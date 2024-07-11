@@ -1,0 +1,45 @@
+.my-digimon-card {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ffa07a;
+  border-radius: 10px;
+  background-color: rgba(#ffa07a, 0.9);
+  padding: 10px;
+  width: 250px;
+  min-height: 76px;
+  height: fit-content;
+  overflow: hidden;
+
+  .my-digimon-card-image {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    img {
+      max-width: 50px;
+      max-height: 50px;
+      object-fit: cover;
+    }
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    text-align: center;
+  }
+
+  &-name {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  &-attributes {
+    font-size: 11px;
+    display: flex;
+  }
+}

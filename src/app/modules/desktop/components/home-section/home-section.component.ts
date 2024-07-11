@@ -12,8 +12,10 @@ import { Digimon } from '../../../../core/interfaces/digimon.interface';
 export class HomeSectionComponent {
   myDigimonList: Digimon[] = [
     {
+      id: '4e2b6e8a-9c10-4abe-b2c1-2f0f9b9a1e45',
       name: 'Agumon',
       img: 'assets/digimons/Agumon.webp',
+      rank: 'Rookie',
       hp: 20,
       mp: 15,
       atk: 10,
@@ -22,7 +24,9 @@ export class HomeSectionComponent {
       level: 5
     },
     {
+      id: '5d3a8b3e-6f00-4e7b-8e77-a9b5b8f5e3f4',
       name: 'Angemon',
+      rank: 'Champion',
       img: 'assets/digimons/Angemon.webp',
       hp: 25,
       mp: 20,
@@ -32,7 +36,9 @@ export class HomeSectionComponent {
       level: 6
     },
     {
+      id: 'b9a2e6c4-4d6b-4c1f-8f9e-0b6c0b2f1a3e',
       name: 'Aquilamon',
+      rank: 'Champion',
       img: 'assets/digimons/Aquilamon.webp',
       hp: 30,
       mp: 25,
@@ -42,7 +48,9 @@ export class HomeSectionComponent {
       level: 7
     },
     {
+      id: 'c8e9b7d6-3e2a-4b1c-9e8f-1a0e2b3c4d6b',
       name: 'Apemon',
+      rank: 'Champion',
       img: 'assets/digimons/Apemon.webp',
       hp: 35,
       mp: 30,

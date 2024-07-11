@@ -1,14 +1,16 @@
 .my-digimon-card {
   display: flex;
   align-items: center;
-  border: 1px solid #ffa07a;
   border-radius: 10px;
-  background-color: rgba(#ffa07a, 0.9);
+  background-color: rgba(#494949, 0.9);
   padding: 10px;
-  width: 250px;
-  min-height: 76px;
-  height: fit-content;
   overflow: hidden;
+  height: 100%;
+
+  &:hover {
+    background-color: rgba(black, 0.7);
+    cursor: pointer;
+  }
 
   .my-digimon-card-image {
     display: flex;
@@ -41,5 +43,6 @@
   &-attributes {
     font-size: 11px;
     display: flex;
+    gap: 15px;
   }
 }

@@ -1,0 +1,44 @@
+[
+  {
+    "seed": "25fc7b61-17ae-453b-94f7-4fa4f9171633",
+    "name": "MetalGreymon",
+    "img": "/assets/digimons/MetalGreymon.webp",
+    "rank": "Ultimate",
+    "hp": 150,
+    "mp": 100,
+    "atk": 50,
+    "def": 40,
+    "level": 1,
+    "bitFarmingRate": 4,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": ["70dbb38a-690e-45b3-bfc5-eccba64fbd9b"]
+  },
+  {
+    "seed": "70dbb38a-690e-45b3-bfc5-eccba64fbd9b",
+    "name": "Greymon",
+    "img": "/assets/digimons/Greymon.webp",
+    "rank": "Champion",
+    "hp": 100,
+    "mp": 50,
+    "atk": 30,
+    "def": 20,
+    "level": 1,
+    "bitFarmingRate": 2,
+    "digiEvolutionSeedList": ["25fc7b61-17ae-453b-94f7-4fa4f9171633"],
+    "degenerateSeedList": ["96c23ff9-d6b4-43da-91e6-f0c9799c65d7"]
+  },
+  {
+    "seed": "96c23ff9-d6b4-43da-91e6-f0c9799c65d7",
+    "name": "Agumon",
+    "img": "/assets/digimons/Agumon.webp",
+    "rank": "Rookie",
+    "hp": 50,
+    "mp": 20,
+    "atk": 10,
+    "def": 5,
+    "level": 1,
+    "bitFarmingRate": 1,
+    "digiEvolutionSeedList": ["70dbb38a-690e-45b3-bfc5-eccba64fbd9b"],
+    "degenerateSeedList": []
+  }
+]

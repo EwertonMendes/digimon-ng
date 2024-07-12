@@ -1,5 +1,5 @@
 <div class="home-section">
-	<h2 class="home-section-sub-title">My Buddies</h2>
+	<h2 class="home-section-sub-title">Upfront Team</h2>
 	<div class="my-digimon-list">
     @for(digimon of globalState.playerData().digimonList; track digimon){
     <app-digi-status-card [digimon]="digimon" (contextmenu)="onRightClick($event, digimon)" />

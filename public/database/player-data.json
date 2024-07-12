@@ -1,0 +1,133 @@
+{
+  "name": "Player 1",
+  "level": 1,
+  "exp": 0,
+  "digimonList": [
+    {
+      "id": "c7e4fd0d-e0d8-4a29-8edd-39be3c3d6a34",
+      "seed": "25fc7b61-17ae-453b-94f7-4fa4f9171633",
+      "name": "MetalGreymon",
+      "img": "/assets/digimons/MetalGreymon.webp",
+      "rank": "Ultimate",
+      "hp": 150,
+      "mp": 100,
+      "atk": 50,
+      "def": 40,
+      "exp": 0,
+      "level": 1,
+      "digiEvolutionSeedList": [],
+      "degenerateSeedList": ["70dbb38a-690e-45b3-bfc5-eccba64fbd9b"]
+    },
+    {
+      "id": "474aa28d-d11f-47d1-b74e-67a31fe63d68",
+      "seed": "70dbb38a-690e-45b3-bfc5-eccba64fbd9b",
+      "name": "Greymon",
+      "img": "/assets/digimons/Greymon.webp",
+      "rank": "Champion",
+      "hp": 100,
+      "mp": 50,
+      "atk": 30,
+      "def": 20,
+      "exp": 0,
+      "level": 1,
+      "digiEvolutionSeedList": ["25fc7b61-17ae-453b-94f7-4fa4f9171633"],
+      "degenerateSeedList": ["96c23ff9-d6b4-43da-91e6-f0c9799c65d7"]
+    }
+  ],
+  "bitFarmDigimonList": [
+    {
+      "seed": "96c23ff9-d6b4-43da-91e6-f0c9799c65d7",
+      "name": "Agumon",
+      "img": "/assets/digimons/Agumon.webp",
+      "rank": "Rookie",
+      "hp": 50,
+      "mp": 20,
+      "atk": 10,
+      "def": 5,
+      "exp": 0,
+      "level": 1,
+      "digiEvolutionSeedList": ["70dbb38a-690e-45b3-bfc5-eccba64fbd9b"],
+      "degenerateSeedList": []
+    },
+    {
+      "seed": "70dbb38a-690e-45b3-bfc5-eccba64fbd9b",
+      "name": "Greymon",
+      "img": "/assets/digimons/Greymon.webp",
+      "rank": "Champion",
+      "hp": 100,
+      "mp": 50,
+      "atk": 30,
+      "def": 20,
+      "exp": 0,
+      "level": 1,
+      "digiEvolutionSeedList": ["25fc7b61-17ae-453b-94f7-4fa4f9171633"],
+      "degenerateSeedList": ["96c23ff9-d6b4-43da-91e6-f0c9799c65d7"]
+    }
+  ],
+  "inTrainingDigimonList": [
+    {
+      "id": "9i2ece6f-9ca0-4d7b-af21-cb25d8fr87a6",
+      "seed": "70dbb38a-690e-45b3-bfc5-eccba64fbd9b",
+      "name": "Greymon",
+      "img": "/assets/digimons/Greymon.webp",
+      "rank": "Champion",
+      "hp": 100,
+      "mp": 50,
+      "atk": 30,
+      "def": 20,
+      "exp": 0,
+      "level": 1,
+      "digiEvolutionSeedList": ["25fc7b61-17ae-453b-94f7-4fa4f9171633"],
+      "degenerateSeedList": ["96c23ff9-d6b4-43da-91e6-f0c9799c65d7"]
+    },
+    {
+      "id": "7skd5e6f-9ca0-4d7b-af21-cb25d8e9io06",
+      "seed": "25fc7b61-17ae-453b-94f7-4fa4f9171633",
+      "name": "MetalGreymon",
+      "img": "/assets/digimons/MetalGreymon.webp",
+      "rank": "Ultimate",
+      "hp": 150,
+      "mp": 100,
+      "atk": 50,
+      "def": 40,
+      "exp": 0,
+      "level": 1,
+      "digiEvolutionSeedList": [],
+      "degenerateSeedList": ["70dbb38a-690e-45b3-bfc5-eccba64fbd9b"]
+    }
+  ],
+  "digimonStorageList": [
+    {
+      "id": "9e683359-c155-4d63-8d89-b9c26c98dd7b",
+      "seed": "28228629-5abc-4fdb-b94d-360783b2ff2c",
+      "name": "Angewomon",
+      "img": "/assets/digimons/Angewomon.webp",
+      "rank": "Ultimate",
+      "hp": 140,
+      "mp": 90,
+      "atk": 45,
+      "def": 35,
+      "exp": 0,
+      "level": 1,
+      "digiEvolutionSeedList": [],
+      "degenerateSeedList": []
+    },
+    {
+      "id": "25fa11f1-c46d-4c79-92d8-60946403378a",
+      "seed": "cd52bdf0-80a8-4b19-b738-ed6acf1f0b14",
+      "name": "Apemon",
+      "img": "/assets/digimons/Apemon.webp",
+      "rank": "Champion",
+      "hp": 120,
+      "mp": 70,
+      "atk": 35,
+      "def": 25,
+      "exp": 0,
+      "level": 1,
+      "digiEvolutionSeedList": [],
+      "degenerateSeedList": []
+    }
+  ],
+  "digimonStorageCapacity": 5,
+  "bits": 0
+}

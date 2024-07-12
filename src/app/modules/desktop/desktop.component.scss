@@ -38,6 +38,25 @@
       width: 100%;
       align-items: center;
 
+      .title-container {
+          display: grid;
+          grid-template-columns: 1fr auto 1fr;
+          align-items: center;
+          margin-top: 20px;
+          gap: 10px;
+          width: 100%;
+        }
+
+        .title-container> :first-child {
+          grid-column: 2 / 3;
+          justify-self: center;
+        }
+
+        .title-container> :last-child {
+          grid-column: 3 / 4;
+          justify-self: end;
+        }
+
       app-home-section {
         display: flex;
         flex-grow: 1;

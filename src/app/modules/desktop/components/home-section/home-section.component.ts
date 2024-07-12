@@ -16,6 +16,7 @@ export class HomeSectionComponent {
 
   onRightClick(event: MouseEvent, digimon: Digimon): void {
     event.preventDefault();
-    this.globalState.removeDigimonFromList(digimon.id);
+    if(!digimon.id) return;
+    this.globalState.removeDigimonFromList(digimon.id!);
   }
 }

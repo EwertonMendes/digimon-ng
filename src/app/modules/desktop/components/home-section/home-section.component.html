@@ -1,8 +1,8 @@
 <div class="home-section">
 	<h2 class="home-section-sub-title">My Buddies</h2>
 	<div class="my-digimon-list">
-    @for(digimon of myDigimonList; track digimon){
-    <app-digi-status-card [digimon]="digimon" />
+    @for(digimon of globalState.playerData().digimonList; track digimon){
+    <app-digi-status-card [digimon]="digimon" (contextmenu)="onRightClick($event, digimon)" />
     }
 	</div>
 </div>

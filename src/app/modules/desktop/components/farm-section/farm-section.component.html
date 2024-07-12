@@ -1,10 +1,10 @@
 <div class="farm-section">
   <div class="farm-section-container">
     <div class="panel">
-      <app-button [text]="'Add digimon to training'" color="secondary"/>
+      <app-button [text]="'Add digimon to training'" color="secondary" (click)="addDigimonToTraining()"/>
       <div class="in-training-digimon-list">
-        @for(digimon of inTrainingDigimonList; track digimon){
-          <app-digi-status-card [digimon]="digimon" />
+        @for(digimon of globalState.playerData().inTrainingDigimonList; track digimon){
+          <app-digi-status-card [digimon]="digimon" (contextmenu)="onRightClick($event, digimon)" />
         }
       </div>
     </div>

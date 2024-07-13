@@ -28,6 +28,9 @@
     <div class="digimon-storage-content">
       @for(digimon of globalState.playerData().digimonStorageList; track digimon){
       <app-digi-status-card [digimon]="digimon" />
+      <app-button text="Add to team" color="secondary" (click)="addDigimonToTeam(digimon)"/>
+      <app-button text="Add to training" color="secondary" (click)="addDigimonToTraining(digimon)"/>
+      <app-button text="Add to farm" color="primary" (click)="addDigimonToFarm(digimon)"/>
       }
     </div>
   </div>

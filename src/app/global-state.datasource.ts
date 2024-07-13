@@ -30,12 +30,15 @@ export class GlobalStateDataSource {
   }
 
   addDigimonToTraining(digimon: Digimon) {
+    if (!digimon.id) return;
     const inTrainingDigimonList = this.playerData().inTrainingDigimonList;
     inTrainingDigimonList.push(digimon);
     this.playerData.set({
       ...this.playerData(),
       inTrainingDigimonList,
     });
+
+    this.removeDigimonFromStorage(digimon.id);
   }
 
   removeDigimonFromTraining(digimonId: string) {
@@ -48,6 +51,18 @@ export class GlobalStateDataSource {
       ...this.playerData(),
       inTrainingDigimonList,
     });
+  }
+
+  addDigimonToList(digimon: Digimon) {
+    if (!digimon.id) return;
+    const digimonList = this.playerData().digimonList;
+    digimonList.push(digimon);
+    this.playerData.set({
+      ...this.playerData(),
+      digimonList,
+    });
+
+    this.removeDigimonFromStorage(digimon.id);
   }
 
   removeDigimonFromList(digimonId: string) {
@@ -69,5 +84,38 @@ export class GlobalStateDataSource {
       ...this.playerData(),
       digimonStorageList,
     });
+  }
+
+  removeDigimonFromStorage(digimonId: string) {
+    const digimonStorageList = this.playerData().digimonStorageList.filter(digimon => digimon.id !== digimonId);
+    this.playerData.set({
+      ...this.playerData(),
+      digimonStorageList,
+    });
+  }
+
+  addDigimonToFarm(digimon: Digimon) {
+    if (!digimon.id) return;
+    const bitFarmDigimonList = this.playerData().bitFarmDigimonList;
+    bitFarmDigimonList.push(digimon);
+    this.playerData.set({
+      ...this.playerData(),
+      bitFarmDigimonList,
+    });
+
+    this.removeDigimonFromStorage(digimon.id);
+  }
+
+  removeDigimonFromFarm(digimonId: string) {
+    const bitFarmDigimonList = this.playerData().bitFarmDigimonList.filter(digimon => digimon.id !== digimonId);
+    this.playerData.set({
+      ...this.playerData(),
+      bitFarmDigimonList,
+    });
+
+    const digimon = this.playerData().bitFarmDigimonList.find(digimon => digimon.id === digimonId);
+    if (digimon) {
+      this.addDigimonToStorage(digimon);
+    }
   }
 }

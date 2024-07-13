@@ -23,5 +23,12 @@
 </div>
 
 <app-modal [id]="digimonStorageModalId">
-
+  <div class="digimon-storage-container">
+    <span class="section-title">Digimon Storage</span>
+    <div class="digimon-storage-content">
+      @for(digimon of globalState.playerData().digimonStorageList; track digimon){
+      <app-digi-status-card [digimon]="digimon" />
+      }
+    </div>
+  </div>
 </app-modal>

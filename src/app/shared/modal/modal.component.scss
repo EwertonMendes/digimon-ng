@@ -8,10 +8,12 @@ app-modal {
 
   .modal-container {
     display: flex;
+    flex-direction: column;
     position: fixed;
     z-index: 1000;
     overflow: auto;
     width: 100%;
+    height: 99%;
 
     .inner-container {
       display: flex;
@@ -25,6 +27,11 @@ app-modal {
         user-select: none;
         margin-right: 25px;
       }
+    }
+
+    .content-container {
+      padding: 20px;
+      height: 100%;
     }
   }
 

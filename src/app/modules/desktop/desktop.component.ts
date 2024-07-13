@@ -4,19 +4,22 @@ import { FarmSectionComponent } from './components/farm-section/farm-section.com
 import { ButtonComponent } from '../../shared/components/button/button.component';
 import { ModalComponent } from '../../shared/modal/modal.component';
 import { ModalService } from '../../shared/modal/modal.service';
+import { DigiStatusCardComponent } from '../../shared/components/digi-status-card/digi-status-card.component';
+import { GlobalStateDataSource } from '../../global-state.datasource';
 
 @Component({
   selector: 'app-desktop',
   standalone: true,
-  imports: [HomeSectionComponent, FarmSectionComponent, ButtonComponent, ModalComponent],
+  imports: [HomeSectionComponent, FarmSectionComponent, ButtonComponent, ModalComponent, DigiStatusCardComponent],
   templateUrl: './desktop.component.html',
-  styleUrl: './desktop.component.scss'
+  styleUrl: './desktop.component.scss',
 })
 export class DesktopComponent {
 
   digimonStorageModalId = 'digimon-storage-modal';
 
   modalService = inject(ModalService);
+  globalState = inject(GlobalStateDataSource);
 
   openDigimonStorageModal() {
     this.modalService.open(this.digimonStorageModalId);

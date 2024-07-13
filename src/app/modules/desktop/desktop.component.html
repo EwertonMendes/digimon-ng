@@ -3,7 +3,7 @@
     <div class="desktop-home-container">
       <div class="title-container">
         <span class="section-title home-title">Home</span>
-        <app-button [text]="'Add digimon to team'" color="secondary"/>
+        <app-button [text]="'Add digimon to team'" color="secondary" (click)="openDigimonStorageModal()"/>
       </div>
       <app-home-section />
     </div>
@@ -21,3 +21,7 @@
 		<span class="section-title">Arena</span>
 	</div>
 </div>
+
+<app-modal [id]="digimonStorageModalId">
+
+</app-modal>

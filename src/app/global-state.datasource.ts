@@ -29,7 +29,6 @@ export class GlobalStateDataSource {
     this.playerData.set(playerData);
   }
 
-
   addDigimonToTraining(digimon: Digimon) {
     const inTrainingDigimonList = this.playerData().inTrainingDigimonList;
     inTrainingDigimonList.push(digimon);

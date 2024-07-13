@@ -1,0 +1,39 @@
+app-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  .modal-container {
+    display: flex;
+    position: fixed;
+    z-index: 1000;
+    overflow: auto;
+    width: 100%;
+
+    .inner-container {
+      display: flex;
+      justify-content: end;
+      color: white;
+      width: 100%;
+
+      .close-button {
+        cursor: pointer;
+        font-size: 46px;
+        user-select: none;
+        margin-right: 25px;
+      }
+    }
+  }
+
+  .modal-background {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(black, 0.8);
+    backdrop-filter: blur(10px);
+    opacity: 0.75;
+    z-index: 900;
+  }
+}

@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, input, output } from '@angular/core';
+import '@phosphor-icons/web/light';
+import '@phosphor-icons/web/bold';
 
 @Component({
   selector: 'app-button',
@@ -9,12 +11,13 @@ import { Component, input, output } from '@angular/core';
   styleUrl: './button.component.scss'
 })
 export class ButtonComponent {
-  text = input.required<string>();
+  text = input<string>();
+  icon = input<string>();
+  weight = input<string>('light');
   color = input<string>('primary');
   disabled = input<boolean>(false);
 
   click = output();
-
 
   onClick() {
     this.click.emit();

@@ -39,6 +39,10 @@ export class GlobalStateDataSource {
   }
 
   removeDigimonFromTraining(digimonId: string) {
+    const digimon = this.playerData().inTrainingDigimonList.find(digimon => digimon.id === digimonId);
+    if (digimon) {
+      this.addDigimonToStorage(digimon);
+    }
     const inTrainingDigimonList = this.playerData().inTrainingDigimonList.filter(digimon => digimon.id !== digimonId);
     this.playerData.set({
       ...this.playerData(),
@@ -47,10 +51,23 @@ export class GlobalStateDataSource {
   }
 
   removeDigimonFromList(digimonId: string) {
+    const digimon = this.playerData().digimonList.find(digimon => digimon.id === digimonId);
+    if (digimon) {
+      this.addDigimonToStorage(digimon);
+    }
     const digimonList = this.playerData().digimonList.filter(digimon => digimon.id !== digimonId);
     this.playerData.set({
       ...this.playerData(),
       digimonList,
+    });
+  }
+
+  addDigimonToStorage(digimon: Digimon) {
+    const digimonStorageList = this.playerData().digimonStorageList;
+    digimonStorageList.push(digimon);
+    this.playerData.set({
+      ...this.playerData(),
+      digimonStorageList,
     });
   }
 }

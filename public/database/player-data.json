@@ -15,6 +15,7 @@
       "def": 40,
       "exp": 0,
       "level": 1,
+      "bitFarmingRate": 1,
       "digiEvolutionSeedList": [],
       "degenerateSeedList": ["70dbb38a-690e-45b3-bfc5-eccba64fbd9b"]
     },
@@ -30,12 +31,14 @@
       "def": 20,
       "exp": 0,
       "level": 1,
+      "bitFarmingRate": 1,
       "digiEvolutionSeedList": ["25fc7b61-17ae-453b-94f7-4fa4f9171633"],
       "degenerateSeedList": ["96c23ff9-d6b4-43da-91e6-f0c9799c65d7"]
     }
   ],
   "bitFarmDigimonList": [
     {
+      "id": "rt54fd0d-e0d8-4a29-8edd-39be3c3d66y7",
       "seed": "96c23ff9-d6b4-43da-91e6-f0c9799c65d7",
       "name": "Agumon",
       "img": "/assets/digimons/Agumon.webp",
@@ -46,10 +49,12 @@
       "def": 5,
       "exp": 0,
       "level": 1,
+      "bitFarmingRate": 1,
       "digiEvolutionSeedList": ["70dbb38a-690e-45b3-bfc5-eccba64fbd9b"],
       "degenerateSeedList": []
     },
     {
+      "id": "d71aa23r-d11f-47d1-b74e-67a31fe63du7",
       "seed": "70dbb38a-690e-45b3-bfc5-eccba64fbd9b",
       "name": "Greymon",
       "img": "/assets/digimons/Greymon.webp",
@@ -60,6 +65,7 @@
       "def": 20,
       "exp": 0,
       "level": 1,
+      "bitFarmingRate": 1,
       "digiEvolutionSeedList": ["25fc7b61-17ae-453b-94f7-4fa4f9171633"],
       "degenerateSeedList": ["96c23ff9-d6b4-43da-91e6-f0c9799c65d7"]
     }
@@ -77,6 +83,7 @@
       "def": 20,
       "exp": 0,
       "level": 1,
+      "bitFarmingRate": 1,
       "digiEvolutionSeedList": ["25fc7b61-17ae-453b-94f7-4fa4f9171633"],
       "degenerateSeedList": ["96c23ff9-d6b4-43da-91e6-f0c9799c65d7"]
     },
@@ -92,6 +99,7 @@
       "def": 40,
       "exp": 0,
       "level": 1,
+      "bitFarmingRate": 1,
       "digiEvolutionSeedList": [],
       "degenerateSeedList": ["70dbb38a-690e-45b3-bfc5-eccba64fbd9b"]
     }
@@ -109,6 +117,7 @@
       "def": 35,
       "exp": 0,
       "level": 1,
+      "bitFarmingRate": 1,
       "digiEvolutionSeedList": [],
       "degenerateSeedList": []
     },
@@ -124,6 +133,7 @@
       "def": 25,
       "exp": 0,
       "level": 1,
+      "bitFarmingRate": 1,
       "digiEvolutionSeedList": [],
       "degenerateSeedList": []
     }

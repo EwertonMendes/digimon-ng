@@ -11,12 +11,17 @@ import { Digimon } from '../../core/interfaces/digimon.interface';
 @Component({
   selector: 'app-desktop',
   standalone: true,
-  imports: [HomeSectionComponent, FarmSectionComponent, ButtonComponent, ModalComponent, DigiStatusCardComponent],
+  imports: [
+    HomeSectionComponent,
+    FarmSectionComponent,
+    ButtonComponent,
+    ModalComponent,
+    DigiStatusCardComponent,
+  ],
   templateUrl: './desktop.component.html',
   styleUrl: './desktop.component.scss',
 })
 export class DesktopComponent {
-
   digimonStorageModalId = 'digimon-storage-modal';
 
   modalService = inject(ModalService);

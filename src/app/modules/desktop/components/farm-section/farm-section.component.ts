@@ -3,11 +3,12 @@ import { ButtonComponent } from '../../../../shared/components/button/button.com
 import { DigiStatusCardComponent } from '../../../../shared/components/digi-status-card/digi-status-card.component';
 import { GlobalStateDataSource } from '../../../../global-state.datasource';
 import { Digimon } from '../../../../core/interfaces/digimon.interface';
+import { DigimonFarmCardComponent } from './components/digimon-farm-card/digimon-farm-card.component';
 
 @Component({
   selector: 'app-farm-section',
   standalone: true,
-  imports: [ButtonComponent, DigiStatusCardComponent],
+  imports: [ButtonComponent, DigiStatusCardComponent, DigimonFarmCardComponent],
   templateUrl: './farm-section.component.html',
   styleUrl: './farm-section.component.scss'
 })
@@ -19,8 +20,13 @@ export class FarmSectionComponent {
 
   }
 
-  onRightClick(event: MouseEvent, digimon: Digimon): void {
+  removeDigimonFromTraining(event: MouseEvent, digimon: Digimon): void {
     event.preventDefault();
     this.globalState.removeDigimonFromTraining(digimon.id!);
+  }
+
+  removeDigimonFromFarm(event: MouseEvent, digimon: Digimon): void {
+    event.preventDefault();
+    this.globalState.removeDigimonFromFarm(digimon.id!);
   }
 }

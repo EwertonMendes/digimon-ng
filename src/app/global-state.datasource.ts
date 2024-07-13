@@ -1,11 +1,11 @@
-import { inject, Injectable, signal } from "@angular/core";
-import { Digimon } from "./core/interfaces/digimon.interface";
-import { DigimonService } from "./services/digimon.service";
-import { PlayerDataService } from "./services/player-data.service";
-import { PlayerData } from "./core/interfaces/player-data.interface";
+import { inject, Injectable, signal } from '@angular/core';
+import { Digimon } from './core/interfaces/digimon.interface';
+import { DigimonService } from './services/digimon.service';
+import { PlayerDataService } from './services/player-data.service';
+import { PlayerData } from './core/interfaces/player-data.interface';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class GlobalStateDataSource {
   playerData = signal<PlayerData>({
@@ -42,11 +42,16 @@ export class GlobalStateDataSource {
   }
 
   removeDigimonFromTraining(digimonId: string) {
-    const digimon = this.playerData().inTrainingDigimonList.find(digimon => digimon.id === digimonId);
+    const digimon = this.playerData().inTrainingDigimonList.find(
+      (digimon) => digimon.id === digimonId
+    );
     if (digimon) {
       this.addDigimonToStorage(digimon);
     }
-    const inTrainingDigimonList = this.playerData().inTrainingDigimonList.filter(digimon => digimon.id !== digimonId);
+    const inTrainingDigimonList =
+      this.playerData().inTrainingDigimonList.filter(
+        (digimon) => digimon.id !== digimonId
+      );
     this.playerData.set({
       ...this.playerData(),
       inTrainingDigimonList,
@@ -66,11 +71,15 @@ export class GlobalStateDataSource {
   }
 
   removeDigimonFromList(digimonId: string) {
-    const digimon = this.playerData().digimonList.find(digimon => digimon.id === digimonId);
+    const digimon = this.playerData().digimonList.find(
+      (digimon) => digimon.id === digimonId
+    );
     if (digimon) {
       this.addDigimonToStorage(digimon);
     }
-    const digimonList = this.playerData().digimonList.filter(digimon => digimon.id !== digimonId);
+    const digimonList = this.playerData().digimonList.filter(
+      (digimon) => digimon.id !== digimonId
+    );
     this.playerData.set({
       ...this.playerData(),
       digimonList,
@@ -87,7 +96,9 @@ export class GlobalStateDataSource {
   }
 
   removeDigimonFromStorage(digimonId: string) {
-    const digimonStorageList = this.playerData().digimonStorageList.filter(digimon => digimon.id !== digimonId);
+    const digimonStorageList = this.playerData().digimonStorageList.filter(
+      (digimon) => digimon.id !== digimonId
+    );
     this.playerData.set({
       ...this.playerData(),
       digimonStorageList,
@@ -107,15 +118,19 @@ export class GlobalStateDataSource {
   }
 
   removeDigimonFromFarm(digimonId: string) {
-    const bitFarmDigimonList = this.playerData().bitFarmDigimonList.filter(digimon => digimon.id !== digimonId);
+    const digimon = this.playerData().bitFarmDigimonList.find(
+      (digimon) => digimon.id === digimonId
+    );
+    if (digimon) {
+      this.addDigimonToStorage(digimon);
+    }
+
+    const bitFarmDigimonList = this.playerData().bitFarmDigimonList.filter(
+      (digimon) => digimon.id !== digimonId
+    );
     this.playerData.set({
       ...this.playerData(),
       bitFarmDigimonList,
     });
-
-    const digimon = this.playerData().bitFarmDigimonList.find(digimon => digimon.id === digimonId);
-    if (digimon) {
-      this.addDigimonToStorage(digimon);
-    }
   }
 }

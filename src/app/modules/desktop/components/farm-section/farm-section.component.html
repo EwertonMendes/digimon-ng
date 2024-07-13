@@ -4,7 +4,7 @@
       <app-button [text]="'Add digimon to training'" color="secondary" (click)="addDigimonToTraining()"/>
       <div class="in-training-digimon-list">
         @for(digimon of globalState.playerData().inTrainingDigimonList; track digimon){
-          <app-digi-status-card [digimon]="digimon" (contextmenu)="onRightClick($event, digimon)" />
+          <app-digi-status-card [digimon]="digimon" (contextmenu)="removeDigimonFromTraining($event, digimon)" />
         }
       </div>
     </div>
@@ -12,17 +12,9 @@
       <app-button [text]="'Add digimon to farm'"/>
 
       <div class="bit-farming-digimon-list">
-        <div class="digimon-work-item">
-          <div class="digimon-work-item-image">
-            <img src="/assets/digimons/Angewomon.webp" alt="Angewomon">
-          </div>
-          <div class="digimon-work-item-content">
-            <span class="digimon-work-item-name">Angewomon</span>
-            <div class="digimon-work-item-attributes">
-              <span>Bits per second: 200</span>
-            </div>
-          </div>
-        </div>
+        @for(digimon of globalState.playerData().bitFarmDigimonList; track digimon){
+          <app-digimon-farm-card [digimon]="digimon" (contextmenu)="removeDigimonFromFarm($event, digimon)" />
+        }
       </div>
     </div>
   </div>

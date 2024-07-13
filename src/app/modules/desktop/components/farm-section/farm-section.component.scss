@@ -30,50 +30,6 @@
         height: 100%;
         overflow: auto;
         padding: 10px;
-
-        .digimon-work-item {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          gap: 10px;
-          padding: 10px;
-          border-radius: 10px;
-          background-color: rgba(white, 0.5);
-
-          &:hover {
-            background-color: rgba(white, 0.7);
-            cursor: pointer;
-          }
-
-          .digimon-work-item-image {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-
-            img {
-              max-width: 50px;
-              max-height: 50px;
-              object-fit: cover;
-            }
-          }
-
-          .digimon-work-item-content {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-          }
-
-          .digimon-work-item-name {
-            font-size: 16px;
-            font-weight: 700;
-          }
-
-          .digimon-work-item-attributes {
-            font-size: 11px;
-          }
-        }
       }
     }
 

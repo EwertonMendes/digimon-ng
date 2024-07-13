@@ -1,0 +1,17 @@
+<div class="action-bar-container">
+  <app-button icon="ph-database" weight="bold" (click)="openDigimonStorageModal()"/>
+</div>
+
+<app-modal [id]="digimonStorageModalId">
+  <div class="digimon-storage-container">
+    <span class="section-title">Digimon Storage</span>
+    <div class="digimon-storage-content">
+      @for(digimon of globalState.playerData().digimonStorageList; track digimon){
+      <app-digi-status-card [digimon]="digimon" />
+      <app-button text="Add to team" color="secondary" (click)="addDigimonToTeam(digimon)"/>
+      <app-button text="Add to training" color="secondary" (click)="addDigimonToTraining(digimon)"/>
+      <app-button text="Add to farm" color="primary" (click)="addDigimonToFarm(digimon)"/>
+      }
+    </div>
+  </div>
+</app-modal>

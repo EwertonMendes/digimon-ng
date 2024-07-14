@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, effect, inject, signal } from '@angular/core';
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
 import { DigiStatusCardComponent } from '../../../../shared/components/digi-status-card/digi-status-card.component';
 import { GlobalStateDataSource } from '../../../../global-state.datasource';
@@ -10,14 +10,20 @@ import { DigimonFarmCardComponent } from './components/digimon-farm-card/digimon
   standalone: true,
   imports: [ButtonComponent, DigiStatusCardComponent, DigimonFarmCardComponent],
   templateUrl: './farm-section.component.html',
-  styleUrl: './farm-section.component.scss'
+  styleUrl: './farm-section.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FarmSectionComponent {
-
   globalState = inject(GlobalStateDataSource);
 
-  addDigimonToTraining() {
+  bitGenerationTotalRate = signal<number>(0);
 
+  constructor() {
+    effect(() => {
+      this.bitGenerationTotalRate.set(this.globalState.getBitGenerationTotalRate())
+    }, {
+      allowSignalWrites: true
+    })
   }
 
   removeDigimonFromTraining(event: MouseEvent, digimon: Digimon): void {

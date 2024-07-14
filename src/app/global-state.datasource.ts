@@ -133,4 +133,9 @@ export class GlobalStateDataSource {
       bitFarmDigimonList,
     });
   }
+
+  getBitGenerationTotalRate() {
+    const bitFarmDigimonList = this.playerData().bitFarmDigimonList;
+    return bitFarmDigimonList.reduce((acc, digimon) => acc + digimon.bitFarmingRate!, 0);
+  }
 }

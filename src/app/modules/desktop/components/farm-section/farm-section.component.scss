@@ -5,6 +5,15 @@
   width: 100%;
   align-items: center;
 
+  &-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    padding: 0px 10px
+  }
+
   &-container {
     display: flex;
     flex-direction: row;

@@ -1,8 +1,13 @@
 <div class="home-section">
-	<h4 class="home-section-sub-title">Upfront Team</h4>
-	<div class="my-digimon-list">
+  <h4 class="home-section-sub-title">
+    Upfront Team: {{ globalState.playerData().digimonList.length }}/6
+  </h4>
+  <div class="my-digimon-list">
     @for(digimon of globalState.playerData().digimonList; track digimon){
-    <app-digi-status-card [digimon]="digimon" (contextmenu)="onRightClick($event, digimon)" />
+    <app-digi-status-card
+      [digimon]="digimon"
+      (contextmenu)="onRightClick($event, digimon)"
+    />
     }
-	</div>
+  </div>
 </div>

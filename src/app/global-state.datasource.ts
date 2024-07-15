@@ -3,6 +3,7 @@ import { Digimon } from './core/interfaces/digimon.interface';
 import { DigimonService } from './services/digimon.service';
 import { PlayerDataService } from './services/player-data.service';
 import { PlayerData } from './core/interfaces/player-data.interface';
+import { interval } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -21,6 +22,7 @@ export class GlobalStateDataSource {
   });
 
   upfrontTeamLimit = 6;
+  oneMinuteInterval = 60000;
 
   digimonService = inject(DigimonService);
   playerDataService = inject(PlayerDataService);
@@ -29,6 +31,8 @@ export class GlobalStateDataSource {
     const playerData = await this.playerDataService.getPlayerData();
 
     this.playerData.set(playerData);
+
+    this.initBitFarmingGeneration();
   }
 
   addDigimonToTraining(digimon: Digimon) {
@@ -142,6 +146,24 @@ export class GlobalStateDataSource {
 
   getBitGenerationTotalRate() {
     const bitFarmDigimonList = this.playerData().bitFarmDigimonList;
-    return bitFarmDigimonList.reduce((acc, digimon) => acc + digimon.bitFarmingRate!, 0);
+    return bitFarmDigimonList.reduce(
+      (acc, digimon) => acc + digimon.bitFarmingRate!,
+      0
+    );
+  }
+
+  private initBitFarmingGeneration() {
+    interval(this.oneMinuteInterval).subscribe(() => {
+      this.generateBitsBasedOnGenerationTotalRate();
+    });
+  }
+
+  private generateBitsBasedOnGenerationTotalRate() {
+    const bitGenerationTotalRate = this.getBitGenerationTotalRate();
+    const bits = this.playerData().bits + bitGenerationTotalRate;
+    this.playerData.set({
+      ...this.playerData(),
+      bits,
+    });
   }
 }

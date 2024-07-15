@@ -20,6 +20,8 @@ export class GlobalStateDataSource {
     bits: 0,
   });
 
+  upfrontTeamLimit = 6;
+
   digimonService = inject(DigimonService);
   playerDataService = inject(PlayerDataService);
 
@@ -59,7 +61,11 @@ export class GlobalStateDataSource {
   }
 
   addDigimonToList(digimon: Digimon) {
-    if (!digimon.id) return;
+    if (
+      !digimon.id ||
+      this.playerData().digimonList.length >= this.upfrontTeamLimit
+    )
+      return;
     const digimonList = this.playerData().digimonList;
     digimonList.push(digimon);
     this.playerData.set({

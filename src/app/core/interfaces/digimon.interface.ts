@@ -1,6 +1,6 @@
 export interface Digimon {
   id?: string;
-  seed: string
+  seed: string;
   name: string;
   nickName?: string;
   img: string;
@@ -15,4 +15,5 @@ export interface Digimon {
   bitFarmingRate?: number;
   digiEvolutionSeedList: string[];
   degenerateSeedList: string[];
+  [key: string]: any;
 }

@@ -21,6 +21,8 @@ export class GlobalStateDataSource {
     bits: 0,
   });
 
+  modifiableAttributes = ['hp', 'mp', 'atk', 'def'];
+
   upfrontTeamLimit = 6;
   oneMinuteInterval = 60000;
 
@@ -32,16 +34,16 @@ export class GlobalStateDataSource {
 
     this.playerData.set(playerData);
 
+    this.initDigimonTraining();
     this.initBitFarmingGeneration();
   }
 
   addDigimonToTraining(digimon: Digimon) {
     if (!digimon.id) return;
-    const inTrainingDigimonList = this.playerData().inTrainingDigimonList;
-    inTrainingDigimonList.push(digimon);
+    this.playerData().inTrainingDigimonList.push(digimon);
     this.playerData.set({
       ...this.playerData(),
-      inTrainingDigimonList,
+      inTrainingDigimonList: this.playerData().inTrainingDigimonList,
     });
 
     this.removeDigimonFromStorage(digimon.id);
@@ -58,6 +60,7 @@ export class GlobalStateDataSource {
       this.playerData().inTrainingDigimonList.filter(
         (digimon) => digimon.id !== digimonId
       );
+
     this.playerData.set({
       ...this.playerData(),
       inTrainingDigimonList,
@@ -164,6 +167,32 @@ export class GlobalStateDataSource {
     this.playerData.set({
       ...this.playerData(),
       bits,
+    });
+  }
+
+  private initDigimonTraining() {
+    interval(this.oneMinuteInterval).subscribe(() => {
+      this.trainDigimons();
+    });
+  }
+
+  private trainDigimons() {
+    this.playerData().inTrainingDigimonList.forEach((digimon) => {
+      const randomAttributeToTrainIndex = Math.floor(
+        Math.random() * this.modifiableAttributes.length
+      );
+      const randomAttributeToTrain =
+        this.modifiableAttributes[randomAttributeToTrainIndex];
+      let randomAttributeTrainingValue = Math.floor(Math.random() * 10);
+
+      if(randomAttributeToTrain === 'hp' || randomAttributeToTrain === 'mp') randomAttributeTrainingValue += 10;
+
+      digimon[randomAttributeToTrain] += randomAttributeTrainingValue;
+    });
+
+    this.playerData.set({
+      ...this.playerData(),
+      inTrainingDigimonList: this.playerData().inTrainingDigimonList,
     });
   }
 }

@@ -6,6 +6,7 @@
     @for(digimon of globalState.playerData().digimonList; track digimon){
     <app-digi-status-card
       [digimon]="digimon"
+      (click)="openDigimonDetailsModal(digimon)"
       (contextmenu)="onRightClick($event, digimon)"
     />
     }

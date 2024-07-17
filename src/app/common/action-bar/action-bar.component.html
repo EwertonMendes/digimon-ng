@@ -17,29 +17,29 @@
       </div>
       } @else {
       <div class="digimon-storage-content-list-container">
-          @for(digimon of globalState.playerData().digimonStorageList; track
-          digimon){
-          <div class="digimon-storage-content-list-item">
-            <app-digi-status-card [digimon]="digimon" />
-            <div class="actions">
-              <app-button
-                text="Add to team"
-                color="primary"
-                (click)="addDigimonToTeam(digimon)"
-              />
-              <app-button
-                text="Add to training"
-                color="secondary"
-                (click)="addDigimonToTraining(digimon)"
-              />
-              <app-button
-                text="Add to farm"
-                color="tertiary"
-                (click)="addDigimonToFarm(digimon)"
-              />
-            </div>
+        @for(digimon of globalState.playerData().digimonStorageList; track
+        digimon){
+        <div class="digimon-storage-content-list-item">
+          <app-digi-status-card [digimon]="digimon" />
+          <div class="actions">
+            <app-button
+              text="Add to team"
+              color="primary"
+              (click)="addDigimonToTeam(digimon)"
+            />
+            <app-button
+              text="Add to training"
+              color="secondary"
+              (click)="addDigimonToTraining(digimon)"
+            />
+            <app-button
+              text="Add to farm"
+              color="tertiary"
+              (click)="addDigimonToFarm(digimon)"
+            />
           </div>
-          }
+        </div>
+        }
       </div>
       }
       <div class="digimon-storage-content-footer">

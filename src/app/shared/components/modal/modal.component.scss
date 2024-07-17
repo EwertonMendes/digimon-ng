@@ -5,6 +5,7 @@ app-modal {
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 1000;
 
   .modal-container {
     display: flex;
@@ -14,6 +15,7 @@ app-modal {
     overflow: auto;
     width: 100%;
     height: 99%;
+    color: white;
 
     .inner-container {
       display: flex;

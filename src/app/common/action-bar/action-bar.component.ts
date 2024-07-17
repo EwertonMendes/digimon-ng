@@ -9,7 +9,11 @@ import { Digimon } from '../../core/interfaces/digimon.interface';
 @Component({
   selector: 'app-action-bar',
   standalone: true,
-  imports: [ButtonComponent, ModalComponent, DigiStatusCardComponent],
+  imports: [
+    ButtonComponent,
+    ModalComponent,
+    DigiStatusCardComponent,
+  ],
   templateUrl: './action-bar.component.html',
   styleUrl: './action-bar.component.scss',
 })

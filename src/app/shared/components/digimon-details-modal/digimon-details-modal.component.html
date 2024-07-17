@@ -3,20 +3,63 @@
     <h3 class="section-title">Digimon Details</h3>
     <div class="digimon-details-content">
       <div class="digimon-details-content-image">
-        <img [src]="globalState.selectedDigimonOnDetails()?.img" alt="digimon" />
+        <img
+          [src]="globalState.selectedDigimonOnDetails()?.img"
+          alt="digimon"
+        />
       </div>
       <div class="digimon-details-content-info">
         <div class="digimon-details-content-info-item">
-          <span class="label">Name:</span>
-          <span class="value">{{ globalState.selectedDigimonOnDetails()?.name }}</span>
+          <span class="label">Name: </span>
+          <span class="value">{{
+            globalState.selectedDigimonOnDetails()?.name
+          }}</span>
         </div>
         <div class="digimon-details-content-info-item">
-          <span class="label">Level:</span>
-          <span class="value">{{ globalState.selectedDigimonOnDetails()?.level }}</span>
+          <span class="label">Level: </span>
+          <span class="value">{{
+            globalState.selectedDigimonOnDetails()?.level
+          }}</span>
         </div>
         <div class="digimon-details-content-info-item">
-          <span class="label">Rank:</span>
-          <span class="value">{{ globalState.selectedDigimonOnDetails()?.rank }}</span>
+          <span class="label">Rank: </span>
+          <span class="value">{{
+            globalState.selectedDigimonOnDetails()?.rank
+          }}</span>
+        </div>
+        <div class="digimon-details-content-info-stats">
+          <div class="digimon-details-content-info-stats-item">
+            <span class="label">HP:</span>
+            <span class="value">{{
+              globalState.selectedDigimonOnDetails()?.hp
+            }}</span>
+          </div>
+          <div class="digimon-details-content-info-stats-item">
+            <span class="label">MP: </span>
+            <span class="value">{{
+              globalState.selectedDigimonOnDetails()?.mp
+            }}</span>
+          </div>
+          <div class="digimon-details-content-info-stats-item">
+            <span class="label">ATK: </span>
+            <span class="value">{{
+              globalState.selectedDigimonOnDetails()?.atk
+            }}</span>
+          </div>
+          <div class="digimon-details-content-info-stats-item">
+            <span class="label">DEF: </span>
+            <span class="value">{{
+              globalState.selectedDigimonOnDetails()?.def
+            }}</span>
+          </div>
+          <div class="digimon-details-content-info-stats-item">
+            <span class="label">Bit Generation: </span>
+            <span class="value"
+              >{{
+                globalState.selectedDigimonOnDetails()?.bitFarmingRate
+              }} /m</span
+            >
+          </div>
         </div>
       </div>
     </div>

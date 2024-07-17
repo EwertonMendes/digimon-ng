@@ -20,7 +20,7 @@
         @for(digimon of globalState.playerData().digimonStorageList; track
         digimon){
         <div class="digimon-storage-content-list-item">
-          <app-digi-status-card [digimon]="digimon" />
+          <app-digi-status-card [digimon]="digimon" (click)="openDigimonDetailsModal(digimon)"/>
           <div class="actions">
             <app-button
               text="Add to team"

@@ -1,6 +1,24 @@
 <app-modal [id]="digimonDetailsModalId">
   <div class="digimon-details-container">
     <h3 class="section-title">Digimon Details</h3>
-    <div class="digimon-details-content"></div>
+    <div class="digimon-details-content">
+      <div class="digimon-details-content-image">
+        <img [src]="globalState.selectedDigimonOnDetails()?.img" alt="digimon" />
+      </div>
+      <div class="digimon-details-content-info">
+        <div class="digimon-details-content-info-item">
+          <span class="label">Name:</span>
+          <span class="value">{{ globalState.selectedDigimonOnDetails()?.name }}</span>
+        </div>
+        <div class="digimon-details-content-info-item">
+          <span class="label">Level:</span>
+          <span class="value">{{ globalState.selectedDigimonOnDetails()?.level }}</span>
+        </div>
+        <div class="digimon-details-content-info-item">
+          <span class="label">Rank:</span>
+          <span class="value">{{ globalState.selectedDigimonOnDetails()?.rank }}</span>
+        </div>
+      </div>
+    </div>
   </div>
 </app-modal>

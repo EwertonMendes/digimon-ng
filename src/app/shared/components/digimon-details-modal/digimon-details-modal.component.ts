@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ModalComponent } from '../modal/modal.component';
+import { GlobalStateDataSource } from '../../../global-state.datasource';
 
 @Component({
   standalone: true,
@@ -10,4 +11,6 @@ import { ModalComponent } from '../modal/modal.component';
 })
 export class DigimonDetailsModalComponent {
   digimonDetailsModalId = 'digimon-details-modal';
+
+  globalState = inject(GlobalStateDataSource);
 }

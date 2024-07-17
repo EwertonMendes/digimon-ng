@@ -23,7 +23,7 @@ export class HomeSectionComponent {
   }
 
   openDigimonDetailsModal(digimon: Digimon): void {
-    console.log(digimon);
+    this.globalState.selectedDigimonOnDetails.set(digimon);
     this.modalService.open(this.digimonDetailsModalId);
   }
 }

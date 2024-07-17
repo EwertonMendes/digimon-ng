@@ -4,6 +4,7 @@ import { DigiStatusCardComponent } from '../../../../shared/components/digi-stat
 import { GlobalStateDataSource } from '../../../../global-state.datasource';
 import { Digimon } from '../../../../core/interfaces/digimon.interface';
 import { DigimonFarmCardComponent } from './components/digimon-farm-card/digimon-farm-card.component';
+import { ModalService } from '../../../../shared/components/modal/modal.service';
 
 @Component({
   selector: 'app-farm-section',
@@ -14,16 +15,24 @@ import { DigimonFarmCardComponent } from './components/digimon-farm-card/digimon
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FarmSectionComponent {
+  digimonDetailsModalId = 'digimon-details-modal';
+
   globalState = inject(GlobalStateDataSource);
+  modalService = inject(ModalService);
 
   bitGenerationTotalRate = signal<number>(0);
 
   constructor() {
-    effect(() => {
-      this.bitGenerationTotalRate.set(this.globalState.getBitGenerationTotalRate())
-    }, {
-      allowSignalWrites: true
-    })
+    effect(
+      () => {
+        this.bitGenerationTotalRate.set(
+          this.globalState.getBitGenerationTotalRate()
+        );
+      },
+      {
+        allowSignalWrites: true,
+      }
+    );
   }
 
   removeDigimonFromTraining(event: MouseEvent, digimon: Digimon): void {
@@ -34,5 +43,10 @@ export class FarmSectionComponent {
   removeDigimonFromFarm(event: MouseEvent, digimon: Digimon): void {
     event.preventDefault();
     this.globalState.removeDigimonFromFarm(digimon.id!);
+  }
+
+  openDigimonDetailsModal(digimon: Digimon): void {
+    this.globalState.selectedDigimonOnDetails.set(digimon);
+    this.modalService.open(this.digimonDetailsModalId);
   }
 }

@@ -21,6 +21,8 @@ export class GlobalStateDataSource {
     bits: 0,
   });
 
+  selectedDigimonOnDetails = signal<Digimon | null>(null);
+
   modifiableAttributes = ['hp', 'mp', 'atk', 'def'];
 
   upfrontTeamLimit = 6;

@@ -9,22 +9,24 @@ import { Digimon } from '../../core/interfaces/digimon.interface';
 @Component({
   selector: 'app-action-bar',
   standalone: true,
-  imports: [
-    ButtonComponent,
-    ModalComponent,
-    DigiStatusCardComponent,
-  ],
+  imports: [ButtonComponent, ModalComponent, DigiStatusCardComponent],
   templateUrl: './action-bar.component.html',
   styleUrl: './action-bar.component.scss',
 })
 export class ActionBarComponent {
   digimonStorageModalId = 'digimon-storage-modal';
+  digimonDetailsModalId = 'digimon-details-modal';
 
   globalState = inject(GlobalStateDataSource);
   modalService = inject(ModalService);
 
   openDigimonStorageModal() {
     this.modalService.open(this.digimonStorageModalId);
+  }
+
+  openDigimonDetailsModal(digimon: Digimon) {
+    this.globalState.selectedDigimonOnDetails.set(digimon);
+    this.modalService.open(this.digimonDetailsModalId);
   }
 
   addDigimonToTeam(digimon: Digimon) {

@@ -19,4 +19,8 @@ export class DigimonService {
   getBaseDigimonDataBySeed(seed: string) {
     return this.baseDigimonData.find(digimon => digimon.seed === seed);
   }
+
+  getBaseDigimonDataById(id: string) {
+    return this.baseDigimonData.find(digimon => digimon.seed === id);
+  }
 }

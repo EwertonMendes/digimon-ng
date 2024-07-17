@@ -1,6 +1,7 @@
-import { Component, inject } from '@angular/core';
+import { Component, effect, inject, signal } from '@angular/core';
 import { ModalComponent } from '../modal/modal.component';
 import { GlobalStateDataSource } from '../../../global-state.datasource';
+import { Digimon } from '../../../core/interfaces/digimon.interface';
 
 @Component({
   standalone: true,
@@ -13,4 +14,20 @@ export class DigimonDetailsModalComponent {
   digimonDetailsModalId = 'digimon-details-modal';
 
   globalState = inject(GlobalStateDataSource);
+
+  evolutions = signal<Digimon[]>([]);
+
+  constructor() {
+    effect(() => {
+      this.globalState.selectedDigimonOnDetails();
+      const evolutionList = this.globalState.getDigimonEvolutions();
+
+      if(!evolutionList) return;
+
+      this.evolutions.set(evolutionList);
+    }, {
+      allowSignalWrites: true,
+    });
+  }
+
 }

@@ -187,7 +187,8 @@ export class GlobalStateDataSource {
         this.modifiableAttributes[randomAttributeToTrainIndex];
       let randomAttributeTrainingValue = Math.floor(Math.random() * 10);
 
-      if(randomAttributeToTrain === 'hp' || randomAttributeToTrain === 'mp') randomAttributeTrainingValue += 10;
+      if (randomAttributeToTrain === 'hp' || randomAttributeToTrain === 'mp')
+        randomAttributeTrainingValue += 10;
 
       digimon[randomAttributeToTrain] += randomAttributeTrainingValue;
     });
@@ -196,5 +197,14 @@ export class GlobalStateDataSource {
       ...this.playerData(),
       inTrainingDigimonList: this.playerData().inTrainingDigimonList,
     });
+  }
+
+  getDigimonEvolutions() {
+    const digimonList: Digimon[] = [];
+    this.selectedDigimonOnDetails()?.digiEvolutionSeedList.forEach((seed) => {
+      const digimon = this.digimonService.getBaseDigimonDataById(seed);
+      if (digimon) digimonList.push(digimon);
+    });
+    return digimonList;
   }
 }

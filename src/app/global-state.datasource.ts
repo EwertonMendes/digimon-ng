@@ -23,7 +23,7 @@ export class GlobalStateDataSource {
 
   selectedDigimonOnDetails = signal<Digimon | null>(null);
 
-  modifiableAttributes = ['hp', 'mp', 'atk', 'def'];
+  modifiableAttributes = ['maxHp', 'maxMp', 'atk', 'def'];
 
   upfrontTeamLimit = 6;
   oneMinuteInterval = 60000;
@@ -187,7 +187,10 @@ export class GlobalStateDataSource {
         this.modifiableAttributes[randomAttributeToTrainIndex];
       let randomAttributeTrainingValue = Math.floor(Math.random() * 10);
 
-      if (randomAttributeToTrain === 'hp' || randomAttributeToTrain === 'mp')
+      if (
+        randomAttributeToTrain === 'maxHp' ||
+        randomAttributeToTrain === 'maxMp'
+      )
         randomAttributeTrainingValue += 10;
 
       digimon[randomAttributeToTrain] += randomAttributeTrainingValue;

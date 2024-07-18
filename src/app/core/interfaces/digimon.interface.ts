@@ -5,8 +5,10 @@ export interface Digimon {
   nickName?: string;
   img: string;
   rank: string;
-  hp: number;
-  mp: number;
+  currentHp: number;
+  maxHp: number;
+  currentMp: number;
+  maxMp: number;
   atk: number;
   def: number;
   exp?: number;

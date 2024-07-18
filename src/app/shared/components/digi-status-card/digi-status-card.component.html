@@ -1,18 +1,18 @@
 <div class="my-digimon-card">
-	<div class="my-digimon-card-image">
-		<img [src]="digimon().img"
-			[alt]="digimon().name">
-	</div>
-	<div class="my-digimon-card-content">
-		<span class="my-digimon-card-name">
-			{{ digimon().name }}
-		</span>
-		<div class="my-digimon-card-attributes">
-			<span>HP: {{ digimon().currentHp }} / {{ digimon().maxHp }}</span>
-			<span>MP: {{ digimon().currentMp }} / {{ digimon().maxMp }}</span>
-
-			<span>EXP: {{ digimon().exp }}</span>
-			<span>Level: {{ digimon().level }}</span>
-		</div>
-	</div>
+  <div class="my-digimon-card-image">
+    <img [src]="digimon().img" [alt]="digimon().name" />
+  </div>
+  <div class="my-digimon-card-content">
+    <span class="my-digimon-card-name">
+      {{ digimon().name }}
+    </span>
+    <div class="my-digimon-card-attributes">
+      <span>HP: {{ digimon().currentHp }} / {{ digimon().maxHp }}</span>
+      <span>MP: {{ digimon().currentMp }} / {{ digimon().maxMp }}</span>
+    </div>
+    <div class="my-digimon-card-attributes">
+      <span>EXP: {{ digimon().exp }}</span>
+      <span>Level: {{ digimon().level }}</span>
+    </div>
+  </div>
 </div>

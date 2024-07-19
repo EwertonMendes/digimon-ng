@@ -1,0 +1,17 @@
+<div class="explore-section">
+  <div class="explore-section-container">
+    <div class="location-list">
+      <h4>Locations</h4>
+      <div class="location-list-container">
+        @for(location of locations; track location){
+        <div class="location-list-item">
+          <div class="location-list-item-image">
+            <img [src]="location.img" alt="location-image" />
+          </div>
+          <h5>{{ location.name }}</h5>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>

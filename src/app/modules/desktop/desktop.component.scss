@@ -112,8 +112,10 @@
       flex-direction: column;
       height: 100%;
       width: 100%;
-      align-items: center;
-      flex-wrap: wrap;
+
+      .explore-title {
+        align-self: center;
+      }
     }
   }
 

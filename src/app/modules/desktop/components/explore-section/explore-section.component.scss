@@ -3,11 +3,8 @@
   flex-direction: column;
 
   &-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+    display: -webkit-inline-box;
+    overflow-x: auto;
 
     .location-list {
       display: flex;
@@ -38,7 +35,6 @@
 
             img {
               border-radius: 10px;
-
             }
           }
         }

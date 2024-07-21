@@ -15,6 +15,7 @@ export class GlobalStateDataSource {
     name: '',
     level: 0,
     exp: 0,
+    totalExp: 0,
     digimonList: [],
     bitFarmDigimonList: [],
     inTrainingDigimonList: [],

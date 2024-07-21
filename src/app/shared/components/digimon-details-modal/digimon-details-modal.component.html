@@ -16,33 +16,43 @@
           }}</span>
         </div>
         <div class="digimon-details-content-info-item">
+          <span class="label">Rank: </span>
+          <span class="value">{{
+            globalState.selectedDigimonOnDetails()?.rank
+          }}</span>
+        </div>
+        <div class="digimon-details-content-info-item">
           <span class="label">Level: </span>
           <span class="value">{{
             globalState.selectedDigimonOnDetails()?.level
           }}</span>
         </div>
         <div class="digimon-details-content-info-item">
-          <span class="label">Rank: </span>
+          <span class="label">Current Exp: </span>
           <span class="value">{{
-            globalState.selectedDigimonOnDetails()?.rank
+            globalState.selectedDigimonOnDetails()?.exp
+          }} / 100</span>
+        </div>
+        <div class="digimon-details-content-info-item">
+          <span class="label">Total Exp: </span>
+          <span class="value">{{
+            globalState.selectedDigimonOnDetails()?.totalExp
           }}</span>
         </div>
         <div class="digimon-details-content-info-stats">
           <div class="digimon-details-content-info-stats-item">
             <span class="label">HP: </span>
-            <span class="value">{{
-              globalState.selectedDigimonOnDetails()?.currentHp
-            }} / {{
-              globalState.selectedDigimonOnDetails()?.maxHp
-            }}</span>
+            <span class="value"
+              >{{ globalState.selectedDigimonOnDetails()?.currentHp }} /
+              {{ globalState.selectedDigimonOnDetails()?.maxHp }}</span
+            >
           </div>
           <div class="digimon-details-content-info-stats-item">
             <span class="label">MP: </span>
-            <span class="value">{{
-              globalState.selectedDigimonOnDetails()?.currentMp
-            }} / {{
-              globalState.selectedDigimonOnDetails()?.maxMp
-            }}</span>
+            <span class="value"
+              >{{ globalState.selectedDigimonOnDetails()?.currentMp }} /
+              {{ globalState.selectedDigimonOnDetails()?.maxMp }}</span
+            >
           </div>
           <div class="digimon-details-content-info-stats-item">
             <span class="label">ATK: </span>
@@ -69,7 +79,7 @@
         @if( evolutions().length > 0 ) {
         <div class="digimon-details-content-info-item">
           <div class="digimon-evolution-list">
-            <h4>Evolutions: </h4>
+            <h4>Evolutions:</h4>
             <div class="digimon-evolution-list-container">
               @for(evolution of evolutions(); track evolution){
               <div class="digimon-evolution-list-item">

@@ -4,6 +4,7 @@ export interface PlayerData {
   name: string;
   level: number;
   exp: number;
+  totalExp: number;
   digimonList: Digimon[];
   bitFarmDigimonList: Digimon[];
   inTrainingDigimonList: Digimon[];

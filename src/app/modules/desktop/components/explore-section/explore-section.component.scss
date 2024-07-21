@@ -19,16 +19,22 @@
         justify-content: center;
         gap: 10px;
         width: 100%;
+        padding: 10px;
 
         .location-list-item {
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          background-color: rgba(black, 0.5);
+          background-color: rgba(#494949, 0.9);
           gap: 10px;
           padding: 10px;
           border-radius: 10px;
+
+          &:hover {
+            cursor: pointer;
+            background-color: rgba(black, 0.7);
+          }
 
           &-image {
             width: 200px;

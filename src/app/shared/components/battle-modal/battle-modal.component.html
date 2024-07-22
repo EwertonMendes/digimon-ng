@@ -1,0 +1,37 @@
+<app-modal [id]="battleModalId" (closeEvent)="onBattleModalClose()">
+  <div class="digimon-battle-container">
+    <h3 class="section-title">Battle</h3>
+    <div class="digimon-battle-content">
+      <div class="digimon-battle-content-container">
+        <div class="teams-container">
+          <div class="player-team-container">
+            <h4 class="team-title">Player Team</h4>
+
+            <div class="player-team">
+              @for(digimon of globalState.playerData().digimonList; track
+              digimon){
+              <app-digi-status-card [digimon]="digimon" />
+              }
+            </div>
+          </div>
+          <span class="middle-text">VS</span>
+          <div class="enemy-team-container">
+            <h4 class="team-title">Enemy Team</h4>
+            <div class="enemy-team">
+              @for(digimon of globalState.enemyTeam(); track
+              digimon){
+              <app-digi-status-card [digimon]="digimon" />
+              }
+            </div>
+          </div>
+        </div>
+        <div class="battle-log-container">
+          <h4 class="battle-log-title">Battle Log</h4>
+          @for(log of this.globalState.battleLog(); track $index){
+          <span class="battle-log">▶ {{log}}</span>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</app-modal>

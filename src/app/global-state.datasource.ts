@@ -25,6 +25,8 @@ export class GlobalStateDataSource {
   });
 
   selectedDigimonOnDetails = signal<Digimon | null>(null);
+  enemyTeam = signal<Digimon[]>([]);
+  battleLog = signal<string[]>([]);
 
   modifiableAttributes = ['maxHp', 'maxMp', 'atk', 'def'];
 
@@ -41,6 +43,10 @@ export class GlobalStateDataSource {
 
     this.initDigimonTraining();
     this.initBitFarmingGeneration();
+  }
+
+  log(message: string) {
+    this.battleLog().push(message);
   }
 
   addDigimonToTraining(digimon: Digimon) {

@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { DesktopComponent } from './modules/desktop/desktop.component';
-import { GlobalStateDataSource } from './global-state.datasource';
+import { GlobalStateDataSource } from './state/global-state.datasource';
 import { ButtonComponent } from './shared/components/button/button.component';
 import { ActionBarComponent } from './common/action-bar/action-bar.component';
 

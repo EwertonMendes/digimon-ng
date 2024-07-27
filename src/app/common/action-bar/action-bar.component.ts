@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { ButtonComponent } from '../../shared/components/button/button.component';
 import { ModalComponent } from '../../shared/components/modal/modal.component';
 import { DigiStatusCardComponent } from '../../shared/components/digi-status-card/digi-status-card.component';
-import { GlobalStateDataSource } from '../../global-state.datasource';
+import { GlobalStateDataSource } from '../../state/global-state.datasource';
 import { ModalService } from '../../shared/components/modal/modal.service';
 import { Digimon } from '../../core/interfaces/digimon.interface';
 

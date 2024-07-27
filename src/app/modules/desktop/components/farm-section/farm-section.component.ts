@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, effect, inject, signal } from '@angular/core';
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
 import { DigiStatusCardComponent } from '../../../../shared/components/digi-status-card/digi-status-card.component';
-import { GlobalStateDataSource } from '../../../../global-state.datasource';
+import { GlobalStateDataSource } from '../../../../state/global-state.datasource';
 import { Digimon } from '../../../../core/interfaces/digimon.interface';
 import { DigimonFarmCardComponent } from './components/digimon-farm-card/digimon-farm-card.component';
 import { ModalService } from '../../../../shared/components/modal/modal.service';

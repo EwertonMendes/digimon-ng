@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { ModalComponent } from '../modal/modal.component';
-import { GlobalStateDataSource } from '../../../global-state.datasource';
+import { GlobalStateDataSource } from '../../../state/global-state.datasource';
 import { DigiStatusCardComponent } from '../digi-status-card/digi-status-card.component';
 
 @Component({

@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { GlobalStateDataSource } from '../../../../global-state.datasource';
+import { GlobalStateDataSource } from '../../../../state/global-state.datasource';
 import { BattleModalComponent } from '../../../../shared/components/battle-modal/battle-modal.component';
 import { ModalService } from '../../../../shared/components/modal/modal.service';
 

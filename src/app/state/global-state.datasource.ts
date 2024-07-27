@@ -26,7 +26,7 @@ export class GlobalStateDataSource {
     bits: 0,
   });
 
-  selectedDigimonOnDetails = signal<Digimon | null>(null);
+  selectedDigimonOnDetails = signal<Digimon | undefined>(undefined);
   enemyTeam = signal<Digimon[]>([]);
   battleLog = signal<string[]>([]);
 
@@ -161,12 +161,9 @@ export class GlobalStateDataSource {
   }
 
   getDigimonEvolutions() {
-    const digimonList: Digimon[] = [];
-    this.selectedDigimonOnDetails()?.digiEvolutionSeedList.forEach((seed) => {
-      const digimon = this.digimonService.getBaseDigimonDataById(seed);
-      if (digimon) digimonList.push(digimon);
-    });
-    return digimonList;
+    return this.digimonService.getDigimonEvolutions(
+      this.selectedDigimonOnDetails()
+    );
   }
 
   private updatePlayerData(playerData?: PlayerData) {

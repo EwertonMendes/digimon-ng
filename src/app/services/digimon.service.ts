@@ -26,6 +26,15 @@ export class DigimonService {
     return this.baseDigimonData.find((digimon) => digimon.seed === id);
   }
 
+  getDigimonEvolutions(digimon?: Digimon) {
+    const digimonList: Digimon[] = [];
+    digimon?.digiEvolutionSeedList.forEach((seed) => {
+      const digimon = this.getBaseDigimonDataById(seed);
+      if (digimon) digimonList.push(digimon);
+    });
+    return digimonList;
+  }
+
   generateRandomDigimon() {
     const randomDigimonIndex = Math.floor(
       Math.random() * this.baseDigimonData.length

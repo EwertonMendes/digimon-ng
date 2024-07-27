@@ -1,4 +1,4 @@
-import { inject, Injectable, Injector, signal } from '@angular/core';
+import { ChangeDetectorRef, inject, Injectable, Injector, signal } from '@angular/core';
 import { TrainingService } from './services/training.service';
 import { FarmingService } from './services/farming.service';
 import { BattleService } from './services/battle.service';
@@ -61,6 +61,8 @@ export class GlobalStateDataSource {
   farmingService = inject(FarmingService);
   battleService = inject(BattleService);
   storageService = inject(StorageService);
+
+  changeDectorRef = inject(ChangeDetectorRef);
 
   constructor(injector: Injector) {
     this.trainingService = injector.get(TrainingService);
@@ -199,5 +201,6 @@ export class GlobalStateDataSource {
       ...this.playerData(),
       ...playerData,
     });
+    this.changeDectorRef.detectChanges();
   }
 }

@@ -1,13 +1,13 @@
 <div class="farm-section">
   <div class="farm-section-header">
-    <span>Bits: {{ globalState.playerData().bits }}</span>
+    <span>Bits: {{ globalState.playerDataAcessor.bits }}</span>
     <span>Bit generation rate: {{ bitGenerationTotalRate() }} bits /min</span>
     </div>
   <div class="farm-section-container">
     <div class="panel">
       <div class="in-training-digimon-list">
         <h4>In-Training Digimons</h4>
-        @for(digimon of globalState.playerData().inTrainingDigimonList; track digimon){
+        @for(digimon of globalState.playerDataAcessor.inTrainingDigimonList; track digimon){
           <app-digi-status-card [digimon]="digimon" (click)="openDigimonDetailsModal(digimon)" (contextmenu)="removeDigimonFromTraining($event, digimon)" />
         }
       </div>
@@ -15,7 +15,7 @@
     <div class="panel">
       <div class="bit-farming-digimon-list">
         <h4>Bit Farming Digimons</h4>
-        @for(digimon of globalState.playerData().bitFarmDigimonList; track digimon){
+        @for(digimon of globalState.playerDataAcessor.bitFarmDigimonList; track digimon){
           <app-digimon-farm-card [digimon]="digimon" (click)="openDigimonDetailsModal(digimon)" (contextmenu)="removeDigimonFromFarm($event, digimon)" />
         }
       </div>

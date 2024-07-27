@@ -18,16 +18,19 @@ export class DigimonDetailsModalComponent {
   evolutions = signal<Digimon[]>([]);
 
   constructor() {
-    effect(() => {
-      this.globalState.selectedDigimonOnDetails();
-      const evolutionList = this.globalState.getDigimonEvolutions();
+    effect(
+      () => {
+        console.log('emitiu');
+        this.globalState.selectedDigimonOnDetailsAccessor;
+        const evolutionList = this.globalState.getDigimonEvolutions();
 
-      if(!evolutionList) return;
+        if (!evolutionList) return;
 
-      this.evolutions.set(evolutionList);
-    }, {
-      allowSignalWrites: true,
-    });
+        this.evolutions.set(evolutionList);
+      },
+      {
+        allowSignalWrites: true,
+      }
+    );
   }
-
 }

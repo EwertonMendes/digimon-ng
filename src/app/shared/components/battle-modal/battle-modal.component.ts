@@ -16,7 +16,6 @@ export class BattleModalComponent {
   globalState = inject(GlobalStateDataSource);
 
   onBattleModalClose() {
-    this.globalState.battleLog.set([]);
-    this.globalState.enemyTeam.set([]);
+    this.globalState.resetBattleState();
   }
 }

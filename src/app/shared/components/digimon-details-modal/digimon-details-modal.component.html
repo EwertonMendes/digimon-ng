@@ -4,7 +4,7 @@
     <div class="digimon-details-content">
       <div class="digimon-details-content-image">
         <img
-          [src]="globalState.selectedDigimonOnDetails()?.img"
+          [src]="globalState.selectedDigimonOnDetailsAccessor?.img"
           alt="digimon"
         />
       </div>
@@ -12,65 +12,65 @@
         <div class="digimon-details-content-info-item">
           <span class="label">Name: </span>
           <span class="value">{{
-            globalState.selectedDigimonOnDetails()?.name
+            globalState.selectedDigimonOnDetailsAccessor?.name
           }}</span>
         </div>
         <div class="digimon-details-content-info-item">
           <span class="label">Rank: </span>
           <span class="value">{{
-            globalState.selectedDigimonOnDetails()?.rank
+            globalState.selectedDigimonOnDetailsAccessor?.rank
           }}</span>
         </div>
         <div class="digimon-details-content-info-item">
           <span class="label">Level: </span>
           <span class="value">{{
-            globalState.selectedDigimonOnDetails()?.level
+            globalState.selectedDigimonOnDetailsAccessor?.level
           }}</span>
         </div>
         <div class="digimon-details-content-info-item">
           <span class="label">Current Exp: </span>
           <span class="value">{{
-            globalState.selectedDigimonOnDetails()?.exp
+            globalState.selectedDigimonOnDetailsAccessor?.exp
           }} / 100</span>
         </div>
         <div class="digimon-details-content-info-item">
           <span class="label">Total Exp: </span>
           <span class="value">{{
-            globalState.selectedDigimonOnDetails()?.totalExp
+            globalState.selectedDigimonOnDetailsAccessor?.totalExp
           }}</span>
         </div>
         <div class="digimon-details-content-info-stats">
           <div class="digimon-details-content-info-stats-item">
             <span class="label">HP: </span>
             <span class="value"
-              >{{ globalState.selectedDigimonOnDetails()?.currentHp }} /
-              {{ globalState.selectedDigimonOnDetails()?.maxHp }}</span
+              >{{ globalState.selectedDigimonOnDetailsAccessor?.currentHp }} /
+              {{ globalState.selectedDigimonOnDetailsAccessor?.maxHp }}</span
             >
           </div>
           <div class="digimon-details-content-info-stats-item">
             <span class="label">MP: </span>
             <span class="value"
-              >{{ globalState.selectedDigimonOnDetails()?.currentMp }} /
-              {{ globalState.selectedDigimonOnDetails()?.maxMp }}</span
+              >{{ globalState.selectedDigimonOnDetailsAccessor?.currentMp }} /
+              {{ globalState.selectedDigimonOnDetailsAccessor?.maxMp }}</span
             >
           </div>
           <div class="digimon-details-content-info-stats-item">
             <span class="label">ATK: </span>
             <span class="value">{{
-              globalState.selectedDigimonOnDetails()?.atk
+              globalState.selectedDigimonOnDetailsAccessor?.atk
             }}</span>
           </div>
           <div class="digimon-details-content-info-stats-item">
             <span class="label">DEF: </span>
             <span class="value">{{
-              globalState.selectedDigimonOnDetails()?.def
+              globalState.selectedDigimonOnDetailsAccessor?.def
             }}</span>
           </div>
           <div class="digimon-details-content-info-stats-item">
             <span class="label">Bit Generation: </span>
             <span class="value"
               >{{
-                globalState.selectedDigimonOnDetails()?.bitFarmingRate
+                globalState.selectedDigimonOnDetailsAccessor?.bitFarmingRate
               }}
               /m</span
             >

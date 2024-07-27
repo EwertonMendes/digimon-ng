@@ -25,7 +25,7 @@ export class ActionBarComponent {
   }
 
   openDigimonDetailsModal(digimon: Digimon) {
-    this.globalState.selectedDigimonOnDetails.set(digimon);
+    this.globalState.setSelectedDigimonOnDetailsAccessor(digimon);
     this.modalService.open(this.digimonDetailsModalId);
   }
 

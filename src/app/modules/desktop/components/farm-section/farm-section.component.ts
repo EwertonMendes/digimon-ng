@@ -46,7 +46,7 @@ export class FarmSectionComponent {
   }
 
   openDigimonDetailsModal(digimon: Digimon): void {
-    this.globalState.selectedDigimonOnDetails.set(digimon);
+    this.globalState.setSelectedDigimonOnDetailsAccessor(digimon);
     this.modalService.open(this.digimonDetailsModalId);
   }
 }

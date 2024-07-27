@@ -13,7 +13,7 @@ import { interval } from 'rxjs';
   providedIn: 'root',
 })
 export class GlobalStateDataSource {
-  playerData = signal<PlayerData>({
+  private playerData = signal<PlayerData>({
     name: '',
     level: 0,
     exp: 0,
@@ -26,9 +26,31 @@ export class GlobalStateDataSource {
     bits: 0,
   });
 
-  selectedDigimonOnDetails = signal<Digimon | undefined>(undefined);
-  enemyTeam = signal<Digimon[]>([]);
-  battleLog = signal<string[]>([]);
+  get playerDataAcessor() {
+    return this.playerData();
+  }
+
+  private selectedDigimonOnDetails = signal<Digimon | undefined>(undefined);
+
+  get selectedDigimonOnDetailsAccessor() {
+    return this.selectedDigimonOnDetails();
+  }
+
+  setSelectedDigimonOnDetailsAccessor(digimon: Digimon | undefined) {
+    this.selectedDigimonOnDetails.set(digimon);
+  }
+
+  private enemyTeam = signal<Digimon[]>([]);
+
+  get enemyTeamAccessor() {
+    return this.enemyTeam();
+  }
+
+  private battleLog = signal<string[]>([]);
+
+  get battleLogAccessor() {
+    return this.battleLog();
+  }
 
   oneMinuteInterval = 60000;
 
@@ -164,6 +186,11 @@ export class GlobalStateDataSource {
     return this.digimonService.getDigimonEvolutions(
       this.selectedDigimonOnDetails()
     );
+  }
+
+  resetBattleState() {
+    this.enemyTeam.set([]);
+    this.battleLog.set([]);
   }
 
   private updatePlayerData(playerData?: PlayerData) {

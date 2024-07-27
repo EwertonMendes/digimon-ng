@@ -39,8 +39,8 @@ export class ExploreSectionComponent {
     this.globalState.log(`Exploring location ${location.name}`);
 
     if (
-      this.globalState.playerData().digimonList.length === 0 ||
-      this.globalState.playerData().digimonList.every((d) => d.currentHp <= 0)
+      this.globalState.playerDataAcessor.digimonList.length === 0 ||
+      this.globalState.playerDataAcessor.digimonList.every((d) => d.currentHp <= 0)
     ) {
       console.log('No Digimon to explore with.');
       this.globalState.log('No Digimon to explore with.');
@@ -53,7 +53,7 @@ export class ExploreSectionComponent {
 
     for (let i = 0; i < randomNumber; i++) {
       const opponentDigimon = this.globalState.generateRandomDigimon();
-      this.globalState.enemyTeam().push(opponentDigimon);
+      this.globalState.enemyTeamAccessor.push(opponentDigimon);
 
       console.log(`Found a ${opponentDigimon.name}!`, opponentDigimon);
       this.globalState.log(`Found a ${opponentDigimon.name}!`);
@@ -61,9 +61,9 @@ export class ExploreSectionComponent {
 
     const turnOrder = [
       ...this.globalState
-        .playerData()
+        .playerDataAcessor
         .digimonList.filter((digimon) => digimon.currentHp > 0),
-      ...this.globalState.enemyTeam().filter((digimon) => digimon.currentHp > 0),
+      ...this.globalState.enemyTeamAccessor.filter((digimon) => digimon.currentHp > 0),
     ];
     turnOrder.sort(() => Math.random() - 0.5);
 
@@ -85,10 +85,10 @@ export class ExploreSectionComponent {
 
         if (digimon.currentHp <= 0) continue;
 
-        if (this.globalState.playerData().digimonList.includes(digimon)) {
+        if (this.globalState.playerDataAcessor.digimonList.includes(digimon)) {
 
           const opponentDigimon = this.globalState
-            .enemyTeam()
+            .enemyTeamAccessor
             .find((d) => d.currentHp > 0);
 
             if(!opponentDigimon) {
@@ -104,13 +104,13 @@ export class ExploreSectionComponent {
             `${digimon.name} attacks! ${opponentDigimon.name} has ${opponentDigimon.currentHp} health left.`
           );
 
-          if (this.globalState.enemyTeam().every((d) => d.currentHp <= 0)) {
+          if (this.globalState.enemyTeamAccessor.every((d) => d.currentHp <= 0)) {
             battleActive = false;
             break;
           }
         } else {
           const target = this.globalState
-            .playerData()
+            .playerDataAcessor
             .digimonList.find((d) => d.currentHp > 0);
           if (target) {
             this.globalState.battle(digimon, target);
@@ -124,7 +124,7 @@ export class ExploreSectionComponent {
 
           if (
             this.globalState
-              .playerData()
+              .playerDataAcessor
               .digimonList.every((d) => d.currentHp <= 0)
           ) {
             console.log('All player Digimon are defeated. Battle lost.');
@@ -138,7 +138,7 @@ export class ExploreSectionComponent {
       }
     }
 
-    if (this.globalState.enemyTeam().every((d) => d.currentHp <= 0)) {
+    if (this.globalState.enemyTeamAccessor.every((d) => d.currentHp <= 0)) {
       console.log('Victory! Opponent Digimon is defeated.');
       this.globalState.log('Victory! Opponent Digimon is defeated.');
     }

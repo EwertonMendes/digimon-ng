@@ -11,13 +11,13 @@
   <div class="digimon-storage-container">
     <h3 class="section-title">Digimon Storage</h3>
     <div class="digimon-storage-content">
-      @if(globalState.playerData().digimonStorageList.length === 0){
+      @if(globalState.playerDataAcessor.digimonStorageList.length === 0){
       <div class="digimon-storage-content-no-data-container">
         <h4>No digimon in storage</h4>
       </div>
       } @else {
       <div class="digimon-storage-content-list-container">
-        @for(digimon of globalState.playerData().digimonStorageList; track
+        @for(digimon of globalState.playerDataAcessor.digimonStorageList; track
         digimon){
         <div class="digimon-storage-content-list-item">
           <app-digi-status-card [digimon]="digimon" (click)="openDigimonDetailsModal(digimon)"/>
@@ -45,8 +45,8 @@
       <div class="digimon-storage-content-footer">
         <span
           >Storage Capacity:
-          {{ globalState.playerData().digimonStorageList.length }} /
-          {{ globalState.playerData().digimonStorageCapacity }}</span
+          {{ globalState.playerDataAcessor.digimonStorageList.length }} /
+          {{ globalState.playerDataAcessor.digimonStorageCapacity }}</span
         >
       </div>
     </div>

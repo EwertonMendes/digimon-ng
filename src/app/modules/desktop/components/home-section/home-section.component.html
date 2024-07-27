@@ -1,9 +1,9 @@
 <div class="home-section">
   <h4 class="home-section-sub-title">
-    Upfront Team: {{ globalState.playerData().digimonList.length }}/6
+    Upfront Team: {{ globalState.playerDataAcessor.digimonList.length }}/6
   </h4>
   <div class="my-digimon-list">
-    @for(digimon of globalState.playerData().digimonList; track digimon){
+    @for(digimon of globalState.playerDataAcessor.digimonList; track digimon){
     <app-digi-status-card
       [digimon]="digimon"
       (click)="openDigimonDetailsModal(digimon)"

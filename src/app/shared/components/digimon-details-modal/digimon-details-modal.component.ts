@@ -20,7 +20,6 @@ export class DigimonDetailsModalComponent {
   constructor() {
     effect(
       () => {
-        console.log('emitiu');
         this.globalState.selectedDigimonOnDetailsAccessor;
         const evolutionList = this.globalState.getDigimonEvolutions();
 

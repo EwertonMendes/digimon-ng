@@ -7,7 +7,6 @@ import { Digimon } from '../core/interfaces/digimon.interface';
 import { PlayerData } from '../core/interfaces/player-data.interface';
 import { DigimonService } from '../services/digimon.service';
 import { PlayerDataService } from '../services/player-data.service';
-import { v4 as uuidv4 } from 'uuid';
 import { interval } from 'rxjs';
 
 @Injectable({
@@ -71,6 +70,7 @@ export class GlobalStateDataSource {
       this.farmingService.generateBitsBasedOnGenerationTotalRate(
         this.playerData()
       );
+      this.updatePlayerData();
     });
   }
 
@@ -157,14 +157,7 @@ export class GlobalStateDataSource {
   }
 
   generateRandomDigimon() {
-    const randomDigimonIndex = Math.floor(
-      Math.random() * this.digimonService.baseDigimonData.length
-    );
-    const newDigimon = this.digimonService.baseDigimonData[randomDigimonIndex];
-
-    newDigimon.id = uuidv4();
-
-    return newDigimon;
+    return this.digimonService.generateRandomDigimon();
   }
 
   getDigimonEvolutions() {

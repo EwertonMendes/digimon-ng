@@ -41,5 +41,13 @@
     font-size: 11px;
     display: flex;
     gap: 15px;
+
+    .low-stat {
+      color: yellow;
+    }
+
+    .zero-stat {
+      color: red;
+    }
   }
 }

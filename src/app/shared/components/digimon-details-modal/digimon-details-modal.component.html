@@ -29,9 +29,9 @@
         </div>
         <div class="digimon-details-content-info-item">
           <span class="label">Current Exp: </span>
-          <span class="value">{{
-            globalState.selectedDigimonOnDetailsAccessor?.exp
-          }} / 100</span>
+          <span class="value"
+            >{{ globalState.selectedDigimonOnDetailsAccessor?.exp }} / 100</span
+          >
         </div>
         <div class="digimon-details-content-info-item">
           <span class="label">Total Exp: </span>
@@ -43,15 +43,45 @@
           <div class="digimon-details-content-info-stats-item">
             <span class="label">HP: </span>
             <span class="value"
-              >{{ globalState.selectedDigimonOnDetailsAccessor?.currentHp }} /
+              ><span
+                [ngClass]="{
+                  'low-stat':
+                    globalState.selectedDigimonOnDetailsAccessor?.currentHp! <=
+                      0.2 *
+                        globalState.selectedDigimonOnDetailsAccessor?.maxHp! &&
+                    globalState.selectedDigimonOnDetailsAccessor?.currentHp! >
+                      0,
+                  'zero-stat':
+                    globalState.selectedDigimonOnDetailsAccessor?.currentHp ===
+                    0
+                }"
+                >{{
+                  globalState.selectedDigimonOnDetailsAccessor?.currentHp
+                }}</span
+              > /
               {{ globalState.selectedDigimonOnDetailsAccessor?.maxHp }}</span
             >
           </div>
           <div class="digimon-details-content-info-stats-item">
             <span class="label">MP: </span>
             <span class="value"
-              >{{ globalState.selectedDigimonOnDetailsAccessor?.currentMp }} /
-              {{ globalState.selectedDigimonOnDetailsAccessor?.maxMp }}</span
+              ><span
+                [ngClass]="{
+                  'low-stat':
+                    globalState.selectedDigimonOnDetailsAccessor?.currentMp! <=
+                      0.2 *
+                        globalState.selectedDigimonOnDetailsAccessor?.maxMp! &&
+                    globalState.selectedDigimonOnDetailsAccessor?.currentMp! >
+                      0,
+                  'zero-stat':
+                    globalState.selectedDigimonOnDetailsAccessor?.currentMp ===
+                    0
+                }"
+                >{{
+                  globalState.selectedDigimonOnDetailsAccessor?.currentMp
+                }}</span
+              >
+              / {{ globalState.selectedDigimonOnDetailsAccessor?.maxMp }}</span
             >
           </div>
           <div class="digimon-details-content-info-stats-item">

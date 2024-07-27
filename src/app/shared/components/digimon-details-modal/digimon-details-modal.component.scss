@@ -41,6 +41,18 @@
             }
           }
         }
+
+        &-stats {
+          &-item {
+            .low-stat {
+              color: yellow;
+            }
+
+            .zero-stat {
+              color: red;
+            }
+          }
+        }
       }
     }
   }

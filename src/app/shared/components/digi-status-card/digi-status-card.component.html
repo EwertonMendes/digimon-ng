@@ -7,8 +7,32 @@
       {{ digimon().name }}
     </span>
     <div class="my-digimon-card-attributes">
-      <span>HP: {{ digimon().currentHp }} / {{ digimon().maxHp }}</span>
-      <span>MP: {{ digimon().currentMp }} / {{ digimon().maxMp }}</span>
+      <span
+        >HP:
+        <span
+          [ngClass]="{
+            'low-stat':
+              digimon().currentHp <= 0.2 * digimon().maxHp &&
+              digimon().currentHp > 0,
+            'zero-stat': digimon().currentHp === 0
+          }"
+          >{{ digimon().currentHp }}</span
+        >
+        / {{ digimon().maxHp }}</span
+      >
+      <span
+        >MP:
+        <span
+          [ngClass]="{
+            'low-stat':
+              digimon().currentMp <= 0.2 * digimon().maxHp &&
+              digimon().currentMp > 0,
+            'zero-stat': digimon().currentMp === 0
+          }"
+          >{{ digimon().currentMp }}</span
+        >
+        / {{ digimon().maxMp }}</span
+      >
     </div>
     <div class="my-digimon-card-attributes">
       <span>EXP: {{ digimon().exp }}</span>

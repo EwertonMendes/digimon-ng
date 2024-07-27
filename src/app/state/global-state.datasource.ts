@@ -52,7 +52,7 @@ export class GlobalStateDataSource {
     return this.battleLog();
   }
 
-  oneMinuteInterval = 100;
+  oneMinuteInterval = 60000;
 
   digimonService = inject(DigimonService);
   playerDataService = inject(PlayerDataService);

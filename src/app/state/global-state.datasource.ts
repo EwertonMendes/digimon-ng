@@ -71,6 +71,14 @@ export class GlobalStateDataSource {
 
   changeDectorRef = inject(ChangeDetectorRef);
 
+  handlers: Record<string, Function> = {
+    [DigimonListLocation.IN_TRAINING]:
+      this.removeDigimonFromTraining.bind(this),
+    [DigimonListLocation.BIT_FARM]: this.removeDigimonFromFarm.bind(this),
+    [DigimonListLocation.STORAGE]: this.removeDigimonFromStorage.bind(this),
+    [DigimonListLocation.TEAM]: this.removeDigimonFromList.bind(this),
+  };
+
   constructor(injector: Injector) {
     this.trainingService = injector.get(TrainingService);
     this.farmingService = injector.get(FarmingService);
@@ -212,17 +220,9 @@ export class GlobalStateDataSource {
   }
 
   private removeFromPreviousList(digimonId: string, from: string) {
-    if (from === DigimonListLocation.IN_TRAINING) {
-      this.removeDigimonFromTraining(digimonId);
-    }
-    if (from === DigimonListLocation.BIT_FARM) {
-      this.removeDigimonFromFarm(digimonId);
-    }
-    if (from === DigimonListLocation.STORAGE) {
-      this.removeDigimonFromStorage(digimonId);
-    }
-    if (from === DigimonListLocation.TEAM) {
-      this.removeDigimonFromList(digimonId);
+    const handler = this.handlers[from];
+    if (handler) {
+      handler(digimonId);
     }
   }
 }

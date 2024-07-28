@@ -16,6 +16,7 @@ import {
   DragDropModule,
   moveItemInArray,
 } from '@angular/cdk/drag-drop';
+import { DigimonListLocation } from '../../../../core/enums/digimon-list-location.enum';
 
 @Component({
   selector: 'app-farm-section',
@@ -63,12 +64,12 @@ export class FarmSectionComponent {
 
   removeDigimonFromTraining(event: MouseEvent, digimon: Digimon): void {
     event.preventDefault();
-    this.globalState.addDigimonToStorage(digimon, 'inTraining');
+    this.globalState.addDigimonToStorage(digimon, DigimonListLocation.IN_TRAINING);
   }
 
   removeDigimonFromFarm(event: MouseEvent, digimon: Digimon): void {
     event.preventDefault();
-    this.globalState.addDigimonToStorage(digimon, 'bitFarm');
+    this.globalState.addDigimonToStorage(digimon, DigimonListLocation.BIT_FARM);
   }
 
   openDigimonDetailsModal(digimon: Digimon): void {

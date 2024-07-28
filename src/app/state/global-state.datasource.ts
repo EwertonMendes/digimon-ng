@@ -14,6 +14,7 @@ import { PlayerData } from '../core/interfaces/player-data.interface';
 import { DigimonService } from '../services/digimon.service';
 import { PlayerDataService } from '../services/player-data.service';
 import { interval } from 'rxjs';
+import { DigimonListLocation } from '../core/enums/digimon-list-location.enum';
 
 @Injectable({
   providedIn: 'root',
@@ -211,16 +212,16 @@ export class GlobalStateDataSource {
   }
 
   private removeFromPreviousList(digimonId: string, from: string) {
-    if (from === 'inTraining') {
+    if (from === DigimonListLocation.IN_TRAINING) {
       this.removeDigimonFromTraining(digimonId);
     }
-    if (from === 'bitFarm') {
+    if (from === DigimonListLocation.BIT_FARM) {
       this.removeDigimonFromFarm(digimonId);
     }
-    if (from === 'storage') {
+    if (from === DigimonListLocation.STORAGE) {
       this.removeDigimonFromStorage(digimonId);
     }
-    if (from === 'team') {
+    if (from === DigimonListLocation.TEAM) {
       this.removeDigimonFromList(digimonId);
     }
   }

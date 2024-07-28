@@ -8,6 +8,7 @@ import {
   DragDropModule,
   moveItemInArray,
 } from '@angular/cdk/drag-drop';
+import { DigimonListLocation } from '../../../../core/enums/digimon-list-location.enum';
 
 @Component({
   selector: 'app-home-section',
@@ -34,7 +35,7 @@ export class HomeSectionComponent {
   onRightClick(event: MouseEvent, digimon: Digimon): void {
     event.preventDefault();
     if (!digimon.id) return;
-    this.globalState.addDigimonToStorage(digimon, 'team');
+    this.globalState.addDigimonToStorage(digimon, DigimonListLocation.TEAM);
   }
 
   openDigimonDetailsModal(digimon: Digimon): void {

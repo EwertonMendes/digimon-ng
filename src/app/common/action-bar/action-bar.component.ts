@@ -5,6 +5,7 @@ import { DigiStatusCardComponent } from '../../shared/components/digi-status-car
 import { GlobalStateDataSource } from '../../state/global-state.datasource';
 import { ModalService } from '../../shared/components/modal/modal.service';
 import { Digimon } from '../../core/interfaces/digimon.interface';
+import { DigimonListLocation } from '../../core/enums/digimon-list-location.enum';
 
 @Component({
   selector: 'app-action-bar',
@@ -30,14 +31,14 @@ export class ActionBarComponent {
   }
 
   addDigimonToTeam(digimon: Digimon) {
-    this.globalState.addDigimonToList(digimon, 'storage');
+    this.globalState.addDigimonToList(digimon, DigimonListLocation.STORAGE);
   }
 
   addDigimonToTraining(digimon: Digimon) {
-    this.globalState.addDigimonToTraining(digimon, 'storage');
+    this.globalState.addDigimonToTraining(digimon, DigimonListLocation.STORAGE);
   }
 
   addDigimonToFarm(digimon: Digimon) {
-    this.globalState.addDigimonToFarm(digimon, 'storage');
+    this.globalState.addDigimonToFarm(digimon, DigimonListLocation.STORAGE);
   }
 }

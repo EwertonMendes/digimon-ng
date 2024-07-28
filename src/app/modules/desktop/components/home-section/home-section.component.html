@@ -2,9 +2,18 @@
   <h4 class="home-section-sub-title">
     Upfront Team: {{ globalState.playerDataAcessor.digimonList.length }}/6
   </h4>
-  <div class="my-digimon-list">
-    @for(digimon of globalState.playerDataAcessor.digimonList; track digimon){
+  <div
+  [id]="teamListId"
+  class="my-digimon-list"
+  #teamList="cdkDropList"
+  cdkDropList
+  [cdkDropListData]="globalState.playerDataAcessor"
+  [cdkDropListConnectedTo]="['in-training-digimon-list', 'bit-farming-digimon-list']"
+  (cdkDropListDropped)="drop($event)"
+  >
+    @for(digimon of globalState.playerDataAcessor.digimonList; track digimon.id){
     <app-digi-status-card
+      cdkDrag
       [digimon]="digimon"
       (click)="openDigimonDetailsModal(digimon)"
       (contextmenu)="onRightClick($event, digimon)"

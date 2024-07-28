@@ -40,6 +40,7 @@ export class FarmSectionComponent {
 
   inTrainingListId = 'in-training-digimon-list';
   bitFarmingListId = 'bit-farming-digimon-list';
+  teamListId = 'team-list';
 
   actions: Record<string, string> = {
     'in-training-digimon-list': 'inTraining',
@@ -98,18 +99,35 @@ export class FarmSectionComponent {
       return;
     }
 
-    if (event.container.id === this.inTrainingListId) {
+    if (event.previousContainer.id === this.inTrainingListId) {
+      this.globalState.addDigimonToFarm(
+        event.previousContainer.data.inTrainingDigimonList[event.previousIndex],
+        this.actions[event.previousContainer.id]
+      );
+    }
+
+    if (event.previousContainer.id === this.bitFarmingListId) {
       this.globalState.addDigimonToTraining(
         event.previousContainer.data.bitFarmDigimonList[event.previousIndex],
         this.actions[event.previousContainer.id]
       );
     }
 
-    if (event.container.id === this.bitFarmingListId) {
-      this.globalState.addDigimonToFarm(
-        event.previousContainer.data.inTrainingDigimonList[event.previousIndex],
-        this.actions[event.previousContainer.id]
-      );
+    if (event.previousContainer.id === this.teamListId) {
+      if (event.container.id === this.inTrainingListId) {
+        this.globalState.addDigimonToTraining(
+          event.previousContainer.data.digimonList[event.previousIndex],
+          this.actions[event.previousContainer.id]
+        );
+        return;
+      }
+      if (event.container.id === this.bitFarmingListId) {
+        this.globalState.addDigimonToFarm(
+          event.previousContainer.data.digimonList[event.previousIndex],
+          this.actions[event.previousContainer.id]
+        );
+        return;
+      }
     }
   }
 }

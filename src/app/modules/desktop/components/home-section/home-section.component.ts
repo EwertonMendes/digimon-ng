@@ -57,9 +57,6 @@ export class HomeSectionComponent {
     }
 
     if (event.previousContainer.id === this.inTrainingListId) {
-      console.log(
-        event.previousContainer.data.digimonList[event.previousIndex]
-      );
       this.globalState.addDigimonToList(
         event.previousContainer.data.inTrainingDigimonList[event.previousIndex],
         this.actions[event.previousContainer.id]

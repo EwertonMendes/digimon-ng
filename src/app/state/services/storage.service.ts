@@ -8,11 +8,11 @@ import { PlayerData } from '../../core/interfaces/player-data.interface';
 export class StorageService {
   upfrontTeamLimit = 6;
 
-  addDigimonToList(digimon: Digimon, playerData: PlayerData) {
-    if (!digimon.id)
-      return;
+  addDigimonToList(playerData: PlayerData, digimon?: Digimon) {
+    if (!digimon || !digimon.id) return;
 
-    if (playerData.digimonList.length >= this.upfrontTeamLimit) throw Error('Team limit reached!');
+    if (playerData.digimonList.length >= this.upfrontTeamLimit)
+      throw Error('Team limit reached!');
     playerData.digimonList.push(digimon);
     return playerData;
   }

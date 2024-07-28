@@ -1,4 +1,10 @@
-import { ChangeDetectorRef, inject, Injectable, Injector, signal } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  inject,
+  Injectable,
+  Injector,
+  signal,
+} from '@angular/core';
 import { TrainingService } from './services/training.service';
 import { FarmingService } from './services/farming.service';
 import { BattleService } from './services/battle.service';
@@ -102,51 +108,52 @@ export class GlobalStateDataSource {
     this.battleLog().push(message);
   }
 
-  addDigimonToTraining(digimon: Digimon) {
+  addDigimonToTraining(digimon: Digimon, from: string) {
     const updatedPlayerData = this.trainingService.addDigimonToTraining(
-      digimon,
-      this.playerData()
+      this.playerData(),
+      digimon
     );
     this.updatePlayerData(updatedPlayerData);
-    this.removeDigimonFromStorage(digimon.id);
+    this.removeFromPreviousList(digimon.id!, from);
   }
 
-  removeDigimonFromTraining(digimonId: string) {
+  private removeDigimonFromTraining(digimonId?: string) {
     const data = this.trainingService.removeDigimonFromTraining(
       this.playerData(),
       digimonId
     );
     this.updatePlayerData(data?.playerData);
-    this.addDigimonToStorage(data?.digimon);
   }
 
-  addDigimonToList(digimon: Digimon) {
+  addDigimonToList(digimon: Digimon, from: string) {
     const updatedPlayerData = this.storageService.addDigimonToList(
-      digimon,
-      this.playerData()
+      this.playerData(),
+      digimon
     );
     this.updatePlayerData(updatedPlayerData);
-    this.removeDigimonFromStorage(digimon.id);
+
+    this.removeFromPreviousList(digimon.id!, from);
   }
 
-  removeDigimonFromList(digimonId: string) {
+  private removeDigimonFromList(digimonId?: string) {
     const data = this.storageService.removeDigimonFromList(
       this.playerData(),
       digimonId
     );
     this.updatePlayerData(data?.playerData);
-    this.addDigimonToStorage(data?.digimon);
   }
 
-  addDigimonToStorage(digimon?: Digimon) {
+  addDigimonToStorage(digimon: Digimon, from: string) {
     const updatedPlayerData = this.storageService.addDigimonToStorage(
       this.playerData(),
       digimon
     );
     this.updatePlayerData(updatedPlayerData);
+
+    this.removeFromPreviousList(digimon.id!, from);
   }
 
-  removeDigimonFromStorage(digimonId?: string) {
+  private removeDigimonFromStorage(digimonId?: string) {
     const updatedPlayerData = this.storageService.removeDigimonFromStorage(
       this.playerData(),
       digimonId
@@ -154,22 +161,21 @@ export class GlobalStateDataSource {
     this.updatePlayerData(updatedPlayerData);
   }
 
-  addDigimonToFarm(digimon: Digimon) {
+  addDigimonToFarm(digimon: Digimon, from: string) {
     const updatedPlayerData = this.farmingService.addDigimonToFarm(
       digimon,
       this.playerData()
     );
     this.updatePlayerData(updatedPlayerData);
-    this.removeDigimonFromStorage(digimon.id);
+    this.removeFromPreviousList(digimon.id!, from);
   }
 
-  removeDigimonFromFarm(digimonId: string) {
+  private removeDigimonFromFarm(digimonId?: string) {
     const data = this.farmingService.removeDigimonFromFarm(
       this.playerData(),
       digimonId
     );
     this.updatePlayerData(data?.playerData);
-    this.addDigimonToStorage(data?.digimon);
   }
 
   battle(attacker: Digimon, defender: Digimon) {
@@ -202,5 +208,20 @@ export class GlobalStateDataSource {
       ...playerData,
     });
     this.changeDectorRef.detectChanges();
+  }
+
+  private removeFromPreviousList(digimonId: string, from: string) {
+    if (from === 'inTraining') {
+      this.removeDigimonFromTraining(digimonId);
+    }
+    if (from === 'bitFarm') {
+      this.removeDigimonFromFarm(digimonId);
+    }
+    if (from === 'storage') {
+      this.removeDigimonFromStorage(digimonId);
+    }
+    if (from === 'team') {
+      this.removeDigimonFromList(digimonId);
+    }
   }
 }

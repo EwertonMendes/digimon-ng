@@ -30,14 +30,14 @@ export class ActionBarComponent {
   }
 
   addDigimonToTeam(digimon: Digimon) {
-    this.globalState.addDigimonToList(digimon);
+    this.globalState.addDigimonToList(digimon, 'storage');
   }
 
   addDigimonToTraining(digimon: Digimon) {
-    this.globalState.addDigimonToTraining(digimon);
+    this.globalState.addDigimonToTraining(digimon, 'storage');
   }
 
   addDigimonToFarm(digimon: Digimon) {
-    this.globalState.addDigimonToFarm(digimon);
+    this.globalState.addDigimonToFarm(digimon, 'storage');
   }
 }

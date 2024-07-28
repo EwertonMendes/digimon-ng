@@ -30,8 +30,8 @@ export class TrainingService {
     return playerData;
   }
 
-  addDigimonToTraining(digimon: Digimon, playerData: PlayerData) {
-    if (!digimon.id) return;
+  addDigimonToTraining(playerData: PlayerData, digimon?: Digimon) {
+    if (!digimon || !digimon.id) return;
     playerData.inTrainingDigimonList.push(digimon);
     return playerData;
   }

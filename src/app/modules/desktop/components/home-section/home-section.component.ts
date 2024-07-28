@@ -19,7 +19,7 @@ export class HomeSectionComponent {
   onRightClick(event: MouseEvent, digimon: Digimon): void {
     event.preventDefault();
     if (!digimon.id) return;
-    this.globalState.removeDigimonFromList(digimon.id!);
+    this.globalState.addDigimonToStorage(digimon, 'team');
   }
 
   openDigimonDetailsModal(digimon: Digimon): void {

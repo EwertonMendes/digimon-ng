@@ -2,21 +2,49 @@
   <div class="farm-section-header">
     <span>Bits: {{ globalState.playerDataAcessor.bits }}</span>
     <span>Bit generation rate: {{ bitGenerationTotalRate() }} bits /min</span>
-    </div>
+  </div>
   <div class="farm-section-container">
     <div class="panel">
-      <div class="in-training-digimon-list">
+      <div
+        [id]="inTrainingListId"
+        class="in-training-digimon-list"
+        #inTrainingList="cdkDropList"
+        cdkDropList
+        [cdkDropListData]="globalState.playerDataAcessor"
+        [cdkDropListConnectedTo]="[bitFarmingList]"
+        (cdkDropListDropped)="drop($event)"
+      >
         <h4>In-Training Digimons</h4>
-        @for(digimon of globalState.playerDataAcessor.inTrainingDigimonList; track digimon){
-          <app-digi-status-card [digimon]="digimon" (click)="openDigimonDetailsModal(digimon)" (contextmenu)="removeDigimonFromTraining($event, digimon)" />
+        @for(digimon of globalState.playerDataAcessor.inTrainingDigimonList;
+        track digimon.id){
+        <app-digi-status-card
+          cdkDrag
+          [digimon]="digimon"
+          (click)="openDigimonDetailsModal(digimon)"
+          (contextmenu)="removeDigimonFromTraining($event, digimon)"
+        />
         }
       </div>
     </div>
     <div class="panel">
-      <div class="bit-farming-digimon-list">
+      <div
+        [id]="bitFarmingListId"
+        class="bit-farming-digimon-list"
+        #bitFarmingList="cdkDropList"
+        cdkDropList
+        [cdkDropListData]="globalState.playerDataAcessor"
+        [cdkDropListConnectedTo]="[inTrainingList]"
+        (cdkDropListDropped)="drop($event)"
+      >
         <h4>Bit Farming Digimons</h4>
-        @for(digimon of globalState.playerDataAcessor.bitFarmDigimonList; track digimon){
-          <app-digimon-farm-card [digimon]="digimon" (click)="openDigimonDetailsModal(digimon)" (contextmenu)="removeDigimonFromFarm($event, digimon)" />
+        @for(digimon of globalState.playerDataAcessor.bitFarmDigimonList; track
+        digimon.id){
+        <app-digimon-farm-card
+          cdkDrag
+          [digimon]="digimon"
+          (click)="openDigimonDetailsModal(digimon)"
+          (contextmenu)="removeDigimonFromFarm($event, digimon)"
+        />
         }
       </div>
     </div>

@@ -9,6 +9,7 @@ import {
   moveItemInArray,
 } from '@angular/cdk/drag-drop';
 import { DigimonListLocation } from '../../../../core/enums/digimon-list-location.enum';
+import { PlayerData } from '../../../../core/interfaces/player-data.interface';
 
 @Component({
   selector: 'app-home-section',
@@ -43,32 +44,76 @@ export class HomeSectionComponent {
     this.modalService.open(this.digimonDetailsModalId);
   }
 
-  drop(event: CdkDragDrop<any>) {
-    if (event.previousContainer === event.container) {
-      if (event.container.id === this.teamListId) {
-        moveItemInArray(
-          this.globalState.playerDataAcessor.digimonList,
-          event.previousIndex,
-          event.currentIndex
-        );
+  drop(event: CdkDragDrop<PlayerData>) {
+    const { previousContainer, container, previousIndex, currentIndex } = event;
 
-        return;
-      }
+    if (previousContainer === container) {
+      this.handleSameContainerDrop(container.id, previousIndex, currentIndex);
       return;
     }
 
-    if (event.previousContainer.id === this.inTrainingListId) {
-      this.globalState.addDigimonToList(
-        event.previousContainer.data.inTrainingDigimonList[event.previousIndex],
-        this.actions[event.previousContainer.id]
-      );
+    this.handleDifferentContainerDrop(previousContainer.id, previousIndex);
+  }
+
+  private handleSameContainerDrop(
+    containerId: string,
+    previousIndex: number,
+    currentIndex: number
+  ) {
+    const handlers = {
+      [this.teamListId]: () =>
+        moveItemInArray(
+          this.globalState.playerDataAcessor.digimonList,
+          previousIndex,
+          currentIndex
+        ),
+    };
+
+    const handler = handlers[containerId];
+    if (handler) {
+      handler();
+    }
+  }
+
+  private handleDifferentContainerDrop(
+    previousContainerId: string,
+    previousIndex: number
+  ) {
+    const digimon = this.getDigimonFromPreviousContainer(
+      previousContainerId,
+      previousIndex
+    );
+    const action = this.actions[previousContainerId];
+
+    const handlers = {
+      [this.inTrainingListId]: () =>
+        this.globalState.addDigimonToList(digimon, action),
+      [this.bitFarmingListId]: () =>
+        this.globalState.addDigimonToList(digimon, action),
+    };
+
+    const handler = handlers[previousContainerId];
+    if (handler) {
+      handler();
+    }
+  }
+
+  private getDigimonFromPreviousContainer(
+    containerId: string,
+    index: number
+  ): Digimon {
+    const lists = {
+      [this.inTrainingListId]:
+        this.globalState.playerDataAcessor.inTrainingDigimonList,
+      [this.bitFarmingListId]:
+        this.globalState.playerDataAcessor.bitFarmDigimonList,
+    };
+
+    const list = lists[containerId];
+    if (list) {
+      return list[index];
     }
 
-    if (event.previousContainer.id === this.bitFarmingListId) {
-      this.globalState.addDigimonToList(
-        event.previousContainer.data.bitFarmDigimonList[event.previousIndex],
-        this.actions[event.previousContainer.id]
-      );
-    }
+    throw new Error('Invalid container ID');
   }
 }

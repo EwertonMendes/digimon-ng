@@ -17,6 +17,7 @@ import {
   moveItemInArray,
 } from '@angular/cdk/drag-drop';
 import { DigimonListLocation } from '../../../../core/enums/digimon-list-location.enum';
+import { PlayerData } from '../../../../core/interfaces/player-data.interface';
 
 @Component({
   selector: 'app-farm-section',
@@ -80,7 +81,7 @@ export class FarmSectionComponent {
     this.modalService.open(this.digimonDetailsModalId);
   }
 
-  drop(event: CdkDragDrop<any>) {
+  drop(event: CdkDragDrop<PlayerData>) {
     const { previousContainer, container, previousIndex, currentIndex } = event;
 
     if (previousContainer === container) {

@@ -123,6 +123,27 @@
       "degenerateSeedList": ["70dbb38a-690e-45b3-bfc5-eccba64fbd9b"]
     }
   ],
+  "hospitalDigimonList": [
+    {
+      "id": "ujfab1f1-c46d-4ca9-92d8-639464033e99",
+      "seed": "cd52bdf0-80a8-4b19-b738-ed6acf1f0b14",
+      "name": "Apemon",
+      "img": "/assets/digimons/Apemon.webp",
+      "rank": "Champion",
+      "currentHp": 0,
+      "maxHp": 100,
+      "currentMp": 0,
+      "maxMp": 50,
+      "atk": 35,
+      "def": 25,
+      "exp": 0,
+      "totalExp": 0,
+      "level": 1,
+      "bitFarmingRate": 1,
+      "digiEvolutionSeedList": [],
+      "degenerateSeedList": []
+    }
+  ],
   "digimonStorageList": [
     {
       "id": "9e683359-c155-4d63-8d89-b9c26c98dd7b",

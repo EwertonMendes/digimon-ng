@@ -8,6 +8,7 @@ export interface PlayerData {
   digimonList: Digimon[];
   bitFarmDigimonList: Digimon[];
   inTrainingDigimonList: Digimon[];
+  hospitalDigimonList: Digimon[];
   digimonStorageList: Digimon[];
   digimonStorageCapacity: number;
   bits: number;

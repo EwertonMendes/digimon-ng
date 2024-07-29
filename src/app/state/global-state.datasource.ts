@@ -1,10 +1,4 @@
-import {
-  ChangeDetectorRef,
-  inject,
-  Injectable,
-  Injector,
-  signal,
-} from '@angular/core';
+import { ChangeDetectorRef, inject, Injectable, signal } from '@angular/core';
 import { TrainingService } from './services/training.service';
 import { FarmingService } from './services/farming.service';
 import { BattleService } from './services/battle.service';
@@ -15,6 +9,7 @@ import { DigimonService } from '../services/digimon.service';
 import { PlayerDataService } from '../services/player-data.service';
 import { interval } from 'rxjs';
 import { DigimonListLocation } from '../core/enums/digimon-list-location.enum';
+import { HospitalService } from './services/hospital.service';
 
 @Injectable({
   providedIn: 'root',
@@ -28,6 +23,7 @@ export class GlobalStateDataSource {
     digimonList: [],
     bitFarmDigimonList: [],
     inTrainingDigimonList: [],
+    hospitalDigimonList: [],
     digimonStorageList: [],
     digimonStorageCapacity: 0,
     bits: 0,
@@ -59,7 +55,7 @@ export class GlobalStateDataSource {
     return this.battleLog();
   }
 
-  oneMinuteInterval = 60000;
+  oneMinuteInterval = 100;
 
   digimonService = inject(DigimonService);
   playerDataService = inject(PlayerDataService);
@@ -68,6 +64,7 @@ export class GlobalStateDataSource {
   farmingService = inject(FarmingService);
   battleService = inject(BattleService);
   storageService = inject(StorageService);
+  hospitalService = inject(HospitalService);
 
   changeDectorRef = inject(ChangeDetectorRef);
 
@@ -77,14 +74,8 @@ export class GlobalStateDataSource {
     [DigimonListLocation.BIT_FARM]: this.removeDigimonFromFarm.bind(this),
     [DigimonListLocation.STORAGE]: this.removeDigimonFromStorage.bind(this),
     [DigimonListLocation.TEAM]: this.removeDigimonFromList.bind(this),
+    [DigimonListLocation.HOSPITAL]: this.removeDigimonFromHospital.bind(this),
   };
-
-  constructor(injector: Injector) {
-    this.trainingService = injector.get(TrainingService);
-    this.farmingService = injector.get(FarmingService);
-    this.battleService = injector.get(BattleService);
-    this.storageService = injector.get(StorageService);
-  }
 
   async connect() {
     const playerData = await this.playerDataService.getPlayerData();
@@ -93,6 +84,7 @@ export class GlobalStateDataSource {
 
     this.initDigimonTraining();
     this.initBitFarmingGeneration();
+    this.initHospitalHealing();
   }
 
   initDigimonTraining() {
@@ -110,6 +102,15 @@ export class GlobalStateDataSource {
         this.playerData()
       );
       this.updatePlayerData();
+    });
+  }
+
+  initHospitalHealing() {
+    interval(this.oneMinuteInterval).subscribe(() => {
+      const updatedPlayerData = this.hospitalService.healDigimons(
+        this.playerData()
+      );
+      this.updatePlayerData(updatedPlayerData);
     });
   }
 
@@ -181,6 +182,23 @@ export class GlobalStateDataSource {
 
   private removeDigimonFromFarm(digimonId?: string) {
     const data = this.farmingService.removeDigimonFromFarm(
+      this.playerData(),
+      digimonId
+    );
+    this.updatePlayerData(data?.playerData);
+  }
+
+  addDigimonToHospital(digimon: Digimon, from: string) {
+    const updatedPlayerData = this.hospitalService.addDigimonToHospital(
+      this.playerData(),
+      digimon
+    );
+    this.updatePlayerData(updatedPlayerData);
+    this.removeFromPreviousList(digimon.id!, from);
+  }
+
+  private removeDigimonFromHospital(digimonId?: string) {
+    const data = this.hospitalService.removeDigimonFromHospital(
       this.playerData(),
       digimonId
     );

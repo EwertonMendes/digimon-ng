@@ -11,7 +11,11 @@
         #inTrainingList="cdkDropList"
         cdkDropList
         [cdkDropListData]="globalState.playerDataAcessor"
-        [cdkDropListConnectedTo]="[bitFarmingList, 'team-list']"
+        [cdkDropListConnectedTo]="[
+          bitFarmingList,
+          'team-list',
+          'hospital-digimon-list'
+        ]"
         (cdkDropListDropped)="drop($event)"
       >
         <h4>In-Training Digimons</h4>
@@ -33,7 +37,11 @@
         #bitFarmingList="cdkDropList"
         cdkDropList
         [cdkDropListData]="globalState.playerDataAcessor"
-        [cdkDropListConnectedTo]="[inTrainingList, 'team-list']"
+        [cdkDropListConnectedTo]="[
+          inTrainingList,
+          'team-list',
+          'hospital-digimon-list'
+        ]"
         (cdkDropListDropped)="drop($event)"
       >
         <h4>Bit Farming Digimons</h4>

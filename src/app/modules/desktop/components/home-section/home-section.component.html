@@ -3,15 +3,20 @@
     Upfront Team: {{ globalState.playerDataAcessor.digimonList.length }}/6
   </h4>
   <div
-  [id]="teamListId"
-  class="my-digimon-list"
-  #teamList="cdkDropList"
-  cdkDropList
-  [cdkDropListData]="globalState.playerDataAcessor"
-  [cdkDropListConnectedTo]="['in-training-digimon-list', 'bit-farming-digimon-list']"
-  (cdkDropListDropped)="drop($event)"
+    [id]="teamListId"
+    class="my-digimon-list"
+    #teamList="cdkDropList"
+    cdkDropList
+    [cdkDropListData]="globalState.playerDataAcessor"
+    [cdkDropListConnectedTo]="[
+      'hospital-digimon-list',
+      'in-training-digimon-list',
+      'bit-farming-digimon-list'
+    ]"
+    (cdkDropListDropped)="drop($event)"
   >
-    @for(digimon of globalState.playerDataAcessor.digimonList; track digimon.id){
+    @for(digimon of globalState.playerDataAcessor.digimonList; track
+    digimon.id){
     <app-digi-status-card
       cdkDrag
       [digimon]="digimon"
@@ -19,5 +24,33 @@
       (contextmenu)="onRightClick($event, digimon)"
     />
     }
+  </div>
+  <div class="hospital-area-container">
+    <div class="hospital-area">
+      <h4 class="hospital-area-sub-title">Hospital</h4>
+      <div
+        [id]="hospitalListId"
+        class="hospital-digimon-list"
+        #inTrainingList="cdkDropList"
+        cdkDropList
+        [cdkDropListData]="globalState.playerDataAcessor"
+        [cdkDropListConnectedTo]="[
+          'team-list',
+          'bit-farming-digimon-list',
+          'in-training-digimon-list'
+        ]"
+        (cdkDropListDropped)="drop($event)"
+      >
+        @for(digimon of globalState.playerDataAcessor.hospitalDigimonList; track
+        digimon.id){
+        <app-digi-status-card
+          cdkDrag
+          [digimon]="digimon"
+          (click)="openDigimonDetailsModal(digimon)"
+          (contextmenu)="onRightClick($event, digimon)"
+        />
+        }
+      </div>
+    </div>
   </div>
 </div>

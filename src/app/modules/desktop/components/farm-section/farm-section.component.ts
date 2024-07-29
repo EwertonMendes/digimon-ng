@@ -43,11 +43,13 @@ export class FarmSectionComponent {
   inTrainingListId = 'in-training-digimon-list';
   bitFarmingListId = 'bit-farming-digimon-list';
   teamListId = 'team-list';
+  hospitalListId = 'hospital-digimon-list';
 
   actions: Record<string, string> = {
     'in-training-digimon-list': 'inTraining',
     'bit-farming-digimon-list': 'bitFarm',
     'team-list': 'team',
+    'hospital-digimon-list': 'hospital',
   };
 
   constructor() {
@@ -140,6 +142,8 @@ export class FarmSectionComponent {
         this.globalState.addDigimonToTraining(digimon, action),
       [this.teamListId]: () =>
         this.handleTeamListDrop(containerId, digimon, action),
+      [this.hospitalListId]: () =>
+        this.handleTeamListDrop(containerId, digimon, action),
     };
 
     const handler = handlers[previousContainerId];
@@ -158,6 +162,7 @@ export class FarmSectionComponent {
         this.globalState.addDigimonToTraining(digimon, action),
       [this.bitFarmingListId]: () =>
         this.globalState.addDigimonToFarm(digimon, action),
+      [this.hospitalListId]: () => this.globalState.addDigimonToHospital(digimon, action),
     };
 
     const handler = handlers[containerId];
@@ -176,6 +181,8 @@ export class FarmSectionComponent {
       [this.bitFarmingListId]:
         this.globalState.playerDataAcessor.bitFarmDigimonList,
       [this.teamListId]: this.globalState.playerDataAcessor.digimonList,
+      [this.hospitalListId]:
+        this.globalState.playerDataAcessor.hospitalDigimonList,
     };
 
     const list = lists[containerId];

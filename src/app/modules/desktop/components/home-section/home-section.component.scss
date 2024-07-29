@@ -4,6 +4,7 @@
   height: 100%;
   width: 100%;
   align-items: center;
+  gap: 15px;
 
   &-sub-title {
     margin: 10px;
@@ -13,10 +14,30 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     gap: 10px;
+    background-color: rgba(black, 0.8);
+    border-radius: 10px;
+    width: 100%;
+    padding: 10px;
+  }
 
-    app-digi-status-card {
-      max-width: 270px;
+  .hospital-area-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(black, 0.8);
+    border-radius: 10px;
+    width: 100%;
+    padding: 10px;
+
+    .hospital-digimon-list {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
     }
   }
 }

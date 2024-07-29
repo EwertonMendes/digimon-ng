@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { GlobalStateDataSource } from '../../../../state/global-state.datasource';
 import { BattleModalComponent } from '../../../../shared/components/battle-modal/battle-modal.component';
 import { ModalService } from '../../../../shared/components/modal/modal.service';
+import { Digimon } from '../../../../core/interfaces/digimon.interface';
 
 interface Location {
   name: string;
@@ -67,34 +68,44 @@ export class ExploreSectionComponent {
     return [...playerTeam, ...enemyTeam].sort(() => Math.random() - 0.5);
   }
 
-  private startBattle(turnOrder: any[]) {
+  private startBattle(turnOrder: Digimon[]) {
     let battleActive = true;
 
+    console.log('entrou no startBattle', battleActive);
+    console.log('turnOrder', turnOrder);
+
     while (battleActive) {
+      console.log('entrou no while, battleActive: ', battleActive);
       if (turnOrder.length <= 1) break;
 
       for (const digimon of turnOrder) {
+        console.log('entrou no for, digimon: ', digimon);
         if (!battleActive) break;
         if (digimon.currentHp <= 0) continue;
 
         if (this.globalState.playerDataAcessor.digimonList.includes(digimon)) {
+          console.log('entrou no if');
           battleActive = this.playerAttack(digimon);
-        } else {
-          battleActive = this.enemyAttack(digimon);
+          continue;
         }
+        battleActive = this.enemyAttack(digimon);
       }
     }
 
     if (this.globalState.enemyTeamAccessor.every((d) => d.currentHp <= 0)) {
       this.log('Victory! Opponent Digimon is defeated.');
+      battleActive = false;
     }
   }
 
-  private playerAttack(digimon: any): boolean {
+  private playerAttack(digimon: Digimon): boolean {
+    console.log('entrou no playerAttack');
     const opponentDigimon = this.globalState.enemyTeamAccessor.find(
       (d) => d.currentHp > 0
     );
-    if (!opponentDigimon) return true;
+    console.log('opponentDigimon', opponentDigimon);
+    console.log('enemyTeamAccessor', this.globalState.enemyTeamAccessor);
+    if (!opponentDigimon) return false;
 
     this.globalState.battle(digimon, opponentDigimon);
     this.log(
@@ -107,11 +118,12 @@ export class ExploreSectionComponent {
     return true;
   }
 
-  private enemyAttack(digimon: any): boolean {
+  private enemyAttack(digimon: Digimon): boolean {
+    console.log('entrou no enemyAttack');
     const target = this.globalState.playerDataAcessor.digimonList.find(
       (d) => d.currentHp > 0
     );
-    if (!target) return true;
+    if (!target) return false;
 
     this.globalState.battle(digimon, target);
     this.log(

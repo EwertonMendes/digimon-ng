@@ -71,20 +71,14 @@ export class ExploreSectionComponent {
   private startBattle(turnOrder: Digimon[]) {
     let battleActive = true;
 
-    console.log('entrou no startBattle', battleActive);
-    console.log('turnOrder', turnOrder);
-
     while (battleActive) {
-      console.log('entrou no while, battleActive: ', battleActive);
       if (turnOrder.length <= 1) break;
 
       for (const digimon of turnOrder) {
-        console.log('entrou no for, digimon: ', digimon);
         if (!battleActive) break;
         if (digimon.currentHp <= 0) continue;
 
         if (this.globalState.playerDataAcessor.digimonList.includes(digimon)) {
-          console.log('entrou no if');
           battleActive = this.playerAttack(digimon);
           continue;
         }
@@ -99,12 +93,9 @@ export class ExploreSectionComponent {
   }
 
   private playerAttack(digimon: Digimon): boolean {
-    console.log('entrou no playerAttack');
     const opponentDigimon = this.globalState.enemyTeamAccessor.find(
       (d) => d.currentHp > 0
     );
-    console.log('opponentDigimon', opponentDigimon);
-    console.log('enemyTeamAccessor', this.globalState.enemyTeamAccessor);
     if (!opponentDigimon) return false;
 
     this.globalState.battle(digimon, opponentDigimon);
@@ -119,7 +110,6 @@ export class ExploreSectionComponent {
   }
 
   private enemyAttack(digimon: Digimon): boolean {
-    console.log('entrou no enemyAttack');
     const target = this.globalState.playerDataAcessor.digimonList.find(
       (d) => d.currentHp > 0
     );

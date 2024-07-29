@@ -1,5 +1,5 @@
 @for(toast of toasts; track $index) {
-<div class="toast-container"  [ngClass]="toast.position || 'bottom'" [@toastAnimation]>
+<div class="toast-container"  [ngClass]="toast.position || 'bottom'" [@toastAnimation] [style.bottom]="toast.position === 'bottom' ? ($index * 60) + 'px' : null" [style.top]="toast.position === 'top' ? ($index * 60) + 'px' : null">
   <div class="toast" [ngClass]="toast.type" (click)="removeToast($index)">
     <i class="ph-light icon" [ngClass]="toast.icon"></i>
     {{ toast.message }}

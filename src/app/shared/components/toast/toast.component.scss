@@ -1,0 +1,15 @@
+.toast-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-self: center;
+
+  span {
+    color: #fff;
+  }
+}
+
+.toast-icon {
+  margin: 4px 12px 0 0;
+  color: #fff;
+}

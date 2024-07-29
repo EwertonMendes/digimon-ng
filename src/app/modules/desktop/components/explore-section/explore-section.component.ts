@@ -3,6 +3,7 @@ import { GlobalStateDataSource } from '../../../../state/global-state.datasource
 import { BattleModalComponent } from '../../../../shared/components/battle-modal/battle-modal.component';
 import { ModalService } from '../../../../shared/components/modal/modal.service';
 import { Digimon } from '../../../../core/interfaces/digimon.interface';
+import { ToastService } from '../../../../shared/components/toast/toast.service';
 
 interface Location {
   name: string;
@@ -19,6 +20,7 @@ interface Location {
 export class ExploreSectionComponent {
   globalState = inject(GlobalStateDataSource);
   modalService = inject(ModalService);
+  toastService = inject(ToastService);
 
   locations: Location[] = [
     { name: 'Login Mountain', img: 'assets/environments/loginmountain.png' },
@@ -32,6 +34,7 @@ export class ExploreSectionComponent {
 
     if (this.isPlayerTeamEmpty()) {
       this.log('No Digimon to explore with.');
+      this.toastService.showToast('No Digimon to explore with.', 'error');
       return;
     }
 
@@ -54,7 +57,7 @@ export class ExploreSectionComponent {
     for (let i = 0; i < randomNumber; i++) {
       const opponentDigimon = this.globalState.generateRandomDigimon();
       this.globalState.enemyTeamAccessor.push(opponentDigimon);
-      this.log(`Found a ${opponentDigimon.name}!`);
+      this.log(`(Enemy) ${opponentDigimon.name} was found!`);
     }
   }
 

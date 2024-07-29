@@ -40,16 +40,16 @@ export class FarmSectionComponent {
 
   bitGenerationTotalRate = signal<number>(0);
 
+  teamListId = 'team-list';
   inTrainingListId = 'in-training-digimon-list';
   bitFarmingListId = 'bit-farming-digimon-list';
-  teamListId = 'team-list';
   hospitalListId = 'hospital-digimon-list';
 
-  actions: Record<string, string> = {
-    'in-training-digimon-list': 'inTraining',
-    'bit-farming-digimon-list': 'bitFarm',
-    'team-list': 'team',
-    'hospital-digimon-list': 'hospital',
+  listLocations: Record<string, string> = {
+    'in-training-digimon-list': DigimonListLocation.IN_TRAINING,
+    'bit-farming-digimon-list': DigimonListLocation.BIT_FARM,
+    'team-list': DigimonListLocation.TEAM,
+    'hospital-digimon-list': DigimonListLocation.HOSPITAL,
   };
 
   constructor() {
@@ -133,7 +133,7 @@ export class FarmSectionComponent {
       previousContainerId,
       previousIndex
     );
-    const action = this.actions[previousContainerId];
+    const action = this.listLocations[previousContainerId];
 
     const handlers = {
       [this.inTrainingListId]: () =>

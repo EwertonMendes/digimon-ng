@@ -28,11 +28,11 @@ export class HomeSectionComponent {
   bitFarmingListId = 'bit-farming-digimon-list';
   hospitalListId = 'hospital-digimon-list';
 
-  actions: Record<string, string> = {
-    'in-training-digimon-list': 'inTraining',
-    'bit-farming-digimon-list': 'bitFarm',
-    'team-list': 'team',
-    'hospital-digimon-list': 'hospital',
+  listLocations: Record<string, string> = {
+    'in-training-digimon-list': DigimonListLocation.IN_TRAINING,
+    'bit-farming-digimon-list': DigimonListLocation.BIT_FARM,
+    'team-list': DigimonListLocation.TEAM,
+    'hospital-digimon-list': DigimonListLocation.HOSPITAL,
   };
 
   onRightClick(event: MouseEvent, digimon: Digimon): void {
@@ -45,83 +45,6 @@ export class HomeSectionComponent {
     this.globalState.setSelectedDigimonOnDetailsAccessor(digimon);
     this.modalService.open(this.digimonDetailsModalId);
   }
-
-  // drop(event: CdkDragDrop<PlayerData>) {
-  //   const { previousContainer, container, previousIndex, currentIndex } = event;
-
-  //   if (previousContainer === container) {
-  //     this.handleSameContainerDrop(container.id, previousIndex, currentIndex);
-  //     return;
-  //   }
-
-  //   this.handleDifferentContainerDrop(previousContainer.id, previousIndex);
-  // }
-
-  // private handleSameContainerDrop(
-  //   containerId: string,
-  //   previousIndex: number,
-  //   currentIndex: number
-  // ) {
-  //   const handlers = {
-  //     [this.teamListId]: () =>
-  //       moveItemInArray(
-  //         this.globalState.playerDataAcessor.digimonList,
-  //         previousIndex,
-  //         currentIndex
-  //       ),
-  //   };
-
-  //   const handler = handlers[containerId];
-  //   if (handler) {
-  //     handler();
-  //   }
-  // }
-
-  // private handleDifferentContainerDrop(
-  //   previousContainerId: string,
-  //   previousIndex: number
-  // ) {
-  //   const digimon = this.getDigimonFromPreviousContainer(
-  //     previousContainerId,
-  //     previousIndex
-  //   );
-  //   const action = this.actions[previousContainerId];
-
-  //   const handlers = {
-  //     [this.inTrainingListId]: () =>
-  //       this.globalState.addDigimonToList(digimon, action),
-  //     [this.bitFarmingListId]: () =>
-  //       this.globalState.addDigimonToList(digimon, action),
-  //     [this.hospitalListId]: () =>
-  //       this.globalState.addDigimonToHospital(digimon, action),
-  //   };
-
-  //   const handler = handlers[previousContainerId];
-  //   if (handler) {
-  //     handler();
-  //   }
-  // }
-
-  // private getDigimonFromPreviousContainer(
-  //   containerId: string,
-  //   index: number
-  // ): Digimon {
-  //   const lists = {
-  //     [this.inTrainingListId]:
-  //       this.globalState.playerDataAcessor.inTrainingDigimonList,
-  //     [this.bitFarmingListId]:
-  //       this.globalState.playerDataAcessor.bitFarmDigimonList,
-  //     [this.hospitalListId]:
-  //       this.globalState.playerDataAcessor.hospitalDigimonList,
-  //   };
-
-  //   const list = lists[containerId];
-  //   if (list) {
-  //     return list[index];
-  //   }
-
-  //   throw new Error('Invalid container ID');
-  // }
 
   drop(event: CdkDragDrop<PlayerData>) {
     const { previousContainer, container, previousIndex, currentIndex } = event;
@@ -174,7 +97,7 @@ export class HomeSectionComponent {
       previousIndex
     );
 
-    const action = this.actions[previousContainerId];
+    const action = this.listLocations[previousContainerId];
 
     const handlers = {
       [this.inTrainingListId]: () =>
@@ -203,8 +126,10 @@ export class HomeSectionComponent {
         this.globalState.addDigimonToTraining(digimon, action),
       [this.bitFarmingListId]: () =>
         this.globalState.addDigimonToFarm(digimon, action),
-      [this.hospitalListId]: () => this.globalState.addDigimonToHospital(digimon, action),
-      [this.teamListId]: () => this.globalState.addDigimonToList(digimon, action),
+      [this.hospitalListId]: () =>
+        this.globalState.addDigimonToHospital(digimon, action),
+      [this.teamListId]: () =>
+        this.globalState.addDigimonToList(digimon, action),
     };
 
     const handler = handlers[containerId];

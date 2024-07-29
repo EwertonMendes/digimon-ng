@@ -13,8 +13,8 @@
         [cdkDropListData]="globalState.playerDataAcessor"
         [cdkDropListConnectedTo]="[
           bitFarmingList,
-          'team-list',
-          'hospital-digimon-list'
+          teamListId,
+          hospitalListId
         ]"
         (cdkDropListDropped)="drop($event)"
       >
@@ -39,8 +39,8 @@
         [cdkDropListData]="globalState.playerDataAcessor"
         [cdkDropListConnectedTo]="[
           inTrainingList,
-          'team-list',
-          'hospital-digimon-list'
+          teamListId,
+          hospitalListId
         ]"
         (cdkDropListDropped)="drop($event)"
       >

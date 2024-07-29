@@ -4,6 +4,7 @@ import { DesktopComponent } from './modules/desktop/desktop.component';
 import { GlobalStateDataSource } from './state/global-state.datasource';
 import { ButtonComponent } from './shared/components/button/button.component';
 import { ActionBarComponent } from './common/action-bar/action-bar.component';
+import { ToastComponent } from './shared/components/toast/toast.component';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,7 @@ import { ActionBarComponent } from './common/action-bar/action-bar.component';
     DesktopComponent,
     ActionBarComponent,
     ButtonComponent,
+    ToastComponent,
   ],
   providers: [GlobalStateDataSource],
   templateUrl: './app.component.html',

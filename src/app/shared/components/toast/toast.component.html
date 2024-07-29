@@ -1,10 +1,8 @@
-<div class="toast-container">
-  <div class="toast-icon">
-    <mat-icon>{{ data.icon }}</mat-icon>
-  </div>
-  <div>
-    <span>
-      {{ data.message }}
-    </span>
+@for(toast of toasts; track $index) {
+<div class="toast-container"  [ngClass]="toast.position || 'bottom'" [@toastAnimation]>
+  <div class="toast" [ngClass]="toast.type" (click)="removeToast($index)">
+    <i class="ph-light icon" [ngClass]="toast.icon"></i>
+    {{ toast.message }}
   </div>
 </div>
+}

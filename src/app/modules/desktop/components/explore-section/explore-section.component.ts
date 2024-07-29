@@ -90,7 +90,11 @@ export class ExploreSectionComponent {
     }
 
     if (this.globalState.enemyTeamAccessor.every((d) => d.currentHp <= 0)) {
-      this.log('Victory! Opponent Digimon is defeated.');
+      this.log('Victory! Opponent Digimons were defeated.');
+      this.toastService.showToast(
+        'Victory! Opponent Digimons were defeated.',
+        'success'
+      );
       battleActive = false;
     }
   }
@@ -129,6 +133,11 @@ export class ExploreSectionComponent {
       )
     ) {
       this.log('All player Digimon are defeated. Battle lost.');
+      this.toastService.showToast(
+        'All player Digimon are defeated. Battle lost.',
+        'error',
+        'ph-skull'
+      );
       return false;
     }
     return true;

@@ -42,7 +42,16 @@ export class ExploreSectionComponent {
     this.generateOpponents();
 
     const turnOrder = this.getTurnOrder();
-    this.log(`Turn order: ${turnOrder.map((d) => d.name).join(', ')}`);
+    this.log(
+      `Turn order: ${turnOrder
+        .map((d) => {
+          if (this.globalState.enemyTeamAccessor.includes(d)) {
+            return `(Enemy) ${d.name}`;
+          }
+          return d.name;
+        })
+        .join(', ')}`
+    );
 
     this.startBattle(turnOrder);
   }

@@ -38,9 +38,6 @@ export class TrainingService {
 
   removeDigimonFromTraining(playerData: PlayerData, digimonId?: string) {
     if (!digimonId) return;
-    const digimon = playerData.inTrainingDigimonList.find(
-      (digimon: Digimon) => digimon.id === digimonId
-    );
 
     const index = playerData.inTrainingDigimonList.findIndex(
       (digimon: Digimon) => digimon.id === digimonId
@@ -48,9 +45,6 @@ export class TrainingService {
 
     playerData.inTrainingDigimonList.splice(index, 1);
 
-    return {
-      playerData,
-      digimon,
-    };
+    return playerData;
   }
 }

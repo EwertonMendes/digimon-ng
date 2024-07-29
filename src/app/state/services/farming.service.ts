@@ -29,9 +29,6 @@ export class FarmingService {
 
   removeDigimonFromFarm(playerData: PlayerData, digimonId?: string) {
     if (!digimonId) return;
-    const digimon = playerData.bitFarmDigimonList.find(
-      (digimon: Digimon) => digimon.id === digimonId
-    );
 
     const index = playerData.bitFarmDigimonList.findIndex(
       (digimon: Digimon) => digimon.id === digimonId
@@ -39,9 +36,6 @@ export class FarmingService {
 
     playerData.bitFarmDigimonList.splice(index, 1);
 
-    return {
-      playerData,
-      digimon,
-    };
+    return playerData;
   }
 }

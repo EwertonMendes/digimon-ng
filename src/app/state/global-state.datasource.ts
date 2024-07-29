@@ -128,11 +128,11 @@ export class GlobalStateDataSource {
   }
 
   private removeDigimonFromTraining(digimonId?: string) {
-    const data = this.trainingService.removeDigimonFromTraining(
+    const playerData = this.trainingService.removeDigimonFromTraining(
       this.playerData(),
       digimonId
     );
-    this.updatePlayerData(data?.playerData);
+    this.updatePlayerData(playerData);
   }
 
   addDigimonToList(digimon: Digimon, from: string) {
@@ -146,11 +146,11 @@ export class GlobalStateDataSource {
   }
 
   private removeDigimonFromList(digimonId?: string) {
-    const data = this.storageService.removeDigimonFromList(
+    const playerData = this.storageService.removeDigimonFromList(
       this.playerData(),
       digimonId
     );
-    this.updatePlayerData(data?.playerData);
+    this.updatePlayerData(playerData);
   }
 
   addDigimonToStorage(digimon: Digimon, from: string) {
@@ -181,11 +181,11 @@ export class GlobalStateDataSource {
   }
 
   private removeDigimonFromFarm(digimonId?: string) {
-    const data = this.farmingService.removeDigimonFromFarm(
+    const playerData = this.farmingService.removeDigimonFromFarm(
       this.playerData(),
       digimonId
     );
-    this.updatePlayerData(data?.playerData);
+    this.updatePlayerData(playerData);
   }
 
   addDigimonToHospital(digimon: Digimon, from: string) {
@@ -198,11 +198,11 @@ export class GlobalStateDataSource {
   }
 
   private removeDigimonFromHospital(digimonId?: string) {
-    const data = this.hospitalService.removeDigimonFromHospital(
+    const playerData = this.hospitalService.removeDigimonFromHospital(
       this.playerData(),
       digimonId
     );
-    this.updatePlayerData(data?.playerData);
+    this.updatePlayerData(playerData);
   }
 
   battle(attacker: Digimon, defender: Digimon) {

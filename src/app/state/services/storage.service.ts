@@ -19,19 +19,13 @@ export class StorageService {
 
   removeDigimonFromList(playerData: PlayerData, digimonId?: string) {
     if (!digimonId) return;
-    const digimon = playerData.digimonList.find(
-      (digimon: Digimon) => digimon.id === digimonId
-    );
 
     const index = playerData.digimonList.findIndex(
       (digimon: Digimon) => digimon.id === digimonId
     );
     playerData.digimonList.splice(index, 1);
 
-    return {
-      playerData,
-      digimon,
-    };
+    return playerData;
   }
 
   addDigimonToStorage(playerData: PlayerData, digimon?: Digimon) {

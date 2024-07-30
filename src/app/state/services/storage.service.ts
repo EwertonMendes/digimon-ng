@@ -1,6 +1,7 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Digimon } from '../../core/interfaces/digimon.interface';
 import { PlayerData } from '../../core/interfaces/player-data.interface';
+import { ToastService } from '../../shared/components/toast/toast.service';
 
 @Injectable({
   providedIn: 'root',
@@ -8,11 +9,15 @@ import { PlayerData } from '../../core/interfaces/player-data.interface';
 export class StorageService {
   upfrontTeamLimit = 6;
 
+  toastService = inject(ToastService);
+
   addDigimonToList(playerData: PlayerData, digimon?: Digimon) {
     if (!digimon || !digimon.id) return;
 
-    if (playerData.digimonList.length >= this.upfrontTeamLimit)
+    if (playerData.digimonList.length >= this.upfrontTeamLimit) {
+      this.toastService.showToast('Team limit reached!', 'error');
       throw Error('Team limit reached!');
+    }
     playerData.digimonList.push(digimon);
     return playerData;
   }

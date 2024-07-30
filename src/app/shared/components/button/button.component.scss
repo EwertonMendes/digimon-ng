@@ -6,6 +6,29 @@
   border-radius: 10px;
   width: 100%;
 
+  .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .top {
+    flex-direction: column;
+  }
+
+  .bottom {
+    flex-direction: column-reverse;
+  }
+
+  .left {
+    flex-direction: row;
+  }
+
+  .right {
+    flex-direction: row-reverse;
+  }
+
   .button-text {
     text-align: center;
   }
@@ -46,6 +69,16 @@
 
     &:hover {
       background-color: #cc0000;
+    }
+  }
+
+  &.info {
+    background-color: #080F0F;
+    color: #fff;
+    padding: 10px;
+
+    &:hover {
+      background-color: #060b0b;
     }
   }
 }

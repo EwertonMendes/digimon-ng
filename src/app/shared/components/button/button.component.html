@@ -1,9 +1,19 @@
 <button class="app-button" [disabled]="disabled()" [ngClass]="color()">
   @if(icon()) {
-  <i [class]="'ph-' + weight()" [ngClass]="icon()"></i>
+  <div class="button-container" [ngClass]="iconPosition()">
+    <i [class]="'ph-' + weight()" [ngClass]="icon()"></i>
+    @if(text()) {
+    <span
+      class="button-text"
+      >{{ text() }}</span
+    >
+    }
+  </div>
   } @else {
-  <span class="button-text" [ngStyle]="{ 'font-weight': weight() === 'light' ? 'normal' : 'bold' }">{{
-    text()
-  }}</span>
+  <span
+    class="button-text"
+    [ngStyle]="{ 'font-weight': weight() === 'light' ? 'normal' : 'bold' }"
+    >{{ text() }}</span
+  >
   }
 </button>

@@ -41,4 +41,8 @@ export class ActionBarComponent {
   addDigimonToFarm(digimon: Digimon) {
     this.globalState.addDigimonToFarm(digimon, DigimonListLocation.STORAGE);
   }
+
+  addDigimonToHospital(digimon: Digimon) {
+    this.globalState.addDigimonToHospital(digimon, DigimonListLocation.STORAGE);
+  }
 }

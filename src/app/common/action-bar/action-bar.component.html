@@ -20,22 +20,38 @@
         @for(digimon of globalState.playerDataAcessor.digimonStorageList; track
         digimon){
         <div class="digimon-storage-content-list-item">
-          <app-digi-status-card [digimon]="digimon" (click)="openDigimonDetailsModal(digimon)"/>
+          <app-digi-status-card
+            [digimon]="digimon"
+            (click)="openDigimonDetailsModal(digimon)"
+          />
           <div class="actions">
             <app-button
-              text="Add to team"
+              icon="ph-users-three"
+              weight="bold"
+              text="To team"
               color="primary"
               (click)="addDigimonToTeam(digimon)"
             />
             <app-button
-              text="Add to training"
+              icon="ph-barbell"
+              weight="bold"
+              text="To training"
               color="secondary"
               (click)="addDigimonToTraining(digimon)"
             />
             <app-button
-              text="Add to farm"
+              icon="ph-coins"
+              weight="bold"
+              text="To bit farm"
               color="tertiary"
               (click)="addDigimonToFarm(digimon)"
+            />
+            <app-button
+              icon="ph-first-aid"
+              weight="bold"
+              text="To Hospital"
+              color="info"
+              (click)="addDigimonToHospital(digimon)"
             />
           </div>
         </div>

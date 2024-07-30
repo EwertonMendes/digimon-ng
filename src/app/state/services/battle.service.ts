@@ -8,6 +8,7 @@ export class BattleService {
 
   private calculateDamage(attacker: Digimon, defender: Digimon) {
     const rankMultiplier: Record<string, number> = {
+      Mega: 2.5,
       Ultimate: 2.0,
       Champion: 1.5,
       Rookie: 1.0,

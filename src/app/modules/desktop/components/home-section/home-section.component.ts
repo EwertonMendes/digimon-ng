@@ -35,10 +35,10 @@ export class HomeSectionComponent {
     'hospital-digimon-list': DigimonListLocation.HOSPITAL,
   };
 
-  onRightClick(event: MouseEvent, digimon: Digimon): void {
+  removeDigimonFromLocation(event: MouseEvent, digimon: Digimon, location: string): void {
     event.preventDefault();
     if (!digimon.id) return;
-    this.globalState.addDigimonToStorage(digimon, DigimonListLocation.TEAM);
+    this.globalState.addDigimonToStorage(digimon, location);
   }
 
   openDigimonDetailsModal(digimon: Digimon): void {

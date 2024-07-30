@@ -21,7 +21,7 @@
       cdkDrag
       [digimon]="digimon"
       (click)="openDigimonDetailsModal(digimon)"
-      (contextmenu)="onRightClick($event, digimon)"
+      (contextmenu)="removeDigimonFromLocation($event, digimon, 'team')"
     />
     }
   </div>
@@ -46,7 +46,7 @@
         cdkDrag
         [digimon]="digimon"
         (click)="openDigimonDetailsModal(digimon)"
-        (contextmenu)="onRightClick($event, digimon)"
+        (contextmenu)="removeDigimonFromLocation($event, digimon, 'hospital')"
       />
       }
     </div>

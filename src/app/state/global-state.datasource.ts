@@ -55,13 +55,13 @@ export class GlobalStateDataSource {
     return this.battleLog();
   }
 
-  trainingDigimonIntervalDurationInSeconds = signal<number>(30);
+  private trainingDigimonIntervalDurationInSeconds = signal<number>(30);
   trainingDigimonCountdown = signal<number>(0);
 
-  bitFarmingIntervalDurationInSeconds = signal<number>(60);
+  private bitFarmingIntervalDurationInSeconds = signal<number>(60);
   bitFarmingCountdown = signal<number>(0);
 
-  hospitalHealingIntervalDurationInSeconds = signal<number>(20);
+  private hospitalHealingIntervalDurationInSeconds = signal<number>(20);
   hospitalHealingCountdown = signal<number>(0);
 
   digimonService = inject(DigimonService);

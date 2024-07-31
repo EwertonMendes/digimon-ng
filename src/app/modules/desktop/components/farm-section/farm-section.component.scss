@@ -39,6 +39,29 @@
         height: 100%;
         overflow: auto;
         padding: 10px;
+
+        .countdown {
+          font-size: 14px;
+          font-weight: 400;
+        }
+      }
+
+      .in-training-digimon-list {
+        .in-training-list-header {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          gap: 10px;
+        }
+      }
+
+      .bit-farming-digimon-list {
+        .bit-farming-list-header {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          gap: 10px;
+        }
       }
     }
 

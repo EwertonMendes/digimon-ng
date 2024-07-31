@@ -11,14 +11,18 @@
         #inTrainingList="cdkDropList"
         cdkDropList
         [cdkDropListData]="globalState.playerDataAcessor"
-        [cdkDropListConnectedTo]="[
-          bitFarmingList,
-          teamListId,
-          hospitalListId
-        ]"
+        [cdkDropListConnectedTo]="[bitFarmingList, teamListId, hospitalListId]"
         (cdkDropListDropped)="drop($event)"
       >
-        <h4>In-Training Digimons</h4>
+        <div class="in-training-list-header">
+          <h4>In-Training Digimons</h4>
+          <h4>
+            {{ globalState.playerDataAcessor.inTrainingDigimonList.length }}/32
+          </h4>
+        </div>
+        <span class="countdown"
+          >Next training in {{ globalState.trainingDigimonCountdown() }}
+        </span>
         @for(digimon of globalState.playerDataAcessor.inTrainingDigimonList;
         track digimon.id){
         <app-digi-status-card
@@ -37,14 +41,18 @@
         #bitFarmingList="cdkDropList"
         cdkDropList
         [cdkDropListData]="globalState.playerDataAcessor"
-        [cdkDropListConnectedTo]="[
-          inTrainingList,
-          teamListId,
-          hospitalListId
-        ]"
+        [cdkDropListConnectedTo]="[inTrainingList, teamListId, hospitalListId]"
         (cdkDropListDropped)="drop($event)"
       >
-        <h4>Bit Farming Digimons</h4>
+        <div class="bit-farming-list-header">
+          <h4>Bit Farm Digimons</h4>
+          <h4>
+            {{ globalState.playerDataAcessor.bitFarmDigimonList.length }}/12
+          </h4>
+        </div>
+        <span class="countdown"
+          >Next bit generation in {{ globalState.bitFarmingCountdown() }}
+        </span>
         @for(digimon of globalState.playerDataAcessor.bitFarmDigimonList; track
         digimon.id){
         <app-digimon-farm-card

@@ -60,6 +60,7 @@ export class DigimonService {
         visited,
         mainEvolutionTree
       );
+
       visited.delete(digimon.seed);
       this.processForwardQueue(
         digimonQueueForward,
@@ -68,7 +69,12 @@ export class DigimonService {
         digimon.seed
       );
 
-      if (this.isTreeContainingOnlySelectedDigimon(mainEvolutionTree, digimon.seed)) {
+      if (
+        this.isTreeContainingOnlySelectedDigimon(
+          mainEvolutionTree,
+          digimon.seed
+        )
+      ) {
         mainEvolutionTree = [];
       }
 
@@ -88,7 +94,7 @@ export class DigimonService {
     const randomDigimonIndex = Math.floor(
       Math.random() * this.baseDigimonData.length
     );
-    const newDigimon = this.baseDigimonData[randomDigimonIndex];
+    const newDigimon = { ...this.baseDigimonData[randomDigimonIndex] };
 
     newDigimon.id = uuidv4();
 
@@ -144,7 +150,10 @@ export class DigimonService {
     }
   }
 
-  private isTreeContainingOnlySelectedDigimon(tree: Digimon[], seed: string): boolean {
+  private isTreeContainingOnlySelectedDigimon(
+    tree: Digimon[],
+    seed: string
+  ): boolean {
     return tree.every((d) => d.seed === seed);
   }
 }

@@ -111,12 +111,7 @@
           <div class="digimon-evolution-list">
             <h4>Evolutions:</h4>
             <div class="digimon-evolution-list-container">
-              @for(evolution of evolutions(); track evolution){
-              <div class="digimon-evolution-list-item">
-                <img [src]="evolution.img" alt="digimon" />
-                <span>{{ evolution.name }}</span>
-              </div>
-              }
+              <app-evolution-tree [evolutionTree]="evolutions()" />
             </div>
           </div>
         </div>

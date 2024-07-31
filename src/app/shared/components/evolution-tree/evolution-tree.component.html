@@ -1,0 +1,11 @@
+<div class="evolution-tree">
+  @for(digimon of evolutionTree(); track digimon.seed){
+  <div class="evolution-stage">
+    <img [src]="digimon.img" [alt]="digimon.name" class="digimon-image" />
+    <div class="digimon-info">
+      <h3>{{ digimon.name }}</h3>
+      <p>{{ digimon.rank }}</p>
+    </div>
+  </div>
+  }
+</div>

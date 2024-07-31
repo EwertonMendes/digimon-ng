@@ -223,6 +223,10 @@ export class GlobalStateDataSource {
     );
   }
 
+  getDigimonCompleteEvolutionTree(digimon: Digimon) {
+    return this.digimonService.getDigimonCompleteEvolutionTree(digimon);
+  }
+
   resetBattleState() {
     this.enemyTeam.set([]);
     this.battleLog.set([]);

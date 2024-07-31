@@ -1,0 +1,22 @@
+.evolution-tree {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.evolution-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.digimon-image {
+  width: 100px;
+  height: 100px;
+}
+
+.digimon-info {
+  text-align: center;
+}

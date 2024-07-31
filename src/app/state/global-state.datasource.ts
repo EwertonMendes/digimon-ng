@@ -55,7 +55,14 @@ export class GlobalStateDataSource {
     return this.battleLog();
   }
 
-  oneMinuteInterval = 60000;
+  trainingDigimonIntervalDurationInSeconds = signal<number>(30);
+  trainingDigimonCountdown = signal<number>(0);
+
+  bitFarmingIntervalDurationInSeconds = signal<number>(60);
+  bitFarmingCountdown = signal<number>(0);
+
+  hospitalHealingIntervalDurationInSeconds = signal<number>(20);
+  hospitalHealingCountdown = signal<number>(0);
 
   digimonService = inject(DigimonService);
   playerDataService = inject(PlayerDataService);
@@ -88,29 +95,74 @@ export class GlobalStateDataSource {
   }
 
   initDigimonTraining() {
-    interval(this.oneMinuteInterval).subscribe(() => {
-      const updatedPlayerData = this.trainingService.trainDigimons(
-        this.playerData()
-      );
-      this.updatePlayerData(updatedPlayerData);
+    let isFirstRun = true;
+    interval(1000).subscribe((secondsPassed) => {
+      const remainingTime =
+        this.trainingDigimonIntervalDurationInSeconds() -
+        (secondsPassed % this.trainingDigimonIntervalDurationInSeconds());
+      this.trainingDigimonCountdown.set(remainingTime);
+
+      if (
+        remainingTime === this.trainingDigimonIntervalDurationInSeconds() &&
+        !isFirstRun
+      ) {
+        const updatedPlayerData = this.trainingService.trainDigimons(
+          this.playerData()
+        );
+        this.updatePlayerData(updatedPlayerData);
+      }
+
+      isFirstRun = false;
+
+      this.changeDectorRef.detectChanges();
     });
   }
 
   initBitFarmingGeneration() {
-    interval(this.oneMinuteInterval).subscribe(() => {
-      this.farmingService.generateBitsBasedOnGenerationTotalRate(
-        this.playerData()
-      );
-      this.updatePlayerData();
+    let isFirstRun = true;
+    interval(1000).subscribe((secondsPassed) => {
+      const remainingTime =
+        this.bitFarmingIntervalDurationInSeconds() -
+        (secondsPassed % this.bitFarmingIntervalDurationInSeconds());
+      this.bitFarmingCountdown.set(remainingTime);
+
+      if (
+        remainingTime === this.bitFarmingIntervalDurationInSeconds() &&
+        !isFirstRun
+      ) {
+        const updatedPlayerData =
+          this.farmingService.generateBitsBasedOnGenerationTotalRate(
+            this.playerData()
+          );
+        this.updatePlayerData(updatedPlayerData);
+      }
+      isFirstRun = false;
+
+      this.changeDectorRef.detectChanges();
     });
   }
 
   initHospitalHealing() {
-    interval(this.oneMinuteInterval).subscribe(() => {
-      const updatedPlayerData = this.hospitalService.healDigimons(
-        this.playerData()
-      );
-      this.updatePlayerData(updatedPlayerData);
+    let isFirstRun = true;
+    interval(1000).subscribe((secondsPassed) => {
+      const remainingTime =
+        this.hospitalHealingIntervalDurationInSeconds() -
+        (secondsPassed % this.hospitalHealingIntervalDurationInSeconds());
+      this.hospitalHealingCountdown.set(remainingTime);
+
+      if (
+        remainingTime === this.hospitalHealingIntervalDurationInSeconds() &&
+        !isFirstRun
+      ) {
+        const updatedPlayerData = this.hospitalService.healDigimons(
+          this.playerData()
+        );
+        this.updatePlayerData(updatedPlayerData);
+      }
+
+      isFirstRun = false;
+
+      this.changeDectorRef.detectChanges();
     });
   }
 

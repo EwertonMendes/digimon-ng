@@ -114,9 +114,9 @@ export class ExploreSectionComponent {
     );
     if (!opponentDigimon) return false;
 
-    this.globalState.battle(digimon, opponentDigimon);
+    const dealtDamage = this.globalState.battle(digimon, opponentDigimon);
     this.log(
-      `${digimon.name} attacks! ${opponentDigimon.name} has ${opponentDigimon.currentHp} health left.`
+      `${digimon.name} attacks! Damage: ${dealtDamage}. ${opponentDigimon.name} has ${opponentDigimon.currentHp} health left.`
     );
 
     if (this.globalState.enemyTeamAccessor.every((d) => d.currentHp <= 0)) {
@@ -131,9 +131,9 @@ export class ExploreSectionComponent {
     );
     if (!target) return false;
 
-    this.globalState.battle(digimon, target);
+    const dealtDamage = this.globalState.battle(digimon, target);
     this.log(
-      `Enemy ${digimon.name} attacks! ${target.name} has ${target.currentHp} health left.`
+      `Enemy ${digimon.name} attacks! Damage: ${dealtDamage}. ${target.name} has ${target.currentHp} health left.`
     );
 
     if (

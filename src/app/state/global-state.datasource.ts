@@ -206,7 +206,7 @@ export class GlobalStateDataSource {
   }
 
   battle(attacker: Digimon, defender: Digimon) {
-    this.battleService.battle(attacker, defender);
+    return this.battleService.battle(attacker, defender);
   }
 
   getBitGenerationTotalRate() {

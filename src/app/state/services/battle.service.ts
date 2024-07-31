@@ -5,7 +5,6 @@ import { Digimon } from '../../core/interfaces/digimon.interface';
   providedIn: 'root',
 })
 export class BattleService {
-
   private calculateDamage(attacker: Digimon, defender: Digimon) {
     const rankMultiplier: Record<string, number> = {
       Mega: 2.5,
@@ -35,18 +34,7 @@ export class BattleService {
     if (defender.currentHp <= 0) {
       defender.currentHp = 0;
       console.log(`${defender.name} has been defeated!`);
-
-      if (!attacker.exp) return;
-
-      const xpGained = 100;
-      attacker.exp += xpGained;
-      console.log(`${attacker.name} gained ${xpGained} XP.`);
-
-      const xpRequired = 100 * Math.pow(attacker.level, 1.5);
-      if (attacker.exp >= xpRequired) {
-        //levelUp(attacker);
-        console.log(`${attacker.name} leveled up to level ${attacker.level}!`);
-      }
     }
+    return damage;
   }
 }

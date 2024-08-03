@@ -75,13 +75,56 @@ export class GlobalStateDataSource {
 
   changeDectorRef = inject(ChangeDetectorRef);
 
-  handlers: Record<string, Function> = {
+  listHandlers: Record<string, Function> = {
     [DigimonListLocation.IN_TRAINING]:
       this.removeDigimonFromTraining.bind(this),
     [DigimonListLocation.BIT_FARM]: this.removeDigimonFromFarm.bind(this),
     [DigimonListLocation.STORAGE]: this.removeDigimonFromStorage.bind(this),
     [DigimonListLocation.TEAM]: this.removeDigimonFromList.bind(this),
     [DigimonListLocation.HOSPITAL]: this.removeDigimonFromHospital.bind(this),
+  };
+
+  intervalConfigurations: Record<string, any> = {
+    digimonTraining: {
+      intervalDurationInSeconds:
+        this.trainingDigimonIntervalDurationInSeconds.bind(this),
+      countdownSetter: this.trainingDigimonCountdown.set.bind(
+        this.trainingDigimonCountdown
+      ),
+      action: () => {
+        const updatedPlayerData = this.trainingService.trainDigimons(
+          this.playerData()
+        );
+        this.updatePlayerData(updatedPlayerData);
+      },
+    },
+    bitFarmingGeneration: {
+      intervalDurationInSeconds:
+        this.bitFarmingIntervalDurationInSeconds.bind(this),
+      countdownSetter: this.bitFarmingCountdown.set.bind(
+        this.bitFarmingCountdown
+      ),
+      action: () => {
+        const updatedPlayerData =
+          this.farmingService.generateBitsBasedOnGenerationTotalRate(
+            this.playerData()
+          );
+        this.updatePlayerData(updatedPlayerData);
+      },
+    },
+    hospitalHealing: {
+      intervalDurationInSeconds:
+        this.hospitalHealingIntervalDurationInSeconds.bind(this),
+      countdownSetter: this.hospitalHealingCountdown.set.bind(
+        this.hospitalHealingCountdown
+      ),
+      action: () => {
+        const updatedPlayerData = this.hospitalService.healDigimons(
+          this.playerData()
+        );
+        this.updatePlayerData(updatedPlayerData);
+      },
+    },
   };
 
   async connect() {
@@ -95,75 +138,15 @@ export class GlobalStateDataSource {
   }
 
   initDigimonTraining() {
-    let isFirstRun = true;
-    interval(1000).subscribe((secondsPassed) => {
-      const remainingTime =
-        this.trainingDigimonIntervalDurationInSeconds() -
-        (secondsPassed % this.trainingDigimonIntervalDurationInSeconds());
-      this.trainingDigimonCountdown.set(remainingTime);
-
-      if (
-        remainingTime === this.trainingDigimonIntervalDurationInSeconds() &&
-        !isFirstRun
-      ) {
-        const updatedPlayerData = this.trainingService.trainDigimons(
-          this.playerData()
-        );
-        this.updatePlayerData(updatedPlayerData);
-      }
-
-      isFirstRun = false;
-
-      this.changeDectorRef.detectChanges();
-    });
+    this.initIntervalCountdown('digimonTraining');
   }
 
   initBitFarmingGeneration() {
-    let isFirstRun = true;
-    interval(1000).subscribe((secondsPassed) => {
-      const remainingTime =
-        this.bitFarmingIntervalDurationInSeconds() -
-        (secondsPassed % this.bitFarmingIntervalDurationInSeconds());
-      this.bitFarmingCountdown.set(remainingTime);
-
-      if (
-        remainingTime === this.bitFarmingIntervalDurationInSeconds() &&
-        !isFirstRun
-      ) {
-        const updatedPlayerData =
-          this.farmingService.generateBitsBasedOnGenerationTotalRate(
-            this.playerData()
-          );
-        this.updatePlayerData(updatedPlayerData);
-      }
-      isFirstRun = false;
-
-      this.changeDectorRef.detectChanges();
-    });
+    this.initIntervalCountdown('bitFarmingGeneration');
   }
 
   initHospitalHealing() {
-    let isFirstRun = true;
-    interval(1000).subscribe((secondsPassed) => {
-      const remainingTime =
-        this.hospitalHealingIntervalDurationInSeconds() -
-        (secondsPassed % this.hospitalHealingIntervalDurationInSeconds());
-      this.hospitalHealingCountdown.set(remainingTime);
-
-      if (
-        remainingTime === this.hospitalHealingIntervalDurationInSeconds() &&
-        !isFirstRun
-      ) {
-        const updatedPlayerData = this.hospitalService.healDigimons(
-          this.playerData()
-        );
-        this.updatePlayerData(updatedPlayerData);
-      }
-
-      isFirstRun = false;
-
-      this.changeDectorRef.detectChanges();
-    });
+    this.initIntervalCountdown('hospitalHealing');
   }
 
   log(message: string) {
@@ -294,9 +277,29 @@ export class GlobalStateDataSource {
   }
 
   private removeFromPreviousList(digimonId: string, from: string) {
-    const handler = this.handlers[from];
+    const handler = this.listHandlers[from];
     if (handler) {
       handler(digimonId);
     }
+  }
+
+  private initIntervalCountdown(
+    configKey: keyof typeof this.intervalConfigurations
+  ) {
+    const config = this.intervalConfigurations[configKey];
+    let isFirstRun = true;
+    interval(1000).subscribe((secondsPassed) => {
+      const remainingTime =
+        config.intervalDurationInSeconds() -
+        (secondsPassed % config.intervalDurationInSeconds());
+      config.countdownSetter(remainingTime);
+
+      if (remainingTime === config.intervalDurationInSeconds() && !isFirstRun) {
+        config.action();
+      }
+
+      isFirstRun = false;
+      this.changeDectorRef.detectChanges();
+    });
   }
 }

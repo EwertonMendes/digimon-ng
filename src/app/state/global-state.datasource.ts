@@ -240,8 +240,8 @@ export class GlobalStateDataSource {
     this.updatePlayerData(playerData);
   }
 
-  battle(attacker: Digimon, defender: Digimon) {
-    return this.battleService.battle(attacker, defender);
+  attack(attacker: Digimon, defender: Digimon) {
+    return this.battleService.attack(attacker, defender);
   }
 
   getBitGenerationTotalRate() {

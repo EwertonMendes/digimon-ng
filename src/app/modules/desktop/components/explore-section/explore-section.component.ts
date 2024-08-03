@@ -114,7 +114,7 @@ export class ExploreSectionComponent {
     );
     if (!opponentDigimon) return false;
 
-    const dealtDamage = this.globalState.battle(digimon, opponentDigimon);
+    const dealtDamage = this.globalState.attack(digimon, opponentDigimon);
     this.log(
       `${digimon.name} attacks! Damage: ${dealtDamage}. ${opponentDigimon.name} has ${opponentDigimon.currentHp} health left.`
     );
@@ -131,7 +131,7 @@ export class ExploreSectionComponent {
     );
     if (!target) return false;
 
-    const dealtDamage = this.globalState.battle(digimon, target);
+    const dealtDamage = this.globalState.attack(digimon, target);
     this.log(
       `Enemy ${digimon.name} attacks! Damage: ${dealtDamage}. ${target.name} has ${target.currentHp} health left.`
     );

@@ -23,7 +23,7 @@ export class BattleService {
     return Math.floor(baseDamage * criticalHit * randomVariance);
   }
 
-  battle(attacker: Digimon, defender: Digimon) {
+  attack(attacker: Digimon, defender: Digimon) {
     const damage = this.calculateDamage(attacker, defender);
     defender.currentHp -= damage;
 

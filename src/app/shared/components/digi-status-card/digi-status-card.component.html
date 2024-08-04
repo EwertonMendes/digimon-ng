@@ -4,7 +4,8 @@
   </div>
   <div class="my-digimon-card-content">
     <span class="my-digimon-card-name">
-      {{ digimon().name }}
+      <span> Lv. {{ digimon().level }} </span
+      >{{ digimon().nickName ? digimon().nickName : digimon().name }}
     </span>
     <div class="my-digimon-card-attributes">
       <span
@@ -33,10 +34,6 @@
         >
         / {{ digimon().maxMp }}</span
       >
-    </div>
-    <div class="my-digimon-card-attributes">
-      <span>EXP: {{ digimon().exp }}</span>
-      <span>Level: {{ digimon().level }}</span>
     </div>
   </div>
 </div>

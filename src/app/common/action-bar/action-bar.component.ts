@@ -6,6 +6,7 @@ import { GlobalStateDataSource } from '../../state/global-state.datasource';
 import { ModalService } from '../../shared/components/modal/modal.service';
 import { Digimon } from '../../core/interfaces/digimon.interface';
 import { DigimonListLocation } from '../../core/enums/digimon-list-location.enum';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-action-bar',
@@ -20,6 +21,7 @@ export class ActionBarComponent {
 
   globalState = inject(GlobalStateDataSource);
   modalService = inject(ModalService);
+  router = inject(Router);
 
   openDigimonStorageModal() {
     this.modalService.open(this.digimonStorageModalId);

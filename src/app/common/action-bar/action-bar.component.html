@@ -1,9 +1,23 @@
 <div class="action-bar-container">
   <app-button
+    title="Desktop"
+    icon="ph-desktop"
+    weight="bold"
+    color="info"
+    (click)="router.navigate(['desktop'])"
+  />
+  <app-button
+    title="Adventure"
+    icon="ph-sword"
+    weight="bold"
+    color="danger"
+    (click)="router.navigate(['adventure'])"
+  />
+  <app-button
+    title="Open digimon storage"
     icon="ph-database"
     weight="bold"
     (click)="openDigimonStorageModal()"
-    title="Open digimon storage"
   />
 </div>
 

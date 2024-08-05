@@ -18,6 +18,14 @@
     border-radius: 10px;
     width: 100%;
     padding: 10px;
+
+    .my-digimon-list-no-data-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
   }
 
   .hospital-area-container {
@@ -42,6 +50,14 @@
       overflow: auto;
       gap: 10px;
       padding: 10px;
+
+      .hospital-digimon-list-no-data-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+      }
     }
   }
 }

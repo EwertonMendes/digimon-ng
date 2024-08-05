@@ -15,7 +15,11 @@
     ]"
     (cdkDropListDropped)="drop($event)"
   >
-    @for(digimon of globalState.playerDataAcessor.digimonList; track
+    @if(globalState.playerDataAcessor.digimonList.length === 0){
+    <div class="my-digimon-list-no-data-container">
+      <h4>No digimon</h4>
+    </div>
+    } @for(digimon of globalState.playerDataAcessor.digimonList; track
     digimon.id){
     <app-digi-status-card
       cdkDrag
@@ -45,7 +49,11 @@
       ]"
       (cdkDropListDropped)="drop($event)"
     >
-      @for(digimon of globalState.playerDataAcessor.hospitalDigimonList; track
+      @if(globalState.playerDataAcessor.hospitalDigimonList.length === 0){
+      <div class="hospital-digimon-list-no-data-container">
+        <h4>No digimon</h4>
+      </div>
+      } @for(digimon of globalState.playerDataAcessor.hospitalDigimonList; track
       digimon.id){
       <app-digi-status-card
         cdkDrag

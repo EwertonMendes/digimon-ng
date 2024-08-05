@@ -1,3 +1,7 @@
+:host {
+  width: 100%;
+}
+
 .desktop {
   display: flex;
   flex-wrap: wrap;
@@ -83,70 +87,6 @@
       align-items: center;
 
       app-farm-section {
-        display: flex;
-        flex-grow: 1;
-        width: 100%;
-        overflow: auto;
-      }
-    }
-  }
-
-  .desktop-explore-wrapper {
-    position: relative;
-    overflow: hidden;
-    color: aliceblue;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-image: url('/assets/bg-3.gif');
-      background-size: cover;
-      filter: brightness(50%);
-      z-index: -1;
-    }
-
-    .desktop-explore-container {
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      width: 100%;
-
-      .explore-title {
-        align-self: center;
-      }
-    }
-  }
-
-  .desktop-arena-wrapper {
-    position: relative;
-    overflow: hidden;
-    color: aliceblue;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-image: url('/assets/bg-4.gif');
-      background-size: cover;
-      filter: brightness(50%);
-      z-index: -1;
-    }
-
-    .desktop-arena-container {
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      width: 100%;
-      align-items: center;
-
-      app-home-section {
         display: flex;
         flex-grow: 1;
         width: 100%;

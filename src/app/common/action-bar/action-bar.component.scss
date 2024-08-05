@@ -51,12 +51,12 @@
 
       .digimon-storage-content-list-item {
         display: flex;
-        flex-direction: column;
+        align-items: center;
         gap: 10px;
 
         .actions {
           display: flex;
-          flex-direction: row;
+          flex-direction: column;
           gap: 10px;
           justify-content: center;
           width: 100%;

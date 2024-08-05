@@ -45,7 +45,7 @@ $digi-angular-theme: mat.define-theme((color: (theme-type: light,
 */
 * {
   margin: 0;
-
+  user-select: none;
 }
 
 /*

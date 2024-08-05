@@ -12,9 +12,7 @@
 
   .my-digimon-list {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    overflow: auto;
     gap: 10px;
     background-color: rgba(black, 0.8);
     border-radius: 10px;
@@ -25,19 +23,25 @@
   .hospital-area-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     gap: 10px;
     background-color: rgba(black, 0.8);
     border-radius: 10px;
     width: 100%;
     padding: 10px;
 
+    .hospital-area-header {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+
     .hospital-digimon-list {
       display: flex;
+      overflow: auto;
       gap: 10px;
-      flex-wrap: wrap;
-      justify-content: center;
+      padding: 10px;
     }
   }
 }

@@ -16,6 +16,7 @@
   .desktop-home-wrapper {
     position: relative;
     overflow: hidden;
+    height: 100%;
     color: aliceblue;
 
     &::before {
@@ -58,6 +59,7 @@
   .desktop-farm-wrapper {
     position: relative;
     overflow: hidden;
+    height: 100%;
     color: aliceblue;
 
     &::before {

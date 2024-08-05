@@ -26,10 +26,12 @@
     }
   </div>
   <div class="hospital-area-container">
-    <h4 class="hospital-area-sub-title">Hospital</h4>
-    <span class="countdown">
-      Next healing in {{ globalState.hospitalHealingCountdown() }}
-    </span>
+    <div class="hospital-area-header">
+      <h4 class="hospital-area-title">Hospital</h4>
+      <span class="countdown">
+        Next healing in {{ globalState.hospitalHealingCountdown() }}
+      </span>
+    </div>
     <div
       [id]="hospitalListId"
       class="hospital-digimon-list"

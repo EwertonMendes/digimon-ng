@@ -17,6 +17,7 @@
       rgba(95, 102, 251, 0.5));
   padding: 10px;
   width: 200px;
+  height: 180px;
   overflow: hidden;
   gap: 10px;
 
@@ -34,7 +35,7 @@
 
     img {
       max-width: 100px;
-      max-height: 100px;
+      height: 100px;
       object-fit: cover;
     }
   }
@@ -48,20 +49,21 @@
   }
 
   &-name {
-    display: flex;
-    justify-content: center;
     background-color: rgba(black, 0.7);
-    gap: 5px;
     width: 100%;
     padding: 5px;
     border-radius: 5px;
     font-size: 14px;
     font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   &-attributes {
     font-size: 11px;
     display: flex;
+    justify-content: space-around;
     gap: 15px;
 
     .low-stat {

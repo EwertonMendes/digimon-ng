@@ -14,12 +14,16 @@
               }
             </div>
           </div>
-          <span class="middle-text">VS</span>
+          <span class="middle-panel">
+            <span>VS</span>
+            @if(globalState.showPlayerAttackButton() && globalState.isBattleActive) {
+            <app-button text="Attack" (click)="playerAttack()" />
+            }
+          </span>
           <div class="enemy-team-container">
             <h4 class="team-title">Enemy Team</h4>
             <div class="enemy-team">
-              @for(digimon of globalState.enemyTeamAccessor; track
-              digimon.id){
+              @for(digimon of globalState.enemyTeamAccessor; track digimon.id){
               <app-digi-status-card [digimon]="digimon" />
               }
             </div>
@@ -28,7 +32,7 @@
         <div class="battle-log-container">
           <h4 class="battle-log-title">Battle Log</h4>
           @for(log of this.globalState.battleLogAccessor; track $index){
-          <span class="battle-log">▶ {{log}}</span>
+          <span class="battle-log">▶ {{ log }}</span>
           }
         </div>
       </div>

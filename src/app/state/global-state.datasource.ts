@@ -10,11 +10,13 @@ import { PlayerDataService } from '../services/player-data.service';
 import { interval } from 'rxjs';
 import { DigimonListLocation } from '../core/enums/digimon-list-location.enum';
 import { HospitalService } from './services/hospital.service';
+import { ToastService } from '../shared/components/toast/toast.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class GlobalStateDataSource {
+  toastService = inject(ToastService);
   private playerData = signal<PlayerData>({
     name: '',
     level: 0,
@@ -54,6 +56,11 @@ export class GlobalStateDataSource {
   get battleLogAccessor() {
     return this.battleLog();
   }
+
+  baseTurnOrder: Array<Digimon & { owner: string }> = [];
+  actualTurnOrder: Array<Digimon & { owner: string }> = [];
+  isBattleActive = false;
+  showPlayerAttackButton = signal<boolean>(false);
 
   private trainingDigimonIntervalDurationInSeconds = signal<number>(30);
   trainingDigimonCountdown = signal<number>(0);
@@ -238,6 +245,119 @@ export class GlobalStateDataSource {
       digimonId
     );
     this.updatePlayerData(playerData);
+  }
+
+  startBattle() {
+    this.generateBaseTurnOrder();
+    this.isBattleActive = true;
+    this.nextTurn();
+  }
+
+  endBattle() {
+    this.isBattleActive = false;
+    this.resetTurnOrder();
+    this.log('Battle ended.');
+  }
+
+  private enemyAttack(digimon: Digimon) {
+    if (!this.isBattleActive) return;
+    const target = this.playerDataAcessor.digimonList.find(
+      (d) => d.currentHp > 0
+    );
+    if (!target) return;
+
+    const dealtDamage = this.attack(digimon, target);
+    this.log(
+      `Enemy ${digimon.name} attacks! Damage: ${dealtDamage}. Player ${target.name} has ${target.currentHp} health left.`
+    );
+
+    if (target.currentHp <= 0) {
+      this.log(`Player ${target.name} has been defeated.`);
+      this.baseTurnOrder = this.baseTurnOrder.filter((d) => d.id !== target.id);
+      this.actualTurnOrder = [...this.baseTurnOrder];
+    }
+  }
+
+  private getTurnOrder() {
+    const playerTeam = this.playerDataAcessor.digimonList
+      .filter((d) => d.currentHp > 0)
+      .map((d) => ({ ...d, owner: 'player' }));
+
+    const enemyTeam = this.enemyTeamAccessor
+      .filter((d) => d.currentHp > 0)
+      .map((d) => ({ ...d, owner: 'enemy' }));
+
+    return [...playerTeam, ...enemyTeam].sort(() => Math.random() - 0.5);
+  }
+
+  resetTurnOrder() {
+    this.baseTurnOrder = [];
+    this.actualTurnOrder = [];
+  }
+
+  repopulateTurnOrder() {
+    this.actualTurnOrder.push(...this.baseTurnOrder);
+  }
+
+  generateBaseTurnOrder() {
+    this.baseTurnOrder = this.getTurnOrder();
+    this.actualTurnOrder = [...this.baseTurnOrder];
+  }
+
+  nextTurn() {
+    if (!this.isBattleActive) {
+      this.showPlayerAttackButton.set(false);
+      this.endBattle();
+      return;
+    }
+
+    if (this.enemyTeamAccessor.every((d) => d.currentHp <= 0)) {
+      this.log('Victory! Opponent Digimons were defeated.');
+      this.toastService.showToast(
+        'Victory! Opponent Digimons were defeated.',
+        'success'
+      );
+      this.isBattleActive = false;
+      this.showPlayerAttackButton.set(false);
+      this.endBattle();
+      return;
+    }
+
+    if (this.playerDataAcessor.digimonList.every((d) => d.currentHp <= 0)) {
+      this.log('All player Digimon are defeated. Battle lost.');
+      this.toastService.showToast(
+        'All player Digimon are defeated. Battle lost.',
+        'error',
+        'ph-skull'
+      );
+      this.isBattleActive = false;
+      this.showPlayerAttackButton.set(false);
+      this.endBattle();
+      return;
+    }
+
+    if (this.actualTurnOrder.length <= 1) {
+      this.repopulateTurnOrder();
+    }
+
+    const digimon = this.actualTurnOrder[0];
+
+    if (!digimon) {
+      this.showPlayerAttackButton.set(false);
+      this.endBattle();
+      return;
+    }
+
+    if (digimon.owner === 'player') {
+      this.showPlayerAttackButton.set(true);
+    }
+
+    if (digimon.owner === 'enemy') {
+      this.showPlayerAttackButton.set(false);
+      this.enemyAttack(digimon);
+      this.actualTurnOrder.shift();
+      this.nextTurn();
+    }
   }
 
   attack(attacker: Digimon, defender: Digimon) {

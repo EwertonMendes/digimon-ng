@@ -29,6 +29,10 @@ export class ExploreSectionComponent {
     { name: 'Proxy Island', img: 'assets/environments/proxyisland.png' },
   ];
 
+  baseTurnOrder: Digimon[] = [];
+  actualTurnOrder: Digimon[] = [];
+  showPlayerAttackButton = false;
+
   exploreLocation(location: Location) {
     this.log(`Exploring location ${location.name}`);
 
@@ -38,22 +42,10 @@ export class ExploreSectionComponent {
       return;
     }
 
-    this.modalService.open('battle-modal');
     this.generateOpponents();
+    this.modalService.open('battle-modal');
 
-    const turnOrder = this.getTurnOrder();
-    this.log(
-      `Turn order: ${turnOrder
-        .map((d) => {
-          if (this.globalState.enemyTeamAccessor.includes(d)) {
-            return `(Enemy) ${d.name}`;
-          }
-          return d.name;
-        })
-        .join(', ')}`
-    );
-
-    this.startBattle(turnOrder);
+    this.startBattle();
   }
 
   private isPlayerTeamEmpty(): boolean {
@@ -70,86 +62,8 @@ export class ExploreSectionComponent {
     }
   }
 
-  private getTurnOrder() {
-    const playerTeam = this.globalState.playerDataAcessor.digimonList.filter(
-      (d) => d.currentHp > 0
-    );
-    const enemyTeam = this.globalState.enemyTeamAccessor.filter(
-      (d) => d.currentHp > 0
-    );
-    return [...playerTeam, ...enemyTeam].sort(() => Math.random() - 0.5);
-  }
-
-  private startBattle(turnOrder: Digimon[]) {
-    let battleActive = true;
-
-    while (battleActive) {
-      if (turnOrder.length <= 1) break;
-
-      for (const digimon of turnOrder) {
-        if (!battleActive) break;
-        if (digimon.currentHp <= 0) continue;
-
-        if (this.globalState.playerDataAcessor.digimonList.includes(digimon)) {
-          battleActive = this.playerAttack(digimon);
-          continue;
-        }
-        battleActive = this.enemyAttack(digimon);
-      }
-    }
-
-    if (this.globalState.enemyTeamAccessor.every((d) => d.currentHp <= 0)) {
-      this.log('Victory! Opponent Digimons were defeated.');
-      this.toastService.showToast(
-        'Victory! Opponent Digimons were defeated.',
-        'success'
-      );
-      battleActive = false;
-    }
-  }
-
-  private playerAttack(digimon: Digimon): boolean {
-    const opponentDigimon = this.globalState.enemyTeamAccessor.find(
-      (d) => d.currentHp > 0
-    );
-    if (!opponentDigimon) return false;
-
-    const dealtDamage = this.globalState.attack(digimon, opponentDigimon);
-    this.log(
-      `${digimon.name} attacks! Damage: ${dealtDamage}. ${opponentDigimon.name} has ${opponentDigimon.currentHp} health left.`
-    );
-
-    if (this.globalState.enemyTeamAccessor.every((d) => d.currentHp <= 0)) {
-      return false;
-    }
-    return true;
-  }
-
-  private enemyAttack(digimon: Digimon): boolean {
-    const target = this.globalState.playerDataAcessor.digimonList.find(
-      (d) => d.currentHp > 0
-    );
-    if (!target) return false;
-
-    const dealtDamage = this.globalState.attack(digimon, target);
-    this.log(
-      `Enemy ${digimon.name} attacks! Damage: ${dealtDamage}. ${target.name} has ${target.currentHp} health left.`
-    );
-
-    if (
-      this.globalState.playerDataAcessor.digimonList.every(
-        (d) => d.currentHp <= 0
-      )
-    ) {
-      this.log('All player Digimon are defeated. Battle lost.');
-      this.toastService.showToast(
-        'All player Digimon are defeated. Battle lost.',
-        'error',
-        'ph-skull'
-      );
-      return false;
-    }
-    return true;
+  private startBattle() {
+    this.globalState.startBattle();
   }
 
   private log(message: string) {

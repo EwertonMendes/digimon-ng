@@ -1,5 +1,10 @@
 import { Injectable } from '@angular/core';
 
+export enum AudioTrack {
+  VICTORY = 'assets/audio/victory-theme.mp3',
+  DEFEAT = 'assets/audio/defeat-theme.mp3',
+}
+
 @Injectable({
   providedIn: 'root',
 })

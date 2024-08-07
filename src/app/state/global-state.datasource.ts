@@ -38,7 +38,7 @@ export class GlobalStateDataSource {
   listsLimits = {
     [DigimonListLocation.TEAM]: 4,
     [DigimonListLocation.IN_TRAINING]: 10,
-    [DigimonListLocation.BIT_FARM]: 12,
+    [DigimonListLocation.BIT_FARM]: 10,
     [DigimonListLocation.STORAGE]: 5,
     [DigimonListLocation.HOSPITAL]: 10,
   };

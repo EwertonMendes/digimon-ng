@@ -33,6 +33,10 @@
           (click)="openDigimonDetailsModal(digimon)"
           (contextmenu)="removeDigimonFromTraining($event, digimon)"
         />
+        } @empty {
+        <div class="in-training-list-no-data-container">
+          <h4>No digimon</h4>
+        </div>
         }
       </div>
     </div>
@@ -65,6 +69,10 @@
           (click)="openDigimonDetailsModal(digimon)"
           (contextmenu)="removeDigimonFromFarm($event, digimon)"
         />
+        } @empty {
+        <div class="bit-farming-list-no-data-container">
+          <h4>No digimon</h4>
+        </div>
         }
       </div>
     </div>

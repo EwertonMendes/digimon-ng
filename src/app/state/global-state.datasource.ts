@@ -11,6 +11,9 @@ import { interval } from 'rxjs';
 import { DigimonListLocation } from '../core/enums/digimon-list-location.enum';
 import { HospitalService } from './services/hospital.service';
 import { ToastService } from '../shared/components/toast/toast.service';
+import { AudioService } from '../services/audio.service';
+
+type EndBattleState = 'victory' | 'defeat' | 'draw';
 
 @Injectable({
   providedIn: 'root',
@@ -81,6 +84,7 @@ export class GlobalStateDataSource {
 
   digimonService = inject(DigimonService);
   playerDataService = inject(PlayerDataService);
+  audioService = inject(AudioService);
 
   trainingService = inject(TrainingService);
   farmingService = inject(FarmingService);
@@ -262,9 +266,27 @@ export class GlobalStateDataSource {
     this.nextTurn();
   }
 
-  endBattle() {
+  endBattle(endState?: EndBattleState) {
     this.isBattleActive = false;
     this.resetTurnOrder();
+
+    if (endState === 'victory') {
+      this.audioService.playAudio('assets/audio/victory-theme.mp3');
+      this.log('Victory! Opponent Digimons were defeated.');
+      this.toastService.showToast(
+        'Victory! Opponent Digimons were defeated.',
+        'success'
+      );
+    }
+
+    if (endState === 'defeat') {
+      this.log('All player Digimon are defeated. Battle lost.');
+      this.toastService.showToast(
+        'All player Digimon are defeated. Battle lost.',
+        'error',
+        'ph-skull'
+      );
+    }
     this.log('Battle ended.');
   }
 
@@ -321,27 +343,16 @@ export class GlobalStateDataSource {
     }
 
     if (this.enemyTeamAccessor.every((d) => d.currentHp <= 0)) {
-      this.log('Victory! Opponent Digimons were defeated.');
-      this.toastService.showToast(
-        'Victory! Opponent Digimons were defeated.',
-        'success'
-      );
       this.isBattleActive = false;
       this.showPlayerAttackButton.set(false);
-      this.endBattle();
+      this.endBattle('victory');
       return;
     }
 
     if (this.playerDataAcessor.digimonList.every((d) => d.currentHp <= 0)) {
-      this.log('All player Digimon are defeated. Battle lost.');
-      this.toastService.showToast(
-        'All player Digimon are defeated. Battle lost.',
-        'error',
-        'ph-skull'
-      );
       this.isBattleActive = false;
       this.showPlayerAttackButton.set(false);
-      this.endBattle();
+      this.endBattle('defeat');
       return;
     }
 

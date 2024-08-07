@@ -176,6 +176,7 @@ export class GlobalStateDataSource {
   addDigimonToTraining(digimon: Digimon, from: string) {
     const updatedPlayerData = this.trainingService.addDigimonToTraining(
       this.playerData(),
+      this.listsLimits[DigimonListLocation.IN_TRAINING],
       digimon
     );
     this.updatePlayerData(updatedPlayerData);
@@ -230,6 +231,7 @@ export class GlobalStateDataSource {
   addDigimonToFarm(digimon: Digimon, from: string) {
     const updatedPlayerData = this.farmingService.addDigimonToFarm(
       digimon,
+      this.listsLimits[DigimonListLocation.BIT_FARM],
       this.playerData()
     );
     this.updatePlayerData(updatedPlayerData);
@@ -247,6 +249,7 @@ export class GlobalStateDataSource {
   addDigimonToHospital(digimon: Digimon, from: string) {
     const updatedPlayerData = this.hospitalService.addDigimonToHospital(
       this.playerData(),
+      this.listsLimits[DigimonListLocation.HOSPITAL],
       digimon
     );
     this.updatePlayerData(updatedPlayerData);

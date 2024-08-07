@@ -1,11 +1,14 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Digimon } from '../../core/interfaces/digimon.interface';
 import { PlayerData } from '../../core/interfaces/player-data.interface';
+import { ToastService } from '../../shared/components/toast/toast.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class FarmingService {
+  toastService = inject(ToastService);
+
   generateBitsBasedOnGenerationTotalRate(playerData: PlayerData) {
     const bitGenerationTotalRate = this.getBitGenerationTotalRate(playerData);
     playerData.bits += bitGenerationTotalRate;
@@ -20,8 +23,17 @@ export class FarmingService {
     );
   }
 
-  addDigimonToFarm(digimon: Digimon, playerData: PlayerData) {
+  addDigimonToFarm(
+    digimon: Digimon,
+    currentFarmLimit: number,
+    playerData: PlayerData
+  ) {
     if (!digimon.id) return;
+    if (playerData.bitFarmDigimonList.length >= currentFarmLimit) {
+      this.toastService.showToast('Bit Farm limit reached!', 'error');
+      throw Error('Bit Farm limit reached!');
+    }
+
     playerData.bitFarmDigimonList.push(digimon);
 
     return playerData;

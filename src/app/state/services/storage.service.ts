@@ -37,6 +37,7 @@ export class StorageService {
 
   addDigimonToStorage(playerData: PlayerData, digimon?: Digimon) {
     if (!digimon || !digimon.id) return;
+
     playerData.digimonStorageList.push(digimon);
     return playerData;
   }

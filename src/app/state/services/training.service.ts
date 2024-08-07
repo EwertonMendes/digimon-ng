@@ -1,6 +1,7 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Digimon } from '../../core/interfaces/digimon.interface';
 import { PlayerData } from '../../core/interfaces/player-data.interface';
+import { ToastService } from '../../shared/components/toast/toast.service';
 
 @Injectable({
   providedIn: 'root',
@@ -8,6 +9,7 @@ import { PlayerData } from '../../core/interfaces/player-data.interface';
 export class TrainingService {
   modifiableAttributes = ['maxHp', 'maxMp', 'atk', 'def'];
   oneMinuteInterval = 60000;
+  toastService = inject(ToastService);
 
   trainDigimons(playerData: PlayerData) {
     playerData.inTrainingDigimonList.forEach((digimon: Digimon) => {
@@ -30,8 +32,16 @@ export class TrainingService {
     return playerData;
   }
 
-  addDigimonToTraining(playerData: PlayerData, digimon?: Digimon) {
+  addDigimonToTraining(
+    playerData: PlayerData,
+    currentTrainingLimit: number,
+    digimon?: Digimon
+  ) {
     if (!digimon || !digimon.id) return;
+    if (playerData.inTrainingDigimonList.length >= currentTrainingLimit) {
+      this.toastService.showToast('Training limit reached!', 'error');
+      throw Error('Training limit reached!');
+    }
     playerData.inTrainingDigimonList.push(digimon);
     return playerData;
   }

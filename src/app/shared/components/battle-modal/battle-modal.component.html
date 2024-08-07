@@ -6,7 +6,6 @@
         <div class="teams-container">
           <div class="player-team-container">
             <h4 class="team-title">Player Team</h4>
-
             <div class="player-team">
               @for(digimon of globalState.playerDataAcessor.digimonList; track
               digimon.id){
@@ -16,8 +15,15 @@
           </div>
           <span class="middle-panel">
             <span>VS</span>
-            @if(globalState.showPlayerAttackButton() && globalState.isBattleActive) {
-            <app-button text="Attack" (click)="playerAttack()" />
+            @if(globalState.showPlayerAttackButton() &&
+            globalState.isBattleActive) {
+            <app-button
+              text="Attack"
+              icon="ph-sword"
+              weight="bold"
+              iconPosition="right"
+              (click)="playerAttack()"
+            />
             }
           </span>
           <div class="enemy-team-container">

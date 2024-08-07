@@ -37,7 +37,7 @@
         </div>
         <div class="battle-log-container">
           <h4 class="battle-log-title">Battle Log</h4>
-          @for(log of this.globalState.battleLogAccessor; track $index){
+          @for(log of this.globalState.battleLogAccessor.slice().reverse(); track $index){
           <span class="battle-log">▶ {{ log }}</span>
           }
         </div>

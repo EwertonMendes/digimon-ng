@@ -1,6 +1,7 @@
 <div class="home-section">
   <h4 class="home-section-sub-title">
-    Upfront Team: {{ globalState.playerDataAcessor.digimonList.length }}/6
+    Upfront Team: {{ globalState.playerDataAcessor.digimonList.length }}/
+    {{ this.globalState.listsLimits.team }}
   </h4>
   <div
     [id]="teamListId"

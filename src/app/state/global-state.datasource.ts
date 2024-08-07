@@ -31,6 +31,14 @@ export class GlobalStateDataSource {
     bits: 0,
   });
 
+  listsLimits = {
+    [DigimonListLocation.TEAM]: 4,
+    [DigimonListLocation.IN_TRAINING]: 10,
+    [DigimonListLocation.BIT_FARM]: 12,
+    [DigimonListLocation.STORAGE]: 5,
+    [DigimonListLocation.HOSPITAL]: 10,
+  };
+
   get playerDataAcessor() {
     return this.playerData();
   }
@@ -180,6 +188,7 @@ export class GlobalStateDataSource {
   addDigimonToList(digimon: Digimon, from: string) {
     const updatedPlayerData = this.storageService.addDigimonToList(
       this.playerData(),
+      this.listsLimits[DigimonListLocation.TEAM],
       digimon
     );
     this.updatePlayerData(updatedPlayerData);

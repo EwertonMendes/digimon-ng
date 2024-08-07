@@ -7,14 +7,16 @@ import { ToastService } from '../../shared/components/toast/toast.service';
   providedIn: 'root',
 })
 export class StorageService {
-  upfrontTeamLimit = 6;
-
   toastService = inject(ToastService);
 
-  addDigimonToList(playerData: PlayerData, digimon?: Digimon) {
+  addDigimonToList(
+    playerData: PlayerData,
+    currentTeamLimit: number,
+    digimon?: Digimon
+  ) {
     if (!digimon || !digimon.id) return;
 
-    if (playerData.digimonList.length >= this.upfrontTeamLimit) {
+    if (playerData.digimonList.length >= currentTeamLimit) {
       this.toastService.showToast('Team limit reached!', 'error');
       throw Error('Team limit reached!');
     }

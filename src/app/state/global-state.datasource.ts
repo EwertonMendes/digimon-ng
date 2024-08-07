@@ -280,6 +280,7 @@ export class GlobalStateDataSource {
     }
 
     if (endState === 'defeat') {
+      this.audioService.playAudio('assets/audio/defeat-theme.mp3');
       this.log('All player Digimon are defeated. Battle lost.');
       this.toastService.showToast(
         'All player Digimon are defeated. Battle lost.',

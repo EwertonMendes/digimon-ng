@@ -1,38 +1,66 @@
 import { Injectable } from '@angular/core';
-
+import { AudioTracks } from '../core/enums/audio-tracks.enum';
 @Injectable({
   providedIn: 'root',
 })
 export class AudioService {
-  private audio = new Audio();
+  private audioMap: { [key: string]: HTMLAudioElement } = {};
   private currentTrack: string | null = null;
 
+  constructor() {
+    this.preloadAllAudios();
+  }
+
+  private preloadAllAudios(): void {
+    Object.values(AudioTracks).forEach((trackUrl) => {
+      this.preloadAudio(trackUrl);
+    });
+  }
+
+  private preloadAudio(trackUrl: string): void {
+    if (!this.audioMap[trackUrl]) {
+      const audio = new Audio(trackUrl);
+      audio.load();
+      this.audioMap[trackUrl] = audio;
+    }
+  }
+
   playAudio(trackUrl: string, loop: boolean = false): void {
+    const audio = this.audioMap[trackUrl];
+    if (!audio) {
+      console.error(`Audio track ${trackUrl} not preloaded`);
+      return;
+    }
     if (this.currentTrack !== trackUrl) {
       this.stopAudio();
-      this.audio.src = trackUrl;
-      this.audio.load();
       this.currentTrack = trackUrl;
     }
-    this.audio.loop = loop;
-    this.audio.play();
+    audio.loop = loop;
+    audio.play();
   }
 
   pauseAudio(): void {
-    this.audio.pause();
+    if (this.currentTrack && this.audioMap[this.currentTrack]) {
+      this.audioMap[this.currentTrack].pause();
+    }
   }
 
   stopAudio(): void {
-    this.audio.pause();
-    this.audio.currentTime = 0;
-    this.currentTrack = null;
+    if (this.currentTrack && this.audioMap[this.currentTrack]) {
+      const audio = this.audioMap[this.currentTrack];
+      audio.pause();
+      audio.currentTime = 0;
+      this.currentTrack = null;
+    }
   }
 
   setVolume(volume: number): void {
-    this.audio.volume = volume;
+    if (this.currentTrack && this.audioMap[this.currentTrack]) {
+      this.audioMap[this.currentTrack].volume = volume;
+    }
   }
 
   isPlaying(): boolean {
-    return !this.audio.paused;
+    return this.currentTrack ? !this.audioMap[this.currentTrack].paused : false;
   }
 }

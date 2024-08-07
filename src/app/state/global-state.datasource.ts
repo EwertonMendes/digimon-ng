@@ -11,7 +11,8 @@ import { interval } from 'rxjs';
 import { DigimonListLocation } from '../core/enums/digimon-list-location.enum';
 import { HospitalService } from './services/hospital.service';
 import { ToastService } from '../shared/components/toast/toast.service';
-import { AudioService, AudioTrack } from '../services/audio.service';
+import { AudioService } from '../services/audio.service';
+import { AudioTracks } from '../core/enums/audio-tracks.enum';
 
 type EndBattleState = 'victory' | 'defeat' | 'draw';
 
@@ -271,7 +272,7 @@ export class GlobalStateDataSource {
     this.resetTurnOrder();
 
     if (endState === 'victory') {
-      this.audioService.playAudio(AudioTrack.VICTORY);
+      this.audioService.playAudio(AudioTracks.VICTORY);
       this.log('Victory! Opponent Digimons were defeated.');
       this.toastService.showToast(
         'Victory! Opponent Digimons were defeated.',
@@ -280,7 +281,7 @@ export class GlobalStateDataSource {
     }
 
     if (endState === 'defeat') {
-      this.audioService.playAudio(AudioTrack.DEFEAT);
+      this.audioService.playAudio(AudioTracks.DEFEAT);
       this.log('All player Digimon are defeated. Battle lost.');
       this.toastService.showToast(
         'All player Digimon are defeated. Battle lost.',

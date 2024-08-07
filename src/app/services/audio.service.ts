@@ -31,6 +31,10 @@ export class AudioService {
       console.error(`Audio track ${trackUrl} not preloaded`);
       return;
     }
+    if (!audio.paused) {
+      audio.pause();
+      audio.currentTime = 0;
+    }
     if (this.currentTrack !== trackUrl) {
       this.stopAudio();
       this.currentTrack = trackUrl;

@@ -14,6 +14,12 @@
             </div>
           </div>
           <span class="middle-panel">
+            @if(globalState.isBattleActive) {
+            <span style="text-align: center;"
+              >{{ globalState.currentAttackingDigimon()?.owner === 'player' ? 'Player' : 'Enemy' }} Turn:
+              {{ globalState.currentAttackingDigimon()?.name }}</span
+            >
+            }
             <span>VS</span>
             @if(globalState.showPlayerAttackButton() &&
             globalState.isBattleActive) {
@@ -37,7 +43,8 @@
         </div>
         <div class="battle-log-container">
           <h4 class="battle-log-title">Battle Log</h4>
-          @for(log of this.globalState.battleLogAccessor.slice().reverse(); track $index){
+          @for(log of this.globalState.battleLogAccessor.slice().reverse();
+          track $index){
           <span class="battle-log">▶ {{ log }}</span>
           }
         </div>

@@ -15,7 +15,7 @@ import { AudioService } from '../services/audio.service';
 import { AudioTracks } from '../core/enums/audio-tracks.enum';
 
 type EndBattleState = 'victory' | 'defeat' | 'draw';
-
+type DigimonWithOwner = Digimon & { owner: string };
 @Injectable({
   providedIn: 'root',
 })
@@ -69,8 +69,12 @@ export class GlobalStateDataSource {
     return this.battleLog();
   }
 
-  baseTurnOrder: Array<Digimon & { owner: string }> = [];
-  actualTurnOrder: Array<Digimon & { owner: string }> = [];
+  baseTurnOrder: Array<DigimonWithOwner> = [];
+  actualTurnOrder: Array<DigimonWithOwner> = [];
+
+  currentAttackingDigimon = signal<DigimonWithOwner | null>(null);
+  currentDefendingDigimon = signal<DigimonWithOwner | null>(null);
+
   isBattleActive = false;
   showPlayerAttackButton = signal<boolean>(false);
 
@@ -302,16 +306,26 @@ export class GlobalStateDataSource {
     );
     if (!target) return;
 
-    const dealtDamage = this.attack(digimon, target);
-    this.log(
-      `Enemy ${digimon.name} attacks! Damage: ${dealtDamage}. Player ${target.name} has ${target.currentHp} health left.`
-    );
+    this.currentDefendingDigimon.set({ ...target, owner: 'player' });
 
-    if (target.currentHp <= 0) {
-      this.log(`Player ${target.name} has been defeated.`);
-      this.baseTurnOrder = this.baseTurnOrder.filter((d) => d.id !== target.id);
-      this.actualTurnOrder = [...this.baseTurnOrder];
-    }
+    setTimeout(() => {
+      const dealtDamage = this.attack(digimon, target);
+      this.log(
+        `Enemy ${digimon.name} attacks! Damage: ${dealtDamage}. Player ${target.name} has ${target.currentHp} health left.`
+      );
+
+      if (target.currentHp <= 0) {
+        this.log(`Player ${target.name} has been defeated.`);
+        this.baseTurnOrder = this.baseTurnOrder.filter(
+          (d) => d.id !== target.id
+        );
+        this.actualTurnOrder = [...this.baseTurnOrder];
+      }
+
+      this.currentAttackingDigimon.set(null);
+      this.currentDefendingDigimon.set(null);
+      this.nextTurn();
+    }, 1000);
   }
 
   private getTurnOrder() {
@@ -374,14 +388,15 @@ export class GlobalStateDataSource {
     }
 
     if (digimon.owner === 'player') {
+      this.currentAttackingDigimon.set(digimon);
       this.showPlayerAttackButton.set(true);
     }
 
     if (digimon.owner === 'enemy') {
+      this.currentAttackingDigimon.set(digimon);
       this.showPlayerAttackButton.set(false);
       this.enemyAttack(digimon);
       this.actualTurnOrder.shift();
-      this.nextTurn();
     }
   }
 

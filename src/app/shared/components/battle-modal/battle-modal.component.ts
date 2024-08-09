@@ -49,9 +49,6 @@ export class BattleModalComponent {
       this.globalState.actualTurnOrder = [...this.globalState.baseTurnOrder];
     }
 
-    this.globalState.currentAttackingDigimon.set(null);
-    this.globalState.currentDefendingDigimon.set(null);
-
     this.globalState.nextTurn();
     return;
   }

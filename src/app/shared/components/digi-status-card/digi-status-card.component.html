@@ -1,4 +1,4 @@
-<div class="my-digimon-card">
+<div class="my-digimon-card" [@damage]="damageState()" (@damage.done)="resetDamageState()">
   <div class="my-digimon-card-image">
     <img [src]="digimon().img" [alt]="digimon().name" />
   </div>

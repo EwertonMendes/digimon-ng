@@ -276,6 +276,8 @@ export class GlobalStateDataSource {
 
   endBattle(endState?: EndBattleState) {
     this.isBattleActive = false;
+    this.currentAttackingDigimon.set(null);
+    this.currentDefendingDigimon.set(null);
     this.resetTurnOrder();
 
     if (endState === 'victory') {
@@ -322,8 +324,6 @@ export class GlobalStateDataSource {
         this.actualTurnOrder = [...this.baseTurnOrder];
       }
 
-      this.currentAttackingDigimon.set(null);
-      this.currentDefendingDigimon.set(null);
       this.nextTurn();
     }, 1000);
   }

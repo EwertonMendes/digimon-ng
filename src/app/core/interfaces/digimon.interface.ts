@@ -5,12 +5,14 @@ export interface Digimon {
   nickName?: string;
   img: string;
   rank: string;
+  species: string;
   currentHp: number;
   maxHp: number;
   currentMp: number;
   maxMp: number;
   atk: number;
   def: number;
+  speed: number;
   exp?: number;
   totalExp?: number;
   level: number;

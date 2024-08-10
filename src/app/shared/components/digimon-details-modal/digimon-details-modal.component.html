@@ -9,6 +9,14 @@
         />
       </div>
       <div class="digimon-details-content-info">
+        @if(globalState.selectedDigimonOnDetailsAccessor?.nickName){
+        <div class="digimon-details-content-info-item">
+          <span class="label">Nickname: </span>
+          <span class="value">{{
+            globalState.selectedDigimonOnDetailsAccessor?.nickName
+          }}</span>
+        </div>
+        }
         <div class="digimon-details-content-info-item">
           <span class="label">Name: </span>
           <span class="value">{{
@@ -58,8 +66,8 @@
                 >{{
                   globalState.selectedDigimonOnDetailsAccessor?.currentHp
                 }}</span
-              > /
-              {{ globalState.selectedDigimonOnDetailsAccessor?.maxHp }}</span
+              >
+              / {{ globalState.selectedDigimonOnDetailsAccessor?.maxHp }}</span
             >
           </div>
           <div class="digimon-details-content-info-stats-item">

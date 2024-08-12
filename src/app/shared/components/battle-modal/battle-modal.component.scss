@@ -54,7 +54,10 @@
               gap: 5px;
 
               .action-indicator {
+                display: flex;
+                align-items: center;
                 font-size: 1.2rem;
+                height: 30px;
               }
             }
           }
@@ -91,7 +94,10 @@
               gap: 5px;
 
               .action-indicator {
+                display: flex;
+                align-items: center;
                 font-size: 1.2rem;
+                height: 30px;
               }
             }
           }

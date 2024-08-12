@@ -42,9 +42,21 @@
             flex-direction: row;
             gap: 10px;
             width: 100%;
+            height: -webkit-fill-available;
             flex-wrap: wrap;
-            align-items: center;
+            align-items: end;
             justify-content: end;
+
+            .digimon-container {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              gap: 5px;
+
+              .action-indicator {
+                font-size: 1.2rem;
+              }
+            }
           }
         }
 
@@ -67,9 +79,21 @@
             flex-direction: row;
             gap: 10px;
             width: 100%;
+            height: -webkit-fill-available;
             flex-wrap: wrap;
-            align-items: center;
+            align-items: end;
             justify-content: start;
+
+            .digimon-container {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              gap: 5px;
+
+              .action-indicator {
+                font-size: 1.2rem;
+              }
+            }
           }
         }
       }

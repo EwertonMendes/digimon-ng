@@ -9,15 +9,27 @@
             <div class="player-team">
               @for(digimon of globalState.playerDataAcessor.digimonList; track
               digimon.id){
-              <app-digi-status-card [digimon]="digimon" />
+              <div class="digimon-container">
+                @if(globalState.currentAttackingDigimon()?.id === digimon.id) {
+                <span class="action-indicator">🔽</span>
+                }
+                @if(globalState.currentDefendingDigimon()?.id === digimon.id) {
+                <span class="action-indicator">💥</span>
+                }
+                <app-digi-status-card [digimon]="digimon" />
+              </div>
               }
             </div>
           </div>
           <span class="middle-panel">
             @if(globalState.isBattleActive) {
-            <span style="text-align: center;"
-              >{{ globalState.currentAttackingDigimon()?.owner === 'player' ? 'Player' : 'Enemy' }} Turn:
-              {{ globalState.currentAttackingDigimon()?.name }}</span
+            <span style="text-align: center"
+              >{{
+                globalState.currentAttackingDigimon()?.owner === "player"
+                  ? "Player"
+                  : "Enemy"
+              }}
+              Turn: {{ globalState.currentAttackingDigimon()?.name }}</span
             >
             }
             <span>VS</span>
@@ -36,7 +48,15 @@
             <h4 class="team-title">Enemy Team</h4>
             <div class="enemy-team">
               @for(digimon of globalState.enemyTeamAccessor; track digimon.id){
-              <app-digi-status-card [digimon]="digimon" />
+              <div class="digimon-container">
+                @if(globalState.currentAttackingDigimon()?.id === digimon.id) {
+                <span class="action-indicator">🔽</span>
+                }
+                @if(globalState.currentDefendingDigimon()?.id === digimon.id) {
+                <span class="action-indicator">💥</span>
+                }
+                <app-digi-status-card [digimon]="digimon" />
+              </div>
               }
             </div>
           </div>

@@ -18,6 +18,8 @@ import {
 } from '@angular/cdk/drag-drop';
 import { DigimonListLocation } from '../../../../core/enums/digimon-list-location.enum';
 import { PlayerData } from '../../../../core/interfaces/player-data.interface';
+import { AudioEffects } from '../../../../core/enums/audio-tracks.enum';
+import { AudioService } from '../../../../services/audio.service';
 
 @Component({
   selector: 'app-farm-section',
@@ -37,6 +39,7 @@ export class FarmSectionComponent {
 
   globalState = inject(GlobalStateDataSource);
   modalService = inject(ModalService);
+  audioService = inject(AudioService);
 
   bitGenerationTotalRate = signal<number>(0);
 
@@ -67,6 +70,7 @@ export class FarmSectionComponent {
 
   removeDigimonFromTraining(event: MouseEvent, digimon: Digimon): void {
     event.preventDefault();
+    this.audioService.playAudio(AudioEffects.CLICK_ALTERNATIVE);
     this.globalState.addDigimonToStorage(
       digimon,
       DigimonListLocation.IN_TRAINING
@@ -75,6 +79,7 @@ export class FarmSectionComponent {
 
   removeDigimonFromFarm(event: MouseEvent, digimon: Digimon): void {
     event.preventDefault();
+    this.audioService.playAudio(AudioEffects.CLICK_ALTERNATIVE);
     this.globalState.addDigimonToStorage(digimon, DigimonListLocation.BIT_FARM);
   }
 

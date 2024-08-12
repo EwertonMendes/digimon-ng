@@ -10,6 +10,8 @@ import {
 } from '@angular/cdk/drag-drop';
 import { DigimonListLocation } from '../../../../core/enums/digimon-list-location.enum';
 import { PlayerData } from '../../../../core/interfaces/player-data.interface';
+import { AudioService } from '../../../../services/audio.service';
+import { AudioEffects } from '../../../../core/enums/audio-tracks.enum';
 
 @Component({
   selector: 'app-home-section',
@@ -22,6 +24,7 @@ export class HomeSectionComponent {
   digimonDetailsModalId = 'digimon-details-modal';
   globalState = inject(GlobalStateDataSource);
   modalService = inject(ModalService);
+  audioService = inject(AudioService);
 
   teamListId = 'team-list';
   inTrainingListId = 'in-training-digimon-list';
@@ -38,6 +41,7 @@ export class HomeSectionComponent {
   removeDigimonFromLocation(event: MouseEvent, digimon: Digimon, location: string): void {
     event.preventDefault();
     if (!digimon.id) return;
+    this.audioService.playAudio(AudioEffects.CLICK_ALTERNATIVE);
     this.globalState.addDigimonToStorage(digimon, location);
   }
 

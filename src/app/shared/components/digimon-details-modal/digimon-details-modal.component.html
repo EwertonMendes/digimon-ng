@@ -2,130 +2,137 @@
   <div class="digimon-details-container">
     <h3 class="section-title">Digimon Details</h3>
     <div class="digimon-details-content">
-      <div class="digimon-details-content-image">
+      <div class="digimon-details-content-first-block">
         <img
           [src]="globalState.selectedDigimonOnDetailsAccessor?.img"
           alt="digimon"
         />
-      </div>
-      <div class="digimon-details-content-info">
-        @if(globalState.selectedDigimonOnDetailsAccessor?.nickName){
-        <div class="digimon-details-content-info-item">
-          <span class="label">Nickname: </span>
-          <span class="value">{{
-            globalState.selectedDigimonOnDetailsAccessor?.nickName
-          }}</span>
-        </div>
+
+        <h4>
+          {{
+            globalState.selectedDigimonOnDetailsAccessor?.nickName ??
+              globalState.selectedDigimonOnDetailsAccessor?.name
+          }}
+        </h4>
+        @if (globalState.selectedDigimonOnDetailsAccessor?.nickName) {
+        <span>{{ globalState.selectedDigimonOnDetailsAccessor?.name }}</span>
         }
-        <div class="digimon-details-content-info-item">
-          <span class="label">Name: </span>
-          <span class="value">{{
-            globalState.selectedDigimonOnDetailsAccessor?.name
-          }}</span>
-        </div>
-        <div class="digimon-details-content-info-item">
-          <span class="label">Age: </span>
-          <span class="value">{{
-            digimonDetailedAge()
-          }}</span>
-        </div>
-        <div class="digimon-details-content-info-item">
-          <span class="label">Species: </span>
-          <span class="value">{{
-            globalState.selectedDigimonOnDetailsAccessor?.species
-          }}</span>
-        </div>
-        <div class="digimon-details-content-info-item">
-          <span class="label">Rank: </span>
-          <span class="value">{{
-            globalState.selectedDigimonOnDetailsAccessor?.rank
-          }}</span>
-        </div>
-        <div class="digimon-details-content-info-item">
-          <span class="label">Level: </span>
-          <span class="value">{{
-            globalState.selectedDigimonOnDetailsAccessor?.level
-          }}</span>
-        </div>
-        <div class="digimon-details-content-info-item">
-          <span class="label">Current Exp: </span>
-          <span class="value"
-            >{{ globalState.selectedDigimonOnDetailsAccessor?.exp }} / 100</span
-          >
-        </div>
-        <div class="digimon-details-content-info-item">
-          <span class="label">Total Exp: </span>
-          <span class="value">{{
-            globalState.selectedDigimonOnDetailsAccessor?.totalExp
-          }}</span>
-        </div>
-        <div class="digimon-details-content-info-stats">
-          <div class="digimon-details-content-info-stats-item">
-            <span class="label">HP: </span>
-            <span class="value"
-              ><span
-                [ngClass]="{
-                  'low-stat':
-                    globalState.selectedDigimonOnDetailsAccessor?.currentHp! <=
-                      0.2 *
-                        globalState.selectedDigimonOnDetailsAccessor?.maxHp! &&
-                    globalState.selectedDigimonOnDetailsAccessor?.currentHp! >
-                      0,
-                  'zero-stat':
-                    globalState.selectedDigimonOnDetailsAccessor?.currentHp ===
-                    0
-                }"
-                >{{
-                  globalState.selectedDigimonOnDetailsAccessor?.currentHp
-                }}</span
+        <span>{{ globalState.selectedDigimonOnDetailsAccessor?.rank }}</span>
+      </div>
+      <div class="digimon-details-content-container">
+        <div class="stats">
+          <div class="digimon-details-content-info">
+            <div class="digimon-details-content-info-item">
+              <span class="label">Age: </span>
+              <span class="value">{{ digimonDetailedAge() }}</span>
+            </div>
+            <div class="digimon-details-content-info-item">
+              <span class="label">Species: </span>
+              <span class="value">{{
+                globalState.selectedDigimonOnDetailsAccessor?.species
+              }}</span>
+            </div>
+            <div class="digimon-details-content-info-item">
+              <span class="label">Level: </span>
+              <span class="value">{{
+                globalState.selectedDigimonOnDetailsAccessor?.level
+              }}</span>
+            </div>
+            <div class="digimon-details-content-info-item">
+              <span class="label">Current Exp: </span>
+              <span class="value"
+                >{{ globalState.selectedDigimonOnDetailsAccessor?.exp }} /
+                100</span
               >
-              / {{ globalState.selectedDigimonOnDetailsAccessor?.maxHp }}</span
-            >
+            </div>
+            <div class="digimon-details-content-info-item">
+              <span class="label">Total Exp: </span>
+              <span class="value">{{
+                globalState.selectedDigimonOnDetailsAccessor?.totalExp
+              }}</span>
+            </div>
           </div>
-          <div class="digimon-details-content-info-stats-item">
-            <span class="label">MP: </span>
-            <span class="value"
-              ><span
-                [ngClass]="{
-                  'low-stat':
-                    globalState.selectedDigimonOnDetailsAccessor?.currentMp! <=
-                      0.2 *
-                        globalState.selectedDigimonOnDetailsAccessor?.maxMp! &&
-                    globalState.selectedDigimonOnDetailsAccessor?.currentMp! >
-                      0,
-                  'zero-stat':
-                    globalState.selectedDigimonOnDetailsAccessor?.currentMp ===
-                    0
-                }"
-                >{{
-                  globalState.selectedDigimonOnDetailsAccessor?.currentMp
-                }}</span
-              >
-              / {{ globalState.selectedDigimonOnDetailsAccessor?.maxMp }}</span
-            >
-          </div>
-          <div class="digimon-details-content-info-stats-item">
-            <span class="label">ATK: </span>
-            <span class="value">{{
-              globalState.selectedDigimonOnDetailsAccessor?.atk
-            }}</span>
-          </div>
-          <div class="digimon-details-content-info-stats-item">
-            <span class="label">DEF: </span>
-            <span class="value">{{
-              globalState.selectedDigimonOnDetailsAccessor?.def
-            }}</span>
-          </div>
-          <div class="digimon-details-content-info-stats-item">
-            <span class="label">Bit Generation: </span>
-            <span class="value"
-              >{{
-                globalState.selectedDigimonOnDetailsAccessor?.bitFarmingRate
-              }}
-              /m</span
-            >
+          <div class="digimon-details-content-info">
+            <div class="digimon-details-content-info-stats">
+              <div class="digimon-details-content-info-stats-item">
+                <span class="label">HP: </span>
+                <span class="value"
+                  ><span
+                    [ngClass]="{
+                      'low-stat':
+                        globalState.selectedDigimonOnDetailsAccessor
+                          ?.currentHp! <=
+                          0.2 *
+                            globalState.selectedDigimonOnDetailsAccessor
+                              ?.maxHp! &&
+                        globalState.selectedDigimonOnDetailsAccessor
+                          ?.currentHp! > 0,
+                      'zero-stat':
+                        globalState.selectedDigimonOnDetailsAccessor
+                          ?.currentHp === 0
+                    }"
+                    >{{
+                      globalState.selectedDigimonOnDetailsAccessor?.currentHp
+                    }}</span
+                  >
+                  /
+                  {{
+                    globalState.selectedDigimonOnDetailsAccessor?.maxHp
+                  }}</span
+                >
+              </div>
+              <div class="digimon-details-content-info-stats-item">
+                <span class="label">MP: </span>
+                <span class="value"
+                  ><span
+                    [ngClass]="{
+                      'low-stat':
+                        globalState.selectedDigimonOnDetailsAccessor
+                          ?.currentMp! <=
+                          0.2 *
+                            globalState.selectedDigimonOnDetailsAccessor
+                              ?.maxMp! &&
+                        globalState.selectedDigimonOnDetailsAccessor
+                          ?.currentMp! > 0,
+                      'zero-stat':
+                        globalState.selectedDigimonOnDetailsAccessor
+                          ?.currentMp === 0
+                    }"
+                    >{{
+                      globalState.selectedDigimonOnDetailsAccessor?.currentMp
+                    }}</span
+                  >
+                  /
+                  {{
+                    globalState.selectedDigimonOnDetailsAccessor?.maxMp
+                  }}</span
+                >
+              </div>
+              <div class="digimon-details-content-info-stats-item">
+                <span class="label">ATK: </span>
+                <span class="value">{{
+                  globalState.selectedDigimonOnDetailsAccessor?.atk
+                }}</span>
+              </div>
+              <div class="digimon-details-content-info-stats-item">
+                <span class="label">DEF: </span>
+                <span class="value">{{
+                  globalState.selectedDigimonOnDetailsAccessor?.def
+                }}</span>
+              </div>
+              <div class="digimon-details-content-info-stats-item">
+                <span class="label">Bit Generation: </span>
+                <span class="value"
+                  >{{
+                    globalState.selectedDigimonOnDetailsAccessor?.bitFarmingRate
+                  }}
+                  /m</span
+                >
+              </div>
+            </div>
           </div>
         </div>
+
         @if( evolutions().length > 0 ) {
         <div class="digimon-details-content-info-item">
           <div class="digimon-evolution-list">

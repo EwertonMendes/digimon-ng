@@ -1,4 +1,15 @@
-import { Component, ElementRef, HostListener, inject, Input, OnDestroy, OnInit, output, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  inject,
+  input,
+  Input,
+  OnDestroy,
+  OnInit,
+  output,
+  ViewEncapsulation,
+} from '@angular/core';
 import { ModalService } from './modal.service';
 
 @Component({
@@ -11,6 +22,7 @@ import { ModalService } from './modal.service';
 })
 export class ModalComponent implements OnInit, OnDestroy {
   @Input({ required: true }) id!: string;
+  closable = input<boolean>(true);
   element: HTMLElement;
 
   openEvent = output<void>();
@@ -19,7 +31,9 @@ export class ModalComponent implements OnInit, OnDestroy {
   modalService = inject(ModalService);
   elementRef = inject(ElementRef<HTMLElement>);
 
-  @HostListener('document:keydown.escape', ['$event']) onKeydownHandler(event: KeyboardEvent) {
+  @HostListener('document:keydown.escape', ['$event']) onKeydownHandler(
+    event: KeyboardEvent
+  ) {
     this.close();
   }
 
@@ -41,6 +55,7 @@ export class ModalComponent implements OnInit, OnDestroy {
   }
 
   public close(): void {
+    if (!this.closable()) return;
     this.element.style.display = 'none';
     this.closeEvent.emit();
   }

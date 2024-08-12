@@ -1,4 +1,4 @@
-<app-modal [id]="battleModalId" (closeEvent)="onBattleModalClose()">
+<app-modal [id]="battleModalId" [closable]="!globalState.isBattleActive" (closeEvent)="onBattleModalClose()">
   <div class="digimon-battle-container">
     <h3 class="section-title">Battle</h3>
     <div class="digimon-battle-content">

@@ -12,7 +12,7 @@ import { DigimonListLocation } from '../core/enums/digimon-list-location.enum';
 import { HospitalService } from './services/hospital.service';
 import { ToastService } from '../shared/components/toast/toast.service';
 import { AudioService } from '../services/audio.service';
-import { AudioTracks } from '../core/enums/audio-tracks.enum';
+import { AudioEffects, AudioTracks } from '../core/enums/audio-tracks.enum';
 
 type EndBattleState = 'victory' | 'defeat' | 'draw';
 type DigimonWithOwner = Digimon & { owner: string };
@@ -315,6 +315,14 @@ export class GlobalStateDataSource {
       this.log(
         `Enemy ${digimon.name} attacks! Damage: ${dealtDamage}. Player ${target.name} has ${target.currentHp} health left.`
       );
+
+      if (dealtDamage === 0) {
+        this.audioService.playAudio(AudioEffects.MISS);
+      }
+
+      if (dealtDamage > 0) {
+        this.audioService.playAudio(AudioEffects.HIT);
+      }
 
       if (target.currentHp <= 0) {
         this.log(`Player ${target.name} has been defeated.`);

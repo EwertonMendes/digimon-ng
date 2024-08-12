@@ -12,8 +12,8 @@
               <div class="digimon-container">
                 @if(globalState.currentAttackingDigimon()?.id === digimon.id) {
                 <span class="action-indicator">🔽</span>
-                }
-                @if(globalState.currentDefendingDigimon()?.id === digimon.id) {
+                } @if(globalState.currentDefendingDigimon()?.id === digimon.id)
+                {
                 <span class="action-indicator">💥</span>
                 }
                 <app-digi-status-card [digimon]="digimon" />
@@ -51,8 +51,8 @@
               <div class="digimon-container">
                 @if(globalState.currentAttackingDigimon()?.id === digimon.id) {
                 <span class="action-indicator">🔽</span>
-                }
-                @if(globalState.currentDefendingDigimon()?.id === digimon.id) {
+                } @if(globalState.currentDefendingDigimon()?.id === digimon.id)
+                {
                 <span class="action-indicator">💥</span>
                 }
                 <app-digi-status-card [digimon]="digimon" />

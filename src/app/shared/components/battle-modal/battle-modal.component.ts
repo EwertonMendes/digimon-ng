@@ -4,6 +4,8 @@ import { GlobalStateDataSource } from '../../../state/global-state.datasource';
 import { DigiStatusCardComponent } from '../digi-status-card/digi-status-card.component';
 import { ToastService } from '../toast/toast.service';
 import { ButtonComponent } from '../button/button.component';
+import { AudioService } from '../../../services/audio.service';
+import { AudioEffects } from '../../../core/enums/audio-tracks.enum';
 
 @Component({
   selector: 'app-battle-modal',
@@ -18,6 +20,7 @@ export class BattleModalComponent {
 
   globalState = inject(GlobalStateDataSource);
   toastService = inject(ToastService);
+  audioService = inject(AudioService);
 
   onBattleModalClose() {
     this.globalState.resetBattleState();
@@ -40,6 +43,14 @@ export class BattleModalComponent {
     this.log(
       `Player ${digimon.name} attacks! Damage: ${dealtDamage}. Enemy ${opponentDigimon.name} has ${opponentDigimon.currentHp} health left.`
     );
+
+    if(dealtDamage === 0) {
+      this.audioService.playAudio(AudioEffects.MISS);
+    }
+
+    if(dealtDamage > 0) {
+      this.audioService.playAudio(AudioEffects.HIT);
+    }
 
     if (opponentDigimon.currentHp <= 0) {
       this.log(`Enemy ${opponentDigimon.name} has been defeated.`);

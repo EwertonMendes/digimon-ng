@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AudioTracks } from '../core/enums/audio-tracks.enum';
+import { AudioEffects, AudioTracks } from '../core/enums/audio-tracks.enum';
 @Injectable({
   providedIn: 'root',
 })
@@ -13,6 +13,10 @@ export class AudioService {
 
   private preloadAllAudios(): void {
     Object.values(AudioTracks).forEach((trackUrl) => {
+      this.preloadAudio(trackUrl);
+    });
+
+    Object.values(AudioEffects).forEach((trackUrl) => {
       this.preloadAudio(trackUrl);
     });
   }

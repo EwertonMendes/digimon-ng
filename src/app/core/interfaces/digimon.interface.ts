@@ -3,6 +3,7 @@ export interface Digimon {
   seed: string;
   name: string;
   nickName?: string;
+  birthDate?: Date;
   img: string;
   rank: string;
   species: string;

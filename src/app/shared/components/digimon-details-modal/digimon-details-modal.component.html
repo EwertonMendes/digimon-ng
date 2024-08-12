@@ -24,6 +24,18 @@
           }}</span>
         </div>
         <div class="digimon-details-content-info-item">
+          <span class="label">Age: </span>
+          <span class="value">{{
+            digimonDetailedAge()
+          }}</span>
+        </div>
+        <div class="digimon-details-content-info-item">
+          <span class="label">Species: </span>
+          <span class="value">{{
+            globalState.selectedDigimonOnDetailsAccessor?.species
+          }}</span>
+        </div>
+        <div class="digimon-details-content-info-item">
           <span class="label">Rank: </span>
           <span class="value">{{
             globalState.selectedDigimonOnDetailsAccessor?.rank

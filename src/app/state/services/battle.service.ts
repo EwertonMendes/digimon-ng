@@ -1,6 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Digimon } from '../../core/interfaces/digimon.interface';
 
+enum DigimonRank {
+  Rookie = 1,
+  Champion = 2,
+  Ultimate = 3,
+  Mega = 4,
+}
+
 @Injectable({
   providedIn: 'root',
 })
@@ -36,5 +43,13 @@ export class BattleService {
       console.log(`${defender.name} has been defeated!`);
     }
     return damage;
+  }
+
+  calculateExpGiven(defeatedDigimon: Digimon): number {
+    const baseExp = 100;
+    const rankMultiplier = DigimonRank[defeatedDigimon.rank as keyof typeof DigimonRank];
+    const levelMultiplier = defeatedDigimon.level;
+
+    return baseExp * rankMultiplier * Math.sqrt(levelMultiplier);
   }
 }

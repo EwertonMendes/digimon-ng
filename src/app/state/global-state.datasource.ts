@@ -282,7 +282,9 @@ export class GlobalStateDataSource {
 
     if (endState === 'victory') {
       this.audioService.playAudio(AudioTracks.VICTORY);
+      const expAmount = this.calculateTotalGainedExp(this.enemyTeam());
       this.log('Victory! Opponent Digimons were defeated.');
+      this.log(`You gained ${expAmount} exp.`);
       this.toastService.showToast(
         'Victory! Opponent Digimons were defeated.',
         'success'
@@ -433,6 +435,29 @@ export class GlobalStateDataSource {
   resetBattleState() {
     this.enemyTeam.set([]);
     this.battleLog.set([]);
+  }
+
+  calculateTotalGainedExp(defeatedDigimons: Digimon[]) {
+    const totalExp = defeatedDigimons.reduce(
+      (acc, digimon) => acc + this.battleService.calculateExpGiven(digimon),
+      0
+    );
+
+    this.playerData().digimonList.forEach((playerDigimon) => {
+      if (!playerDigimon || playerDigimon.currentHp <= 0) return;
+
+      if (!playerDigimon.exp) playerDigimon.exp = 0;
+      if(!playerDigimon.totalExp) playerDigimon.totalExp = 0;
+
+      playerDigimon.exp += totalExp;
+      playerDigimon.totalExp += totalExp;
+    });
+
+    this.playerData().totalExp += totalExp;
+
+    this.updatePlayerData();
+
+    return totalExp;
   }
 
   private updatePlayerData(playerData?: PlayerData) {

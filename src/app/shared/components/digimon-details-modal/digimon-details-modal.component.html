@@ -41,8 +41,8 @@
             <div class="digimon-details-content-info-item">
               <span class="label">Current Exp: </span>
               <span class="value"
-                >{{ globalState.selectedDigimonOnDetailsAccessor?.exp }} /
-                {{ neededExpForNextLevel() }}</span
+                >{{ globalState.selectedDigimonOnDetailsAccessor?.exp | number : "1.0-0" }} /
+                {{ neededExpForNextLevel() | number : "1.0-0" }}</span
               >
             </div>
             <div class="digimon-details-content-info-item">
@@ -73,11 +73,13 @@
                     }"
                     >{{
                       globalState.selectedDigimonOnDetailsAccessor?.currentHp
+                        | number : "1.0-0"
                     }}</span
                   >
                   /
                   {{
                     globalState.selectedDigimonOnDetailsAccessor?.maxHp
+                      | number : "1.0-0"
                   }}</span
                 >
               </div>
@@ -100,31 +102,33 @@
                     }"
                     >{{
                       globalState.selectedDigimonOnDetailsAccessor?.currentMp
+                        | number : "1.0-0"
                     }}</span
                   >
                   /
                   {{
                     globalState.selectedDigimonOnDetailsAccessor?.maxMp
+                      | number : "1.0-0"
                   }}</span
                 >
               </div>
               <div class="digimon-details-content-info-stats-item">
                 <span class="label">ATK: </span>
                 <span class="value">{{
-                  globalState.selectedDigimonOnDetailsAccessor?.atk
+                  globalState.selectedDigimonOnDetailsAccessor?.atk | number : "1.0-0"
                 }}</span>
               </div>
               <div class="digimon-details-content-info-stats-item">
                 <span class="label">DEF: </span>
                 <span class="value">{{
-                  globalState.selectedDigimonOnDetailsAccessor?.def
+                  globalState.selectedDigimonOnDetailsAccessor?.def | number : "1.0-0"
                 }}</span>
               </div>
               <div class="digimon-details-content-info-stats-item">
                 <span class="label">Bit Generation: </span>
                 <span class="value"
                   >{{
-                    globalState.selectedDigimonOnDetailsAccessor?.bitFarmingRate
+                    globalState.selectedDigimonOnDetailsAccessor?.bitFarmingRate | number : "1.0-0"
                   }}
                   /m</span
                 >

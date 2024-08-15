@@ -2,11 +2,12 @@ import { Injectable } from '@angular/core';
 import { Digimon } from '../../core/interfaces/digimon.interface';
 
 enum DigimonRank {
-  'In-Training' = 1,
-  Rookie = 2,
-  Champion = 3,
-  Ultimate = 4,
-  Mega = 5,
+  Fresh = 1,
+  'In-Training' = 2,
+  Rookie = 3,
+  Champion = 4,
+  Ultimate = 5,
+  Mega = 6,
 }
 
 @Injectable({
@@ -18,6 +19,8 @@ export class BattleService {
     Ultimate: 2.0,
     Champion: 1.5,
     Rookie: 1.0,
+    'In-Training': 0.5,
+    Fresh: 0.1,
   };
 
   private calculateDamage(attacker: Digimon, defender: Digimon) {

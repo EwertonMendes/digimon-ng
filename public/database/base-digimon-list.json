@@ -97,6 +97,26 @@
     "level": 1,
     "bitFarmingRate": 1,
     "digiEvolutionSeedList": ["96c23ff9-d6b4-43da-91e6-f0c9799c65d7"],
+    "degenerateSeedList": ["b5ac222a-e653-4543-923e-77355dd24686"]
+  },
+  {
+    "seed": "b5ac222a-e653-4543-923e-77355dd24686",
+    "name": "Botamon",
+    "img": "/assets/digimons/Botamon.webp",
+    "rank": "Fresh",
+    "species": "Dark",
+    "currentHp": 56,
+    "maxHp": 56,
+    "currentMp": 57,
+    "maxMp": 57,
+    "atk": 37,
+    "def": 25,
+    "speed": 18,
+    "exp": 0,
+    "totalExp": 0,
+    "level": 1,
+    "bitFarmingRate": 1,
+    "digiEvolutionSeedList": ["edc9812f-82a6-487f-9a4d-52b845643176"],
     "degenerateSeedList": []
   },
   {

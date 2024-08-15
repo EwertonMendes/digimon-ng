@@ -447,13 +447,35 @@ export class GlobalStateDataSource {
       if (!playerDigimon || playerDigimon.currentHp <= 0) return;
 
       if (!playerDigimon.exp) playerDigimon.exp = 0;
-      if(!playerDigimon.totalExp) playerDigimon.totalExp = 0;
+      if (!playerDigimon.totalExp) playerDigimon.totalExp = 0;
 
       playerDigimon.exp += totalExp;
       playerDigimon.totalExp += totalExp;
+
+      while (
+        playerDigimon.exp >=
+        this.battleService.calculateRequiredExpForLevel(playerDigimon.level)
+      ) {
+        playerDigimon.exp -= this.battleService.calculateRequiredExpForLevel(
+          playerDigimon.level
+        );
+        playerDigimon.level++;
+        this.battleService.improveDigimonStats(playerDigimon);
+      }
     });
 
+    this.playerData().exp += totalExp;
     this.playerData().totalExp += totalExp;
+
+    while (
+      this.playerData().exp >=
+      this.battleService.calculateRequiredExpForLevel(this.playerData().level)
+    ) {
+      this.playerData().exp -= this.battleService.calculateRequiredExpForLevel(
+        this.playerData().level
+      );
+      this.playerData().level++;
+    }
 
     this.updatePlayerData();
 

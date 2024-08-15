@@ -12,16 +12,16 @@ enum DigimonRank {
   providedIn: 'root',
 })
 export class BattleService {
-  private calculateDamage(attacker: Digimon, defender: Digimon) {
-    const rankMultiplier: Record<string, number> = {
-      Mega: 2.5,
-      Ultimate: 2.0,
-      Champion: 1.5,
-      Rookie: 1.0,
-    };
+  rankMultiplier: Record<string, number> = {
+    Mega: 2.5,
+    Ultimate: 2.0,
+    Champion: 1.5,
+    Rookie: 1.0,
+  };
 
+  private calculateDamage(attacker: Digimon, defender: Digimon) {
     let baseDamage =
-      (attacker.atk - defender.def) * rankMultiplier[attacker.rank];
+      (attacker.atk - defender.def) * this.rankMultiplier[attacker.rank];
     baseDamage = Math.max(1, baseDamage);
 
     const criticalHit = Math.random() < 0.1 ? 1.5 : 1.0;
@@ -47,9 +47,42 @@ export class BattleService {
 
   calculateExpGiven(defeatedDigimon: Digimon): number {
     const baseExp = 100;
-    const rankMultiplier = DigimonRank[defeatedDigimon.rank as keyof typeof DigimonRank];
+    const rankMultiplier =
+      DigimonRank[defeatedDigimon.rank as keyof typeof DigimonRank];
     const levelMultiplier = defeatedDigimon.level;
 
     return baseExp * rankMultiplier * Math.sqrt(levelMultiplier);
+  }
+
+  calculateRequiredExpForLevel(level: number, baseExp: number = 100): number {
+    return baseExp * Math.pow(1.2, level);
+  }
+
+  improveDigimonStats(digimon: Digimon) {
+    const multiplier = this.rankMultiplier[digimon.rank];
+    const baseStatIncrease = Math.floor((digimon.level * multiplier) / 5);
+
+    const randomFactor = () => Math.floor(Math.random() * 3) + 1;
+
+    digimon.atk += Math.floor(
+      Math.floor(digimon.atk + baseStatIncrease + randomFactor()) * multiplier
+    );
+
+    digimon.def += Math.floor(
+      Math.floor(digimon.def + baseStatIncrease + randomFactor()) * multiplier
+    );
+
+    const hpIncrease = Math.floor(
+      Math.floor(digimon.maxHp + baseStatIncrease + randomFactor()) * multiplier
+    );
+
+    const mpIncrease = Math.floor(
+      Math.floor(digimon.maxMp + baseStatIncrease + randomFactor()) * multiplier
+    );
+
+    digimon.maxHp += hpIncrease;
+    digimon.currentHp = digimon.maxHp;
+    digimon.maxMp += mpIncrease;
+    digimon.currentMp = digimon.maxMp;
   }
 }

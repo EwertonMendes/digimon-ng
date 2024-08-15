@@ -483,6 +483,10 @@ export class GlobalStateDataSource {
     return totalExp;
   }
 
+  getNeededExpForNextLevel(digimon: Digimon) {
+    return this.battleService.calculateRequiredExpForLevel(digimon.level);
+  }
+
   private updatePlayerData(playerData?: PlayerData) {
     if (!playerData) return;
     this.playerData.set({

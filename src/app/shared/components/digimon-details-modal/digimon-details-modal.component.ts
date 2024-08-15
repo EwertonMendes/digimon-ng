@@ -27,6 +27,14 @@ export class DigimonDetailsModalComponent {
       )
     );
   });
+
+  neededExpForNextLevel = computed(() => {
+    if (!this.globalState.selectedDigimonOnDetailsAccessor) return;
+    return this.globalState.getNeededExpForNextLevel(
+      this.globalState.selectedDigimonOnDetailsAccessor
+    );
+  });
+
   evolutions = signal<Digimon[]>([]);
 
   constructor() {

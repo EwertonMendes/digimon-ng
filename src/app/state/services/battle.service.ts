@@ -55,7 +55,7 @@ export class BattleService {
   }
 
   calculateRequiredExpForLevel(level: number, baseExp: number = 100): number {
-    return baseExp * Math.pow(1.2, level);
+    return Math.floor(baseExp * Math.pow(1.2, level));
   }
 
   improveDigimonStats(digimon: Digimon) {

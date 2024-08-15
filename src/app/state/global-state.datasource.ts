@@ -449,15 +449,16 @@ export class GlobalStateDataSource {
       if (!playerDigimon.exp) playerDigimon.exp = 0;
       if (!playerDigimon.totalExp) playerDigimon.totalExp = 0;
 
-      playerDigimon.exp += totalExp;
-      playerDigimon.totalExp += totalExp;
+      playerDigimon.exp = Math.floor(playerDigimon.exp + totalExp);
+      playerDigimon.totalExp = Math.floor(playerDigimon.totalExp + totalExp);
 
       while (
         playerDigimon.exp >=
         this.battleService.calculateRequiredExpForLevel(playerDigimon.level)
       ) {
-        playerDigimon.exp -= this.battleService.calculateRequiredExpForLevel(
-          playerDigimon.level
+        playerDigimon.exp = Math.floor(
+          playerDigimon.exp -
+            this.battleService.calculateRequiredExpForLevel(playerDigimon.level)
         );
         playerDigimon.level++;
         this.battleService.improveDigimonStats(playerDigimon);

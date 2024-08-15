@@ -60,25 +60,22 @@ export class BattleService {
 
   improveDigimonStats(digimon: Digimon) {
     const multiplier = this.rankMultiplier[digimon.rank];
-    const baseStatIncrease = Math.floor((digimon.level * multiplier) / 5);
+    const baseStatIncrease = Math.floor(digimon.level * 0.5);
 
     const randomFactor = () => Math.floor(Math.random() * 3) + 1;
 
-    digimon.atk += Math.floor(
-      Math.floor(digimon.atk + baseStatIncrease + randomFactor()) * multiplier
-    );
+    const calculateStatIncrease = (baseStat: number) => {
+      const randomValue = randomFactor();
+      return Math.floor(
+        baseStatIncrease + randomValue + baseStat * multiplier * 0.05
+      );
+    };
 
-    digimon.def += Math.floor(
-      Math.floor(digimon.def + baseStatIncrease + randomFactor()) * multiplier
-    );
+    digimon.atk += calculateStatIncrease(digimon.atk);
+    digimon.def += calculateStatIncrease(digimon.def);
 
-    const hpIncrease = Math.floor(
-      Math.floor(digimon.maxHp + baseStatIncrease + randomFactor()) * multiplier
-    );
-
-    const mpIncrease = Math.floor(
-      Math.floor(digimon.maxMp + baseStatIncrease + randomFactor()) * multiplier
-    );
+    const hpIncrease = calculateStatIncrease(digimon.maxHp);
+    const mpIncrease = calculateStatIncrease(digimon.maxMp);
 
     digimon.maxHp += hpIncrease;
     digimon.currentHp = digimon.maxHp;

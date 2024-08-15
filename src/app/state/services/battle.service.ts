@@ -2,10 +2,11 @@ import { Injectable } from '@angular/core';
 import { Digimon } from '../../core/interfaces/digimon.interface';
 
 enum DigimonRank {
-  Rookie = 1,
-  Champion = 2,
-  Ultimate = 3,
-  Mega = 4,
+  'In-Training' = 1,
+  Rookie = 2,
+  Champion = 3,
+  Ultimate = 4,
+  Mega = 5,
 }
 
 @Injectable({

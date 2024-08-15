@@ -77,6 +77,26 @@
     "level": 1,
     "bitFarmingRate": 1,
     "digiEvolutionSeedList": ["70dbb38a-690e-45b3-bfc5-eccba64fbd9b"],
+    "degenerateSeedList": ["edc9812f-82a6-487f-9a4d-52b845643176"]
+  },
+  {
+    "seed": "edc9812f-82a6-487f-9a4d-52b845643176",
+    "name": "Koromon",
+    "img": "/assets/digimons/Koromon.webp",
+    "rank": "In-Training",
+    "species": "Dragon",
+    "currentHp": 66,
+    "maxHp": 66,
+    "currentMp": 67,
+    "maxMp": 67,
+    "atk": 47,
+    "def": 35,
+    "speed": 28,
+    "exp": 0,
+    "totalExp": 0,
+    "level": 1,
+    "bitFarmingRate": 1,
+    "digiEvolutionSeedList": ["96c23ff9-d6b4-43da-91e6-f0c9799c65d7"],
     "degenerateSeedList": []
   },
   {

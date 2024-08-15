@@ -104,7 +104,7 @@ export class DigimonService {
   private getRankOrder(rank: string): number {
     const rankOrder: Record<string, number> = {
       'Baby I': 1,
-      'Baby II': 2,
+      'In-Training': 2,
       Rookie: 3,
       Champion: 4,
       Ultimate: 5,

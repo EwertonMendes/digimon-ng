@@ -38,14 +38,28 @@
           align-items: center;
 
           .player-team {
-            display: flex;
-            flex-direction: row;
+            display: grid;
+            grid-template-areas: "first second"
+              "fourth third";
             gap: 10px;
             width: 100%;
             height: -webkit-fill-available;
-            flex-wrap: wrap;
-            align-items: end;
-            justify-content: end;
+
+            :first-child {
+              grid-area: first;
+            }
+
+            :nth-child(2) {
+              grid-area: second;
+            }
+
+            :nth-child(3) {
+              grid-area: third;
+            }
+
+            :nth-child(4) {
+              grid-area: fourth;
+            }
 
             .digimon-container {
               display: flex;
@@ -78,14 +92,11 @@
           align-items: center;
 
           .enemy-team {
-            display: flex;
-            flex-direction: row;
+            display: grid;
+            grid-template-columns: auto auto;
             gap: 10px;
             width: 100%;
             height: -webkit-fill-available;
-            flex-wrap: wrap;
-            align-items: end;
-            justify-content: start;
 
             .digimon-container {
               display: flex;

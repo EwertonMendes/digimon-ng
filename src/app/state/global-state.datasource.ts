@@ -438,47 +438,12 @@ export class GlobalStateDataSource {
   }
 
   calculateTotalGainedExp(defeatedDigimons: Digimon[]) {
-    const totalExp = defeatedDigimons.reduce(
-      (acc, digimon) => acc + this.battleService.calculateExpGiven(digimon),
-      0
+    const { playerData, totalExp } = this.battleService.calculateTotalGainedExp(
+      this.playerData(),
+      defeatedDigimons
     );
 
-    this.playerData().digimonList.forEach((playerDigimon) => {
-      if (!playerDigimon || playerDigimon.currentHp <= 0) return;
-
-      if (!playerDigimon.exp) playerDigimon.exp = 0;
-      if (!playerDigimon.totalExp) playerDigimon.totalExp = 0;
-
-      playerDigimon.exp = Math.floor(playerDigimon.exp + totalExp);
-      playerDigimon.totalExp = Math.floor(playerDigimon.totalExp + totalExp);
-
-      while (
-        playerDigimon.exp >=
-        this.battleService.calculateRequiredExpForLevel(playerDigimon.level)
-      ) {
-        playerDigimon.exp = Math.floor(
-          playerDigimon.exp -
-            this.battleService.calculateRequiredExpForLevel(playerDigimon.level)
-        );
-        playerDigimon.level++;
-        this.battleService.improveDigimonStats(playerDigimon);
-      }
-    });
-
-    this.playerData().exp += totalExp;
-    this.playerData().totalExp += totalExp;
-
-    while (
-      this.playerData().exp >=
-      this.battleService.calculateRequiredExpForLevel(this.playerData().level)
-    ) {
-      this.playerData().exp -= this.battleService.calculateRequiredExpForLevel(
-        this.playerData().level
-      );
-      this.playerData().level++;
-    }
-
-    this.updatePlayerData();
+    this.updatePlayerData(playerData);
 
     return totalExp;
   }

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Digimon } from '../../core/interfaces/digimon.interface';
+import { PlayerData } from '../../core/interfaces/player-data.interface';
 
 enum DigimonRank {
   Fresh = 1,
@@ -60,6 +61,50 @@ export class BattleService {
 
   calculateRequiredExpForLevel(level: number, baseExp: number = 100): number {
     return Math.floor(baseExp * Math.pow(1.2, level));
+  }
+
+  calculateTotalGainedExp(playerData: PlayerData, defeatedDigimons: Digimon[]) {
+    const totalExp = defeatedDigimons.reduce(
+      (acc, digimon) => acc + this.calculateExpGiven(digimon),
+      0
+    );
+
+    playerData.digimonList.forEach((playerDigimon) => {
+      if (!playerDigimon || playerDigimon.currentHp <= 0) return;
+
+      if (!playerDigimon.exp) playerDigimon.exp = 0;
+      if (!playerDigimon.totalExp) playerDigimon.totalExp = 0;
+
+      playerDigimon.exp = Math.floor(playerDigimon.exp + totalExp);
+      playerDigimon.totalExp = Math.floor(playerDigimon.totalExp + totalExp);
+
+      while (
+        playerDigimon.exp >=
+        this.calculateRequiredExpForLevel(playerDigimon.level)
+      ) {
+        playerDigimon.exp = Math.floor(
+          playerDigimon.exp -
+            this.calculateRequiredExpForLevel(playerDigimon.level)
+        );
+        playerDigimon.level++;
+        this.improveDigimonStats(playerDigimon);
+      }
+    });
+
+    playerData.exp += totalExp;
+    playerData.totalExp += totalExp;
+
+    while (
+      playerData.exp >= this.calculateRequiredExpForLevel(playerData.level)
+    ) {
+      playerData.exp -= this.calculateRequiredExpForLevel(playerData.level);
+      playerData.level++;
+    }
+
+    return {
+      playerData,
+      totalExp,
+    };
   }
 
   improveDigimonStats(digimon: Digimon) {

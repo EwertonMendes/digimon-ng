@@ -69,37 +69,8 @@ export class BattleService {
       0
     );
 
-    playerData.digimonList.forEach((playerDigimon) => {
-      if (!playerDigimon || playerDigimon.currentHp <= 0) return;
-
-      if (!playerDigimon.exp) playerDigimon.exp = 0;
-      if (!playerDigimon.totalExp) playerDigimon.totalExp = 0;
-
-      playerDigimon.exp = Math.floor(playerDigimon.exp + totalExp);
-      playerDigimon.totalExp = Math.floor(playerDigimon.totalExp + totalExp);
-
-      while (
-        playerDigimon.exp >=
-        this.calculateRequiredExpForLevel(playerDigimon.level)
-      ) {
-        playerDigimon.exp = Math.floor(
-          playerDigimon.exp -
-            this.calculateRequiredExpForLevel(playerDigimon.level)
-        );
-        playerDigimon.level++;
-        this.improveDigimonStats(playerDigimon);
-      }
-    });
-
-    playerData.exp += totalExp;
-    playerData.totalExp += totalExp;
-
-    while (
-      playerData.exp >= this.calculateRequiredExpForLevel(playerData.level)
-    ) {
-      playerData.exp -= this.calculateRequiredExpForLevel(playerData.level);
-      playerData.level++;
-    }
+    this.updatePlayerDigimonsExp(playerData, totalExp);
+    this.updatePlayerExp(playerData, totalExp);
 
     return {
       playerData,
@@ -130,5 +101,41 @@ export class BattleService {
     digimon.currentHp = digimon.maxHp;
     digimon.maxMp += mpIncrease;
     digimon.currentMp = digimon.maxMp;
+  }
+
+  private updatePlayerDigimonsExp(playerData: PlayerData, totalExp: number) {
+    playerData.digimonList.forEach((playerDigimon) => {
+      if (!playerDigimon || playerDigimon.currentHp <= 0) return;
+
+      playerDigimon.exp = Math.floor((playerDigimon.exp || 0) + totalExp);
+      playerDigimon.totalExp = Math.floor(
+        (playerDigimon.totalExp || 0) + totalExp
+      );
+
+      this.levelUpDigimon(playerDigimon);
+    });
+  }
+
+  private levelUpDigimon(digimon: Digimon) {
+    if (!digimon.exp) digimon.exp = 0;
+    while (digimon.exp >= this.calculateRequiredExpForLevel(digimon.level)) {
+      digimon.exp = Math.floor(
+        digimon.exp - this.calculateRequiredExpForLevel(digimon.level)
+      );
+      digimon.level++;
+      this.improveDigimonStats(digimon);
+    }
+  }
+
+  private updatePlayerExp(playerData: PlayerData, totalExp: number) {
+    playerData.exp += totalExp;
+    playerData.totalExp += totalExp;
+
+    while (
+      playerData.exp >= this.calculateRequiredExpForLevel(playerData.level)
+    ) {
+      playerData.exp -= this.calculateRequiredExpForLevel(playerData.level);
+      playerData.level++;
+    }
   }
 }

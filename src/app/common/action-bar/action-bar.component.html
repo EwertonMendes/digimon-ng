@@ -1,24 +1,40 @@
 <div class="action-bar-container">
-  <app-button
-    title="Desktop"
-    icon="ph-desktop"
-    weight="bold"
-    color="info"
-    (click)="navigateTo('desktop')"
-  />
-  <app-button
-    title="Adventure"
-    icon="ph-sword"
-    weight="bold"
-    color="danger"
-    (click)="navigateTo('adventure')"
-  />
-  <app-button
-    title="Open digimon storage"
-    icon="ph-database"
-    weight="bold"
-    (click)="openDigimonStorageModal()"
-  />
+  <div class="action-bar-buttons">
+    <app-button
+      title="Desktop"
+      icon="ph-desktop"
+      weight="bold"
+      color="info"
+      (click)="navigateTo('desktop')"
+    />
+    <app-button
+      title="Adventure"
+      icon="ph-sword"
+      weight="bold"
+      color="danger"
+      (click)="navigateTo('adventure')"
+    />
+    <app-button
+      title="Open digimon storage"
+      icon="ph-database"
+      weight="bold"
+      (click)="openDigimonStorageModal()"
+    />
+  </div>
+  <div class="action-bar-buttons">
+    <app-button
+      title="Player Info"
+      icon="ph-user-circle-gear"
+      weight="bold"
+      color="info"
+    />
+    <app-button
+      title="Config"
+      icon="ph-gear"
+      weight="bold"
+      color="info"
+    />
+  </div>
 </div>
 
 <app-modal [id]="digimonStorageModalId">

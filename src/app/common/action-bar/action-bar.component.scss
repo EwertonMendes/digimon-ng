@@ -2,11 +2,17 @@
   &-container {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    justify-content: space-between;
     padding: 10px;
     background-color: rgba(black, 0.8);
     width: 55px;
     height: 100%;
+
+    .action-bar-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
   }
 }
 

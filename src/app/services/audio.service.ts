@@ -5,7 +5,6 @@ import { AudioEffects, AudioTracks } from '../core/enums/audio-tracks.enum';
 })
 export class AudioService {
   private audioMap: { [key: string]: HTMLAudioElement } = {};
-  private currentTrack: string | null = null;
 
   constructor() {
     this.preloadAllAudios();
@@ -35,40 +34,9 @@ export class AudioService {
       console.error(`Audio track ${trackUrl} not preloaded`);
       return;
     }
-    if (!audio.paused) {
-      audio.pause();
-      audio.currentTime = 0;
-    }
-    if (this.currentTrack !== trackUrl) {
-      this.stopAudio();
-      this.currentTrack = trackUrl;
-    }
+    audio.pause();
+    audio.currentTime = 0;
     audio.loop = loop;
     audio.play();
-  }
-
-  pauseAudio(): void {
-    if (this.currentTrack && this.audioMap[this.currentTrack]) {
-      this.audioMap[this.currentTrack].pause();
-    }
-  }
-
-  stopAudio(): void {
-    if (this.currentTrack && this.audioMap[this.currentTrack]) {
-      const audio = this.audioMap[this.currentTrack];
-      audio.pause();
-      audio.currentTime = 0;
-      this.currentTrack = null;
-    }
-  }
-
-  setVolume(volume: number): void {
-    if (this.currentTrack && this.audioMap[this.currentTrack]) {
-      this.audioMap[this.currentTrack].volume = volume;
-    }
-  }
-
-  isPlaying(): boolean {
-    return this.currentTrack ? !this.audioMap[this.currentTrack].paused : false;
   }
 }

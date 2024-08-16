@@ -65,7 +65,6 @@ export class BattleModalComponent {
   }
 
   private log(message: string) {
-    console.log(message);
     this.globalState.log(message);
   }
 }

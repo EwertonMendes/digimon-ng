@@ -39,13 +39,8 @@ export class BattleService {
     const damage = this.calculateDamage(attacker, defender);
     defender.currentHp -= damage;
 
-    console.log(
-      `${attacker.name} dealt ${damage} damage to ${defender.name}. ${defender.name} has ${defender.currentHp} HP left.`
-    );
-
     if (defender.currentHp <= 0) {
       defender.currentHp = 0;
-      console.log(`${defender.name} has been defeated!`);
     }
     return damage;
   }

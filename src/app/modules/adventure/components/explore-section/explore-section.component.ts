@@ -67,7 +67,6 @@ export class ExploreSectionComponent {
   }
 
   private log(message: string) {
-    console.log(message);
     this.globalState.log(message);
   }
 }

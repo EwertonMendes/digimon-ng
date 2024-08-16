@@ -28,73 +28,8 @@
       weight="bold"
       color="info"
     />
-    <app-button
-      title="Config"
-      icon="ph-gear"
-      weight="bold"
-      color="info"
-    />
+    <app-button title="Config" icon="ph-gear" weight="bold" color="info" />
   </div>
 </div>
 
-<app-modal [id]="digimonStorageModalId">
-  <div class="digimon-storage-container">
-    <h3 class="section-title">Digimon Storage</h3>
-    <div class="digimon-storage-content">
-      @if(globalState.playerDataAcessor.digimonStorageList.length === 0){
-      <div class="digimon-storage-content-no-data-container">
-        <h4>No digimon in storage</h4>
-      </div>
-      } @else {
-      <div class="digimon-storage-content-list-container">
-        @for(digimon of globalState.playerDataAcessor.digimonStorageList; track
-        digimon){
-        <div class="digimon-storage-content-list-item">
-          <app-digi-status-card
-            [digimon]="digimon"
-            (click)="openDigimonDetailsModal(digimon)"
-          />
-          <div class="actions">
-            <app-button
-              icon="ph-users-three"
-              weight="bold"
-              text="To team"
-              color="primary"
-              (click)="addDigimonToTeam(digimon)"
-            />
-            <app-button
-              icon="ph-barbell"
-              weight="bold"
-              text="To training"
-              color="secondary"
-              (click)="addDigimonToTraining(digimon)"
-            />
-            <app-button
-              icon="ph-coins"
-              weight="bold"
-              text="To bit farm"
-              color="tertiary"
-              (click)="addDigimonToFarm(digimon)"
-            />
-            <app-button
-              icon="ph-first-aid"
-              weight="bold"
-              text="To Hospital"
-              color="info"
-              (click)="addDigimonToHospital(digimon)"
-            />
-          </div>
-        </div>
-        }
-      </div>
-      }
-      <div class="digimon-storage-content-footer">
-        <span
-          >Storage Capacity:
-          {{ globalState.playerDataAcessor.digimonStorageList.length }} /
-          {{ globalState.playerDataAcessor.digimonStorageCapacity }}</span
-        >
-      </div>
-    </div>
-  </div>
-</app-modal>
+<app-storage-modal />

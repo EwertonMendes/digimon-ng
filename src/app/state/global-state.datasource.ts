@@ -47,6 +47,16 @@ export class GlobalStateDataSource {
     return this.playerData();
   }
 
+  get totalDigimonCount() {
+    return (
+      this.playerDataAcessor.digimonList.length +
+      this.playerDataAcessor.inTrainingDigimonList.length +
+      this.playerDataAcessor.bitFarmDigimonList.length +
+      this.playerDataAcessor.hospitalDigimonList.length +
+      this.playerDataAcessor.digimonStorageList.length
+    );
+  }
+
   private selectedDigimonOnDetails = signal<Digimon | undefined>(undefined);
 
   get selectedDigimonOnDetailsAccessor() {
@@ -448,8 +458,8 @@ export class GlobalStateDataSource {
     return totalExp;
   }
 
-  getNeededExpForNextLevel(digimon: Digimon) {
-    return this.battleService.calculateRequiredExpForLevel(digimon.level);
+  getNeededExpForNextLevel(entity: Digimon | PlayerData) {
+    return this.battleService.calculateRequiredExpForLevel(entity.level);
   }
 
   private updatePlayerData(playerData?: PlayerData) {

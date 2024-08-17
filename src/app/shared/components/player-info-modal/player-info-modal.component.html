@@ -1,0 +1,18 @@
+<app-modal [id]="playerInfoModalId">
+  <div class="player-info-container">
+    <div class="player-info-header">
+      <img src="assets/Tai.webp" alt="player" class="avatar" />
+      <h2>{{ globalState.playerDataAcessor.name }}</h2>
+    </div>
+    <div class="player-info-content">
+      <span>Bits: {{ globalState.playerDataAcessor.bits }}</span>
+      <span>Level: {{ globalState.playerDataAcessor.level }}</span>
+      <span
+        >Current Exp: {{ globalState.playerDataAcessor.exp }} /
+        {{ neededExpForNextLevel() }}</span
+      >
+      <span>Total Exp: {{ globalState.playerDataAcessor.totalExp }} </span>
+      <span>Total Digimon Count: {{ globalState.totalDigimonCount }}</span>
+    </div>
+  </div>
+</app-modal>

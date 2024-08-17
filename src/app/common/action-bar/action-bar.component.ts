@@ -5,11 +5,12 @@ import { Router } from '@angular/router';
 import { AudioService } from '../../services/audio.service';
 import { AudioEffects } from '../../core/enums/audio-tracks.enum';
 import { StorageModalComponent } from '../../shared/components/storage-modal/storage-modal.component';
+import { PlayerInfoModalComponent } from '../../shared/components/player-info-modal/player-info-modal.component';
 
 @Component({
   selector: 'app-action-bar',
   standalone: true,
-  imports: [ButtonComponent, StorageModalComponent],
+  imports: [ButtonComponent, StorageModalComponent, PlayerInfoModalComponent],
   templateUrl: './action-bar.component.html',
   styleUrl: './action-bar.component.scss',
 })
@@ -23,6 +24,11 @@ export class ActionBarComponent {
   openDigimonStorageModal() {
     this.audioService.playAudio(AudioEffects.CLICK);
     this.modalService.open(this.digimonStorageModalId);
+  }
+
+  openPlayerInfoModal() {
+    this.audioService.playAudio(AudioEffects.CLICK);
+    this.modalService.open('player-info-modal');
   }
 
   navigateTo(url: string) {

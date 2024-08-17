@@ -5,14 +5,14 @@
       <h2>{{ globalState.playerDataAcessor.name }}</h2>
     </div>
     <div class="player-info-content">
-      <span>Bits: {{ globalState.playerDataAcessor.bits }}</span>
+      <span>Bits: {{ globalState.playerDataAcessor.bits | number : "1.0-0" }}</span>
       <span>Level: {{ globalState.playerDataAcessor.level }}</span>
       <span
-        >Current Exp: {{ globalState.playerDataAcessor.exp }} /
-        {{ neededExpForNextLevel() }}</span
+        >Current Exp: {{ globalState.playerDataAcessor.exp | number : "1.0-0" }} /
+        {{ neededExpForNextLevel()| number : "1.0-0" }}</span
       >
-      <span>Total Exp: {{ globalState.playerDataAcessor.totalExp }} </span>
-      <span>Total Digimon Count: {{ globalState.totalDigimonCount }}</span>
+      <span>Total Exp: {{ globalState.playerDataAcessor.totalExp | number : "1.0-0" }} </span>
+      <span>Total Digimon Count: {{ globalState.totalDigimonCount | number : "1.0-0" }}</span>
     </div>
   </div>
 </app-modal>

@@ -4,18 +4,29 @@ import { GlobalStateDataSource } from '../../../state/global-state.datasource';
 import { Digimon } from '../../../core/interfaces/digimon.interface';
 import { CommonModule } from '@angular/common';
 import { EvolutionTreeComponent } from '../evolution-tree/evolution-tree.component';
+import { ButtonComponent } from '../button/button.component';
+import { ModalService } from '../modal/modal.service';
+import { EvolutionTreeModalComponent } from "../evolution-tree-modal/evolution-tree-modal.component";
 
 @Component({
   standalone: true,
   selector: 'app-digimon-details-modal',
   templateUrl: './digimon-details-modal.component.html',
   styleUrl: './digimon-details-modal.component.scss',
-  imports: [ModalComponent, CommonModule, EvolutionTreeComponent],
+  imports: [
+    ModalComponent,
+    CommonModule,
+    EvolutionTreeComponent,
+    ButtonComponent,
+    EvolutionTreeModalComponent
+],
 })
 export class DigimonDetailsModalComponent {
   digimonDetailsModalId = 'digimon-details-modal';
+  evolutionTreeModalId = 'evolution-tree-modal';
 
   globalState = inject(GlobalStateDataSource);
+  modalService = inject(ModalService);
 
   digimonDetailedAge = computed(() => {
     if (!this.globalState.selectedDigimonOnDetailsAccessor) return;
@@ -117,5 +128,9 @@ export class DigimonDetailsModalComponent {
     }
 
     return parts.join(', ') || 'less than an hour';
+  }
+
+  openEvolutionTreeModal() {
+    this.modalService.open(this.evolutionTreeModalId);
   }
 }

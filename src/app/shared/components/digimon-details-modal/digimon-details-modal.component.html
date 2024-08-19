@@ -147,7 +147,12 @@
           </div>
         </div>
         }
+        <app-button
+          text="Evolution Tree"
+          (click)="openEvolutionTreeModal()"  />
       </div>
     </div>
   </div>
 </app-modal>
+
+<app-evolution-tree-modal [mainDigimon]="globalState.selectedDigimonOnDetailsAccessor"/>

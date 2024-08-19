@@ -1,0 +1,10 @@
+<app-modal [id]="evolutionTreeModalId" (openEvent)="onOpen()" (closeEvent)="onClose()">
+  <div class="evolution-tree-container">
+    <div class="evolution-tree-header">
+      <h2>{{ mainDigimon()?.name }}</h2>
+    </div>
+    <div class="evolution-tree-content">
+      <div id="evolutionTreeWrapper"></div>
+    </div>
+  </div>
+</app-modal>

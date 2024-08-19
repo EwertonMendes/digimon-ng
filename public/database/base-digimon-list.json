@@ -40,6 +40,26 @@
     "degenerateSeedList": ["70dbb38a-690e-45b3-bfc5-eccba64fbd9b"]
   },
   {
+    "seed": "66e5a6ea-93a5-47f8-91d9-8601857496f6",
+    "name": "Skull Greymon",
+    "img": "/assets/digimons/SkullGreymon.webp",
+    "rank": "Ultimate",
+    "species": "Dark",
+    "currentHp": 236,
+    "maxHp": 236,
+    "currentMp": 224,
+    "maxMp": 224,
+    "atk": 146,
+    "def": 71,
+    "speed": 55,
+    "exp": 0,
+    "totalExp": 0,
+    "level": 1,
+    "bitFarmingRate": 4,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": ["70dbb38a-690e-45b3-bfc5-eccba64fbd9b"]
+  },
+  {
     "seed": "70dbb38a-690e-45b3-bfc5-eccba64fbd9b",
     "name": "Greymon",
     "img": "/assets/digimons/Greymon.webp",
@@ -56,7 +76,7 @@
     "totalExp": 0,
     "level": 1,
     "bitFarmingRate": 2,
-    "digiEvolutionSeedList": ["25fc7b61-17ae-453b-94f7-4fa4f9171633"],
+    "digiEvolutionSeedList": ["25fc7b61-17ae-453b-94f7-4fa4f9171633", "66e5a6ea-93a5-47f8-91d9-8601857496f6"],
     "degenerateSeedList": ["96c23ff9-d6b4-43da-91e6-f0c9799c65d7"]
   },
   {

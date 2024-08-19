@@ -24,7 +24,29 @@
       "level": 1,
       "bitFarmingRate": 5,
       "digiEvolutionSeedList": [],
-      "degenerateSeedList": ["25fc7b61-17ae-453b-94f7-4fa4f9171633"]
+      "degenerateSeedList": ["25fc7b61-17ae-453b-94f7-4fa4f9171633"],
+      "currentEvolutionRoute": [
+        {
+          "seed": "b5ac222a-e653-4543-923e-77355dd24686",
+          "rank": "Fresh"
+        },
+        {
+          "seed": "edc9812f-82a6-487f-9a4d-52b845643176",
+          "rank": "In-Training"
+        },
+        {
+          "seed": "96c23ff9-d6b4-43da-91e6-f0c9799c65d7",
+          "rank": "Rookie"
+        },
+        {
+          "seed": "70dbb38a-690e-45b3-bfc5-eccba64fbd9b",
+          "rank": "Champion"
+        },
+        {
+          "seed": "25fc7b61-17ae-453b-94f7-4fa4f9171633",
+          "rank": "Ultimate"
+        }
+      ]
     },
     {
       "id": "c7e4fd0d-e0d8-4a29-8edd-39be3c3d6a34",
@@ -47,7 +69,25 @@
       "level": 1,
       "bitFarmingRate": 4,
       "digiEvolutionSeedList": ["df67cc96-4a69-4f26-88d6-2c98ccaecfe6"],
-      "degenerateSeedList": ["70dbb38a-690e-45b3-bfc5-eccba64fbd9b"]
+      "degenerateSeedList": ["70dbb38a-690e-45b3-bfc5-eccba64fbd9b"],
+      "currentEvolutionRoute": [
+        {
+          "seed": "b5ac222a-e653-4543-923e-77355dd24686",
+          "rank": "Fresh"
+        },
+        {
+          "seed": "edc9812f-82a6-487f-9a4d-52b845643176",
+          "rank": "In-Training"
+        },
+        {
+          "seed": "96c23ff9-d6b4-43da-91e6-f0c9799c65d7",
+          "rank": "Rookie"
+        },
+        {
+          "seed": "70dbb38a-690e-45b3-bfc5-eccba64fbd9b",
+          "rank": "Champion"
+        }
+      ]
     },
     {
       "id": "474aa28d-d11f-47d1-b74e-67a31fe63d68",
@@ -68,8 +108,22 @@
       "totalExp": 0,
       "level": 1,
       "bitFarmingRate": 2,
-      "digiEvolutionSeedList": ["25fc7b61-17ae-453b-94f7-4fa4f9171633"],
-      "degenerateSeedList": ["96c23ff9-d6b4-43da-91e6-f0c9799c65d7"]
+      "digiEvolutionSeedList": ["25fc7b61-17ae-453b-94f7-4fa4f9171633", "66e5a6ea-93a5-47f8-91d9-8601857496f6"],
+      "degenerateSeedList": ["96c23ff9-d6b4-43da-91e6-f0c9799c65d7"],
+      "currentEvolutionRoute": [
+        {
+          "seed": "b5ac222a-e653-4543-923e-77355dd24686",
+          "rank": "Fresh"
+        },
+        {
+          "seed": "edc9812f-82a6-487f-9a4d-52b845643176",
+          "rank": "In-Training"
+        },
+        {
+          "seed": "96c23ff9-d6b4-43da-91e6-f0c9799c65d7",
+          "rank": "Rookie"
+        }
+      ]
     }
   ],
   "bitFarmDigimonList": [
@@ -93,7 +147,17 @@
       "level": 1,
       "bitFarmingRate": 1,
       "digiEvolutionSeedList": ["70dbb38a-690e-45b3-bfc5-eccba64fbd9b"],
-      "degenerateSeedList": []
+      "degenerateSeedList": [],
+      "currentEvolutionRoute": [
+        {
+          "seed": "b5ac222a-e653-4543-923e-77355dd24686",
+          "rank": "Fresh"
+        },
+        {
+          "seed": "edc9812f-82a6-487f-9a4d-52b845643176",
+          "rank": "In-Training"
+        }
+      ]
     },
     {
       "id": "d71aa23r-d11f-47d1-b74e-67a31fe63du7",
@@ -114,8 +178,22 @@
       "totalExp": 0,
       "level": 1,
       "bitFarmingRate": 2,
-      "digiEvolutionSeedList": ["25fc7b61-17ae-453b-94f7-4fa4f9171633"],
-      "degenerateSeedList": ["96c23ff9-d6b4-43da-91e6-f0c9799c65d7"]
+      "digiEvolutionSeedList": ["25fc7b61-17ae-453b-94f7-4fa4f9171633", "66e5a6ea-93a5-47f8-91d9-8601857496f6"],
+      "degenerateSeedList": ["96c23ff9-d6b4-43da-91e6-f0c9799c65d7"],
+      "currentEvolutionRoute": [
+        {
+          "seed": "b5ac222a-e653-4543-923e-77355dd24686",
+          "rank": "Fresh"
+        },
+        {
+          "seed": "edc9812f-82a6-487f-9a4d-52b845643176",
+          "rank": "In-Training"
+        },
+        {
+          "seed": "96c23ff9-d6b4-43da-91e6-f0c9799c65d7",
+          "rank": "Rookie"
+        }
+      ]
     }
   ],
   "inTrainingDigimonList": [
@@ -138,8 +216,22 @@
       "totalExp": 0,
       "level": 1,
       "bitFarmingRate": 2,
-      "digiEvolutionSeedList": ["25fc7b61-17ae-453b-94f7-4fa4f9171633"],
-      "degenerateSeedList": ["96c23ff9-d6b4-43da-91e6-f0c9799c65d7"]
+      "digiEvolutionSeedList": ["25fc7b61-17ae-453b-94f7-4fa4f9171633", "66e5a6ea-93a5-47f8-91d9-8601857496f6"],
+      "degenerateSeedList": ["96c23ff9-d6b4-43da-91e6-f0c9799c65d7"],
+      "currentEvolutionRoute": [
+        {
+          "seed": "b5ac222a-e653-4543-923e-77355dd24686",
+          "rank": "Fresh"
+        },
+        {
+          "seed": "edc9812f-82a6-487f-9a4d-52b845643176",
+          "rank": "In-Training"
+        },
+        {
+          "seed": "96c23ff9-d6b4-43da-91e6-f0c9799c65d7",
+          "rank": "Rookie"
+        }
+      ]
     },
     {
       "id": "7skd5e6f-9ca0-4d7b-af21-cb25d8e9io06",
@@ -161,7 +253,25 @@
       "level": 1,
       "bitFarmingRate": 4,
       "digiEvolutionSeedList": ["df67cc96-4a69-4f26-88d6-2c98ccaecfe6"],
-      "degenerateSeedList": ["70dbb38a-690e-45b3-bfc5-eccba64fbd9b"]
+      "degenerateSeedList": ["70dbb38a-690e-45b3-bfc5-eccba64fbd9b"],
+      "currentEvolutionRoute": [
+        {
+          "seed": "b5ac222a-e653-4543-923e-77355dd24686",
+          "rank": "Fresh"
+        },
+        {
+          "seed": "edc9812f-82a6-487f-9a4d-52b845643176",
+          "rank": "In-Training"
+        },
+        {
+          "seed": "96c23ff9-d6b4-43da-91e6-f0c9799c65d7",
+          "rank": "Rookie"
+        },
+        {
+          "seed": "70dbb38a-690e-45b3-bfc5-eccba64fbd9b",
+          "rank": "Champion"
+        }
+      ]
     }
   ],
   "hospitalDigimonList": [
@@ -210,7 +320,29 @@
       "level": 1,
       "bitFarmingRate": 5,
       "digiEvolutionSeedList": [],
-      "degenerateSeedList": ["25fc7b61-17ae-453b-94f7-4fa4f9171633"]
+      "degenerateSeedList": ["25fc7b61-17ae-453b-94f7-4fa4f9171633"],
+      "currentEvolutionRoute": [
+        {
+          "seed": "b5ac222a-e653-4543-923e-77355dd24686",
+          "rank": "Fresh"
+        },
+        {
+          "seed": "edc9812f-82a6-487f-9a4d-52b845643176",
+          "rank": "In-Training"
+        },
+        {
+          "seed": "96c23ff9-d6b4-43da-91e6-f0c9799c65d7",
+          "rank": "Rookie"
+        },
+        {
+          "seed": "70dbb38a-690e-45b3-bfc5-eccba64fbd9b",
+          "rank": "Champion"
+        },
+        {
+          "seed": "25fc7b61-17ae-453b-94f7-4fa4f9171633",
+          "rank": "Ultimate"
+        }
+      ]
     },
     {
       "id": "9e683359-c155-4d63-8d89-b9c26c98dd7b",

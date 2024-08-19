@@ -20,5 +20,6 @@ export interface Digimon {
   bitFarmingRate?: number;
   digiEvolutionSeedList: string[];
   degenerateSeedList: string[];
+  currentEvolutionRoute?: Array<{ seed: string; rank: string }>;
   [key: string]: any;
 }

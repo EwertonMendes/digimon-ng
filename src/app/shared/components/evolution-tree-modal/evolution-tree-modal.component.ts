@@ -26,6 +26,7 @@ export class EvolutionTreeModalComponent {
 
   onOpen() {
     const container = document.getElementById('evolutionTreeWrapper')!;
+    if (!container) return;
 
     const graph = new Graph();
 
@@ -39,8 +40,6 @@ export class EvolutionTreeModalComponent {
 
         return digimon;
       });
-
-    console.log('evolutionRouteDigimons', evolutionRouteDigimons);
 
     evolutionRouteDigimons?.forEach((digimon, index) => {
       if (!digimon) return;
@@ -88,8 +87,6 @@ export class EvolutionTreeModalComponent {
     const possibleEvolutions = this.digimonService.getDigimonEvolutions(
       this.mainDigimon()
     );
-
-    console.log('possibleEvolutions', possibleEvolutions);
 
     possibleEvolutions.forEach((evolution, index) => {
       graph.addNode(evolution.name, {
@@ -163,6 +160,7 @@ export class EvolutionTreeModalComponent {
   }
 
   onClose() {
+    if (!this.sigma) return;
     this.sigma.kill();
   }
 }

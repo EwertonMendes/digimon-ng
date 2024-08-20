@@ -108,7 +108,10 @@
       "totalExp": 0,
       "level": 1,
       "bitFarmingRate": 2,
-      "digiEvolutionSeedList": ["25fc7b61-17ae-453b-94f7-4fa4f9171633", "66e5a6ea-93a5-47f8-91d9-8601857496f6"],
+      "digiEvolutionSeedList": [
+        "25fc7b61-17ae-453b-94f7-4fa4f9171633",
+        "66e5a6ea-93a5-47f8-91d9-8601857496f6"
+      ],
       "degenerateSeedList": ["96c23ff9-d6b4-43da-91e6-f0c9799c65d7"],
       "currentEvolutionRoute": [
         {
@@ -131,7 +134,6 @@
       "id": "rt54fd0d-e0d8-4a29-8edd-39be3c3d66y7",
       "seed": "96c23ff9-d6b4-43da-91e6-f0c9799c65d7",
       "name": "Agumon",
-      "birthDate": "2024-01-01T22:00:00",
       "img": "/assets/digimons/Agumon.webp",
       "rank": "Rookie",
       "species": "Dragon",
@@ -146,8 +148,11 @@
       "totalExp": 0,
       "level": 1,
       "bitFarmingRate": 1,
-      "digiEvolutionSeedList": ["70dbb38a-690e-45b3-bfc5-eccba64fbd9b"],
-      "degenerateSeedList": [],
+      "digiEvolutionSeedList": [
+        "70dbb38a-690e-45b3-bfc5-eccba64fbd9b",
+        "67cd2d63-4299-446e-a851-6f04e9b51bc5"
+      ],
+      "degenerateSeedList": ["edc9812f-82a6-487f-9a4d-52b845643176"],
       "currentEvolutionRoute": [
         {
           "seed": "b5ac222a-e653-4543-923e-77355dd24686",
@@ -178,7 +183,10 @@
       "totalExp": 0,
       "level": 1,
       "bitFarmingRate": 2,
-      "digiEvolutionSeedList": ["25fc7b61-17ae-453b-94f7-4fa4f9171633", "66e5a6ea-93a5-47f8-91d9-8601857496f6"],
+      "digiEvolutionSeedList": [
+        "25fc7b61-17ae-453b-94f7-4fa4f9171633",
+        "66e5a6ea-93a5-47f8-91d9-8601857496f6"
+      ],
       "degenerateSeedList": ["96c23ff9-d6b4-43da-91e6-f0c9799c65d7"],
       "currentEvolutionRoute": [
         {
@@ -216,7 +224,10 @@
       "totalExp": 0,
       "level": 1,
       "bitFarmingRate": 2,
-      "digiEvolutionSeedList": ["25fc7b61-17ae-453b-94f7-4fa4f9171633", "66e5a6ea-93a5-47f8-91d9-8601857496f6"],
+      "digiEvolutionSeedList": [
+        "25fc7b61-17ae-453b-94f7-4fa4f9171633",
+        "66e5a6ea-93a5-47f8-91d9-8601857496f6"
+      ],
       "degenerateSeedList": ["96c23ff9-d6b4-43da-91e6-f0c9799c65d7"],
       "currentEvolutionRoute": [
         {
@@ -387,6 +398,49 @@
       "bitFarmingRate": 2,
       "digiEvolutionSeedList": [],
       "degenerateSeedList": []
+    },
+    {
+      "id": "6dad38a0-355b-4792-acce-a4b9473191f6",
+      "seed": "e3f58de4-75f0-4e38-81a0-ad1c32367f97",
+      "name": "Shine Greymon",
+      "img": "/assets/digimons/ShineGreymon.webp",
+      "rank": "Mega",
+      "species": "Dragon",
+      "currentHp": 323,
+      "maxHp": 323,
+      "currentMp": 330,
+      "maxMp": 330,
+      "atk": 173,
+      "def": 140,
+      "speed": 127,
+      "exp": 0,
+      "totalExp": 0,
+      "level": 1,
+      "bitFarmingRate": 5,
+      "digiEvolutionSeedList": [],
+      "degenerateSeedList": ["529f424a-7efe-49bd-90dc-58286aaa9fb5"],
+      "currentEvolutionRoute": [
+        {
+          "seed": "b5ac222a-e653-4543-923e-77355dd24686",
+          "rank": "Fresh"
+        },
+        {
+          "seed": "edc9812f-82a6-487f-9a4d-52b845643176",
+          "rank": "In-Training"
+        },
+        {
+          "seed": "96c23ff9-d6b4-43da-91e6-f0c9799c65d7",
+          "rank": "Rookie"
+        },
+        {
+          "seed": "67cd2d63-4299-446e-a851-6f04e9b51bc5",
+          "rank": "Champion"
+        },
+        {
+          "seed": "529f424a-7efe-49bd-90dc-58286aaa9fb5",
+          "rank": "Ultimate"
+        }
+      ]
     }
   ],
   "digimonStorageCapacity": 5,

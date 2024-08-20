@@ -1,10 +1,62 @@
-<app-modal [id]="evolutionTreeModalId" (openEvent)="onOpen()" (closeEvent)="onClose()">
+<app-modal
+  [id]="evolutionTreeModalId"
+  (openEvent)="onOpen()"
+  (closeEvent)="onClose()"
+>
   <div class="evolution-tree-container">
     <div class="evolution-tree-header">
       <h2>{{ mainDigimon()?.name }}</h2>
     </div>
     <div class="evolution-tree-content">
       <div id="evolutionTreeWrapper"></div>
+      <div class="selected-digimon-container">
+        <div class="selected-digimon-header">
+          <h3>{{ selectedDigimon()?.name }}</h3>
+        </div>
+        <div class="selected-digimon-image">
+          @if(selectedDigimon()) {
+          <img [src]="selectedDigimon()?.img" alt="selected-digimon" />
+          } @else {
+          <span>Select a digimon to view its stats</span>
+          }
+        </div>
+        <div class="selected-digimon-content">
+          <div class="selected-digimon-info">
+            <div class="selected-digimon-info-row">
+              <span>Rank:</span>
+              <span>{{ selectedDigimon()?.rank ?? "-" }}</span>
+            </div>
+            <div class="selected-digimon-info-row">
+              <span>Species:</span>
+              <span>{{ selectedDigimon()?.species ?? "-" }}</span>
+            </div>
+            <div class="selected-digimon-info-row">
+              <span>HP:</span>
+              <span>{{ selectedDigimon()?.maxHp ?? "-" }}</span>
+            </div>
+            <div class="selected-digimon-info-row">
+              <span>MP:</span>
+              <span>{{ selectedDigimon()?.maxMp ?? "-" }}</span>
+            </div>
+            <div class="selected-digimon-info-row">
+              <span>ATK:</span>
+              <span>{{ selectedDigimon()?.atk ?? "-" }}</span>
+            </div>
+            <div class="selected-digimon-info-row">
+              <span>DEF:</span>
+              <span>{{ selectedDigimon()?.def ?? "-" }}</span>
+            </div>
+            <div class="selected-digimon-info-row">
+              <span>SPD:</span>
+              <span>{{ selectedDigimon()?.speed ?? "-" }}</span>
+            </div>
+            <div class="selected-digimon-info-row">
+              <span>Bits per minute:</span>
+              <span>{{ selectedDigimon()?.bitFarmingRate ?? "-" }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </app-modal>

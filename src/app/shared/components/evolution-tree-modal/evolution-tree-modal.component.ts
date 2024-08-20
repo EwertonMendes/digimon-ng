@@ -1,6 +1,6 @@
 import Graph from 'graphology';
 import Sigma from 'sigma';
-import { Component, inject, input } from '@angular/core';
+import { Component, inject, input, signal } from '@angular/core';
 import { ModalComponent } from '../modal/modal.component';
 import { Digimon } from '../../../core/interfaces/digimon.interface';
 import { createNodeImageProgram } from '@sigma/node-image';
@@ -22,6 +22,7 @@ export class EvolutionTreeModalComponent {
   sigma!: Sigma;
   currentRank: string = 'Fresh';
   evolutionRouteDigimons: Digimon[] = [];
+  selectedDigimon = signal<Digimon | undefined>(undefined);
 
   digimonService = inject(DigimonService);
 
@@ -189,6 +190,7 @@ export class EvolutionTreeModalComponent {
       const digimon = this.digimonService.getBaseDigimonDataBySeed(
         clickedNode['seed']
       );
+      this.selectedDigimon.set(digimon);
       const possibleEvolutions =
         this.digimonService.getDigimonEvolutions(digimon);
 
@@ -232,6 +234,7 @@ export class EvolutionTreeModalComponent {
   }
 
   onClose() {
+    this.selectedDigimon.set(undefined);
     if (!this.sigma) return;
     this.sigma.kill();
   }

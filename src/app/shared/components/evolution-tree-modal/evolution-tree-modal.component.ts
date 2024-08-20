@@ -163,12 +163,6 @@ export class EvolutionTreeModalComponent {
 
       this.currentRank = clickedNode['rank'];
 
-      const digimon = this.digimonService.getBaseDigimonDataBySeed(
-        clickedNode['seed']
-      );
-      const possibleEvolutions =
-        this.digimonService.getDigimonEvolutions(digimon);
-
       const upperRankNodeToDrop = this.sigma
         .getGraph()
         .nodes()
@@ -188,13 +182,28 @@ export class EvolutionTreeModalComponent {
         this.sigma.getGraph().dropNode(node);
       });
 
+      const digimon = this.digimonService.getBaseDigimonDataBySeed(
+        clickedNode['seed']
+      );
+      const possibleEvolutions =
+        this.digimonService.getDigimonEvolutions(digimon);
+
       possibleEvolutions.forEach((evolution: Digimon, index: number) => {
-        if (this.sigma.getGraph().findNode((node) => node === evolution.seed))
+        if (this.sigma.getGraph().findNode((node) => node === evolution.seed)) {
           return;
+        }
+
+        let newNodeX = clickedNode['x'] + 1;
+        let newNodeY = clickedNode['y'] + index;
+
+        if (this.hasNodeInPosition(newNodeX, newNodeY)) {
+          newNodeY++;
+        }
+
         this.sigma.getGraph().addNode(evolution.seed, {
           label: `${evolution.name} (${evolution.rank})`,
-          x: clickedNode['x'] + 1,
-          y: clickedNode['y'] + index,
+          x: newNodeX,
+          y: newNodeY,
           size: 40,
           color: '#D95D39',
           type: 'image',
@@ -208,6 +217,14 @@ export class EvolutionTreeModalComponent {
         });
       });
     });
+  }
+
+  private hasNodeInPosition(x: number, y: number) {
+    const node = this.sigma.getGraph().findNode((node) => {
+      const nodeAttributes = this.sigma.getGraph().getNodeAttributes(node);
+      return nodeAttributes['x'] === x && nodeAttributes['y'] === y;
+    });
+    return node;
   }
 
   onClose() {

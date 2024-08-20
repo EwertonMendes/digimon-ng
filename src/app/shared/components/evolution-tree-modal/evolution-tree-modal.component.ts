@@ -51,7 +51,7 @@ export class EvolutionTreeModalComponent {
         x: index,
         y: 0,
         size: 40,
-        color: '#D95D39',
+        color: '#C0E5C8',
         type: 'image',
         image: digimon.img,
         seed: digimon.seed,
@@ -63,8 +63,8 @@ export class EvolutionTreeModalComponent {
           this.evolutionRouteDigimons[index - 1]?.seed,
           digimon.seed,
           {
-            size: 2,
-            color: 'black',
+            size: 5,
+            color: '#C0E5C8',
           }
         );
       }

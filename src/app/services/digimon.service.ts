@@ -101,7 +101,7 @@ export class DigimonService {
     return newDigimon;
   }
 
-  private getRankOrder(rank: string): number {
+  getRankOrder(rank: string): number {
     const rankOrder: Record<string, number> = {
       Fresh: 1,
       'In-Training': 2,

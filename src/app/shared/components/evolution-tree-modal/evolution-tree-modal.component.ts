@@ -21,6 +21,7 @@ export class EvolutionTreeModalComponent {
   mainDigimon = input<Digimon>();
   sigma!: Sigma;
   currentRank: string = 'Fresh';
+  evolutionRouteDigimons: Digimon[] = [];
 
   digimonService = inject(DigimonService);
 
@@ -30,8 +31,8 @@ export class EvolutionTreeModalComponent {
 
     const graph = new Graph();
 
-    const evolutionRouteDigimons =
-      this.mainDigimon()?.currentEvolutionRoute?.map((evolution) => {
+    this.evolutionRouteDigimons = this.mainDigimon()
+      ?.currentEvolutionRoute?.map((evolution) => {
         const digimon = this.digimonService.getBaseDigimonDataBySeed(
           evolution.seed
         );
@@ -39,9 +40,10 @@ export class EvolutionTreeModalComponent {
         if (!digimon) return;
 
         return digimon;
-      });
+      })
+      .filter((digimon) => digimon !== undefined) as Digimon[];
 
-    evolutionRouteDigimons?.forEach((digimon, index) => {
+    this.evolutionRouteDigimons?.forEach((digimon, index) => {
       if (!digimon) return;
 
       graph.addNode(digimon.name, {
@@ -57,16 +59,20 @@ export class EvolutionTreeModalComponent {
       });
 
       if (index > 0) {
-        graph.addEdge(evolutionRouteDigimons[index - 1]?.name, digimon.name, {
-          size: 2,
-          color: 'black',
-        });
+        graph.addEdge(
+          this.evolutionRouteDigimons[index - 1]?.name,
+          digimon.name,
+          {
+            size: 2,
+            color: 'black',
+          }
+        );
       }
     });
 
     graph.addNode(this.mainDigimon()?.name, {
       label: this.mainDigimon()?.name,
-      x: evolutionRouteDigimons?.length ?? 0,
+      x: this.evolutionRouteDigimons?.length ?? 0,
       y: 0,
       size: 40,
       color: '#D95D39',
@@ -76,9 +82,10 @@ export class EvolutionTreeModalComponent {
       rank: this.mainDigimon()?.rank,
     });
 
-    if (evolutionRouteDigimons?.length) {
+    if (this.evolutionRouteDigimons?.length) {
       graph.addEdge(
-        evolutionRouteDigimons[evolutionRouteDigimons.length - 1]?.name,
+        this.evolutionRouteDigimons[this.evolutionRouteDigimons.length - 1]
+          ?.name,
         this.mainDigimon()?.name,
         { size: 2, color: 'black' }
       );
@@ -91,7 +98,7 @@ export class EvolutionTreeModalComponent {
     possibleEvolutions.forEach((evolution, index) => {
       graph.addNode(evolution.name, {
         label: evolution.name,
-        x: evolutionRouteDigimons?.length! + 1,
+        x: this.evolutionRouteDigimons?.length! + 1,
         y: index,
         size: 40,
         color: '#D95D39',
@@ -155,7 +162,51 @@ export class EvolutionTreeModalComponent {
       const clickedNode = this.sigma.getGraph().getNodeAttributes(data.node);
 
       this.currentRank = clickedNode['rank'];
-      console.log('currentRank', this.currentRank);
+
+      const digimon = this.digimonService.getBaseDigimonDataBySeed(
+        clickedNode['seed']
+      );
+      const possibleEvolutions =
+        this.digimonService.getDigimonEvolutions(digimon);
+
+      const upperRankNodeToDrop = this.sigma
+        .getGraph()
+        .nodes()
+        .filter((node) => {
+          const nodeAttributes = this.sigma.getGraph().getNodeAttributes(node);
+          return (
+            nodeAttributes['seed'] !== this.mainDigimon()?.seed &&
+            !this.evolutionRouteDigimons.find(
+              (evolution) => evolution.seed === nodeAttributes['seed']
+            ) &&
+            this.digimonService.getRankOrder(nodeAttributes['rank']) >
+              this.digimonService.getRankOrder(this.currentRank)
+          );
+        });
+
+      upperRankNodeToDrop.forEach((node) => {
+        this.sigma.getGraph().dropNode(node);
+      });
+
+      possibleEvolutions.forEach((evolution: Digimon, index: number) => {
+        if (this.sigma.getGraph().findNode((node) => node === evolution.name))
+          return;
+        this.sigma.getGraph().addNode(evolution.name, {
+          label: evolution.name,
+          x: clickedNode['x'] + 1,
+          y: clickedNode['y'] + index,
+          size: 40,
+          color: '#D95D39',
+          type: 'image',
+          image: evolution.img,
+          seed: evolution.seed,
+          rank: evolution.rank,
+        });
+        this.sigma.getGraph().addEdge(clickedNode['label'], evolution.name, {
+          size: 2,
+          color: 'black',
+        });
+      });
     });
   }
 

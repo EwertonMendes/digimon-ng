@@ -3,7 +3,7 @@ import Sigma from 'sigma';
 import { Component, inject, input } from '@angular/core';
 import { ModalComponent } from '../modal/modal.component';
 import { Digimon } from '../../../core/interfaces/digimon.interface';
-import { NodeImageProgram } from '@sigma/node-image';
+import { createNodeImageProgram } from '@sigma/node-image';
 import { Settings } from 'sigma/settings';
 import { NodeDisplayData, PartialButFor } from 'sigma/types';
 import { DigimonService } from '../../../services/digimon.service';
@@ -118,7 +118,11 @@ export class EvolutionTreeModalComponent {
 
     this.sigma = new Sigma(graph, container, {
       nodeProgramClasses: {
-        image: NodeImageProgram,
+        image: createNodeImageProgram({
+          objectFit: 'contain',
+          padding: 0.1,
+          keepWithinCircle: true,
+        }),
       },
       minCameraRatio: 0.5,
       maxCameraRatio: 2,

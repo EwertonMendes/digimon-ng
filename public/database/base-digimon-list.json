@@ -56,7 +56,7 @@
     "totalExp": 0,
     "level": 1,
     "bitFarmingRate": 4,
-    "digiEvolutionSeedList": [],
+    "digiEvolutionSeedList": ["f1b3b3b4-1b3b-4b3b-8b3b-3b3b3b3b3b3b", "fvargf4-283b-4b3b-8b3b-003b30u65cf1"],
     "degenerateSeedList": ["70dbb38a-690e-45b3-bfc5-eccba64fbd9b"]
   },
   {
@@ -178,5 +178,45 @@
     "bitFarmingRate": 4,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": []
+  },
+  {
+    "seed": "f1b3b3b4-1b3b-4b3b-8b3b-3b3b3b3b3b3b",
+    "name": "MachineDramon",
+    "img": "/assets/digimons/MachineDramon.webp",
+    "rank": "Mega",
+    "species": "Machine",
+    "currentHp": 323,
+    "maxHp": 323,
+    "currentMp": 327,
+    "maxMp": 327,
+    "atk": 174,
+    "def": 148,
+    "speed": 124,
+    "exp": 0,
+    "totalExp": 0,
+    "level": 1,
+    "bitFarmingRate": 5,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": ["66e5a6ea-93a5-47f8-91d9-8601857496f6"]
+  },
+  {
+    "seed": "fvargf4-283b-4b3b-8b3b-003b30u65cf1",
+    "name": "Black War Greymon",
+    "img": "/assets/digimons/BlackWarGreymon.webp",
+    "rank": "Mega",
+    "species": "Dragon",
+    "currentHp": 322,
+    "maxHp": 322,
+    "currentMp": 338,
+    "maxMp": 338,
+    "atk": 173,
+    "def": 139,
+    "speed": 127,
+    "exp": 0,
+    "totalExp": 0,
+    "level": 1,
+    "bitFarmingRate": 5,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": ["66e5a6ea-93a5-47f8-91d9-8601857496f6"]
   }
 ]

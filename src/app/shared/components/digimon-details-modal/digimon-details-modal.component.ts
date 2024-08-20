@@ -3,10 +3,10 @@ import { ModalComponent } from '../modal/modal.component';
 import { GlobalStateDataSource } from '../../../state/global-state.datasource';
 import { Digimon } from '../../../core/interfaces/digimon.interface';
 import { CommonModule } from '@angular/common';
-import { EvolutionTreeComponent } from '../evolution-tree/evolution-tree.component';
+import { EvolutionRouteComponent } from '../evolution-route/evolution-route.component';
 import { ButtonComponent } from '../button/button.component';
 import { ModalService } from '../modal/modal.service';
-import { EvolutionTreeModalComponent } from "../evolution-tree-modal/evolution-tree-modal.component";
+import { EvolutionTreeModalComponent } from '../evolution-tree-modal/evolution-tree-modal.component';
 
 @Component({
   standalone: true,
@@ -16,10 +16,10 @@ import { EvolutionTreeModalComponent } from "../evolution-tree-modal/evolution-t
   imports: [
     ModalComponent,
     CommonModule,
-    EvolutionTreeComponent,
+    EvolutionRouteComponent,
     ButtonComponent,
-    EvolutionTreeModalComponent
-],
+    EvolutionTreeModalComponent,
+  ],
 })
 export class DigimonDetailsModalComponent {
   digimonDetailsModalId = 'digimon-details-modal';
@@ -46,19 +46,22 @@ export class DigimonDetailsModalComponent {
     );
   });
 
-  evolutions = signal<Digimon[]>([]);
+  evolutionRoute = signal<Digimon[]>([]);
 
   constructor() {
     effect(
       () => {
         this.globalState.selectedDigimonOnDetailsAccessor;
-        const evolutionList = this.globalState.getDigimonCompleteEvolutionTree(
+        const evolutionList = this.globalState.getDigimonCurrentEvolutionRoute(
           this.globalState.selectedDigimonOnDetailsAccessor!
         );
 
-        if (!evolutionList) return;
+        if (!evolutionList) {
+          this.evolutionRoute.set([]);
+          return;
+        };
 
-        this.evolutions.set(evolutionList.mainEvolutionTree);
+        this.evolutionRoute.set(evolutionList);
       },
       {
         allowSignalWrites: true,

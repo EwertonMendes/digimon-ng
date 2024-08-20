@@ -1,5 +1,5 @@
-<div class="evolution-tree">
-  @for(digimon of evolutionTree(); track digimon.seed){
+<div class="evolution-route">
+  @for(digimon of evolutionRoute(); track digimon.seed; let index = $index){
   <div class="evolution-stage">
     <img [src]="digimon.img" [alt]="digimon.name" class="digimon-image" />
     <div class="digimon-info">
@@ -7,5 +7,9 @@
       <p>{{ digimon.rank }}</p>
     </div>
   </div>
-  }
+  @if(index < evolutionRoute().length - 1){
+  <div class="evolution-arrow">
+    <span>▶</span>
+  </div>
+  } }
 </div>

@@ -44,50 +44,10 @@ export class DigimonService {
     return digimonList;
   }
 
-  getDigimonCompleteEvolutionTree(digimon?: Digimon) {
-    let mainEvolutionTree: Digimon[] = [];
-    const directEvolutions: Digimon[] = this.getDigimonEvolutions(digimon);
-    const directDegenerations: Digimon[] =
-      this.getDigimonDegenerations(digimon);
-
-    if (digimon) {
-      const visited: Set<string> = new Set();
-      const digimonQueueForward: Digimon[] = [digimon];
-      const digimonQueueBackward: Digimon[] = [digimon];
-
-      this.processBackwardQueue(
-        digimonQueueBackward,
-        visited,
-        mainEvolutionTree
-      );
-
-      visited.delete(digimon.seed);
-      this.processForwardQueue(
-        digimonQueueForward,
-        visited,
-        mainEvolutionTree,
-        digimon.seed
-      );
-
-      if (
-        this.isTreeContainingOnlySelectedDigimon(
-          mainEvolutionTree,
-          digimon.seed
-        )
-      ) {
-        mainEvolutionTree = [];
-      }
-
-      mainEvolutionTree.sort(
-        (a, b) => this.getRankOrder(a.rank) - this.getRankOrder(b.rank)
-      );
-    }
-
-    return {
-      mainEvolutionTree,
-      directEvolutions,
-      directDegenerations,
-    };
+  getDigimonCurrentEvolutionRoute(digimon?: Digimon) {
+    return digimon?.currentEvolutionRoute?.map((digimon) =>
+      this.getBaseDigimonDataBySeed(digimon.seed)
+    ) as Digimon[];
   }
 
   generateRandomDigimon() {
@@ -113,47 +73,4 @@ export class DigimonService {
     return rankOrder[rank] || 0;
   }
 
-  private processBackwardQueue(
-    queue: Digimon[],
-    visited: Set<string>,
-    tree: Digimon[]
-  ) {
-    while (queue.length > 0) {
-      const currentDigimon = queue.shift();
-      if (currentDigimon && !visited.has(currentDigimon.seed)) {
-        tree.push(currentDigimon);
-        visited.add(currentDigimon.seed);
-        currentDigimon.degenerateSeedList.forEach((seed) => {
-          const nextDigimon = this.getBaseDigimonDataBySeed(seed);
-          if (nextDigimon) queue.push(nextDigimon);
-        });
-      }
-    }
-  }
-
-  private processForwardQueue(
-    queue: Digimon[],
-    visited: Set<string>,
-    tree: Digimon[],
-    initialSeed: string
-  ) {
-    while (queue.length > 0) {
-      const currentDigimon = queue.shift();
-      if (currentDigimon && !visited.has(currentDigimon.seed)) {
-        if (currentDigimon.seed !== initialSeed) tree.push(currentDigimon);
-        visited.add(currentDigimon.seed);
-        currentDigimon.digiEvolutionSeedList.forEach((seed) => {
-          const nextDigimon = this.getBaseDigimonDataBySeed(seed);
-          if (nextDigimon) queue.push(nextDigimon);
-        });
-      }
-    }
-  }
-
-  private isTreeContainingOnlySelectedDigimon(
-    tree: Digimon[],
-    seed: string
-  ): boolean {
-    return tree.every((d) => d.seed === seed);
-  }
 }

@@ -438,8 +438,8 @@ export class GlobalStateDataSource {
     );
   }
 
-  getDigimonCompleteEvolutionTree(digimon: Digimon) {
-    return this.digimonService.getDigimonCompleteEvolutionTree(digimon);
+  getDigimonCurrentEvolutionRoute(digimon: Digimon) {
+    return this.digimonService.getDigimonCurrentEvolutionRoute(digimon);
   }
 
   resetBattleState() {

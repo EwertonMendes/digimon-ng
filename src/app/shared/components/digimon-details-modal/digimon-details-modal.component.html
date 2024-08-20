@@ -137,12 +137,12 @@
           </div>
         </div>
 
-        @if( evolutions().length > 0 ) {
+        @if( evolutionRoute().length > 0 ) {
         <div class="digimon-details-content-info-item">
           <div class="digimon-evolution-list">
-            <h4>Evolutions:</h4>
+            <h4>Current Evolution Route:</h4>
             <div class="digimon-evolution-list-container">
-              <app-evolution-tree [evolutionTree]="evolutions()" />
+              <app-evolution-route [evolutionRoute]="evolutionRoute()" />
             </div>
           </div>
         </div>

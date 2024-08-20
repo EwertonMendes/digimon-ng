@@ -46,8 +46,8 @@ export class EvolutionTreeModalComponent {
     this.evolutionRouteDigimons?.forEach((digimon, index) => {
       if (!digimon) return;
 
-      graph.addNode(digimon.name, {
-        label: digimon.name,
+      graph.addNode(digimon.seed, {
+        label: `${digimon.name} (${digimon.rank})`,
         x: index,
         y: 0,
         size: 40,
@@ -60,8 +60,8 @@ export class EvolutionTreeModalComponent {
 
       if (index > 0) {
         graph.addEdge(
-          this.evolutionRouteDigimons[index - 1]?.name,
-          digimon.name,
+          this.evolutionRouteDigimons[index - 1]?.seed,
+          digimon.seed,
           {
             size: 2,
             color: 'black',
@@ -70,8 +70,8 @@ export class EvolutionTreeModalComponent {
       }
     });
 
-    graph.addNode(this.mainDigimon()?.name, {
-      label: this.mainDigimon()?.name,
+    graph.addNode(this.mainDigimon()?.seed, {
+      label: `${this.mainDigimon()?.name} ${this.mainDigimon()?.rank}`,
       x: this.evolutionRouteDigimons?.length ?? 0,
       y: 0,
       size: 40,
@@ -85,8 +85,8 @@ export class EvolutionTreeModalComponent {
     if (this.evolutionRouteDigimons?.length) {
       graph.addEdge(
         this.evolutionRouteDigimons[this.evolutionRouteDigimons.length - 1]
-          ?.name,
-        this.mainDigimon()?.name,
+          ?.seed,
+        this.mainDigimon()?.seed,
         { size: 2, color: 'black' }
       );
     }
@@ -96,8 +96,8 @@ export class EvolutionTreeModalComponent {
     );
 
     possibleEvolutions.forEach((evolution, index) => {
-      graph.addNode(evolution.name, {
-        label: evolution.name,
+      graph.addNode(evolution.seed, {
+        label: `${evolution.name} (${evolution.rank})`,
         x: this.evolutionRouteDigimons?.length! + 1,
         y: index,
         size: 40,
@@ -108,7 +108,7 @@ export class EvolutionTreeModalComponent {
         rank: evolution.rank,
       });
 
-      graph.addEdge(this.mainDigimon()?.name, evolution.name, {
+      graph.addEdge(this.mainDigimon()?.seed, evolution.seed, {
         size: 2,
         color: 'black',
       });
@@ -189,10 +189,10 @@ export class EvolutionTreeModalComponent {
       });
 
       possibleEvolutions.forEach((evolution: Digimon, index: number) => {
-        if (this.sigma.getGraph().findNode((node) => node === evolution.name))
+        if (this.sigma.getGraph().findNode((node) => node === evolution.seed))
           return;
-        this.sigma.getGraph().addNode(evolution.name, {
-          label: evolution.name,
+        this.sigma.getGraph().addNode(evolution.seed, {
+          label: `${evolution.name} (${evolution.rank})`,
           x: clickedNode['x'] + 1,
           y: clickedNode['y'] + index,
           size: 40,
@@ -202,7 +202,7 @@ export class EvolutionTreeModalComponent {
           seed: evolution.seed,
           rank: evolution.rank,
         });
-        this.sigma.getGraph().addEdge(clickedNode['label'], evolution.name, {
+        this.sigma.getGraph().addEdge(clickedNode['seed'], evolution.seed, {
           size: 2,
           color: 'black',
         });

@@ -71,11 +71,11 @@ export class EvolutionTreeModalComponent {
     });
 
     graph.addNode(this.mainDigimon()?.seed, {
-      label: `${this.mainDigimon()?.name} ${this.mainDigimon()?.rank}`,
+      label: `${this.mainDigimon()?.name} (${this.mainDigimon()?.rank})`,
       x: this.evolutionRouteDigimons?.length ?? 0,
       y: 0,
       size: 40,
-      color: '#D95D39',
+      color: '#C0E5C8',
       type: 'image',
       image: this.mainDigimon()?.img,
       seed: this.mainDigimon()?.seed,
@@ -87,7 +87,7 @@ export class EvolutionTreeModalComponent {
         this.evolutionRouteDigimons[this.evolutionRouteDigimons.length - 1]
           ?.seed,
         this.mainDigimon()?.seed,
-        { size: 2, color: 'black' }
+        { size: 5, color: '#C0E5C8' }
       );
     }
 

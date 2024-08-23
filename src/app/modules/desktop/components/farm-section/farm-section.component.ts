@@ -100,7 +100,8 @@ export class FarmSectionComponent {
     this.handleDifferentContainerDrop(
       previousContainer.id,
       container.id,
-      previousIndex
+      previousIndex,
+      currentIndex
     );
   }
 
@@ -133,7 +134,8 @@ export class FarmSectionComponent {
   private handleDifferentContainerDrop(
     previousContainerId: string,
     containerId: string,
-    previousIndex: number
+    previousIndex: number,
+    currentIndex: number
   ) {
     const digimon = this.getDigimonFromPreviousContainer(
       previousContainerId,
@@ -142,33 +144,22 @@ export class FarmSectionComponent {
     const action = this.listLocations[previousContainerId];
 
     const handlers = {
-      [this.inTrainingListId]: () =>
-        this.globalState.addDigimonToFarm(digimon, action),
-      [this.bitFarmingListId]: () =>
+      [this.inTrainingListId]: () => {
         this.globalState.addDigimonToTraining(digimon, action),
-      [this.teamListId]: () =>
-        this.handleTeamListDrop(containerId, digimon, action),
-      [this.hospitalListId]: () =>
-        this.handleTeamListDrop(containerId, digimon, action),
-    };
-
-    const handler = handlers[previousContainerId];
-    if (handler) {
-      handler();
-    }
-  }
-
-  private handleTeamListDrop(
-    containerId: string,
-    digimon: Digimon,
-    action: any
-  ) {
-    const handlers = {
-      [this.inTrainingListId]: () =>
-        this.globalState.addDigimonToTraining(digimon, action),
-      [this.bitFarmingListId]: () =>
+          moveItemInArray(
+            this.globalState.playerDataAcessor.inTrainingDigimonList,
+            this.globalState.playerDataAcessor.inTrainingDigimonList.length - 1,
+            currentIndex
+          );
+      },
+      [this.bitFarmingListId]: () => {
         this.globalState.addDigimonToFarm(digimon, action),
-      [this.hospitalListId]: () => this.globalState.addDigimonToHospital(digimon, action),
+          moveItemInArray(
+            this.globalState.playerDataAcessor.bitFarmDigimonList,
+            this.globalState.playerDataAcessor.bitFarmDigimonList.length - 1,
+            currentIndex
+          );
+      },
     };
 
     const handler = handlers[containerId];

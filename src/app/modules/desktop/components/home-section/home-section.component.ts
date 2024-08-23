@@ -38,7 +38,11 @@ export class HomeSectionComponent {
     'hospital-digimon-list': DigimonListLocation.HOSPITAL,
   };
 
-  removeDigimonFromLocation(event: MouseEvent, digimon: Digimon, location: string): void {
+  removeDigimonFromLocation(
+    event: MouseEvent,
+    digimon: Digimon,
+    location: string
+  ): void {
     event.preventDefault();
     if (!digimon.id) return;
     this.audioService.playAudio(AudioEffects.CLICK_ALTERNATIVE);
@@ -62,7 +66,8 @@ export class HomeSectionComponent {
     this.handleDifferentContainerDrop(
       previousContainer.id,
       container.id,
-      previousIndex
+      previousIndex,
+      currentIndex
     );
   }
 
@@ -95,7 +100,8 @@ export class HomeSectionComponent {
   private handleDifferentContainerDrop(
     previousContainerId: string,
     containerId: string,
-    previousIndex: number
+    previousIndex: number,
+    currentIndex: number
   ) {
     const digimon = this.getDigimonFromPreviousContainer(
       previousContainerId,
@@ -105,36 +111,22 @@ export class HomeSectionComponent {
     const action = this.listLocations[previousContainerId];
 
     const handlers = {
-      [this.inTrainingListId]: () =>
-        this.handleTeamListDrop(containerId, digimon, action),
-      [this.bitFarmingListId]: () =>
-        this.handleTeamListDrop(containerId, digimon, action),
-      [this.teamListId]: () =>
-        this.globalState.addDigimonToList(digimon, action),
-      [this.hospitalListId]: () =>
+      [this.teamListId]: () => {
+        this.globalState.addDigimonToList(digimon, action);
+        moveItemInArray(
+          this.globalState.playerDataAcessor.digimonList,
+          this.globalState.playerDataAcessor.digimonList.length - 1,
+          currentIndex
+        );
+      },
+      [this.hospitalListId]: () => {
         this.globalState.addDigimonToHospital(digimon, action),
-    };
-
-    const handler = handlers[containerId];
-    if (handler) {
-      handler();
-    }
-  }
-
-  private handleTeamListDrop(
-    containerId: string,
-    digimon: Digimon,
-    action: string
-  ) {
-    const handlers = {
-      [this.inTrainingListId]: () =>
-        this.globalState.addDigimonToTraining(digimon, action),
-      [this.bitFarmingListId]: () =>
-        this.globalState.addDigimonToFarm(digimon, action),
-      [this.hospitalListId]: () =>
-        this.globalState.addDigimonToHospital(digimon, action),
-      [this.teamListId]: () =>
-        this.globalState.addDigimonToList(digimon, action),
+          moveItemInArray(
+            this.globalState.playerDataAcessor.hospitalDigimonList,
+            this.globalState.playerDataAcessor.hospitalDigimonList.length - 1,
+            currentIndex
+          );
+      },
     };
 
     const handler = handlers[containerId];

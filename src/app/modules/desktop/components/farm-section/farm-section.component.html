@@ -10,6 +10,7 @@
         class="in-training-digimon-list"
         #inTrainingList="cdkDropList"
         cdkDropList
+        cdkDropListOrientation="vertical"
         [cdkDropListData]="globalState.playerDataAcessor"
         [cdkDropListConnectedTo]="[bitFarmingList, teamListId, hospitalListId]"
         (cdkDropListDropped)="drop($event)"
@@ -46,6 +47,7 @@
         class="bit-farming-digimon-list"
         #bitFarmingList="cdkDropList"
         cdkDropList
+        cdkDropListOrientation="vertical"
         [cdkDropListData]="globalState.playerDataAcessor"
         [cdkDropListConnectedTo]="[inTrainingList, teamListId, hospitalListId]"
         (cdkDropListDropped)="drop($event)"

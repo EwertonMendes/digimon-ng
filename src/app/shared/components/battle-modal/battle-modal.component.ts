@@ -6,11 +6,12 @@ import { ToastService } from '../toast/toast.service';
 import { ButtonComponent } from '../button/button.component';
 import { AudioService } from '../../../services/audio.service';
 import { AudioEffects } from '../../../core/enums/audio-tracks.enum';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-battle-modal',
   standalone: true,
-  imports: [ModalComponent, DigiStatusCardComponent, ButtonComponent],
+  imports: [CommonModule, ModalComponent, DigiStatusCardComponent, ButtonComponent],
   templateUrl: './battle-modal.component.html',
   styleUrl: './battle-modal.component.scss',
 })

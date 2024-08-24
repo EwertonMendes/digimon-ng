@@ -6,6 +6,29 @@
   <div class="digimon-battle-container">
     <h3 class="section-title">Battle</h3>
     <div class="digimon-battle-content">
+      <div class="turn-order-container">
+        <div class="turn-order">
+          <h4 class="turn-order-title">Turn Order</h4>
+          @for(digimon of globalState.actualTurnOrder; track digimon.id){
+          <div
+            class="turn-order-digimon"
+            [ngClass]="{
+              'player-digimon': digimon.owner === 'player',
+              'enemy-digimon': digimon.owner === 'enemy'
+            }"
+          >
+            <img
+              [src]="digimon.img"
+              alt="digimon"
+              class="turn-order-digimon-image"
+            />
+            <div class="turn-order-digimon-info">
+              <div class="turn-order-digimon-name">{{ digimon.name }}</div>
+            </div>
+          </div>
+          }
+        </div>
+      </div>
       <div class="digimon-battle-content-container">
         <div class="teams-container">
           <div class="player-team-container">

@@ -1,4 +1,13 @@
 .evolution-tree-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  .evolution-tree-header {
+    display: flex;
+    justify-content: center;
+  }
+
   .evolution-tree-content {
     display: flex;
     flex-direction: row;

@@ -11,7 +11,12 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-battle-modal',
   standalone: true,
-  imports: [CommonModule, ModalComponent, DigiStatusCardComponent, ButtonComponent],
+  imports: [
+    CommonModule,
+    ModalComponent,
+    DigiStatusCardComponent,
+    ButtonComponent,
+  ],
   templateUrl: './battle-modal.component.html',
   styleUrl: './battle-modal.component.scss',
 })
@@ -38,18 +43,21 @@ export class BattleModalComponent {
     );
     if (!opponentDigimon) return;
 
-    this.globalState.currentDefendingDigimon.set({ ...opponentDigimon, owner: 'enemy' });
+    this.globalState.currentDefendingDigimon.set({
+      ...opponentDigimon,
+      owner: 'enemy',
+    });
 
     const dealtDamage = this.globalState.attack(digimon, opponentDigimon);
     this.log(
       `Player ${digimon.name} attacks! Damage: ${dealtDamage}. Enemy ${opponentDigimon.name} has ${opponentDigimon.currentHp} health left.`
     );
 
-    if(dealtDamage === 0) {
+    if (dealtDamage === 0) {
       this.audioService.playAudio(AudioEffects.MISS);
     }
 
-    if(dealtDamage > 0) {
+    if (dealtDamage > 0) {
       this.audioService.playAudio(AudioEffects.HIT);
     }
 
@@ -58,7 +66,9 @@ export class BattleModalComponent {
       this.globalState.baseTurnOrder = this.globalState.baseTurnOrder.filter(
         (d) => d.id !== opponentDigimon.id
       );
-      this.globalState.actualTurnOrder = [...this.globalState.baseTurnOrder];
+      this.globalState.actualTurnOrder = this.globalState.actualTurnOrder.filter(
+        (d) => d.id !== opponentDigimon.id
+      );
     }
 
     this.globalState.nextTurn();

@@ -9,7 +9,7 @@
       <div class="turn-order-container">
         <div class="turn-order">
           <h4 class="turn-order-title">Turn Order</h4>
-          @for(digimon of globalState.actualTurnOrder; track digimon.id){
+          @for(digimon of globalState.actualTurnOrder; track digimon.seed + $index){
           <div
             class="turn-order-digimon"
             [ngClass]="{

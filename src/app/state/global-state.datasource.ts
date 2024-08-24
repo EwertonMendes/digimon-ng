@@ -336,12 +336,16 @@ export class GlobalStateDataSource {
         this.audioService.playAudio(AudioEffects.HIT);
       }
 
+      this.actualTurnOrder.shift();
+
       if (target.currentHp <= 0) {
         this.log(`Player ${target.name} has been defeated.`);
         this.baseTurnOrder = this.baseTurnOrder.filter(
           (d) => d.id !== target.id
         );
-        this.actualTurnOrder = [...this.baseTurnOrder];
+        this.actualTurnOrder = this.actualTurnOrder.filter(
+          (d) => d.id !== target.id
+        );
       }
 
       this.nextTurn();
@@ -366,12 +370,14 @@ export class GlobalStateDataSource {
   }
 
   repopulateTurnOrder() {
-    this.actualTurnOrder.push(...this.baseTurnOrder);
+    for (let i = 0; i < 5; i++) {
+      this.actualTurnOrder.push(...this.baseTurnOrder);
+    }
   }
 
   generateBaseTurnOrder() {
     this.baseTurnOrder = this.getTurnOrder();
-    this.actualTurnOrder = [...this.baseTurnOrder];
+    this.repopulateTurnOrder();
   }
 
   nextTurn() {
@@ -395,7 +401,7 @@ export class GlobalStateDataSource {
       return;
     }
 
-    if (this.actualTurnOrder.length <= 1) {
+    if (this.actualTurnOrder.length <= 5) {
       this.repopulateTurnOrder();
     }
 
@@ -416,7 +422,6 @@ export class GlobalStateDataSource {
       this.currentAttackingDigimon.set(digimon);
       this.showPlayerAttackButton.set(false);
       this.enemyAttack(digimon);
-      this.actualTurnOrder.shift();
     }
   }
 

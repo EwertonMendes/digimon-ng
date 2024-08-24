@@ -30,6 +30,7 @@ export class BattleModalComponent {
 
   onBattleModalClose() {
     this.globalState.resetBattleState();
+    this.globalState.resetTurnOrder();
   }
 
   playerAttack() {

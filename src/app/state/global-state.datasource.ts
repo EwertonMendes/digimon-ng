@@ -288,7 +288,6 @@ export class GlobalStateDataSource {
     this.isBattleActive = false;
     this.currentAttackingDigimon.set(null);
     this.currentDefendingDigimon.set(null);
-    this.resetTurnOrder();
 
     if (endState === 'victory') {
       this.audioService.playAudio(AudioTracks.VICTORY);

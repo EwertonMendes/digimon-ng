@@ -442,6 +442,10 @@ export class GlobalStateDataSource {
     );
   }
 
+  generateDigimonBySeed(seed: string) {
+    return this.digimonService.generateDigimonBySeed(seed);
+  }
+
   getDigimonCurrentEvolutionRoute(digimon: Digimon) {
     return this.digimonService.getDigimonCurrentEvolutionRoute(digimon);
   }

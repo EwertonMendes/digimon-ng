@@ -61,6 +61,16 @@ export class DigimonService {
     return newDigimon;
   }
 
+  generateDigimonBySeed(seed: string) {
+    const baseDigimon = this.getBaseDigimonDataBySeed(seed);
+    if (!baseDigimon) return;
+    const newDigimon = { ...baseDigimon };
+
+    newDigimon.id = uuidv4();
+
+    return newDigimon;
+  }
+
   getRankOrder(rank: string): number {
     const rankOrder: Record<string, number> = {
       Fresh: 1,

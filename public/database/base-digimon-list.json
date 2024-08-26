@@ -329,7 +329,7 @@
     "totalExp": 0,
     "level": 1,
     "bitFarmingRate": 1,
-    "digiEvolutionSeedList": [],
+    "digiEvolutionSeedList": ["ghi9012j-3456-kl78-mn90-1234567opqrs"],
     "degenerateSeedList": []
   },
   {
@@ -349,7 +349,27 @@
     "totalExp": 0,
     "level": 1,
     "bitFarmingRate": 1,
-    "digiEvolutionSeedList": [],
+    "digiEvolutionSeedList": ["ghi9012j-3456-kl78-mn90-1234567opqrs"],
     "degenerateSeedList": []
+  },
+  {
+    "seed": "ghi9012j-3456-kl78-mn90-1234567opqrs",
+    "name": "Tentomon",
+    "img": "/assets/digimons/Tentomon.webp",
+    "rank": "Rookie",
+    "species": "Insect",
+    "currentHp": 106,
+    "maxHp": 106,
+    "currentMp": 108,
+    "maxMp": 108,
+    "atk": 75,
+    "def": 71,
+    "speed": 63,
+    "exp": 0,
+    "totalExp": 0,
+    "level": 1,
+    "bitFarmingRate": 1,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": ["abc1234f-5678-90de-bc12-3456789abcde", "def5678g-9012-34hi-jk56-7890123lmnop"]
   }
 ]

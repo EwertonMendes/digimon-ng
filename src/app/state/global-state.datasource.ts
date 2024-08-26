@@ -224,12 +224,14 @@ export class GlobalStateDataSource {
     this.updatePlayerData(playerData);
   }
 
-  addDigimonToStorage(digimon: Digimon, from: string) {
+  addDigimonToStorage(digimon: Digimon, from?: string) {
     const updatedPlayerData = this.storageService.addDigimonToStorage(
       this.playerData(),
       digimon
     );
     this.updatePlayerData(updatedPlayerData);
+
+    if(!from) return;
 
     this.removeFromPreviousList(digimon.id!, from);
   }

@@ -1,0 +1,15 @@
+<app-modal [id]="debugModalId">
+  <div class="debug-modal-container">
+    <h3 class="section-title">Debug</h3>
+    <div class="debug-modal-content">
+      <div class="debug-modal-content-row">
+        <app-button
+          text="Give random digimon"
+          icon="ph-plus"
+          color="danger"
+          (click)="giveRandomDigimon()"
+        />
+      </div>
+    </div>
+  </div>
+</app-modal>

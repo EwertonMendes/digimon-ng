@@ -6,16 +6,23 @@ import { AudioService } from '../../services/audio.service';
 import { AudioEffects } from '../../core/enums/audio-tracks.enum';
 import { StorageModalComponent } from '../../shared/components/storage-modal/storage-modal.component';
 import { PlayerInfoModalComponent } from '../../shared/components/player-info-modal/player-info-modal.component';
+import { DebugModalComponent } from './debug-modal/debug-modal.component';
 
 @Component({
   selector: 'app-action-bar',
   standalone: true,
-  imports: [ButtonComponent, StorageModalComponent, PlayerInfoModalComponent],
+  imports: [
+    ButtonComponent,
+    StorageModalComponent,
+    PlayerInfoModalComponent,
+    DebugModalComponent,
+  ],
   templateUrl: './action-bar.component.html',
   styleUrl: './action-bar.component.scss',
 })
 export class ActionBarComponent {
   digimonStorageModalId = 'digimon-storage-modal';
+  debugModlaId = 'debug-modal';
 
   modalService = inject(ModalService);
   audioService = inject(AudioService);
@@ -29,6 +36,11 @@ export class ActionBarComponent {
   openPlayerInfoModal() {
     this.audioService.playAudio(AudioEffects.CLICK);
     this.modalService.open('player-info-modal');
+  }
+
+  openDebugModal() {
+    this.audioService.playAudio(AudioEffects.CLICK);
+    this.modalService.open(this.debugModlaId);
   }
 
   navigateTo(url: string) {

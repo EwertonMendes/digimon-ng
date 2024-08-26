@@ -23,6 +23,13 @@
   </div>
   <div class="action-bar-buttons">
     <app-button
+      title="Debug"
+      icon="ph-bug"
+      weight="bold"
+      color="info"
+      (click)="openDebugModal()"
+    />
+    <app-button
       title="Player Info"
       icon="ph-user-circle-gear"
       weight="bold"
@@ -35,3 +42,4 @@
 
 <app-storage-modal />
 <app-player-info-modal />
+<app-debug-modal />

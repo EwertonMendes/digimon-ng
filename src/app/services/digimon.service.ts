@@ -74,6 +74,7 @@ export class DigimonService {
     const newDigimon = { ...digimon };
 
     newDigimon.id = uuidv4();
+    newDigimon.birthDate = new Date();
 
     return newDigimon;
   }

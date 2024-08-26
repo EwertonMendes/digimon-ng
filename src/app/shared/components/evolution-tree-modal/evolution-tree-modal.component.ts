@@ -100,7 +100,7 @@ export class EvolutionTreeModalComponent {
         const nodeAttributes = this.sigma.getGraph().getNodeAttributes(node);
         return (
           nodeAttributes['seed'] !== this.mainDigimon()?.seed &&
-          !this.evolutionRouteDigimons.find(
+          !this.evolutionRouteDigimons?.find(
             (evolution) => evolution.seed === nodeAttributes['seed']
           ) &&
           this.digimonService.getRankOrder(nodeAttributes['rank']) >

@@ -457,6 +457,13 @@ export class GlobalStateDataSource {
     this.battleLog.set([]);
   }
 
+  resetStorage() {
+    this.playerData.set({
+      ...this.playerData(),
+      digimonStorageList: [],
+    });
+  }
+
   calculateTotalGainedExp(defeatedDigimons: Digimon[]) {
     const { playerData, totalExp } = this.battleService.calculateTotalGainedExp(
       this.playerData(),

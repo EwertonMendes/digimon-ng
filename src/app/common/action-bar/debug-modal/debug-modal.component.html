@@ -2,14 +2,15 @@
   <div class="debug-modal-container">
     <h3 class="section-title">Debug</h3>
     <div class="debug-modal-content">
+      @for (tool of tools; track $index) {
       <div class="debug-modal-content-row">
         <app-button
-          text="Give random digimon"
-          icon="ph-plus"
+          text="{{ tool.name }}"
           color="danger"
-          (click)="giveRandomDigimon()"
+          (click)="tool.action()"
         />
       </div>
+      }
     </div>
   </div>
 </app-modal>

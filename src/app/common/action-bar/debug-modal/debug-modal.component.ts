@@ -17,9 +17,22 @@ export class DebugModalComponent {
   globalState = inject(GlobalStateDataSource);
   toastService = inject(ToastService);
 
+  tools = [
+    { name: 'Give Random Digimon', action: this.giveRandomDigimon.bind(this) },
+    { name: 'Reset Storage', action: this.resetStorage.bind(this) },
+  ];
+
   giveRandomDigimon() {
     const digimon = this.globalState.generateRandomDigimon();
     this.globalState.addDigimonToStorage(digimon);
-    this.toastService.showToast(`${digimon.name} was added to storage!`, 'success');
+    this.toastService.showToast(
+      `${digimon.name} was added to storage!`,
+      'success'
+    );
+  }
+
+  resetStorage() {
+    this.globalState.resetStorage();
+    this.toastService.showToast('Storage reset!', 'success');
   }
 }

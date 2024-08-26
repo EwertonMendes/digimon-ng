@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { Digimon } from '../core/interfaces/digimon.interface';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -6,27 +7,33 @@ import { v4 as uuidv4 } from 'uuid';
   providedIn: 'root',
 })
 export class DigimonService {
-  baseDigimonData!: Digimon[];
+  private baseDigimonDataSubject = new BehaviorSubject<Digimon[]>([]);
+  baseDigimonData$ = this.baseDigimonDataSubject.asObservable();
 
   constructor() {
     this.initializeBaseDigimonData();
   }
 
   private async initializeBaseDigimonData() {
-    this.baseDigimonData = await fetch('database/base-digimon-list.json').then(
-      (res) => res.json()
+    const data = await fetch('database/base-digimon-list.json').then((res) =>
+      res.json()
+    );
+    this.baseDigimonDataSubject.next(data);
+  }
+
+  getBaseDigimonDataBySeed(seed: string): Digimon | undefined {
+    return this.baseDigimonDataSubject.value.find(
+      (digimon) => digimon.seed === seed
     );
   }
 
-  getBaseDigimonDataBySeed(seed: string) {
-    return this.baseDigimonData.find((digimon) => digimon.seed === seed);
+  getBaseDigimonDataById(id: string): Digimon | undefined {
+    return this.baseDigimonDataSubject.value.find(
+      (digimon) => digimon.seed === id
+    );
   }
 
-  getBaseDigimonDataById(id: string) {
-    return this.baseDigimonData.find((digimon) => digimon.seed === id);
-  }
-
-  getDigimonEvolutions(digimon?: Digimon) {
+  getDigimonEvolutions(digimon?: Digimon): Digimon[] {
     const digimonList: Digimon[] = [];
     digimon?.digiEvolutionSeedList.forEach((seed) => {
       const digimon = this.getBaseDigimonDataById(seed);
@@ -35,7 +42,7 @@ export class DigimonService {
     return digimonList;
   }
 
-  getDigimonDegenerations(digimon?: Digimon) {
+  getDigimonDegenerations(digimon?: Digimon): Digimon[] {
     const digimonList: Digimon[] = [];
     digimon?.degenerateSeedList.forEach((seed) => {
       const digimon = this.getBaseDigimonDataById(seed);
@@ -44,24 +51,34 @@ export class DigimonService {
     return digimonList;
   }
 
-  getDigimonCurrentEvolutionRoute(digimon?: Digimon) {
+  getDigimonCurrentEvolutionRoute(digimon?: Digimon): Digimon[] | undefined {
     return digimon?.currentEvolutionRoute?.map((digimon) =>
       this.getBaseDigimonDataBySeed(digimon.seed)
     ) as Digimon[];
   }
 
-  generateRandomDigimon() {
+  generateRandomDigimon(): Digimon {
     const randomDigimonIndex = Math.floor(
-      Math.random() * this.baseDigimonData.length
+      Math.random() * this.baseDigimonDataSubject.value.length
     );
-    const newDigimon = { ...this.baseDigimonData[randomDigimonIndex] };
+    const newDigimon = {
+      ...this.baseDigimonDataSubject.value[randomDigimonIndex],
+    };
 
     newDigimon.id = uuidv4();
 
     return newDigimon;
   }
 
-  generateDigimonBySeed(seed: string) {
+  generateNewDigimon(digimon: Digimon): Digimon {
+    const newDigimon = { ...digimon };
+
+    newDigimon.id = uuidv4();
+
+    return newDigimon;
+  }
+
+  generateDigimonBySeed(seed: string): Digimon | undefined {
     const baseDigimon = this.getBaseDigimonDataBySeed(seed);
     if (!baseDigimon) return;
     const newDigimon = { ...baseDigimon };
@@ -82,5 +99,4 @@ export class DigimonService {
     };
     return rankOrder[rank] || 0;
   }
-
 }

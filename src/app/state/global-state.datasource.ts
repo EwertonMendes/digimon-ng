@@ -438,6 +438,10 @@ export class GlobalStateDataSource {
     return this.digimonService.generateRandomDigimon();
   }
 
+  generateNewDigimon(digimon: Digimon) {
+    return this.digimonService.generateNewDigimon(digimon);
+  }
+
   getDigimonEvolutions() {
     return this.digimonService.getDigimonEvolutions(
       this.selectedDigimonOnDetails()

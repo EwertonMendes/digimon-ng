@@ -14,3 +14,5 @@
     </div>
   </div>
 </app-modal>
+
+<app-digimon-selection-modal [id]="digimonSelectionModalId" [digimonList]="selectableDigimonList()" (onSelectDigimon)="giveSelectedDigimon($event)"/>

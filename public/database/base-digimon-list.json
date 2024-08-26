@@ -311,5 +311,25 @@
     "bitFarmingRate": 5,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["529f424a-7efe-49bd-90dc-58286aaa9fb5"]
+  },
+  {
+    "seed": "abc1234f-5678-90de-bc12-3456789abcde",
+    "name": "Mochimon",
+    "img": "/assets/digimons/Mochimon.webp",
+    "rank": "In-Training",
+    "species": "Lesser",
+    "currentHp": 55,
+    "maxHp": 55,
+    "currentMp": 60,
+    "maxMp": 60,
+    "atk": 40,
+    "def": 30,
+    "speed": 25,
+    "exp": 0,
+    "totalExp": 0,
+    "level": 1,
+    "bitFarmingRate": 1,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": []
   }
 ]

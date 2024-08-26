@@ -369,7 +369,30 @@
     "totalExp": 0,
     "level": 1,
     "bitFarmingRate": 1,
+    "digiEvolutionSeedList": ["jkl3456m-7890-no12-pq34-567890rstuvw"],
+    "degenerateSeedList": [
+      "abc1234f-5678-90de-bc12-3456789abcde",
+      "def5678g-9012-34hi-jk56-7890123lmnop"
+    ]
+  },
+  {
+    "seed": "jkl3456m-7890-no12-pq34-567890rstuvw",
+    "name": "Kabuterimon",
+    "img": "/assets/digimons/Kabuterimon.webp",
+    "rank": "Champion",
+    "species": "Insect",
+    "currentHp": 168,
+    "maxHp": 168,
+    "currentMp": 161,
+    "maxMp": 161,
+    "atk": 106,
+    "def": 102,
+    "speed": 81,
+    "exp": 0,
+    "totalExp": 0,
+    "level": 1,
+    "bitFarmingRate": 1,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["abc1234f-5678-90de-bc12-3456789abcde", "def5678g-9012-34hi-jk56-7890123lmnop"]
+    "degenerateSeedList": ["ghi9012j-3456-kl78-mn90-1234567opqrs"]
   }
 ]

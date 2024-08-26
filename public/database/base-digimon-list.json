@@ -331,5 +331,25 @@
     "bitFarmingRate": 1,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": []
+  },
+  {
+    "seed": "def5678g-9012-34hi-jk56-7890123lmnop",
+    "name": "Minomon",
+    "img": "/assets/digimons/Minomon.webp",
+    "rank": "In-Training",
+    "species": "Insect",
+    "currentHp": 63,
+    "maxHp": 63,
+    "currentMp": 69,
+    "maxMp": 69,
+    "atk": 41,
+    "def": 42,
+    "speed": 26,
+    "exp": 0,
+    "totalExp": 0,
+    "level": 1,
+    "bitFarmingRate": 1,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": []
   }
 ]

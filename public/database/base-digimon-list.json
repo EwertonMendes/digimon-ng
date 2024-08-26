@@ -348,7 +348,7 @@
     "exp": 0,
     "totalExp": 0,
     "level": 1,
-    "bitFarmingRate": 1,
+    "bitFarmingRate": 2,
     "digiEvolutionSeedList": ["ghi9012j-3456-kl78-mn90-1234567opqrs"],
     "degenerateSeedList": []
   },
@@ -368,7 +368,7 @@
     "exp": 0,
     "totalExp": 0,
     "level": 1,
-    "bitFarmingRate": 1,
+    "bitFarmingRate": 3,
     "digiEvolutionSeedList": ["jkl3456m-7890-no12-pq34-567890rstuvw"],
     "degenerateSeedList": [
       "abc1234f-5678-90de-bc12-3456789abcde",
@@ -391,8 +391,11 @@
     "exp": 0,
     "totalExp": 0,
     "level": 1,
-    "bitFarmingRate": 1,
-    "digiEvolutionSeedList": ["pqr1234s-5678-tu90-vw12-345678xyzabc", "mno7890p-1234-qr56-st78-901234uvwxzy"],
+    "bitFarmingRate": 4,
+    "digiEvolutionSeedList": [
+      "pqr1234s-5678-tu90-vw12-345678xyzabc",
+      "mno7890p-1234-qr56-st78-901234uvwxzy"
+    ],
     "degenerateSeedList": ["ghi9012j-3456-kl78-mn90-1234567opqrs"]
   },
   {
@@ -411,8 +414,8 @@
     "exp": 0,
     "totalExp": 0,
     "level": 1,
-    "bitFarmingRate": 1,
-    "digiEvolutionSeedList": [],
+    "bitFarmingRate": 7,
+    "digiEvolutionSeedList": ["stu9012v-3456-wx78-yz90-123456abcdef"],
     "degenerateSeedList": ["jkl3456m-7890-no12-pq34-567890rstuvw"]
   },
   {
@@ -431,8 +434,31 @@
     "exp": 0,
     "totalExp": 0,
     "level": 1,
-    "bitFarmingRate": 1,
-    "digiEvolutionSeedList": [],
+    "bitFarmingRate": 7,
+    "digiEvolutionSeedList": ["stu9012v-3456-wx78-yz90-123456abcdef"],
     "degenerateSeedList": ["jkl3456m-7890-no12-pq34-567890rstuvw"]
+  },
+  {
+    "seed": "stu9012v-3456-wx78-yz90-123456abcdef",
+    "name": "Hercules Kabuterimon",
+    "img": "/assets/digimons/HerculesKabuterimon.webp",
+    "rank": "Mega",
+    "species": "Insect",
+    "currentHp": 322,
+    "maxHp": 322,
+    "currentMp": 320,
+    "maxMp": 320,
+    "atk": 178,
+    "def": 156,
+    "speed": 138,
+    "exp": 0,
+    "totalExp": 0,
+    "level": 1,
+    "bitFarmingRate": 12,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [
+      "mno7890p-1234-qr56-st78-901234uvwxzy",
+      "pqr1234s-5678-tu90-vw12-345678xyzabc"
+    ]
   }
 ]

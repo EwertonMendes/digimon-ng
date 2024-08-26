@@ -1,0 +1,17 @@
+<app-modal [id]="digimonSelectionModalId">
+  <div class="digimon-selection-modal-container">
+    <h3 class="section-title">Select your digimon</h3>
+    <div class="digimon-selection-modal-content">
+      @for (digimon of digimonList(); track digimon.seed + $index) {
+      <div class="digimon-selection-item" (click)="onSelectDigimon.emit(digimon)">
+        <img
+          [src]="digimon.img"
+          alt="digimon"
+          class="digimon-selection-item-image"
+        />
+        <div>{{ digimon.nickName ?? digimon.name }}</div>
+      </div>
+      }
+    </div>
+  </div>
+</app-modal>

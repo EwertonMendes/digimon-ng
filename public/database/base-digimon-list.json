@@ -482,7 +482,7 @@
     "totalExp": 0,
     "level": 1,
     "bitFarmingRate": 1,
-    "digiEvolutionSeedList": [],
+    "digiEvolutionSeedList": ["def5678a-9012-345b-cdef-6789012345gh"],
     "degenerateSeedList": ["def5678g-9012-34hi-jk56-7890123lmnop"]
   },
   {
@@ -504,5 +504,26 @@
     "bitFarmingRate": 1,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["def5678g-9012-34hi-jk56-7890123lmnop"]
+  },
+  {
+    "seed": "def5678a-9012-345b-cdef-6789012345gh",
+    "name": "Airdramon",
+    "img": "/assets/digimons/Airdramon.webp",
+    "rank": "Champion",
+    "species": "Dragon",
+    "currentHp": 147,
+    "maxHp": 147,
+    "currentMp": 180,
+    "maxMp": 180,
+    "atk": 85,
+    "def": 93,
+    "speed": 94,
+    "exp": 0,
+    "totalExp": 0,
+    "level": 1,
+    "bitFarmingRate": 1,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": ["abc1234d-5678-efgh-9101-ijklmnopqrst"]
   }
+
 ]

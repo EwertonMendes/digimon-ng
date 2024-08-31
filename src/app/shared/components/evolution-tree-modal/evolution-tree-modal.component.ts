@@ -36,6 +36,12 @@ export class EvolutionTreeModalComponent {
       this.evolutionRouteDigimons
     );
 
+    this.sigma.on('enterNode', () => {
+      container.style.cursor = 'pointer';
+    });
+    this.sigma.on('leaveNode', () => {
+      container.style.cursor = 'default';
+    });
     this.sigma.on('clickNode', (data) => this.handleNodeClick(data));
   }
 

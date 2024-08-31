@@ -127,7 +127,10 @@
       "67cd2d63-4299-446e-a851-6f04e9b51bc5",
       "a351a4ab-a5bf-42df-8a27-bb2d8ce06d0b"
     ],
-    "degenerateSeedList": ["edc9812f-82a6-487f-9a4d-52b845643176", "ijk9012l-3456-789m-nopq-rstuvwxyz23"]
+    "degenerateSeedList": [
+      "edc9812f-82a6-487f-9a4d-52b845643176",
+      "ijk9012l-3456-789m-nopq-rstuvwxyz23"
+    ]
   },
   {
     "seed": "edc9812f-82a6-487f-9a4d-52b845643176",
@@ -565,7 +568,27 @@
     "totalExp": 0,
     "level": 1,
     "bitFarmingRate": 1,
-    "digiEvolutionSeedList": [],
+    "digiEvolutionSeedList": ["lmn3456o-789p-qr01-stuv-wxyzabcd34"],
     "degenerateSeedList": []
+  },
+  {
+    "seed": "lmn3456o-789p-qr01-stuv-wxyzabcd34",
+    "name": "Guilmon",
+    "img": "/assets/digimons/Guilmon.webp",
+    "rank": "Rookie",
+    "species": "Dragon",
+    "currentHp": 120,
+    "maxHp": 120,
+    "currentMp": 101,
+    "maxMp": 101,
+    "atk": 87,
+    "def": 67,
+    "speed": 50,
+    "exp": 0,
+    "totalExp": 0,
+    "level": 1,
+    "bitFarmingRate": 1,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": ["ijk9012l-3456-789m-nopq-rstuvwxyz23"]
   }
 ]

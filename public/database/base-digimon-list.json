@@ -588,6 +588,26 @@
     "totalExp": 0,
     "level": 1,
     "bitFarmingRate": 1,
+    "digiEvolutionSeedList": ["opq6789r-012s-tuvw-xyza-bcdefg5678"],
+    "degenerateSeedList": ["ijk9012l-3456-789m-nopq-rstuvwxyz23"]
+  },
+  {
+    "seed": "opq6789r-012s-tuvw-xyza-bcdefg5678",
+    "name": "Growlmon",
+    "img": "/assets/digimons/Growlmon.webp",
+    "rank": "Champion",
+    "species": "Dragon",
+    "currentHp": 175,
+    "maxHp": 175,
+    "currentMp": 161,
+    "maxMp": 161,
+    "atk": 117,
+    "def": 94,
+    "speed": 67,
+    "exp": 0,
+    "totalExp": 0,
+    "level": 1,
+    "bitFarmingRate": 1,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["ijk9012l-3456-789m-nopq-rstuvwxyz23"]
   }

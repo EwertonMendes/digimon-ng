@@ -59,10 +59,25 @@ export class EvolutionTreeModalComponent {
     );
     this.selectedDigimon.set(digimon);
 
+    if (this.isPartOfCurrentEvolutionRoute(digimon!)) {
+      this.addPossibleDegenerations(digimon!, clickedNode);
+    }
+    this.addPossibleEvolutions(digimon!, clickedNode);
+  }
+
+  private isPartOfCurrentEvolutionRoute(digimon: Digimon): boolean {
+    return (
+      !!this.evolutionRouteDigimons?.find(
+        (routeDigimon) => routeDigimon.seed === digimon.seed
+      ) || digimon.seed === this.mainDigimon()?.seed
+    );
+  }
+
+  private addPossibleEvolutions(digimon: Digimon, clickedNode: any) {
     const possibleEvolutions =
       this.digimonService.getDigimonEvolutions(digimon);
 
-    possibleEvolutions.forEach((evolution: Digimon, index: number) => {
+    possibleEvolutions?.forEach((evolution: Digimon, index: number) => {
       if (this.sigma.getGraph().findNode((node) => node === evolution.seed)) {
         return;
       }
@@ -86,6 +101,42 @@ export class EvolutionTreeModalComponent {
         rank: evolution.rank,
       });
       this.sigma.getGraph().addEdge(clickedNode['seed'], evolution.seed, {
+        size: 2,
+        color: 'black',
+      });
+    });
+  }
+
+  private addPossibleDegenerations(digimon: Digimon, clickedNode: any) {
+    const possibleDegenerations =
+      this.digimonService.getDigimonDegenerations(digimon);
+
+    possibleDegenerations?.forEach((degeneration: Digimon, index: number) => {
+      if (
+        this.sigma.getGraph().findNode((node) => node === degeneration.seed)
+      ) {
+        return;
+      }
+
+      let newNodeX = clickedNode['x'] - 1;
+      let newNodeY = clickedNode['y'] + index;
+
+      if (this.hasNodeInPosition(newNodeX, newNodeY)) {
+        newNodeY++;
+      }
+
+      this.sigma.getGraph().addNode(degeneration.seed, {
+        label: `${degeneration.name} (${degeneration.rank})`,
+        x: newNodeX,
+        y: newNodeY,
+        size: 40,
+        color: '#D95D39',
+        type: 'image',
+        image: degeneration.img,
+        seed: degeneration.seed,
+        rank: degeneration.rank,
+      });
+      this.sigma.getGraph().addEdge(degeneration.seed, clickedNode['seed'], {
         size: 2,
         color: 'black',
       });

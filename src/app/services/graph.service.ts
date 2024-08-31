@@ -22,6 +22,7 @@ export class GraphService {
 
     this.addEvolutionRouteNodes(graph, evolutionRouteDigimons);
     this.addMainDigimonNode(graph, mainDigimon, evolutionRouteDigimons);
+    this.addPossibleDegenerations(graph, mainDigimon, evolutionRouteDigimons);
     this.addPossibleEvolutions(graph, mainDigimon, evolutionRouteDigimons);
 
     return new Sigma(graph, container, {
@@ -93,6 +94,40 @@ export class GraphService {
         }
       );
     }
+  }
+
+  private addPossibleDegenerations(
+    graph: Graph,
+    mainDigimon: Digimon,
+    evolutionRouteDigimons?: Digimon[]
+  ) {
+    const possibleDegenerations = this.digimonService
+      .getDigimonDegenerations(mainDigimon)
+      .filter(
+        (degeneration) =>
+          !evolutionRouteDigimons?.find(
+            (routeDigimon) => routeDigimon.seed === degeneration.seed
+          )
+      );
+
+    possibleDegenerations.forEach((degeneration, index) => {
+      graph.addNode(degeneration.seed, {
+        label: `${degeneration.name} (${degeneration.rank})`,
+        x: (evolutionRouteDigimons?.length ?? 0) - 1,
+        y: index,
+        size: 40,
+        color: '#D95D39',
+        type: 'image',
+        image: degeneration.img,
+        seed: degeneration.seed,
+        rank: degeneration.rank,
+      });
+
+      graph.addEdge(degeneration.seed, mainDigimon.seed, {
+        size: 2,
+        color: 'black',
+      });
+    });
   }
 
   private addPossibleEvolutions(

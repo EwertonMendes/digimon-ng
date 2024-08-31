@@ -628,7 +628,27 @@
     "totalExp": 0,
     "level": 1,
     "bitFarmingRate": 1,
-    "digiEvolutionSeedList": [],
+    "digiEvolutionSeedList": ["uvw1234x-567y-zabc-defg-hijklmno890"],
     "degenerateSeedList": ["opq6789r-012s-tuvw-xyza-bcdefg5678"]
+  },
+  {
+    "seed": "uvw1234x-567y-zabc-defg-hijklmno890",
+    "name": "Megidramon",
+    "img": "/assets/digimons/Megidramon.webp",
+    "rank": "Mega",
+    "species": "Dragon",
+    "currentHp": 332,
+    "maxHp": 332,
+    "currentMp": 318,
+    "maxMp": 318,
+    "atk": 176,
+    "def": 148,
+    "speed": 112,
+    "exp": 0,
+    "totalExp": 0,
+    "level": 1,
+    "bitFarmingRate": 1,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": ["rst9012u-345v-wxyz-abcd-efghij6789"]
   }
 ]

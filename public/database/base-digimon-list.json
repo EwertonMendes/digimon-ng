@@ -608,7 +608,27 @@
     "totalExp": 0,
     "level": 1,
     "bitFarmingRate": 1,
-    "digiEvolutionSeedList": [],
+    "digiEvolutionSeedList": ["rst9012u-345v-wxyz-abcd-efghij6789"],
     "degenerateSeedList": ["ijk9012l-3456-789m-nopq-rstuvwxyz23"]
+  },
+  {
+    "seed": "rst9012u-345v-wxyz-abcd-efghij6789",
+    "name": "War Growlmon",
+    "img": "/assets/digimons/WarGrowlmon.webp",
+    "rank": "Ultimate",
+    "species": "Dragon",
+    "currentHp": 230,
+    "maxHp": 230,
+    "currentMp": 226,
+    "maxMp": 226,
+    "atk": 144,
+    "def": 124,
+    "speed": 92,
+    "exp": 0,
+    "totalExp": 0,
+    "level": 1,
+    "bitFarmingRate": 1,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": ["opq6789r-012s-tuvw-xyza-bcdefg5678"]
   }
 ]

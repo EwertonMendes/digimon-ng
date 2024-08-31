@@ -349,7 +349,7 @@
     "totalExp": 0,
     "level": 1,
     "bitFarmingRate": 2,
-    "digiEvolutionSeedList": ["ghi9012j-3456-kl78-mn90-1234567opqrs"],
+    "digiEvolutionSeedList": ["ghi9012j-3456-kl78-mn90-1234567opqrs", "abc1234d-5678-efgh-9101-ijklmnopqrst"],
     "degenerateSeedList": []
   },
   {
@@ -460,5 +460,25 @@
       "mno7890p-1234-qr56-st78-901234uvwxzy",
       "pqr1234s-5678-tu90-vw12-345678xyzabc"
     ]
+  },
+  {
+    "seed": "abc1234d-5678-efgh-9101-ijklmnopqrst",
+    "name": "Kunemon",
+    "img": "/assets/digimons/Kunemon.webp",
+    "rank": "Rookie",
+    "species": "Insect/Plant",
+    "currentHp": 99,
+    "maxHp": 99,
+    "currentMp": 127,
+    "maxMp": 127,
+    "atk": 75,
+    "def": 68,
+    "speed": 52,
+    "exp": 0,
+    "totalExp": 0,
+    "level": 1,
+    "bitFarmingRate": 1,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": ["def5678g-9012-34hi-jk56-7890123lmnop"]
   }
 ]

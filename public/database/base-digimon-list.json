@@ -149,8 +149,74 @@
     "totalExp": 0,
     "level": 1,
     "bitFarmingRate": 1,
-    "digiEvolutionSeedList": ["96c23ff9-d6b4-43da-91e6-f0c9799c65d7", "lmn3456o-789p-qr01-stuv-wxyzabcd34"],
+    "digiEvolutionSeedList": [
+      "96c23ff9-d6b4-43da-91e6-f0c9799c65d7",
+      "lmn3456o-789p-qr01-stuv-wxyzabcd34",
+      "xyz5678a-123b-cdef-456g-hijklmn7890",
+      "uvw1234a-567b-cdef-890g-hijklmn1234",
+      "xyz5678a-123b-cdef-456g-hijklmn5678"
+    ],
     "degenerateSeedList": ["b5ac222a-e653-4543-923e-77355dd24686"]
+  },
+  {
+    "seed": "xyz5678a-123b-cdef-456g-hijklmn7890",
+    "name": "Betamon",
+    "img": "/assets/digimons/Betamon.webp",
+    "rank": "Rookie",
+    "species": "Aquan",
+    "currentHp": 85,
+    "maxHp": 85,
+    "currentMp": 121,
+    "maxMp": 121,
+    "atk": 76,
+    "def": 66,
+    "speed": 53,
+    "exp": 0,
+    "totalExp": 0,
+    "level": 1,
+    "bitFarmingRate": 1,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": ["edc9812f-82a6-487f-9a4d-52b845643176"]
+  },
+  {
+    "seed": "uvw1234a-567b-cdef-890g-hijklmn1234",
+    "name": "Goburimon",
+    "img": "/assets/digimons/Goburimon.webp",
+    "rank": "Rookie",
+    "species": "Beast",
+    "currentHp": 118,
+    "maxHp": 118,
+    "currentMp": 118,
+    "maxMp": 118,
+    "atk": 82,
+    "def": 72,
+    "speed": 50,
+    "exp": 0,
+    "totalExp": 0,
+    "level": 1,
+    "bitFarmingRate": 1,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": ["edc9812f-82a6-487f-9a4d-52b845643176"]
+  },
+  {
+    "seed": "xyz5678a-123b-cdef-456g-hijklmn5678",
+    "name": "Falcomon",
+    "img": "/assets/digimons/Falcomon.webp",
+    "rank": "Rookie",
+    "species": "Bird",
+    "currentHp": 109,
+    "maxHp": 109,
+    "currentMp": 114,
+    "maxMp": 114,
+    "atk": 72,
+    "def": 63,
+    "speed": 71,
+    "exp": 0,
+    "totalExp": 0,
+    "level": 1,
+    "bitFarmingRate": 1,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": ["edc9812f-82a6-487f-9a4d-52b845643176"]
   },
   {
     "seed": "b5ac222a-e653-4543-923e-77355dd24686",
@@ -589,7 +655,10 @@
     "level": 1,
     "bitFarmingRate": 1,
     "digiEvolutionSeedList": ["opq6789r-012s-tuvw-xyza-bcdefg5678"],
-    "degenerateSeedList": ["ijk9012l-3456-789m-nopq-rstuvwxyz23", "edc9812f-82a6-487f-9a4d-52b845643176"]
+    "degenerateSeedList": [
+      "ijk9012l-3456-789m-nopq-rstuvwxyz23",
+      "edc9812f-82a6-487f-9a4d-52b845643176"
+    ]
   },
   {
     "seed": "opq6789r-012s-tuvw-xyza-bcdefg5678",

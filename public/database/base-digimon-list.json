@@ -127,7 +127,7 @@
       "67cd2d63-4299-446e-a851-6f04e9b51bc5",
       "a351a4ab-a5bf-42df-8a27-bb2d8ce06d0b"
     ],
-    "degenerateSeedList": ["edc9812f-82a6-487f-9a4d-52b845643176"]
+    "degenerateSeedList": ["edc9812f-82a6-487f-9a4d-52b845643176", "ijk9012l-3456-789m-nopq-rstuvwxyz23"]
   },
   {
     "seed": "edc9812f-82a6-487f-9a4d-52b845643176",
@@ -547,5 +547,25 @@
     "bitFarmingRate": 1,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["abc1234d-5678-efgh-9101-ijklmnopqrst"]
+  },
+  {
+    "seed": "ijk9012l-3456-789m-nopq-rstuvwxyz23",
+    "name": "Gigimon",
+    "img": "/assets/digimons/Gigimon.webp",
+    "rank": "In-Training",
+    "species": "Dragon",
+    "currentHp": 72,
+    "maxHp": 72,
+    "currentMp": 61,
+    "maxMp": 61,
+    "atk": 50,
+    "def": 39,
+    "speed": 29,
+    "exp": 0,
+    "totalExp": 0,
+    "level": 1,
+    "bitFarmingRate": 1,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": []
   }
 ]

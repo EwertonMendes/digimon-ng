@@ -13,8 +13,12 @@ import Sigma from 'sigma';
   styleUrls: ['./evolution-tree-modal.component.scss'],
 })
 export class EvolutionTreeModalComponent {
-  evolutionTreeModalId = 'evolution-tree-modal';
+  private static readonly NODE_SIZE = 40;
+  private static readonly EDGE_SIZE = 2;
+  private static readonly NODE_COLOR = '#D95D39';
+  private static readonly EDGE_COLOR = 'black';
 
+  evolutionTreeModalId = 'evolution-tree-modal';
   mainDigimon = input<Digimon>();
   sigma!: Sigma;
   currentRank: string = 'Fresh';
@@ -29,13 +33,16 @@ export class EvolutionTreeModalComponent {
     if (!container) return;
 
     this.evolutionRouteDigimons = this.getEvolutionRouteDigimons();
-
     this.sigma = this.graphService.createGraph(
       container,
       this.mainDigimon()!,
       this.evolutionRouteDigimons
     );
 
+    this.setupGraphEventHandlers(container);
+  }
+
+  private setupGraphEventHandlers(container: HTMLElement) {
     this.sigma.on('enterNode', () => {
       container.style.cursor = 'pointer';
     });
@@ -55,15 +62,9 @@ export class EvolutionTreeModalComponent {
 
   private handleNodeClick(data: any) {
     const clickedNode = this.sigma.getGraph().getNodeAttributes(data.node);
-
     this.currentRank = clickedNode['rank'];
 
-    if (
-      clickedNode['seed'] === this.mainDigimon()?.seed ||
-      this.mainDigimon()?.currentEvolutionRoute?.find(
-        (evolution) => evolution.seed === clickedNode['seed']
-      )
-    ) {
+    if (this.isMainOrEvolutionRouteNode(clickedNode)) {
       this.removeAllNonEvolutionRouteNodes(clickedNode);
     } else {
       this.removeUpperRankNodes();
@@ -80,9 +81,18 @@ export class EvolutionTreeModalComponent {
     this.addPossibleEvolutions(digimon!, clickedNode);
   }
 
+  private isMainOrEvolutionRouteNode(nodeAttributes: any): boolean {
+    return (
+      nodeAttributes['seed'] === this.mainDigimon()?.seed ||
+      this.mainDigimon()?.currentEvolutionRoute?.some(
+        (evolution) => evolution.seed === nodeAttributes['seed']
+      )
+    ) ?? false;
+  }
+
   private isPartOfCurrentEvolutionRoute(digimon: Digimon): boolean {
     return (
-      !!this.evolutionRouteDigimons?.find(
+      this.evolutionRouteDigimons?.some(
         (routeDigimon) => routeDigimon.seed === digimon.seed
       ) || digimon.seed === this.mainDigimon()?.seed
     );
@@ -97,30 +107,14 @@ export class EvolutionTreeModalComponent {
         return;
       }
 
-      let newNodeX = clickedNode['x'] + 1;
-      let newNodeY = clickedNode['y'] + index;
+      const { newNodeX, newNodeY } = this.calculateNewNodePosition(
+        clickedNode,
+        index,
+        1
+      );
 
-      if (this.hasNodeInPosition(newNodeX, newNodeY)) {
-        newNodeY++;
-      }
-
-      this.sigma.getGraph().addNode(evolution.seed, {
-        label: `${evolution.name} (${evolution.rank})`,
-        x: newNodeX,
-        y: newNodeY,
-        size: 40,
-        color: '#D95D39',
-        type: 'image',
-        image: evolution.img,
-        seed: evolution.seed,
-        rank: evolution.rank,
-      });
-      this.sigma.getGraph().addEdge(clickedNode['seed'], evolution.seed, {
-        size: 2,
-        color: 'black',
-        sourceSeed: clickedNode['seed'],
-        targetSeed: evolution.seed,
-      });
+      this.addNodeToGraph(evolution, newNodeX, newNodeY);
+      this.addEdgeToGraph(clickedNode['seed'], evolution.seed);
     });
   }
 
@@ -135,30 +129,52 @@ export class EvolutionTreeModalComponent {
         return;
       }
 
-      let newNodeX = clickedNode['x'] - 1;
-      let newNodeY = clickedNode['y'] + index;
+      const { newNodeX, newNodeY } = this.calculateNewNodePosition(
+        clickedNode,
+        index,
+        -1
+      );
 
-      if (this.hasNodeInPosition(newNodeX, newNodeY)) {
-        newNodeY++;
-      }
+      this.addNodeToGraph(degeneration, newNodeX, newNodeY);
+      this.addEdgeToGraph(degeneration.seed, clickedNode['seed']);
+    });
+  }
 
-      this.sigma.getGraph().addNode(degeneration.seed, {
-        label: `${degeneration.name} (${degeneration.rank})`,
-        x: newNodeX,
-        y: newNodeY,
-        size: 40,
-        color: '#D95D39',
-        type: 'image',
-        image: degeneration.img,
-        seed: degeneration.seed,
-        rank: degeneration.rank,
-      });
-      this.sigma.getGraph().addEdge(degeneration.seed, clickedNode['seed'], {
-        size: 2,
-        color: 'black',
-        sourceSeed: degeneration.seed,
-        targetSeed: clickedNode['seed'],
-      });
+  private calculateNewNodePosition(
+    clickedNode: any,
+    index: number,
+    direction: number
+  ) {
+    let newNodeX = clickedNode['x'] + direction;
+    let newNodeY = clickedNode['y'] + index;
+
+    if (this.hasNodeInPosition(newNodeX, newNodeY)) {
+      newNodeY++;
+    }
+
+    return { newNodeX, newNodeY };
+  }
+
+  private addNodeToGraph(digimon: Digimon, x: number, y: number) {
+    this.sigma.getGraph().addNode(digimon.seed, {
+      label: `${digimon.name} (${digimon.rank})`,
+      x,
+      y,
+      size: EvolutionTreeModalComponent.NODE_SIZE,
+      color: EvolutionTreeModalComponent.NODE_COLOR,
+      type: 'image',
+      image: digimon.img,
+      seed: digimon.seed,
+      rank: digimon.rank,
+    });
+  }
+
+  private addEdgeToGraph(sourceSeed: string, targetSeed: string) {
+    this.sigma.getGraph().addEdge(sourceSeed, targetSeed, {
+      size: EvolutionTreeModalComponent.EDGE_SIZE,
+      color: EvolutionTreeModalComponent.EDGE_COLOR,
+      sourceSeed,
+      targetSeed,
     });
   }
 
@@ -170,11 +186,12 @@ export class EvolutionTreeModalComponent {
         const nodeAttributes = this.sigma.getGraph().getNodeAttributes(node);
         return (
           nodeAttributes['seed'] !== clickedNode['seed'] &&
-          !this.evolutionRouteDigimons?.find(
+          !this.evolutionRouteDigimons?.some(
             (evolution) => evolution.seed === nodeAttributes['seed']
           )
         );
       });
+
     nodesToDrop.forEach((node) => {
       this.sigma.getGraph().dropNode(node);
     });
@@ -188,7 +205,7 @@ export class EvolutionTreeModalComponent {
         const nodeAttributes = this.sigma.getGraph().getNodeAttributes(node);
         return (
           nodeAttributes['seed'] !== this.mainDigimon()?.seed &&
-          !this.evolutionRouteDigimons?.find(
+          !this.evolutionRouteDigimons?.some(
             (evolution) => evolution.seed === nodeAttributes['seed']
           ) &&
           this.digimonService.getRankOrder(nodeAttributes['rank']) >
@@ -201,12 +218,11 @@ export class EvolutionTreeModalComponent {
     });
   }
 
-  private hasNodeInPosition(x: number, y: number) {
-    const node = this.sigma.getGraph().findNode((node) => {
+  private hasNodeInPosition(x: number, y: number): boolean {
+    return !!this.sigma.getGraph().findNode((node) => {
       const nodeAttributes = this.sigma.getGraph().getNodeAttributes(node);
       return nodeAttributes['x'] === x && nodeAttributes['y'] === y;
     });
-    return node;
   }
 
   onClose() {

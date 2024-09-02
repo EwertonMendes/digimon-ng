@@ -58,7 +58,16 @@ export class EvolutionTreeModalComponent {
 
     this.currentRank = clickedNode['rank'];
 
-    this.removeUpperRankNodes(clickedNode);
+    if (
+      clickedNode['seed'] === this.mainDigimon()?.seed ||
+      this.mainDigimon()?.currentEvolutionRoute?.find(
+        (evolution) => evolution.seed === clickedNode['seed']
+      )
+    ) {
+      this.removeAllNonEvolutionRouteNodes(clickedNode);
+    } else {
+      this.removeUpperRankNodes();
+    }
 
     const digimon = this.digimonService.getBaseDigimonDataBySeed(
       clickedNode['seed']
@@ -109,6 +118,8 @@ export class EvolutionTreeModalComponent {
       this.sigma.getGraph().addEdge(clickedNode['seed'], evolution.seed, {
         size: 2,
         color: 'black',
+        sourceSeed: clickedNode['seed'],
+        targetSeed: evolution.seed,
       });
     });
   }
@@ -145,12 +156,32 @@ export class EvolutionTreeModalComponent {
       this.sigma.getGraph().addEdge(degeneration.seed, clickedNode['seed'], {
         size: 2,
         color: 'black',
+        sourceSeed: degeneration.seed,
+        targetSeed: clickedNode['seed'],
       });
     });
   }
 
-  private removeUpperRankNodes(clickedNode: any) {
-    const upperRankNodeToDrop = this.sigma
+  private removeAllNonEvolutionRouteNodes(clickedNode: any) {
+    const nodesToDrop = this.sigma
+      .getGraph()
+      .nodes()
+      .filter((node) => {
+        const nodeAttributes = this.sigma.getGraph().getNodeAttributes(node);
+        return (
+          nodeAttributes['seed'] !== clickedNode['seed'] &&
+          !this.evolutionRouteDigimons?.find(
+            (evolution) => evolution.seed === nodeAttributes['seed']
+          )
+        );
+      });
+    nodesToDrop.forEach((node) => {
+      this.sigma.getGraph().dropNode(node);
+    });
+  }
+
+  private removeUpperRankNodes() {
+    const nodesToDrop = this.sigma
       .getGraph()
       .nodes()
       .filter((node) => {
@@ -165,7 +196,7 @@ export class EvolutionTreeModalComponent {
         );
       });
 
-    upperRankNodeToDrop.forEach((node) => {
+    nodesToDrop.forEach((node) => {
       this.sigma.getGraph().dropNode(node);
     });
   }

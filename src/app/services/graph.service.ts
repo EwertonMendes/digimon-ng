@@ -62,6 +62,8 @@ export class GraphService {
         graph.addEdge(evolutionRouteDigimons[index - 1]?.seed, digimon.seed, {
           size: 5,
           color: '#C0E5C8',
+          sourceSeed: evolutionRouteDigimons[index - 1]?.seed,
+          targetSeed: digimon.seed,
         });
       }
     });
@@ -85,14 +87,14 @@ export class GraphService {
     });
 
     if (evolutionRouteDigimons?.length) {
-      graph.addEdge(
-        evolutionRouteDigimons[evolutionRouteDigimons.length - 1]?.seed,
-        mainDigimon.seed,
-        {
-          size: 5,
-          color: '#C0E5C8',
-        }
-      );
+      const previousEvolutionSeed =
+        evolutionRouteDigimons[evolutionRouteDigimons.length - 1]?.seed;
+      graph.addEdge(previousEvolutionSeed, mainDigimon.seed, {
+        size: 5,
+        color: '#C0E5C8',
+        sourceSeed: previousEvolutionSeed,
+        targetSeed: mainDigimon.seed,
+      });
     }
   }
 
@@ -126,6 +128,8 @@ export class GraphService {
       graph.addEdge(degeneration.seed, mainDigimon.seed, {
         size: 2,
         color: 'black',
+        sourceSeed: degeneration.seed,
+        targetSeed: mainDigimon.seed,
       });
     });
   }
@@ -154,6 +158,8 @@ export class GraphService {
       graph.addEdge(mainDigimon.seed, evolution.seed, {
         size: 2,
         color: 'black',
+        sourceSeed: mainDigimon.seed,
+        targetSeed: evolution.seed,
       });
     });
   }

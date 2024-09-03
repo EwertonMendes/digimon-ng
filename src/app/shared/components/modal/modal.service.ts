@@ -3,26 +3,44 @@ import { ModalComponent } from './modal.component';
 
 @Injectable({ providedIn: 'root' })
 export class ModalService {
-  modals: ModalComponent[] = [];
+  private modals: ModalComponent[] = [];
+  private openModals: ModalComponent[] = [];
 
-  public add(modal: ModalComponent) {
+  add(modal: ModalComponent) {
     if (this.modals.find((m) => m.id === modal.id)) {
       throw new Error(`A modal with id ${modal.id} already exists`);
     }
     this.modals.push(modal);
   }
 
-  public remove(id: string) {
+  remove(id: string) {
     this.modals = this.modals.filter((x) => x.id !== id);
   }
 
-  public open(id: string) {
+  open(id: string) {
     const modal = this.modals.find((x) => x.id === id);
-    modal?.open();
+    if (modal) {
+      this.openModals.push(modal);
+      modal.open();
+    }
   }
 
-  public close(id: string) {
+  close(id: string) {
     const modal = this.modals.find((x) => x.id === id);
-    modal?.close();
+    if (modal) {
+      modal.close();
+    }
+  }
+
+  getOpenModals(): ModalComponent[] {
+    return this.openModals;
+  }
+
+  getLastOpenModal(): ModalComponent {
+    return this.openModals[this.openModals.length - 1];
+  }
+
+  removeLastOpenModal() {
+    this.openModals.pop();
   }
 }

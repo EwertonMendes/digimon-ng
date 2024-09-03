@@ -25,9 +25,10 @@
       flex-direction: column;
       gap: 5px;
       align-items: center;
+      padding: 10%;
 
       img {
-        width: 300px;
+        scale: 2;
       }
     }
 
@@ -35,6 +36,14 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
+
+      .digimon-details-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3px;
+        margin-bottom: 10px;
+      }
 
       .stats {
         display: flex;

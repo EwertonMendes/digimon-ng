@@ -7,19 +7,20 @@
           [src]="globalState.selectedDigimonOnDetailsAccessor?.img"
           alt="digimon"
         />
-
-        <h4>
-          {{
-            globalState.selectedDigimonOnDetailsAccessor?.nickName ??
-              globalState.selectedDigimonOnDetailsAccessor?.name
-          }}
-        </h4>
-        @if (globalState.selectedDigimonOnDetailsAccessor?.nickName) {
-        <span>{{ globalState.selectedDigimonOnDetailsAccessor?.name }}</span>
-        }
-        <span>{{ globalState.selectedDigimonOnDetailsAccessor?.rank }}</span>
       </div>
       <div class="digimon-details-content-container">
+        <div class="digimon-details-header">
+          <h4>
+            {{
+              globalState.selectedDigimonOnDetailsAccessor?.nickName ??
+                globalState.selectedDigimonOnDetailsAccessor?.name
+            }}
+          </h4>
+          @if (globalState.selectedDigimonOnDetailsAccessor?.nickName) {
+          <span>{{ globalState.selectedDigimonOnDetailsAccessor?.name }}</span>
+          }
+          <span>{{ globalState.selectedDigimonOnDetailsAccessor?.rank }}</span>
+        </div>
         <div class="stats">
           <div class="digimon-details-content-info">
             <div class="digimon-details-content-info-item">
@@ -41,8 +42,11 @@
             <div class="digimon-details-content-info-item">
               <span class="label">Current Exp: </span>
               <span class="value"
-                >{{ globalState.selectedDigimonOnDetailsAccessor?.exp | number : "1.0-0" }} /
-                {{ neededExpForNextLevel() | number : "1.0-0" }}</span
+                >{{
+                  globalState.selectedDigimonOnDetailsAccessor?.exp
+                    | number : "1.0-0"
+                }}
+                / {{ neededExpForNextLevel() | number : "1.0-0" }}</span
               >
             </div>
             <div class="digimon-details-content-info-item">
@@ -115,20 +119,23 @@
               <div class="digimon-details-content-info-stats-item">
                 <span class="label">ATK: </span>
                 <span class="value">{{
-                  globalState.selectedDigimonOnDetailsAccessor?.atk | number : "1.0-0"
+                  globalState.selectedDigimonOnDetailsAccessor?.atk
+                    | number : "1.0-0"
                 }}</span>
               </div>
               <div class="digimon-details-content-info-stats-item">
                 <span class="label">DEF: </span>
                 <span class="value">{{
-                  globalState.selectedDigimonOnDetailsAccessor?.def | number : "1.0-0"
+                  globalState.selectedDigimonOnDetailsAccessor?.def
+                    | number : "1.0-0"
                 }}</span>
               </div>
               <div class="digimon-details-content-info-stats-item">
                 <span class="label">Bit Generation: </span>
                 <span class="value"
                   >{{
-                    globalState.selectedDigimonOnDetailsAccessor?.bitFarmingRate | number : "1.0-0"
+                    globalState.selectedDigimonOnDetailsAccessor?.bitFarmingRate
+                      | number : "1.0-0"
                   }}
                   /m</span
                 >
@@ -147,12 +154,12 @@
           </div>
         </div>
         }
-        <app-button
-          text="Evolution Tree"
-          (click)="openEvolutionTreeModal()"  />
+        <app-button text="Evolution Tree" (click)="openEvolutionTreeModal()" />
       </div>
     </div>
   </div>
 </app-modal>
 
-<app-evolution-tree-modal [mainDigimon]="globalState.selectedDigimonOnDetailsAccessor"/>
+<app-evolution-tree-modal
+  [mainDigimon]="globalState.selectedDigimonOnDetailsAccessor"
+/>

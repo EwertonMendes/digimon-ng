@@ -239,6 +239,26 @@
     "degenerateSeedList": []
   },
   {
+    "seed": "e7f074b5-2979-4a45-b6a3-3b07f6965f7d",
+    "name": "Pitchmon",
+    "img": "/assets/digimons/Pitchmon.webp",
+    "rank": "Fresh",
+    "species": "Aqua",
+    "currentHp": 57,
+    "maxHp": 57,
+    "currentMp": 59,
+    "maxMp": 59,
+    "atk": 32,
+    "def": 35,
+    "speed": 14,
+    "exp": 0,
+    "totalExp": 0,
+    "level": 1,
+    "bitFarmingRate": 1,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": []
+  },
+  {
     "seed": "cd52bdf0-80a8-4b19-b738-ed6acf1f0b14",
     "name": "Apemon",
     "img": "/assets/digimons/Apemon.webp",

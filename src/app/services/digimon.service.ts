@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Digimon } from '../core/interfaces/digimon.interface';
+import { BaseDigimon, Digimon } from '../core/interfaces/digimon.interface';
 import { v4 as uuidv4 } from 'uuid';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DigimonService {
-  private baseDigimonDataSubject = new BehaviorSubject<Digimon[]>([]);
+  private baseDigimonDataSubject = new BehaviorSubject<BaseDigimon[]>([]);
   baseDigimonData$ = this.baseDigimonDataSubject.asObservable();
 
   constructor() {
@@ -21,20 +21,20 @@ export class DigimonService {
     this.baseDigimonDataSubject.next(data);
   }
 
-  getBaseDigimonDataBySeed(seed: string): Digimon | undefined {
+  getBaseDigimonDataBySeed(seed: string): BaseDigimon | undefined {
     return this.baseDigimonDataSubject.value.find(
       (digimon) => digimon.seed === seed
     );
   }
 
-  getBaseDigimonDataById(id: string): Digimon | undefined {
+  getBaseDigimonDataById(id: string): BaseDigimon | undefined {
     return this.baseDigimonDataSubject.value.find(
       (digimon) => digimon.seed === id
     );
   }
 
-  getDigimonEvolutions(digimon?: Digimon): Digimon[] {
-    const digimonList: Digimon[] = [];
+  getDigimonEvolutions(digimon?: Digimon | BaseDigimon): BaseDigimon[] {
+    const digimonList: BaseDigimon[] = [];
     digimon?.digiEvolutionSeedList.forEach((seed) => {
       const digimon = this.getBaseDigimonDataById(seed);
       if (digimon) digimonList.push(digimon);
@@ -42,8 +42,8 @@ export class DigimonService {
     return digimonList;
   }
 
-  getDigimonDegenerations(digimon?: Digimon): Digimon[] {
-    const digimonList: Digimon[] = [];
+  getDigimonDegenerations(digimon?: Digimon | BaseDigimon): BaseDigimon[] {
+    const digimonList: BaseDigimon[] = [];
     digimon?.degenerateSeedList.forEach((seed) => {
       const digimon = this.getBaseDigimonDataById(seed);
       if (digimon) digimonList.push(digimon);
@@ -51,30 +51,42 @@ export class DigimonService {
     return digimonList;
   }
 
-  getDigimonCurrentEvolutionRoute(digimon?: Digimon): Digimon[] | undefined {
+  getDigimonCurrentEvolutionRoute(
+    digimon?: Digimon
+  ): BaseDigimon[] | undefined {
     return digimon?.currentEvolutionRoute?.map((digimon) =>
       this.getBaseDigimonDataBySeed(digimon.seed)
-    ) as Digimon[];
+    ) as BaseDigimon[];
   }
 
   generateRandomDigimon(): Digimon {
     const randomDigimonIndex = Math.floor(
       Math.random() * this.baseDigimonDataSubject.value.length
     );
-    const newDigimon = {
-      ...this.baseDigimonDataSubject.value[randomDigimonIndex],
+
+    const baseDigimon = this.baseDigimonDataSubject.value[randomDigimonIndex];
+    const newDigimon: Digimon = {
+      id: uuidv4(),
+      birthDate: new Date(),
+      seed: baseDigimon.seed,
+      name: baseDigimon.name,
+      img: baseDigimon.img,
+      rank: baseDigimon.rank,
+      species: baseDigimon.species,
+      currentHp: baseDigimon.hp,
+      maxHp: baseDigimon.hp,
+      currentMp: baseDigimon.mp,
+      maxMp: baseDigimon.mp,
+      atk: baseDigimon.atk,
+      def: baseDigimon.def,
+      speed: baseDigimon.speed,
+      exp: 0,
+      totalExp: 0,
+      level: 1,
+      bitFarmingRate: baseDigimon.bitFarmingRate,
+      digiEvolutionSeedList: baseDigimon.digiEvolutionSeedList,
+      degenerateSeedList: baseDigimon.degenerateSeedList,
     };
-
-    newDigimon.id = uuidv4();
-
-    return newDigimon;
-  }
-
-  generateNewDigimon(digimon: Digimon): Digimon {
-    const newDigimon = { ...digimon };
-
-    newDigimon.id = uuidv4();
-    newDigimon.birthDate = new Date();
 
     return newDigimon;
   }
@@ -82,9 +94,56 @@ export class DigimonService {
   generateDigimonBySeed(seed: string): Digimon | undefined {
     const baseDigimon = this.getBaseDigimonDataBySeed(seed);
     if (!baseDigimon) return;
-    const newDigimon = { ...baseDigimon };
 
-    newDigimon.id = uuidv4();
+    const newDigimon: Digimon = {
+      id: uuidv4(),
+      birthDate: new Date(),
+      seed: baseDigimon.seed,
+      name: baseDigimon.name,
+      img: baseDigimon.img,
+      rank: baseDigimon.rank,
+      species: baseDigimon.species,
+      currentHp: baseDigimon.hp,
+      maxHp: baseDigimon.hp,
+      currentMp: baseDigimon.mp,
+      maxMp: baseDigimon.mp,
+      atk: baseDigimon.atk,
+      def: baseDigimon.def,
+      speed: baseDigimon.speed,
+      exp: 0,
+      totalExp: 0,
+      level: 1,
+      bitFarmingRate: baseDigimon.bitFarmingRate,
+      digiEvolutionSeedList: baseDigimon.digiEvolutionSeedList,
+      degenerateSeedList: baseDigimon.degenerateSeedList,
+    };
+
+    return newDigimon;
+  }
+
+  generateNewDigimon(digimon: BaseDigimon): Digimon {
+    const newDigimon = {
+      id: uuidv4(),
+      birthDate: new Date(),
+      seed: digimon.seed,
+      name: digimon.name,
+      img: digimon.img,
+      rank: digimon.rank,
+      species: digimon.species,
+      currentHp: digimon.hp,
+      maxHp: digimon.hp,
+      currentMp: digimon.mp,
+      maxMp: digimon.mp,
+      atk: digimon.atk,
+      def: digimon.def,
+      speed: digimon.speed,
+      exp: 0,
+      totalExp: 0,
+      level: 1,
+      bitFarmingRate: digimon.bitFarmingRate,
+      digiEvolutionSeedList: digimon.digiEvolutionSeedList,
+      degenerateSeedList: digimon.degenerateSeedList,
+    };
 
     return newDigimon;
   }

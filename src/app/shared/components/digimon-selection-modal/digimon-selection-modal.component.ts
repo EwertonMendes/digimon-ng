@@ -1,6 +1,6 @@
 import { Component, input, output } from '@angular/core';
 import { ModalComponent } from '../modal/modal.component';
-import { Digimon } from '../../../core/interfaces/digimon.interface';
+import { BaseDigimon } from '../../../core/interfaces/digimon.interface';
 
 @Component({
   selector: 'app-digimon-selection-modal',
@@ -12,7 +12,7 @@ import { Digimon } from '../../../core/interfaces/digimon.interface';
 export class DigimonSelectionModalComponent {
   digimonSelectionModalId = 'digimon-selection-modal';
 
-  digimonList = input.required<Digimon[]>();
+  digimonList = input.required<BaseDigimon[]>();
 
-  onSelectDigimon = output<Digimon>();
+  onSelectDigimon = output<BaseDigimon>();
 }

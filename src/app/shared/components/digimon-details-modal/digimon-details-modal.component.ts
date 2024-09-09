@@ -1,12 +1,12 @@
 import { Component, computed, effect, inject, signal } from '@angular/core';
 import { ModalComponent } from '../modal/modal.component';
 import { GlobalStateDataSource } from '../../../state/global-state.datasource';
-import { Digimon } from '../../../core/interfaces/digimon.interface';
 import { CommonModule } from '@angular/common';
 import { EvolutionRouteComponent } from '../evolution-route/evolution-route.component';
 import { ButtonComponent } from '../button/button.component';
 import { ModalService } from '../modal/modal.service';
 import { EvolutionTreeModalComponent } from '../evolution-tree-modal/evolution-tree-modal.component';
+import { BaseDigimon } from '../../../core/interfaces/digimon.interface';
 
 @Component({
   standalone: true,
@@ -46,7 +46,7 @@ export class DigimonDetailsModalComponent {
     );
   });
 
-  evolutionRoute = signal<Digimon[]>([]);
+  evolutionRoute = signal<BaseDigimon[]>([]);
 
   constructor() {
     effect(
@@ -59,7 +59,7 @@ export class DigimonDetailsModalComponent {
         if (!evolutionList) {
           this.evolutionRoute.set([]);
           return;
-        };
+        }
 
         this.evolutionRoute.set(evolutionList);
       },

@@ -3,7 +3,7 @@ import { TrainingService } from './services/training.service';
 import { FarmingService } from './services/farming.service';
 import { BattleService } from './services/battle.service';
 import { StorageService } from './services/storage.service';
-import { Digimon } from '../core/interfaces/digimon.interface';
+import { BaseDigimon, Digimon } from '../core/interfaces/digimon.interface';
 import { PlayerData } from '../core/interfaces/player-data.interface';
 import { DigimonService } from '../services/digimon.service';
 import { PlayerDataService } from '../services/player-data.service';
@@ -231,7 +231,7 @@ export class GlobalStateDataSource {
     );
     this.updatePlayerData(updatedPlayerData);
 
-    if(!from) return;
+    if (!from) return;
 
     this.removeFromPreviousList(digimon.id!, from);
   }
@@ -438,7 +438,7 @@ export class GlobalStateDataSource {
     return this.digimonService.generateRandomDigimon();
   }
 
-  generateNewDigimon(digimon: Digimon) {
+  generateNewDigimon(digimon: BaseDigimon) {
     return this.digimonService.generateNewDigimon(digimon);
   }
 

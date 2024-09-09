@@ -6,7 +6,7 @@ import { ToastService } from '../../../shared/components/toast/toast.service';
 import { DigimonSelectionModalComponent } from '../../../shared/components/digimon-selection-modal/digimon-selection-modal.component';
 import { ModalService } from '../../../shared/components/modal/modal.service';
 import { DigimonService } from '../../../services/digimon.service';
-import { Digimon } from '../../../core/interfaces/digimon.interface';
+import { BaseDigimon } from '../../../core/interfaces/digimon.interface';
 
 @Component({
   selector: 'app-debug-modal',
@@ -18,7 +18,7 @@ import { Digimon } from '../../../core/interfaces/digimon.interface';
 export class DebugModalComponent implements OnInit {
   debugModalId = 'debug-modal';
   digimonSelectionModalId = 'digimon-selection-modal';
-  selectableDigimonList = signal<Digimon[]>([]);
+  selectableDigimonList = signal<BaseDigimon[]>([]);
   globalState = inject(GlobalStateDataSource);
   toastService = inject(ToastService);
   modalService = inject(ModalService);
@@ -50,7 +50,7 @@ export class DebugModalComponent implements OnInit {
     );
   }
 
-  giveSelectedDigimon(digimon: Digimon) {
+  giveSelectedDigimon(digimon: BaseDigimon) {
     const newDigimon = this.globalState.generateNewDigimon(digimon);
 
     this.globalState.addDigimonToStorage(newDigimon);

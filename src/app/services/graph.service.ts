@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 import { createNodeImageProgram } from '@sigma/node-image';
 import { Settings } from 'sigma/settings';
 import { NodeDisplayData, PartialButFor } from 'sigma/types';
-import { Digimon } from '../core/interfaces/digimon.interface';
+import { BaseDigimon, Digimon } from '../core/interfaces/digimon.interface';
 import { DigimonService } from './digimon.service';
 
 @Injectable({
@@ -16,7 +16,7 @@ export class GraphService {
   createGraph(
     container: HTMLElement,
     mainDigimon: Digimon,
-    evolutionRouteDigimons?: Digimon[]
+    evolutionRouteDigimons?: BaseDigimon[]
   ): Sigma {
     const graph = new Graph();
 
@@ -41,7 +41,7 @@ export class GraphService {
 
   private addEvolutionRouteNodes(
     graph: Graph,
-    evolutionRouteDigimons?: Digimon[]
+    evolutionRouteDigimons?: BaseDigimon[]
   ) {
     evolutionRouteDigimons?.forEach((digimon, index) => {
       if (!digimon) return;
@@ -72,7 +72,7 @@ export class GraphService {
   private addMainDigimonNode(
     graph: Graph,
     mainDigimon: Digimon,
-    evolutionRouteDigimons?: Digimon[]
+    evolutionRouteDigimons?: BaseDigimon[]
   ) {
     graph.addNode(mainDigimon.seed, {
       label: `${mainDigimon.name} (${mainDigimon.rank})`,
@@ -101,7 +101,7 @@ export class GraphService {
   private addPossibleDegenerations(
     graph: Graph,
     mainDigimon: Digimon,
-    evolutionRouteDigimons?: Digimon[]
+    evolutionRouteDigimons?: BaseDigimon[]
   ) {
     const possibleDegenerations = this.digimonService
       .getDigimonDegenerations(mainDigimon)
@@ -137,7 +137,7 @@ export class GraphService {
   private addPossibleEvolutions(
     graph: Graph,
     mainDigimon: Digimon,
-    evolutionRouteDigimons?: Digimon[]
+    evolutionRouteDigimons?: BaseDigimon[]
   ) {
     const possibleEvolutions =
       this.digimonService.getDigimonEvolutions(mainDigimon);

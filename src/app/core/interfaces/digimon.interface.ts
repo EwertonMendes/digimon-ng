@@ -23,3 +23,20 @@ export interface Digimon {
   currentEvolutionRoute?: Array<{ seed: string; rank: string }>;
   [key: string]: any;
 }
+
+export interface BaseDigimon {
+  seed: string;
+  name: string;
+  img: string;
+  rank: string;
+  species: string;
+  hp: number;
+  mp: number;
+  atk: number;
+  def: number;
+  speed: number;
+  bitFarmingRate: number;
+  digiEvolutionSeedList: string[];
+  degenerateSeedList: string[];
+  [key: string]: any;
+}

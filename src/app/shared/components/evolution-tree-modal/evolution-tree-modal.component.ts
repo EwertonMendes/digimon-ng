@@ -1,6 +1,6 @@
 import { Component, inject, input, signal } from '@angular/core';
 import { ModalComponent } from '../modal/modal.component';
-import { Digimon } from '../../../core/interfaces/digimon.interface';
+import { BaseDigimon, Digimon } from '../../../core/interfaces/digimon.interface';
 import { DigimonService } from '../../../services/digimon.service';
 import { GraphService } from '../../../services/graph.service';
 import Sigma from 'sigma';
@@ -22,8 +22,8 @@ export class EvolutionTreeModalComponent {
   mainDigimon = input<Digimon>();
   sigma!: Sigma;
   currentRank: string = 'Fresh';
-  evolutionRouteDigimons: Digimon[] = [];
-  selectedDigimon = signal<Digimon | undefined>(undefined);
+  evolutionRouteDigimons: BaseDigimon[] = [];
+  selectedDigimon = signal<BaseDigimon | undefined>(undefined);
 
   digimonService = inject(DigimonService);
   graphService = inject(GraphService);
@@ -52,12 +52,12 @@ export class EvolutionTreeModalComponent {
     this.sigma.on('clickNode', (data) => this.handleNodeClick(data));
   }
 
-  private getEvolutionRouteDigimons(): Digimon[] {
+  private getEvolutionRouteDigimons(): BaseDigimon[] {
     return this.mainDigimon()
       ?.currentEvolutionRoute?.map((evolution) =>
         this.digimonService.getBaseDigimonDataBySeed(evolution.seed)
       )
-      .filter((digimon) => digimon !== undefined) as Digimon[];
+      .filter((digimon) => digimon !== undefined) as BaseDigimon[];
   }
 
   private handleNodeClick(data: any) {
@@ -83,14 +83,15 @@ export class EvolutionTreeModalComponent {
 
   private isMainOrEvolutionRouteNode(nodeAttributes: any): boolean {
     return (
-      nodeAttributes['seed'] === this.mainDigimon()?.seed ||
-      this.mainDigimon()?.currentEvolutionRoute?.some(
-        (evolution) => evolution.seed === nodeAttributes['seed']
-      )
-    ) ?? false;
+      (nodeAttributes['seed'] === this.mainDigimon()?.seed ||
+        this.mainDigimon()?.currentEvolutionRoute?.some(
+          (evolution) => evolution.seed === nodeAttributes['seed']
+        )) ??
+      false
+    );
   }
 
-  private isPartOfCurrentEvolutionRoute(digimon: Digimon): boolean {
+  private isPartOfCurrentEvolutionRoute(digimon: BaseDigimon): boolean {
     return (
       this.evolutionRouteDigimons?.some(
         (routeDigimon) => routeDigimon.seed === digimon.seed
@@ -98,11 +99,11 @@ export class EvolutionTreeModalComponent {
     );
   }
 
-  private addPossibleEvolutions(digimon: Digimon, clickedNode: any) {
+  private addPossibleEvolutions(digimon: BaseDigimon, clickedNode: any) {
     const possibleEvolutions =
       this.digimonService.getDigimonEvolutions(digimon);
 
-    possibleEvolutions?.forEach((evolution: Digimon, index: number) => {
+    possibleEvolutions?.forEach((evolution: BaseDigimon, index: number) => {
       if (this.sigma.getGraph().findNode((node) => node === evolution.seed)) {
         return;
       }
@@ -118,26 +119,28 @@ export class EvolutionTreeModalComponent {
     });
   }
 
-  private addPossibleDegenerations(digimon: Digimon, clickedNode: any) {
+  private addPossibleDegenerations(digimon: BaseDigimon, clickedNode: any) {
     const possibleDegenerations =
       this.digimonService.getDigimonDegenerations(digimon);
 
-    possibleDegenerations?.forEach((degeneration: Digimon, index: number) => {
-      if (
-        this.sigma.getGraph().findNode((node) => node === degeneration.seed)
-      ) {
-        return;
+    possibleDegenerations?.forEach(
+      (degeneration: BaseDigimon, index: number) => {
+        if (
+          this.sigma.getGraph().findNode((node) => node === degeneration.seed)
+        ) {
+          return;
+        }
+
+        const { newNodeX, newNodeY } = this.calculateNewNodePosition(
+          clickedNode,
+          index,
+          -1
+        );
+
+        this.addNodeToGraph(degeneration, newNodeX, newNodeY);
+        this.addEdgeToGraph(degeneration.seed, clickedNode['seed']);
       }
-
-      const { newNodeX, newNodeY } = this.calculateNewNodePosition(
-        clickedNode,
-        index,
-        -1
-      );
-
-      this.addNodeToGraph(degeneration, newNodeX, newNodeY);
-      this.addEdgeToGraph(degeneration.seed, clickedNode['seed']);
-    });
+    );
   }
 
   private calculateNewNodePosition(
@@ -155,7 +158,7 @@ export class EvolutionTreeModalComponent {
     return { newNodeX, newNodeY };
   }
 
-  private addNodeToGraph(digimon: Digimon, x: number, y: number) {
+  private addNodeToGraph(digimon: BaseDigimon, x: number, y: number) {
     this.sigma.getGraph().addNode(digimon.seed, {
       label: `${digimon.name} (${digimon.rank})`,
       x,

@@ -639,5 +639,20 @@
     "bitFarmingRate": 13,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["rst9012u-345v-wxyz-abcd-efghij6789"]
+  },
+  {
+    "seed": "5f42c392-4f8e-4fc2-9202-44225bc0936b",
+    "name": "Tsunomon",
+    "img": "/assets/digimons/Tsunomon.webp",
+    "rank": "In-Training",
+    "species": "Beast",
+    "hp": 64,
+    "mp": 57,
+    "atk": 51,
+    "def": 33,
+    "speed": 37,
+    "bitFarmingRate": 1,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": []
   }
 ]

@@ -652,7 +652,22 @@
     "def": 33,
     "speed": 37,
     "bitFarmingRate": 1,
-    "digiEvolutionSeedList": [],
+    "digiEvolutionSeedList": ["768e6d1a-5c3b-4ed2-991f-e4a1c16357a6"],
     "degenerateSeedList": []
+  },
+  {
+    "seed": "768e6d1a-5c3b-4ed2-991f-e4a1c16357a6",
+    "name": "Gabumon",
+    "img": "/assets/digimons/Gabumon.webp",
+    "rank": "Rookie",
+    "species": "Beast",
+    "hp": 113,
+    "mp": 102,
+    "atk": 86,
+    "def": 59,
+    "speed": 63,
+    "bitFarmingRate": 2,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": ["5f42c392-4f8e-4fc2-9202-44225bc0936b"]
   }
 ]

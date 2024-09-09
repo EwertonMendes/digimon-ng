@@ -697,7 +697,22 @@
     "def": 102,
     "speed": 115,
     "bitFarmingRate": 4,
-    "digiEvolutionSeedList": [],
+    "digiEvolutionSeedList": ["d9f9c182-731b-4f21-8e2f-167b2d663e34"],
     "degenerateSeedList": ["80c6f1b9-648a-49b3-92c9-01d6e2f4bc8e"]
+  },
+  {
+    "seed": "d9f9c182-731b-4f21-8e2f-167b2d663e34",
+    "name": "Metal Garurumon",
+    "img": "/assets/digimons/MetalGarurumon.webp",
+    "rank": "Mega",
+    "species": "Beast",
+    "hp": 312,
+    "mp": 338,
+    "atk": 167,
+    "def": 121,
+    "speed": 131,
+    "bitFarmingRate": 8,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": ["a5e0bfb7-8d2a-4ef1-9636-cbb9db1fe1d0"]
   }
 ]

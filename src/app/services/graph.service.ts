@@ -113,10 +113,15 @@ export class GraphService {
       );
 
     possibleDegenerations.forEach((degeneration, index) => {
+      const { newNodeX, newNodeY } = this.calculateNewNodePosition(
+        graph,
+        { x: (evolutionRouteDigimons?.length ?? 0) + 1, y: index },
+        -1
+      );
       graph.addNode(degeneration.seed, {
         label: `${degeneration.name} (${degeneration.rank})`,
-        x: (evolutionRouteDigimons?.length ?? 0) - 1,
-        y: index,
+        x: newNodeX,
+        y: newNodeY,
         size: 40,
         color: '#D95D39',
         type: 'image',
@@ -197,5 +202,27 @@ export class GraphService {
       xPosition + 4,
       yPosition + rectHeight / 2 + size / 3
     );
+  }
+
+  private calculateNewNodePosition(
+    graph: any,
+    position: { x: number; y: number },
+    direction: number
+  ) {
+    let newNodeX = position.x + direction - 1;
+    let newNodeY = position.y;
+
+    if (this.hasNodeInPosition(graph, newNodeX, newNodeY)) {
+      newNodeY++;
+    }
+
+    return { newNodeX, newNodeY };
+  }
+
+  private hasNodeInPosition(graph: any, x: number, y: number): boolean {
+    return !!graph.findNode((node: string) => {
+      const nodeAttributes = graph.getNodeAttributes(node);
+      return nodeAttributes['x'] === x && nodeAttributes['y'] === y;
+    });
   }
 }

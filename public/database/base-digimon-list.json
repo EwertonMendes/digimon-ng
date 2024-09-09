@@ -667,7 +667,22 @@
     "def": 59,
     "speed": 63,
     "bitFarmingRate": 2,
-    "digiEvolutionSeedList": [],
+    "digiEvolutionSeedList": ["80c6f1b9-648a-49b3-92c9-01d6e2f4bc8e"],
     "degenerateSeedList": ["5f42c392-4f8e-4fc2-9202-44225bc0936b"]
+  },
+  {
+    "seed": "80c6f1b9-648a-49b3-92c9-01d6e2f4bc8e",
+    "name": "Garurumon",
+    "img": "/assets/digimons/Garurumon.webp",
+    "rank": "Champion",
+    "species": "Beast",
+    "hp": 166,
+    "mp": 165,
+    "atk": 101,
+    "def": 80,
+    "speed": 83,
+    "bitFarmingRate": 3,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": ["768e6d1a-5c3b-4ed2-991f-e4a1c16357a6"]
   }
 ]

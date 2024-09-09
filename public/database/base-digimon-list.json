@@ -682,7 +682,22 @@
     "def": 80,
     "speed": 83,
     "bitFarmingRate": 3,
-    "digiEvolutionSeedList": [],
+    "digiEvolutionSeedList": ["a5e0bfb7-8d2a-4ef1-9636-cbb9db1fe1d0"],
     "degenerateSeedList": ["768e6d1a-5c3b-4ed2-991f-e4a1c16357a6"]
+  },
+  {
+    "seed": "a5e0bfb7-8d2a-4ef1-9636-cbb9db1fe1d0",
+    "name": "War Garurumon",
+    "img": "/assets/digimons/WarGarurumon.webp",
+    "rank": "Ultimate",
+    "species": "Beast",
+    "hp": 217,
+    "mp": 238,
+    "atk": 127,
+    "def": 102,
+    "speed": 115,
+    "bitFarmingRate": 4,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": ["80c6f1b9-648a-49b3-92c9-01d6e2f4bc8e"]
   }
 ]

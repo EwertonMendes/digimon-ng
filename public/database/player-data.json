@@ -52,7 +52,6 @@
       "id": "c7e4fd0d-e0d8-4a29-8edd-39be3c3d6a34",
       "seed": "25fc7b61-17ae-453b-94f7-4fa4f9171633",
       "name": "Metal Greymon",
-      "nickName": "Anderson",
       "birthDate": "2024-08-01T09:00:00",
       "img": "/assets/digimons/MetalGreymon.webp",
       "rank": "Ultimate",
@@ -134,6 +133,7 @@
       "id": "rt54fd0d-e0d8-4a29-8edd-39be3c3d66y7",
       "seed": "96c23ff9-d6b4-43da-91e6-f0c9799c65d7",
       "name": "Agumon",
+      "birthDate": "2024-09-09T15:37:24",
       "img": "/assets/digimons/Agumon.webp",
       "rank": "Rookie",
       "species": "Dragon",
@@ -147,13 +147,16 @@
       "exp": 0,
       "totalExp": 0,
       "level": 1,
-      "bitFarmingRate": 1,
+      "bitFarmingRate": 2,
       "digiEvolutionSeedList": [
         "70dbb38a-690e-45b3-bfc5-eccba64fbd9b",
         "67cd2d63-4299-446e-a851-6f04e9b51bc5",
         "a351a4ab-a5bf-42df-8a27-bb2d8ce06d0b"
       ],
-      "degenerateSeedList": ["edc9812f-82a6-487f-9a4d-52b845643176"],
+      "degenerateSeedList": [
+        "edc9812f-82a6-487f-9a4d-52b845643176",
+        "ijk9012l-3456-789m-nopq-rstuvwxyz23"
+      ],
       "currentEvolutionRoute": [
         {
           "seed": "b5ac222a-e653-4543-923e-77355dd24686",
@@ -307,7 +310,8 @@
       "level": 1,
       "bitFarmingRate": 2,
       "digiEvolutionSeedList": [],
-      "degenerateSeedList": []
+      "degenerateSeedList": [],
+      "currentEvolutionRoute": []
     }
   ],
   "digimonStorageList": [
@@ -315,18 +319,17 @@
       "id": "4hcf1ead-de18-42bf-be3c-fbebb8ax650u",
       "seed": "df67cc96-4a69-4f26-88d6-2c98ccaecfe6",
       "name": "War Greymon",
-      "nickName": "Apelão",
       "birthDate": "2023-08-01T14:35:00",
       "img": "/assets/digimons/WarGreymon.webp",
       "rank": "Mega",
       "species": "Dragon",
       "currentHp": 9999,
-      "maxHp": 9999,
+      "maxHp": 320,
       "currentMp": 9999,
-      "maxMp": 9999,
-      "atk": 9999,
-      "def": 9999,
-      "speed": 9999,
+      "maxMp": 335,
+      "atk": 171,
+      "def": 146,
+      "speed": 122,
       "exp": 0,
       "totalExp": 0,
       "level": 1,
@@ -376,7 +379,8 @@
       "level": 1,
       "bitFarmingRate": 4,
       "digiEvolutionSeedList": [],
-      "degenerateSeedList": []
+      "degenerateSeedList": [],
+      "currentEvolutionRoute": []
     },
     {
       "id": "25fa11f1-c46d-4c79-92d8-60946403378a",
@@ -398,12 +402,14 @@
       "level": 1,
       "bitFarmingRate": 2,
       "digiEvolutionSeedList": [],
-      "degenerateSeedList": []
+      "degenerateSeedList": [],
+      "currentEvolutionRoute": []
     },
     {
       "id": "6dad38a0-355b-4792-acce-a4b9473191f6",
       "seed": "e3f58de4-75f0-4e38-81a0-ad1c32367f97",
       "name": "Shine Greymon",
+      "birthDate": "2024-09-09T15:37:24",
       "img": "/assets/digimons/ShineGreymon.webp",
       "rank": "Mega",
       "species": "Dragon",

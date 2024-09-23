@@ -38,5 +38,6 @@ export interface BaseDigimon {
   bitFarmingRate: number;
   digiEvolutionSeedList: string[];
   degenerateSeedList: string[];
+  evolutionRequirements?: Array<{ type: string; value: any }>;
   [key: string]: any;
 }

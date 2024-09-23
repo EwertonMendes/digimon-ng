@@ -1,14 +1,20 @@
-import { Component, inject, input, signal } from '@angular/core';
+import { Component, effect, inject, input, signal } from '@angular/core';
 import { ModalComponent } from '../modal/modal.component';
-import { BaseDigimon, Digimon } from '../../../core/interfaces/digimon.interface';
+import {
+  BaseDigimon,
+  Digimon,
+} from '../../../core/interfaces/digimon.interface';
 import { DigimonService } from '../../../services/digimon.service';
 import { GraphService } from '../../../services/graph.service';
 import Sigma from 'sigma';
+import { ButtonComponent } from '../button/button.component';
+import { GlobalStateDataSource } from '../../../state/global-state.datasource';
+import { ModalService } from '../modal/modal.service';
 
 @Component({
   selector: 'app-evolution-tree-modal',
   standalone: true,
-  imports: [ModalComponent],
+  imports: [ModalComponent, ButtonComponent],
   templateUrl: './evolution-tree-modal.component.html',
   styleUrls: ['./evolution-tree-modal.component.scss'],
 })
@@ -23,10 +29,40 @@ export class EvolutionTreeModalComponent {
   sigma!: Sigma;
   currentRank: string = 'Fresh';
   evolutionRouteDigimons: BaseDigimon[] = [];
+  canEvolve = signal<boolean>(false);
   selectedDigimon = signal<BaseDigimon | undefined>(undefined);
+  selectedPossibleEvolutionStats = signal<any | undefined>(undefined);
 
   digimonService = inject(DigimonService);
   graphService = inject(GraphService);
+  globalState = inject(GlobalStateDataSource);
+  modalService = inject(ModalService);
+
+  constructor() {
+    effect(
+      () => {
+        if (
+          !this.mainDigimon() ||
+          !this.digimonService.checkRequirements(
+            this.mainDigimon()!,
+            this.selectedDigimon()!
+          )
+        ) {
+          this.canEvolve.set(false);
+          return;
+        }
+
+        this.canEvolve.set(
+          this.mainDigimon()?.digiEvolutionSeedList?.some(
+            (seed) => seed === this.selectedDigimon()?.seed
+          ) ?? false
+        );
+      },
+      {
+        allowSignalWrites: true,
+      }
+    );
+  }
 
   onOpen() {
     const container = document.getElementById('evolutionTreeWrapper')!;
@@ -232,5 +268,29 @@ export class EvolutionTreeModalComponent {
     this.selectedDigimon.set(undefined);
     if (!this.sigma) return;
     this.sigma.kill();
+  }
+
+  evolveDigimon() {
+    if (!this.mainDigimon() || !this.selectedDigimon()) return;
+
+    this.globalState.evolveDigimon(
+      this.mainDigimon()!,
+      this.selectedDigimon()?.seed!
+    );
+
+    this.onClose();
+    this.onOpen();
+    this.modalService.close('evolution-confirmation-modal');
+  }
+
+  showEvolutionConfirmationModal() {
+    this.modalService.open('evolution-confirmation-modal');
+
+    this.selectedPossibleEvolutionStats.set(
+      this.digimonService.getPossibleEvolutionStats(
+        this.mainDigimon()!,
+        this.selectedDigimon()!
+      )
+    );
   }
 }

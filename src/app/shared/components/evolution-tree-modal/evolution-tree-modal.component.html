@@ -54,8 +54,93 @@
               <span>Bits per minute:</span>
               <span>{{ selectedDigimon()?.bitFarmingRate ?? "-" }}</span>
             </div>
+            <div class="selected-digimon-info-requirements">
+              <span>Evolution requirements:</span>
+
+              @for (requirement of selectedDigimon()?.evolutionRequirements;
+              track $index) {
+
+              <span>- {{ requirement.type }}: {{ requirement.value }}</span>
+              }
+            </div>
+            @if(selectedDigimon() && canEvolve()) {
+            <app-button
+              [text]="
+                'Evolve ' +
+                mainDigimon()?.name +
+                ' ' +
+                'into ' +
+                selectedDigimon()?.name
+              "
+              (click)="showEvolutionConfirmationModal()"
+            />
+            }
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</app-modal>
+
+<app-modal id="evolution-confirmation-modal">
+  <div class="evolution-confirmation-container">
+    <div class="evolution-confirmation-header">
+      <h2>Evolution Confirmation</h2>
+      <span>
+        Are you sure you want to evolve
+        <strong>{{ mainDigimon()?.name }}</strong> into
+        <strong>{{ selectedDigimon()?.name }}</strong
+        >?
+      </span>
+    </div>
+    <div class="evolution-confirmation-content">
+      <div class="evolution-confirmation-content-info">
+        @if(mainDigimon() && selectedDigimon()) {
+
+        <span>
+          HP: {{ mainDigimon()?.maxHp }} ->
+          <span class="new-value">{{
+            selectedPossibleEvolutionStats()?.maxHp
+          }} ↑</span>
+        </span>
+        <span>
+          MP: {{ mainDigimon()?.maxMp }} ->
+          <span class="new-value">{{
+            selectedPossibleEvolutionStats()?.maxMp
+          }} ↑</span>
+        </span>
+        <span>
+          ATK: {{ mainDigimon()?.atk }} ->
+          <span class="new-value">{{
+            selectedPossibleEvolutionStats()?.atk
+          }} ↑</span>
+        </span>
+        <span>
+          DEF: {{ mainDigimon()?.def }} ->
+          <span class="new-value">{{
+            selectedPossibleEvolutionStats()?.def
+          }} ↑</span>
+        </span>
+        <span>
+          SPD: {{ mainDigimon()?.speed }} ->
+          <span class="new-value">{{
+            selectedPossibleEvolutionStats()?.speed
+          }} ↑</span>
+        </span>
+        <span>
+          Bit Generation: {{ mainDigimon()?.bitFarmingRate }} ->
+          <span class="new-value">{{
+            selectedPossibleEvolutionStats()?.bitFarmingRate
+          }} ↑</span>
+        </span>
+        }
+      </div>
+      <div class="evolution-confirmation-content-actions">
+        <app-button text="Yes" (click)="evolveDigimon()" />
+        <app-button
+          text="No"
+          (click)="this.modalService.close('evolution-confirmation-modal')"
+        />
       </div>
     </div>
   </div>

@@ -159,4 +159,141 @@ export class DigimonService {
     };
     return rankOrder[rank] || 0;
   }
+
+  checkRequirements(
+    evolvingDigimon: Digimon,
+    targetDigimon: BaseDigimon
+  ): boolean {
+    const requirementCheckers: Record<string, Function> = {
+      level: (evolvingDigimon: Digimon, value: number) =>
+        evolvingDigimon.level >= value,
+    };
+
+    const value = targetDigimon.evolutionRequirements?.every((requirement) => {
+      const checker = requirementCheckers[requirement.type];
+      return checker ? checker(evolvingDigimon, requirement.value) : false;
+    }) as boolean;
+
+    return value;
+  }
+
+  getPossibleEvolutionStats(
+    evolvingDigimon: Digimon,
+    targetDigimon: BaseDigimon
+  ): any {
+    const rankMultipliers: Record<string, number> = {
+      Fresh: 1.0,
+      'In-Training': 1.1,
+      Rookie: 1.2,
+      Champion: 1.3,
+      Ultimate: 1.5,
+      Mega: 1.8,
+    };
+
+    const rankMultiplier =
+      rankMultipliers[targetDigimon.rank] /
+      rankMultipliers[evolvingDigimon.rank];
+
+    return {
+      maxHp: Math.round(
+        (evolvingDigimon.maxHp > targetDigimon.hp
+          ? evolvingDigimon.maxHp
+          : targetDigimon.hp) * rankMultiplier
+      ),
+      maxMp: Math.round(
+        (evolvingDigimon.maxMp > targetDigimon.mp
+          ? evolvingDigimon.maxMp
+          : targetDigimon.mp) * rankMultiplier
+      ),
+      atk: Math.round(
+        (evolvingDigimon.atk > targetDigimon.atk
+          ? evolvingDigimon.atk
+          : targetDigimon.atk) * rankMultiplier
+      ),
+      def: Math.round(
+        (evolvingDigimon.def > targetDigimon.def
+          ? evolvingDigimon.def
+          : targetDigimon.def) * rankMultiplier
+      ),
+      speed: Math.round(
+        (evolvingDigimon.speed > targetDigimon.speed
+          ? evolvingDigimon.speed
+          : targetDigimon.speed) * rankMultiplier
+      ),
+      bitFarmingRate:
+        evolvingDigimon.bitFarmingRate! + targetDigimon.bitFarmingRate + 1,
+    };
+  }
+
+  evolveDigimon(evolvingDigimon: Digimon, targetSeed: string): Digimon | void {
+    const rankMultipliers: Record<string, number> = {
+      Fresh: 1.0,
+      'In-Training': 1.1,
+      Rookie: 1.2,
+      Champion: 1.3,
+      Ultimate: 1.5,
+      Mega: 1.8,
+    };
+    const targetDigimon = this.getBaseDigimonDataBySeed(targetSeed);
+
+    if (!targetDigimon) throw Error('Target Digimon not found!');
+
+    if (!this.checkRequirements(evolvingDigimon, targetDigimon))
+      throw Error('Evolution requirements not met!');
+
+    const rankMultiplier =
+      rankMultipliers[targetDigimon.rank] /
+      rankMultipliers[evolvingDigimon.rank];
+
+    evolvingDigimon.maxHp = Math.round(
+      (evolvingDigimon.maxHp > targetDigimon.hp
+        ? evolvingDigimon.maxHp
+        : targetDigimon.hp) * rankMultiplier
+    );
+    evolvingDigimon.maxMp = Math.round(
+      (evolvingDigimon.maxMp > targetDigimon.mp
+        ? evolvingDigimon.maxMp
+        : targetDigimon.mp) * rankMultiplier
+    );
+    evolvingDigimon.currentHp = evolvingDigimon.maxHp;
+    evolvingDigimon.currentMp = evolvingDigimon.maxMp;
+
+    evolvingDigimon.atk = Math.round(
+      (evolvingDigimon.atk > targetDigimon.atk
+        ? evolvingDigimon.atk
+        : targetDigimon.atk) * rankMultiplier
+    );
+    evolvingDigimon.def = Math.round(
+      (evolvingDigimon.def > targetDigimon.def
+        ? evolvingDigimon.def
+        : targetDigimon.def) * rankMultiplier
+    );
+    evolvingDigimon.speed = Math.round(
+      (evolvingDigimon.speed > targetDigimon.speed
+        ? evolvingDigimon.speed
+        : targetDigimon.speed) * rankMultiplier
+    );
+    evolvingDigimon.bitFarmingRate! += targetDigimon.bitFarmingRate + 1;
+
+    evolvingDigimon.exp = 0;
+    evolvingDigimon.level = 1;
+
+    if (!evolvingDigimon.currentEvolutionRoute) {
+      evolvingDigimon.currentEvolutionRoute = [];
+    }
+
+    evolvingDigimon.currentEvolutionRoute.push({
+      seed: evolvingDigimon.seed,
+      rank: evolvingDigimon.rank,
+    });
+
+    evolvingDigimon.name = targetDigimon.name;
+    evolvingDigimon.seed = targetDigimon.seed;
+    evolvingDigimon.img = targetDigimon.img;
+    evolvingDigimon.rank = targetDigimon.rank;
+    evolvingDigimon.digiEvolutionSeedList = targetDigimon.digiEvolutionSeedList;
+    evolvingDigimon.degenerateSeedList = targetDigimon.degenerateSeedList;
+
+    return evolvingDigimon;
+  }
 }

@@ -483,6 +483,49 @@ export class GlobalStateDataSource {
     return this.battleService.calculateRequiredExpForLevel(entity.level);
   }
 
+  evolveDigimon(digimon: Digimon, targetSeed: string) {
+    const evolvedDigimon = this.digimonService.evolveDigimon(
+      digimon,
+      targetSeed
+    );
+
+    if (!evolvedDigimon) return;
+
+    const playerData = this.playerData();
+    const lists = this.getAllDigimonLists(playerData);
+
+    this.updateDigimonInLists(lists, digimon, evolvedDigimon);
+    this.updateSelectedDigimonDetails(evolvedDigimon);
+
+    this.changeDectorRef.detectChanges();
+  }
+
+  private getAllDigimonLists(playerData: PlayerData): Digimon[][] {
+    return [
+      playerData.digimonList,
+      playerData.hospitalDigimonList,
+      playerData.inTrainingDigimonList,
+      playerData.bitFarmDigimonList,
+    ];
+  }
+
+  private updateDigimonInLists(
+    lists: Digimon[][],
+    digimon: Digimon,
+    evolvedDigimon: Digimon
+  ): void {
+    const allDigimons = lists.flatMap((list) => list);
+    const digimonToUpdate = allDigimons.find((d) => d.id === digimon.id);
+
+    if (digimonToUpdate) {
+      Object.assign(digimonToUpdate, evolvedDigimon);
+    }
+  }
+
+  private updateSelectedDigimonDetails(evolvedDigimon: Digimon): void {
+    this.selectedDigimonOnDetails.set({ ...evolvedDigimon });
+  }
+
   private updatePlayerData(playerData?: PlayerData) {
     if (!playerData) return;
     this.playerData.set({

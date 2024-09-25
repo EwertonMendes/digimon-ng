@@ -1,3 +1,5 @@
+$highlight-color: #65f695;
+
 .evolution-tree-container {
   display: flex;
   flex-direction: column;
@@ -110,7 +112,7 @@
 
     .arrow-icon {
       font-size: 45px;
-      color: #65f695;
+      color: $highlight-color;
       animation: moveRight 0.4s infinite;
 
       @keyframes moveRight {
@@ -152,7 +154,7 @@
       }
 
       .new-value {
-        color: #65f695;
+        color: $highlight-color;
       }
     }
 

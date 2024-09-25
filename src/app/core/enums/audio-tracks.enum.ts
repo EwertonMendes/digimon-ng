@@ -8,4 +8,5 @@ export enum AudioEffects {
   HIT = 'assets/audio/effects/hit.wav',
   CLICK = 'assets/audio/effects/click.wav',
   CLICK_ALTERNATIVE = 'assets/audio/effects/click-alternative.wav',
+  EVOLUTION = 'assets/audio/effects/evolution.mp3',
 }

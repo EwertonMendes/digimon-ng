@@ -10,6 +10,8 @@ import Sigma from 'sigma';
 import { ButtonComponent } from '../button/button.component';
 import { GlobalStateDataSource } from '../../../state/global-state.datasource';
 import { ModalService } from '../modal/modal.service';
+import '@phosphor-icons/web/light';
+import '@phosphor-icons/web/bold';
 
 @Component({
   selector: 'app-evolution-tree-modal',

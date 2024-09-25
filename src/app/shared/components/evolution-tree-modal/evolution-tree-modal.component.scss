@@ -80,8 +80,13 @@
   .evolution-confirmation-container {
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    border-radius: 8px;
+    border-radius: 16px;
+    width: fit-content;
+    height: fit-content;
+    justify-self: center;
+    align-self: center;
+    background: rebeccapurple;
+    padding: 50px 50px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 
@@ -96,14 +101,44 @@
     }
   }
 
+  .evolution-confirmation-digimon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 10px;
+
+    .arrow-icon {
+      font-size: 45px;
+      color: #65f695;
+      animation: moveRight 0.4s infinite;
+
+      @keyframes moveRight {
+        0% {
+          transform: translateX(0);
+        }
+
+        50% {
+          transform: translateX(20px);
+        }
+
+        100% {
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+
   .evolution-confirmation-content {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    width: fit-content;
 
     &-info {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, auto);
       gap: 10px;
 
       span {

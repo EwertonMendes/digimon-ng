@@ -9,6 +9,7 @@ interface Location {
   name: string;
   img: string;
   possibleEcounterDigimonSeeds: string[];
+  levelRange: { min: number; max: number };
 }
 
 @Component({
@@ -32,6 +33,7 @@ export class ExploreSectionComponent {
         'edc9812f-82a6-487f-9a4d-52b845643176',
         '96c23ff9-d6b4-43da-91e6-f0c9799c65d7',
       ],
+      levelRange: { min: 1, max: 5 },
     },
     {
       name: 'Pixel Desert',
@@ -41,16 +43,19 @@ export class ExploreSectionComponent {
         '70dbb38a-690e-45b3-bfc5-eccba64fbd9b',
         'cd52bdf0-80a8-4b19-b738-ed6acf1f0b14',
       ],
+      levelRange: { min: 5, max: 10 },
     },
     {
       name: 'Register Jungle',
       img: 'assets/environments/registerjungle.png',
       possibleEcounterDigimonSeeds: [],
+      levelRange: { min: 10, max: 15 },
     },
     {
       name: 'Proxy Island',
       img: 'assets/environments/proxyisland.png',
       possibleEcounterDigimonSeeds: [],
+      levelRange: { min: 20, max: 30 },
     },
   ];
 
@@ -80,12 +85,18 @@ export class ExploreSectionComponent {
 
   private generateOpponentsOnExploreLocation(location: Location) {
     const randomNumber = Math.round(Math.random() * 3) + 1;
+
     if (
       !location.possibleEcounterDigimonSeeds ||
       location.possibleEcounterDigimonSeeds.length === 0
     ) {
       for (let i = 0; i < randomNumber; i++) {
-        const opponentDigimon = this.globalState.generateRandomDigimon();
+        const randomLevel = Math.floor(
+          Math.random() * (location.levelRange.max - location.levelRange.min) +
+            location.levelRange.min
+        );
+        const opponentDigimon =
+          this.globalState.generateRandomDigimon(randomLevel);
         this.globalState.enemyTeamAccessor.push(opponentDigimon);
         this.log(`(Enemy) ${opponentDigimon.name} was found!`);
       }
@@ -93,11 +104,16 @@ export class ExploreSectionComponent {
     }
 
     for (let i = 0; i < randomNumber; i++) {
+      const randomLevel = Math.floor(
+        Math.random() * (location.levelRange.max - location.levelRange.min) +
+          location.levelRange.min
+      );
       const randomPossibleSeedIndex = Math.floor(
         Math.random() * location.possibleEcounterDigimonSeeds.length
-      )
+      );
       const opponentDigimon = this.globalState.generateDigimonBySeed(
-        location.possibleEcounterDigimonSeeds[randomPossibleSeedIndex]
+        location.possibleEcounterDigimonSeeds[randomPossibleSeedIndex],
+        randomLevel
       );
       if (!opponentDigimon) return;
       this.globalState.enemyTeamAccessor.push(opponentDigimon);

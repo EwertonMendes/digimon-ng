@@ -434,8 +434,14 @@ export class GlobalStateDataSource {
     return this.farmingService.getBitGenerationTotalRate(this.playerData());
   }
 
-  generateRandomDigimon() {
-    return this.digimonService.generateRandomDigimon();
+  generateRandomDigimon(level?: number) {
+    let digimon = this.digimonService.generateRandomDigimon();
+
+    if (level) {
+      digimon = this.battleService.levelUpDigimonToLevel(digimon, level)!;
+    }
+
+    return digimon;
   }
 
   generateNewDigimon(digimon: BaseDigimon) {
@@ -448,8 +454,14 @@ export class GlobalStateDataSource {
     );
   }
 
-  generateDigimonBySeed(seed: string) {
-    return this.digimonService.generateDigimonBySeed(seed);
+  generateDigimonBySeed(seed: string, level?: number) {
+    let digimon = this.digimonService.generateDigimonBySeed(seed);
+    if (!digimon) throw Error('Digimon not found');
+    if (level) {
+      digimon = this.battleService.levelUpDigimonToLevel(digimon, level)!;
+    }
+
+    return digimon;
   }
 
   getDigimonCurrentEvolutionRoute(digimon: Digimon) {

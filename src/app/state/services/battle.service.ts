@@ -43,7 +43,7 @@ export class BattleService {
   calculateExpGiven(defeatedDigimon: Digimon): number {
     const baseExp = 50;
     const rankMultiplier = this.rankMultiplier[defeatedDigimon.rank];
-    const levelMultiplier = Math.log2(defeatedDigimon.level + 1) + 1;
+    const levelMultiplier = Math.pow(defeatedDigimon.level, 2);
 
     return Math.floor(baseExp * rankMultiplier * levelMultiplier);
   }
@@ -171,5 +171,21 @@ export class BattleService {
     baseExp: number = 300
   ): number {
     return Math.floor(baseExp * (Math.pow(level, 2) + 4 * level));
+  }
+
+  levelUpDigimonToLevel(digimon: Digimon, level: number) {
+    if (level <= digimon.level) return digimon;
+
+    while (digimon.level < level) {
+      const expForNextLevel = this.calculateRequiredExpForLevel(digimon.level);
+
+      digimon.level++;
+
+      if (!digimon.exp) digimon.exp = 0;
+      digimon.exp += expForNextLevel;
+      this.levelUpDigimon(digimon);
+    }
+
+    return digimon;
   }
 }

@@ -16,8 +16,6 @@ export class PlayerInfoModalComponent {
   globalState = inject(GlobalStateDataSource);
 
   neededExpForNextLevel = computed(() => {
-    return this.globalState.getNeededExpForNextLevel(
-      this.globalState.playerDataAcessor
-    );
+    return this.globalState.getPlayerNeededExpForNextLevel();
   });
 }

@@ -479,8 +479,16 @@ export class GlobalStateDataSource {
     return totalExp;
   }
 
-  getNeededExpForNextLevel(entity: Digimon | PlayerData) {
-    return this.battleService.calculateRequiredExpForLevel(entity.level);
+  getDigimonNeededExpForNextLevel() {
+    return this.battleService.calculateRequiredExpForLevel(
+      this.selectedDigimonOnDetailsAccessor?.level ?? 1
+    );
+  }
+
+  getPlayerNeededExpForNextLevel() {
+    return this.battleService.calculateRequiredExpForPlayerLevel(
+      this.playerDataAcessor.level
+    );
   }
 
   evolveDigimon(digimon: Digimon, targetSeed: string) {

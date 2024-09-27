@@ -39,12 +39,9 @@ export class DigimonDetailsModalComponent {
     );
   });
 
-  neededExpForNextLevel = computed(() => {
-    if (!this.globalState.selectedDigimonOnDetailsAccessor) return;
-    return this.globalState.getNeededExpForNextLevel(
-      this.globalState.selectedDigimonOnDetailsAccessor
-    );
-  });
+  neededExpForNextLevel = computed(() =>
+    this.globalState.getDigimonNeededExpForNextLevel()
+  );
 
   evolutionRoute = signal<BaseDigimon[]>([]);
 

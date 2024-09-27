@@ -164,6 +164,7 @@ export class DigimonService {
     evolvingDigimon: Digimon,
     targetDigimon: BaseDigimon
   ): boolean {
+    if (!evolvingDigimon || !targetDigimon) return false;
     const requirementCheckers: Record<string, Function> = {
       level: (evolvingDigimon: Digimon, value: number) =>
         evolvingDigimon.level >= value,

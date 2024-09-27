@@ -16,8 +16,8 @@ export class BattleService {
   };
 
   private maxLevel = 100;
-  private maxHpMp = 99999;
-  private maxOtherStats = 9999;
+  private maxHpMp = 999999;
+  private maxOtherStats = 99999;
 
   private calculateDamage(attacker: Digimon, defender: Digimon) {
     let baseDamage =

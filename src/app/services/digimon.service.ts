@@ -10,6 +10,9 @@ export class DigimonService {
   private baseDigimonDataSubject = new BehaviorSubject<BaseDigimon[]>([]);
   baseDigimonData$ = this.baseDigimonDataSubject.asObservable();
 
+  private maxHpMp = 999999;
+  private maxOtherStats = 99999;
+
   constructor() {
     this.initializeBaseDigimonData();
   }
@@ -34,17 +37,16 @@ export class DigimonService {
   }
 
   getDigimonEvolutions(digimon?: Digimon | BaseDigimon): BaseDigimon[] {
-    const digimonList: BaseDigimon[] = [];
-    digimon?.digiEvolutionSeedList.forEach((seed) => {
-      const digimon = this.getBaseDigimonDataById(seed);
-      if (digimon) digimonList.push(digimon);
-    });
-    return digimonList;
+    return this.getDigimonListBySeeds(digimon?.digiEvolutionSeedList);
   }
 
   getDigimonDegenerations(digimon?: Digimon | BaseDigimon): BaseDigimon[] {
+    return this.getDigimonListBySeeds(digimon?.degenerateSeedList);
+  }
+
+  private getDigimonListBySeeds(seeds?: string[]): BaseDigimon[] {
     const digimonList: BaseDigimon[] = [];
-    digimon?.degenerateSeedList.forEach((seed) => {
+    seeds?.forEach((seed) => {
       const digimon = this.getBaseDigimonDataById(seed);
       if (digimon) digimonList.push(digimon);
     });
@@ -54,48 +56,26 @@ export class DigimonService {
   getDigimonCurrentEvolutionRoute(
     digimon?: Digimon
   ): BaseDigimon[] | undefined {
-    return digimon?.currentEvolutionRoute?.map((digimon) =>
-      this.getBaseDigimonDataBySeed(digimon.seed)
+    return digimon?.currentEvolutionRoute?.map((route) =>
+      this.getBaseDigimonDataBySeed(route.seed)
     ) as BaseDigimon[];
   }
 
   generateRandomDigimon(): Digimon {
-    const randomDigimonIndex = Math.floor(
+    const randomIndex = Math.floor(
       Math.random() * this.baseDigimonDataSubject.value.length
     );
-
-    const baseDigimon = this.baseDigimonDataSubject.value[randomDigimonIndex];
-    const newDigimon: Digimon = {
-      id: uuidv4(),
-      birthDate: new Date(),
-      seed: baseDigimon.seed,
-      name: baseDigimon.name,
-      img: baseDigimon.img,
-      rank: baseDigimon.rank,
-      species: baseDigimon.species,
-      currentHp: baseDigimon.hp,
-      maxHp: baseDigimon.hp,
-      currentMp: baseDigimon.mp,
-      maxMp: baseDigimon.mp,
-      atk: baseDigimon.atk,
-      def: baseDigimon.def,
-      speed: baseDigimon.speed,
-      exp: 0,
-      totalExp: 0,
-      level: 1,
-      bitFarmingRate: baseDigimon.bitFarmingRate,
-      digiEvolutionSeedList: baseDigimon.digiEvolutionSeedList,
-      degenerateSeedList: baseDigimon.degenerateSeedList,
-    };
-
-    return newDigimon;
+    const baseDigimon = this.baseDigimonDataSubject.value[randomIndex];
+    return this.createDigimonFromBase(baseDigimon);
   }
 
   generateDigimonBySeed(seed: string): Digimon | undefined {
     const baseDigimon = this.getBaseDigimonDataBySeed(seed);
-    if (!baseDigimon) return;
+    return baseDigimon ? this.createDigimonFromBase(baseDigimon) : undefined;
+  }
 
-    const newDigimon: Digimon = {
+  private createDigimonFromBase(baseDigimon: BaseDigimon): Digimon {
+    return {
       id: uuidv4(),
       birthDate: new Date(),
       seed: baseDigimon.seed,
@@ -117,8 +97,6 @@ export class DigimonService {
       digiEvolutionSeedList: baseDigimon.digiEvolutionSeedList,
       degenerateSeedList: baseDigimon.degenerateSeedList,
     };
-
-    return newDigimon;
   }
 
   getRankOrder(rank: string): number {
@@ -143,63 +121,61 @@ export class DigimonService {
         evolvingDigimon.level >= value,
     };
 
-    const value = targetDigimon.evolutionRequirements?.every((requirement) => {
+    return targetDigimon.evolutionRequirements?.every((requirement) => {
       const checker = requirementCheckers[requirement.type];
       return checker ? checker(evolvingDigimon, requirement.value) : false;
     }) as boolean;
-
-    return value;
   }
 
   getPossibleEvolutionStats(
     evolvingDigimon: Digimon,
     targetDigimon: BaseDigimon
   ): any {
-    const rankMultipliers: Record<string, number> = {
-      Fresh: 1.0,
-      'In-Training': 1.1,
-      Rookie: 1.2,
-      Champion: 1.3,
-      Ultimate: 1.5,
-      Mega: 1.8,
-    };
-
-    const rankMultiplier =
-      rankMultipliers[targetDigimon.rank] /
-      rankMultipliers[evolvingDigimon.rank];
+    const rankMultiplier = this.calculateRankMultiplier(
+      evolvingDigimon.rank,
+      targetDigimon.rank
+    );
 
     return {
-      maxHp: Math.round(
-        (evolvingDigimon.maxHp > targetDigimon.hp
-          ? evolvingDigimon.maxHp
-          : targetDigimon.hp) * rankMultiplier
+      maxHp: this.calculateStat(
+        evolvingDigimon.maxHp,
+        targetDigimon.hp,
+        rankMultiplier,
+        this.maxHpMp
       ),
-      maxMp: Math.round(
-        (evolvingDigimon.maxMp > targetDigimon.mp
-          ? evolvingDigimon.maxMp
-          : targetDigimon.mp) * rankMultiplier
+      maxMp: this.calculateStat(
+        evolvingDigimon.maxMp,
+        targetDigimon.mp,
+        rankMultiplier,
+        this.maxHpMp
       ),
-      atk: Math.round(
-        (evolvingDigimon.atk > targetDigimon.atk
-          ? evolvingDigimon.atk
-          : targetDigimon.atk) * rankMultiplier
+      atk: this.calculateStat(
+        evolvingDigimon.atk,
+        targetDigimon.atk,
+        rankMultiplier,
+        this.maxOtherStats
       ),
-      def: Math.round(
-        (evolvingDigimon.def > targetDigimon.def
-          ? evolvingDigimon.def
-          : targetDigimon.def) * rankMultiplier
+      def: this.calculateStat(
+        evolvingDigimon.def,
+        targetDigimon.def,
+        rankMultiplier,
+        this.maxOtherStats
       ),
-      speed: Math.round(
-        (evolvingDigimon.speed > targetDigimon.speed
-          ? evolvingDigimon.speed
-          : targetDigimon.speed) * rankMultiplier
+      speed: this.calculateStat(
+        evolvingDigimon.speed,
+        targetDigimon.speed,
+        rankMultiplier,
+        this.maxOtherStats
       ),
       bitFarmingRate:
         evolvingDigimon.bitFarmingRate! + targetDigimon.bitFarmingRate + 1,
     };
   }
 
-  evolveDigimon(evolvingDigimon: Digimon, targetSeed: string): Digimon | void {
+  private calculateRankMultiplier(
+    evolvingRank: string,
+    targetRank: string
+  ): number {
     const rankMultipliers: Record<string, number> = {
       Fresh: 1.0,
       'In-Training': 1.1,
@@ -208,50 +184,86 @@ export class DigimonService {
       Ultimate: 1.5,
       Mega: 1.8,
     };
+
+    return rankMultipliers[targetRank] / rankMultipliers[evolvingRank];
+  }
+
+  private calculateStat(
+    evolvingStat: number,
+    targetStat: number,
+    rankMultiplier: number,
+    maxStat: number
+  ): number {
+    return Math.min(
+      Math.round(
+        (evolvingStat > targetStat ? evolvingStat : targetStat) * rankMultiplier
+      ),
+      maxStat
+    );
+  }
+
+  evolveDigimon(evolvingDigimon: Digimon, targetSeed: string): Digimon | void {
     const targetDigimon = this.getBaseDigimonDataBySeed(targetSeed);
 
     if (!targetDigimon) throw Error('Target Digimon not found!');
-
     if (!this.checkRequirements(evolvingDigimon, targetDigimon))
       throw Error('Evolution requirements not met!');
 
-    const rankMultiplier =
-      rankMultipliers[targetDigimon.rank] /
-      rankMultipliers[evolvingDigimon.rank];
-
-    evolvingDigimon.maxHp = Math.round(
-      (evolvingDigimon.maxHp > targetDigimon.hp
-        ? evolvingDigimon.maxHp
-        : targetDigimon.hp) * rankMultiplier
+    const rankMultiplier = this.calculateRankMultiplier(
+      evolvingDigimon.rank,
+      targetDigimon.rank
     );
-    evolvingDigimon.maxMp = Math.round(
-      (evolvingDigimon.maxMp > targetDigimon.mp
-        ? evolvingDigimon.maxMp
-        : targetDigimon.mp) * rankMultiplier
+
+    evolvingDigimon.maxHp = this.calculateStat(
+      evolvingDigimon.maxHp,
+      targetDigimon.hp,
+      rankMultiplier,
+      this.maxHpMp
+    );
+    evolvingDigimon.maxMp = this.calculateStat(
+      evolvingDigimon.maxMp,
+      targetDigimon.mp,
+      rankMultiplier,
+      this.maxHpMp
     );
     evolvingDigimon.currentHp = evolvingDigimon.maxHp;
     evolvingDigimon.currentMp = evolvingDigimon.maxMp;
 
-    evolvingDigimon.atk = Math.round(
-      (evolvingDigimon.atk > targetDigimon.atk
-        ? evolvingDigimon.atk
-        : targetDigimon.atk) * rankMultiplier
+    evolvingDigimon.atk = this.calculateStat(
+      evolvingDigimon.atk,
+      targetDigimon.atk,
+      rankMultiplier,
+      this.maxOtherStats
     );
-    evolvingDigimon.def = Math.round(
-      (evolvingDigimon.def > targetDigimon.def
-        ? evolvingDigimon.def
-        : targetDigimon.def) * rankMultiplier
+    evolvingDigimon.def = this.calculateStat(
+      evolvingDigimon.def,
+      targetDigimon.def,
+      rankMultiplier,
+      this.maxOtherStats
     );
-    evolvingDigimon.speed = Math.round(
-      (evolvingDigimon.speed > targetDigimon.speed
-        ? evolvingDigimon.speed
-        : targetDigimon.speed) * rankMultiplier
+    evolvingDigimon.speed = this.calculateStat(
+      evolvingDigimon.speed,
+      targetDigimon.speed,
+      rankMultiplier,
+      this.maxOtherStats
     );
     evolvingDigimon.bitFarmingRate! += targetDigimon.bitFarmingRate + 1;
 
-    evolvingDigimon.exp = 0;
-    evolvingDigimon.level = 1;
+    this.resetDigimonStats(evolvingDigimon);
+    this.updateEvolutionRoute(evolvingDigimon, targetDigimon);
 
+    return evolvingDigimon;
+  }
+
+  private resetDigimonStats(digimon: Digimon): void {
+    digimon.exp = 0;
+    digimon.level = 1;
+  }
+
+  private updateEvolutionRoute(
+    evolvingDigimon: Digimon,
+    targetDigimon: BaseDigimon
+  ): void {
     if (!evolvingDigimon.currentEvolutionRoute) {
       evolvingDigimon.currentEvolutionRoute = [];
     }
@@ -267,7 +279,5 @@ export class DigimonService {
     evolvingDigimon.rank = targetDigimon.rank;
     evolvingDigimon.digiEvolutionSeedList = targetDigimon.digiEvolutionSeedList;
     evolvingDigimon.degenerateSeedList = targetDigimon.degenerateSeedList;
-
-    return evolvingDigimon;
   }
 }

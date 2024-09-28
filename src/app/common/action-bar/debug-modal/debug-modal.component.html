@@ -15,4 +15,19 @@
   </div>
 </app-modal>
 
-<app-digimon-selection-modal [id]="digimonSelectionModalId" [digimonList]="selectableDigimonList()" (onSelectDigimon)="giveSelectedDigimon($event)"/>
+<app-digimon-selection-modal [id]="digimonSelectionModalId" [digimonList]="selectableDigimonList()" (onSelectDigimon)="giveSelectedDigimon($event)">
+  <div class="level-select-container">
+    <label for="level-select">Select level:</label>
+    <input
+      type="number"
+      id="level-select"
+      name="level-select"
+      class="level-select-input"
+      min="1"
+      max="100"
+      [maxlength]="3"
+      [(ngModel)]="selectedLevel"
+      (ngModelChange)="validateLevel($event)"
+    />
+  </div>
+</app-digimon-selection-modal>

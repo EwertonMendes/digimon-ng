@@ -121,33 +121,6 @@ export class DigimonService {
     return newDigimon;
   }
 
-  generateNewDigimon(digimon: BaseDigimon): Digimon {
-    const newDigimon = {
-      id: uuidv4(),
-      birthDate: new Date(),
-      seed: digimon.seed,
-      name: digimon.name,
-      img: digimon.img,
-      rank: digimon.rank,
-      species: digimon.species,
-      currentHp: digimon.hp,
-      maxHp: digimon.hp,
-      currentMp: digimon.mp,
-      maxMp: digimon.mp,
-      atk: digimon.atk,
-      def: digimon.def,
-      speed: digimon.speed,
-      exp: 0,
-      totalExp: 0,
-      level: 1,
-      bitFarmingRate: digimon.bitFarmingRate,
-      digiEvolutionSeedList: digimon.digiEvolutionSeedList,
-      degenerateSeedList: digimon.degenerateSeedList,
-    };
-
-    return newDigimon;
-  }
-
   getRankOrder(rank: string): number {
     const rankOrder: Record<string, number> = {
       Fresh: 1,

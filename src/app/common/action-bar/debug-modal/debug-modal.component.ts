@@ -8,10 +8,17 @@ import { ModalService } from '../../../shared/components/modal/modal.service';
 import { DigimonService } from '../../../services/digimon.service';
 import { BaseDigimon } from '../../../core/interfaces/digimon.interface';
 
+import { FormsModule } from '@angular/forms';
+
 @Component({
   selector: 'app-debug-modal',
   standalone: true,
-  imports: [ModalComponent, ButtonComponent, DigimonSelectionModalComponent],
+  imports: [
+    ModalComponent,
+    ButtonComponent,
+    DigimonSelectionModalComponent,
+    FormsModule,
+  ],
   templateUrl: './debug-modal.component.html',
   styleUrl: './debug-modal.component.scss',
 })
@@ -19,6 +26,7 @@ export class DebugModalComponent implements OnInit {
   debugModalId = 'debug-modal';
   digimonSelectionModalId = 'digimon-selection-modal';
   selectableDigimonList = signal<BaseDigimon[]>([]);
+  selectedLevel = 1;
   globalState = inject(GlobalStateDataSource);
   toastService = inject(ToastService);
   modalService = inject(ModalService);
@@ -51,16 +59,23 @@ export class DebugModalComponent implements OnInit {
   }
 
   giveSelectedDigimon(digimon: BaseDigimon) {
-    const newDigimon = this.globalState.generateNewDigimon(digimon);
+    const newDigimon = this.globalState.generateDigimonBySeed(
+      digimon.seed,
+      this.selectedLevel
+    );
 
     this.globalState.addDigimonToStorage(newDigimon);
 
     this.toastService.showToast(
-      `${digimon.name} was added to storage!`,
+      `${digimon.name} (Lv. ${this.selectedLevel}) was added to storage!`,
       'success'
     );
 
     this.modalService.close(this.digimonSelectionModalId);
+  }
+
+  validateLevel(value: number): void {
+    this.selectedLevel = Math.max(1, Math.min(value, 100));
   }
 
   resetStorage() {

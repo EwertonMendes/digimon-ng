@@ -14,3 +14,40 @@
     background-color: peru;
   }
 }
+
+.level-select-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  label {
+    font-size: 16px;
+  }
+
+  .level-select-input {
+    width: 80px;
+    height: 40px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+  }
+
+
+  .level-select-input::-webkit-inner-spin-button,
+  .level-select-input::-webkit-outer-spin-button {
+    opacity: 1;
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    cursor: pointer;
+  }
+
+  .level-select-input:active {
+    transform: scale(1.02);
+  }
+}

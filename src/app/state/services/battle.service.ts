@@ -179,8 +179,6 @@ export class BattleService {
     while (digimon.level < level) {
       const expForNextLevel = this.calculateRequiredExpForLevel(digimon.level);
 
-      digimon.level++;
-
       if (!digimon.exp) digimon.exp = 0;
       digimon.exp += expForNextLevel;
       this.levelUpDigimon(digimon);

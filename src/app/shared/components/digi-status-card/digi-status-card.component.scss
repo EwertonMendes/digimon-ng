@@ -17,7 +17,7 @@
       rgba(95, 102, 251, 0.5));
   padding: 10px;
   width: 200px;
-  height: 180px;
+  height: fit-content;
   overflow: hidden;
   gap: 10px;
 
@@ -63,8 +63,11 @@
   &-attributes {
     font-size: 11px;
     display: flex;
-    justify-content: space-around;
-    gap: 15px;
+    align-items: flex-start;
+    width: -webkit-fill-available;
+    padding-left: 3px;
+    flex-direction: column;
+    gap: 1px;
 
     .low-stat {
       color: yellow;

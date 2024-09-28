@@ -1,8 +1,8 @@
 .home-section {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  width: 100%;
+  height: max-content;
+  width: -webkit-fill-available;
   align-items: center;
   gap: 15px;
 
@@ -18,7 +18,7 @@
     border-radius: 10px;
     width: 100%;
     padding: 10px;
-    height: 205px;
+    height: 235px;
 
     .my-digimon-list-no-data-container {
       display: flex;

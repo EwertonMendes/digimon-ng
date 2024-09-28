@@ -19,8 +19,8 @@
 
   .desktop-home-wrapper {
     position: relative;
-    overflow: hidden;
-    height: 100%;
+    overflow: auto;
+    height: inherit;
     color: aliceblue;
 
     &::before {
@@ -39,7 +39,6 @@
     .desktop-home-container {
       display: flex;
       flex-direction: column;
-      height: 100%;
       width: 100%;
       align-items: center;
 

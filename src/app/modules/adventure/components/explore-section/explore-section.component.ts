@@ -4,6 +4,7 @@ import { BattleModalComponent } from '../../../../shared/components/battle-modal
 import { ModalService } from '../../../../shared/components/modal/modal.service';
 import { Digimon } from '../../../../core/interfaces/digimon.interface';
 import { ToastService } from '../../../../shared/components/toast/toast.service';
+import { DigimonSeeds } from '../../../../core/enums/digimon-seeds.enum';
 
 interface Location {
   name: string;
@@ -29,9 +30,9 @@ export class ExploreSectionComponent {
       name: 'Login Mountain',
       img: 'assets/environments/loginmountain.png',
       possibleEcounterDigimonSeeds: [
-        'b5ac222a-e653-4543-923e-77355dd24686',
-        'edc9812f-82a6-487f-9a4d-52b845643176',
-        '96c23ff9-d6b4-43da-91e6-f0c9799c65d7',
+        DigimonSeeds.BOTAMON,
+        DigimonSeeds.KOROMON,
+        DigimonSeeds.AGUMON,
       ],
       levelRange: { min: 1, max: 5 },
     },
@@ -39,9 +40,9 @@ export class ExploreSectionComponent {
       name: 'Pixel Desert',
       img: 'assets/environments/pixeldesert.png',
       possibleEcounterDigimonSeeds: [
-        '96c23ff9-d6b4-43da-91e6-f0c9799c65d7',
-        '70dbb38a-690e-45b3-bfc5-eccba64fbd9b',
-        'cd52bdf0-80a8-4b19-b738-ed6acf1f0b14',
+        DigimonSeeds.AGUMON,
+        DigimonSeeds.GREYMON,
+        DigimonSeeds.APEMON,
       ],
       levelRange: { min: 5, max: 10 },
     },

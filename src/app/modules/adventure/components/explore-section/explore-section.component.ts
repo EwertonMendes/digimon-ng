@@ -5,6 +5,8 @@ import { ModalService } from '../../../../shared/components/modal/modal.service'
 import { Digimon } from '../../../../core/interfaces/digimon.interface';
 import { ToastService } from '../../../../shared/components/toast/toast.service';
 import { DigimonSeeds } from '../../../../core/enums/digimon-seeds.enum';
+import { AudioService } from '../../../../services/audio.service';
+import { AudioEffects } from '../../../../core/enums/audio-tracks.enum';
 
 interface Location {
   name: string;
@@ -24,6 +26,7 @@ export class ExploreSectionComponent {
   globalState = inject(GlobalStateDataSource);
   modalService = inject(ModalService);
   toastService = inject(ToastService);
+  audioService = inject(AudioService);
 
   locations: Location[] = [
     {
@@ -65,6 +68,7 @@ export class ExploreSectionComponent {
   showPlayerAttackButton = false;
 
   exploreLocation(location: Location) {
+    this.audioService.playAudio(AudioEffects.CLICK);
     this.log(`Exploring location ${location.name}`);
 
     if (this.isPlayerTeamEmpty()) {

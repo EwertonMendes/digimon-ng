@@ -4,7 +4,7 @@
     <div class="location-list">
       <div class="location-list-container">
         @for(location of locations; track location){
-        <div class="location-list-item" (click)="exploreLocation(location)">
+        <div tabindex="0" class="location-list-item" (click)="exploreLocation(location)">
           <div class="location-list-item-image">
             <img [src]="location.img" alt="location-image" />
           </div>

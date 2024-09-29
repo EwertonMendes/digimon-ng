@@ -997,7 +997,7 @@
     "def": 122,
     "speed": 105,
     "bitFarmingRate": 5,
-    "digiEvolutionSeedList": [],
+    "digiEvolutionSeedList": ["48b7a3e5-3e43-4819-96b8-673bfe67d5c1"],
     "degenerateSeedList": ["a351a4ab-a5bf-42df-8a27-bb2d8ce06d0b"],
     "evolutionRequirements": [
       {
@@ -1005,6 +1005,26 @@
         "value": 50
       }
     ]
+  },
+  {
+    "seed": "48b7a3e5-3e43-4819-96b8-673bfe67d5c1",
+    "name": "Zeke Greymon",
+    "img": "/assets/digimons/ZekeGreymon.webp",
+    "rank": "Mega",
+    "species": "Dragon",
+    "hp": 335,
+    "mp": 340,
+    "atk": 178,
+    "def": 152,
+    "speed": 128,
+    "bitFarmingRate": 6,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": ["34af8b92-9237-4f39-b45d-0d6c073d98c1"],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 75
+      }
+    ]
   }
-
 ]

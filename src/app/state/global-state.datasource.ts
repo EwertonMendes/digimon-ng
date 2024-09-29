@@ -500,6 +500,7 @@ export class GlobalStateDataSource {
   }
 
   async evolveDigimon(digimon: Digimon, targetSeed: string) {
+    const evolvingDigimonName = digimon.name;
     await this.audioService.playAudio(AudioEffects.EVOLUTION);
 
     const evolvedDigimon = this.digimonService.evolveDigimon(
@@ -508,6 +509,11 @@ export class GlobalStateDataSource {
     );
 
     if (!evolvedDigimon) return;
+
+    this.toastService.showToast(
+      `${evolvingDigimonName} evolved to ${evolvedDigimon.name}!`,
+      'success'
+    );
 
     const playerData = this.playerData();
     const lists = this.getAllDigimonLists(playerData);

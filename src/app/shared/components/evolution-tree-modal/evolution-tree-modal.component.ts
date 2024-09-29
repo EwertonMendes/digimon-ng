@@ -12,6 +12,8 @@ import { GlobalStateDataSource } from '../../../state/global-state.datasource';
 import { ModalService } from '../modal/modal.service';
 import '@phosphor-icons/web/light';
 import '@phosphor-icons/web/bold';
+import { AudioEffects } from '../../../core/enums/audio-tracks.enum';
+import { AudioService } from '../../../services/audio.service';
 
 @Component({
   selector: 'app-evolution-tree-modal',
@@ -39,6 +41,7 @@ export class EvolutionTreeModalComponent {
   graphService = inject(GraphService);
   globalState = inject(GlobalStateDataSource);
   modalService = inject(ModalService);
+  audioService = inject(AudioService);
 
   constructor() {
     effect(
@@ -286,6 +289,7 @@ export class EvolutionTreeModalComponent {
   }
 
   showEvolutionConfirmationModal() {
+    this.audioService.playAudio(AudioEffects.CLICK);
     this.modalService.open('evolution-confirmation-modal');
 
     this.selectedPossibleEvolutionStats.set(

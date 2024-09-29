@@ -7,6 +7,8 @@ import { ButtonComponent } from '../button/button.component';
 import { ModalService } from '../modal/modal.service';
 import { EvolutionTreeModalComponent } from '../evolution-tree-modal/evolution-tree-modal.component';
 import { BaseDigimon } from '../../../core/interfaces/digimon.interface';
+import { AudioEffects } from '../../../core/enums/audio-tracks.enum';
+import { AudioService } from '../../../services/audio.service';
 
 @Component({
   standalone: true,
@@ -27,6 +29,7 @@ export class DigimonDetailsModalComponent {
 
   globalState = inject(GlobalStateDataSource);
   modalService = inject(ModalService);
+  audioService = inject(AudioService);
 
   digimonDetailedAge = computed(() => {
     if (!this.globalState.selectedDigimonOnDetailsAccessor) return;
@@ -131,6 +134,7 @@ export class DigimonDetailsModalComponent {
   }
 
   openEvolutionTreeModal() {
+    this.audioService.playAudio(AudioEffects.CLICK);
     this.modalService.open(this.evolutionTreeModalId);
   }
 }

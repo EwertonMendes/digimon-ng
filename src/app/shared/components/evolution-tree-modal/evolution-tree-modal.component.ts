@@ -272,10 +272,10 @@ export class EvolutionTreeModalComponent {
     this.sigma.kill();
   }
 
-  evolveDigimon() {
+  async evolveDigimon() {
     if (!this.mainDigimon() || !this.selectedDigimon()) return;
 
-    this.globalState.evolveDigimon(
+    await this.globalState.evolveDigimon(
       this.mainDigimon()!,
       this.selectedDigimon()?.seed!
     );

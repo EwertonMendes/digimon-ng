@@ -499,8 +499,9 @@ export class GlobalStateDataSource {
     );
   }
 
-  evolveDigimon(digimon: Digimon, targetSeed: string) {
-    this.audioService.playAudio(AudioEffects.EVOLUTION);
+  async evolveDigimon(digimon: Digimon, targetSeed: string) {
+    await this.audioService.playAudio(AudioEffects.EVOLUTION);
+
     const evolvedDigimon = this.digimonService.evolveDigimon(
       digimon,
       targetSeed

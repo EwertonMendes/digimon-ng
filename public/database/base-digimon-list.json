@@ -101,7 +101,7 @@
     "def": 90,
     "speed": 81,
     "bitFarmingRate": 2,
-    "digiEvolutionSeedList": [],
+    "digiEvolutionSeedList": ["34af8b92-9237-4f39-b45d-0d6c073d98c1"],
     "degenerateSeedList": ["96c23ff9-d6b4-43da-91e6-f0c9799c65d7"],
     "evolutionRequirements": [
       {
@@ -984,5 +984,27 @@
         "value": 70
       }
     ]
+  },
+  {
+    "seed": "34af8b92-9237-4f39-b45d-0d6c073d98c1",
+    "name": "Blue Metal Greymon",
+    "img": "/assets/digimons/BlueMetalGreymon.webp",
+    "rank": "Ultimate",
+    "species": "Dragon",
+    "hp": 235,
+    "mp": 240,
+    "atk": 142,
+    "def": 122,
+    "speed": 105,
+    "bitFarmingRate": 5,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": ["a351a4ab-a5bf-42df-8a27-bb2d8ce06d0b"],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 50
+      }
+    ]
   }
+
 ]

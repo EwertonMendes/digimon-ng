@@ -83,6 +83,7 @@ export class DigimonService {
       img: baseDigimon.img,
       rank: baseDigimon.rank,
       species: baseDigimon.species,
+      attribute: baseDigimon.attribute,
       currentHp: baseDigimon.hp,
       maxHp: baseDigimon.hp,
       currentMp: baseDigimon.mp,

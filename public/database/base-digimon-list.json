@@ -18,7 +18,8 @@
         "type": "level",
         "value": 70
       }
-    ]
+    ],
+    "attribute": "Vaccine"
   },
   {
     "seed": "25fc7b61-17ae-453b-94f7-4fa4f9171633",
@@ -39,7 +40,8 @@
         "type": "level",
         "value": 50
       }
-    ]
+    ],
+    "attribute": "Vaccine"
   },
   {
     "seed": "66e5a6ea-93a5-47f8-91d9-8601857496f6",
@@ -63,7 +65,8 @@
         "type": "level",
         "value": 50
       }
-    ]
+    ],
+    "attribute": "Virus"
   },
   {
     "seed": "70dbb38a-690e-45b3-bfc5-eccba64fbd9b",
@@ -87,7 +90,8 @@
         "type": "level",
         "value": 30
       }
-    ]
+    ],
+    "attribute": "Vaccine"
   },
   {
     "seed": "a351a4ab-a5bf-42df-8a27-bb2d8ce06d0b",
@@ -108,7 +112,8 @@
         "type": "level",
         "value": 30
       }
-    ]
+    ],
+    "attribute": "Vaccine"
   },
   {
     "seed": "96c23ff9-d6b4-43da-91e6-f0c9799c65d7",
@@ -136,7 +141,8 @@
         "type": "level",
         "value": 15
       }
-    ]
+    ],
+    "attribute": "Vaccine"
   },
   {
     "seed": "edc9812f-82a6-487f-9a4d-52b845643176",
@@ -163,7 +169,8 @@
         "type": "level",
         "value": 7
       }
-    ]
+    ],
+    "attribute": "Vaccine"
   },
   {
     "seed": "xyz5678a-123b-cdef-456g-hijklmn7890",
@@ -184,7 +191,8 @@
         "type": "level",
         "value": 15
       }
-    ]
+    ],
+    "attribute": "Data"
   },
   {
     "seed": "uvw1234a-567b-cdef-890g-hijklmn1234",
@@ -205,7 +213,8 @@
         "type": "level",
         "value": 15
       }
-    ]
+    ],
+    "attribute": "Data"
   },
   {
     "seed": "xyz5678a-123b-cdef-456g-hijklmn5678",
@@ -226,7 +235,8 @@
         "type": "level",
         "value": 15
       }
-    ]
+    ],
+    "attribute": "Data"
   },
   {
     "seed": "b5ac222a-e653-4543-923e-77355dd24686",
@@ -247,7 +257,8 @@
         "type": "level",
         "value": 3
       }
-    ]
+    ],
+    "attribute": "Free"
   },
   {
     "seed": "e7f074b5-2979-4a45-b6a3-3b07f6965f7d",
@@ -268,7 +279,8 @@
         "type": "level",
         "value": 3
       }
-    ]
+    ],
+    "attribute": "Data"
   },
   {
     "seed": "277edb81-7051-4a5e-8f5d-369e70cd18e5",
@@ -289,7 +301,8 @@
         "type": "level",
         "value": 7
       }
-    ]
+    ],
+    "attribute": "Data"
   },
   {
     "seed": "6ce78264-cbb0-4e10-8f55-89336f93d8dd",
@@ -310,7 +323,8 @@
         "type": "level",
         "value": 15
       }
-    ]
+    ],
+    "attribute": "Data"
   },
   {
     "seed": "b7f8c97d-1e9f-42a7-bbf1-d3e67a54f799",
@@ -331,7 +345,8 @@
         "type": "level",
         "value": 30
       }
-    ]
+    ],
+    "attribute": "Data"
   },
   {
     "seed": "fd9a8a5e-7e23-4c1b-b6b8-f2ec5f0c82e1",
@@ -352,7 +367,8 @@
         "type": "level",
         "value": 50
       }
-    ]
+    ],
+    "attribute": "Data"
   },
   {
     "seed": "8e58f41d-2d7f-4f3a-b94d-21a37f4ec691",
@@ -373,7 +389,8 @@
         "type": "level",
         "value": 70
       }
-    ]
+    ],
+    "attribute": "Data"
   },
   {
     "seed": "cd52bdf0-80a8-4b19-b738-ed6acf1f0b14",
@@ -394,7 +411,8 @@
         "type": "level",
         "value": 30
       }
-    ]
+    ],
+    "attribute": "Data"
   },
   {
     "seed": "28228629-5abc-4fdb-b94d-360783b2ff2c",
@@ -415,7 +433,8 @@
         "type": "level",
         "value": 50
       }
-    ]
+    ],
+    "attribute": "Vaccine"
   },
   {
     "seed": "f1b3b3b4-1b3b-4b3b-8b3b-3b3b3b3b3b3b",
@@ -436,7 +455,8 @@
         "type": "level",
         "value": 70
       }
-    ]
+    ],
+    "attribute": "Virus"
   },
   {
     "seed": "fvargf4-283b-4b3b-8b3b-003b30u65cf1",
@@ -457,7 +477,8 @@
         "type": "level",
         "value": 70
       }
-    ]
+    ],
+    "attribute": "Vaccine"
   },
   {
     "seed": "67cd2d63-4299-446e-a851-6f04e9b51bc5",
@@ -481,7 +502,8 @@
         "type": "level",
         "value": 30
       }
-    ]
+    ],
+    "attribute": "Vaccine"
   },
   {
     "seed": "529f424a-7efe-49bd-90dc-58286aaa9fb5",
@@ -502,7 +524,8 @@
         "type": "level",
         "value": 50
       }
-    ]
+    ],
+    "attribute": "Vaccine"
   },
   {
     "seed": "e3f58de4-75f0-4e38-81a0-ad1c32367f97",
@@ -523,7 +546,8 @@
         "type": "level",
         "value": 70
       }
-    ]
+    ],
+    "attribute": "Vaccine"
   },
   {
     "seed": "abc1234f-5678-90de-bc12-3456789abcde",
@@ -544,7 +568,8 @@
         "type": "level",
         "value": 7
       }
-    ]
+    ],
+    "attribute": "Data"
   },
   {
     "seed": "def5678g-9012-34hi-jk56-7890123lmnop",
@@ -569,7 +594,8 @@
         "type": "level",
         "value": 7
       }
-    ]
+    ],
+    "attribute": "Data"
   },
   {
     "seed": "ghi9012j-3456-kl78-mn90-1234567opqrs",
@@ -593,7 +619,8 @@
         "type": "level",
         "value": 15
       }
-    ]
+    ],
+    "attribute": "Data"
   },
   {
     "seed": "jkl3456m-7890-no12-pq34-567890rstuvw",
@@ -617,7 +644,8 @@
         "type": "level",
         "value": 30
       }
-    ]
+    ],
+    "attribute": "Data"
   },
   {
     "seed": "mno7890p-1234-qr56-st78-901234uvwxzy",
@@ -638,7 +666,8 @@
         "type": "level",
         "value": 50
       }
-    ]
+    ],
+    "attribute": "Data"
   },
   {
     "seed": "pqr1234s-5678-tu90-vw12-345678xyzabc",
@@ -659,7 +688,8 @@
         "type": "level",
         "value": 50
       }
-    ]
+    ],
+    "attribute": "Data"
   },
   {
     "seed": "stu9012v-3456-wx78-yz90-123456abcdef",
@@ -683,7 +713,8 @@
         "type": "level",
         "value": 70
       }
-    ]
+    ],
+    "attribute": "Data"
   },
   {
     "seed": "abc1234d-5678-efgh-9101-ijklmnopqrst",
@@ -707,7 +738,8 @@
         "type": "level",
         "value": 15
       }
-    ]
+    ],
+    "attribute": "Data"
   },
   {
     "seed": "xyz1234a-5678-bc90-defg-1234567890ab",
@@ -728,7 +760,8 @@
         "type": "level",
         "value": 15
       }
-    ]
+    ],
+    "attribute": "Virus"
   },
   {
     "seed": "def5678a-9012-345b-cdef-6789012345gh",
@@ -749,7 +782,8 @@
         "type": "level",
         "value": 30
       }
-    ]
+    ],
+    "attribute": "Vaccine"
   },
   {
     "seed": "hij6789k-0123-456l-mnop-qrstuvwxyz01",
@@ -770,7 +804,8 @@
         "type": "level",
         "value": 30
       }
-    ]
+    ],
+    "attribute": "Free"
   },
   {
     "seed": "ijk9012l-3456-789m-nopq-rstuvwxyz23",
@@ -791,7 +826,8 @@
         "type": "level",
         "value": 7
       }
-    ]
+    ],
+    "attribute": "Vaccine"
   },
   {
     "seed": "lmn3456o-789p-qr01-stuv-wxyzabcd34",
@@ -815,7 +851,8 @@
         "type": "level",
         "value": 15
       }
-    ]
+    ],
+    "attribute": "Vaccine"
   },
   {
     "seed": "opq6789r-012s-tuvw-xyza-bcdefg5678",
@@ -836,7 +873,8 @@
         "type": "level",
         "value": 30
       }
-    ]
+    ],
+    "attribute": "Vaccine"
   },
   {
     "seed": "rst9012u-345v-wxyz-abcd-efghij6789",
@@ -857,7 +895,8 @@
         "type": "level",
         "value": 50
       }
-    ]
+    ],
+    "attribute": "Vaccine"
   },
   {
     "seed": "uvw1234x-567y-zabc-defg-hijklmno890",
@@ -878,7 +917,8 @@
         "type": "level",
         "value": 70
       }
-    ]
+    ],
+    "attribute": "Vaccine"
   },
   {
     "seed": "5f42c392-4f8e-4fc2-9202-44225bc0936b",
@@ -899,7 +939,8 @@
         "type": "level",
         "value": 7
       }
-    ]
+    ],
+    "attribute": "Data"
   },
   {
     "seed": "768e6d1a-5c3b-4ed2-991f-e4a1c16357a6",
@@ -920,7 +961,8 @@
         "type": "level",
         "value": 15
       }
-    ]
+    ],
+    "attribute": "Data"
   },
   {
     "seed": "80c6f1b9-648a-49b3-92c9-01d6e2f4bc8e",
@@ -941,7 +983,8 @@
         "type": "level",
         "value": 30
       }
-    ]
+    ],
+    "attribute": "Data"
   },
   {
     "seed": "a5e0bfb7-8d2a-4ef1-9636-cbb9db1fe1d0",
@@ -962,7 +1005,8 @@
         "type": "level",
         "value": 50
       }
-    ]
+    ],
+    "attribute": "Data"
   },
   {
     "seed": "d9f9c182-731b-4f21-8e2f-167b2d663e34",
@@ -983,7 +1027,8 @@
         "type": "level",
         "value": 70
       }
-    ]
+    ],
+    "attribute": "Data"
   },
   {
     "seed": "34af8b92-9237-4f39-b45d-0d6c073d98c1",
@@ -1004,7 +1049,8 @@
         "type": "level",
         "value": 50
       }
-    ]
+    ],
+    "attribute": "Virus"
   },
   {
     "seed": "48b7a3e5-3e43-4819-96b8-673bfe67d5c1",
@@ -1025,6 +1071,7 @@
         "type": "level",
         "value": 75
       }
-    ]
+    ],
+    "attribute": "Data"
   }
 ]

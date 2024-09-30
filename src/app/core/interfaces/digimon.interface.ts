@@ -7,6 +7,7 @@ export interface Digimon {
   img: string;
   rank: string;
   species: string;
+  attribute: string;
   currentHp: number;
   maxHp: number;
   currentMp: number;
@@ -30,6 +31,7 @@ export interface BaseDigimon {
   img: string;
   rank: string;
   species: string;
+  attribute: string;
   hp: number;
   mp: number;
   atk: number;

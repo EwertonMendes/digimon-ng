@@ -11,6 +11,8 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { ModalService } from './modal.service';
+import { AudioService } from '../../../services/audio.service';
+import { AudioEffects } from '../../../core/enums/audio-tracks.enum';
 
 @Component({
   selector: 'app-modal',
@@ -29,6 +31,7 @@ export class ModalComponent implements OnInit, OnDestroy {
   closeEvent = output<void>();
 
   modalService = inject(ModalService);
+  audioService = inject(AudioService);
   elementRef = inject(ElementRef<HTMLElement>);
 
   @HostListener('document:keydown.escape', ['$event']) onKeydownHandler() {
@@ -56,6 +59,7 @@ export class ModalComponent implements OnInit, OnDestroy {
     if (!this.closable()) return;
     if (this.modalService.getLastOpenModal() !== this) return;
     this.modalService.removeLastOpenModal();
+    this.audioService.playAudio(AudioEffects.CLICK_ALTERNATIVE);
     this.element.style.display = 'none';
     this.closeEvent.emit();
   }

@@ -35,7 +35,7 @@ export class ModalComponent implements OnInit, OnDestroy {
   elementRef = inject(ElementRef<HTMLElement>);
 
   @HostListener('document:keydown.escape', ['$event']) onKeydownHandler() {
-    this.close();
+    this.close(true);
   }
 
   constructor() {
@@ -55,11 +55,13 @@ export class ModalComponent implements OnInit, OnDestroy {
     this.openEvent.emit();
   }
 
-  close(): void {
+  close(playClickSound: boolean = false): void {
     if (!this.closable()) return;
     if (this.modalService.getLastOpenModal() !== this) return;
     this.modalService.removeLastOpenModal();
-    this.audioService.playAudio(AudioEffects.CLICK_ALTERNATIVE);
+    if (playClickSound) {
+      this.audioService.playAudio(AudioEffects.CLICK_ALTERNATIVE);
+    }
     this.element.style.display = 'none';
     this.closeEvent.emit();
   }

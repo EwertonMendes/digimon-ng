@@ -1,4 +1,10 @@
-import { ChangeDetectorRef, inject, Injectable, signal } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  computed,
+  inject,
+  Injectable,
+  signal,
+} from '@angular/core';
 import { TrainingService } from './services/training.service';
 import { FarmingService } from './services/farming.service';
 import { BattleService } from './services/battle.service';
@@ -7,7 +13,7 @@ import { Digimon } from '../core/interfaces/digimon.interface';
 import { PlayerData } from '../core/interfaces/player-data.interface';
 import { DigimonService } from '../services/digimon.service';
 import { PlayerDataService } from '../services/player-data.service';
-import { interval } from 'rxjs';
+import { interval, Subject } from 'rxjs';
 import { DigimonListLocation } from '../core/enums/digimon-list-location.enum';
 import { HospitalService } from './services/hospital.service';
 import { ToastService } from '../shared/components/toast/toast.service';
@@ -97,6 +103,31 @@ export class GlobalStateDataSource {
   private hospitalHealingIntervalDurationInSeconds = signal<number>(20);
   hospitalHealingCountdown = signal<number>(0);
 
+  digimonHpChanges$ = new Subject<{
+    digimonId: string;
+    previousHp: number;
+    currentHp: number;
+    difference: number;
+    isPositive: boolean;
+  }>();
+
+  digimonMpChanges$ = new Subject<{
+    digimonId: string;
+    previousMp: number;
+    currentMp: number;
+    difference: number;
+    isPositive: boolean;
+  }>();
+
+  allPlayerDigimonList = computed(() =>
+    [
+      this.playerDataAcessor.digimonList,
+      this.playerDataAcessor.inTrainingDigimonList,
+      this.playerDataAcessor.bitFarmDigimonList,
+      this.playerDataAcessor.hospitalDigimonList,
+    ].flat()
+  );
+
   digimonService = inject(DigimonService);
   playerDataService = inject(PlayerDataService);
   audioService = inject(AudioService);
@@ -161,10 +192,73 @@ export class GlobalStateDataSource {
     },
   };
 
+  private createDigimonProxy(digimon: Digimon): Digimon {
+    return new Proxy(digimon, {
+      set: (target, property, value) => {
+        if (property === 'currentHp' && target.currentHp !== value) {
+          this.handleHpChange(target, value);
+        } else if (property === 'currentMp' && target.currentMp !== value) {
+          this.handleMpChange(target, value);
+        }
+        target[property as keyof Digimon] = value;
+        return true;
+      },
+    });
+  }
+
+  private handleHpChange(digimon: Digimon, newHp: number) {
+    const previousHp = digimon.currentHp;
+    this.digimonHpChanges$.next({
+      digimonId: digimon.id!,
+      previousHp,
+      currentHp: newHp,
+      difference: Math.abs(previousHp - newHp),
+      isPositive: previousHp < newHp,
+    });
+  }
+
+  private handleMpChange(digimon: Digimon, newMp: number) {
+    const previousMp = digimon.currentMp;
+    this.digimonMpChanges$.next({
+      digimonId: digimon.id!,
+      previousMp,
+      currentMp: newMp,
+      difference: Math.abs(previousMp - newMp),
+      isPositive: previousMp < newMp,
+    });
+  }
+
+  private updatePlayerDataList(listName: keyof PlayerData, digimon: Digimon) {
+    const list = this.playerData()[listName];
+    const digimonIndex = list.findIndex((d: Digimon) => d.id === digimon.id);
+
+    if (digimonIndex !== -1) {
+      const updatedList = [...list];
+      updatedList[digimonIndex] = digimon;
+      this.playerData.set({
+        ...this.playerData(),
+        [listName]: updatedList,
+      });
+    }
+  }
+
+  private trackDigimon(digimon: Digimon) {
+    const proxy = this.createDigimonProxy(digimon);
+    const found = this.findDigimonInLists(digimon.id!);
+
+    if (found) {
+      this.updatePlayerDataList(found.listName, proxy);
+    }
+  }
+
   async connect() {
     const playerData = await this.playerDataService.getPlayerData();
 
     this.playerData.set(playerData);
+
+    this.allPlayerDigimonList().forEach((digimon) => {
+      this.trackDigimon(digimon);
+    });
 
     this.initDigimonTraining();
     this.initBitFarmingGeneration();
@@ -278,6 +372,45 @@ export class GlobalStateDataSource {
       digimonId
     );
     this.updatePlayerData(playerData);
+  }
+
+  findDigimonInLists(
+    digimonId: string
+  ): { digimon: Digimon; listName: string } | undefined {
+    const lists = [
+      { name: 'digimonList', list: this.playerData().digimonList },
+      {
+        name: 'bitFarmDigimonList',
+        list: this.playerData().bitFarmDigimonList,
+      },
+      {
+        name: 'inTrainingDigimonList',
+        list: this.playerData().inTrainingDigimonList,
+      },
+      {
+        name: 'hospitalDigimonList',
+        list: this.playerData().hospitalDigimonList,
+      },
+      {
+        name: 'digimonStorageList',
+        list: this.playerData().digimonStorageList,
+      },
+    ];
+
+    for (const { name, list } of lists) {
+      const foundDigimon = list.find(
+        (digimon: Digimon) => digimon.id === digimonId
+      );
+
+      if (foundDigimon) {
+        return {
+          digimon: foundDigimon,
+          listName: name,
+        };
+      }
+    }
+
+    return undefined;
   }
 
   startBattle() {
@@ -584,5 +717,23 @@ export class GlobalStateDataSource {
       isFirstRun = false;
       this.changeDectorRef.detectChanges();
     });
+  }
+
+  addHpToDigimon(digimon: Digimon, amount: number) {
+    const digimonInList = this.allPlayerDigimonList().find(
+      (d) => d.id === digimon.id
+    );
+    if (!digimonInList) return;
+    digimonInList.currentHp += amount;
+    digimon.currentHp = digimonInList.currentHp;
+  }
+
+  removeHpFromDigimon(digimon: Digimon, amount: number) {
+    const digimonInList = this.allPlayerDigimonList().find(
+      (d) => d.id === digimon.id
+    );
+    if (!digimonInList) return;
+    digimonInList.currentHp -= amount;
+    digimon.currentHp = digimonInList.currentHp;
   }
 }

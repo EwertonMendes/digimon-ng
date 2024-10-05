@@ -1,4 +1,24 @@
-<div tabindex="0" class="my-digimon-card" [ngStyle]="{ filter: digimon().currentHp <= 0 ? 'brightness(0.6)' : '' }" [@damage]="damageState()" (@damage.done)="resetDamageState()">
+
+<div
+  tabindex="0"
+  class="my-digimon-card"
+  [ngStyle]="{ filter: digimon().currentHp <= 0 ? 'brightness(0.6)' : '' }"
+  [@damage]="damageState()"
+  (@damage.done)="resetDamageState()"
+>
+  <div class="modifications">
+    @if(showHpChange()) {
+    <span
+      class="modifications-item"
+      [ngClass]="hpChange().changeType"
+      @fadeUp
+      (@fadeUp.done)="onHpChangeAnimationDone()"
+    >
+      {{ hpChange().changeType === "damage" ? "-" : "+" }}
+      {{ hpChange().hpChangeValue }} HP
+    </span>
+    }
+  </div>
   <div class="my-digimon-card-image">
     <img [src]="digimon().img" [alt]="digimon().name" />
   </div>

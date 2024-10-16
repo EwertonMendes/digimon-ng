@@ -376,6 +376,7 @@
     "img": "/assets/digimons/Vikemon.webp",
     "rank": "Mega",
     "species": "Aquan",
+    "attribute": "Data",
     "hp": 330,
     "mp": 342,
     "atk": 171,
@@ -389,8 +390,29 @@
         "type": "level",
         "value": 70
       }
-    ],
-    "attribute": "Data"
+    ]
+  },
+  {
+    "seed": "083241cc-fcf8-4101-a58d-09b0e6b375b6",
+    "name": "Armadillomon",
+    "img": "/assets/digimons/Armadillomon.webp",
+    "rank": "Rookie",
+    "species": "Beast",
+    "attribute": "Vaccine",
+    "hp": 124,
+    "mp": 105,
+    "atk": 81,
+    "def": 70,
+    "speed": 53,
+    "bitFarmingRate": 6,
+    "digiEvolutionSeedList": ["cd52bdf0-80a8-4b19-b738-ed6acf1f0b14"],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 20
+      }
+    ]
   },
   {
     "seed": "cd52bdf0-80a8-4b19-b738-ed6acf1f0b14",
@@ -398,6 +420,7 @@
     "img": "/assets/digimons/Apemon.webp",
     "rank": "Champion",
     "species": "Beast",
+    "attribute": "Data",
     "hp": 159,
     "mp": 188,
     "atk": 97,
@@ -405,14 +428,13 @@
     "speed": 91,
     "bitFarmingRate": 2,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["083241cc-fcf8-4101-a58d-09b0e6b375b6"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 30
       }
-    ],
-    "attribute": "Data"
+    ]
   },
   {
     "seed": "28228629-5abc-4fdb-b94d-360783b2ff2c",

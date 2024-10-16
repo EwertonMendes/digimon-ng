@@ -74,6 +74,7 @@ export class EvolutionTreeModalComponent {
     if (!container) return;
 
     this.evolutionRouteDigimons = this.getEvolutionRouteDigimons();
+
     this.sigma = this.graphService.createGraph(
       container,
       this.mainDigimon()!,
@@ -228,11 +229,13 @@ export class EvolutionTreeModalComponent {
       .nodes()
       .filter((node) => {
         const nodeAttributes = this.sigma.getGraph().getNodeAttributes(node);
+
         return (
           nodeAttributes['seed'] !== clickedNode['seed'] &&
           !this.evolutionRouteDigimons?.some(
             (evolution) => evolution.seed === nodeAttributes['seed']
-          )
+          ) &&
+          this.mainDigimon()?.seed !== nodeAttributes['seed']
         );
       });
 

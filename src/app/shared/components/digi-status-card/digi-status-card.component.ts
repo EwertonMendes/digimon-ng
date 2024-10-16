@@ -52,7 +52,7 @@ export class DigiStatusCardComponent {
   damageState = computed(() => {
     return this.globalState.currentDefendingDigimon()?.id === this.digimon().id
       ? 'attacked'
-      : 'normal' ?? 'normal';
+      : 'normal';
   });
 
   constructor() {

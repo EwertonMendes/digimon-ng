@@ -27,6 +27,7 @@ export class DebugModalComponent implements OnInit {
   digimonSelectionModalId = 'digimon-selection-modal';
   selectableDigimonList = signal<BaseDigimon[]>([]);
   selectedLevel = 1;
+  totalDigimonAmount = 0;
   globalState = inject(GlobalStateDataSource);
   toastService = inject(ToastService);
   modalService = inject(ModalService);
@@ -46,6 +47,8 @@ export class DebugModalComponent implements OnInit {
       this.selectableDigimonList.set(
         data.sort((a, b) => a.name.localeCompare(b.name))
       );
+
+      this.totalDigimonAmount = data.length;
     });
   }
 

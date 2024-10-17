@@ -21,6 +21,7 @@ export enum DigimonSeeds {
   ARMADILLOMON = '083241cc-fcf8-4101-a58d-09b0e6b375b6',
   APEMON = 'cd52bdf0-80a8-4b19-b738-ed6acf1f0b14',
   KYUKIMON = 'c67f1a0b-f889-438b-9cc0-885f9f711a26',
+  KUZUHAMON = '8f89a3d4-7b14-45dc-88ae-c5f0d44637d3',
   ANGEWOMON = '28228629-5abc-4fdb-b94d-360783b2ff2c',
   MACHINEDRAMON = 'f1b3b3b4-1b3b-4b3b-8b3b-3b3b3b3b3b3b',
   BLACK_WAR_GREYMON = 'fvargf4-283b-4b3b-8b3b-003b30u65cf1',

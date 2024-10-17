@@ -393,6 +393,28 @@
     ]
   },
   {
+    "seed": "9fb1302d-6916-4237-a80f-fa4e5e69decc",
+    "name": "Dodomon",
+    "img": "/assets/digimons/Dodomon.webp",
+    "rank": "Fresh",
+    "species": "Beast",
+    "attribute": "Data",
+    "hp": 55,
+    "mp": 10,
+    "atk": 30,
+    "def": 20,
+    "speed": 15,
+    "bitFarmingRate": 2,
+    "digiEvolutionSeedList": ["25acac95-1107-484a-8dfc-f4f8139bc164"],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 3
+      }
+    ]
+  },
+  {
     "seed": "25acac95-1107-484a-8dfc-f4f8139bc164",
     "name": "Dorimon",
     "img": "/assets/digimons/Dorimon.webp",
@@ -404,10 +426,15 @@
     "atk": 52,
     "def": 41,
     "speed": 37,
-    "bitFarmingRate": 1,
+    "bitFarmingRate": 5,
     "digiEvolutionSeedList": ["083241cc-fcf8-4101-a58d-09b0e6b375b6"],
-    "degenerateSeedList": [],
-    "evolutionRequirements": []
+    "degenerateSeedList": ["9fb1302d-6916-4237-a80f-fa4e5e69decc"],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 7
+      }
+    ]
   },
   {
     "seed": "083241cc-fcf8-4101-a58d-09b0e6b375b6",
@@ -421,7 +448,7 @@
     "atk": 81,
     "def": 70,
     "speed": 53,
-    "bitFarmingRate": 6,
+    "bitFarmingRate": 10,
     "digiEvolutionSeedList": ["cd52bdf0-80a8-4b19-b738-ed6acf1f0b14"],
     "degenerateSeedList": ["25acac95-1107-484a-8dfc-f4f8139bc164"],
     "evolutionRequirements": [

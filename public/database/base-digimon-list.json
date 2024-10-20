@@ -537,12 +537,34 @@
     "def": 28,
     "speed": 36,
     "bitFarmingRate": 3,
-    "digiEvolutionSeedList": [],
+    "digiEvolutionSeedList": ["986f4b59-c234-44fa-b5bc-456736578f67"],
     "degenerateSeedList": [],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 7
+      }
+    ]
+  },
+  {
+    "seed": "986f4b59-c234-44fa-b5bc-456736578f67",
+    "name": "Salamon",
+    "img": "/assets/digimons/Salamon.webp",
+    "rank": "Rookie",
+    "species": "Holy",
+    "attribute": "Vaccine",
+    "hp": 105,
+    "mp": 119,
+    "atk": 76,
+    "def": 59,
+    "speed": 61,
+    "bitFarmingRate": 7,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": ["4f2a5a34-f37e-4e2e-9429-5fa6a7b36c1b"],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 15
       }
     ]
   },

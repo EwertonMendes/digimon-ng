@@ -603,7 +603,10 @@
     "def": 98,
     "speed": 113,
     "bitFarmingRate": 17,
-    "digiEvolutionSeedList": ["3452a6f7-80f7-4c3e-9a78-0ba44f8c56a2"],
+    "digiEvolutionSeedList": [
+      "3452a6f7-80f7-4c3e-9a78-0ba44f8c56a2",
+      "198db8dd-fe31-40a7-8d52-b25fc617fd47"
+    ],
     "degenerateSeedList": ["f3d8e2e9-316a-412b-91f9-678d1e6e9a56"],
     "evolutionRequirements": [
       {
@@ -635,8 +638,30 @@
     ]
   },
   {
+    "seed": "198db8dd-fe31-40a7-8d52-b25fc617fd47",
+    "name": "Holydramon",
+    "img": "/assets/digimons/Holydramon.webp",
+    "rank": "Mega",
+    "species": "Holy",
+    "attribute": "Vaccine",
+    "hp": 320,
+    "mp": 300,
+    "atk": 209,
+    "def": 130,
+    "speed": 140,
+    "bitFarmingRate": 19,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": ["28228629-5abc-4fdb-b94d-360783b2ff2c"],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 70
+      }
+    ]
+  },
+  {
     "seed": "f1b3b3b4-1b3b-4b3b-8b3b-3b3b3b3b3b3b",
-    "name": "MachineDramon",
+    "name": "Machinedramon",
     "img": "/assets/digimons/MachineDramon.webp",
     "rank": "Mega",
     "species": "Machine",

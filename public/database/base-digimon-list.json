@@ -602,13 +602,35 @@
     "atk": 130,
     "def": 98,
     "speed": 113,
-    "bitFarmingRate": 4,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "bitFarmingRate": 17,
+    "digiEvolutionSeedList": ["3452a6f7-80f7-4c3e-9a78-0ba44f8c56a2"],
+    "degenerateSeedList": ["f3d8e2e9-316a-412b-91f9-678d1e6e9a56"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 50
+      }
+    ]
+  },
+  {
+    "seed": "3452a6f7-80f7-4c3e-9a78-0ba44f8c56a2",
+    "name": "Ophanimon",
+    "img": "/assets/digimons/Ophanimon.webp",
+    "rank": "Mega",
+    "species": "Holy",
+    "attribute": "Vaccine",
+    "hp": 308,
+    "mp": 366,
+    "atk": 178,
+    "def": 148,
+    "speed": 137,
+    "bitFarmingRate": 22,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": ["28228629-5abc-4fdb-b94d-360783b2ff2c"],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 70
       }
     ]
   },

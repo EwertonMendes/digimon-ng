@@ -65,7 +65,8 @@ export class DebugModalComponent implements OnInit {
   giveSelectedDigimon(digimon: BaseDigimon) {
     const newDigimon = this.globalState.generateDigimonBySeed(
       digimon.seed,
-      this.selectedLevel
+      this.selectedLevel,
+      this.generateEvolutionLine
     );
 
     this.globalState.addDigimonToStorage(newDigimon);

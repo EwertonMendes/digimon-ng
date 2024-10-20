@@ -9,7 +9,7 @@ import { TrainingService } from './services/training.service';
 import { FarmingService } from './services/farming.service';
 import { BattleService } from './services/battle.service';
 import { StorageService } from './services/storage.service';
-import { Digimon } from '../core/interfaces/digimon.interface';
+import { BaseDigimon, Digimon } from '../core/interfaces/digimon.interface';
 import { PlayerData } from '../core/interfaces/player-data.interface';
 import { DigimonService } from '../services/digimon.service';
 import { PlayerDataService } from '../services/player-data.service';
@@ -583,14 +583,52 @@ export class GlobalStateDataSource {
     );
   }
 
-  generateDigimonBySeed(seed: string, level?: number) {
+  generateDigimonBySeed(seed: string, level = 1, withEvolutionRoute = false) {
     let digimon = this.digimonService.generateDigimonBySeed(seed);
     if (!digimon) throw Error('Digimon not found');
-    if (level) {
+
+    if (withEvolutionRoute && digimon.degenerateSeedList[0]) {
+      const baseDigimon = this.digimonService.getBaseDigimonDataBySeed(
+        digimon.degenerateSeedList[0]
+      );
+
+      if (!baseDigimon) throw Error('Digimon not found');
+
+      const evolutionRoute = this.generateEvolutionRoute(baseDigimon);
+
+      digimon.currentEvolutionRoute = evolutionRoute;
+    }
+
+    if (level > 1) {
       digimon = this.battleService.levelUpDigimonToLevel(digimon, level)!;
     }
 
     return digimon;
+  }
+
+  private generateEvolutionRoute(baseDigimon: BaseDigimon) {
+    const evolutionRoute = [];
+    let currentDigimon: BaseDigimon | null = baseDigimon;
+
+    while (currentDigimon) {
+      evolutionRoute.unshift({
+        seed: currentDigimon.seed,
+        rank: currentDigimon.rank,
+      });
+
+      if (
+        !currentDigimon.degenerateSeedList ||
+        currentDigimon.degenerateSeedList.length === 0
+      ) {
+        break;
+      }
+
+      const nextSeed: string = currentDigimon.degenerateSeedList[0];
+      currentDigimon =
+        this.digimonService.getBaseDigimonDataBySeed(nextSeed) || null;
+    }
+
+    return evolutionRoute;
   }
 
   getDigimonCurrentEvolutionRoute(digimon: Digimon) {

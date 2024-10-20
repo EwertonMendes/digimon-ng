@@ -97,6 +97,7 @@ export class DigimonService {
       bitFarmingRate: baseDigimon.bitFarmingRate,
       digiEvolutionSeedList: baseDigimon.digiEvolutionSeedList,
       degenerateSeedList: baseDigimon.degenerateSeedList,
+      currentEvolutionRoute: [],
     };
   }
 

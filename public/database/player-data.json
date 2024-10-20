@@ -400,10 +400,32 @@
       "exp": 0,
       "totalExp": 0,
       "level": 1,
-      "bitFarmingRate": 4,
-      "digiEvolutionSeedList": [],
-      "degenerateSeedList": [],
-      "currentEvolutionRoute": []
+      "bitFarmingRate": 17,
+      "digiEvolutionSeedList": [
+        "3452a6f7-80f7-4c3e-9a78-0ba44f8c56a2",
+        "198db8dd-fe31-40a7-8d52-b25fc617fd47"
+      ],
+      "degenerateSeedList": ["f3d8e2e9-316a-412b-91f9-678d1e6e9a56"],
+      "evolutionRequirements": [
+        {
+          "type": "level",
+          "value": 50
+        }
+      ],
+      "currentEvolutionRoute": [
+        {
+          "seed": "4f2a5a34-f37e-4e2e-9429-5fa6a7b36c1b",
+          "rank": "In-Training"
+        },
+        {
+          "seed": "986f4b59-c234-44fa-b5bc-456736578f67",
+          "rank": "Rookie"
+        },
+        {
+          "seed": "f3d8e2e9-316a-412b-91f9-678d1e6e9a56",
+          "rank": "Champion"
+        }
+      ]
     },
     {
       "id": "25fa11f1-c46d-4c79-92d8-60946403378a",

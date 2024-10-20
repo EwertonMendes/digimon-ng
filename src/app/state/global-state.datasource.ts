@@ -475,10 +475,10 @@ export class GlobalStateDataSource {
       if (target.currentHp <= 0) {
         this.log(`Player ${target.name} has been defeated.`);
         this.baseTurnOrder = this.baseTurnOrder.filter(
-          (d) => d.id !== target.id
+          (digimon) => digimon.id !== target.id
         );
         this.actualTurnOrder = this.actualTurnOrder.filter(
-          (d) => d.id !== target.id
+          (digimon) => digimon.id !== target.id
         );
       }
 
@@ -488,12 +488,12 @@ export class GlobalStateDataSource {
 
   private getTurnOrder() {
     const playerTeam = this.playerDataAcessor.digimonList
-      .filter((d) => d.currentHp > 0)
-      .map((d) => ({ ...d, owner: 'player' }));
+      .filter((playerDigimon) => playerDigimon.currentHp > 0)
+      .map((playerDigimon) => ({ ...playerDigimon, owner: 'player' }));
 
     const enemyTeam = this.enemyTeamAccessor
-      .filter((d) => d.currentHp > 0)
-      .map((d) => ({ ...d, owner: 'enemy' }));
+      .filter((enemyDigimon) => enemyDigimon.currentHp > 0)
+      .map((enemyDigimon) => ({ ...enemyDigimon, owner: 'enemy' }));
 
     return [...playerTeam, ...enemyTeam].sort(() => Math.random() - 0.5);
   }

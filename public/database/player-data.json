@@ -319,7 +319,20 @@
       "bitFarmingRate": 2,
       "digiEvolutionSeedList": ["c67f1a0b-f889-438b-9cc0-885f9f711a26"],
       "degenerateSeedList": ["083241cc-fcf8-4101-a58d-09b0e6b375b6"],
-      "currentEvolutionRoute": []
+      "currentEvolutionRoute": [
+        {
+          "seed": "9fb1302d-6916-4237-a80f-fa4e5e69decc",
+          "rank": "Fresh"
+        },
+        {
+          "seed": "25acac95-1107-484a-8dfc-f4f8139bc164",
+          "rank": "In-Training"
+        },
+        {
+          "seed": "083241cc-fcf8-4101-a58d-09b0e6b375b6",
+          "rank": "Rookie"
+        }
+      ]
     }
   ],
   "digimonStorageList": [
@@ -414,7 +427,12 @@
       "bitFarmingRate": 2,
       "digiEvolutionSeedList": ["c67f1a0b-f889-438b-9cc0-885f9f711a26"],
       "degenerateSeedList": ["083241cc-fcf8-4101-a58d-09b0e6b375b6"],
-      "currentEvolutionRoute": []
+      "currentEvolutionRoute": [
+        {
+          "seed": "083241cc-fcf8-4101-a58d-09b0e6b375b6",
+          "rank": "Rookie"
+        }
+      ]
     },
     {
       "id": "6dad38a0-355b-4792-acce-a4b9473191f6",

@@ -5,6 +5,7 @@
     "img": "/assets/digimons/WarGreymon.webp",
     "rank": "Mega",
     "species": "Dragon",
+    "attribute": "Vaccine",
     "hp": 320,
     "mp": 335,
     "atk": 171,
@@ -18,8 +19,7 @@
         "type": "level",
         "value": 70
       }
-    ],
-    "attribute": "Vaccine"
+    ]
   },
   {
     "seed": "25fc7b61-17ae-453b-94f7-4fa4f9171633",
@@ -27,6 +27,7 @@
     "img": "/assets/digimons/MetalGreymon.webp",
     "rank": "Ultimate",
     "species": "Dragon",
+    "attribute": "Vaccine",
     "hp": 222,
     "mp": 230,
     "atk": 136,
@@ -40,8 +41,7 @@
         "type": "level",
         "value": 50
       }
-    ],
-    "attribute": "Vaccine"
+    ]
   },
   {
     "seed": "66e5a6ea-93a5-47f8-91d9-8601857496f6",
@@ -49,6 +49,7 @@
     "img": "/assets/digimons/SkullGreymon.webp",
     "rank": "Ultimate",
     "species": "Dark",
+    "attribute": "Virus",
     "hp": 236,
     "mp": 224,
     "atk": 146,
@@ -65,8 +66,7 @@
         "type": "level",
         "value": 50
       }
-    ],
-    "attribute": "Virus"
+    ]
   },
   {
     "seed": "70dbb38a-690e-45b3-bfc5-eccba64fbd9b",
@@ -74,6 +74,7 @@
     "img": "/assets/digimons/Greymon.webp",
     "rank": "Champion",
     "species": "Dragon",
+    "attribute": "Vaccine",
     "hp": 170,
     "mp": 165,
     "atk": 115,
@@ -90,8 +91,7 @@
         "type": "level",
         "value": 30
       }
-    ],
-    "attribute": "Vaccine"
+    ]
   },
   {
     "seed": "a351a4ab-a5bf-42df-8a27-bb2d8ce06d0b",
@@ -99,6 +99,7 @@
     "img": "/assets/digimons/BlueGreymon.webp",
     "rank": "Champion",
     "species": "Dragon",
+    "attribute": "Vaccine",
     "hp": 178,
     "mp": 150,
     "atk": 118,
@@ -112,8 +113,7 @@
         "type": "level",
         "value": 30
       }
-    ],
-    "attribute": "Vaccine"
+    ]
   },
   {
     "seed": "96c23ff9-d6b4-43da-91e6-f0c9799c65d7",
@@ -121,6 +121,7 @@
     "img": "/assets/digimons/Agumon.webp",
     "rank": "Rookie",
     "species": "Dragon",
+    "attribute": "Vaccine",
     "hp": 111,
     "mp": 115,
     "atk": 83,
@@ -141,8 +142,7 @@
         "type": "level",
         "value": 15
       }
-    ],
-    "attribute": "Vaccine"
+    ]
   },
   {
     "seed": "edc9812f-82a6-487f-9a4d-52b845643176",
@@ -150,6 +150,7 @@
     "img": "/assets/digimons/Koromon.webp",
     "rank": "In-Training",
     "species": "Dragon",
+    "attribute": "Vaccine",
     "hp": 66,
     "mp": 67,
     "atk": 47,
@@ -169,8 +170,7 @@
         "type": "level",
         "value": 7
       }
-    ],
-    "attribute": "Vaccine"
+    ]
   },
   {
     "seed": "xyz5678a-123b-cdef-456g-hijklmn7890",
@@ -178,6 +178,7 @@
     "img": "/assets/digimons/Betamon.webp",
     "rank": "Rookie",
     "species": "Aquan",
+    "attribute": "Data",
     "hp": 85,
     "mp": 121,
     "atk": 76,
@@ -191,8 +192,7 @@
         "type": "level",
         "value": 15
       }
-    ],
-    "attribute": "Data"
+    ]
   },
   {
     "seed": "uvw1234a-567b-cdef-890g-hijklmn1234",
@@ -200,6 +200,7 @@
     "img": "/assets/digimons/Goburimon.webp",
     "rank": "Rookie",
     "species": "Beast",
+    "attribute": "Data",
     "hp": 118,
     "mp": 118,
     "atk": 82,
@@ -213,8 +214,7 @@
         "type": "level",
         "value": 15
       }
-    ],
-    "attribute": "Data"
+    ]
   },
   {
     "seed": "xyz5678a-123b-cdef-456g-hijklmn5678",
@@ -222,6 +222,7 @@
     "img": "/assets/digimons/Falcomon.webp",
     "rank": "Rookie",
     "species": "Bird",
+    "attribute": "Data",
     "hp": 109,
     "mp": 114,
     "atk": 72,
@@ -235,8 +236,7 @@
         "type": "level",
         "value": 15
       }
-    ],
-    "attribute": "Data"
+    ]
   },
   {
     "seed": "b5ac222a-e653-4543-923e-77355dd24686",
@@ -244,6 +244,7 @@
     "img": "/assets/digimons/Botamon.webp",
     "rank": "Fresh",
     "species": "Dark",
+    "attribute": "Free",
     "hp": 56,
     "mp": 57,
     "atk": 37,
@@ -257,8 +258,7 @@
         "type": "level",
         "value": 3
       }
-    ],
-    "attribute": "Free"
+    ]
   },
   {
     "seed": "e7f074b5-2979-4a45-b6a3-3b07f6965f7d",
@@ -266,6 +266,7 @@
     "img": "/assets/digimons/Pitchmon.webp",
     "rank": "Fresh",
     "species": "Aquan",
+    "attribute": "Data",
     "hp": 57,
     "mp": 59,
     "atk": 32,
@@ -279,8 +280,7 @@
         "type": "level",
         "value": 3
       }
-    ],
-    "attribute": "Data"
+    ]
   },
   {
     "seed": "277edb81-7051-4a5e-8f5d-369e70cd18e5",
@@ -288,6 +288,7 @@
     "img": "/assets/digimons/Pukamon.webp",
     "rank": "In-Training",
     "species": "Aquan",
+    "attribute": "Data",
     "hp": 70,
     "mp": 64,
     "atk": 40,
@@ -301,8 +302,7 @@
         "type": "level",
         "value": 7
       }
-    ],
-    "attribute": "Data"
+    ]
   },
   {
     "seed": "6ce78264-cbb0-4e10-8f55-89336f93d8dd",
@@ -310,6 +310,7 @@
     "img": "/assets/digimons/Gomamon.webp",
     "rank": "Rookie",
     "species": "Aquan",
+    "attribute": "Data",
     "hp": 108,
     "mp": 112,
     "atk": 74,
@@ -323,8 +324,7 @@
         "type": "level",
         "value": 15
       }
-    ],
-    "attribute": "Data"
+    ]
   },
   {
     "seed": "b7f8c97d-1e9f-42a7-bbf1-d3e67a54f799",
@@ -332,6 +332,7 @@
     "img": "/assets/digimons/Ikkakumon.webp",
     "rank": "Champion",
     "species": "Aquan",
+    "attribute": "Data",
     "hp": 170,
     "mp": 162,
     "atk": 110,
@@ -345,8 +346,7 @@
         "type": "level",
         "value": 30
       }
-    ],
-    "attribute": "Data"
+    ]
   },
   {
     "seed": "fd9a8a5e-7e23-4c1b-b6b8-f2ec5f0c82e1",
@@ -354,6 +354,7 @@
     "img": "/assets/digimons/Zudomon.webp",
     "rank": "Ultimate",
     "species": "Aquan",
+    "attribute": "Data",
     "hp": 235,
     "mp": 222,
     "atk": 138,
@@ -367,8 +368,7 @@
         "type": "level",
         "value": 50
       }
-    ],
-    "attribute": "Data"
+    ]
   },
   {
     "seed": "8e58f41d-2d7f-4f3a-b94d-21a37f4ec691",
@@ -524,7 +524,6 @@
       }
     ]
   },
-
   {
     "seed": "28228629-5abc-4fdb-b94d-360783b2ff2c",
     "name": "Angewomon",
@@ -553,6 +552,7 @@
     "img": "/assets/digimons/MachineDramon.webp",
     "rank": "Mega",
     "species": "Machine",
+    "attribute": "Virus",
     "hp": 323,
     "mp": 327,
     "atk": 174,
@@ -566,8 +566,7 @@
         "type": "level",
         "value": 70
       }
-    ],
-    "attribute": "Virus"
+    ]
   },
   {
     "seed": "fvargf4-283b-4b3b-8b3b-003b30u65cf1",
@@ -575,6 +574,7 @@
     "img": "/assets/digimons/BlackWarGreymon.webp",
     "rank": "Mega",
     "species": "Dragon",
+    "attribute": "Vaccine",
     "hp": 322,
     "mp": 338,
     "atk": 173,
@@ -588,8 +588,7 @@
         "type": "level",
         "value": 70
       }
-    ],
-    "attribute": "Vaccine"
+    ]
   },
   {
     "seed": "67cd2d63-4299-446e-a851-6f04e9b51bc5",
@@ -597,6 +596,7 @@
     "img": "/assets/digimons/GeoGreymon.webp",
     "rank": "Champion",
     "species": "Dragon",
+    "attribute": "Vaccine",
     "hp": 173,
     "mp": 175,
     "atk": 116,
@@ -613,8 +613,7 @@
         "type": "level",
         "value": 30
       }
-    ],
-    "attribute": "Vaccine"
+    ]
   },
   {
     "seed": "529f424a-7efe-49bd-90dc-58286aaa9fb5",
@@ -622,6 +621,7 @@
     "img": "/assets/digimons/RizeGreymon.webp",
     "rank": "Ultimate",
     "species": "Dragon",
+    "attribute": "Vaccine",
     "hp": 220,
     "mp": 247,
     "atk": 138,
@@ -635,8 +635,7 @@
         "type": "level",
         "value": 50
       }
-    ],
-    "attribute": "Vaccine"
+    ]
   },
   {
     "seed": "e3f58de4-75f0-4e38-81a0-ad1c32367f97",
@@ -644,6 +643,7 @@
     "img": "/assets/digimons/ShineGreymon.webp",
     "rank": "Mega",
     "species": "Dragon",
+    "attribute": "Vaccine",
     "hp": 323,
     "mp": 330,
     "atk": 173,
@@ -657,8 +657,7 @@
         "type": "level",
         "value": 70
       }
-    ],
-    "attribute": "Vaccine"
+    ]
   },
   {
     "seed": "abc1234f-5678-90de-bc12-3456789abcde",
@@ -666,6 +665,7 @@
     "img": "/assets/digimons/Mochimon.webp",
     "rank": "In-Training",
     "species": "Lesser",
+    "attribute": "Data",
     "hp": 55,
     "mp": 60,
     "atk": 40,
@@ -679,8 +679,7 @@
         "type": "level",
         "value": 7
       }
-    ],
-    "attribute": "Data"
+    ]
   },
   {
     "seed": "def5678g-9012-34hi-jk56-7890123lmnop",
@@ -688,6 +687,7 @@
     "img": "/assets/digimons/Minomon.webp",
     "rank": "In-Training",
     "species": "Insect",
+    "attribute": "Data",
     "hp": 63,
     "mp": 69,
     "atk": 41,
@@ -705,8 +705,7 @@
         "type": "level",
         "value": 7
       }
-    ],
-    "attribute": "Data"
+    ]
   },
   {
     "seed": "ghi9012j-3456-kl78-mn90-1234567opqrs",
@@ -714,6 +713,7 @@
     "img": "/assets/digimons/Tentomon.webp",
     "rank": "Rookie",
     "species": "Insect",
+    "attribute": "Data",
     "hp": 106,
     "mp": 108,
     "atk": 75,
@@ -730,8 +730,7 @@
         "type": "level",
         "value": 15
       }
-    ],
-    "attribute": "Data"
+    ]
   },
   {
     "seed": "jkl3456m-7890-no12-pq34-567890rstuvw",
@@ -739,6 +738,7 @@
     "img": "/assets/digimons/Kabuterimon.webp",
     "rank": "Champion",
     "species": "Insect",
+    "attribute": "Data",
     "hp": 168,
     "mp": 161,
     "atk": 106,
@@ -755,8 +755,7 @@
         "type": "level",
         "value": 30
       }
-    ],
-    "attribute": "Data"
+    ]
   },
   {
     "seed": "mno7890p-1234-qr56-st78-901234uvwxzy",
@@ -764,6 +763,7 @@
     "img": "/assets/digimons/Megakabuterimon_Blue.webp",
     "rank": "Ultimate",
     "species": "Insect",
+    "attribute": "Data",
     "hp": 234,
     "mp": 227,
     "atk": 132,
@@ -777,8 +777,7 @@
         "type": "level",
         "value": 50
       }
-    ],
-    "attribute": "Data"
+    ]
   },
   {
     "seed": "pqr1234s-5678-tu90-vw12-345678xyzabc",
@@ -786,6 +785,7 @@
     "img": "/assets/digimons/MegaKabuterimon_Red.webp",
     "rank": "Ultimate",
     "species": "Insect",
+    "attribute": "Data",
     "hp": 238,
     "mp": 227,
     "atk": 135,
@@ -799,8 +799,7 @@
         "type": "level",
         "value": 50
       }
-    ],
-    "attribute": "Data"
+    ]
   },
   {
     "seed": "stu9012v-3456-wx78-yz90-123456abcdef",
@@ -808,6 +807,7 @@
     "img": "/assets/digimons/HerculesKabuterimon.webp",
     "rank": "Mega",
     "species": "Insect",
+    "attribute": "Data",
     "hp": 322,
     "mp": 320,
     "atk": 178,
@@ -824,8 +824,7 @@
         "type": "level",
         "value": 70
       }
-    ],
-    "attribute": "Data"
+    ]
   },
   {
     "seed": "abc1234d-5678-efgh-9101-ijklmnopqrst",
@@ -833,6 +832,7 @@
     "img": "/assets/digimons/Kunemon.webp",
     "rank": "Rookie",
     "species": "Insect",
+    "attribute": "Data",
     "hp": 99,
     "mp": 127,
     "atk": 75,
@@ -849,8 +849,7 @@
         "type": "level",
         "value": 15
       }
-    ],
-    "attribute": "Data"
+    ]
   },
   {
     "seed": "xyz1234a-5678-bc90-defg-1234567890ab",
@@ -858,6 +857,7 @@
     "img": "/assets/digimons/Kokuwamon.webp",
     "rank": "Rookie",
     "species": "Dark",
+    "attribute": "Virus",
     "hp": 114,
     "mp": 122,
     "atk": 79,
@@ -871,8 +871,7 @@
         "type": "level",
         "value": 15
       }
-    ],
-    "attribute": "Virus"
+    ]
   },
   {
     "seed": "def5678a-9012-345b-cdef-6789012345gh",
@@ -880,6 +879,7 @@
     "img": "/assets/digimons/Airdramon.webp",
     "rank": "Champion",
     "species": "Dragon",
+    "attribute": "Vaccine",
     "hp": 147,
     "mp": 180,
     "atk": 85,
@@ -893,8 +893,7 @@
         "type": "level",
         "value": 30
       }
-    ],
-    "attribute": "Vaccine"
+    ]
   },
   {
     "seed": "hij6789k-0123-456l-mnop-qrstuvwxyz01",
@@ -902,6 +901,7 @@
     "img": "/assets/digimons/Dokugumon.webp",
     "rank": "Champion",
     "species": "Insect/Plant",
+    "attribute": "Free",
     "hp": 158,
     "mp": 181,
     "atk": 107,
@@ -915,8 +915,7 @@
         "type": "level",
         "value": 30
       }
-    ],
-    "attribute": "Free"
+    ]
   },
   {
     "seed": "ijk9012l-3456-789m-nopq-rstuvwxyz23",
@@ -924,6 +923,7 @@
     "img": "/assets/digimons/Gigimon.webp",
     "rank": "In-Training",
     "species": "Dragon",
+    "attribute": "Vaccine",
     "hp": 72,
     "mp": 61,
     "atk": 50,
@@ -937,8 +937,7 @@
         "type": "level",
         "value": 7
       }
-    ],
-    "attribute": "Vaccine"
+    ]
   },
   {
     "seed": "lmn3456o-789p-qr01-stuv-wxyzabcd34",
@@ -946,6 +945,7 @@
     "img": "/assets/digimons/Guilmon.webp",
     "rank": "Rookie",
     "species": "Dragon",
+    "attribute": "Vaccine",
     "hp": 120,
     "mp": 101,
     "atk": 87,
@@ -962,8 +962,7 @@
         "type": "level",
         "value": 15
       }
-    ],
-    "attribute": "Vaccine"
+    ]
   },
   {
     "seed": "opq6789r-012s-tuvw-xyza-bcdefg5678",
@@ -971,6 +970,7 @@
     "img": "/assets/digimons/Growlmon.webp",
     "rank": "Champion",
     "species": "Dragon",
+    "attribute": "Vaccine",
     "hp": 175,
     "mp": 161,
     "atk": 117,
@@ -984,8 +984,7 @@
         "type": "level",
         "value": 30
       }
-    ],
-    "attribute": "Vaccine"
+    ]
   },
   {
     "seed": "rst9012u-345v-wxyz-abcd-efghij6789",
@@ -993,6 +992,7 @@
     "img": "/assets/digimons/WarGrowlmon.webp",
     "rank": "Ultimate",
     "species": "Dragon",
+    "attribute": "Vaccine",
     "hp": 230,
     "mp": 226,
     "atk": 144,
@@ -1006,8 +1006,7 @@
         "type": "level",
         "value": 50
       }
-    ],
-    "attribute": "Vaccine"
+    ]
   },
   {
     "seed": "uvw1234x-567y-zabc-defg-hijklmno890",
@@ -1015,6 +1014,7 @@
     "img": "/assets/digimons/Megidramon.webp",
     "rank": "Mega",
     "species": "Dragon",
+    "attribute": "Vaccine",
     "hp": 332,
     "mp": 318,
     "atk": 176,
@@ -1028,8 +1028,7 @@
         "type": "level",
         "value": 70
       }
-    ],
-    "attribute": "Vaccine"
+    ]
   },
   {
     "seed": "5f42c392-4f8e-4fc2-9202-44225bc0936b",
@@ -1037,6 +1036,7 @@
     "img": "/assets/digimons/Tsunomon.webp",
     "rank": "In-Training",
     "species": "Beast",
+    "attribute": "Data",
     "hp": 64,
     "mp": 57,
     "atk": 51,
@@ -1050,8 +1050,7 @@
         "type": "level",
         "value": 7
       }
-    ],
-    "attribute": "Data"
+    ]
   },
   {
     "seed": "768e6d1a-5c3b-4ed2-991f-e4a1c16357a6",
@@ -1059,6 +1058,7 @@
     "img": "/assets/digimons/Gabumon.webp",
     "rank": "Rookie",
     "species": "Beast",
+    "attribute": "Data",
     "hp": 113,
     "mp": 102,
     "atk": 86,
@@ -1072,8 +1072,7 @@
         "type": "level",
         "value": 15
       }
-    ],
-    "attribute": "Data"
+    ]
   },
   {
     "seed": "80c6f1b9-648a-49b3-92c9-01d6e2f4bc8e",
@@ -1081,6 +1080,7 @@
     "img": "/assets/digimons/Garurumon.webp",
     "rank": "Champion",
     "species": "Beast",
+    "attribute": "Data",
     "hp": 166,
     "mp": 165,
     "atk": 101,
@@ -1094,8 +1094,7 @@
         "type": "level",
         "value": 30
       }
-    ],
-    "attribute": "Data"
+    ]
   },
   {
     "seed": "a5e0bfb7-8d2a-4ef1-9636-cbb9db1fe1d0",
@@ -1103,6 +1102,7 @@
     "img": "/assets/digimons/WarGarurumon.webp",
     "rank": "Ultimate",
     "species": "Beast",
+    "attribute": "Data",
     "hp": 217,
     "mp": 238,
     "atk": 127,
@@ -1116,8 +1116,7 @@
         "type": "level",
         "value": 50
       }
-    ],
-    "attribute": "Data"
+    ]
   },
   {
     "seed": "d9f9c182-731b-4f21-8e2f-167b2d663e34",
@@ -1125,6 +1124,7 @@
     "img": "/assets/digimons/MetalGarurumon.webp",
     "rank": "Mega",
     "species": "Beast",
+    "attribute": "Data",
     "hp": 312,
     "mp": 338,
     "atk": 167,
@@ -1138,8 +1138,7 @@
         "type": "level",
         "value": 70
       }
-    ],
-    "attribute": "Data"
+    ]
   },
   {
     "seed": "34af8b92-9237-4f39-b45d-0d6c073d98c1",
@@ -1147,6 +1146,7 @@
     "img": "/assets/digimons/BlueMetalGreymon.webp",
     "rank": "Ultimate",
     "species": "Dragon",
+    "attribute": "Virus",
     "hp": 235,
     "mp": 240,
     "atk": 142,
@@ -1160,8 +1160,7 @@
         "type": "level",
         "value": 50
       }
-    ],
-    "attribute": "Virus"
+    ]
   },
   {
     "seed": "48b7a3e5-3e43-4819-96b8-673bfe67d5c1",
@@ -1169,6 +1168,7 @@
     "img": "/assets/digimons/ZekeGreymon.webp",
     "rank": "Mega",
     "species": "Dragon",
+    "attribute": "Data",
     "hp": 335,
     "mp": 340,
     "atk": 178,
@@ -1182,7 +1182,6 @@
         "type": "level",
         "value": 75
       }
-    ],
-    "attribute": "Data"
+    ]
   }
 ]

@@ -28,6 +28,7 @@ export class DebugModalComponent implements OnInit {
   selectableDigimonList = signal<BaseDigimon[]>([]);
   selectedLevel = 1;
   totalDigimonAmount = 0;
+  generateEvolutionLine = false;
   globalState = inject(GlobalStateDataSource);
   toastService = inject(ToastService);
   modalService = inject(ModalService);

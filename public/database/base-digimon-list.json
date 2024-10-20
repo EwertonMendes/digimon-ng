@@ -559,12 +559,34 @@
     "def": 59,
     "speed": 61,
     "bitFarmingRate": 7,
-    "digiEvolutionSeedList": [],
+    "digiEvolutionSeedList": ["f3d8e2e9-316a-412b-91f9-678d1e6e9a56"],
     "degenerateSeedList": ["4f2a5a34-f37e-4e2e-9429-5fa6a7b36c1b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 15
+      }
+    ]
+  },
+  {
+    "seed": "f3d8e2e9-316a-412b-91f9-678d1e6e9a56",
+    "name": "Gatomon",
+    "img": "/assets/digimons/Gatomon.webp",
+    "rank": "Champion",
+    "species": "Holy",
+    "attribute": "Vaccine",
+    "hp": 151,
+    "mp": 181,
+    "atk": 97,
+    "def": 76,
+    "speed": 85,
+    "bitFarmingRate": 12,
+    "digiEvolutionSeedList": ["28228629-5abc-4fdb-b94d-360783b2ff2c"],
+    "degenerateSeedList": ["986f4b59-c234-44fa-b5bc-456736578f67"],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 25
       }
     ]
   },

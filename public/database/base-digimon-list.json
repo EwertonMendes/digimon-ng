@@ -525,6 +525,28 @@
     ]
   },
   {
+    "seed": "4f2a5a34-f37e-4e2e-9429-5fa6a7b36c1b",
+    "name": "Puttimon",
+    "img": "/assets/digimons/Puttimon.webp",
+    "rank": "In-Training",
+    "species": "Holy",
+    "attribute": "Vaccine",
+    "hp": 69,
+    "mp": 70,
+    "atk": 45,
+    "def": 28,
+    "speed": 36,
+    "bitFarmingRate": 3,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 7
+      }
+    ]
+  },
+  {
     "seed": "28228629-5abc-4fdb-b94d-360783b2ff2c",
     "name": "Angewomon",
     "img": "/assets/digimons/Angewomon.webp",

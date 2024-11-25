@@ -207,7 +207,7 @@
     "def": 72,
     "speed": 50,
     "bitFarmingRate": 1,
-    "digiEvolutionSeedList": [],
+    "digiEvolutionSeedList": ["87a9e123-4f23-42b3-9d83-3c7e4382c3d5", "f3c12345-6b7d-4e89-9ef7-89c4672c34ab"],
     "degenerateSeedList": ["edc9812f-82a6-487f-9a4d-52b845643176"],
     "evolutionRequirements": [
       {
@@ -1303,7 +1303,7 @@
     "img": "/assets/digimons/Seadramon.webp",
     "rank": "Champion",
     "species": "Aquan",
-    "attribute": "Water",
+    "attribute": "Virus",
     "hp": 151,
     "mp": 172,
     "atk": 105,
@@ -1312,6 +1312,50 @@
     "bitFarmingRate": 8,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["xyz5678a-123b-cdef-456g-hijklmn7890"],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 30
+      }
+    ]
+  },
+  {
+    "seed": "f3c12345-6b7d-4e89-9ef7-89c4672c34ab",
+    "name": "Fugamon",
+    "img": "/assets/digimons/Fugamon.webp",
+    "rank": "Champion",
+    "species": "Beast",
+    "attribute": "Virus",
+    "hp": 168,
+    "mp": 193,
+    "atk": 115,
+    "def": 86,
+    "speed": 78,
+    "bitFarmingRate": 2,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": ["uvw1234a-567b-cdef-890g-hijklmn1234"],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 30
+      }
+    ]
+  },
+  {
+    "seed": "87a9e123-4f23-42b3-9d83-3c7e4382c3d5",
+    "name": "Ogremon",
+    "img": "/assets/digimons/Ogremon.webp",
+    "rank": "Champion",
+    "species": "Beast",
+    "attribute": "Virus",
+    "hp": 167,
+    "mp": 180,
+    "atk": 116,
+    "def": 95,
+    "speed": 70,
+    "bitFarmingRate": 2,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": ["uvw1234a-567b-cdef-890g-hijklmn1234"],
     "evolutionRequirements": [
       {
         "type": "level",

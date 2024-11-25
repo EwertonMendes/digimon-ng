@@ -9,6 +9,8 @@ export enum DigimonSeeds {
   BETAMON = 'xyz5678a-123b-cdef-456g-hijklmn7890',
   SEADRAMON = 'a03b8672-59d7-4f2e-9b5d-b0e2a3e7f9b8',
   GOBURIMON = 'uvw1234a-567b-cdef-890g-hijklmn1234',
+  OGREMON = '87a9e123-4f23-42b3-9d83-3c7e4382c3d5',
+  FUGAMON = 'f3c12345-6b7d-4e89-9ef7-89c4672c34ab',
   FALCOMON = 'xyz5678a-123b-cdef-456g-hijklmn5678',
   BOTAMON = 'b5ac222a-e653-4543-923e-77355dd24686',
   PITCHMON = 'e7f074b5-2979-4a45-b6a3-3b07f6965f7d',

@@ -185,7 +185,7 @@
     "def": 66,
     "speed": 53,
     "bitFarmingRate": 2,
-    "digiEvolutionSeedList": [],
+    "digiEvolutionSeedList": ["a03b8672-59d7-4f2e-9b5d-b0e2a3e7f9b8"],
     "degenerateSeedList": ["edc9812f-82a6-487f-9a4d-52b845643176"],
     "evolutionRequirements": [
       {
@@ -1294,6 +1294,28 @@
       {
         "type": "level",
         "value": 75
+      }
+    ]
+  },
+  {
+    "seed": "a03b8672-59d7-4f2e-9b5d-b0e2a3e7f9b8",
+    "name": "Seadramon",
+    "img": "/assets/digimons/Seadramon.webp",
+    "rank": "Champion",
+    "species": "Aquan",
+    "attribute": "Water",
+    "hp": 151,
+    "mp": 172,
+    "atk": 105,
+    "def": 94,
+    "speed": 73,
+    "bitFarmingRate": 8,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": ["xyz5678a-123b-cdef-456g-hijklmn7890"],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 30
       }
     ]
   }

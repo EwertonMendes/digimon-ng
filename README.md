@@ -41,7 +41,6 @@ DigiAngular follows a modular architecture, promoting separation of concerns and
 DigiAngular leverages several libraries and tools to enhance development and functionality:
 
 - **Angular**: The core framework for building the application.
-- **RxJS**: For reactive programming and managing asynchronous data streams.
 - **Angular Animations**: For creating smooth and responsive animations.
 - **Sigma**: For creating interactive and modular digi-evolution graphs
 - **SCSS**: For styling the application with a modular and maintainable approach.

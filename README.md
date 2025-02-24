@@ -24,6 +24,10 @@ DigiAngular is an Angular application that allows users to manage and view Digim
 ## Features
 
 - **Digimon Status Cards**: Display detailed information about each Digimon, including HP, MP, and other attributes.
+  
+  ![20250224_145637-ezgif com-optimize](https://github.com/user-attachments/assets/6b0ffa6a-8e14-4bf7-8e1e-42d7a9fea966)
+
+
 - **Moving Digimon Cards**: The player can drag and drop the digimon cards moving along between the allowed areas like, Upfront Team, Hospital, Training, and Bit farm areas.
 - **Attribute Change Animations**: Visual feedback for attribute changes, such as HP and MP, with smooth animations.
 - **Evolution Tree**: Displays the evolution tree of a specific digimon, showing its current evolution line and possible evolutions and degenerations.

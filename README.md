@@ -16,6 +16,11 @@ Welcome to DigiAngular! This project is an Angular application designed to manag
 
 DigiAngular is an Angular application that allows users to manage and view Digimon data. The application includes features such as displaying Digimon status cards, handling attribute changes with animations, and managing state effectively.
 
+![image](https://github.com/user-attachments/assets/d72b421c-07ca-4f31-b514-5ee88f57c17e)
+
+![image](https://github.com/user-attachments/assets/26ef1667-4125-4ecf-bb6f-b47c375bc537)
+
+
 ## Features
 
 - **Digimon Status Cards**: Display detailed information about each Digimon, including HP, MP, and other attributes.

@@ -7,12 +7,12 @@ import { PlayerData } from '../../core/interfaces/player-data.interface';
 })
 export class BattleService {
   rankMultiplier: Record<string, number> = {
-    Mega: 2.5,
-    Ultimate: 2.0,
+    Mega: 2.0,
+    Ultimate: 1.75,
     Champion: 1.5,
-    Rookie: 1.0,
-    'In-Training': 0.5,
-    Fresh: 0.1,
+    Rookie: 1.2,
+    'In-Training': 0.7,
+    Fresh: 0.4,
   };
 
   private maxLevel = 100;
@@ -43,13 +43,12 @@ export class BattleService {
   calculateExpGiven(defeatedDigimon: Digimon): number {
     const baseExp = 50;
     const rankMultiplier = this.rankMultiplier[defeatedDigimon.rank];
-    const levelMultiplier = Math.pow(defeatedDigimon.level, 2);
-
+    const levelMultiplier = Math.pow(defeatedDigimon.level, 1.5);
     return Math.floor(baseExp * rankMultiplier * levelMultiplier);
   }
 
   calculateRequiredExpForLevel(level: number, baseExp: number = 100): number {
-    return Math.floor(baseExp * (Math.pow(level, 2) + 5 * level));
+    return Math.floor(baseExp * (Math.pow(level, 1.75) + 3 * level));
   }
 
   calculateTotalGainedExp(playerData: PlayerData, defeatedDigimons: Digimon[]) {
@@ -68,34 +67,37 @@ export class BattleService {
   }
 
   improveDigimonStats(digimon: Digimon) {
-    const multiplier = this.rankMultiplier[digimon.rank];
-    const levelMultiplier = digimon.level * 0.2;
-    const rankMultiplier = multiplier;
+    const rankMultiplier = this.rankMultiplier[digimon.rank];
+    const levelMultiplier = digimon.level * 0.1;
+    const statCapByRank: Record<string, number> = {
+      Mega: 99999,
+      Ultimate: 80000,
+      Champion: 60000,
+      Rookie: 30000,
+      'In-Training': 15000,
+      Fresh: 5000,
+    };
 
-    const limitedStatIncrease = (baseStat: number, maxStat: number) => {
+    const cappedStatIncrease = (baseStat: number, maxStat: number) => {
       const increase = Math.floor(
-        baseStat * 0.03 + levelMultiplier + rankMultiplier
+        baseStat * 0.02 + levelMultiplier + rankMultiplier
       );
-      const newStat = Math.min(baseStat + Math.max(1, increase), maxStat);
+      const statCap = statCapByRank[digimon.rank];
+      const newStat = Math.min(
+        baseStat + Math.max(1, increase),
+        Math.min(maxStat, statCap)
+      );
       return newStat;
     };
 
-    const highCapStatIncrease = (baseStat: number, maxStat: number) => {
-      const increase = Math.floor(
-        baseStat * 0.05 + levelMultiplier + rankMultiplier
-      );
-      const newStat = Math.min(baseStat + Math.max(1, increase), maxStat);
-      return newStat;
-    };
+    digimon.atk = cappedStatIncrease(digimon.atk, this.maxOtherStats);
+    digimon.def = cappedStatIncrease(digimon.def, this.maxOtherStats);
+    digimon.speed = cappedStatIncrease(digimon.speed, this.maxOtherStats);
 
-    digimon.atk = limitedStatIncrease(digimon.atk, this.maxOtherStats);
-    digimon.def = limitedStatIncrease(digimon.def, this.maxOtherStats);
-    digimon.speed = limitedStatIncrease(digimon.speed, this.maxOtherStats);
-
-    digimon.maxHp = highCapStatIncrease(digimon.maxHp, this.maxHpMp);
+    digimon.maxHp = cappedStatIncrease(digimon.maxHp, this.maxHpMp);
     digimon.currentHp = digimon.maxHp;
 
-    digimon.maxMp = highCapStatIncrease(digimon.maxMp, this.maxHpMp);
+    digimon.maxMp = cappedStatIncrease(digimon.maxMp, this.maxHpMp);
     digimon.currentMp = digimon.maxMp;
   }
 
@@ -170,7 +172,7 @@ export class BattleService {
     level: number,
     baseExp: number = 300
   ): number {
-    return Math.floor(baseExp * (Math.pow(level, 2) + 4 * level));
+    return Math.floor(baseExp * (Math.pow(level, 1.7) + 3 * level));
   }
 
   levelUpDigimonToLevel(digimon: Digimon, level: number) {

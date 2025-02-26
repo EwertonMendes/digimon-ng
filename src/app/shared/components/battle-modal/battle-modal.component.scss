@@ -17,7 +17,10 @@
     overflow: auto;
     padding: 10px;
     border-radius: 15px;
-    background-color: rgba(orangered, 0.7);
+
+    &-colored-background {
+      background-color: rgba(orangered, 0.7);
+    }
 
     .turn-order-container {
       display: flex;

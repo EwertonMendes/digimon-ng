@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { ModalComponent } from '../modal/modal.component';
 import { GlobalStateDataSource } from '../../../state/global-state.datasource';
 import { DigiStatusCardComponent } from '../digi-status-card/digi-status-card.component';
@@ -21,6 +21,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './battle-modal.component.scss',
 })
 export class BattleModalComponent {
+  imageBackground = input<string | null>(null);
   battleModalId = 'battle-modal';
   showPlayerAttackButton = false;
 
@@ -67,9 +68,10 @@ export class BattleModalComponent {
       this.globalState.baseTurnOrder = this.globalState.baseTurnOrder.filter(
         (d) => d.id !== opponentDigimon.id
       );
-      this.globalState.actualTurnOrder = this.globalState.actualTurnOrder.filter(
-        (d) => d.id !== opponentDigimon.id
-      );
+      this.globalState.actualTurnOrder =
+        this.globalState.actualTurnOrder.filter(
+          (d) => d.id !== opponentDigimon.id
+        );
     }
 
     this.globalState.nextTurn();

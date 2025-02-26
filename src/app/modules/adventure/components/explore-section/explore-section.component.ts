@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { GlobalStateDataSource } from '../../../../state/global-state.datasource';
 import { BattleModalComponent } from '../../../../shared/components/battle-modal/battle-modal.component';
 import { ModalService } from '../../../../shared/components/modal/modal.service';
@@ -272,12 +272,14 @@ export class ExploreSectionComponent {
       levelRange: { min: 75, max: 100 },
     },
   ];
+  currentLocation = signal<Location | null>(null)
 
   baseTurnOrder: Digimon[] = [];
   actualTurnOrder: Digimon[] = [];
   showPlayerAttackButton = false;
 
   exploreLocation(location: Location) {
+    this.currentLocation.set(location);
     this.audioService.playAudio(AudioEffects.CLICK);
     this.log(`Exploring location ${location.name}`);
 

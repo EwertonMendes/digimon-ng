@@ -59,8 +59,10 @@ export class HomeSectionComponent {
   canHealAll = signal(false)
 
   healAll() {
+    if (!this.canHealAll()) return;
     this.audioService.playAudio(AudioEffects.CLICK);
     this.hospitalService.fullHealHospitalDigimons(this.globalState.playerDataAcessor);
+    this.globalState.playerDataAcessor.bits -= this.fullHealPrice;
   }
 
   removeDigimonFromLocation(

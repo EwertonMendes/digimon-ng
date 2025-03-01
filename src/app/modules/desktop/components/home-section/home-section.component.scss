@@ -41,10 +41,21 @@
 
     .hospital-area-header {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      flex-direction: row;
+      justify-content: space-between;
       gap: 10px;
+      padding: 0 10px 0 10px;
+
+      &-column {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        h4, span {
+          text-align: end;
+        }
+
+      }
     }
 
     .hospital-digimon-list {

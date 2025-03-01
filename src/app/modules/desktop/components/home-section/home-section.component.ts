@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, effect, inject, signal } from '@angular/core';
 import { DigiStatusCardComponent } from '../../../../shared/components/digi-status-card/digi-status-card.component';
 import { GlobalStateDataSource } from '../../../../state/global-state.datasource';
 import { Digimon } from '../../../../core/interfaces/digimon.interface';
@@ -12,17 +12,20 @@ import { DigimonListLocation } from '../../../../core/enums/digimon-list-locatio
 import { PlayerData } from '../../../../core/interfaces/player-data.interface';
 import { AudioService } from '../../../../services/audio.service';
 import { AudioEffects } from '../../../../core/enums/audio-tracks.enum';
+import { ButtonComponent } from '../../../../shared/components/button/button.component';
+import { HospitalService } from '../../../../state/services/hospital.service';
 
 @Component({
   selector: 'app-home-section',
   standalone: true,
-  imports: [DigiStatusCardComponent, DragDropModule],
+  imports: [DigiStatusCardComponent, ButtonComponent, DragDropModule],
   templateUrl: './home-section.component.html',
   styleUrl: './home-section.component.scss',
 })
 export class HomeSectionComponent {
   digimonDetailsModalId = 'digimon-details-modal';
   globalState = inject(GlobalStateDataSource);
+  hospitalService = inject(HospitalService);
   modalService = inject(ModalService);
   audioService = inject(AudioService);
 
@@ -30,6 +33,7 @@ export class HomeSectionComponent {
   inTrainingListId = 'in-training-digimon-list';
   bitFarmingListId = 'bit-farming-digimon-list';
   hospitalListId = 'hospital-digimon-list';
+  fullHealPrice = 150;
 
   listLocations: Record<string, string> = {
     'in-training-digimon-list': DigimonListLocation.IN_TRAINING,
@@ -37,6 +41,27 @@ export class HomeSectionComponent {
     'team-list': DigimonListLocation.TEAM,
     'hospital-digimon-list': DigimonListLocation.HOSPITAL,
   };
+
+  constructor() {
+    effect(() => {
+      this.canHealAll.set(
+        this.globalState.playerDataAcessor.hospitalDigimonList.length > 0 &&
+        this.globalState.playerDataAcessor.hospitalDigimonList.some(
+          (digimon) => digimon.currentHp < digimon.maxHp
+        ) &&
+        this.globalState.playerDataAcessor.bits >= this.fullHealPrice
+      )
+    }, {
+      allowSignalWrites: true
+    });
+  }
+
+  canHealAll = signal(false)
+
+  healAll() {
+    this.audioService.playAudio(AudioEffects.CLICK);
+    this.hospitalService.fullHealHospitalDigimons(this.globalState.playerDataAcessor);
+  }
 
   removeDigimonFromLocation(
     event: MouseEvent,

@@ -23,6 +23,15 @@ export class HospitalService {
     return playerData;
   }
 
+  fullHealHospitalDigimons(playerData: PlayerData) {
+    playerData.hospitalDigimonList.forEach((digimon: Digimon) => {
+      digimon.currentHp = digimon.maxHp;
+      digimon.currentMp = digimon.maxMp;
+    });
+
+    return playerData;
+  }
+
   addDigimonToHospital(
     playerData: PlayerData,
     currentHospitalLimit: number,

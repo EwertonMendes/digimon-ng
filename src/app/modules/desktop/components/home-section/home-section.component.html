@@ -34,13 +34,6 @@
   <div class="hospital-area-container">
     <div class="hospital-area-header">
       <div class="hospital-area-header-column">
-        <app-button
-          [text]="'Heal All for ' + fullHealPrice + ' Bits'"
-          [disabled]="!canHealAll()"
-          (click)="healAll()"
-        />
-      </div>
-      <div class="hospital-area-header-column">
         <h4 class="hospital-area-title">
           Hospital:
           {{ globalState.playerDataAcessor.hospitalDigimonList.length }}/{{
@@ -50,6 +43,13 @@
         <span class="countdown">
           Next healing in {{ globalState.hospitalHealingCountdown() }}
         </span>
+      </div>
+      <div class="hospital-area-header-column">
+        <app-button
+          [text]="'Heal All for ' + fullHealPrice + ' Bits'"
+          [disabled]="!canHealAll()"
+          (click)="healAll()"
+        />
       </div>
     </div>
     <div

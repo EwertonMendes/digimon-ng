@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 .app-button {
   display: flex;
   justify-content: center;
@@ -81,4 +83,9 @@
       background-color: #292929;
     }
   }
+}
+
+.disabled {
+  cursor: not-allowed;
+  filter: brightness(70%);
 }

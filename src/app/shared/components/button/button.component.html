@@ -1,12 +1,13 @@
-<button class="app-button" [disabled]="disabled()" [ngClass]="color()">
+<button
+  class="app-button"
+  [disabled]="disabled()"
+  [ngClass]="[color(), disabled() ? 'disabled' : '']"
+>
   @if(icon()) {
   <div class="button-container" [ngClass]="iconPosition()">
     <i [class]="'ph-' + weight()" [ngClass]="icon()"></i>
     @if(text()) {
-    <span
-      class="button-text"
-      >{{ text() }}</span
-    >
+    <span class="button-text">{{ text() }}</span>
     }
   </div>
   } @else {

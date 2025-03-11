@@ -6,19 +6,41 @@
   align-items: center;
   gap: 15px;
 
-  &-sub-title {
+  .battle-team-area-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: rgba(black, 0.8);
+    border-radius: 10px;
+    width: 100%;
+    padding: 10px;
+    height: 305px;
+    width: -webkit-fill-available;
+  }
+
+  .battle-team-area-sub-title-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .battle-team-area-sub-title {
     margin: 10px;
+  }
+
+  &-battle-team-container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: -webkit-fill-available;
   }
 
   .my-digimon-list {
     display: flex;
     overflow: auto;
     gap: 10px;
-    background-color: rgba(black, 0.8);
-    border-radius: 10px;
-    width: 100%;
     padding: 10px;
-    height: 235px;
+    height: 100%;
 
     .my-digimon-list-no-data-container {
       display: flex;
@@ -58,6 +80,7 @@
       overflow: auto;
       gap: 10px;
       padding: 10px;
+      height: 100%;
 
       .hospital-digimon-list-no-data-container {
         display: flex;

@@ -1,36 +1,43 @@
 <div class="home-section">
-  <h4 class="home-section-sub-title">
-    Upfront Team: {{ globalState.playerDataAcessor.digimonList.length }}/
-    {{ this.globalState.listsLimits.team }}
-  </h4>
-  <div
-    [id]="teamListId"
-    class="my-digimon-list"
-    #teamList="cdkDropList"
-    cdkDropList
-    cdkDropListOrientation="horizontal"
-    [cdkDropListData]="globalState.playerDataAcessor"
-    [cdkDropListConnectedTo]="[
-      hospitalListId,
-      inTrainingListId,
-      bitFarmingListId
-    ]"
-    (cdkDropListDropped)="drop($event)"
-  >
-    @for(digimon of globalState.playerDataAcessor.digimonList; track
-    digimon.id){
-    <app-digi-status-card
-      cdkDrag
-      [digimon]="digimon"
-      (click)="openDigimonDetailsModal(digimon)"
-      (contextmenu)="removeDigimonFromLocation($event, digimon, 'team')"
-    />
-    } @empty {
-    <div class="my-digimon-list-no-data-container">
-      <h4>No digimon</h4>
+  <div class="battle-team-area-container">
+    <div class="battle-team-area-sub-title-container">
+      <h4 class="battle-team-area-sub-title">
+        Battle Team: {{ globalState.playerDataAcessor.digimonList.length }}/
+        {{ this.globalState.listsLimits.team }}
+      </h4>
     </div>
-    }
+    <div
+      [id]="teamListId"
+      class="my-digimon-list"
+      #teamList="cdkDropList"
+      cdkDropList
+      cdkDropListOrientation="horizontal"
+      [cdkDropListData]="globalState.playerDataAcessor"
+      [cdkDropListConnectedTo]="[
+        hospitalListId,
+        inTrainingListId,
+        bitFarmingListId
+      ]"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <div class="home-section-battle-team-container">
+        @for(digimon of globalState.playerDataAcessor.digimonList; track
+        digimon.id){
+        <app-digi-status-card
+          cdkDrag
+          [digimon]="digimon"
+          (click)="openDigimonDetailsModal(digimon)"
+          (contextmenu)="removeDigimonFromLocation($event, digimon, 'team')"
+        />
+        } @empty {
+        <div class="my-digimon-list-no-data-container">
+          <h4>No digimon</h4>
+        </div>
+        }
+      </div>
+    </div>
   </div>
+
   <div class="hospital-area-container">
     <div class="hospital-area-header">
       <div class="hospital-area-header-column">

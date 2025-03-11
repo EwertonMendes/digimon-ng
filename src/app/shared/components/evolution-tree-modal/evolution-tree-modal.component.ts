@@ -36,6 +36,7 @@ export class EvolutionTreeModalComponent {
   canEvolve = signal<boolean>(false);
   selectedDigimon = signal<BaseDigimon | undefined>(undefined);
   selectedPossibleEvolutionStats = signal<any | undefined>(undefined);
+  isEvolving = signal<boolean>(false);
 
   digimonService = inject(DigimonService);
   graphService = inject(GraphService);
@@ -256,7 +257,7 @@ export class EvolutionTreeModalComponent {
             (evolution) => evolution.seed === nodeAttributes['seed']
           ) &&
           this.digimonService.getRankOrder(nodeAttributes['rank']) >
-            this.digimonService.getRankOrder(this.currentRank)
+          this.digimonService.getRankOrder(this.currentRank)
         );
       });
 
@@ -281,6 +282,8 @@ export class EvolutionTreeModalComponent {
   async evolveDigimon() {
     if (!this.mainDigimon() || !this.selectedDigimon()) return;
 
+    this.isEvolving.set(true)
+
     await this.globalState.evolveDigimon(
       this.mainDigimon()!,
       this.selectedDigimon()?.seed!
@@ -289,6 +292,7 @@ export class EvolutionTreeModalComponent {
     this.onClose();
     this.onOpen();
     this.modalService.close('evolution-confirmation-modal');
+    this.isEvolving.set(false)
   }
 
   showEvolutionConfirmationModal() {

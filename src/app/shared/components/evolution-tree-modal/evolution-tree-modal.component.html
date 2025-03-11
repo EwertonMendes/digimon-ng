@@ -147,9 +147,14 @@
       <div class="evolution-confirmation-content-actions">
         <app-button
           text="No"
+          [disabled]="isEvolving()"
           (click)="this.modalService.close('evolution-confirmation-modal')"
         />
-        <app-button text="Yes" (click)="evolveDigimon()" />
+        <app-button
+          text="Yes"
+          (click)="evolveDigimon()"
+          [disabled]="isEvolving()"
+        />
       </div>
     </div>
   </div>

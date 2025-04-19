@@ -1,8 +1,12 @@
+@if(!globalState.showInitialSetupScreen()) {
 <main class="main">
   <div class="content">
     <app-action-bar />
     <router-outlet />
   </div>
 </main>
+} @else {
+<app-initial-setup></app-initial-setup>
+}
 
 <app-toast></app-toast>

@@ -1,20 +1,19 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { DesktopComponent } from './modules/desktop/desktop.component';
 import { GlobalStateDataSource } from './state/global-state.datasource';
-import { ButtonComponent } from './shared/components/button/button.component';
 import { ActionBarComponent } from './common/action-bar/action-bar.component';
 import { ToastComponent } from './shared/components/toast/toast.component';
+import { InitialSetupComponent } from './modules/initial-setup/initial-setup.component';
+import { PlayerDataService } from './services/player-data.service';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     RouterOutlet,
-    DesktopComponent,
     ActionBarComponent,
-    ButtonComponent,
     ToastComponent,
+    InitialSetupComponent
   ],
   providers: [GlobalStateDataSource],
   templateUrl: './app.component.html',
@@ -24,8 +23,14 @@ export class AppComponent implements OnInit {
   title = 'digi-angular';
 
   globalState = inject(GlobalStateDataSource);
+  playerDataService = inject(PlayerDataService);
 
   async ngOnInit() {
-    await this.globalState.connect();
+    const playerData = await this.playerDataService.loadPlayerData();
+    if (!playerData) {
+      this.globalState.showInitialSetupScreen.set(true);
+      return;
+    }
+    this.globalState.initializeGame(playerData);
   }
 }

@@ -1,13 +1,14 @@
+main {
+  font-family: 'Roboto', sans-serif;
+  height: -webkit-fill-available;
+}
+
 .content {
   display: flex;
   flex-direction: row;
-  height: 100vh;
+  height: -webkit-fill-available;
 
   app-action-bar {
     z-index: 999;
   }
-}
-
-main {
-  font-family: 'Roboto', sans-serif;
 }

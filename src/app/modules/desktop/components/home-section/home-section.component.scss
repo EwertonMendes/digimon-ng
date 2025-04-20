@@ -1,8 +1,8 @@
 .home-section {
   display: flex;
   flex-direction: column;
-  height: max-content;
   width: -webkit-fill-available;
+  height: -webkit-fill-available;
   align-items: center;
   gap: 15px;
 
@@ -16,6 +16,7 @@
     padding: 10px;
     height: 315px;
     width: -webkit-fill-available;
+    height: -webkit-fill-available;
   }
 
   .battle-team-area-sub-title-container {
@@ -33,6 +34,7 @@
     flex-direction: row;
     gap: 10px;
     width: -webkit-fill-available;
+    height: -webkit-fill-available;
   }
 
   .my-digimon-list {
@@ -59,7 +61,7 @@
     border-radius: 10px;
     width: 100%;
     padding: 10px;
-    height: 316px;
+    height: -webkit-fill-available;
 
     .hospital-area-header {
       display: flex;

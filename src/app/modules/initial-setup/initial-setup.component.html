@@ -1,3 +1,45 @@
-<p>initial-setup works!</p>
-
-<app-button text="Confirm" (click)="confirmInitialSetup()"></app-button>
+<div class="initial-setup">
+  <div class="initial-setup__title">
+    <h1>Welcome to Digi-Angular!</h1>
+    <p>Let's get started by setting up your Tamer name and initial team.</p>
+  </div>
+  <div class="initial-setup__content">
+    <div class="initial-setup__form-group">
+      <label for="tamerName">Tamer Name:</label>
+      <input
+        id="tamerName"
+        type="text"
+        [(ngModel)]="tamerName"
+        placeholder="Enter your Tamer name"
+      />
+    </div>
+    <div class="initial-setup__form-group">
+      <span for="teamName">Select Your Team:</span>
+      <div class="initial-setup__team-list">
+        @for (team of teams; track $index) {
+        <div class="initial-setup__team" (click)="selectTeam(team.members)">
+          <div class="initial-setup__team-header">
+            <div class="initial-setup__team-header-name">
+              <span>{{ team.name }}</span>
+            </div>
+          </div>
+          <div class="initial-setup__team-members">
+            @for (digimon of team.members; track $index) {
+            <div class="initial-setup__team-container">
+              <div class="initial-setup__digimon">
+                <img [src]="digimon.img" class="image" />
+                <span>{{ digimon.name }}</span>
+                <span>{{ digimon.rank }}</span>
+              </div>
+            </div>
+            }
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+  <div class="initial-setup__footer">
+    <app-button text="Confirm" [disabled]="!tamerName() || tamerName().length < 3 || !selectedTeam().length" (click)="confirmInitialSetup()"></app-button>
+  </div>
+</div>

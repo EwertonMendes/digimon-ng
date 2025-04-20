@@ -1,0 +1,137 @@
+:host {
+  display: flex;
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+  background: #0c0c0c;
+  color: #fff;
+  overflow: hidden;
+}
+
+.initial-setup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem;
+  width: 100%;
+  max-width: fit-content;
+  margin: 0 auto;
+
+  &__title {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  &__form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    label,
+    span {
+      font-size: 1rem;
+      font-weight: bold;
+      width: max-content;
+    }
+
+    #tamerName {
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+      width: 100%;
+      background: #1a1a1a;
+      color: #fff;
+    }
+  }
+
+  &__team-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  &__team {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1 1 calc(33.33% - 1rem);
+    max-width: calc(33.33% - 1rem);
+    border: 10px solid #960002;
+    border-radius: 10px;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background: #960002;
+    }
+
+    &-header {
+      display: flex;
+      flex-direction: row;
+      gap: 0.5rem;
+      width: 100%;
+      align-items: center;
+
+      &-name {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+        align-items: center;
+
+        span {
+          font-size: 1.5rem;
+          font-weight: bold;
+        }
+      }
+    }
+
+    &-members {
+      display: flex;
+      flex-direction: row;
+      gap: 0.5rem;
+    }
+
+    &-container {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+    }
+  }
+
+  &__digimon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    img {
+      width: 50px;
+      height: 50px;
+      object-fit: scale-down;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    width: -webkit-fill-available;
+
+    app-button {
+      width: 40%;
+    }
+  }
+}

@@ -1,11 +1,11 @@
 :host {
-  width: 100%;
+  width: -webkit-fill-available;
 }
 
 .adventure {
   display: flex;
   flex-wrap: wrap;
-  height: 100vh;
+  height: -webkit-fill-available;
 
   >div {
     display: flex;

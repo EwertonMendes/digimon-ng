@@ -288,6 +288,10 @@ export class GlobalStateDataSource {
     this.showInitialSetupScreen.set(false);
   }
 
+  async saveCurrentPlayerData() {
+    await this.playerDataService.savePlayerData(this.playerData());
+  }
+
   initDigimonTraining() {
     this.initIntervalCountdown('digimonTraining');
   }

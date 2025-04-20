@@ -7,6 +7,8 @@ import { AudioEffects } from '../../core/enums/audio-tracks.enum';
 import { StorageModalComponent } from '../../shared/components/storage-modal/storage-modal.component';
 import { PlayerInfoModalComponent } from '../../shared/components/player-info-modal/player-info-modal.component';
 import { DebugModalComponent } from './debug-modal/debug-modal.component';
+import { GlobalStateDataSource } from '../../state/global-state.datasource';
+import { ToastService } from '../../shared/components/toast/toast.service';
 
 @Component({
   selector: 'app-action-bar',
@@ -27,6 +29,8 @@ export class ActionBarComponent {
   modalService = inject(ModalService);
   audioService = inject(AudioService);
   router = inject(Router);
+  globalState = inject(GlobalStateDataSource);
+  toastService = inject(ToastService);
 
   openDigimonStorageModal() {
     this.audioService.playAudio(AudioEffects.CLICK);
@@ -46,5 +50,16 @@ export class ActionBarComponent {
   navigateTo(url: string) {
     this.audioService.playAudio(AudioEffects.CLICK);
     this.router.navigate([url]);
+  }
+
+  async saveGame() {
+    this.audioService.playAudio(AudioEffects.CLICK);
+    try {
+      await this.globalState.saveCurrentPlayerData();
+      this.toastService.showToast('Game saved successfully!', 'success');
+
+    } catch (err) {
+      this.toastService.showToast('Error saving game', 'error');
+    }
   }
 }

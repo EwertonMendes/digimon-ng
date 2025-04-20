@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { DesktopComponent } from './modules/desktop/desktop.component';
 import { AdventureComponent } from './modules/adventure/adventure.component';
+import { LabComponent } from './modules/lab/lab.component';
 
 export const routes: Routes = [
   {
@@ -15,6 +16,10 @@ export const routes: Routes = [
   {
     path: 'adventure',
     component: AdventureComponent,
+  },
+  {
+    path: 'lab',
+    component: LabComponent,
   },
   { path: '**', redirectTo: 'desktop' },
 ];

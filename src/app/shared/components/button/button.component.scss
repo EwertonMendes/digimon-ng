@@ -72,6 +72,16 @@
     }
   }
 
+  &.success {
+    background-color: #23CE6B;
+    color: #000;
+    padding: 10px;
+
+    &:hover {
+      background-color: #20b45e;
+    }
+  }
+
   &.info {
     background-color: #080F0F;
     color: #fff;

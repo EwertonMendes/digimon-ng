@@ -39,6 +39,7 @@ export class GlobalStateDataSource {
     digimonStorageList: [],
     digimonStorageCapacity: 0,
     bits: 0,
+    digiData: {},
   });
 
   showInitialSetupScreen = signal<boolean>(false);
@@ -279,13 +280,18 @@ export class GlobalStateDataSource {
       digimonStorageCapacity: 10,
       digimonTrainingCapacity: 10,
       bits: 0,
+      digiData: {
+        [selectedDigimons[0].seed!]: 10,
+        [selectedDigimons[1].seed!]: 10,
+        [selectedDigimons[2].seed!]: 10,
+      },
     };
 
     this.playerDataService.savePlayerData(newPlayerData);
 
     this.initializeGame(newPlayerData);
 
-    this.showInitialSetupScreen.set(false);
+    this.showInitialSetupScreen.set(false);;
   }
 
   async saveCurrentPlayerData() {
@@ -453,10 +459,13 @@ export class GlobalStateDataSource {
 
     if (endState === 'victory') {
       this.audioService.playAudio(AudioTracks.VICTORY);
-      const { totalExp, totalBits } = this.calculateRewards(this.enemyTeam());
+      const { totalExp, totalBits, digiDataGains } = this.calculateRewards(this.enemyTeam());
       this.log('Victory! Opponent Digimons were defeated.');
       this.log(`You gained ${totalExp} exp.`);
       this.log(`You gained ${totalBits} bits.`);
+      for(const gain of digiDataGains) {
+        this.log(`You gained ${gain.amount} ${gain.name} Digi Data.`);
+      }
       this.toastService.showToast(
         'Victory! Opponent Digimons were defeated.',
         'success'
@@ -687,23 +696,29 @@ export class GlobalStateDataSource {
   // }
 
   calculateRewards(defeatedDigimons: Digimon[]) {
-    // Calculate total experience
     const { playerData, totalExp } = this.battleService.calculateTotalGainedExp(
       this.playerData(),
       defeatedDigimons
     );
 
-    // Calculate total bits
     const totalBits = this.battleService.calculateTotalGainedBits(defeatedDigimons);
 
-    // Update player data with new experience and bits
+    const digiDataGains = this.battleService.calculateGainedDigiData(defeatedDigimons);
+
+    const updatedDigiData = { ...(playerData.digiData || {}) };
+
+    for (const gain of digiDataGains) {
+      const { seed, amount } = gain;
+      updatedDigiData[seed] = Math.min((updatedDigiData[seed] || 0) + amount, 999);
+    }
+
     this.updatePlayerData({
       ...playerData,
       bits: (playerData.bits || 0) + totalBits,
+      digidata: updatedDigiData
     });
 
-    // Return both total experience and bits
-    return { totalExp, totalBits };
+    return { totalExp, totalBits, digiDataGains };
   }
 
   getDigimonNeededExpForNextLevel() {

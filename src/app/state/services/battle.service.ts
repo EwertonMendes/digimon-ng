@@ -211,4 +211,29 @@ export class BattleService {
 
     return digimon;
   }
+
+  calculateGainedDigiData(defeatedDigimons: Digimon[]): { seed: string; name: string; amount: number }[] {
+    const digiDataGainPerRank: Record<string, number> = {
+      "In-Training": 25,
+      "Rookie": 15,
+      "Champion": 10,
+      "Ultimate": 5,
+      "Mega": 2
+    };
+
+    const gainMap: Record<string, { seed: string; name: string; amount: number }> = {};
+
+    for (const digimon of defeatedDigimons) {
+      const { seed, name, rank } = digimon;
+      const gain = digiDataGainPerRank[rank] || 1;
+
+      if (!gainMap[seed]) {
+        gainMap[seed] = { seed, name, amount: 0 };
+      }
+
+      gainMap[seed].amount += gain;
+    }
+
+    return Object.values(gainMap);
+  }
 }

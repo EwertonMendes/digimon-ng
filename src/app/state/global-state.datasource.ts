@@ -684,17 +684,6 @@ export class GlobalStateDataSource {
     });
   }
 
-  // calculateTotalGainedExp(defeatedDigimons: Digimon[]) {
-  //   const { playerData, totalExp } = this.battleService.calculateTotalGainedExp(
-  //     this.playerData(),
-  //     defeatedDigimons
-  //   );
-
-  //   this.updatePlayerData(playerData);
-
-  //   return totalExp;
-  // }
-
   calculateRewards(defeatedDigimons: Digimon[]) {
     const { playerData, totalExp } = this.battleService.calculateTotalGainedExp(
       this.playerData(),
@@ -715,7 +704,7 @@ export class GlobalStateDataSource {
     this.updatePlayerData({
       ...playerData,
       bits: (playerData.bits || 0) + totalBits,
-      digidata: updatedDigiData
+      digiData: updatedDigiData
     });
 
     return { totalExp, totalBits, digiDataGains };

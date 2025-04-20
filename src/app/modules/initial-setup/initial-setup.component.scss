@@ -2,7 +2,7 @@
   display: flex;
   width: -webkit-fill-available;
   height: -webkit-fill-available;
-  background: #0c0c0c;
+  background: #07070A;
   color: #fff;
   overflow: hidden;
 }
@@ -108,6 +108,13 @@
       flex-direction: row;
       width: 100%;
     }
+  }
+
+  .selected {
+    border-color: #5FAD56;
+    background-color: rgba(0, 255, 0, 0.1);
+    transform: scale(1.05);
+    transition: all 0.2s ease-in-out;
   }
 
   &__digimon {

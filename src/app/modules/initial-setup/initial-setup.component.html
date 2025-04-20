@@ -17,7 +17,11 @@
       <span for="teamName">Select Your Team:</span>
       <div class="initial-setup__team-list">
         @for (team of teams; track $index) {
-        <div class="initial-setup__team" (click)="selectTeam(team.members)">
+        <div
+          class="initial-setup__team"
+          [ngClass]="{ selected: selectedTeam() === team.members}"
+          (click)="selectTeam(team.members)"
+        >
           <div class="initial-setup__team-header">
             <div class="initial-setup__team-header-name">
               <span>{{ team.name }}</span>
@@ -40,6 +44,12 @@
     </div>
   </div>
   <div class="initial-setup__footer">
-    <app-button text="Confirm" [disabled]="!tamerName() || tamerName().length < 3 || !selectedTeam().length" (click)="confirmInitialSetup()"></app-button>
+    <app-button
+      text="Confirm"
+      [disabled]="
+        !tamerName() || tamerName().length < 3 || !selectedTeam().length
+      "
+      (click)="confirmInitialSetup()"
+    ></app-button>
   </div>
 </div>

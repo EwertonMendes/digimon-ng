@@ -3,11 +3,12 @@ import { GlobalStateDataSource } from '../../state/global-state.datasource';
 import { ButtonComponent } from '../../shared/components/button/button.component';
 import { FormsModule } from '@angular/forms';
 import { BaseDigimon, Digimon } from '../../core/interfaces/digimon.interface';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-initial-setup',
   standalone: true,
-  imports: [FormsModule, ButtonComponent],
+  imports: [CommonModule,FormsModule, ButtonComponent],
   templateUrl: './initial-setup.component.html',
   styleUrl: './initial-setup.component.scss'
 })

@@ -66,6 +66,29 @@ export class BattleService {
     };
   }
 
+  calculateTotalGainedBits(defeatedDigimons: Digimon[]): number {
+    return defeatedDigimons.reduce(
+      (acc, digimon) => acc + this.calculateBitsGiven(digimon),
+      0
+    );
+  }
+
+  private calculateBitsGiven(defeatedDigimon: Digimon): number {
+
+    const rankBitsMultiplier: Record<string, { baseBits: number; multiplier: number }> = {
+      Mega: { baseBits: 500, multiplier: 5 },
+      Ultimate: { baseBits: 400, multiplier: 4 },
+      Champion: { baseBits: 200, multiplier: 2 },
+      Rookie: { baseBits: 75, multiplier: 1 },
+      'In-Training': { baseBits: 50, multiplier: 1 },
+      Fresh: { baseBits: 15, multiplier: 1 },
+    };
+    const rankData = rankBitsMultiplier[defeatedDigimon.rank];
+    const baseBits = rankData.baseBits;
+    const multiplier = rankData.multiplier;
+    return Math.floor(baseBits * multiplier);
+  }
+
   improveDigimonStats(digimon: Digimon) {
     const rankMultiplier = this.rankMultiplier[digimon.rank];
     const levelMultiplier = digimon.level * 0.1;

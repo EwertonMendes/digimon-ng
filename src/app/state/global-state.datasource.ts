@@ -449,9 +449,10 @@ export class GlobalStateDataSource {
 
     if (endState === 'victory') {
       this.audioService.playAudio(AudioTracks.VICTORY);
-      const expAmount = this.calculateTotalGainedExp(this.enemyTeam());
+      const { totalExp, totalBits } = this.calculateRewards(this.enemyTeam());
       this.log('Victory! Opponent Digimons were defeated.');
-      this.log(`You gained ${expAmount} exp.`);
+      this.log(`You gained ${totalExp} exp.`);
+      this.log(`You gained ${totalBits} bits.`);
       this.toastService.showToast(
         'Victory! Opponent Digimons were defeated.',
         'success'
@@ -670,15 +671,35 @@ export class GlobalStateDataSource {
     });
   }
 
-  calculateTotalGainedExp(defeatedDigimons: Digimon[]) {
+  // calculateTotalGainedExp(defeatedDigimons: Digimon[]) {
+  //   const { playerData, totalExp } = this.battleService.calculateTotalGainedExp(
+  //     this.playerData(),
+  //     defeatedDigimons
+  //   );
+
+  //   this.updatePlayerData(playerData);
+
+  //   return totalExp;
+  // }
+
+  calculateRewards(defeatedDigimons: Digimon[]) {
+    // Calculate total experience
     const { playerData, totalExp } = this.battleService.calculateTotalGainedExp(
       this.playerData(),
       defeatedDigimons
     );
 
-    this.updatePlayerData(playerData);
+    // Calculate total bits
+    const totalBits = this.battleService.calculateTotalGainedBits(defeatedDigimons);
 
-    return totalExp;
+    // Update player data with new experience and bits
+    this.updatePlayerData({
+      ...playerData,
+      bits: (playerData.bits || 0) + totalBits,
+    });
+
+    // Return both total experience and bits
+    return { totalExp, totalBits };
   }
 
   getDigimonNeededExpForNextLevel() {

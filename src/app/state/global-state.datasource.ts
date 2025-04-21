@@ -853,7 +853,8 @@ export class GlobalStateDataSource {
 
   getBitCost(rank: string): number {
     const costMap: Record<string, number> = {
-      "In-Training": 100,
+      "Fresh": 100,
+      "In-Training": 200,
       "Rookie": 500,
       "Champion": 1500,
       "Ultimate": 5000,

@@ -9,6 +9,9 @@
             <img [src]="location.img" alt="location-image" />
           </div>
           <h5>{{ location.name }}</h5>
+          <div class="location-list-item-level-range">
+            <span>Level: {{ location.levelRange.min }} - {{ location.levelRange.max }}</span>
+          </div>
         </div>
         }
       </div>

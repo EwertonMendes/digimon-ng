@@ -1578,12 +1578,78 @@
     "def": 94,
     "speed": 73,
     "bitFarmingRate": 8,
-    "digiEvolutionSeedList": [],
+    "digiEvolutionSeedList": ["a2fd5cd4-16dc-4422-8e94-7129b75478ce"],
     "degenerateSeedList": ["xyz5678a-123b-cdef-456g-hijklmn7890"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
+      }
+    ]
+  },
+  {
+    "seed": "a2fd5cd4-16dc-4422-8e94-7129b75478ce",
+    "name": "MegaSeadramon",
+    "img": "/assets/digimons/MegaSeadramon.webp",
+    "rank": "Ultimate",
+    "species": "Aquan",
+    "attribute": "Data",
+    "hp": 225,
+    "mp": 235,
+    "atk": 129,
+    "def": 105,
+    "speed": 104,
+    "bitFarmingRate": 2,
+    "digiEvolutionSeedList": ["ec5a734e-fb3d-4aeb-9f6d-487d5db59ed9", "2a9a5124-3a0a-4d1f-92cb-f1b7b99cf4e0"],
+    "degenerateSeedList": ["a03b8672-59d7-4f2e-9b5d-b0e2a3e7f9b8"],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 45
+      }
+    ]
+  },
+  {
+    "seed": "ec5a734e-fb3d-4aeb-9f6d-487d5db59ed9",
+    "name": "MetalSeadramon",
+    "img": "/assets/digimons/MetalSeadramon.webp",
+    "rank": "Mega",
+    "species": "Aquan",
+    "attribute": "Data",
+    "hp": 317,
+    "mp": 337,
+    "atk": 161,
+    "def": 141,
+    "speed": 120,
+    "bitFarmingRate": 1,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": ["a2fd5cd4-16dc-4422-8e94-7129b75478ce"],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 60
+      }
+    ]
+  },
+  {
+    "seed": "2a9a5124-3a0a-4d1f-92cb-f1b7b99cf4e0",
+    "name": "GigaSeadramon",
+    "img": "/assets/digimons/GigaSeadramon.webp",
+    "rank": "Mega",
+    "species": "Aquan",
+    "attribute": "Virus",
+    "hp": 340,
+    "mp": 355,
+    "atk": 188,
+    "def": 170,
+    "speed": 120,
+    "bitFarmingRate": 1,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": ["a2fd5cd4-16dc-4422-8e94-7129b75478ce"],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 60
       }
     ]
   },

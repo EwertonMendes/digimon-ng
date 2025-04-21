@@ -648,6 +648,10 @@ export class GlobalStateDataSource {
     );
   }
 
+  getBaseDigimonDataBySeed(seed: string) {
+    return this.digimonService.getBaseDigimonDataBySeed(seed);
+  }
+
   generateDigimonBySeed(seed: string, level = 1, withEvolutionRoute = false) {
     let digimon = this.digimonService.generateDigimonBySeed(seed);
     if (!digimon) throw Error('Digimon not found');

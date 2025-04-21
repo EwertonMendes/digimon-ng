@@ -10,13 +10,23 @@
           <img [src]="digimon.img" [alt]="digimon.name" />
         </div>
         <div class="lab__content-card-body-text">
-          <span class="lab__content-card-body-text-name">{{ digimon.name }}</span>
-          <span class="lab__content-card-body-text-rank">Rank: {{ digimon.rank }}</span>
+          <span class="lab__content-card-body-text-name">{{
+            digimon.name
+          }}</span>
+          <span class="lab__content-card-body-text-rank"
+            >Rank: {{ digimon.rank }}</span
+          >
           <div class="lab__content-card-body-text-convert-bar">
-            <span> {{digimon.amount}}%</span>
+            <span> {{ digimon.amount }}%</span>
             <div class="lab__content-card-body-text-convert-bar-progress"></div>
           </div>
-          <app-button text="CONVERT" weight="bold" color="info" [disabled]="digimon.amount < 100" />
+          <app-button
+            text="CONVERT"
+            weight="bold"
+            color="info"
+            [disabled]="digimon.amount < 100"
+            (click)="convertDigiData(digimon)"
+          />
         </div>
       </div>
     </div>

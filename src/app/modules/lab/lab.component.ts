@@ -3,6 +3,7 @@ import { ButtonComponent } from "../../shared/components/button/button.component
 import { GlobalStateDataSource } from '../../state/global-state.datasource';
 import { BaseDigimon } from '../../core/interfaces/digimon.interface';
 import { DigimonService } from '../../services/digimon.service';
+import { ToastService } from '../../shared/components/toast/toast.service';
 
 type LabDigimon = BaseDigimon & { amount: number };
 
@@ -18,6 +19,7 @@ export class LabComponent {
   labDigimons = signal<LabDigimon[]>([]);
   globalState = inject(GlobalStateDataSource);
   digimonService = inject(DigimonService);
+  toastService = inject(ToastService);
 
   constructor() {
     effect(() => {
@@ -33,5 +35,15 @@ export class LabComponent {
     }, {
       allowSignalWrites: true,
     });
+  }
+
+  convertDigiData(digimon: LabDigimon) {
+
+    const newDigimon = this.digimonService.generateDigimonBySeed(digimon.seed);
+
+    if(!newDigimon) return;
+
+    this.globalState.convertDigiData(newDigimon);
+
   }
 }

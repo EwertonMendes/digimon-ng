@@ -463,7 +463,7 @@ export class GlobalStateDataSource {
       this.log('Victory! Opponent Digimons were defeated.');
       this.log(`You gained ${totalExp} exp.`);
       this.log(`You gained ${totalBits} bits.`);
-      for(const gain of digiDataGains) {
+      for (const gain of digiDataGains) {
         this.log(`You gained ${gain.amount} ${gain.name} Digi Data.`);
       }
       this.toastService.showToast(
@@ -825,5 +825,26 @@ export class GlobalStateDataSource {
     if (!digimonInList) return;
     digimonInList.currentHp -= amount;
     digimon.currentHp = digimonInList.currentHp;
+  }
+
+  convertDigiData(digimon: Digimon) {
+    this.addDigimonToStorage(digimon);
+
+    const currentAmount = this.playerData().digiData?.[digimon.seed] || 0;
+
+    const updatedPlayerData = {
+      ...this.playerData(),
+      digiData: {
+        ...this.playerData().digiData,
+        [digimon.seed]: currentAmount - 100,
+      },
+    };
+
+    this.updatePlayerData(updatedPlayerData);
+
+    this.toastService.showToast(
+      `You successfully converted Digi Data to ${digimon.name}!`,
+      'success'
+    );
   }
 }

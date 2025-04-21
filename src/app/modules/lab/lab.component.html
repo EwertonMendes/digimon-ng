@@ -18,7 +18,12 @@
           >
           <div class="lab__content-card-body-text-convert-bar">
             <span> {{ digimon.amount }}%</span>
-            <div class="lab__content-card-body-text-convert-bar-progress"></div>
+            <div class="lab__content-card-body-text-convert-bar-progress">
+              <div
+                class="lab__content-card-body-text-convert-bar-progress-fill"
+                [ngStyle]="{ width: digimon.amount + '%' }"
+              ></div>
+            </div>
           </div>
           <app-button
             text="CONVERT"

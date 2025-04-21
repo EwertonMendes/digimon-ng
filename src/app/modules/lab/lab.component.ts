@@ -4,13 +4,14 @@ import { GlobalStateDataSource } from '../../state/global-state.datasource';
 import { BaseDigimon } from '../../core/interfaces/digimon.interface';
 import { DigimonService } from '../../services/digimon.service';
 import { ToastService } from '../../shared/components/toast/toast.service';
+import { CommonModule } from '@angular/common';
 
 type LabDigimon = BaseDigimon & { amount: number };
 
 @Component({
   selector: 'app-lab',
   standalone: true,
-  imports: [ButtonComponent],
+  imports: [CommonModule,ButtonComponent],
   templateUrl: './lab.component.html',
   styleUrl: './lab.component.scss'
 })

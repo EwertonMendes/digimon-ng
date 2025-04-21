@@ -232,12 +232,78 @@
     "def": 63,
     "speed": 71,
     "bitFarmingRate": 5,
-    "digiEvolutionSeedList": [],
+    "digiEvolutionSeedList": ["fa3e15c0-4a3f-45e1-b75e-1b2d1b16a377"],
     "degenerateSeedList": ["edc9812f-82a6-487f-9a4d-52b845643176"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 10
+      }
+    ]
+  },
+  {
+    "seed": "fa3e15c0-4a3f-45e1-b75e-1b2d1b16a377",
+    "name": "Peckmon",
+    "img": "/assets/digimons/Peckmon.webp",
+    "rank": "Champion",
+    "species": "Bird",
+    "attribute": "Data",
+    "hp": 152,
+    "mp": 168,
+    "atk": 97,
+    "def": 82,
+    "speed": 88,
+    "bitFarmingRate": 10,
+    "digiEvolutionSeedList": ["e5a57e68-7e23-4314-bd93-ea8c7d5fca85"],
+    "degenerateSeedList": ["xyz5678a-123b-cdef-456g-hijklmn5678"],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 25
+      }
+    ]
+  },
+  {
+    "seed": "e5a57e68-7e23-4314-bd93-ea8c7d5fca85",
+    "name": "Yatagaramon",
+    "img": "/assets/digimons/Yatagaramon.webp",
+    "rank": "Ultimate",
+    "species": "Bird",
+    "attribute": "Vaccine",
+    "hp": 208,
+    "mp": 247,
+    "atk": 130,
+    "def": 98,
+    "speed": 117,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": ["c2b04d58-6c74-49ea-902f-b7fc16a1e342"],
+    "degenerateSeedList": ["fa3e15c0-4a3f-45e1-b75e-1b2d1b16a377"],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 45
+      }
+    ]
+  },
+  {
+    "seed": "c2b04d58-6c74-49ea-902f-b7fc16a1e342",
+    "name": "Ravemon",
+    "img": "/assets/digimons/Ravemon.webp",
+    "rank": "Mega",
+    "species": "Bird",
+    "attribute": "Vaccine",
+    "hp": 298,
+    "mp": 334,
+    "atk": 162,
+    "def": 118,
+    "speed": 136,
+    "bitFarmingRate": 30,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": ["e5a57e68-7e23-4314-bd93-ea8c7d5fca85"],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 60
       }
     ]
   },
@@ -954,8 +1020,9 @@
     "atk": 75,
     "def": 68,
     "speed": 52,
-    "bitFarmingRate": 1,
+    "bitFarmingRate": 6,
     "digiEvolutionSeedList": [
+      "9f207e7b-2e92-4cfc-8e44-94cf25e0fdb5",
       "hij6789k-0123-456l-mnop-qrstuvwxyz01",
       "def5678a-9012-345b-cdef-6789012345gh"
     ],
@@ -964,6 +1031,72 @@
       {
         "type": "level",
         "value": 10
+      }
+    ]
+  },
+  {
+    "seed": "9f207e7b-2e92-4cfc-8e44-94cf25e0fdb5",
+    "name": "Flymon",
+    "img": "/assets/digimons/Flymon.webp",
+    "rank": "Champion",
+    "species": "Insect",
+    "attribute": "Data",
+    "hp": 158,
+    "mp": 187,
+    "atk": 105,
+    "def": 86,
+    "speed": 81,
+    "bitFarmingRate": 12,
+    "digiEvolutionSeedList": ["2f1a57b3-4fc2-4a7b-97a5-8b5f6886ec14"],
+    "degenerateSeedList": ["abc1234d-5678-efgh-9101-ijklmnopqrst"],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 20
+      }
+    ]
+  },
+  {
+    "seed": "2f1a57b3-4fc2-4a7b-97a5-8b5f6886ec14",
+    "name": "Okuwamon",
+    "img": "/assets/digimons/Okuwamon.webp",
+    "rank": "Ultimate",
+    "species": "Insect",
+    "attribute": "Virus",
+    "hp": 213,
+    "mp": 235,
+    "atk": 136,
+    "def": 100,
+    "speed": 107,
+    "bitFarmingRate": 19,
+    "digiEvolutionSeedList": ["cd380816-9fcf-42a0-8260-17a962fd536f"],
+    "degenerateSeedList": ["9f207e7b-2e92-4cfc-8e44-94cf25e0fdb5"],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 35
+      }
+    ]
+  },
+  {
+    "seed": "cd380816-9fcf-42a0-8260-17a962fd536f",
+    "name": "GranKuwagamon",
+    "img": "/assets/digimons/GranKuwagamon.webp",
+    "rank": "Mega",
+    "species": "Insect",
+    "attribute": "Virus",
+    "hp": 315,
+    "mp": 334,
+    "atk": 170,
+    "def": 124,
+    "speed": 129,
+    "bitFarmingRate": 1,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": ["2f1a57b3-4fc2-4a7b-97a5-8b5f6886ec14"],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 50
       }
     ]
   },
@@ -980,12 +1113,56 @@
     "def": 57,
     "speed": 60,
     "bitFarmingRate": 3,
-    "digiEvolutionSeedList": [],
+    "digiEvolutionSeedList": ["f4cbbd45-9e42-4b43-b9b0-4f8e1b9b9d21"],
     "degenerateSeedList": ["def5678g-9012-34hi-jk56-7890123lmnop"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 10
+      }
+    ]
+  },
+  {
+    "seed": "f4cbbd45-9e42-4b43-b9b0-4f8e1b9b9d21",
+    "name": "Guardromon",
+    "img": "/assets/digimons/Guardromon.webp",
+    "rank": "Champion",
+    "species": "Machine",
+    "attribute": "Virus",
+    "hp": 172,
+    "mp": 177,
+    "atk": 106,
+    "def": 104,
+    "speed": 73,
+    "bitFarmingRate": 3,
+    "digiEvolutionSeedList": ["a7e2f3b1-03e4-40fc-b80b-8db60f4f616b"],
+    "degenerateSeedList": ["xyz1234a-5678-bc90-defg-1234567890ab"],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 25
+      }
+    ]
+  },
+  {
+    "seed": "a7e2f3b1-03e4-40fc-b80b-8db60f4f616b",
+    "name": "Andromon",
+    "img": "/assets/digimons/Andromon.webp",
+    "rank": "Ultimate",
+    "species": "Machine",
+    "attribute": "Virus",
+    "hp": 215,
+    "mp": 225,
+    "atk": 131,
+    "def": 123,
+    "speed": 99,
+    "bitFarmingRate": 3,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": ["f4cbbd45-9e42-4b43-b9b0-4f8e1b9b9d21"],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 45
       }
     ]
   },
@@ -1002,7 +1179,7 @@
     "def": 93,
     "speed": 94,
     "bitFarmingRate": 6,
-    "digiEvolutionSeedList": [],
+    "digiEvolutionSeedList": ["40ed91a1-d2e3-47dc-8c18-64a55757e6b1"],
     "degenerateSeedList": ["abc1234d-5678-efgh-9101-ijklmnopqrst"],
     "evolutionRequirements": [
       {
@@ -1012,24 +1189,112 @@
     ]
   },
   {
+    "seed": "40ed91a1-d2e3-47dc-8c18-64a55757e6b1",
+    "name": "Megadramon",
+    "img": "/assets/digimons/Megadramon.webp",
+    "rank": "Ultimate",
+    "species": "Machine",
+    "attribute": "Virus",
+    "hp": 224,
+    "mp": 226,
+    "atk": 135,
+    "def": 117,
+    "speed": 96,
+    "bitFarmingRate": 1,
+    "digiEvolutionSeedList": ["5c59bdf1-0288-4a39-bfbc-3d513a6dfe4c"],
+    "degenerateSeedList": ["def5678a-9012-345b-cdef-6789012345gh"],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 35
+      }
+    ]
+  },
+  {
+    "seed": "5c59bdf1-0288-4a39-bfbc-3d513a6dfe4c",
+    "name": "Darkdramon",
+    "img": "/assets/digimons/Darkdramon.webp",
+    "rank": "Mega",
+    "species": "Dragon",
+    "attribute": "Virus",
+    "hp": 323,
+    "mp": 337,
+    "atk": 172,
+    "def": 144,
+    "speed": 122,
+    "bitFarmingRate": 1,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": ["40ed91a1-d2e3-47dc-8c18-64a55757e6b1"],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 50
+      }
+    ]
+  },
+  {
     "seed": "hij6789k-0123-456l-mnop-qrstuvwxyz01",
     "name": "Dokugumon",
     "img": "/assets/digimons/Dokugumon.webp",
     "rank": "Champion",
     "species": "Insect/Plant",
-    "attribute": "Free",
+    "attribute": "Virus",
     "hp": 158,
     "mp": 181,
     "atk": 107,
     "def": 87,
     "speed": 84,
     "bitFarmingRate": 5,
-    "digiEvolutionSeedList": [],
+    "digiEvolutionSeedList": ["e49a85fa-77ea-4a06-9a65-bd3133e2c1e4"],
     "degenerateSeedList": ["abc1234d-5678-efgh-9101-ijklmnopqrst"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
+      }
+    ]
+  },
+  {
+    "seed": "e49a85fa-77ea-4a06-9a65-bd3133e2c1e4",
+    "name": "Arukenimon",
+    "img": "/assets/digimons/Arukenimon.webp",
+    "rank": "Ultimate",
+    "species": "Insect",
+    "attribute": "Virus",
+    "hp": 215,
+    "mp": 242,
+    "atk": 113,
+    "def": 118,
+    "speed": 112,
+    "bitFarmingRate": 2,
+    "digiEvolutionSeedList": ["b2dbcc35-8eeb-4f16-97aa-3f2e7a1a3df9"],
+    "degenerateSeedList": ["hij6789k-0123-456l-mnop-qrstuvwxyz01"],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 35
+      }
+    ]
+  },
+  {
+    "seed": "b2dbcc35-8eeb-4f16-97aa-3f2e7a1a3df9",
+    "name": "Beelzemon",
+    "img": "/assets/digimons/Beelzemon.webp",
+    "rank": "Mega",
+    "species": "Dark",
+    "attribute": "Virus",
+    "hp": 326,
+    "mp": 358,
+    "atk": 180,
+    "def": 164,
+    "speed": 142,
+    "bitFarmingRate": 1,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": ["e49a85fa-77ea-4a06-9a65-bd3133e2c1e4"],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 50
       }
     ]
   },

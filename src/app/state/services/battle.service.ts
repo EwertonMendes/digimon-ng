@@ -214,6 +214,7 @@ export class BattleService {
 
   calculateGainedDigiData(defeatedDigimons: Digimon[]): { seed: string; name: string; amount: number }[] {
     const digiDataGainPerRank: Record<string, number> = {
+      "Fresh": 30,
       "In-Training": 25,
       "Rookie": 15,
       "Champion": 10,

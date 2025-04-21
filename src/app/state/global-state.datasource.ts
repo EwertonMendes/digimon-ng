@@ -600,6 +600,34 @@ export class GlobalStateDataSource {
     return this.battleService.attack(attacker, defender);
   }
 
+  attemptRunAway() {
+    const playerScore = this.battleService.calculateTeamScore(this.playerData().digimonList);
+    const enemyScore = this.battleService.calculateTeamScore(this.enemyTeam());
+
+    const escapeChance = this.battleService.calculateEscapeChance(playerScore, enemyScore);
+    const chance = Math.random();
+
+    if (chance <= escapeChance) {
+      this.toastService.showToast('Escape successful!', 'info');
+      this.audioService.playAudio(AudioEffects.MISS);
+      this.log('Player escaped the battle.');
+      this.endBattle();
+      return;
+    }
+
+    this.toastService.showToast('Escape failed! Enemy attacks!', 'error');
+    this.audioService.playAudio(AudioEffects.HIT);
+    this.log('Escape attempt failed. Enemy counterattacks.');
+
+    const enemy = this.actualTurnOrder[0];
+    if (!enemy || enemy.owner !== 'enemy') {
+      this.enemyAttack(enemy);
+      return;
+    }
+
+    this.nextTurn();
+  }
+
   getBitGenerationTotalRate() {
     return this.farmingService.getBitGenerationTotalRate(this.playerData());
   }

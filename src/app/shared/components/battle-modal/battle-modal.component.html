@@ -7,9 +7,15 @@
     <h3 class="section-title">Battle</h3>
     <div
       class="digimon-battle-content"
-      [ngClass]="{ 'digimon-battle-content-colored-background': !imageBackground() }"
+      [ngClass]="{
+        'digimon-battle-content-colored-background': !imageBackground()
+      }"
       [ngStyle]="{
-        'background-image': imageBackground() ? 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(' + imageBackground() + ')' : 'none',
+        'background-image': imageBackground()
+          ? 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(' +
+            imageBackground() +
+            ')'
+          : 'none',
         'background-size': 'cover',
         'background-position': 'center'
       }"
@@ -17,7 +23,8 @@
       <div class="turn-order-container">
         <div class="turn-order">
           <h4 class="turn-order-title">Turn Order</h4>
-          @for(digimon of globalState.actualTurnOrder; track digimon.seed + $index){
+          @for(digimon of globalState.actualTurnOrder; track digimon.seed +
+          $index){
           <div
             class="turn-order-digimon"
             [ngClass]="{
@@ -85,6 +92,15 @@
               weight="bold"
               iconPosition="right"
               (click)="playerAttack()"
+            />
+            <app-button
+              text="Run away"
+              icon="ph-run"
+              weight="bold"
+              color="danger"
+              iconPosition="right"
+              [disabled]="!globalState.isBattleActive"
+              (click)="attemptRunAway()"
             />
             }
           </span>

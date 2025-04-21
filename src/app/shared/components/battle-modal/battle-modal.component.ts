@@ -78,6 +78,11 @@ export class BattleModalComponent {
     return;
   }
 
+  attemptRunAway() {
+    if (!this.globalState.isBattleActive) return;
+    this.globalState.attemptRunAway();
+  }
+
   private log(message: string) {
     this.globalState.log(message);
   }

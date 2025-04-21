@@ -237,4 +237,38 @@ export class BattleService {
 
     return Object.values(gainMap);
   }
+
+  calculateTeamScore(team: Digimon[]): number {
+    const rankWeights: Record<string, number> = {
+      "In-Training": 1,
+      "Rookie": 2,
+      "Champion": 3,
+      "Ultimate": 4,
+      "Mega": 5,
+    };
+
+    let totalScore = 0;
+
+    for (const digimon of team) {
+      if (digimon.currentHp > 0) {
+        const rankScore = rankWeights[digimon.rank] || 1;
+        totalScore += rankScore * digimon.level;
+      }
+    }
+
+    return totalScore;
+  }
+
+  calculateEscapeChance(playerScore: number, enemyScore: number): number {
+    const ratio = playerScore / enemyScore;
+
+    if (ratio >= 4.0) return 0.95;
+    if (ratio >= 3.0) return 0.85;
+    if (ratio >= 2.0) return 0.75;
+    if (ratio >= 1.5) return 0.6;
+    if (ratio >= 1.0) return 0.5;
+    if (ratio >= 0.75) return 0.35;
+    if (ratio >= 0.5) return 0.2;
+    return 0.1;
+  }
 }

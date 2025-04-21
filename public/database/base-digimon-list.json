@@ -17,7 +17,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 70
+        "value": 50
       }
     ]
   },
@@ -39,7 +39,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 50
+        "value": 35
       }
     ]
   },
@@ -64,7 +64,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 50
+        "value": 35
       }
     ]
   },
@@ -89,7 +89,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 30
+        "value": 20
       }
     ]
   },
@@ -111,7 +111,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 30
+        "value": 20
       }
     ]
   },
@@ -140,7 +140,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 15
+        "value": 10
       }
     ]
   },
@@ -168,7 +168,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 7
+        "value": 5
       }
     ]
   },
@@ -190,7 +190,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 15
+        "value": 10
       }
     ]
   },
@@ -207,12 +207,15 @@
     "def": 72,
     "speed": 50,
     "bitFarmingRate": 1,
-    "digiEvolutionSeedList": ["87a9e123-4f23-42b3-9d83-3c7e4382c3d5", "f3c12345-6b7d-4e89-9ef7-89c4672c34ab"],
+    "digiEvolutionSeedList": [
+      "87a9e123-4f23-42b3-9d83-3c7e4382c3d5",
+      "f3c12345-6b7d-4e89-9ef7-89c4672c34ab"
+    ],
     "degenerateSeedList": ["edc9812f-82a6-487f-9a4d-52b845643176"],
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 15
+        "value": 10
       }
     ]
   },
@@ -234,7 +237,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 15
+        "value": 10
       }
     ]
   },
@@ -256,7 +259,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 3
+        "value": 2
       }
     ]
   },
@@ -278,7 +281,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 3
+        "value": 2
       }
     ]
   },
@@ -300,7 +303,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 7
+        "value": 5
       }
     ]
   },
@@ -322,7 +325,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 15
+        "value": 10
       }
     ]
   },
@@ -344,7 +347,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 30
+        "value": 20
       }
     ]
   },
@@ -366,7 +369,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 50
+        "value": 35
       }
     ]
   },
@@ -388,7 +391,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 70
+        "value": 50
       }
     ]
   },
@@ -410,7 +413,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 3
+        "value": 2
       }
     ]
   },
@@ -432,7 +435,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 7
+        "value": 5
       }
     ]
   },
@@ -454,7 +457,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 20
+        "value": 10
       }
     ]
   },
@@ -476,7 +479,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 30
+        "value": 20
       }
     ]
   },
@@ -498,7 +501,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 50
+        "value": 35
       }
     ]
   },
@@ -520,7 +523,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 70
+        "value": 50
       }
     ]
   },
@@ -542,7 +545,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 7
+        "value": 5
       }
     ]
   },
@@ -564,7 +567,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 15
+        "value": 10
       }
     ]
   },
@@ -586,7 +589,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 25
+        "value": 20
       }
     ]
   },
@@ -611,7 +614,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 50
+        "value": 35
       }
     ]
   },
@@ -633,7 +636,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 70
+        "value": 50
       }
     ]
   },
@@ -655,7 +658,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 70
+        "value": 50
       }
     ]
   },
@@ -677,7 +680,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 70
+        "value": 50
       }
     ]
   },
@@ -699,7 +702,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 70
+        "value": 50
       }
     ]
   },
@@ -724,7 +727,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 30
+        "value": 20
       }
     ]
   },
@@ -746,7 +749,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 50
+        "value": 35
       }
     ]
   },
@@ -768,7 +771,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 70
+        "value": 50
       }
     ]
   },
@@ -790,7 +793,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 7
+        "value": 5
       }
     ]
   },
@@ -816,7 +819,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 7
+        "value": 5
       }
     ]
   },
@@ -841,7 +844,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 15
+        "value": 10
       }
     ]
   },
@@ -866,7 +869,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 30
+        "value": 20
       }
     ]
   },
@@ -888,7 +891,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 50
+        "value": 35
       }
     ]
   },
@@ -910,7 +913,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 50
+        "value": 35
       }
     ]
   },
@@ -935,7 +938,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 70
+        "value": 50
       }
     ]
   },
@@ -960,7 +963,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 15
+        "value": 10
       }
     ]
   },
@@ -982,7 +985,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 15
+        "value": 10
       }
     ]
   },
@@ -1004,7 +1007,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 30
+        "value": 20
       }
     ]
   },
@@ -1026,7 +1029,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 30
+        "value": 20
       }
     ]
   },
@@ -1048,7 +1051,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 7
+        "value": 5
       }
     ]
   },
@@ -1073,7 +1076,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 15
+        "value": 10
       }
     ]
   },
@@ -1095,7 +1098,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 30
+        "value": 20
       }
     ]
   },
@@ -1117,7 +1120,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 50
+        "value": 35
       }
     ]
   },
@@ -1139,7 +1142,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 70
+        "value": 50
       }
     ]
   },
@@ -1161,7 +1164,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 7
+        "value": 5
       }
     ]
   },
@@ -1183,7 +1186,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 15
+        "value": 10
       }
     ]
   },
@@ -1205,7 +1208,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 30
+        "value": 20
       }
     ]
   },
@@ -1227,7 +1230,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 50
+        "value": 35
       }
     ]
   },
@@ -1249,7 +1252,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 70
+        "value": 50
       }
     ]
   },
@@ -1271,7 +1274,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 50
+        "value": 35
       }
     ]
   },
@@ -1293,7 +1296,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 75
+        "value": 50
       }
     ]
   },
@@ -1315,7 +1318,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 30
+        "value": 20
       }
     ]
   },
@@ -1337,7 +1340,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 30
+        "value": 20
       }
     ]
   },
@@ -1359,7 +1362,7 @@
     "evolutionRequirements": [
       {
         "type": "level",
-        "value": 30
+        "value": 20
       }
     ]
   }

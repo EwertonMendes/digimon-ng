@@ -6,7 +6,7 @@ import { DigimonService } from '../../services/digimon.service';
 import { ToastService } from '../../shared/components/toast/toast.service';
 import { CommonModule } from '@angular/common';
 
-type LabDigimon = BaseDigimon & { amount: number };
+type LabDigimon = BaseDigimon & { amount: number; cost: number };
 
 @Component({
   selector: 'app-lab',
@@ -28,6 +28,7 @@ export class LabComponent {
       Object.entries(this.globalState.playerDataAcessor.digiData).forEach(([seed, amount]) => {
         const digimon = this.digimonService.getBaseDigimonDataBySeed(seed) as LabDigimon;
         digimon.amount = amount;
+        digimon.cost = this.globalState.getBitCost(digimon.rank);
         if (digimon) {
           digimons.push(digimon);
         }

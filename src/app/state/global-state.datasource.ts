@@ -832,8 +832,11 @@ export class GlobalStateDataSource {
 
     const currentAmount = this.playerData().digiData?.[digimon.seed] || 0;
 
+    const bitCost = this.getBitCost(digimon.rank);
+
     const updatedPlayerData = {
       ...this.playerData(),
+      bits: this.playerData().bits - bitCost,
       digiData: {
         ...this.playerData().digiData,
         [digimon.seed]: currentAmount - 100,
@@ -846,5 +849,16 @@ export class GlobalStateDataSource {
       `You successfully converted Digi Data to ${digimon.name}!`,
       'success'
     );
+  }
+
+  getBitCost(rank: string): number {
+    const costMap: Record<string, number> = {
+      "In-Training": 100,
+      "Rookie": 500,
+      "Champion": 1500,
+      "Ultimate": 5000,
+      "Mega": 15000
+    };
+    return costMap[rank] || 1000;
   }
 }

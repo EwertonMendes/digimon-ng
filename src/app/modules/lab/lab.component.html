@@ -16,6 +16,9 @@
           <span class="lab__content-card-body-text-rank"
             >Rank: {{ digimon.rank }}</span
           >
+          <span class="lab__content-card-body-text-cost">
+            Cost: {{ digimon.cost }} bits
+          </span>
           <div class="lab__content-card-body-text-convert-bar">
             <span> {{ digimon.amount }}%</span>
             <div class="lab__content-card-body-text-convert-bar-progress">
@@ -29,7 +32,7 @@
             text="CONVERT"
             weight="bold"
             color="info"
-            [disabled]="digimon.amount < 100"
+            [disabled]="digimon.amount < 100 || globalState.playerDataAcessor.bits < digimon.cost"
             (click)="convertDigiData(digimon)"
           />
         </div>

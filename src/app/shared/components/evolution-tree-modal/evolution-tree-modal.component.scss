@@ -13,16 +13,34 @@ $highlight-color: #65f695;
   .evolution-tree-content {
     display: flex;
     flex-direction: row;
-    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+    background: linear-gradient(135deg, #731DD8 0%, #FF2079 100%);
     border-radius: 10px;
     padding: 20px;
-    height: 95%;
+    height: 100%;
 
-    #evolutionTreeWrapper {
+    .evolution-tree-graph-container {
       width: 70%;
       height: 100%;
-      border: 1px solid black;
+      border: 10px solid black;
       border-radius: 10px;
+
+      #evolutionTreeWrapper {
+        height: 100%;
+      }
+    }
+
+    .selected-digimon-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: -webkit-fill-available;
+      height: 60%;
+
+      h2 {
+        font-size: 2rem;
+        color: #FF2079;
+      }
     }
 
     .selected-digimon-container {
@@ -30,10 +48,9 @@ $highlight-color: #65f695;
       flex-direction: column;
       align-items: center;
       width: 30%;
-      height: 100%;
-      padding: 20px;
+      margin-left: 20px;
+      background: #191919;
       border-radius: 10px;
-      gap: 10px;
 
       .selected-digimon-image {
         display: flex;
@@ -41,36 +58,69 @@ $highlight-color: #65f695;
         align-items: center;
         width: 100%;
         height: 200px;
-        border: 3px solid black;
-        border-radius: 10px;
 
         img {
           height: 250px;
           object-fit: scale-down;
         }
+
+        .placeholder {
+          font-size: 1.5rem;
+          color: #FF2079;
+        }
       }
 
       .selected-digimon-content {
+        width: -webkit-fill-available;
 
         .selected-digimon-info {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 10px;
           width: 100%;
+          padding: 10px;
+          color: #fff;
 
-          &-row {
+          &-item {
             display: flex;
-            flex-direction: row;
-            gap: 5px;
             justify-content: space-between;
+            align-items: center;
+            padding: 5px 10px;
+            background: lighten($color: #191919, $amount: 5%);
+            border-radius: 5px;
+
+            .label {
+              font-weight: bold;
+              color: #FF2079;
+            }
+
+            .value {
+              color: #F5DD90;
+            }
           }
 
           &-requirements {
+            grid-column: span 2;
             display: flex;
             flex-direction: column;
-            align-items: center;
             gap: 5px;
-            text-transform: capitalize;
+            padding: 10px 5px;
+
+            .label {
+              font-weight: bold;
+              color: #FF2079;
+              margin-bottom: 5px;
+            }
+
+            .requirements-list {
+              display: flex;
+              flex-direction: column;
+              gap: 5px;
+
+              span {
+                color: #F5DD90;
+              }
+            }
           }
         }
       }

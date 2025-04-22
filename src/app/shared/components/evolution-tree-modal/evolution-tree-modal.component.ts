@@ -34,7 +34,7 @@ export class EvolutionTreeModalComponent implements AfterViewInit {
 
   private static readonly NODE_SIZE = 40;
   private static readonly EDGE_SIZE = 2;
-  private static readonly NODE_COLOR = '#D95D39';
+  private static readonly NODE_COLOR = '#191919';
   private static readonly EDGE_COLOR = 'black';
 
   evolutionTreeModalId = 'evolution-tree-modal';

@@ -8,74 +8,78 @@
       <h2>{{ mainDigimon()?.name }}</h2>
     </div>
     <div class="evolution-tree-content">
-      <div id="evolutionTreeWrapper"></div>
+      <div class="evolution-tree-graph-container">
+        <div id="evolutionTreeWrapper"></div>
+      </div>
       <div class="selected-digimon-container">
         <div class="selected-digimon-header">
-          <h3>{{ selectedDigimon()?.name }}</h3>
-        </div>
-        <div class="selected-digimon-image">
-          @if(selectedDigimon()) {
-          <img [src]="selectedDigimon()?.img" alt="selected-digimon" />
-          } @else {
-          <span>Select a digimon to view its stats</span>
-          }
+          <div class="selected-digimon-image">
+            @if(selectedDigimon()) {
+            <img [src]="selectedDigimon()?.img" alt="selected-digimon" />
+            } @else {
+            <span class="placeholder">Select a digimon to view its stats</span>
+            }
+          </div>
+          <h2>{{ selectedDigimon()?.name }}</h2>
         </div>
         <div class="selected-digimon-content">
           <div class="selected-digimon-info">
-            <div class="selected-digimon-info-row">
-              <span>Rank:</span>
-              <span>{{ selectedDigimon()?.rank ?? "-" }}</span>
+            <div class="selected-digimon-info-item">
+              <span class="label">Rank:</span>
+              <span class="value">{{ selectedDigimon()?.rank ?? "-" }}</span>
             </div>
-            <div class="selected-digimon-info-row">
-              <span>Species:</span>
-              <span>{{ selectedDigimon()?.species ?? "-" }}</span>
+            <div class="selected-digimon-info-item">
+              <span class="label">Species:</span>
+              <span class="value">{{ selectedDigimon()?.species ?? "-" }}</span>
             </div>
-            <div class="selected-digimon-info-row">
-              <span>HP:</span>
-              <span>{{ selectedDigimon()?.hp ?? "-" }}</span>
+            <div class="selected-digimon-info-item">
+              <span class="label">HP:</span>
+              <span class="value">{{ selectedDigimon()?.hp ?? "-" }}</span>
             </div>
-            <div class="selected-digimon-info-row">
-              <span>MP:</span>
-              <span>{{ selectedDigimon()?.mp ?? "-" }}</span>
+            <div class="selected-digimon-info-item">
+              <span class="label">MP:</span>
+              <span class="value">{{ selectedDigimon()?.mp ?? "-" }}</span>
             </div>
-            <div class="selected-digimon-info-row">
-              <span>ATK:</span>
-              <span>{{ selectedDigimon()?.atk ?? "-" }}</span>
+            <div class="selected-digimon-info-item">
+              <span class="label">ATK:</span>
+              <span class="value">{{ selectedDigimon()?.atk ?? "-" }}</span>
             </div>
-            <div class="selected-digimon-info-row">
-              <span>DEF:</span>
-              <span>{{ selectedDigimon()?.def ?? "-" }}</span>
+            <div class="selected-digimon-info-item">
+              <span class="label">DEF:</span>
+              <span class="value">{{ selectedDigimon()?.def ?? "-" }}</span>
             </div>
-            <div class="selected-digimon-info-row">
-              <span>SPD:</span>
-              <span>{{ selectedDigimon()?.speed ?? "-" }}</span>
+            <div class="selected-digimon-info-item">
+              <span class="label">SPD:</span>
+              <span class="value">{{ selectedDigimon()?.speed ?? "-" }}</span>
             </div>
-            <div class="selected-digimon-info-row">
-              <span>Bits per minute:</span>
-              <span>{{ selectedDigimon()?.bitFarmingRate ?? "-" }}</span>
+            <div class="selected-digimon-info-item">
+              <span class="label">Bits per minute:</span>
+              <span class="value">{{
+                selectedDigimon()?.bitFarmingRate ?? "-"
+              }}</span>
             </div>
             <div class="selected-digimon-info-requirements">
-              <span>Evolution requirements:</span>
-
-              @for (requirement of selectedDigimon()?.evolutionRequirements;
-              track $index) {
-
-              <span>- {{ requirement.type }}: {{ requirement.value }}</span>
-              }
+              <span class="label">Evolution requirements:</span>
+              <div class="requirements-list">
+                @for (requirement of selectedDigimon()?.evolutionRequirements;
+                track $index) {
+                <span>{{ requirement.type }}: {{ requirement.value }}</span>
+                }
+              </div>
             </div>
-            @if(selectedDigimon() && canEvolve()) {
-            <app-button
-              [text]="
-                'Evolve ' +
-                mainDigimon()?.name +
-                ' ' +
-                'into ' +
-                selectedDigimon()?.name
-              "
-              (click)="showEvolutionConfirmationModal()"
-            />
-            }
           </div>
+          @if(selectedDigimon() && canEvolve()) {
+          <app-button
+            [text]="
+              'Evolve ' +
+              mainDigimon()?.name +
+              ' ' +
+              'into ' +
+              selectedDigimon()?.name
+            "
+            (click)="showEvolutionConfirmationModal()"
+          />
+          }
         </div>
       </div>
     </div>

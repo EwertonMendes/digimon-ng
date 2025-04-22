@@ -86,22 +86,24 @@
             <span>VS</span>
             @if(globalState.showPlayerAttackButton() &&
             globalState.isBattleActive) {
-            <app-button
-              text="Attack"
-              icon="ph-sword"
-              weight="bold"
-              iconPosition="right"
-              (click)="playerAttack()"
-            />
-            <app-button
-              text="Run away"
-              icon="ph-run"
-              weight="bold"
-              color="danger"
-              iconPosition="right"
-              [disabled]="!globalState.isBattleActive"
-              (click)="attemptRunAway()"
-            />
+            <div class="player-actions-container">
+              <app-button
+                text="Attack"
+                icon="ph-sword"
+                weight="bold"
+                iconPosition="right"
+                (click)="playerAttack()"
+              />
+              <app-button
+                text="Run away"
+                icon="ph-person-simple-run"
+                weight="bold"
+                color="danger"
+                iconPosition="right"
+                [disabled]="!globalState.isBattleActive"
+                (click)="attemptRunAway()"
+              />
+            </div>
             }
           </span>
           <div class="enemy-team-container">

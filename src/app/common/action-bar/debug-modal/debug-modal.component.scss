@@ -1,17 +1,33 @@
+@import '@variables';
+
 .debug-modal-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  width: 100%;
+  height: 100%;
+  color: $text;
+
+  .section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color: $primary;
+  }
 
   .debug-modal-content {
     display: flex;
+    flex-direction: row;
     gap: 10px;
-    padding: 10px;
-    border-radius: 10px;
     width: 100%;
     height: 100%;
-    background-color: peru;
+    overflow: auto;
+    padding: 10px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   }
 }
 

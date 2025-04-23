@@ -71,6 +71,9 @@
       }
 
       .selected-digimon-content {
+        display: flex;
+        flex-direction: column;
+        padding: 16px;
         width: -webkit-fill-available;
 
         .selected-digimon-info {

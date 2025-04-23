@@ -1,10 +1,30 @@
+@import '../../../../variables.scss';
+
 .app-button {
   display: flex;
   justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 12px 16px;
+  border-radius: 10px;
   border: none;
   cursor: pointer;
-  border-radius: 10px;
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.1s ease;
   width: 100%;
+  position: relative;
+  overflow: hidden;
+  color: $text;
+  background-color: transparent;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: scale(0.97);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
 
   .button-container {
     display: flex;
@@ -34,66 +54,106 @@
   }
 
   &.primary {
-    background-color: #FFC43D;
-    padding: 10px;
+    background-color: $primary;
+    color: $text;
 
     &:hover {
-      background-color: #d1a132;
+      background-color: $primary-light;
+      box-shadow: 0 0 12px $primary-light;
+    }
+
+    &:active {
+      background-color: $primary-dark;
     }
   }
 
   &.secondary {
-    background-color: #06D6A0;
-    color: #000;
-    padding: 10px;
+    background-color: $secondary;
+    color: $text;
 
     &:hover {
-      background-color: #05b98f;
+      background-color: $secondary-light;
+      box-shadow: 0 0 12px $secondary-light;
+    }
+
+    &:active {
+      background-color: $secondary-dark;
     }
   }
 
   &.tertiary {
-    background-color: #f0f8ff;
+    background-color: $tertiary;
     color: #000;
-    padding: 10px;
 
     &:hover {
-      background-color: #add8e6;
+      background-color: $tertiary-light;
+      box-shadow: 0 0 12px $tertiary-light;
+    }
+
+    &:active {
+      background-color: $tertiary-dark;
     }
   }
 
   &.danger {
-    background-color: #D62828;
-    color: #fff;
-    padding: 10px;
+    background-color: $danger;
+    color: $text;
 
     &:hover {
-      background-color: #aa2121;
+      background-color: lighten($danger, 5%);
+      box-shadow: 0 0 12px lighten($danger, 10%);
+    }
+
+    &:active {
+      background-color: darken($danger, 5%);
     }
   }
 
   &.success {
-    background-color: #23CE6B;
+    background-color: $success;
     color: #000;
-    padding: 10px;
 
     &:hover {
-      background-color: #20b45e;
+      background-color: lighten($success, 5%);
+      box-shadow: 0 0 12px lighten($success, 10%);
+    }
+
+    &:active {
+      background-color: darken($success, 5%);
     }
   }
 
   &.info {
-    background-color: #080F0F;
-    color: #fff;
-    padding: 10px;
+    background-color: $info;
+    color: $text;
 
     &:hover {
-      background-color: #292929;
+      background-color: lighten($info, 5%);
+      box-shadow: 0 0 12px lighten($info, 10%);
+    }
+
+    &:active {
+      background-color: darken($info, 5%);
+    }
+  }
+
+  &.dark {
+    background-color: $dark;
+    color: #fff;
+
+    &:hover {
+      background-color: $dark-hover;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+    }
+
+    &:active {
+      background-color: $dark-active;
     }
   }
 }
 
 .disabled {
   cursor: not-allowed;
-  filter: brightness(70%);
+  filter: brightness(60%);
+  pointer-events: none;
 }

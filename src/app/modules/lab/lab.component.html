@@ -33,7 +33,7 @@
             weight="bold"
             color="info"
             [disabled]="digimon.amount < 100 || globalState.playerDataAcessor.bits < digimon.cost"
-            (click)="convertDigiData(digimon)"
+            (onClick)="convertDigiData(digimon)"
           />
         </div>
       </div>

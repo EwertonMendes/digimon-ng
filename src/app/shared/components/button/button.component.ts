@@ -20,9 +20,10 @@ export class ButtonComponent {
   color = input<string>('primary');
   disabled = input<boolean>(false);
 
-  click = output();
+  onClick = output();
 
-  onClick() {
-    this.click.emit();
+  performClick() {
+    if(this.disabled()) return;
+    this.onClick.emit();
   }
 }

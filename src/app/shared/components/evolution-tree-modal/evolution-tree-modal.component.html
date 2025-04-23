@@ -77,7 +77,7 @@
               'into ' +
               selectedDigimon()?.name
             "
-            (click)="showEvolutionConfirmationModal()"
+            (onClick)="showEvolutionConfirmationModal()"
           />
           }
         </div>
@@ -152,11 +152,11 @@
         <app-button
           text="No"
           [disabled]="isEvolving()"
-          (click)="this.modalService.close('evolution-confirmation-modal')"
+          (onClick)="this.modalService.close('evolution-confirmation-modal')"
         />
         <app-button
           text="Yes"
-          (click)="evolveDigimon()"
+          (onClick)="evolveDigimon()"
           [disabled]="isEvolving()"
         />
       </div>

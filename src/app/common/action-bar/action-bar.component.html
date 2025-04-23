@@ -5,27 +5,27 @@
       icon="ph-desktop"
       weight="bold"
       color="info"
-      (click)="navigateTo('desktop')"
+      (onClick)="navigateTo('desktop')"
     />
     <app-button
       title="Adventure"
       icon="ph-sword"
       weight="bold"
       color="danger"
-      (click)="navigateTo('adventure')"
+      (onClick)="navigateTo('adventure')"
     />
     <app-button
       title="Open digimon storage"
       icon="ph-database"
       weight="bold"
-      (click)="openDigimonStorageModal()"
+      (onClick)="openDigimonStorageModal()"
     />
     <app-button
       title="Lab"
       icon="ph-test-tube"
       weight="bold"
       color="success"
-      (click)="navigateTo('lab')"
+      (onClick)="navigateTo('lab')"
     />
   </div>
   <div class="action-bar-buttons">
@@ -34,17 +34,17 @@
       icon="ph-bug"
       weight="bold"
       color="dark"
-      (click)="openDebugModal()"
+      (onClick)="openDebugModal()"
     />
     <app-button
       title="Player Info"
       icon="ph-user-circle-gear"
       weight="bold"
       color="dark"
-      (click)="openPlayerInfoModal()"
+      (onClick)="openPlayerInfoModal()"
     />
     <app-button title="Config" icon="ph-gear" weight="bold" color="dark" />
-    <app-button title="Save Game" icon="ph-floppy-disk" weight="bold" color="dark" (click)="saveGame()" />
+    <app-button title="Save Game" icon="ph-floppy-disk" weight="bold" color="dark" (onClick)="saveGame()" />
   </div>
 </div>
 

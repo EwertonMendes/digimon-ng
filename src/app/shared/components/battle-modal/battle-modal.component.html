@@ -92,7 +92,7 @@
                 icon="ph-sword"
                 weight="bold"
                 iconPosition="right"
-                (click)="playerAttack()"
+                (onClick)="playerAttack()"
               />
               <app-button
                 text="Run away"
@@ -101,7 +101,7 @@
                 color="danger"
                 iconPosition="right"
                 [disabled]="!globalState.isBattleActive"
-                (click)="attemptRunAway()"
+                (onClick)="attemptRunAway()"
               />
             </div>
             }

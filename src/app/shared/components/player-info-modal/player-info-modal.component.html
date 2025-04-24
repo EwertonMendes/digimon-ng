@@ -1,18 +1,32 @@
 <app-modal [id]="playerInfoModalId">
   <div class="player-info-container">
     <div class="player-info-header">
-      <img src="assets/Tai.webp" alt="player" class="avatar" />
-      <h2>{{ globalState.playerDataAcessor.name }}</h2>
+      <img src="assets/Tai.webp" alt="player avatar" class="avatar" />
+      <h2 class="player-name">{{ globalState.playerDataAcessor.name }}</h2>
     </div>
     <div class="player-info-content">
-      <span>Bits: {{ globalState.playerDataAcessor.bits | number : "1.0-0" }}</span>
-      <span>Level: {{ globalState.playerDataAcessor.level }}</span>
-      <span
-        >Current Exp: {{ globalState.playerDataAcessor.exp | number : "1.0-0" }} /
-        {{ neededExpForNextLevel()| number : "1.0-0" }}</span
-      >
-      <span>Total Exp: {{ globalState.playerDataAcessor.totalExp | number : "1.0-0" }} </span>
-      <span>Total Digimon Count: {{ globalState.totalDigimonCount | number : "1.0-0" }}</span>
+      <div class="info-item">
+        <span class="label">Bits:</span>
+        <span class="value">{{ globalState.playerDataAcessor.bits | number : "1.0-0" }}</span>
+      </div>
+      <div class="info-item">
+        <span class="label">Level:</span>
+        <span class="value">{{ globalState.playerDataAcessor.level }}</span>
+      </div>
+      <div class="info-item">
+        <span class="label">Current Exp:</span>
+        <span class="value">
+          {{ globalState.playerDataAcessor.exp | number : "1.0-0" }} / {{ neededExpForNextLevel() | number : "1.0-0" }}
+        </span>
+      </div>
+      <div class="info-item">
+        <span class="label">Total Exp:</span>
+        <span class="value">{{ globalState.playerDataAcessor.totalExp | number : "1.0-0" }}</span>
+      </div>
+      <div class="info-item">
+        <span class="label">Total Digimons:</span>
+        <span class="value">{{ globalState.totalDigimonCount | number : "1.0-0" }}</span>
+      </div>
     </div>
   </div>
 </app-modal>

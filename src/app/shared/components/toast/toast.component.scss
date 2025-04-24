@@ -1,15 +1,17 @@
+@import '@variables';
+
 .toast-container {
   position: fixed;
   right: 20px;
   z-index: 1000;
-}
 
-.toast-container.top {
-  top: 20px;
-}
+  &.top {
+    top: 20px;
+  }
 
-.toast-container.bottom {
-  bottom: 20px;
+  &.bottom {
+    bottom: 20px;
+  }
 }
 
 .toast {
@@ -17,8 +19,9 @@
   justify-content: space-between;
   align-items: center;
   gap: 10px;
-  background-color: #333;
-  color: #fff;
+  background-color: $dark;
+  color: $text;
+  font-size: 1.5rem;
   padding: 10px 20px;
   margin: 10px 0;
   border-radius: 10px;
@@ -26,28 +29,32 @@
   cursor: pointer;
   opacity: 0.9;
   transition: opacity 0.3s ease;
-}
-
-.toast.success {
-  background-color: #28a745;
 
   &:hover {
-    background-color: #218838;
+    opacity: 1;
   }
-}
 
-.toast.error {
-  background-color: #A52422;
+  &.success {
+    background-color: darken($success, 20%);
 
-  &:hover {
-    background-color: #8a1f1c;
+    &:hover {
+      background-color: darken($success, 10%);
+    }
   }
-}
 
-.toast.info {
-  background-color: #080F0F;
+  &.error {
+    background-color: $danger;
 
-  &:hover {
-    background-color: #060b0b;
+    &:hover {
+      background-color: darken($danger, 5%);
+    }
+  }
+
+  &.info {
+    background-color: $info;
+
+    &:hover {
+      background-color: lighten($info, 5%);
+    }
   }
 }

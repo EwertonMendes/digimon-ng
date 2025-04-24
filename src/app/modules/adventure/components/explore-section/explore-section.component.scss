@@ -1,3 +1,5 @@
+@import '@variables';
+
 :host {
   overflow: auto;
   margin-top: 20px;
@@ -7,55 +9,73 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 24px;
+
+  &-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 24px;
+  }
 
   &-container {
-    display: -webkit-inline-box;
-    overflow-y: auto;
+    width: 100%;
+    max-width: 1000px;
 
     .location-list {
       display: flex;
-      flex-direction: column;
       justify-content: center;
-      margin-top: 20px;
-      gap: 10px;
 
       &-container {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 24px;
         width: 100%;
-        padding: 10px;
+        padding: 12px;
 
         .location-list-item {
           display: flex;
           flex-direction: column;
-          justify-content: center;
           align-items: center;
-          background-color: rgba(#494949, 0.9);
-          gap: 10px;
-          padding: 10px;
-          border-radius: 10px;
-          transition: all 0.2s ease-in-out;
+          background: rgba(255, 255, 255, 0.06);
+          border-radius: 20px;
+          padding: 16px;
+          backdrop-filter: blur(10px);
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+          transition: all 0.3s ease;
+          color: $text;
 
-          &:hover {
+          &:hover,
+          &:focus {
             cursor: pointer;
-            background-color: rgba(black, 0.7);
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-4px);
+            outline: none;
           }
 
           &-image {
-            width: 200px;
+            width: 100%;
+            max-width: 200px;
 
             img {
-              border-radius: 10px;
+              width: 100%;
+              border-radius: 12px;
+              box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
             }
           }
 
           h5 {
-            font-size: 1rem;
+            margin-top: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: center;
+            color: $text;
           }
 
           &-level-range {
-            font-size: 0.8rem;
+            font-size: 0.95rem;
+            font-weight: 400;
+            color: darken($text, 15%);
+            margin-top: 4px;
           }
         }
       }

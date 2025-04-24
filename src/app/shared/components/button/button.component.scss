@@ -17,141 +17,142 @@
   color: $text;
   background-color: transparent;
 
-  .button-container {
+  &__container {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
+
+    &--top {
+      flex-direction: column;
+    }
+
+    &--bottom {
+      flex-direction: column-reverse;
+    }
+
+    &--left {
+      flex-direction: row;
+    }
+
+    &--right {
+      flex-direction: row-reverse;
+    }
   }
 
-  .top {
-    flex-direction: column;
-  }
-
-  .bottom {
-    flex-direction: column-reverse;
-  }
-
-  .left {
-    flex-direction: row;
-  }
-
-  .right {
-    flex-direction: row-reverse;
-  }
-
-  .button-text {
+  &__text {
     text-align: center;
   }
 
-  &:not(.disabled):hover {
+  &:not(.app-button--disabled):hover {
     transform: translateY(-2px);
   }
 
-  &:not(.disabled):active {
+  &:not(.app-button--disabled):active {
     transform: scale(0.97);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   }
 
-  &.primary {
+  // Color Modifiers
+  &--primary {
     background-color: $primary;
     color: $text;
 
-    &:not(.disabled):hover {
+    &:not(.app-button--disabled):hover {
       background-color: $primary-light;
       box-shadow: 0 0 12px $primary-light;
     }
 
-    &:not(.disabled):active {
+    &:not(.app-button--disabled):active {
       background-color: $primary-dark;
     }
   }
 
-  &.secondary {
+  &--secondary {
     background-color: $secondary;
     color: $text;
 
-    &:not(.disabled):hover {
+    &:not(.app-button--disabled):hover {
       background-color: $secondary-light;
       box-shadow: 0 0 12px $secondary-light;
     }
 
-    &:not(.disabled):active {
+    &:not(.app-button--disabled):active {
       background-color: $secondary-dark;
     }
   }
 
-  &.tertiary {
+  &--tertiary {
     background-color: $tertiary;
     color: #000;
 
-    &:not(.disabled):hover {
+    &:not(.app-button--disabled):hover {
       background-color: $tertiary-light;
       box-shadow: 0 0 12px $tertiary-light;
     }
 
-    &:not(.disabled):active {
+    &:not(.app-button--disabled):active {
       background-color: $tertiary-dark;
     }
   }
 
-  &.danger {
+  &--danger {
     background-color: $danger;
     color: $text;
 
-    &:not(.disabled):hover {
+    &:not(.app-button--disabled):hover {
       background-color: lighten($danger, 5%);
       box-shadow: 0 0 12px lighten($danger, 10%);
     }
 
-    &:not(.disabled):active {
+    &:not(.app-button--disabled):active {
       background-color: darken($danger, 5%);
     }
   }
 
-  &.success {
+  &--success {
     background-color: $success;
     color: #000;
 
-    &:not(.disabled):hover {
+    &:not(.app-button--disabled):hover {
       background-color: lighten($success, 5%);
       box-shadow: 0 0 12px lighten($success, 10%);
     }
 
-    &:not(.disabled):active {
+    &:not(.app-button--disabled):active {
       background-color: darken($success, 5%);
     }
   }
 
-  &.info {
+  &--info {
     background-color: $info;
     color: $text;
 
-    &:not(.disabled):hover {
+    &:not(.app-button--disabled):hover {
       background-color: lighten($info, 5%);
       box-shadow: 0 0 12px lighten($info, 10%);
     }
 
-    &:not(.disabled):active {
+    &:not(.app-button--disabled):active {
       background-color: darken($info, 5%);
     }
   }
 
-  &.dark {
+  &--dark {
     background-color: $dark;
     color: #fff;
 
-    &:not(.disabled):hover {
+    &:not(.app-button--disabled):hover {
       background-color: $dark-hover;
       box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
     }
 
-    &:not(.disabled):active {
+    &:not(.app-button--disabled):active {
       background-color: $dark-active;
     }
   }
 
-  &.disabled {
+  &--disabled {
     cursor: not-allowed;
     filter: brightness(60%);
     pointer-events: auto;

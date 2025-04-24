@@ -3,41 +3,42 @@
     <h1>DIGILAB</h1>
   </div>
   <div class="lab__content">
-    @for(digimon of labDigimons(); track $index) {
-    <div class="lab__content-card">
-      <div class="lab__content-card-body">
-        <div class="lab__content-card-body-image">
-          <img [src]="digimon.img" [alt]="digimon.name" />
-        </div>
-        <div class="lab__content-card-body-text">
-          <span class="lab__content-card-body-text-name">{{
-            digimon.name
-          }}</span>
-          <span class="lab__content-card-body-text-rank"
-            >Rank: {{ digimon.rank }}</span
-          >
-          <span class="lab__content-card-body-text-cost">
-            Cost: {{ digimon.cost }} bits
-          </span>
-          <div class="lab__content-card-body-text-convert-bar">
-            <span> {{ digimon.amount }}%</span>
-            <div class="lab__content-card-body-text-convert-bar-progress">
-              <div
-                class="lab__content-card-body-text-convert-bar-progress-fill"
-                [ngStyle]="{ width: digimon.amount + '%' }"
-              ></div>
-            </div>
+    @for (digimon of labDigimons(); track $index) {
+      <div class="lab__content-card">
+        <div class="lab__content-card-body">
+          <div class="lab__content-card-body-image">
+            <img [src]="digimon.img" [alt]="digimon.name" />
           </div>
-          <app-button
-            text="CONVERT"
-            weight="bold"
-            color="info"
-            [disabled]="digimon.amount < 100 || globalState.playerDataAcessor.bits < digimon.cost"
-            (onClick)="convertDigiData(digimon)"
-          />
+          <div class="lab__content-card-body-text">
+            <span class="lab__content-card-body-text-name">{{ digimon.name }}</span>
+            <span class="lab__content-card-body-text-rank">Rank: {{ digimon.rank }}</span>
+            <span class="lab__content-card-body-text-cost">Cost: {{ digimon.cost }} bits</span>
+            <div class="lab__content-card-body-text-convert-bar">
+              <span
+                [ngClass]="{
+                  'lab__content-card-body-text-convert-bar__percent--complete': digimon.amount >= 100,
+                  'lab__content-card-body-text-convert-bar__percent--incomplete': digimon.amount < 100
+                }"
+              >
+                {{ digimon.amount }}%
+              </span>
+              <div class="lab__content-card-body-text-convert-bar-progress">
+                <div
+                  class="lab__content-card-body-text-convert-bar-progress-fill"
+                  [ngStyle]="{ width: digimon.amount + '%' }"
+                ></div>
+              </div>
+            </div>
+            <app-button
+              text="CONVERT"
+              weight="bold"
+              color="info"
+              [disabled]="digimon.amount < 100 || globalState.playerDataAcessor.bits < digimon.cost"
+              (onClick)="convertDigiData(digimon)"
+            />
+          </div>
         </div>
       </div>
-    </div>
     }
   </div>
 </div>

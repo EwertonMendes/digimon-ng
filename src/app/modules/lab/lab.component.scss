@@ -17,6 +17,8 @@
   background-color: rgba($dark, 0.7);
 
   &__title {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     text-align: center;
     background: $secondary;
     color: $text;
@@ -25,6 +27,31 @@
     border-radius: 0 0 10px 10px;
     font-weight: bold;
     letter-spacing: 2px;
+
+    h1 {
+      grid-column: 2;
+    }
+
+    &-bits {
+      grid-column: 3;
+      display: flex;
+      flex-direction: row;
+      gap: 0.5rem;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+
+      &-text {
+        font-size: 1.5rem;
+        color: $text;
+      }
+
+      &-amount {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: $primary-light
+      }
+    }
   }
 
   &__content {

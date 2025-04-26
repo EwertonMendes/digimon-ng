@@ -40,6 +40,11 @@ export class BattleModalComponent {
     this.isChoosingDigimonToAttack.set(true);
   }
 
+  cancelAttack(event?: MouseEvent) {
+    event?.preventDefault();
+    this.isChoosingDigimonToAttack.set(false);
+  }
+
   playerAttack(opponentDigimon: Digimon) {
     if (!this.globalState.isBattleActive || !this.isChoosingDigimonToAttack() || opponentDigimon.currentHp <= 0) return;
     this.isChoosingDigimonToAttack.set(false);

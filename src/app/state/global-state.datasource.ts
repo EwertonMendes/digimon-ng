@@ -578,7 +578,7 @@ export class GlobalStateDataSource {
   }
 
   repopulateTurnOrder() {
-    this.turnOrder = [...this.getTurnOrder(), ...this.getTurnOrder()];
+    this.turnOrder = [...this.turnOrder, ...this.getTurnOrder(), ...this.getTurnOrder()];
   }
 
   nextTurn() {

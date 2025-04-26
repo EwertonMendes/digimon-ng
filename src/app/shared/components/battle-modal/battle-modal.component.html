@@ -23,8 +23,7 @@
       <div class="turn-order-container">
         <div class="turn-order">
           <h4 class="turn-order-title">Turn Order</h4>
-          @for(digimon of globalState.turnOrder; track digimon.seed +
-          $index){
+          @for(digimon of globalState.turnOrder; track digimon.seed + $index){
           <div
             class="turn-order-digimon"
             [ngClass]="{
@@ -85,14 +84,14 @@
             }
             <span>VS</span>
             @if(globalState.showPlayerAttackButton() &&
-            globalState.isBattleActive) {
+            !isChoosingDigimonToAttack() && globalState.isBattleActive) {
             <div class="player-actions-container">
               <app-button
                 text="Attack"
                 icon="ph-sword"
                 weight="bold"
                 iconPosition="right"
-                (onClick)="playerAttack()"
+                (onClick)="onClickAttack()"
               />
               <app-button
                 text="Run away"
@@ -126,7 +125,14 @@
                   { 🔽 } @if(globalState.currentDefendingDigimon()?.id ===
                   digimon.id) { 💥 }
                 </span>
-                <app-digi-status-card [digimon]="digimon" />
+                <app-digi-status-card
+                  [digimon]="digimon"
+                  (click)="playerAttack(digimon)"
+                  [ngClass]="{
+                    selectable:
+                      isChoosingDigimonToAttack() && digimon.currentHp > 0
+                  }"
+                />
               </div>
               }
             </div>

@@ -1,4 +1,4 @@
-import { Component, inject, input } from '@angular/core';
+import { Component, inject, input, signal } from '@angular/core';
 import { ModalComponent } from '../modal/modal.component';
 import { GlobalStateDataSource } from '../../../state/global-state.datasource';
 import { DigiStatusCardComponent } from '../digi-status-card/digi-status-card.component';
@@ -7,6 +7,7 @@ import { ButtonComponent } from '../button/button.component';
 import { AudioService } from '../../../services/audio.service';
 import { AudioEffects } from '../../../core/enums/audio-tracks.enum';
 import { CommonModule } from '@angular/common';
+import { Digimon } from 'app/core/interfaces/digimon.interface';
 
 @Component({
   selector: 'app-battle-modal',
@@ -24,6 +25,7 @@ export class BattleModalComponent {
   imageBackground = input<string | null>(null);
   battleModalId = 'battle-modal';
   showPlayerAttackButton = false;
+  isChoosingDigimonToAttack = signal(false);
 
   globalState = inject(GlobalStateDataSource);
   toastService = inject(ToastService);
@@ -34,16 +36,16 @@ export class BattleModalComponent {
     this.globalState.resetTurnOrder();
   }
 
-  playerAttack() {
-    if (!this.globalState.isBattleActive) return;
+  onClickAttack() {
+    this.isChoosingDigimonToAttack.set(true);
+  }
+
+  playerAttack(opponentDigimon: Digimon) {
+    if (!this.globalState.isBattleActive || !this.isChoosingDigimonToAttack() || opponentDigimon.currentHp <= 0) return;
+    this.isChoosingDigimonToAttack.set(false);
     const digimon = this.globalState.turnOrder.shift();
 
     if (!digimon) return;
-
-    const opponentDigimon = this.globalState.enemyTeamAccessor.find(
-      (d) => d.currentHp > 0
-    );
-    if (!opponentDigimon) return;
 
     this.globalState.currentDefendingDigimon.set({
       ...opponentDigimon,

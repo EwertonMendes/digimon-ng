@@ -190,6 +190,16 @@
                 font-size: 1.2rem;
                 height: 30px;
               }
+
+              .selectable {
+                border: 10px solid $primary;
+                border-radius: 20px;
+                transition: border 0.3s ease-in-out;
+
+                &:hover {
+                  border: 10px solid $secondary;
+                }
+              }
             }
           }
         }

@@ -484,9 +484,9 @@ export class GlobalStateDataSource {
 
   private enemyAttack(digimon: Digimon) {
     if (!this.isBattleActive) return;
-    const target = this.playerDataAcessor.digimonList.find(
-      (d) => d.currentHp > 0
-    );
+
+    const target = this.getTargetBasedOnStrategy();
+
     if (!target) return;
 
     this.currentDefendingDigimon.set({ ...target, owner: 'player' });
@@ -516,6 +516,35 @@ export class GlobalStateDataSource {
 
       this.nextTurn();
     }, 1000);
+  }
+
+  private getTargetBasedOnStrategy(): Digimon | null {
+    const playerTeam = this.playerDataAcessor.digimonList.filter(
+      (d) => d.currentHp > 0
+    );
+
+    if (playerTeam.length === 0) return null;
+
+    const strategies: Record<string, () => Digimon> = {
+      lowestHp: () =>
+        playerTeam.reduce((lowest, digimon) =>
+          digimon.currentHp < lowest.currentHp ? digimon : lowest
+        ),
+      highestThreat: () =>
+        playerTeam.reduce((highest, digimon) =>
+          digimon.atk > highest.atk ? digimon : highest
+        ),
+      random: () => playerTeam[Math.floor(Math.random() * playerTeam.length)],
+      fastest: () =>
+        playerTeam.reduce((fastest, digimon) =>
+          digimon.speed > fastest.speed ? digimon : fastest
+        ),
+    };
+
+    const strategyKeys = Object.keys(strategies);
+    const randomStrategy = strategyKeys[Math.floor(Math.random() * strategyKeys.length)];
+
+    return strategies[randomStrategy]();
   }
 
   private getTurnOrder() {
@@ -549,7 +578,6 @@ export class GlobalStateDataSource {
   }
 
   repopulateTurnOrder() {
-
     this.turnOrder = [...this.getTurnOrder(), ...this.getTurnOrder()];
   }
 

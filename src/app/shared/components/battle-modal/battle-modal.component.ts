@@ -36,7 +36,7 @@ export class BattleModalComponent {
 
   playerAttack() {
     if (!this.globalState.isBattleActive) return;
-    const digimon = this.globalState.actualTurnOrder.shift();
+    const digimon = this.globalState.turnOrder.shift();
 
     if (!digimon) return;
 
@@ -65,11 +65,8 @@ export class BattleModalComponent {
 
     if (opponentDigimon.currentHp <= 0) {
       this.log(`Enemy ${opponentDigimon.name} has been defeated.`);
-      this.globalState.baseTurnOrder = this.globalState.baseTurnOrder.filter(
-        (d) => d.id !== opponentDigimon.id
-      );
-      this.globalState.actualTurnOrder =
-        this.globalState.actualTurnOrder.filter(
+      this.globalState.turnOrder =
+        this.globalState.turnOrder.filter(
           (d) => d.id !== opponentDigimon.id
         );
     }

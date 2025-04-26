@@ -87,9 +87,7 @@ export class GlobalStateDataSource {
   get battleLogAccessor() {
     return this.battleLog();
   }
-
-  baseTurnOrder: Array<DigimonWithOwner> = [];
-  actualTurnOrder: Array<DigimonWithOwner> = [];
+  turnOrder: Array<DigimonWithOwner> = [];
 
   currentAttackingDigimon = signal<DigimonWithOwner | null>(null);
   currentDefendingDigimon = signal<DigimonWithOwner | null>(null);
@@ -447,7 +445,7 @@ export class GlobalStateDataSource {
   }
 
   startBattle() {
-    this.generateBaseTurnOrder();
+    this.repopulateTurnOrder();
     this.isBattleActive = true;
     this.nextTurn();
   }
@@ -507,14 +505,11 @@ export class GlobalStateDataSource {
         this.audioService.playAudio(AudioEffects.HIT);
       }
 
-      this.actualTurnOrder.shift();
+      this.turnOrder.shift();
 
       if (target.currentHp <= 0) {
         this.log(`Player ${target.name} has been defeated.`);
-        this.baseTurnOrder = this.baseTurnOrder.filter(
-          (digimon) => digimon.id !== target.id
-        );
-        this.actualTurnOrder = this.actualTurnOrder.filter(
+        this.turnOrder = this.turnOrder.filter(
           (digimon) => digimon.id !== target.id
         );
       }
@@ -532,23 +527,30 @@ export class GlobalStateDataSource {
       .filter((enemyDigimon) => enemyDigimon.currentHp > 0)
       .map((enemyDigimon) => ({ ...enemyDigimon, owner: 'enemy' }));
 
-    return [...playerTeam, ...enemyTeam].sort(() => Math.random() - 0.5);
+    const allDigimons = [...playerTeam, ...enemyTeam];
+
+    allDigimons.sort((a, b) => b.speed - a.speed);
+
+    const turnOrder: Array<DigimonWithOwner> = [];
+    for (const digimon of allDigimons) {
+      turnOrder.push(digimon);
+
+      const averageSpeed = allDigimons.reduce((acc, d) => acc + d.speed, 0) / allDigimons.length;
+      if (digimon.speed > averageSpeed * 1.5) {
+        turnOrder.push(digimon);
+      }
+    }
+
+    return turnOrder;
   }
 
   resetTurnOrder() {
-    this.baseTurnOrder = [];
-    this.actualTurnOrder = [];
+    this.turnOrder = [];
   }
 
   repopulateTurnOrder() {
-    for (let i = 0; i < 5; i++) {
-      this.actualTurnOrder.push(...this.baseTurnOrder);
-    }
-  }
 
-  generateBaseTurnOrder() {
-    this.baseTurnOrder = this.getTurnOrder();
-    this.repopulateTurnOrder();
+    this.turnOrder = [...this.getTurnOrder(), ...this.getTurnOrder()];
   }
 
   nextTurn() {
@@ -572,11 +574,11 @@ export class GlobalStateDataSource {
       return;
     }
 
-    if (this.actualTurnOrder.length <= 5) {
+    if (this.turnOrder.length <= 5) {
       this.repopulateTurnOrder();
     }
 
-    const digimon = this.actualTurnOrder[0];
+    const digimon = this.turnOrder[0];
 
     if (!digimon) {
       this.showPlayerAttackButton.set(false);
@@ -619,7 +621,7 @@ export class GlobalStateDataSource {
     this.audioService.playAudio(AudioEffects.HIT);
     this.log('Escape attempt failed. Enemy counterattacks.');
 
-    const enemy = this.actualTurnOrder[0];
+    const enemy = this.turnOrder[0];
     if (!enemy || enemy.owner !== 'enemy') {
       this.enemyAttack(enemy);
       return;

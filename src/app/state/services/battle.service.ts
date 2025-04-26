@@ -20,12 +20,18 @@ export class BattleService {
   private maxOtherStats = 99999;
 
   private calculateDamage(attacker: Digimon, defender: Digimon) {
-    let baseDamage =
-      (attacker.atk - defender.def) * this.rankMultiplier[attacker.rank];
+    let baseDamage = (attacker.atk - defender.def) * this.rankMultiplier[attacker.rank];
     baseDamage = Math.max(1, baseDamage);
 
     const criticalHit = Math.random() < 0.1 ? 1.5 : 1.0;
+
     const randomVariance = 0.9 + Math.random() * 0.2;
+
+    const speedDifference = defender.speed - attacker.speed;
+    const missChance = Math.max(0, Math.min(0.5, speedDifference / 100));
+    if (Math.random() < missChance) {
+      return 0;
+    }
 
     return Math.floor(baseDamage * criticalHit * randomVariance);
   }

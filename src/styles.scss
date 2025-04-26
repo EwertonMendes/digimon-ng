@@ -68,6 +68,7 @@ body {
   border-radius: 60px;
   padding: 20px;
 }
+
 ::-webkit-scrollbar-thumb {
   border-radius: 60px;
   background: #F49D37;
@@ -133,4 +134,10 @@ img {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.cdk-drag-preview {
+  zoom: scale(0.5) !important;
+  width: auto !important;
+  height: auto !important;
 }

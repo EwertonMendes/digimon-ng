@@ -142,6 +142,11 @@
                 font-size: 1.2rem;
                 height: 30px;
               }
+
+              app-digi-status-card {
+                border: 10px solid transparent;
+                border-radius: 20px;
+              }
             }
           }
         }
@@ -191,13 +196,18 @@
                 height: 30px;
               }
 
-              .selectable {
-                border: 10px solid $primary;
+              app-digi-status-card {
+                border: 10px solid transparent;
                 border-radius: 20px;
-                transition: border 0.3s ease-in-out;
+                transition: all 0.2s ease-in-out;
+              }
+
+              app-digi-status-card.selectable {
+                border: 10px solid $primary;
 
                 &:hover {
                   border: 10px solid $secondary;
+                  scale: 1.1;
                 }
               }
             }

@@ -73,19 +73,21 @@
       ]"
       (cdkDropListDropped)="drop($event)"
     >
-      @for(digimon of globalState.playerDataAcessor.hospitalDigimonList; track
-      digimon.id){
-      <app-digi-status-card
-        cdkDrag
-        [digimon]="digimon"
-        (click)="openDigimonDetailsModal(digimon)"
-        (contextmenu)="removeDigimonFromLocation($event, digimon, 'hospital')"
-      />
-      } @empty {
-      <div class="hospital-digimon-list-no-data-container">
-        <h4>No Digimon</h4>
+      <div class="hospital-digimon-list-container">
+        @for(digimon of globalState.playerDataAcessor.hospitalDigimonList; track
+        digimon.id){
+        <app-digi-status-card
+          cdkDrag
+          [digimon]="digimon"
+          (click)="openDigimonDetailsModal(digimon)"
+          (contextmenu)="removeDigimonFromLocation($event, digimon, 'hospital')"
+        />
+        } @empty {
+        <div class="hospital-digimon-list-no-data-container">
+          <h4>No Digimon</h4>
+        </div>
+        }
       </div>
-      }
     </div>
   </div>
 </div>

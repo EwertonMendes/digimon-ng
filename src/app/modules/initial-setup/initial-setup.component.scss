@@ -72,8 +72,8 @@
   }
 
   &__team-list {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     width: 100%;
     justify-content: center;
@@ -84,13 +84,12 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 1rem;
-    width: 32%;
     min-width: 300px;
     max-width: 400px;
     background: rgba(255, 255, 255, 0.05);
     border: 2px solid $gray-700;
     border-radius: 20px;
-    padding: 1.5rem;
+    padding: 1rem;
     cursor: pointer;
     transition: transform 0.3s ease, border-color 0.3s ease;
     backdrop-filter: blur(12px);
@@ -142,7 +141,7 @@
     text-align: center;
     font-size: 1rem;
 
-    img {
+    .image {
       width: 70px;
       height: 70px;
       object-fit: contain;
@@ -151,10 +150,15 @@
       margin-bottom: 0.5rem;
     }
 
-    span {
-      line-height: 1.2;
+    .name {
+      font-size: 1.10rem;
+      font-weight: bold;
+      color: $text;
+    }
+
+    .rank {
+      font-size: 0.85rem;
       color: $gray-300;
-      font-weight: 600;
     }
   }
 

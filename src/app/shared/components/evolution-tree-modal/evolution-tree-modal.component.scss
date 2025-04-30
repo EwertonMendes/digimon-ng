@@ -133,6 +133,12 @@
 }
 
 #evolution-confirmation-modal {
+  .evolution-confirmation-modal-container {
+    display: flex;
+    justify-content: center;
+    height: -webkit-fill-available;
+  }
+
   .evolution-confirmation-container {
     display: flex;
     flex-direction: column;

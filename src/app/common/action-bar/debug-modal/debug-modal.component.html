@@ -46,6 +46,13 @@
         [(ngModel)]="generateEvolutionLine"
       />
     </div>
+    <div class="generate-evolution-line-select-container">
+      <app-button
+        text="Refresh digimon list"
+        color="primary"
+        (onClick)="refreshDigimonList()"
+      />
+    </div>
     <div>Total: {{ totalDigimonAmount }}</div>
   </div>
 </app-digimon-selection-modal>

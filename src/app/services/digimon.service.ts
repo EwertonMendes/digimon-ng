@@ -14,10 +14,10 @@ export class DigimonService {
   private maxOtherStats = 99999;
 
   constructor() {
-    this.initializeBaseDigimonData();
+    this.readBaseDigimonDatabase();
   }
 
-  private async initializeBaseDigimonData() {
+  async readBaseDigimonDatabase() {
     const data = await fetch('database/base-digimon-list.json').then((res) =>
       res.json()
     );

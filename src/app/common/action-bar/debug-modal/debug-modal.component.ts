@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { ChangeDetectorRef, Component, inject, OnInit, signal } from '@angular/core';
 import { ModalComponent } from '../../../shared/components/modal/modal.component';
 import { ButtonComponent } from '../../../shared/components/button/button.component';
 import { GlobalStateDataSource } from '../../../state/global-state.datasource';
@@ -33,6 +33,7 @@ export class DebugModalComponent implements OnInit {
   toastService = inject(ToastService);
   modalService = inject(ModalService);
   digimonService = inject(DigimonService);
+  changeDectorRef = inject(ChangeDetectorRef);
 
   tools = [
     { name: 'Give Random Digimon', action: this.giveRandomDigimon.bind(this) },
@@ -77,6 +78,11 @@ export class DebugModalComponent implements OnInit {
     );
 
     this.modalService.close(this.digimonSelectionModalId);
+  }
+
+  async refreshDigimonList() {
+    await this.digimonService.readBaseDigimonDatabase();
+    this.changeDectorRef.detectChanges();
   }
 
   validateLevel(value: number): void {

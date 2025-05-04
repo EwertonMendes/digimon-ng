@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, inject, OnInit, signal } from '@angular/core';
+import { ChangeDetectorRef, Component, inject, signal } from '@angular/core';
 import { ModalComponent } from '../../../shared/components/modal/modal.component';
 import { ButtonComponent } from '../../../shared/components/button/button.component';
 import { GlobalStateDataSource } from '../../../state/global-state.datasource';
@@ -9,6 +9,8 @@ import { DigimonService } from '../../../services/digimon.service';
 import { BaseDigimon } from '../../../core/interfaces/digimon.interface';
 
 import { FormsModule } from '@angular/forms';
+import { EvolutionTreeModalComponent } from 'app/shared/components/evolution-tree-modal/evolution-tree-modal.component';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-debug-modal',
@@ -18,17 +20,24 @@ import { FormsModule } from '@angular/forms';
     ButtonComponent,
     DigimonSelectionModalComponent,
     FormsModule,
+    EvolutionTreeModalComponent,
   ],
   templateUrl: './debug-modal.component.html',
   styleUrl: './debug-modal.component.scss',
 })
-export class DebugModalComponent implements OnInit {
+export class DebugModalComponent {
   debugModalId = 'debug-modal';
-  digimonSelectionModalId = 'digimon-selection-modal';
+  giveSelectedDigimonModalId = 'give-selected-digimon-modal-debug';
+  seeEvolutionTreeModalId = 'see-evolution-tree-modal-debug';
+  evolutionTreeModalId = 'evolution-tree-modal-debug';
+
+  selectedEvolutionLineDigimon = signal<BaseDigimon>({} as BaseDigimon);
   selectableDigimonList = signal<BaseDigimon[]>([]);
   selectedLevel = 1;
   totalDigimonAmount = 0;
   generateEvolutionLine = false;
+  $OnDestroy = new Subject<void>();
+
   globalState = inject(GlobalStateDataSource);
   toastService = inject(ToastService);
   modalService = inject(ModalService);
@@ -39,19 +48,26 @@ export class DebugModalComponent implements OnInit {
     { name: 'Give Random Digimon', action: this.giveRandomDigimon.bind(this) },
     {
       name: 'Give Certain Digimon',
-      action: this.openDigimonSelectionModal.bind(this),
+      action: this.openGivenCertainDigimonModal.bind(this),
     },
     { name: 'Reset Storage', action: this.resetStorage.bind(this) },
+    { name: 'See Evolution Lines', action: this.openSeeEvolutionLinesDigimonModal.bind(this) },
   ];
 
-  ngOnInit(): void {
-    this.digimonService.baseDigimonData$.subscribe((data) => {
+  onOpen() {
+    if (this.selectableDigimonList().length !== 0) return;
+    this.digimonService.baseDigimonData$.pipe(takeUntil(this.$OnDestroy)).subscribe((data) => {
       this.selectableDigimonList.set(
         data.sort((a, b) => a.name.localeCompare(b.name))
       );
-
       this.totalDigimonAmount = data.length;
     });
+  }
+
+  onClose() {
+    this.selectableDigimonList.set([]);
+    this.$OnDestroy.next();
+    this.$OnDestroy.complete();
   }
 
   giveRandomDigimon() {
@@ -77,7 +93,13 @@ export class DebugModalComponent implements OnInit {
       'success'
     );
 
-    this.modalService.close(this.digimonSelectionModalId);
+    this.modalService.close(this.giveSelectedDigimonModalId);
+  }
+
+  openEvolutionTreeModal(digimon: BaseDigimon) {
+    this.selectedEvolutionLineDigimon.set(digimon);
+    this.changeDectorRef.detectChanges();
+    this.modalService.open(this.evolutionTreeModalId);
   }
 
   async refreshDigimonList() {
@@ -94,7 +116,11 @@ export class DebugModalComponent implements OnInit {
     this.toastService.showToast('Storage reset!', 'success');
   }
 
-  openDigimonSelectionModal() {
-    this.modalService.open(this.digimonSelectionModalId);
+  openGivenCertainDigimonModal() {
+    this.modalService.open(this.giveSelectedDigimonModalId);
+  }
+
+  openSeeEvolutionLinesDigimonModal() {
+    this.modalService.open(this.seeEvolutionTreeModalId);
   }
 }

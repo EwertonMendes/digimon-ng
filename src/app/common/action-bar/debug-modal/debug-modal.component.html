@@ -1,4 +1,4 @@
-<app-modal [id]="debugModalId">
+<app-modal [id]="debugModalId" (openEvent)="onOpen()" (closeEvent)="onClose()">
   <div class="debug-modal-container">
     <h3 class="section-title">Debug</h3>
     <div class="debug-modal-content">
@@ -16,7 +16,7 @@
 </app-modal>
 
 <app-digimon-selection-modal
-  [id]="digimonSelectionModalId"
+  [id]="giveSelectedDigimonModalId"
   [digimonList]="selectableDigimonList()"
   (onSelectDigimon)="giveSelectedDigimon($event)"
 >
@@ -56,3 +56,14 @@
     <div>Total: {{ totalDigimonAmount }}</div>
   </div>
 </app-digimon-selection-modal>
+
+<app-digimon-selection-modal
+  [id]="seeEvolutionTreeModalId"
+  [digimonList]="selectableDigimonList()"
+  (onSelectDigimon)="openEvolutionTreeModal($event)"
+/>
+
+<app-evolution-tree-modal
+  [id]="evolutionTreeModalId"
+  [mainDigimon]="selectedEvolutionLineDigimon()"
+/>

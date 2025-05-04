@@ -8,6 +8,7 @@ export class ModalService {
 
   add(modal: ModalComponent) {
     if (this.modals.find((m) => m.id === modal.id)) {
+      if (modal.isUnique()) return;
       throw new Error(`A modal with id ${modal.id} already exists`);
     }
     this.modals.push(modal);

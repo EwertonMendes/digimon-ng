@@ -15,7 +15,7 @@ export class GraphService {
 
   createGraph(
     container: HTMLElement,
-    mainDigimon: Digimon,
+    mainDigimon: Digimon | BaseDigimon,
     evolutionRouteDigimons?: BaseDigimon[]
   ): Sigma {
     const graph = new Graph();
@@ -71,7 +71,7 @@ export class GraphService {
 
   private addMainDigimonNode(
     graph: Graph,
-    mainDigimon: Digimon,
+    mainDigimon: Digimon | BaseDigimon,
     evolutionRouteDigimons?: BaseDigimon[]
   ) {
     graph.addNode(mainDigimon.seed, {
@@ -100,7 +100,7 @@ export class GraphService {
 
   private addPossibleDegenerations(
     graph: Graph,
-    mainDigimon: Digimon,
+    mainDigimon: Digimon | BaseDigimon,
     evolutionRouteDigimons?: BaseDigimon[]
   ) {
     const possibleDegenerations = this.digimonService
@@ -141,7 +141,7 @@ export class GraphService {
 
   private addPossibleEvolutions(
     graph: Graph,
-    mainDigimon: Digimon,
+    mainDigimon: Digimon | BaseDigimon,
     evolutionRouteDigimons?: BaseDigimon[]
   ) {
     const possibleEvolutions =

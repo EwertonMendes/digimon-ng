@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, effect, HostListener, inject, input, signal } from '@angular/core';
+import { AfterViewInit, Component, effect, ElementRef, HostListener, inject, input, signal } from '@angular/core';
 import { ModalComponent } from '../modal/modal.component';
 import {
   BaseDigimon,
@@ -37,8 +37,8 @@ export class EvolutionTreeModalComponent implements AfterViewInit {
   private static readonly NODE_COLOR = '#191919';
   private static readonly EDGE_COLOR = 'black';
 
-  evolutionTreeModalId = 'evolution-tree-modal';
-  mainDigimon = input<Digimon>();
+  id = input<string>('evolution-tree-modal');
+  mainDigimon = input<Digimon | BaseDigimon>();
   sigma!: Sigma;
   currentRank: string = 'Fresh';
   evolutionRouteDigimons: BaseDigimon[] = [];
@@ -52,10 +52,12 @@ export class EvolutionTreeModalComponent implements AfterViewInit {
   globalState = inject(GlobalStateDataSource);
   modalService = inject(ModalService);
   audioService = inject(AudioService);
+  elementRef = inject(ElementRef<HTMLElement>);
 
   constructor() {
     effect(
       () => {
+        if(!this.isDigimon(this.mainDigimon())) return;
         if (
           !this.mainDigimon() ||
           !this.digimonService.checkRequirements(
@@ -80,7 +82,7 @@ export class EvolutionTreeModalComponent implements AfterViewInit {
   }
 
   onOpen() {
-    const container = document.getElementById('evolutionTreeWrapper')!;
+    const container = this.elementRef.nativeElement.querySelector('#evolutionTreeWrapper')!;
     if (!container) return;
 
     this.evolutionRouteDigimons = this.getEvolutionRouteDigimons();
@@ -106,10 +108,10 @@ export class EvolutionTreeModalComponent implements AfterViewInit {
 
   private getEvolutionRouteDigimons(): BaseDigimon[] {
     return this.mainDigimon()
-      ?.currentEvolutionRoute?.map((evolution) =>
+      ?.currentEvolutionRoute?.map((evolution: { seed: string; }) =>
         this.digimonService.getBaseDigimonDataBySeed(evolution.seed)
       )
-      .filter((digimon) => digimon !== undefined) as BaseDigimon[];
+      .filter((digimon: Digimon | BaseDigimon) => digimon !== undefined) as BaseDigimon[];
   }
 
   private handleNodeClick(data: any) {
@@ -137,7 +139,7 @@ export class EvolutionTreeModalComponent implements AfterViewInit {
     return (
       (nodeAttributes['seed'] === this.mainDigimon()?.seed ||
         this.mainDigimon()?.currentEvolutionRoute?.some(
-          (evolution) => evolution.seed === nodeAttributes['seed']
+          (evolution: { seed: string; }) => evolution.seed === nodeAttributes['seed']
         )) ??
       false
     );
@@ -288,13 +290,19 @@ export class EvolutionTreeModalComponent implements AfterViewInit {
     this.sigma.kill();
   }
 
+  isDigimon(digimon: Digimon | BaseDigimon | undefined): digimon is Digimon {
+    if (!digimon) return false;
+    return digimon.hasOwnProperty('id');
+  }
+
   async evolveDigimon() {
-    if (!this.mainDigimon() || !this.selectedDigimon()) return;
+    if (!this.mainDigimon() || !this.selectedDigimon() || !this.isDigimon(this.mainDigimon())) return;
+
 
     this.isEvolving.set(true)
 
     await this.globalState.evolveDigimon(
-      this.mainDigimon()!,
+      this.mainDigimon()! as Digimon,
       this.selectedDigimon()?.seed!
     );
 

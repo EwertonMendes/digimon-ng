@@ -114,7 +114,7 @@ export class DigimonService {
   }
 
   checkRequirements(
-    evolvingDigimon: Digimon,
+    evolvingDigimon: Digimon | BaseDigimon,
     targetDigimon: BaseDigimon
   ): boolean {
     if (!evolvingDigimon || !targetDigimon) return false;
@@ -130,7 +130,7 @@ export class DigimonService {
   }
 
   getPossibleEvolutionStats(
-    evolvingDigimon: Digimon,
+    evolvingDigimon: Digimon | BaseDigimon,
     targetDigimon: BaseDigimon
   ): any {
     const rankMultiplier = this.calculateRankMultiplier(

@@ -10,9 +10,9 @@ import { BaseDigimon } from '../../../core/interfaces/digimon.interface';
   styleUrl: './digimon-selection-modal.component.scss',
 })
 export class DigimonSelectionModalComponent {
-  digimonSelectionModalId = 'digimon-selection-modal';
+  id = input<string>('digimon-selection-modal');
 
-  digimonList = input.required<BaseDigimon[]>();
+  digimonList = input<BaseDigimon[]>();
 
   onSelectDigimon = output<BaseDigimon>();
 }

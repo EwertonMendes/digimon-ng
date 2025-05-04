@@ -1,5 +1,5 @@
 <app-modal
-  [id]="evolutionTreeModalId"
+  [id]="id()"
   (openEvent)="onOpen()"
   (closeEvent)="onClose()"
 >
@@ -86,7 +86,7 @@
   </div>
 </app-modal>
 
-<app-modal id="evolution-confirmation-modal">
+<app-modal id="evolution-confirmation-modal" [isUnique]="true">
   <div class="evolution-confirmation-modal-container">
     <div class="evolution-confirmation-container">
       <div class="evolution-confirmation-header">

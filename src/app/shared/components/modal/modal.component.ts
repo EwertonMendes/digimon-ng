@@ -24,6 +24,7 @@ import { AudioEffects } from '../../../core/enums/audio-tracks.enum';
 })
 export class ModalComponent implements OnInit, OnDestroy {
   @Input({ required: true }) id!: string;
+  isUnique = input<boolean>(false);
   closable = input<boolean>(true);
   element: HTMLElement;
 

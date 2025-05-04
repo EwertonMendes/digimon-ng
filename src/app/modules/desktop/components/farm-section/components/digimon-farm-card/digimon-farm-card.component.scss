@@ -1,3 +1,5 @@
+@import '@variables';
+
 .digimon-work-item {
   display: flex;
   flex-direction: row;
@@ -6,7 +8,10 @@
   padding: 10px;
   border-radius: 10px;
   color: white;
-  background-color: rgba(white, 0.5);
+  background-image: linear-gradient(to right bottom,
+      rgba($primary-dark, 0.8),
+      rgba($primary-light, 0.8),
+    );
 
   &:hover {
     background-color: rgba(white, 0.7);

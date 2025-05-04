@@ -1,21 +1,14 @@
+@import '@variables';
+
 .my-digimon-card {
   position: relative;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
   background-image: linear-gradient(to right bottom,
-      rgba(209, 195, 107, 0.5),
-      rgba(238, 172, 102, 0.5),
-      rgba(255, 148, 120, 0.5),
-      rgba(255, 129, 152, 0.5),
-      rgba(235, 123, 190, 0.5),
-      rgba(216, 121, 206, 0.5),
-      rgba(189, 122, 222, 0.5),
-      rgba(151, 125, 236, 0.5),
-      rgba(140, 119, 240, 0.5),
-      rgba(128, 113, 243, 0.5),
-      rgba(113, 107, 247, 0.5),
-      rgba(95, 102, 251, 0.5));
+      rgba($secondary-dark, 0.7),
+      rgba($secondary-light, 0.7),
+    );
   color: white;
   padding: 10px;
   width: 200px;

@@ -1,7 +1,4 @@
 import { Routes } from '@angular/router';
-import { DesktopComponent } from './modules/desktop/desktop.component';
-import { AdventureComponent } from './modules/adventure/adventure.component';
-import { LabComponent } from './modules/lab/lab.component';
 
 export const routes: Routes = [
   {
@@ -11,15 +8,15 @@ export const routes: Routes = [
   },
   {
     path: 'desktop',
-    component: DesktopComponent,
+    loadComponent: () => import('./modules/desktop/desktop.component').then(m => m.DesktopComponent),
   },
   {
     path: 'adventure',
-    component: AdventureComponent,
+    loadComponent: () => import('./modules/adventure/adventure.component').then(m => m.AdventureComponent),
   },
   {
     path: 'lab',
-    component: LabComponent,
+    loadComponent: () => import('./modules/lab/lab.component').then(m => m.LabComponent),
   },
   { path: '**', redirectTo: 'desktop' },
 ];

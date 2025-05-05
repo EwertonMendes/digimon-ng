@@ -2284,7 +2284,10 @@
     "def": 71,
     "speed": 55,
     "bitFarmingRate": 44,
-    "digiEvolutionSeedList": [],
+    "digiEvolutionSeedList": [
+      "bc8f1703-4769-4c3b-b8a2-e4f1d7ce9a02",
+      "a5d4e9f7-c830-4f2d-b6a1-1e0f4c3b9d58"
+    ],
     "degenerateSeedList": [],
     "evolutionRequirements": [
       {
@@ -4790,7 +4793,7 @@
     "speed": 75,
     "bitFarmingRate": 20,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["be1f2a3b-c4d5-4e6f-8a9b-0c1d2e3f4a5b"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -4922,7 +4925,7 @@
     "speed": 79,
     "bitFarmingRate": 16,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["be1f2a3b-c4d5-4e6f-8a9b-0c1d2e3f4a5b"],
     "evolutionRequirements": [
       {
         "type": "level",

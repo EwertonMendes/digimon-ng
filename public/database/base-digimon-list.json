@@ -5113,5 +5113,1941 @@
         "value": 20
       }
     ]
+  },
+  {
+    "seed": "550e8400-e29b-41d4-a716-446655440000",
+    "name": "Volcanomon",
+    "img": "/assets/digimons/Volcanomon.webp",
+    "rank": "Ultimate",
+    "species": "Dark",
+    "attribute": "Virus",
+    "hp": 229,
+    "mp": 231,
+    "atk": 131,
+    "def": 124,
+    "speed": 91,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 35
+      }
+    ]
+  },
+  {
+    "seed": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "name": "Monzaemon",
+    "img": "/assets/digimons/Monzaemon.webp",
+    "rank": "Ultimate",
+    "species": "Holy",
+    "attribute": "Vaccine",
+    "hp": 230,
+    "mp": 238,
+    "atk": 123,
+    "def": 122,
+    "speed": 90,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 36
+      }
+    ]
+  },
+  {
+    "seed": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+    "name": "MetalMamemon",
+    "img": "/assets/digimons/MetalMamemon.webp",
+    "rank": "Ultimate",
+    "species": "Machine",
+    "attribute": "Data",
+    "hp": 211,
+    "mp": 233,
+    "atk": 130,
+    "def": 119,
+    "speed": 106,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 37
+      }
+    ]
+  },
+  {
+    "seed": "8f14e45f-ceea-41d4-9a3d-3e8d2e9f6b2c",
+    "name": "Etemon",
+    "img": "/assets/digimons/Etemon.webp",
+    "rank": "Ultimate",
+    "species": "Beast",
+    "attribute": "Virus",
+    "hp": 204,
+    "mp": 229,
+    "atk": 116,
+    "def": 125,
+    "speed": 92,
+    "bitFarmingRate": 19,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 38
+      }
+    ]
+  },
+  {
+    "seed": "d1c5f6b8-2f3e-4e9b-8c2d-7a9e5f6d3b1a",
+    "name": "Piximon",
+    "img": "/assets/digimons/Piximon.webp",
+    "rank": "Ultimate",
+    "species": "Holy",
+    "attribute": "Vaccine",
+    "hp": 203,
+    "mp": 247,
+    "atk": 112,
+    "def": 108,
+    "speed": 112,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 39
+      }
+    ]
+  },
+  {
+    "seed": "e6b9d4f2-8c7a-4d3e-9f2b-5c1d8e3a6f9b",
+    "name": "Digitamamon",
+    "img": "/assets/digimons/Digitamamon.webp",
+    "rank": "Ultimate",
+    "species": "Holy",
+    "attribute": "Data",
+    "hp": 222,
+    "mp": 240,
+    "atk": 119,
+    "def": 130,
+    "speed": 86,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 40
+      }
+    ]
+  },
+  {
+    "seed": "a3d9f7c2-5e8b-4f1d-9c3a-7b2e6d4f8a1c",
+    "name": "Mammothmon",
+    "img": "/assets/digimons/Mammothmon.webp",
+    "rank": "Ultimate",
+    "species": "Beast",
+    "attribute": "Data",
+    "hp": 232,
+    "mp": 223,
+    "atk": 133,
+    "def": 122,
+    "speed": 90,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 41
+      }
+    ]
+  },
+  {
+    "seed": "b7e2c9d4-1f6a-4d3b-8e5c-9a2f7d6b3c1e",
+    "name": "ShogunGekomon",
+    "img": "/assets/digimons/ShogunGekomon.webp",
+    "rank": "Ultimate",
+    "species": "Aquan",
+    "attribute": "Data",
+    "hp": 224,
+    "mp": 237,
+    "atk": 127,
+    "def": 126,
+    "speed": 88,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 42
+      }
+    ]
+  },
+  {
+    "seed": "c4f8a2d6-9b3e-4e1f-8d7c-5a9f2b6e3d1c",
+    "name": "Tylomon",
+    "img": "/assets/digimons/Tylomon.webp",
+    "rank": "Ultimate",
+    "species": "Aquan",
+    "attribute": "Vaccine",
+    "hp": 204,
+    "mp": 228,
+    "atk": 111,
+    "def": 118,
+    "speed": 108,
+    "bitFarmingRate": 19,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 43
+      }
+    ]
+  },
+  {
+    "seed": "d9e3b7f2-5c1a-4f6d-8e9b-2a7c6d3f1e4b",
+    "name": "Scorpiomon",
+    "img": "/assets/digimons/Scorpiomon.webp",
+    "rank": "Ultimate",
+    "species": "Aquan",
+    "attribute": "Virus",
+    "hp": 216,
+    "mp": 248,
+    "atk": 128,
+    "def": 123,
+    "speed": 92,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 44
+      }
+    ]
+  },
+  {
+    "seed": "e8f4c6a1-3d2b-4e5f-9a8c-7b6d5e4f3a2c",
+    "name": "Dragomon",
+    "img": "/assets/digimons/Dragomon.webp",
+    "rank": "Ultimate",
+    "species": "Aquan",
+    "attribute": "Virus",
+    "hp": 208,
+    "mp": 255,
+    "atk": 130,
+    "def": 114,
+    "speed": 89,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 45
+      }
+    ]
+  },
+  {
+    "seed": "f9a5d7b2-4e3c-5f6a-8b9d-0c1e2f3a4b5d",
+    "name": "WarGarurumon (Black)",
+    "img": "/assets/digimons/WarGarurumon (Black).webp",
+    "rank": "Ultimate",
+    "species": "Beast",
+    "attribute": "Virus",
+    "hp": 219,
+    "mp": 233,
+    "atk": 130,
+    "def": 115,
+    "speed": 113,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 35
+      }
+    ]
+  },
+  {
+    "seed": "a1b2c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+    "name": "Myotismon",
+    "img": "/assets/digimons/Myotismon.webp",
+    "rank": "Ultimate",
+    "species": "Dark",
+    "attribute": "Virus",
+    "hp": 233,
+    "mp": 260,
+    "atk": 132,
+    "def": 121,
+    "speed": 95,
+    "bitFarmingRate": 21,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 36
+      }
+    ]
+  },
+  {
+    "seed": "b2c3d4e5-6f7a-8b9c-0d1e-2f3a4b5c6d7e",
+    "name": "LadyDevimon",
+    "img": "/assets/digimons/LadyDevimon.webp",
+    "rank": "Ultimate",
+    "species": "Dark",
+    "attribute": "Virus",
+    "hp": 216,
+    "mp": 239,
+    "atk": 134,
+    "def": 103,
+    "speed": 108,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 37
+      }
+    ]
+  },
+  {
+    "seed": "c3d4e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
+    "name": "Garudamon",
+    "img": "/assets/digimons/Garudamon.webp",
+    "rank": "Ultimate",
+    "species": "Bird",
+    "attribute": "Vaccine",
+    "hp": 215,
+    "mp": 250,
+    "atk": 128,
+    "def": 99,
+    "speed": 115,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 38
+      }
+    ]
+  },
+  {
+    "seed": "d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
+    "name": "Blossomon",
+    "img": "/assets/digimons/Blossomon.webp",
+    "rank": "Ultimate",
+    "species": "Insect/Plant",
+    "attribute": "Data",
+    "hp": 216,
+    "mp": 243,
+    "atk": 129,
+    "def": 113,
+    "speed": 93,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 39
+      }
+    ]
+  },
+  {
+    "seed": "e5f6a7b8-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
+    "name": "Lillymon",
+    "img": "/assets/digimons/Lillymon.webp",
+    "rank": "Ultimate",
+    "species": "Insect/Plant",
+    "attribute": "Vaccine",
+    "hp": 209,
+    "mp": 244,
+    "atk": 112,
+    "def": 108,
+    "speed": 114,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 40
+      }
+    ]
+  },
+  {
+    "seed": "f6a7b8c9-0d1e-2f3a-4b5c-6d7e8f9a0b1c",
+    "name": "Datamon",
+    "img": "/assets/digimons/Datamon.webp",
+    "rank": "Ultimate",
+    "species": "Machine",
+    "attribute": "Virus",
+    "hp": 205,
+    "mp": 244,
+    "atk": 109,
+    "def": 116,
+    "speed": 109,
+    "bitFarmingRate": 19,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 41
+      }
+    ]
+  },
+  {
+    "seed": "a7b8c9d0-1e2f-3a4b-5c6d-7e8f9a0b1c2d",
+    "name": "Cyberdramon",
+    "img": "/assets/digimons/Cyberdramon.webp",
+    "rank": "Ultimate",
+    "species": "Dragon",
+    "attribute": "Vaccine",
+    "hp": 228,
+    "mp": 241,
+    "atk": 141,
+    "def": 124,
+    "speed": 110,
+    "bitFarmingRate": 21,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 42
+      }
+    ]
+  },
+  {
+    "seed": "b8c9d0e1-2f3a-4b5c-6d7e-8f9a0b1c2d3e",
+    "name": "MagnaAngemon",
+    "img": "/assets/digimons/MagnaAngemon.webp",
+    "rank": "Ultimate",
+    "species": "Holy",
+    "attribute": "Vaccine",
+    "hp": 220,
+    "mp": 243,
+    "atk": 133,
+    "def": 103,
+    "speed": 114,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 43
+      }
+    ]
+  },
+  {
+    "seed": "c9d0e1f2-3a4b-5c6d-7e8f-9a0b1c2d3e4f",
+    "name": "Paildramon",
+    "img": "/assets/digimons/Paildramon.webp",
+    "rank": "Ultimate",
+    "species": "Dragon",
+    "attribute": "Vaccine",
+    "hp": 231,
+    "mp": 236,
+    "atk": 142,
+    "def": 123,
+    "speed": 108,
+    "bitFarmingRate": 21,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 44
+      }
+    ]
+  },
+  {
+    " oletseed": "d0e1f2a3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+    "name": "Dinobeemon",
+    "img": "/assets/digimons/Dinobeemon.webp",
+    "rank": "Ultimate",
+    "species": "Insect/Plant",
+    "attribute": "Data",
+    "hp": 216,
+    "mp": 253,
+    "atk": 134,
+    "def": 101,
+    "speed": 119,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 45
+      }
+    ]
+  },
+  {
+    "seed": "e1f2a3b4-5c6d-7e8f-9a0b-1c2d3e4f5a6b",
+    "name": "Antylamon",
+    "img": "/assets/digimons/Antylamon.webp",
+    "rank": "Ultimate",
+    "species": "Dark",
+    "attribute": "Data",
+    "hp": 214,
+    "mp": 254,
+    "atk": 110,
+    "def": 126,
+    "speed": 113,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 35
+      }
+    ]
+  },
+  {
+    "seed": "f2a3b4c5-6d7e-8f9a-0b1c-2d3e4f5a6b7c",
+    "name": "Mummymon",
+    "img": "/assets/digimons/Mummymon.webp",
+    "rank": "Ultimate",
+    "species": "Dark",
+    "attribute": "Virus",
+    "hp": 225,
+    "mp": 226,
+    "atk": 132,
+    "def": 116,
+    "speed": 97,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 36
+      }
+    ]
+  },
+  {
+    "seed": "a3b4c5d6-7e8f-9a0b-1c2d-3e4f5a6b7c8d",
+    "name": "Rapidmon",
+    "img": "/assets/digimons/Rapidmon.webp",
+    "rank": "Ultimate",
+    "species": "Beast",
+    "attribute": "Data",
+    "hp": 214,
+    "mp": 250,
+    "atk": 132,
+    "def": 106,
+    "speed": 109,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 37
+      }
+    ]
+  },
+  {
+    "seed": "b4c5d6e7-8f9a-0b1c-2d3e-4f5a6b7c8d9e",
+    "name": "Taomon",
+    "img": "/assets/digimons/Taomon.webp",
+    "rank": "Ultimate",
+    "species": "Holy",
+    "attribute": "Vaccine",
+    "hp": 203,
+    "mp": 251,
+    "atk": 113,
+    "def": 109,
+    "speed": 116,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 38
+      }
+    ]
+  },
+  {
+    "seed": "c5d6e7f8-9a0b-1c2d-3e4f-5a6b7c8d9e0f",
+    "name": "Parrotmon",
+    "img": "/assets/digimons/Parrotmon.webp",
+    "rank": "Ultimate",
+    "species": "Bird",
+    "attribute": "Data",
+    "hp": 218,
+    "mp": 221,
+    "atk": 119,
+    "def": 104,
+    "speed": 108,
+    "bitFarmingRate": 19,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 39
+      }
+    ]
+  },
+  {
+    "seed": "d6e7f8a9-0b1c-2d3e-4f5a-6b7c8d9e0f1a",
+    "name": "Infermon",
+    "img": "/assets/digimons/Infermon.webp",
+    "rank": "Ultimate",
+    "species": "Dark",
+    "attribute": "Virus",
+    "hp": 224,
+    "mp": 229,
+    "atk": 126,
+    "def": 122,
+    "speed": 102,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 40
+      }
+    ]
+  },
+  {
+    "seed": "e7f8a9b0-1c2d-3e4f-5a6b-7c8d9e0f1a2b",
+    "name": "BlackRapidmon",
+    "img": "/assets/digimons/BlackRapidmon.webp",
+    "rank": "Ultimate",
+    "species": "Dark",
+    "attribute": "Virus",
+    "hp": 223,
+    "mp": 235,
+    "atk": 136,
+    "def": 109,
+    "speed": 108,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 41
+      }
+    ]
+  },
+  {
+    "seed": "f8a9b0c1-2d3e-4f5a-6b7c-8d9e0f1a2b3c",
+    "name": "Pandamon",
+    "img": "/assets/digimons/Pandamon.webp",
+    "rank": "Ultimate",
+    "species": "Beast",
+    "attribute": "Data",
+    "hp": 230,
+    "mp": 233,
+    "atk": 131,
+    "def": 100,
+    "speed": 107,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 42
+      }
+    ]
+  },
+  {
+    "seed": "a9b0c1d2-3e4f-5a6b-7c8d-9e0f1a2b3c4d",
+    "name": "Marine Devimon",
+    "img": "/assets/digimons/Marine_Devimon.webp",
+    "rank": "Ultimate",
+    "species": "Aquan",
+    "attribute": "Virus",
+    "hp": 229,
+    "mp": 227,
+    "atk": 130,
+    "def": 102,
+    "speed": 107,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 43
+      }
+    ]
+  },
+  {
+    "seed": "b0c1d2e3-4f5a-6b7c-8d9e-0f1a2b3c4d5e",
+    "name": "Karatenmon",
+    "img": "/assets/digimons/Karatenmon.webp",
+    "rank": "Ultimate",
+    "species": "Bird",
+    "attribute": "Data",
+    "hp": 219,
+    "mp": 238,
+    "atk": 127,
+    "def": 97,
+    "speed": 115,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 44
+      }
+    ]
+  },
+  {
+    "seed": "c1d2e3f4-5a6b-7c8d-9e0f-1a2b3c4d5e6f",
+    "name": "Sinduramon",
+    "img": "/assets/digimons/Sinduramon.webp",
+    "rank": "Ultimate",
+    "species": "Bird",
+    "attribute": "Vaccine",
+    "hp": 227,
+    "mp": 224,
+    "atk": 125,
+    "def": 125,
+    "speed": 107,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 45
+      }
+    ]
+  },
+  {
+    "seed": "d2e3f4a5-6b7c-8d9e-0f1a-2b3c4d5e6f7a",
+    "name": "Pipismon",
+    "img": "/assets/digimons/Pipismon.webp",
+    "rank": "Ultimate",
+    "species": "Bird",
+    "attribute": "Data",
+    "hp": 204,
+    "mp": 236,
+    "atk": 124,
+    "def": 95,
+    "speed": 112,
+    "bitFarmingRate": 19,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 35
+      }
+    ]
+  },
+  {
+    "seed": "e3f4a5b6-7c8d-9e0f-1a2b-3c4d5e6f7a8b",
+    "name": "DoruGreymon",
+    "img": "/assets/digimons/DoruGreymon.webp",
+    "rank": "Ultimate",
+    "species": "Dragon",
+    "attribute": "Data",
+    "hp": 231,
+    "mp": 226,
+    "atk": 136,
+    "def": 122,
+    "speed": 104,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 36
+      }
+    ]
+  },
+  {
+    "seed": "f4a5b6c7-8d9e-0f1a-2b3c-4d5e6f7a8b9c",
+    "name": "Divermon",
+    "img": "/assets/digimons/Divermon.webp",
+    "rank": "Ultimate",
+    "species": "Aquan",
+    "attribute": "Data",
+    "hp": 217,
+    "mp": 233,
+    "atk": 128,
+    "def": 126,
+    "speed": 110,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 37
+      }
+    ]
+  },
+  {
+    "seed": "a5b6c7d8-9e0f-1a2b-3c4d-5e6f7a8b9c0d",
+    "name": "Kimeramon",
+    "img": "/assets/digimons/Kimeramon.webp",
+    "rank": "Ultimate",
+    "species": "Dark",
+    "attribute": "Virus",
+    "hp": 236,
+    "mp": 253,
+    "atk": 148,
+    "def": 129,
+    "speed": 111,
+    "bitFarmingRate": 22,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 38
+      }
+    ]
+  },
+  {
+    "seed": "b6c7d8e9-0f1a-2b3c-4d5e-6f7a8b9c0d1e",
+    "name": "Triceramon",
+    "img": "/assets/digimons/Triceramon.webp",
+    "rank": "Ultimate",
+    "species": "Dragon",
+    "attribute": "Data",
+    "hp": 232,
+    "mp": 221,
+    "atk": 132,
+    "def": 127,
+    "speed": 96,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 39
+      }
+    ]
+  },
+  {
+    "seed": "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
+    "name": "Deramon",
+    "img": "/assets/digimons/Deramon.webp",
+    "rank": "Ultimate",
+    "species": "Bird",
+    "attribute": "Data",
+    "hp": 210,
+    "mp": 240,
+    "atk": 113,
+    "def": 116,
+    "speed": 97,
+    "bitFarmingRate": 19,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 40
+      }
+    ]
+  },
+  {
+    "seed": "d8e9f0a1-2b3c-4d5e-6f7a-8b9c0d1e2f3a",
+    "name": "Silphymon",
+    "img": "/assets/digimons/Silphymon.webp",
+    "rank": "Ultimate",
+    "species": "Bird",
+    "attribute": "Vaccine",
+    "hp": 219,
+    "mp": 256,
+    "atk": 129,
+    "def": 101,
+    "speed": 117,
+    "bitFarmingRate": 21,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 41
+      }
+    ]
+  },
+  {
+    "seed": "e9f0a1b2-3c4d-5e6f-7a8b-9c0d1e2f3a4b",
+    "name": "SuperStarmon",
+    "img": "/assets/digimons/SuperStarmon.webp",
+    "rank": "Ultimate",
+    "species": "Holy",
+    "attribute": "Vaccine",
+    "hp": 205,
+    "mp": 252,
+    "atk": 130,
+    "def": 120,
+    "speed": 92,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 42
+      }
+    ]
+  },
+  {
+    "seed": "f0a1b2c3-4d5e-6f7a-8b9c-0d1e2f3a4b5c",
+    "name": "BlackWarGrowlmon",
+    "img": "/assets/digimons/BlackWarGrowlmon.webp",
+    "rank": "Ultimate",
+    "species": "Dragon",
+    "attribute": "Virus",
+    "hp": 231,
+    "mp": 231,
+    "atk": 145,
+    "def": 110,
+    "speed": 91,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 43
+      }
+    ]
+  },
+  {
+    "seed": "a1b2c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+    "name": "Whamon",
+    "img": "/assets/digimons/Whamon.webp",
+    "rank": "Ultimate",
+    "species": "Aquan",
+    "attribute": "Data",
+    "hp": 240,
+    "mp": 242,
+    "atk": 128,
+    "def": 122,
+    "speed": 90,
+    "bitFarmingRate": 21,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 44
+      }
+    ]
+  },
+  {
+    "seed": "b2c3d4e5-6f7a-8b9c-0d1e-2f3a4b5c6d7e",
+    "name": "Mamemon",
+    "img": "/assets/digimons/Mamemon.webp",
+    "rank": "Ultimate",
+    "species": "Machine",
+    "attribute": "Data",
+    "hp": 218,
+    "mp": 237,
+    "atk": 128,
+    "def": 117,
+    "speed": 102,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 45
+      }
+    ]
+  },
+  {
+    "seed": "c3d4e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
+    "name": "Toucanmon",
+    "img": "/assets/digimons/Toucanmon.webp",
+    "rank": "Ultimate",
+    "species": "Bird",
+    "attribute": "Data",
+    "hp": 227,
+    "mp": 242,
+    "atk": 132,
+    "def": 124,
+    "speed": 94,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 35
+      }
+    ]
+  },
+  {
+    "seed": "d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
+    "name": "Aurumon",
+    "img": "/assets/digimons/Aurumon.webp",
+    "rank": "Ultimate",
+    "species": "Bird",
+    "attribute": "Data",
+    "hp": 204,
+    "mp": 251,
+    "atk": 120,
+    "def": 96,
+    "speed": 110,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 36
+      }
+    ]
+  },
+  {
+    "seed": "e5f6a7b8-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
+    "name": "Meteormon",
+    "img": "/assets/digimons/Meteormon.webp",
+    "rank": "Ultimate",
+    "species": "Machine",
+    "attribute": "Data",
+    "hp": 231,
+    "mp": 243,
+    "atk": 121,
+    "def": 129,
+    "speed": 108,
+    "bitFarmingRate": 21,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 37
+      }
+    ]
+  },
+  {
+    "seed": "f6a7b8c9-0d1e-2f3a-4b5c-6d7e8f9a0b1c",
+    "name": "Gigadramon",
+    "img": "/assets/digimons/Gigadramon.webp",
+    "rank": "Ultimate",
+    "species": "Machine",
+    "attribute": "Virus",
+    "hp": 229,
+    "mp": 257,
+    "atk": 139,
+    "def": 125,
+    "speed": 105,
+    "bitFarmingRate": 21,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 38
+      }
+    ]
+  },
+  {
+    "seed": "a7b8c9d0-1e2f-3a4b-5c6d-7e8f9a0b1c2d",
+    "name": "MachGaogamon",
+    "img": "/assets/digimons/MachGaogamon.webp",
+    "rank": "Ultimate",
+    "species": "Beast",
+    "attribute": "Data",
+    "hp": 215,
+    "mp": 243,
+    "atk": 126,
+    "def": 99,
+    "speed": 118,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 39
+      }
+    ]
+  },
+  {
+    "seed": "b8c9d0e1-2f3a-4b5c-6d7e-8f9a0b1c2d3e",
+    "name": "Tyilinmon",
+    "img": "/assets/digimons/Tyilinmon.webp",
+    "rank": "Ultimate",
+    "species": "Holy",
+    "attribute": "Vaccine",
+    "hp": 228,
+    "mp": 253,
+    "atk": 143,
+    "def": 100,
+    "speed": 118,
+    "bitFarmingRate": 21,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 40
+      }
+    ]
+  },
+  {
+    "seed": "c9d0e1f2-3a4b-5c6d-7e8f-9a0b1c2d3e4f",
+    "name": "Lilamon",
+    "img": "/assets/digimons/Lilamon.webp",
+    "rank": "Ultimate",
+    "species": "Insect/Plant",
+    "attribute": "Vaccine",
+    "hp": 202,
+    "mp": 257,
+    "atk": 114,
+    "def": 109,
+    "speed": 117,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 41
+      }
+    ]
+  },
+  {
+    "seed": "d0e1f2a3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+    "name": "Shadramon",
+    "img": "/assets/digimons/Shadramon.webp",
+    "rank": "Ultimate",
+    "species": "Insect/Plant",
+    "attribute": "Virus",
+    "hp": 207,
+    "mp": 262,
+    "atk": 139,
+    "def": 93,
+    "speed": 115,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 42
+      }
+    ]
+  },
+  {
+    "seed": "e1f2a3b4-5c6d-7e8f-9a0b-1c2d3e4f5a6b",
+    "name": "Matadormon",
+    "img": "/assets/digimons/Matadormon.webp",
+    "rank": "Ultimate",
+    "species": "Dark",
+    "attribute": "Virus",
+    "hp": 226,
+    "mp": 238,
+    "atk": 122,
+    "def": 104,
+    "speed": 119,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 43
+      }
+    ]
+  },
+  {
+    "seed": "f2a3b4c5-6d7e-8f9a-0b1c-2d3e4f5a6b7c",
+    "name": "Kabukimon",
+    "img": "/assets/digimons/Kabukimon.webp",
+    "rank": "Ultimate",
+    "species": "Insect/Plant",
+    "attribute": "Data",
+    "hp": 211,
+    "mp": 244,
+    "atk": 115,
+    "def": 113,
+    "speed": 111,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 44
+      }
+    ]
+  },
+  {
+    "seed": "a3b4c5d6-7e8f-9a0b-1c2d-3e4f5a6b7c8d",
+    "name": "Cherrymon",
+    "img": "/assets/digimons/Cherrymon.webp",
+    "rank": "Ultimate",
+    "species": "Insect/Plant",
+    "attribute": "Data",
+    "hp": 230,
+    "mp": 263,
+    "atk": 131,
+    "def": 130,
+    "speed": 87,
+    "bitFarmingRate": 21,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 45
+      }
+    ]
+  },
+  {
+    "seed": "b4c5d6e7-8f9a-0b1c-2d3e-4f5a6b7c8d9e",
+    "name": "Garbagemon",
+    "img": "/assets/digimons/Garbagemon.webp",
+    "rank": "Ultimate",
+    "species": "Machine",
+    "attribute": "Virus",
+    "hp": 224,
+    "mp": 226,
+    "atk": 116,
+    "def": 122,
+    "speed": 108,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 35
+      }
+    ]
+  },
+  {
+    "seed": "c5d6e7f8-9a0b-1c2d-3e4f-5a6b7c8d9e0f",
+    "name": "Lucemon Chaos Mode",
+    "img": "/assets/digimons/Lucemon_Chaos_Mode.webp",
+    "rank": "Ultimate",
+    "species": "Dark",
+    "attribute": "Virus",
+    "hp": 243,
+    "mp": 265,
+    "atk": 142,
+    "def": 113,
+    "speed": 118,
+    "bitFarmingRate": 22,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 36
+      }
+    ]
+  },
+  {
+    "seed": "d6e7f8a9-0b1c-2d3e-4f5a-6b7c8d9e0f1a",
+    "name": "MameTyramon",
+    "img": "/assets/digimons/MameTyramon.webp",
+    "rank": "Ultimate",
+    "species": "Machine",
+    "attribute": "Data",
+    "hp": 221,
+    "mp": 228,
+    "atk": 130,
+    "def": 117,
+    "speed": 99,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 37
+      }
+    ]
+  },
+  {
+    "seed": "e7f8a9b0-1c2d-3e4f-5a6b-7c8d9e0f1a2b",
+    "name": "Giromon",
+    "img": "/assets/digimons/Giromon.webp",
+    "rank": "Ultimate",
+    "species": "Machine",
+    "attribute": "Data",
+    "hp": 214,
+    "mp": 249,
+    "atk": 139,
+    "def": 103,
+    "speed": 97,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 38
+      }
+    ]
+  },
+  {
+    "seed": "f8a9b0c1-2d3e-4f5a-6b7c-8d9e0f1a2b3c",
+    "name": "Vademon",
+    "img": "/assets/digimons/Vademon.webp",
+    "rank": "Ultimate",
+    "species": "Machine",
+    "attribute": "Data",
+    "hp": 204,
+    "mp": 266,
+    "atk": 134,
+    "def": 119,
+    "speed": 92,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 39
+      }
+    ]
+  },
+  {
+    "seed": "a9b0c1d2-3e4f-5a6b-7c8d-9e0f1a2b3c4d",
+    "name": "MetalTyrannomon",
+    "img": "/assets/digimons/MetalTyrannomon.webp",
+    "rank": "Ultimate",
+    "species": "Machine",
+    "attribute": "Virus",
+    "hp": 225,
+    "mp": 245,
+    "atk": 138,
+    "def": 124,
+    "speed": 101,
+    "bitFarmingRate": 21,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 40
+      }
+    ]
+  },
+  {
+    "seed": "b0c1d2e3-4f5a-6b7c-8d9e-0f1a2b3c4d5e",
+    "name": "Tekkamon",
+    "img": "/assets/digimons/Tekkamon.webp",
+    "rank": "Ultimate",
+    "species": "Machine",
+    "attribute": "Data",
+    "hp": 210,
+    "mp": 240,
+    "atk": 121,
+    "def": 115,
+    "speed": 104,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 41
+      }
+    ]
+  },
+  {
+    "seed": "c1d2e3f4-5a6b-7c8d-9e0f-1a2b3c4d5e6f",
+    "name": "Big Mamemon",
+    "img": "/assets/digimons/Big Mamemon.webp",
+    "rank": "Ultimate",
+    "species": "Machine",
+    "attribute": "Data",
+    "hp": 244,
+    "mp": 268,
+    "atk": 131,
+    "def": 128,
+    "speed": 92,
+    "bitFarmingRate": 22,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 42
+      }
+    ]
+  },
+  {
+    "seed": "d2e3f4a5-6b7c-8d9e-0f1a-2b3c4d5e6f7a",
+    "name": "EXTyrannomon",
+    "img": "/assets/digimons/ExTyrannomon.webp",
+    "rank": "Ultimate",
+    "species": "Machine",
+    "attribute": "Data",
+    "hp": 202,
+    "mp": 252,
+    "atk": 111,
+    "def": 122,
+    "speed": 105,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 43
+      }
+    ]
+  },
+  {
+    "seed": "e3f4a5b6-7c8d-9e0f-1a2b-3c4d5e6f7a8b",
+    "name": "Vermilimon",
+    "img": "/assets/digimons/Vermilimon.webp",
+    "rank": "Ultimate",
+    "species": "Dragon",
+    "attribute": "Data",
+    "hp": 233,
+    "mp": 225,
+    "atk": 134,
+    "def": 126,
+    "speed": 98,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 44
+      }
+    ]
+  },
+  {
+    "seed": "f4a5b6c7-8d9e-0f1a-2b3c-4d5e6f7a8b9c",
+    "name": "Phantomon",
+    "img": "/assets/digimons/Phantomon.webp",
+    "rank": "Ultimate",
+    "species": "Dark",
+    "attribute": "Virus",
+    "hp": 209,
+    "mp": 256,
+    "atk": 109,
+    "def": 115,
+    "speed": 115,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 45
+      }
+    ]
+  },
+  {
+    "seed": "a5b6c7d8-9e0f-1a2b-3c4d-5e6f7a8b9c0d",
+    "name": "Vajiramon",
+    "img": "/assets/digimons/Vajiramon.webp",
+    "rank": "Ultimate",
+    "species": "Dark",
+    "attribute": "Virus",
+    "hp": 228,
+    "mp": 228,
+    "atk": 132,
+    "def": 128,
+    "speed": 93,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 35
+      }
+    ]
+  },
+  {
+    "seed": "b6c7d8e9-0f1a-2b3c-4d5e-6f7a8b9c0d1e",
+    "name": "AeroVeedramon",
+    "img": "/assets/digimons/AeroVeedramon.webp",
+    "rank": "Ultimate",
+    "species": "Dragon",
+    "attribute": "Vaccine",
+    "hp": 231,
+    "mp": 241,
+    "atk": 138,
+    "def": 126,
+    "speed": 109,
+    "bitFarmingRate": 21,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 36
+      }
+    ]
+  },
+  {
+    "seed": "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
+    "name": "GrapLeomon",
+    "img": "/assets/digimons/GrapLeomon.webp",
+    "rank": "Ultimate",
+    "species": "Beast",
+    "attribute": "Data",
+    "hp": 226,
+    "mp": 246,
+    "atk": 138,
+    "def": 105,
+    "speed": 107,
+    "bitFarmingRate": 21,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 37
+      }
+    ]
+  },
+  {
+    "seed": "d8e9f0a1-2b3c-4d5e-6f7a-8b9c0d1e2f3a",
+    "name": "Knightmon",
+    "img": "/assets/digimons/Knightmon.webp",
+    "rank": "Ultimate",
+    "species": "Holy",
+    "attribute": "Vaccine",
+    "hp": 230,
+    "mp": 224,
+    "atk": 137,
+    "def": 124,
+    "speed": 90,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 38
+      }
+    ]
+  },
+  {
+    "seed": "e9f0a1b2-3c4d-5e6f-7a8b-9c0d1e2f3a4b",
+    "name": "Brachiomon",
+    "img": "/assets/digimons/Brachiomon.webp",
+    "rank": "Ultimate",
+    "species": "Aquan",
+    "attribute": "Data",
+    "hp": 234,
+    "mp": 252,
+    "atk": 126,
+    "def": 120,
+    "speed": 87,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 39
+      }
+    ]
+  },
+  {
+    "seed": "f0a1b2c3-4d5e-6f7a-8b9c-0d1e2f3a4b5c",
+    "name": "Allomon",
+    "img": "/assets/digimons/Allomon.webp",
+    "rank": "Ultimate",
+    "species": "Dragon",
+    "attribute": "Data",
+    "hp": 218,
+    "mp": 229,
+    "atk": 136,
+    "def": 119,
+    "speed": 108,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 40
+      }
+    ]
+  },
+  {
+    "seed": "a1b2c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+    "name": "Lanksmon",
+    "img": "/assets/digimons/Lanksmon.webp",
+    "rank": "Ultimate",
+    "species": "Beast",
+    "attribute": "Data",
+    "hp": 224,
+    "mp": 236,
+    "atk": 133,
+    "def": 103,
+    "speed": 114,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 41
+      }
+    ]
+  },
+  {
+    "seed": "b2c3d4e5-6f7a-8b9c-0d1e-2f3a4b5c6d7e",
+    "name": "Shaujinmon",
+    "img": "/assets/digimons/Shaujinmon.webp",
+    "rank": "Ultimate",
+    "species": "Aquan",
+    "attribute": "Data",
+    "hp": 212,
+    "mp": 258,
+    "atk": 114,
+    "def": 116,
+    "speed": 113,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 42
+      }
+    ]
+  },
+  {
+    "seed": "c3d4e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
+    "name": "BishopChessmon",
+    "img": "/assets/digimons/BishopChessmon.webp",
+    "rank": "Ultimate",
+    "species": "Machine",
+    "attribute": "Data",
+    "hp": 217,
+    "mp": 255,
+    "atk": 129,
+    "def": 102,
+    "speed": 109,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 43
+      }
+    ]
+  },
+  {
+    "seed": "d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
+    "name": "RockChessmon",
+    "img": "/assets/digimons/RockChessmon.webp",
+    "rank": "Ultimate",
+    "species": "Machine",
+    "attribute": "Data",
+    "hp": 238,
+    "mp": 238,
+    "atk": 136,
+    "def": 131,
+    "speed": 96,
+    "bitFarmingRate": 21,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 44
+      }
+    ]
+  },
+  {
+    "seed": "e5f6a7b8-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
+    "name": "Flaremon",
+    "img": "/assets/digimons/Flaremon.webp",
+    "rank": "Ultimate",
+    "species": "Holy",
+    "attribute": "Vaccine",
+    "hp": 236,
+    "mp": 241,
+    "atk": 140,
+    "def": 120,
+    "speed": 105,
+    "bitFarmingRate": 21,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 45
+      }
+    ]
+  },
+  {
+    "seed": "f6a7b8c9-0d1e-2f3a-4b5c-6d7e8f9a0b1c",
+    "name": "Crescemon",
+    "img": "/assets/digimons/Crescemon.webp",
+    "rank": "Ultimate",
+    "species": "Dark",
+    "attribute": "Virus",
+    "hp": 213,
+    "mp": 268,
+    "atk": 114,
+    "def": 108,
+    "speed": 118,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 35
+      }
+    ]
+  },
+  {
+    "seed": "a1b2c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+    "name": "Flamedramon",
+    "img": "/assets/digimons/Flamedramon.webp",
+    "rank": "Ultimate",
+    "species": "Dragon",
+    "attribute": "Vaccine",
+    "hp": 224,
+    "mp": 229,
+    "atk": 132,
+    "def": 104,
+    "speed": 110,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 35
+      }
+    ]
+  },
+  {
+    "seed": "b2c3d4e5-6f7a-8b9c-0d1e-2f3a4b5c6d7e",
+    "name": "Magnamon",
+    "img": "/assets/digimons/Magnamon.webp",
+    "rank": "Ultimate",
+    "species": "Holy",
+    "attribute": "Vaccine",
+    "hp": 226,
+    "mp": 260,
+    "atk": 140,
+    "def": 133,
+    "speed": 105,
+    "bitFarmingRate": 22,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 36
+      }
+    ]
+  },
+  {
+    "seed": "c3d4e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
+    "name": "Prairiemon",
+    "img": "/assets/digimons/Prairiemon.webp",
+    "rank": "Ultimate",
+    "species": "Beast",
+    "attribute": "Data",
+    "hp": 204,
+    "mp": 237,
+    "atk": 125,
+    "def": 116,
+    "speed": 115,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 37
+      }
+    ]
+  },
+  {
+    "seed": "d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
+    "name": "Kongoumon",
+    "img": "/assets/digimons/Kongoumon.webp",
+    "rank": "Ultimate",
+    "species": "Insect/Plant",
+    "attribute": "Vaccine",
+    "hp": 231,
+    "mp": 234,
+    "atk": 134,
+    "def": 127,
+    "speed": 97,
+    "bitFarmingRate": 21,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 38
+      }
+    ]
+  },
+  {
+    "seed": "e5f6a7b8-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
+    "name": "Seahomon",
+    "img": "/assets/digimons/Seahomon.webp",
+    "rank": "Ultimate",
+    "species": "Aquan",
+    "attribute": "Data",
+    "hp": 229,
+    "mp": 256,
+    "atk": 127,
+    "def": 117,
+    "speed": 94,
+    "bitFarmingRate": 21,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 39
+      }
+    ]
+  },
+  {
+    "seed": "f6a7b8c9-0d1e-2f3a-4b5c-6d7e8f9a0b1c",
+    "name": "Shurimon",
+    "img": "/assets/digimons/Shurimon.webp",
+    "rank": "Ultimate",
+    "species": "Bird",
+    "attribute": "Vaccine",
+    "hp": 211,
+    "mp": 239,
+    "atk": 129,
+    "def": 98,
+    "speed": 116,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 40
+      }
+    ]
+  },
+  {
+    "seed": "a7b8c9d0-1e2f-3a4b-5c6d-7e8f9a0b1c2d",
+    "name": "Kenkimon",
+    "img": "/assets/digimons/Kenkimon.webp",
+    "rank": "Ultimate",
+    "species": "Machine",
+    "attribute": "Data",
+    "hp": 230,
+    "mp": 233,
+    "atk": 132,
+    "def": 128,
+    "speed": 95,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 41
+      }
+    ]
+  },
+  {
+    "seed": "b8c9d0e1-2f3a-4b5c-6d7e-8f9a0b1c2d3e",
+    "name": "Ponchomon",
+    "img": "/assets/digimons/Ponchomon.webp",
+    "rank": "Ultimate",
+    "species": "Dark",
+    "attribute": "Virus",
+    "hp": 221,
+    "mp": 228,
+    "atk": 133,
+    "def": 100,
+    "speed": 106,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 42
+      }
+    ]
+  },
+  {
+    "seed": "c9d0e1f2-3a4b-5c6d-7e8f-9a0b1c2d3e4f",
+    "name": "Argomon Ultimate",
+    "img": "/assets/digimons/Argomon Ultimate.webp",
+    "rank": "Ultimate",
+    "species": "Dark",
+    "attribute": "Virus",
+    "hp": 216,
+    "mp": 246,
+    "atk": 120,
+    "def": 99,
+    "speed": 110,
+    "bitFarmingRate": 20,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 43
+      }
+    ]
+  },
+  {
+    "seed": "d0e1f2a3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+    "name": "Shakkoumon",
+    "img": "/assets/digimons/Shakkoumon.webp",
+    "rank": "Ultimate",
+    "species": "Holy",
+    "attribute": "Vaccine",
+    "hp": 235,
+    "mp": 250,
+    "atk": 135,
+    "def": 130,
+    "speed": 88,
+    "bitFarmingRate": 21,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 44
+      }
+    ]
   }
 ]

@@ -29,6 +29,7 @@
     />
   </div>
   <div class="action-bar-buttons">
+    @if(isDevMode) {
     <app-button
       title="Debug"
       icon="ph-bug"
@@ -36,6 +37,7 @@
       color="dark"
       (onClick)="openDebugModal()"
     />
+    }
     <app-button
       title="Player Info"
       icon="ph-user-circle-gear"
@@ -44,7 +46,13 @@
       (onClick)="openPlayerInfoModal()"
     />
     <app-button title="Config" icon="ph-gear" weight="bold" color="dark" />
-    <app-button title="Save Game" icon="ph-floppy-disk" weight="bold" color="dark" (onClick)="saveGame()" />
+    <app-button
+      title="Save Game"
+      icon="ph-floppy-disk"
+      weight="bold"
+      color="dark"
+      (onClick)="saveGame()"
+    />
   </div>
 </div>
 

@@ -9,6 +9,7 @@ import { PlayerInfoModalComponent } from '../../shared/components/player-info-mo
 import { DebugModalComponent } from './debug-modal/debug-modal.component';
 import { GlobalStateDataSource } from '../../state/global-state.datasource';
 import { ToastService } from '../../shared/components/toast/toast.service';
+import { environment } from 'app/environments/environment';
 
 @Component({
   selector: 'app-action-bar',
@@ -25,6 +26,7 @@ import { ToastService } from '../../shared/components/toast/toast.service';
 export class ActionBarComponent {
   digimonStorageModalId = 'digimon-storage-modal';
   debugModlaId = 'debug-modal';
+  isDevMode = !environment.production;
 
   modalService = inject(ModalService);
   audioService = inject(AudioService);

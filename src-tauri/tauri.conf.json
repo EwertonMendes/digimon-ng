@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "identifier": "digi-angular",
   "build": {
-    "frontendDist": "../dist",
+    "frontendDist": "../dist/digi-angular/browser",
     "devUrl": "http://localhost:4200",
     "beforeDevCommand": "npm run web",
     "beforeBuildCommand": "npm run build"

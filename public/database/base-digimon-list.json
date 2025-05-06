@@ -5115,7 +5115,7 @@
     ]
   },
   {
-    "seed": "550e8400-e29b-41d4-a716-446655440000",
+    "seed": "a1b2c3d4-e5f6-4789-9012-34567890abcd",
     "name": "Volcanomon",
     "img": "/assets/digimons/Volcanomon.webp",
     "rank": "Ultimate",
@@ -5137,7 +5137,7 @@
     ]
   },
   {
-    "seed": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "seed": "bcdefa01-2345-4678-9abc-def012345678",
     "name": "Monzaemon",
     "img": "/assets/digimons/Monzaemon.webp",
     "rank": "Ultimate",
@@ -5203,7 +5203,7 @@
     ]
   },
   {
-    "seed": "d1c5f6b8-2f3e-4e9b-8c2d-7a9e5f6d3b1a",
+    "seed": "defabc87-6543-210f-edcb-a9876543210f",
     "name": "Piximon",
     "img": "/assets/digimons/Piximon.webp",
     "rank": "Ultimate",
@@ -5225,7 +5225,7 @@
     ]
   },
   {
-    "seed": "e6b9d4f2-8c7a-4d3e-9f2b-5c1d8e3a6f9b",
+    "seed": "9a1b8c3e-4f3d-5f3c-2c7b-1b0e6e5f3c1b",
     "name": "Digitamamon",
     "img": "/assets/digimons/Digitamamon.webp",
     "rank": "Ultimate",
@@ -5247,7 +5247,7 @@
     ]
   },
   {
-    "seed": "a3d9f7c2-5e8b-4f1d-9c3a-7b2e6d4f8a1c",
+    "seed": "efabcd76-5432-10fe-dcba-9876543210fe",
     "name": "Mammothmon",
     "img": "/assets/digimons/Mammothmon.webp",
     "rank": "Ultimate",
@@ -5555,7 +5555,7 @@
     ]
   },
   {
-    "seed": "c9d0e1f2-3a4b-5c6d-7e8f-9a0b1c2d3e4f",
+    "seed": "5f3c8e2a-6e5f-9a1b-2c8e-1b0e7d5c4f3d",
     "name": "Paildramon",
     "img": "/assets/digimons/Paildramon.webp",
     "rank": "Ultimate",
@@ -5577,7 +5577,7 @@
     ]
   },
   {
-    " oletseed": "d0e1f2a3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+    " oletseed": "5f3c9a1b-1b0e-6e5f-8c3e-4f3d2c7b3c1b",
     "name": "Dinobeemon",
     "img": "/assets/digimons/Dinobeemon.webp",
     "rank": "Ultimate",
@@ -5863,7 +5863,7 @@
     ]
   },
   {
-    "seed": "e3f4a5b6-7c8d-9e0f-1a2b-3c4d5e6f7a8b",
+    "seed": "1b0e4f3d-5f3c-2c7b-9a1b-8c3e6e5f3c1b",
     "name": "DoruGreymon",
     "img": "/assets/digimons/DoruGreymon.webp",
     "rank": "Ultimate",
@@ -5885,7 +5885,7 @@
     ]
   },
   {
-    "seed": "f4a5b6c7-8d9e-0f1a-2b3c-4d5e6f7a8b9c",
+    "seed": "8c3e6e5f-3c1b-1b0e-5f3c-9a1b4f3d2c7b",
     "name": "Divermon",
     "img": "/assets/digimons/Divermon.webp",
     "rank": "Ultimate",
@@ -5907,7 +5907,7 @@
     ]
   },
   {
-    "seed": "a5b6c7d8-9e0f-1a2b-3c4d-5e6f7a8b9c0d",
+    "seed": "2c7b9a1b-5f3c-8c3e-3c1b-1b0e4f3d6e5f",
     "name": "Kimeramon",
     "img": "/assets/digimons/Kimeramon.webp",
     "rank": "Ultimate",
@@ -5929,7 +5929,7 @@
     ]
   },
   {
-    "seed": "b6c7d8e9-0f1a-2b3c-4d5e-6f7a8b9c0d1e",
+    "seed": "6e5f4f3d-1b0e-3c1b-8c3e-5f3c9a1b2c7b",
     "name": "Triceramon",
     "img": "/assets/digimons/Triceramon.webp",
     "rank": "Ultimate",
@@ -5951,7 +5951,7 @@
     ]
   },
   {
-    "seed": "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
+    "seed": "9a1b2c7b-8c3e-6e5f-4f3d-1b0e3c1b5f3c",
     "name": "Deramon",
     "img": "/assets/digimons/Deramon.webp",
     "rank": "Ultimate",
@@ -5973,7 +5973,7 @@
     ]
   },
   {
-    "seed": "d8e9f0a1-2b3c-4d5e-6f7a-8b9c0d1e2f3a",
+    "seed": "5f3c3c1b-8c3e-9a1b-2c7b-1b0e6e5f4f3d",
     "name": "Silphymon",
     "img": "/assets/digimons/Silphymon.webp",
     "rank": "Ultimate",
@@ -5995,7 +5995,7 @@
     ]
   },
   {
-    "seed": "e9f0a1b2-3c4d-5e6f-7a8b-9c0d1e2f3a4b",
+    "seed": "4f3d6e5f-1b0e-2c7b-5f3c-8c3e9a1b3c1b",
     "name": "SuperStarmon",
     "img": "/assets/digimons/SuperStarmon.webp",
     "rank": "Ultimate",
@@ -6017,7 +6017,7 @@
     ]
   },
   {
-    "seed": "f0a1b2c3-4d5e-6f7a-8b9c-0d1e2f3a4b5c",
+    "seed": "2c7b4f3d-8c3e-9a1b-3c1b-1b0e6e5f5f3c",
     "name": "BlackWarGrowlmon",
     "img": "/assets/digimons/BlackWarGrowlmon.webp",
     "rank": "Ultimate",
@@ -6215,7 +6215,7 @@
     ]
   },
   {
-    "seed": "c9d0e1f2-3a4b-5c6d-7e8f-9a0b1c2d3e4f",
+    "seed": "7d5c4f3d-1b0e-8c3e-f8a7-a9d29e5f2c7b",
     "name": "Lilamon",
     "img": "/assets/digimons/Lilamon.webp",
     "rank": "Ultimate",
@@ -6237,7 +6237,7 @@
     ]
   },
   {
-    "seed": "d0e1f2a3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+    "seed": "a6f79b4c-0a3e-d2f8-b1c5-e8b3c7f07d9",
     "name": "Shadramon",
     "img": "/assets/digimons/Shadramon.webp",
     "rank": "Ultimate",
@@ -6259,7 +6259,7 @@
     ]
   },
   {
-    "seed": "e1f2a3b4-5c6d-7e8f-9a0b-1c2d3e4f5a6b",
+    "seed": "9e5f2c7b-8c3e-5f3c-3c1b-6e5f1a0b4a6b",
     "name": "Matadormon",
     "img": "/assets/digimons/Matadormon.webp",
     "rank": "Ultimate",
@@ -6281,7 +6281,7 @@
     ]
   },
   {
-    "seed": "f2a3b4c5-6d7e-8f9a-0b1c-2d3e4f5a6b7c",
+    "seed": "4a6b9c3e-2c7b-7d5c-a9d2-1b0e8c3e5f3c",
     "name": "Kabukimon",
     "img": "/assets/digimons/Kabukimon.webp",
     "rank": "Ultimate",
@@ -6303,7 +6303,7 @@
     ]
   },
   {
-    "seed": "a3b4c5d6-7e8f-9a0b-1c2d-3e4f5a6b7c8d",
+    "seed": "5f3c8e2a-a9d2-1b0e-6e5f-3c1b7d5c9a1b",
     "name": "Cherrymon",
     "img": "/assets/digimons/Cherrymon.webp",
     "rank": "Ultimate",
@@ -6325,7 +6325,7 @@
     ]
   },
   {
-    "seed": "b4c5d6e7-8f9a-0b1c-2d3e-4f5a6b7c8d9e",
+    "seed": "9a1b7d5c-6e5f-5f3c-8c3e-a9d21b0e4f3d",
     "name": "Garbagemon",
     "img": "/assets/digimons/Garbagemon.webp",
     "rank": "Ultimate",
@@ -6347,7 +6347,7 @@
     ]
   },
   {
-    "seed": "c5d6e7f8-9a0b-1c2d-3e4f-5a6b7c8d9e0f",
+    "seed": "1b0e4f3d-a9d2-9a1b-2c7b-8c3e6e5f5f3c",
     "name": "Lucemon Chaos Mode",
     "img": "/assets/digimons/Lucemon_Chaos_Mode.webp",
     "rank": "Ultimate",
@@ -6369,7 +6369,7 @@
     ]
   },
   {
-    "seed": "d6e7f8a9-0b1c-2d3e-4f5a-6b7c8d9e0f1a",
+    "seed": "8c3e6e5f-2c7b-1b0e-3c1b-a9d25f3c9a1b",
     "name": "MameTyramon",
     "img": "/assets/digimons/MameTyramon.webp",
     "rank": "Ultimate",
@@ -6391,7 +6391,7 @@
     ]
   },
   {
-    "seed": "e7f8a9b0-1c2d-3e4f-5a6b-7c8d9e0f1a2b",
+    "seed": "5f3c9a1b-3c1b-8c3e-6e5f-1b0e2c7b4f3d",
     "name": "Giromon",
     "img": "/assets/digimons/Giromon.webp",
     "rank": "Ultimate",
@@ -6413,7 +6413,7 @@
     ]
   },
   {
-    "seed": "f8a9b0c1-2d3e-4f5a-6b7c-8d9e0f1a2b3c",
+    "seed": "2c7b4f3d-1b0e-6e5f-a9d2-8c3e9a1b5f3c",
     "name": "Vademon",
     "img": "/assets/digimons/Vademon.webp",
     "rank": "Ultimate",
@@ -6435,7 +6435,7 @@
     ]
   },
   {
-    "seed": "a9b0c1d2-3e4f-5a6b-7c8d-9e0f1a2b3c4d",
+    "seed": "9a1b5f3c-8c3e-2c7b-3c1b-1b0e6e5f4f3d",
     "name": "MetalTyrannomon",
     "img": "/assets/digimons/MetalTyrannomon.webp",
     "rank": "Ultimate",
@@ -6457,7 +6457,7 @@
     ]
   },
   {
-    "seed": "b0c1d2e3-4f5a-6b7c-8d9e-0f1a2b3c4d5e",
+    "seed": "4f3d1b0e-3c1b-9a1b-6e5f-8c3e2c7b5f3c",
     "name": "Tekkamon",
     "img": "/assets/digimons/Tekkamon.webp",
     "rank": "Ultimate",
@@ -6479,7 +6479,7 @@
     ]
   },
   {
-    "seed": "c1d2e3f4-5a6b-7c8d-9e0f-1a2b3c4d5e6f",
+    "seed": "5f3c2c7b-8c3e-4f3d-1b0e-9a1b6e5f3c1b",
     "name": "Big Mamemon",
     "img": "/assets/digimons/Big Mamemon.webp",
     "rank": "Ultimate",
@@ -6501,7 +6501,7 @@
     ]
   },
   {
-    "seed": "d2e3f4a5-6b7c-8d9e-0f1a-2b3c4d5e6f7a",
+    "seed": "5f3c9a1b-6e5f-1b0e-4f3d-8c3e2c7b3c1b",
     "name": "EXTyrannomon",
     "img": "/assets/digimons/ExTyrannomon.webp",
     "rank": "Ultimate",
@@ -7029,7 +7029,7 @@
     ]
   },
   {
-    "seed": "d0e1f2a3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+    "seed": "8c3e2c7b-4f3d-3c1b-6e5f-1b0e9a1b5f3c",
     "name": "Shakkoumon",
     "img": "/assets/digimons/Shakkoumon.webp",
     "rank": "Ultimate",
@@ -7117,7 +7117,7 @@
     ]
   },
   {
-    "seed": "8f14e45f-ceea-41d4-9a3d-3e8d2e9f6b2c",
+    "seed": "5f3c2c7b-1b0e-6e5f-4f3d-8c3e9a1b3c1b",
     "name": "MarineAngemon",
     "img": "/assets/digimons/MarineAngemon.webp",
     "rank": "Mega",
@@ -7205,7 +7205,7 @@
     ]
   },
   {
-    "seed": "b7e2c9d4-1f6a-4d3b-8e5c-9a2f7d6b3c1e",
+    "seed": "fabcde65-4321-0fed-cba9-876543210fed",
     "name": "Puppetmon",
     "img": "/assets/digimons/Puppetmon.webp",
     "rank": "Mega",
@@ -7227,7 +7227,7 @@
     ]
   },
   {
-    "seed": "c4f8a2d6-9b3e-4e1f-8d7c-5a9f2b6e3d1c",
+    "seed": "abcdef54-3210-0fec-b9a8-76543210feda",
     "name": "Rosemon",
     "img": "/assets/digimons/Rosemon.webp",
     "rank": "Mega",
@@ -7249,7 +7249,7 @@
     ]
   },
   {
-    "seed": "d9e3b7f2-5c1a-4f6d-8e9b-2a7c6d3f1e4b",
+    "seed": "bcdefa43-210f-0ecb-9a87-6543210fedab",
     "name": "VenomMyotismon",
     "img": "/assets/digimons/VenomMyotismon.webp",
     "rank": "Mega",
@@ -7271,7 +7271,7 @@
     ]
   },
   {
-    "seed": "e8f4c6a1-3d2b-4e5f-9a8c-7b6d5e4f3a2c",
+    "seed": "cdefab32-10fe-0cba-a876-543210fedabc",
     "name": "Omnimon",
     "img": "/assets/digimons/Omnimon.webp",
     "rank": "Mega",
@@ -7491,7 +7491,7 @@
     ]
   },
   {
-    "seed": "c9d2e4f5-6a7b-4c8d-9e3f-4a5b6c7d8e9f",
+    "seed": "7b3a9d1e-2c8f-4a5b-9e6d-1f0c7b8a9d2e",
     "name": "Gallantmon",
     "img": "/assets/digimons/Gallantmon.webp",
     "rank": "Mega",
@@ -7513,7 +7513,7 @@
     ]
   },
   {
-    "seed": "d1e3f5a6-7b8c-4d9e-8f4a-5b6c7d8e9f1a",
+    "seed": "2e1f0b9a-6c5b-8a7d-9d2e-1f0c7b8a4a5b",
     "name": "Gallantmon Crimson Mode",
     "img": "/assets/digimons/GallantmonCrimsonMode.webp",
     "rank": "Mega",
@@ -7535,7 +7535,7 @@
     ]
   },
   {
-    "seed": "e2f4a6b7-8c9d-4e1f-9a5b-6c7d8e9f1a2b",
+    "seed": "7b8a9d2e-5b3c-9e6d-2e1f-1f0c8a7d4d1c",
     "name": "Mega Gargomon",
     "img": "/assets/digimons/Mega Gargomon.webp",
     "rank": "Mega",
@@ -7557,7 +7557,7 @@
     ]
   },
   {
-    "seed": "f3a5b7c8-9d1e-4f2a-8b6c-7d8e9f1a2b3c",
+    "seed": "4d1c8b2f-1f0c-7b8a-9d2e-5b3c2e1f9e6a",
     "name": "Sakuyamon",
     "img": "/assets/digimons/Sakuyamon.webp",
     "rank": "Mega",
@@ -7579,7 +7579,7 @@
     ]
   },
   {
-    "seed": "a4b6c8d9-1e2f-4a3b-9c7d-8e9f1a2b3c4d",
+    "seed": "1f0c9d2e-2e1f-9e6a-4d1c-7b8a5b3c8a7d",
     "name": "Diaboromon",
     "img": "/assets/digimons/Diaboromon.webp",
     "rank": "Mega",
@@ -7601,7 +7601,7 @@
     ]
   },
   {
-    "seed": "b5c7d9e1-2f3a-4b4c-8d8e-9f1a2b3c4d5e",
+    "seed": "9d2e7b8a-1f0c-4d1c-5b3c-2e1f8a7d9e6a",
     "name": "Neptunmon",
     "img": "/assets/digimons/Neptunmon.webp",
     "rank": "Mega",
@@ -7623,7 +7623,7 @@
     ]
   },
   {
-    "seed": "c6d8e1f2-3a4b-4c5d-9e9f-1a2b3c4d5e6f",
+    "seed": "1f0c2e1f-7b8a-9e6a-4d1c-5b3c8a7d9d2e",
     "name": "Pukumon",
     "img": "/assets/digimons/Pukumon.webp",
     "rank": "Mega",
@@ -7645,7 +7645,7 @@
     ]
   },
   {
-    "seed": "d7e9f2a3-4b5c-4d6e-8f1a-2b3c4d5e6f7a",
+    "seed": "9d2e8a7d-5b3c-1f0c-2e1f-7b8a4d1c9e6a",
     "name": "Gryphonmon",
     "img": "/assets/digimons/Gryphonmon.webp",
     "rank": "Mega",
@@ -7667,7 +7667,7 @@
     ]
   },
   {
-    "seed": "e8f1a3b4-5c6d-4e7f-9a2b-3c4d5e6f7a8b",
+    "seed": "9e6a4d1c-7b8a-1f0c-8a7d-5b3c2e1f9d2e",
     "name": "Preciomon",
     "img": "/assets/digimons/Preciomon.webp",
     "rank": "Mega",
@@ -7689,7 +7689,7 @@
     ]
   },
   {
-    "seed": "f9a2b4c5-6d7e-4f8a-8b3c-4d5e6f7a8b9c",
+    "seed": "4d1c9e6a-2e1f-7b8a-1f0c-5b3c8a7d9d2e",
     "name": "Armageddemon",
     "img": "/assets/digimons/Armageddemon.webp",
     "rank": "Mega",
@@ -7711,7 +7711,7 @@
     ]
   },
   {
-    "seed": "a1b3c5d6-7e8f-4a9b-9c4d-5e6f7a8b9c1d",
+    "seed": "9d2e4d1c-7b8a-1f0c-5b3c-2e1f8a7d9e6a",
     "name": "MaloMyotismon",
     "img": "/assets/digimons/MaloMyotismon.webp",
     "rank": "Mega",
@@ -7733,7 +7733,7 @@
     ]
   },
   {
-    "seed": "b2c4d6e7-8f9a-4b1c-8d5e-6f7a8b9c1d2e",
+    "seed": "5b3c8a7d-2e1f-9d2e-4d1c-7b8a1f0c9e6a",
     "name": "Imperialdramon (Dragon Mode) (Black)",
     "img": "/assets/digimons/Imperialdramon (Dragon Mode) (Black).webp",
     "rank": "Mega",
@@ -7755,7 +7755,7 @@
     ]
   },
   {
-    "seed": "6c3b5d02-1a9b-4b1d-a8ee-84a6eebc3e1a ",
+    "seed": "6c3b5d02-1a9b-4b1d-a8ee-84a6eebc3e1a",
     "name": "Boltmon",
     "img": "/assets/digimons/Boltmon.webp",
     "rank": "Mega",
@@ -7777,7 +7777,7 @@
     ]
   },
   {
-    "seed": "d4e6f8a9-1b2c-4d3e-8f7a-8b9c1d2e3f4a",
+    "seed": "5b3c8a7d-4d1c-1f0c-9e6a-2e1f7b8a9d2e",
     "name": "PrinceMamemon",
     "img": "/assets/digimons/PrinceMamemon.webp",
     "rank": "Mega",
@@ -7799,7 +7799,7 @@
     ]
   },
   {
-    "seed": "e5f7a9b1-2c3d-4e4f-9a8b-9c1d2e3f4a5b",
+    "seed": "e8c7f0d9-a2b6-f0a3-7d9b-4c5d2f8b1e3",
     "name": "Zanbamon",
     "img": "/assets/digimons/Zanbamon.webp",
     "rank": "Mega",
@@ -7821,7 +7821,7 @@
     ]
   },
   {
-    "seed": "f6a8b1c2-3d4e-4f5a-8b9c-1d2e3f4a5b6c",
+    "seed": "7d9b4c5d-2f8b-1e3a-0a3e-9b4c6f5d8b2",
     "name": "Black SaintGargomon",
     "img": "/assets/digimons/Black SaintGargomon.webp",
     "rank": "Mega",
@@ -7843,7 +7843,7 @@
     ]
   },
   {
-    "seed": "a7b9c2d3-4e5f-4a6b-9c1d-2e3f4a5b6c7d",
+    "seed": "e7b1c5d2-f8b3-c7f0-b4e8-a6f7d99b2a",
     "name": "Jijimon",
     "img": "/assets/digimons/Jijimon.webp",
     "rank": "Mega",
@@ -7865,7 +7865,7 @@
     ]
   },
   {
-    "seed": "b8c1d3e4-5f6a-4b7c-8d2e-3f4a5b6c7d8e",
+    "seed": "c7f0b1c5-d2f8-a6f7-e8b3-5d2f9b4c0a3",
     "name": "Babamon",
     "img": "/assets/digimons/Babamon.webp",
     "rank": "Mega",
@@ -7887,7 +7887,7 @@
     ]
   },
   {
-    "seed": "c9d2e4f5-6a7b-4c8d-9e3f-4a5b6c7d8e9f",
+    "seed": "f7d9e8b3-1c5f-a6f5-d2f8-7d9b0a3ec4b",
     "name": "Anubismon",
     "img": "/assets/digimons/Anubismon.webp",
     "rank": "Mega",
@@ -7909,7 +7909,7 @@
     ]
   },
   {
-    "seed": "d1e3f5a6-7b8c-4d9e-8f4a-5b6c7d8e9f1a",
+    "seed": "8a7d9d2e-1f0c-4d1c-5b3c-9e6a2e1f0b9a",
     "name": "Parasimon",
     "img": "/assets/digimons/Parasimon.webp",
     "rank": "Mega",
@@ -7931,7 +7931,7 @@
     ]
   },
   {
-    "seed": "e2f4a6b7-8c9d-4e1f-9a5b-6c7d8e9f1a2b",
+    "seed": "1f0c7b8a-9d2e-9e6a-8a7d-4d1c5b3c2e1f",
     "name": "Cannondramon",
     "img": "/assets/digimons/Cannondramon.webp",
     "rank": "Mega",
@@ -7953,7 +7953,7 @@
     ]
   },
   {
-    "seed": "f3a5b7c8-9d1e-4f2a-8b6c-7d8e9f1a2b3c",
+    "seed": "5b3c2e1f-7b8a-4d1c-9e6a-2e1f0b9a8a7d",
     "name": "SL Angemon",
     "img": "/assets/digimons/SL Angemon.webp",
     "rank": "Mega",
@@ -7975,7 +7975,7 @@
     ]
   },
   {
-    "seed": "a4b6c8d9-1e2f-4a3b-9c7d-8e9f1a2b3c4d",
+    "seed": "7b8a5b3c-8a7d-1f0c-9d2e-2e1f9e6a4d1c",
     "name": "Eaglemon",
     "img": "/assets/digimons/Eaglemon.webp",
     "rank": "Mega",
@@ -7997,7 +7997,7 @@
     ]
   },
   {
-    "seed": "b5c7d9e1-2f3a-4b4c-8d8e-9f1a2b3c4d5e",
+    "seed": "5b3c8a7d-9e6a-2e1f-1f0c-7b8a4d1c9d2e",
     "name": "Dorugoramon",
     "img": "/assets/digimons/Dorugoramon.webp",
     "rank": "Mega",
@@ -8019,7 +8019,7 @@
     ]
   },
   {
-    "seed": "d7e9f2a3-4b5c-4d6e-8f1a-2b3c4d5e6f7a",
+    "seed": "7b8a4d1c-9e6a-2e1f-8a7d-1f0c5b3c9d2e",
     "name": "Bantyo Leomon",
     "img": "/assets/digimons/Bantyo Leomon.webp",
     "rank": "Mega",
@@ -8041,7 +8041,7 @@
     ]
   },
   {
-    "seed": "e8f1a3b4-5c6d-4e7f-9a2b-3c4d5e6f7a8b",
+    "seed": "5b3c2e1f-8a7d-9d2e-1f0c-7b8a9e6a4d1c",
     "name": "Apocalymon",
     "img": "/assets/digimons/Apocalymon.webp",
     "rank": "Mega",
@@ -8063,7 +8063,7 @@
     ]
   },
   {
-    "seed": "f9a2b4c5-6d7e-4f8a-8b3c-4d5e6f7a8b9c",
+    "seed": "9d2e8a7d-5b3c-1f0c-7b8a-2e1f4d1c9e6a",
     "name": "Ebemon",
     "img": "/assets/digimons/Ebemon.webp",
     "rank": "Mega",
@@ -8085,7 +8085,7 @@
     ]
   },
   {
-    "seed": "a1b3c5d6-7e8f-4a9b-9c4d-5e6f7a8b9c1d",
+    "seed": "7b8a4d1c-2e1f-9e6a-8a7d-5b3c1f0c9d2e",
     "name": "Gulfmon",
     "img": "/assets/digimons/Gulfmon.webp",
     "rank": "Mega",
@@ -8107,7 +8107,7 @@
     ]
   },
   {
-    "seed": "b2c4d6e7-8f9a-4b1c-8d5e-6f7a8b9c1d2e",
+    "seed": "8a7d4d1c-9e6a-2e1f-5b3c-1f0c7b8a9d2e",
     "name": "Goldramon",
     "img": "/assets/digimons/Goldramon.webp",
     "rank": "Mega",
@@ -8129,7 +8129,7 @@
     ]
   },
   {
-    "seed": "6c3b5d02-1a9b-4b1d-a8ee-84a6eebc3e1a ",
+    "seed": "37d122c0-59c8-4638-a8f6-75972a7a9cd6",
     "name": "ZeedMillenniummon",
     "img": "/assets/digimons/ZeedMillenniummon.webp",
     "rank": "Mega",
@@ -8151,7 +8151,7 @@
     ]
   },
   {
-    "seed": "d4e6f8a9-1b2c-4d3e-8f7a-8b9c1d2e3f4a",
+    "seed": "2e1f7b8a-9d2e-8a7d-4d1c-1f0c5b3c9e6a",
     "name": "Ghoulmon (Black)",
     "img": "/assets/digimons/Ghoulmon (Black).webp",
     "rank": "Mega",
@@ -8173,7 +8173,7 @@
     ]
   },
   {
-    "seed": "e5f7a9b1-2c3d-4e4f-9a8b-9c1d2e3f4a5b",
+    "seed": "c1a7e8b3-5d2f-4e9a-8b1c-6f0a3e7d9b4",
     "name": "Chaos Gallantmon",
     "img": "/assets/digimons/Chaos Gallantmon.webp",
     "rank": "Mega",
@@ -8195,7 +8195,7 @@
     ]
   },
   {
-    "seed": "f6a8b1c2-3d4e-4f5a-8b9c-1d2e3f4a5b6c",
+    "seed": "9b4c6f5d-8b2e-7d9b-e8c7-f0a3a1c5d2f",
     "name": "Valkyrimon",
     "img": "/assets/digimons/Valkyrimon.webp",
     "rank": "Mega",
@@ -8217,7 +8217,7 @@
     ]
   },
   {
-    "seed": "a7b9c2d3-4e5f-4a6b-9c1d-2e3f4a5b6c7d",
+    "seed": "a6f7d99b-2a6f-8b1c-5d2f-e8c7f0a3b4e",
     "name": "Justimon",
     "img": "/assets/digimons/Justimon.webp",
     "rank": "Mega",
@@ -8239,7 +8239,7 @@
     ]
   },
   {
-    "seed": "b8c1d3e4-5f6a-4b7c-8d2e-3f4a5b6c7d8e",
+    "seed": "f0a3b4e8-c7f0-d9b4-b1c5-d2f8a6f7e99",
     "name": "Skull Mammothmon",
     "img": "/assets/digimons/Skull Mammothmon.webp",
     "rank": "Mega",
@@ -8261,7 +8261,7 @@
     ]
   },
   {
-    "seed": "c9d2e4f5-6a7b-4c8d-9e3f-4a5b6c7d8e9f",
+    "seed": "4d1c8b2f-9e6a-5b3c-8a7d-2e1f0b9a6c5",
     "name": "Pharaohmon",
     "img": "/assets/digimons/Pharaohmon.webp",
     "rank": "Mega",
@@ -8283,7 +8283,7 @@
     ]
   },
   {
-    "seed": "d1e3f5a6-7b8c-4d9e-8f4a-5b6c7d8e9f1a",
+    "seed": "9e6d1f0c-7b8a-2e1f-4a5b-8a7d9d2e6c5b",
     "name": "Susanoomon",
     "img": "/assets/digimons/Susanoomon.webp",
     "rank": "Mega",
@@ -8305,7 +8305,7 @@
     ]
   },
   {
-    "seed": "e2f4a6b7-8c9d-4e1f-9a5b-6c7d8e9f1a2b",
+    "seed": "9d2e6c5b-8a7d-2e1f-9e6d-1f0c4d1c7b8a",
     "name": "Alphamon",
     "img": "/assets/digimons/Alphamon.webp",
     "rank": "Mega",
@@ -8327,7 +8327,7 @@
     ]
   },
   {
-    "seed": "f3a5b7c8-9d1e-4f2a-8b6c-7d8e9f1a2b3c",
+    "seed": "2e1f9e6a-9d2e-5b3c-8a7d-1f0c7b8a4d1c",
     "name": "Magna Dramon",
     "img": "/assets/digimons/Magna Dramon.webp",
     "rank": "Mega",
@@ -8349,7 +8349,7 @@
     ]
   },
   {
-    "seed": "a4b6c8d9-1e2f-4a3b-9c7d-8e9f1a2b3c4d",
+    "seed": "2e1f9e6a-4d1c-7b8a-5b3c-1f0c8a7d9d2e",
     "name": "Millenniummon",
     "img": "/assets/digimons/Millenniummon.webp",
     "rank": "Mega",
@@ -8371,7 +8371,7 @@
     ]
   },
   {
-    "seed": "b5c7d9e1-2f3a-4b4c-8d8e-9f1a2b3c4d5e",
+    "seed": "8a7d9d2e-5b3c-1f0c-2e1f-7b8a4d1c9e6a",
     "name": "MoonMillenniummon",
     "img": "/assets/digimons/MoonMillenniummon.webp",
     "rank": "Mega",
@@ -8393,7 +8393,7 @@
     ]
   },
   {
-    "seed": "c6d8e1f2-3a4b-4c5d-9e9f-1a2b3c4d5e6f",
+    "seed": "2e1f4d1c-7b8a-9d2e-5b3c-1f0c8a7d9e6a",
     "name": "Sleipmon",
     "img": "/assets/digimons/Sleipmon.webp",
     "rank": "Mega",
@@ -8415,7 +8415,7 @@
     ]
   },
   {
-    "seed": "d7e9f2a3-4b5c-4d6e-8f1a-2b3c4d5e6f7a",
+    "seed": "2e1f5b3c-1f0c-9d2e-7b8a-4d1c8a7d9e6a",
     "name": "MirageGaogamon",
     "img": "/assets/digimons/MirageGaogamon.webp",
     "rank": "Mega",
@@ -8437,7 +8437,7 @@
     ]
   },
   {
-    "seed": "e8f1a3b4-5c6d-4e7f-9a2b-3c4d5e6f7a8b",
+    "seed": "2e1f9e6a-7b8a-4d1c-9d2e-8a7d1f0c5b3c",
     "name": "JumboGamemon",
     "img": "/assets/digimons/JumboGamemon.webp",
     "rank": "Mega",
@@ -8459,7 +8459,7 @@
     ]
   },
   {
-    "seed": "f9a2b4c5-6d7e-4f8a-8b3c-4d5e6f7a8b9c",
+    "seed": "8a7d1f0c-9d2e-5b3c-2e1f-7b8a4d1c9e6a",
     "name": "QueenChessmon",
     "img": "/assets/digimons/QueenChessmon.webp",
     "rank": "Mega",
@@ -8481,7 +8481,7 @@
     ]
   },
   {
-    "seed": "a1b3c5d6-7e8f-4a9b-9c4d-5e6f7a8b9c1d",
+    "seed": "1f0c5b3c-9d2e-8a7d-2e1f-7b8a4d1c9e6a",
     "name": "KingChessmon",
     "img": "/assets/digimons/KingChessmon.webp",
     "rank": "Mega",
@@ -8503,7 +8503,7 @@
     ]
   },
   {
-    "seed": "b2c4d6e7-8f9a-4b1c-8d5e-6f7a8b9c1d2e",
+    "seed": "4d1c7b8a-1f0c-9d2e-8a7d-5b3c2e1f9e6a",
     "name": "Chronomon (Holy Mode)",
     "img": "/assets/digimons/Chronomon (Holy Mode).webp",
     "rank": "Mega",
@@ -8547,7 +8547,7 @@
     ]
   },
   {
-    "seed": "d4e6f8a9-1b2c-4d3e-8f7a-8b9c1d2e3f4a",
+    "seed": "9d2e5b3c-2e1f-7b8a-4d1c-1f0c8a7d9e6a",
     "name": "Varodurumon",
     "img": "/assets/digimons/Varodurumon.webp",
     "rank": "Mega",
@@ -8569,7 +8569,7 @@
     ]
   },
   {
-    "seed": "e5f7a9b1-2c3d-4e4f-9a8b-9c1d2e3f4a5b",
+    "seed": "6f0a3e7d-9b4c-5d2f-b3a1-e8c7f0d9a2b",
     "name": "Apollomon",
     "img": "/assets/digimons/Apollomon.webp",
     "rank": "Mega",
@@ -8591,7 +8591,7 @@
     ]
   },
   {
-    "seed": "f6a8b1c2-3d4e-4f5a-8b9c-1d2e3f4a5b6c",
+    "seed": "f0a3a1c5-d2f8-b3a1-c7f0-d9b4e8a6f7d",
     "name": "Dianamon",
     "img": "/assets/digimons/Dianamon.webp",
     "rank": "Mega",
@@ -8613,7 +8613,7 @@
     ]
   },
   {
-    "seed": "a7b9c2d3-4e5f-4a6b-9c1d-2e3f4a5b6c7d",
+    "seed": "d9b4e8a6-f7d9-a2b6-f0a3-e7b1c5d2f8b",
     "name": "Shine Greymon (Burst Mode)",
     "img": "/assets/digimons/Shine Greymon (Burst Mode).webp",
     "rank": "Mega",
@@ -8635,7 +8635,7 @@
     ]
   },
   {
-    "seed": "b8c1d3e4-5f6a-4b7c-8d2e-3f4a5b6c7d8e",
+    "seed": "b4e8a6f7-e99b-f0a3-d9b4-c7f0b1c5d2f",
     "name": "Shine Greymon (Ruin Mode)",
     "img": "/assets/digimons/Shine Greymon (Ruin Mode).webp",
     "rank": "Mega",
@@ -8657,7 +8657,7 @@
     ]
   },
   {
-    "seed": "c9d2e4f5-6a7b-4c8d-9e3f-4a5b6c7d8e9f",
+    "seed": "4f3d8c3e-5f3c-2c7b-1b0e-6e5f9a1b3c1b",
     "name": "MirageGaogamon (Burst Mode)",
     "img": "/assets/digimons/MirageGaogamon (Burst Mode).webp",
     "rank": "Mega",
@@ -8679,7 +8679,7 @@
     ]
   },
   {
-    "seed": "d1e3f5a6-7b8c-4d9e-8f4a-5b6c7d8e9f1a",
+    "seed": "5b3c8a7d-2e1f-9e6d-1f0c-7b8a4a5b9d2e",
     "name": "Ravemon (Burst Mode)",
     "img": "/assets/digimons/Ravemon (Burst Mode).webp",
     "rank": "Mega",
@@ -8701,7 +8701,7 @@
     ]
   },
   {
-    "seed": "e2f4a6b7-8c9d-4e1f-9a5b-6c7d8e9f1a2b",
+    "seed": "2e1f0b9a-4a5b-1f0c-7b8a-9e6d8a7d9d2e",
     "name": "Lotosmon",
     "img": "/assets/digimons/Lotosmon.webp",
     "rank": "Mega",
@@ -8723,7 +8723,7 @@
     ]
   },
   {
-    "seed": "f3a5b7c8-9d1e-4f2a-8b6c-7d8e9f1a2b3c",
+    "seed": "8a7d4d1c-1f0c-2e1f-7b8a-9d2e5b3c9e6a",
     "name": "Beelzemon (Blast Mode)",
     "img": "/assets/digimons/Beelzemon (Blast Mode).webp",
     "rank": "Mega",
@@ -8745,7 +8745,7 @@
     ]
   },
   {
-    "seed": "a4b6c8d9-1e2f-4a3b-9c7d-8e9f1a2b3c4d",
+    "seed": "9e6a5b3c-7b8a-8a7d-2e1f-1f0c9d2e4d1c",
     "name": "Rosemon (Burst Mode)",
     "img": "/assets/digimons/Rosemon (Burst Mode).webp",
     "rank": "Mega",
@@ -8767,7 +8767,7 @@
     ]
   },
   {
-    "seed": "b5c7d9e1-2f3a-4b4c-8d8e-9f1a2b3c4d5e",
+    "seed": "4d1c9e6a-2e1f-8a7d-1f0c-7b8a5b3c9d2e",
     "name": "Argomon Mega",
     "img": "/assets/digimons/Argomon Mega.webp",
     "rank": "Mega",
@@ -8789,7 +8789,7 @@
     ]
   },
   {
-    "seed": "c6d8e1f2-3a4b-4c5d-9e9f-1a2b3c4d5e6f",
+    "seed": "8a7d9e6a-1f0c-5b3c-9d2e-7b8a4d1c2e1f",
     "name": "Minervamon",
     "img": "/assets/digimons/Minervamon.webp",
     "rank": "Mega",
@@ -8811,7 +8811,7 @@
     ]
   },
   {
-    "seed": "d7e9f2a3-4b5c-4d6e-8f1a-2b3c4d5e6f7a",
+    "seed": "8a7d9d2e-4d1c-7b8a-5b3c-1f0c9e6a2e1f",
     "name": "Duftmon",
     "img": "/assets/digimons/Duftmon.webp",
     "rank": "Mega",
@@ -8833,7 +8833,7 @@
     ]
   },
   {
-    "seed": "e8f1a3b4-5c6d-4e7f-9a2b-3c4d5e6f7a8b",
+    "seed": "1f0c9e6a-5b3c-2e1f-9d2e-7b8a4d1c8a7d",
     "name": "Chaosmon",
     "img": "/assets/digimons/Chaosmon.webp",
     "rank": "Mega",

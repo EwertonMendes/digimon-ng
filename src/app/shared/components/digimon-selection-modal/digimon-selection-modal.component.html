@@ -3,17 +3,22 @@
     <h3 class="section-title">Select your digimon</h3>
     <ng-content></ng-content>
     <div class="digimon-selection-modal-content">
-      @for (digimon of digimonList(); track digimon.seed + $index) {
-      <div
-        class="digimon-selection-item"
-        (click)="onSelectDigimon.emit(digimon)"
-      >
-        <img
-          [src]="digimon.img"
-          alt="digimon"
-          class="digimon-selection-item-image"
-        />
-        <div>{{ digimon.name }}</div>
+      @for (group of groupedDigimonList; track group.letter) {
+      <div class="digimon-group-header">{{ group.letter }}</div>
+      <div class="digimon-selection-modal-content-items-container">
+        @for (digimon of group.digimons; track digimon.seed + $index) {
+        <div
+          class="digimon-selection-item"
+          (click)="onSelectDigimon.emit(digimon)"
+        >
+          <img
+            [src]="digimon.img"
+            alt="digimon"
+            class="digimon-selection-item-image"
+          />
+          <div>{{ digimon.name }}</div>
+        </div>
+        }
       </div>
       }
     </div>

@@ -61,7 +61,13 @@
   [id]="seeEvolutionTreeModalId"
   [digimonList]="selectableDigimonList()"
   (onSelectDigimon)="openEvolutionTreeModal($event)"
-/>
+>
+  <app-button
+    text="Refresh digimon list"
+    color="primary"
+    (onClick)="refreshDigimonList()"
+  />
+</app-digimon-selection-modal>
 
 <app-evolution-tree-modal
   [id]="evolutionTreeModalId"

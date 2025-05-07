@@ -52,6 +52,16 @@
         object-fit: scale-down;
       }
 
+      &-name {
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      &-rank {
+        font-size: 0.8rem;
+      }
+
       &:hover {
         background: $secondary;
         cursor: pointer;

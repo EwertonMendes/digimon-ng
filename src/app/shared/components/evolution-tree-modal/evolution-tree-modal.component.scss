@@ -58,11 +58,34 @@
         justify-content: center;
         align-items: center;
         width: 100%;
-        height: 200px;
+        height: 250px;
 
         img {
-          height: 250px;
-          object-fit: scale-down;
+          transition: height 0.1s ease-in-out;
+        }
+
+        .fresh {
+          height: 50px;
+        }
+
+        .in-training {
+          height: 70px;
+        }
+
+        .rookie {
+          height: 100px;
+        }
+
+        .champion {
+          height: 150px;
+        }
+
+        .ultimate {
+          height: 200px;
+        }
+
+        .mega {
+          height: 220px;
         }
 
         .placeholder {

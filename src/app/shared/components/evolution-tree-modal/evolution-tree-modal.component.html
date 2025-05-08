@@ -15,7 +15,7 @@
         <div class="selected-digimon-header">
           <div class="selected-digimon-image">
             @if(selectedDigimon()) {
-            <img [src]="selectedDigimon()?.img" alt="selected-digimon" />
+            <img [src]="selectedDigimon()?.img" alt="selected-digimon" [class]="selectedDigimon()?.rank?.toLowerCase()" />
             } @else {
             <span class="placeholder">Select a digimon to view its stats</span>
             }

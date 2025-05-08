@@ -57,7 +57,7 @@ export class EvolutionTreeModalComponent implements AfterViewInit {
   constructor() {
     effect(
       () => {
-        if(!this.isDigimon(this.mainDigimon())) return;
+        if (!this.isDigimon(this.mainDigimon())) return;
         if (
           !this.mainDigimon() ||
           !this.digimonService.checkRequirements(

@@ -16,18 +16,14 @@ Welcome to DigiAngular! This project is an Angular application designed to manag
 
 DigiAngular is an Angular application that allows users to manage and view Digimon data. The application includes features such as displaying Digimon status cards, handling attribute changes with animations, and managing state effectively.
 
-![image](https://github.com/user-attachments/assets/d72b421c-07ca-4f31-b514-5ee88f57c17e)
+![image](https://github.com/user-attachments/assets/0e7fab44-9d94-4839-94fa-f0649f2435f1)
 
-![image](https://github.com/user-attachments/assets/26ef1667-4125-4ecf-bb6f-b47c375bc537)
+![image](https://github.com/user-attachments/assets/9794f84c-ff6c-4fc4-84c7-29e9ee315661)
 
 
 ## Features
 
 - **Digimon Status Cards**: Display detailed information about each Digimon, including HP, MP, and other attributes.
-  
-  ![20250224_145637-ezgif com-optimize](https://github.com/user-attachments/assets/6b0ffa6a-8e14-4bf7-8e1e-42d7a9fea966)
-
-
 - **Moving Digimon Cards**: The player can drag and drop the digimon cards moving along between the allowed areas like, Upfront Team, Hospital, Training, and Bit farm areas.
 - **Attribute Change Animations**: Visual feedback for attribute changes, such as HP and MP, with smooth animations.
 - **Evolution Tree**: Displays the evolution tree of a specific digimon, showing its current evolution line and possible evolutions and degenerations.
@@ -73,3 +69,39 @@ State management is handled using Angular's reactive features and services:
 DigiAngular is a robust and feature-rich Angular application that demonstrates advanced techniques and best practices. It showcases the power of Angular for building uncommon applications, with a focus on state management, animations, and interactive interfaces.
 
 Thank you for exploring DigiAngular!
+
+## Other Screenshots:
+
+### Start Game Screen:
+
+![image](https://github.com/user-attachments/assets/3dc5f4a8-9f42-44be-9c16-477f6a79ea52)
+
+### Aventure route:
+
+![image](https://github.com/user-attachments/assets/160b432a-73b5-400e-9a55-c975e22555ca)
+
+### Battle:
+
+![image](https://github.com/user-attachments/assets/64f93007-7812-4a68-a22e-171e09a76262)
+
+![image](https://github.com/user-attachments/assets/6f11bb03-706c-47f6-8ff3-714c52ac0816)
+
+### Digimon Details:
+![image](https://github.com/user-attachments/assets/7bfc2eaa-188c-4c7a-b91d-a5adfb6a67cc)
+
+### Evolution Tree Explorer:
+
+![image](https://github.com/user-attachments/assets/4b4e0773-ca45-4634-99c3-b2ac47e18aed)
+
+### Digimon Storage:
+
+![image](https://github.com/user-attachments/assets/4612afb7-a8ed-4700-a66d-76f03bfaf0b5)
+
+### Digilab:
+
+![image](https://github.com/user-attachments/assets/4955f4e4-b2ad-4104-80d6-d288bfecd609)
+
+### Player Data:
+
+![image](https://github.com/user-attachments/assets/4a6207b2-537b-403c-ba3a-c19a01c231d2)
+

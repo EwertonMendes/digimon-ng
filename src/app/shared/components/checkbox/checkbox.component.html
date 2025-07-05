@@ -1,0 +1,9 @@
+<label class="custom-checkbox">
+  <span>{{ label }}</span>
+  <input
+    type="checkbox"
+    [checked]="value"
+    (change)="toggle()"
+    [disabled]="disabled"
+  />
+</label>

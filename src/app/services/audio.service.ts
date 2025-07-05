@@ -7,8 +7,21 @@ import { AudioEffects, AudioTracks } from '../core/enums/audio-tracks.enum';
 export class AudioService {
   private audioMap: { [key: string]: HTMLAudioElement } = {};
 
+  private shouldPlayAudio: boolean = true;
+
   constructor() {
     this.preloadAllAudios();
+  }
+
+  get isAudioEnabled(): boolean {
+    return this.shouldPlayAudio;
+  }
+
+  set isAudioEnabled(value: boolean) {
+    this.shouldPlayAudio = value;
+    if (!value) {
+      Object.values(this.audioMap).forEach((audio) => audio.pause());
+    }
   }
 
   private preloadAllAudios(): void {
@@ -35,6 +48,8 @@ export class AudioService {
       console.error(`Audio track ${trackUrl} not preloaded`);
       return;
     }
+
+    if (!this.shouldPlayAudio) return;
 
     audio.pause();
     audio.currentTime = 0;

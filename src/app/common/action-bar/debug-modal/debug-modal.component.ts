@@ -11,6 +11,7 @@ import { BaseDigimon } from '../../../core/interfaces/digimon.interface';
 import { FormsModule } from '@angular/forms';
 import { EvolutionTreeModalComponent } from 'app/shared/components/evolution-tree-modal/evolution-tree-modal.component';
 import { Subject, takeUntil } from 'rxjs';
+import { CheckboxComponent } from 'app/shared/components/checkbox/checkbox.component';
 
 @Component({
   selector: 'app-debug-modal',
@@ -21,6 +22,7 @@ import { Subject, takeUntil } from 'rxjs';
     DigimonSelectionModalComponent,
     FormsModule,
     EvolutionTreeModalComponent,
+    CheckboxComponent
   ],
   templateUrl: './debug-modal.component.html',
   styleUrl: './debug-modal.component.scss',

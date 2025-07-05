@@ -10,6 +10,7 @@ import { DebugModalComponent } from './debug-modal/debug-modal.component';
 import { GlobalStateDataSource } from '../../state/global-state.datasource';
 import { ToastService } from '../../shared/components/toast/toast.service';
 import { environment } from 'app/environments/environment';
+import { ConfigModalComponent } from './config-modal/config-modal.component';
 
 @Component({
   selector: 'app-action-bar',
@@ -19,13 +20,16 @@ import { environment } from 'app/environments/environment';
     StorageModalComponent,
     PlayerInfoModalComponent,
     DebugModalComponent,
+    ConfigModalComponent
   ],
   templateUrl: './action-bar.component.html',
   styleUrl: './action-bar.component.scss',
 })
 export class ActionBarComponent {
+  playerInfoModalId = 'player-info-modal';
   digimonStorageModalId = 'digimon-storage-modal';
-  debugModlaId = 'debug-modal';
+  debugModalId = 'debug-modal';
+  configModalId = 'config-modal';
   isDevMode = !environment.production;
 
   modalService = inject(ModalService);
@@ -41,12 +45,17 @@ export class ActionBarComponent {
 
   openPlayerInfoModal() {
     this.audioService.playAudio(AudioEffects.CLICK);
-    this.modalService.open('player-info-modal');
+    this.modalService.open(this.playerInfoModalId);
   }
 
   openDebugModal() {
     this.audioService.playAudio(AudioEffects.CLICK);
-    this.modalService.open(this.debugModlaId);
+    this.modalService.open(this.debugModalId);
+  }
+
+  openConfigModal() {
+    this.audioService.playAudio(AudioEffects.CLICK);
+    this.modalService.open(this.configModalId);
   }
 
   navigateTo(url: string) {

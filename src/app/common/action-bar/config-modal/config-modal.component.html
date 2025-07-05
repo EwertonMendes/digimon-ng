@@ -1,0 +1,17 @@
+<app-modal [id]="configModalId">
+  <div class="config-modal-container">
+    <h3 class="section-title">Configurations</h3>
+    <div class="config-modal-content">
+      <div class="config-item">
+        <app-checkbox
+          label="Enable Audio"
+          [(ngModel)]="enableAudio"
+          (ngModelChange)="toggleAudio()"
+        />
+        <p class="config-description">
+          Turn the sound effects and music on or off.
+        </p>
+      </div>
+    </div>
+  </div>
+</app-modal>

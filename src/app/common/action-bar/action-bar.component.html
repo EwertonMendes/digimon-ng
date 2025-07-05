@@ -45,7 +45,13 @@
       color="dark"
       (onClick)="openPlayerInfoModal()"
     />
-    <app-button title="Config" icon="ph-gear" weight="bold" color="dark" />
+    <app-button
+      title="Config"
+      icon="ph-gear"
+      weight="bold"
+      color="dark"
+      (onClick)="openConfigModal()"
+    />
     <app-button
       title="Save Game"
       icon="ph-floppy-disk"
@@ -59,3 +65,4 @@
 <app-storage-modal />
 <app-player-info-modal />
 <app-debug-modal />
+<app-config-modal />

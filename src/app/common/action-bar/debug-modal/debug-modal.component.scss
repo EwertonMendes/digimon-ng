@@ -52,7 +52,8 @@
       font-size: 14px;
       font-weight: bold;
       color: #333;
-      background-color: #f0f0f0;
+      background-color: $gray-100;
+      border-color: $primary-light;
       border-radius: 10px;
       outline: none;
       transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -78,7 +79,6 @@
     display: flex;
     gap: 10px;
     align-items: center;
-    justify-content: center;
     width: -webkit-fill-available;
 
     label {

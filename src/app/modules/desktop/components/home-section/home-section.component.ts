@@ -51,8 +51,6 @@ export class HomeSectionComponent {
         ) &&
         this.globalState.playerDataAcessor.bits >= this.fullHealPrice
       )
-    }, {
-      allowSignalWrites: true
     });
   }
 

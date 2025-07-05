@@ -34,8 +34,6 @@ export class LabComponent {
         }
       });
       this.labDigimons.set(digimons);
-    }, {
-      allowSignalWrites: true,
     });
   }
 

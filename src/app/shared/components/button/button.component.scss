@@ -1,4 +1,5 @@
-@import '@variables';
+@use '@variables' as *;
+@use "sass:color";
 
 .app-button {
   display: flex;
@@ -100,12 +101,12 @@
     color: $text;
 
     &:not(.app-button--disabled):hover {
-      background-color: lighten($danger, 5%);
-      box-shadow: 0 0 12px lighten($danger, 10%);
+      background-color: color.adjust($danger, $lightness: 5%);
+      box-shadow: 0 0 12px color.adjust($danger, $lightness: 10%);
     }
 
     &:not(.app-button--disabled):active {
-      background-color: darken($danger, 5%);
+      background-color: color.adjust($danger, $lightness: -5%);
     }
   }
 
@@ -114,12 +115,12 @@
     color: #000;
 
     &:not(.app-button--disabled):hover {
-      background-color: lighten($success, 5%);
-      box-shadow: 0 0 12px lighten($success, 10%);
+      background-color: color.adjust($success, $lightness: 5%);
+      box-shadow: 0 0 12px color.adjust($success, $lightness: 10%);
     }
 
     &:not(.app-button--disabled):active {
-      background-color: darken($success, 5%);
+      background-color: color.adjust($success, $lightness: -5%);
     }
   }
 
@@ -128,12 +129,12 @@
     color: $text;
 
     &:not(.app-button--disabled):hover {
-      background-color: lighten($info, 5%);
-      box-shadow: 0 0 12px lighten($info, 10%);
+      background-color: color.adjust($info, $lightness: 5%);
+      box-shadow: 0 0 12px color.adjust($info, $lightness: 10%);
     }
 
     &:not(.app-button--disabled):active {
-      background-color: darken($info, 5%);
+      background-color: color.adjust($info, $lightness: -5%);
     }
   }
 

@@ -5,7 +5,6 @@ import {
   inject,
   signal,
 } from '@angular/core';
-import { ButtonComponent } from '../../../../shared/components/button/button.component';
 import { DigiStatusCardComponent } from '../../../../shared/components/digi-status-card/digi-status-card.component';
 import { GlobalStateDataSource } from '../../../../state/global-state.datasource';
 import { Digimon } from '../../../../core/interfaces/digimon.interface';
@@ -25,7 +24,6 @@ import { AudioService } from '../../../../services/audio.service';
   selector: 'app-farm-section',
   standalone: true,
   imports: [
-    ButtonComponent,
     DigiStatusCardComponent,
     DigimonFarmCardComponent,
     DragDropModule,
@@ -61,9 +59,6 @@ export class FarmSectionComponent {
         this.bitGenerationTotalRate.set(
           this.globalState.getBitGenerationTotalRate()
         );
-      },
-      {
-        allowSignalWrites: true,
       }
     );
   }

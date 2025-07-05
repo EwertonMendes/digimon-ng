@@ -62,9 +62,6 @@ export class DigimonDetailsModalComponent {
         }
 
         this.evolutionRoute.set(evolutionList);
-      },
-      {
-        allowSignalWrites: true,
       }
     );
   }

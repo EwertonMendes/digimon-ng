@@ -74,9 +74,6 @@ export class EvolutionTreeModalComponent implements AfterViewInit {
             (seed) => seed === this.selectedDigimon()?.seed
           ) ?? false
         );
-      },
-      {
-        allowSignalWrites: true,
       }
     );
   }

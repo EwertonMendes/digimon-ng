@@ -1,4 +1,5 @@
-@import '@variables';
+@use '@variables' as *;
+@use 'sass:color';
 
 :host {
   overflow: auto;
@@ -74,7 +75,7 @@
           &-level-range {
             font-size: 0.95rem;
             font-weight: 400;
-            color: darken($text, 15%);
+            color: color.adjust($text, $lightness: 15%);
             margin-top: 4px;
           }
         }

@@ -1,4 +1,5 @@
-@import '@variables';
+@use '@variables' as *;
+@use 'sass:color';
 
 :host {
   display: flex;
@@ -138,7 +139,7 @@
             }
 
             &__percent--incomplete {
-              color: darken($text, 25%);
+              color: color.adjust($text, $lightness: -25%);
             }
 
             &-progress {

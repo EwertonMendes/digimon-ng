@@ -1,4 +1,4 @@
-@import '@variables';
+ @use '@variables' as *;
 
 .digimon-selection-modal-container {
   display: flex;

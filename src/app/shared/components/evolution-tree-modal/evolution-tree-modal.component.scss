@@ -1,4 +1,5 @@
-@import '@variables';
+@use "sass:color";
+@use '@variables' as *;
 
 .evolution-tree-container {
   display: flex;
@@ -113,7 +114,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 5px 10px;
-            background: lighten($color: $background, $amount: 5%);
+            background: color.adjust($background, $lightness: 5%);
             border-radius: 5px;
 
             .label {

@@ -1,7 +1,20 @@
 <div class="farm-section">
   <div class="farm-section-header">
-    <span>Bits: {{ globalState.playerDataAcessor.bits }}</span>
-    <span>Bit generation rate: {{ bitGenerationTotalRate() }} bits /min</span>
+    <span
+      >{{ "MODULES.DESKTOP.COMPONENTS.FARM_SECTION.BITS" | transloco }}
+      {{ globalState.playerDataAcessor.bits }}</span
+    >
+    <span
+      >{{
+        "MODULES.DESKTOP.COMPONENTS.FARM_SECTION.BIT_GENERATION_RATE"
+          | transloco
+      }}
+      {{ bitGenerationTotalRate() }}
+      {{
+        "MODULES.DESKTOP.COMPONENTS.FARM_SECTION.BITS_PER_MINUTE_SHORT"
+          | transloco
+      }}</span
+    >
   </div>
   <div class="farm-section-container">
     <div class="panel">
@@ -16,15 +29,23 @@
         (cdkDropListDropped)="drop($event)"
       >
         <div class="in-training-list-header">
-          <h4>In-Training Digimons</h4>
+          <h4>
+            {{
+              "MODULES.DESKTOP.COMPONENTS.FARM_SECTION.IN_TRAINING_HEADER"
+                | transloco
+            }}
+          </h4>
           <h4>
             {{ globalState.playerDataAcessor.inTrainingDigimonList.length }}/{{
               this.globalState.listsLimits.inTraining
             }}
           </h4>
         </div>
-        <span class="countdown"
-          >Next training in {{ globalState.trainingDigimonCountdown() }}
+        <span class="countdown">
+          {{
+            "MODULES.DESKTOP.COMPONENTS.FARM_SECTION.NEXT_TRAINING" | transloco
+          }}
+          {{ globalState.trainingDigimonCountdown() }}
         </span>
         @for(digimon of globalState.playerDataAcessor.inTrainingDigimonList;
         track digimon.id){
@@ -36,7 +57,11 @@
         />
         } @empty {
         <div class="in-training-list-no-data-container">
-          <h4>No digimon</h4>
+          <h4>
+            {{
+              "MODULES.DESKTOP.COMPONENTS.FARM_SECTION.NO_DIGIMON" | transloco
+            }}
+          </h4>
         </div>
         }
       </div>
@@ -53,15 +78,24 @@
         (cdkDropListDropped)="drop($event)"
       >
         <div class="bit-farming-list-header">
-          <h4>Bit Farm Digimons</h4>
+          <h4>
+            {{
+              "MODULES.DESKTOP.COMPONENTS.FARM_SECTION.BIT_FARM_HEADER"
+                | transloco
+            }}
+          </h4>
           <h4>
             {{ globalState.playerDataAcessor.bitFarmDigimonList.length }}/{{
               this.globalState.listsLimits.bitFarm
             }}
           </h4>
         </div>
-        <span class="countdown"
-          >Next bit generation in {{ globalState.bitFarmingCountdown() }}
+        <span class="countdown">
+          {{
+            "MODULES.DESKTOP.COMPONENTS.FARM_SECTION.NEXT_BIT_GENERATION"
+              | transloco
+          }}
+          {{ globalState.bitFarmingCountdown() }}
         </span>
         @for(digimon of globalState.playerDataAcessor.bitFarmDigimonList; track
         digimon.id){
@@ -73,7 +107,11 @@
         />
         } @empty {
         <div class="bit-farming-list-no-data-container">
-          <h4>No digimon</h4>
+          <h4>
+            {{
+              "MODULES.DESKTOP.COMPONENTS.FARM_SECTION.NO_DIGIMON" | transloco
+            }}
+          </h4>
         </div>
         }
       </div>

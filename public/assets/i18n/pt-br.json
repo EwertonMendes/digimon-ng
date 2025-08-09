@@ -27,6 +27,14 @@
         },
         "FARM_SECTION": {
           "TITLE": "Fazenda",
+          "BITS": "Bits:",
+          "BIT_GENERATION_RATE": "Taxa de geração de bits:",
+          "BITS_PER_MINUTE_SHORT": "bits /min",
+          "IN_TRAINING_HEADER": "Digimons em Treinamento",
+          "NO_DIGIMON": "Nenhum digimon",
+          "NEXT_TRAINING": "Próximo treino em",
+          "BIT_FARM_HEADER": "Digimons na Fazenda de Bits",
+          "NEXT_BIT_GENERATION": "Próxima geração de bits em",
           "BITS_PER_MINUTE": "Bits por minuto:"
         }
       }

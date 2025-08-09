@@ -19,6 +19,7 @@ import { DigimonListLocation } from '../../../../core/enums/digimon-list-locatio
 import { PlayerData } from '../../../../core/interfaces/player-data.interface';
 import { AudioEffects } from '../../../../core/enums/audio-tracks.enum';
 import { AudioService } from '../../../../services/audio.service';
+import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-farm-section',
@@ -27,6 +28,7 @@ import { AudioService } from '../../../../services/audio.service';
     DigiStatusCardComponent,
     DigimonFarmCardComponent,
     DragDropModule,
+    TranslocoModule
   ],
   templateUrl: './farm-section.component.html',
   styleUrl: './farm-section.component.scss',

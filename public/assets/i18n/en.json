@@ -27,6 +27,14 @@
         },
         "FARM_SECTION": {
           "TITLE": "Farm",
+          "BITS": "Bits:",
+          "BIT_GENERATION_RATE": "Bit generation rate:",
+          "BITS_PER_MINUTE_SHORT": "bits /min",
+          "IN_TRAINING_HEADER": "In-Training Digimons",
+          "NO_DIGIMON": "No digimon",
+          "NEXT_TRAINING": "Next training in",
+          "BIT_FARM_HEADER": "Bit Farm Digimons",
+          "NEXT_BIT_GENERATION": "Next bit generation in",
           "BITS_PER_MINUTE": "Bits per minute:"
         }
       }

@@ -26,6 +26,24 @@
     "COMPONENTS": {
       "BATTLE_MODAL": {
         "TITLE": "Battle"
+      },
+      "EVOLUTION_TREE_MODAL": {
+        "SELECT_DIGIMON_PLACEHOLDER": "Select a digimon to view its stats",
+        "RANK": "Rank",
+        "SPECIES": "Species",
+        "HP": "HP",
+        "MP": "MP",
+        "ATK": "ATK",
+        "DEF": "DEF",
+        "SPD": "SPD",
+        "BITS_PER_MINUTE": "Bits per minute",
+        "EVOLUTION_REQUIREMENTS": "Evolution requirements",
+        "EVOLVE_INTO": "Evolve {{main}} into {{target}}",
+        "EVOLUTION_CONFIRMATION_TITLE": "Evolution Confirmation",
+        "EVOLUTION_CONFIRMATION_TEXT": "Are you sure you want to evolve {{main}} into {{target}}?",
+        "BIT_GENERATION": "Bit Generation:",
+        "NO": "No",
+        "YES": "Yes"
       }
     }
   }

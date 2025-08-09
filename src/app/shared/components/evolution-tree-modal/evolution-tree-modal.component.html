@@ -1,8 +1,4 @@
-<app-modal
-  [id]="id()"
-  (openEvent)="onOpen()"
-  (closeEvent)="onClose()"
->
+<app-modal [id]="id()" (openEvent)="onOpen()" (closeEvent)="onClose()">
   <div class="evolution-tree-container">
     <div class="evolution-tree-header">
       <h2>{{ mainDigimon()?.name }}</h2>
@@ -15,9 +11,16 @@
         <div class="selected-digimon-header">
           <div class="selected-digimon-image">
             @if(selectedDigimon()) {
-            <img [src]="selectedDigimon()?.img" alt="selected-digimon" [class]="selectedDigimon()?.rank?.toLowerCase()" />
+            <img
+              [src]="selectedDigimon()?.img"
+              alt="selected-digimon"
+              [class]="selectedDigimon()?.rank?.toLowerCase()"
+            />
             } @else {
-            <span class="placeholder">Select a digimon to view its stats</span>
+            <span class="placeholder">{{
+              "SHARED.COMPONENTS.EVOLUTION_TREE_MODAL.SELECT_DIGIMON_PLACEHOLDER"
+                | transloco
+            }}</span>
             }
           </div>
           <h2>{{ selectedDigimon()?.name }}</h2>
@@ -25,41 +28,61 @@
         <div class="selected-digimon-content">
           <div class="selected-digimon-info">
             <div class="selected-digimon-info-item">
-              <span class="label">Rank:</span>
+              <span class="label">{{
+                "SHARED.COMPONENTS.EVOLUTION_TREE_MODAL.RANK" | transloco
+              }}:</span>
               <span class="value">{{ selectedDigimon()?.rank ?? "-" }}</span>
             </div>
             <div class="selected-digimon-info-item">
-              <span class="label">Species:</span>
+              <span class="label">{{
+                "SHARED.COMPONENTS.EVOLUTION_TREE_MODAL.SPECIES" | transloco
+              }}:</span>
               <span class="value">{{ selectedDigimon()?.species ?? "-" }}</span>
             </div>
             <div class="selected-digimon-info-item">
-              <span class="label">HP:</span>
+              <span class="label">{{
+                "SHARED.COMPONENTS.EVOLUTION_TREE_MODAL.HP" | transloco
+              }}:</span>
               <span class="value">{{ selectedDigimon()?.hp ?? "-" }}</span>
             </div>
             <div class="selected-digimon-info-item">
-              <span class="label">MP:</span>
+              <span class="label">{{
+                "SHARED.COMPONENTS.EVOLUTION_TREE_MODAL.MP" | transloco
+              }}:</span>
               <span class="value">{{ selectedDigimon()?.mp ?? "-" }}</span>
             </div>
             <div class="selected-digimon-info-item">
-              <span class="label">ATK:</span>
+              <span class="label">{{
+                "SHARED.COMPONENTS.EVOLUTION_TREE_MODAL.ATK" | transloco
+              }}:</span>
               <span class="value">{{ selectedDigimon()?.atk ?? "-" }}</span>
             </div>
             <div class="selected-digimon-info-item">
-              <span class="label">DEF:</span>
+              <span class="label">{{
+                "SHARED.COMPONENTS.EVOLUTION_TREE_MODAL.DEF" | transloco
+              }}:</span>
               <span class="value">{{ selectedDigimon()?.def ?? "-" }}</span>
             </div>
             <div class="selected-digimon-info-item">
-              <span class="label">SPD:</span>
+              <span class="label">{{
+                "SHARED.COMPONENTS.EVOLUTION_TREE_MODAL.SPD" | transloco
+              }}:</span>
               <span class="value">{{ selectedDigimon()?.speed ?? "-" }}</span>
             </div>
             <div class="selected-digimon-info-item">
-              <span class="label">Bits per minute:</span>
+              <span class="label">{{
+                "SHARED.COMPONENTS.EVOLUTION_TREE_MODAL.BITS_PER_MINUTE"
+                  | transloco
+              }}:</span>
               <span class="value">{{
                 selectedDigimon()?.bitFarmingRate ?? "-"
               }}</span>
             </div>
             <div class="selected-digimon-info-requirements">
-              <span class="label">Evolution requirements:</span>
+              <span class="label">{{
+                "SHARED.COMPONENTS.EVOLUTION_TREE_MODAL.EVOLUTION_REQUIREMENTS"
+                  | transloco
+              }}</span>
               <div class="requirements-list">
                 @for (requirement of selectedDigimon()?.evolutionRequirements;
                 track $index) {
@@ -71,11 +94,9 @@
           @if(selectedDigimon() && canEvolve()) {
           <app-button
             [text]="
-              'Evolve ' +
-              mainDigimon()?.name +
-              ' ' +
-              'into ' +
-              selectedDigimon()?.name
+              'SHARED.COMPONENTS.EVOLUTION_TREE_MODAL.EVOLVE_INTO'
+                | transloco
+                  : { main: mainDigimon()?.name, target: selectedDigimon()?.name }
             "
             (onClick)="showEvolutionConfirmationModal()"
           />
@@ -90,12 +111,18 @@
   <div class="evolution-confirmation-modal-container">
     <div class="evolution-confirmation-container">
       <div class="evolution-confirmation-header">
-        <h2>Evolution Confirmation</h2>
+        <h2>
+          {{
+            "SHARED.COMPONENTS.EVOLUTION_TREE_MODAL.EVOLUTION_CONFIRMATION_TITLE"
+              | transloco
+          }}
+        </h2>
         <span>
-          Are you sure you want to evolve
-          <strong>{{ mainDigimon()?.name }}</strong> into
-          <strong>{{ selectedDigimon()?.name }}</strong
-          >?
+          {{
+            "SHARED.COMPONENTS.EVOLUTION_TREE_MODAL.EVOLUTION_CONFIRMATION_TEXT"
+              | transloco
+                : { main: mainDigimon()?.name, target: selectedDigimon()?.name }
+          }}
         </span>
         <div class="evolution-confirmation-digimon">
           <div class="evolution-confirmation-digimon-main">
@@ -112,37 +139,45 @@
           @if(mainDigimon() && selectedDigimon()) {
 
           <span>
-            HP: {{ mainDigimon()?.maxHp }} ->
+            {{ "SHARED.COMPONENTS.EVOLUTION_TREE_MODAL.HP" | transloco }}:
+            {{ mainDigimon()?.maxHp }} ->
             <span class="new-value"
               >{{ selectedPossibleEvolutionStats()?.maxHp }} ↑</span
             >
           </span>
           <span>
-            MP: {{ mainDigimon()?.maxMp }} ->
+            {{ "SHARED.COMPONENTS.EVOLUTION_TREE_MODAL.MP" | transloco }}:
+            {{ mainDigimon()?.maxMp }} ->
             <span class="new-value"
               >{{ selectedPossibleEvolutionStats()?.maxMp }} ↑</span
             >
           </span>
           <span>
-            ATK: {{ mainDigimon()?.atk }} ->
+            {{ "SHARED.COMPONENTS.EVOLUTION_TREE_MODAL.ATK" | transloco }}:
+            {{ mainDigimon()?.atk }} ->
             <span class="new-value"
               >{{ selectedPossibleEvolutionStats()?.atk }} ↑</span
             >
           </span>
           <span>
-            DEF: {{ mainDigimon()?.def }} ->
+            {{ "SHARED.COMPONENTS.EVOLUTION_TREE_MODAL.DEF" | transloco }}:
+            {{ mainDigimon()?.def }} ->
             <span class="new-value"
               >{{ selectedPossibleEvolutionStats()?.def }} ↑</span
             >
           </span>
           <span>
-            SPD: {{ mainDigimon()?.speed }} ->
+            {{ "SHARED.COMPONENTS.EVOLUTION_TREE_MODAL.SPD" | transloco }}:
+            {{ mainDigimon()?.speed }} ->
             <span class="new-value"
               >{{ selectedPossibleEvolutionStats()?.speed }} ↑</span
             >
           </span>
           <span>
-            Bit Generation: {{ mainDigimon()?.bitFarmingRate }} ->
+            {{
+              "SHARED.COMPONENTS.EVOLUTION_TREE_MODAL.BIT_GENERATION"
+                | transloco
+            }}: {{ mainDigimon()?.bitFarmingRate }} ->
             <span class="new-value"
               >{{ selectedPossibleEvolutionStats()?.bitFarmingRate }} ↑</span
             >
@@ -151,12 +186,12 @@
         </div>
         <div class="evolution-confirmation-content-actions">
           <app-button
-            text="No"
+            [text]="'SHARED.COMPONENTS.EVOLUTION_TREE_MODAL.NO' | transloco"
             [disabled]="isEvolving()"
             (onClick)="this.modalService.close('evolution-confirmation-modal')"
           />
           <app-button
-            text="Yes"
+            [text]="'SHARED.COMPONENTS.EVOLUTION_TREE_MODAL.YES' | transloco"
             (onClick)="evolveDigimon()"
             [disabled]="isEvolving()"
           />

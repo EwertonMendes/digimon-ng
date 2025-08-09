@@ -26,6 +26,24 @@
     "COMPONENTS": {
       "BATTLE_MODAL": {
         "TITLE": "Batalla"
+      },
+      "EVOLUTION_TREE_MODAL": {
+        "SELECT_DIGIMON_PLACEHOLDER": "Selecciona un digimon para ver sus estadísticas",
+        "RANK": "Rango",
+        "SPECIES": "Especie",
+        "HP": "HP",
+        "MP": "MP",
+        "ATK": "ATQ",
+        "DEF": "DEF",
+        "SPD": "VEL",
+        "BITS_PER_MINUTE": "Bits por minuto",
+        "EVOLUTION_REQUIREMENTS": "Requisitos de evolución",
+        "EVOLVE_INTO": "Evolucionar {{main}} en {{target}}",
+        "EVOLUTION_CONFIRMATION_TITLE": "Confirmación de Evolución",
+        "EVOLUTION_CONFIRMATION_TEXT": "¿Estás seguro de que quieres evolucionar {{main}} en {{target}}?",
+        "BIT_GENERATION": "Generación de Bits:",
+        "NO": "No",
+        "YES": "Sí"
       }
     }
   }

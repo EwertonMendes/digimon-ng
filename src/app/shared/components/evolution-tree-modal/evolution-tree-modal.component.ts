@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, effect, ElementRef, HostListener, inject, input, signal } from '@angular/core';
+import { TranslocoModule } from '@jsverse/transloco';
 import { ModalComponent } from '../modal/modal.component';
 import {
   BaseDigimon,
@@ -18,7 +19,7 @@ import { AudioService } from '../../../services/audio.service';
 @Component({
   selector: 'app-evolution-tree-modal',
   standalone: true,
-  imports: [ModalComponent, ButtonComponent],
+  imports: [ModalComponent, ButtonComponent, TranslocoModule],
   templateUrl: './evolution-tree-modal.component.html',
   styleUrls: ['./evolution-tree-modal.component.scss'],
 })

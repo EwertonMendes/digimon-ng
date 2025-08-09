@@ -28,12 +28,12 @@
         "FARM_SECTION": {
           "TITLE": "Granja",
           "BITS": "Bits:",
-          "BIT_GENERATION_RATE": "Tasa de generación de bits:",
+          "BIT_GENERATION_RATE": "Tasa de generación:",
           "BITS_PER_MINUTE_SHORT": "bits /min",
-          "IN_TRAINING_HEADER": "Digimon en Entrenamiento",
+          "IN_TRAINING_HEADER": "Entrenamiento",
           "NO_DIGIMON": "Sin digimon",
           "NEXT_TRAINING": "Próximo entrenamiento en",
-          "BIT_FARM_HEADER": "Digimon en la Granja de Bits",
+          "BIT_FARM_HEADER": "Granja de Bits",
           "NEXT_BIT_GENERATION": "Próxima generación de bits en",
           "BITS_PER_MINUTE": "Bits por minuto:"
         }

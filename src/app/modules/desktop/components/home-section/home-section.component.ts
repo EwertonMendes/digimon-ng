@@ -14,11 +14,12 @@ import { AudioService } from '../../../../services/audio.service';
 import { AudioEffects } from '../../../../core/enums/audio-tracks.enum';
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
 import { HospitalService } from '../../../../state/services/hospital.service';
+import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-home-section',
   standalone: true,
-  imports: [DigiStatusCardComponent, ButtonComponent, DragDropModule],
+  imports: [DigiStatusCardComponent, ButtonComponent, DragDropModule, TranslocoModule],
   templateUrl: './home-section.component.html',
   styleUrl: './home-section.component.scss',
 })
@@ -42,7 +43,8 @@ export class HomeSectionComponent {
     'hospital-digimon-list': DigimonListLocation.HOSPITAL,
   };
 
-  constructor() {
+  constructor(private translocoService: TranslocoService) {
+    this.translocoService.setActiveLang('pt-br');
     effect(() => {
       this.canHealAll.set(
         this.globalState.playerDataAcessor.hospitalDigimonList.length > 0 &&

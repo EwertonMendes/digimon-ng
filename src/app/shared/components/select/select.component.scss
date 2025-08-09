@@ -1,0 +1,105 @@
+@use '@variables' as *;
+
+.app-select {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-family: inherit;
+  position: relative;
+  outline: none;
+
+  &__label {
+    font-size: 0.95rem;
+    color: $text;
+    margin-bottom: 0.15rem;
+    letter-spacing: 0.5px;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    background: $background;
+    color: $text;
+    border-radius: 12px;
+    box-shadow: 0 0 0 1.5px $primary inset;
+    padding: 0.5rem 2.5rem 0.5rem 0.75rem;
+    cursor: pointer;
+    min-height: 40px;
+    position: relative;
+    transition: box-shadow 0.2s;
+
+    &--disabled {
+      background: $gray-700;
+      color: $gray-400;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+  }
+
+  &__selected {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    width: 100%;
+    pointer-events: none;
+  }
+
+  &__arrow {
+    position: absolute;
+    right: 1rem;
+    color: $primary;
+    font-size: 1.1rem;
+    pointer-events: none;
+  }
+
+  &__dropdown {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: $background;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+    margin: 0.25rem 0 0 0;
+    padding: 0.25rem 0;
+    z-index: 10;
+    list-style: none;
+    max-height: 220px;
+    overflow-y: auto;
+  }
+
+  &__dropdown-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    color: $text;
+    background: transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+
+    &:hover,
+    &--selected {
+      background: $primary;
+      color: $text;
+    }
+  }
+
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 0.5rem;
+    width: 1.1em;
+    height: 1.1em;
+    vertical-align: middle;
+
+    img {
+      border-radius: 50%;
+      box-sizing: border-box;
+    }
+  }
+}

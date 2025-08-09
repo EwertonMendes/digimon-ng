@@ -5,7 +5,9 @@
   (contextmenu)="cancelAttack($event)"
 >
   <div class="digimon-battle-container">
-    <h3 class="section-title">Battle</h3>
+    <h3 class="section-title">
+      {{ "SHARED.COMPONENTS.BATTLE_MODAL.TITLE" | transloco }}
+    </h3>
     <div
       class="digimon-battle-content"
       [ngClass]="{

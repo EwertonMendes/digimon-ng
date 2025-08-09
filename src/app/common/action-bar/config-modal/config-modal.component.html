@@ -1,16 +1,31 @@
 <app-modal [id]="configModalId">
   <div class="config-modal-container">
-    <h3 class="section-title">Configurations</h3>
+    <h3 class="section-title">{{ "COMMON.ACTION_BAR.CONFIG_MODAL.TITLE" | transloco }}</h3>
     <div class="config-modal-content">
       <div class="config-item">
         <app-checkbox
-          label="Enable Audio"
+          [label]="
+            'COMMON.ACTION_BAR.CONFIG_MODAL.ENABLE_AUDIO.LABEL' | transloco
+          "
           [(ngModel)]="enableAudio"
           (ngModelChange)="toggleAudio()"
         />
         <p class="config-description">
-          Turn the sound effects and music on or off.
+          {{
+            "COMMON.ACTION_BAR.CONFIG_MODAL.ENABLE_AUDIO.DESCRIPTION"
+              | transloco
+          }}
         </p>
+      </div>
+      <div class="config-item">
+        <app-select
+          [label]="
+            'COMMON.ACTION_BAR.CONFIG_MODAL.LANGUAGE.LABEL' | transloco
+          "
+          [options]="languageOptions"
+          [(ngModel)]="selectedLanguage"
+          (ngModelChange)="changeLanguage($event)"
+        />
       </div>
     </div>
   </div>

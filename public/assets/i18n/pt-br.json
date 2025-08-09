@@ -1,0 +1,32 @@
+{
+  "COMMON": {
+    "ACTION_BAR": {
+      "CONFIG_MODAL": {
+        "TITLE": "Configurações",
+        "ENABLE_AUDIO": {
+          "LABEL": "Habilitar Áudio",
+          "DESCRIPTION": "Ativar ou desativar os efeitos sonoros e a música."
+        },
+        "LANGUAGE": {
+          "LABEL": "Idioma"
+        }
+      }
+    }
+  },
+  "MODULES": {
+    "DESKTOP": {
+      "COMPONENTS": {
+        "HOME_SECTION": {
+          "SUBTITLE": "Equipe de Batalha"
+        }
+      }
+    }
+  },
+  "SHARED": {
+    "COMPONENTS": {
+      "BATTLE_MODAL": {
+        "TITLE": "Batalha"
+      }
+    }
+  }
+}

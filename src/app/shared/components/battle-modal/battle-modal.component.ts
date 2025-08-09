@@ -8,6 +8,7 @@ import { AudioService } from '../../../services/audio.service';
 import { AudioEffects } from '../../../core/enums/audio-tracks.enum';
 import { CommonModule } from '@angular/common';
 import { Digimon } from 'app/core/interfaces/digimon.interface';
+import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-battle-modal',
@@ -17,6 +18,7 @@ import { Digimon } from 'app/core/interfaces/digimon.interface';
     ModalComponent,
     DigiStatusCardComponent,
     ButtonComponent,
+    TranslocoModule
   ],
   templateUrl: './battle-modal.component.html',
   styleUrl: './battle-modal.component.scss',

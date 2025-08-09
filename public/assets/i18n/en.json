@@ -1,0 +1,32 @@
+{
+  "COMMON": {
+    "ACTION_BAR": {
+      "CONFIG_MODAL": {
+        "TITLE": "Settings",
+        "ENABLE_AUDIO": {
+          "LABEL": "Enable Audio",
+          "DESCRIPTION": "Turn the sound effects and music on or off."
+        },
+        "LANGUAGE": {
+          "LABEL": "Language"
+        }
+      }
+    }
+  },
+  "MODULES": {
+    "DESKTOP": {
+      "COMPONENTS": {
+        "HOME_SECTION": {
+          "SUBTITLE": "Battle Team"
+        }
+      }
+    }
+  },
+  "SHARED": {
+    "COMPONENTS": {
+      "BATTLE_MODAL": {
+        "TITLE": "Battle"
+      }
+    }
+  }
+}

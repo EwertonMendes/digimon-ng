@@ -32,7 +32,11 @@
         />
         } @empty {
         <div class="my-digimon-list-no-data-container">
-          <h4>No digimon</h4>
+          <h4>
+            {{
+              "MODULES.DESKTOP.COMPONENTS.HOME_SECTION.NO_DIGIMON" | transloco
+            }}
+          </h4>
         </div>
         }
       </div>
@@ -43,18 +47,26 @@
     <div class="hospital-area-header">
       <div class="hospital-area-header-column">
         <h4 class="hospital-area-title">
-          Hospital:
+          {{
+            "MODULES.DESKTOP.COMPONENTS.HOME_SECTION.HOSPITAL_TITLE" | transloco
+          }}
           {{ globalState.playerDataAcessor.hospitalDigimonList.length }}/{{
             globalState.listsLimits.hospital
           }}
         </h4>
         <span class="countdown">
-          Next healing in {{ globalState.hospitalHealingCountdown() }}
+          {{
+            "MODULES.DESKTOP.COMPONENTS.HOME_SECTION.NEXT_HEALING" | transloco
+          }}
+          {{ globalState.hospitalHealingCountdown() }}
         </span>
       </div>
       <div class="hospital-area-header-column">
         <app-button
-          [text]="'Heal All for ' + fullHealPrice + ' Bits'"
+          [text]="
+            'MODULES.DESKTOP.COMPONENTS.HOME_SECTION.HEAL_ALL'
+              | transloco : { price: fullHealPrice }
+          "
           [disabled]="!canHealAll()"
           (onClick)="healAll()"
         />
@@ -85,7 +97,12 @@
         />
         } @empty {
         <div class="hospital-digimon-list-no-data-container">
-          <h4>No Digimon</h4>
+          <h4>
+            {{
+              "MODULES.DESKTOP.COMPONENTS.HOME_SECTION.NO_DIGIMON_HOSPITAL"
+                | transloco
+            }}
+          </h4>
         </div>
         }
       </div>

@@ -17,7 +17,17 @@
     "DESKTOP": {
       "COMPONENTS": {
         "HOME_SECTION": {
-          "SUBTITLE": "Equipo de Batalla"
+          "TITLE": "Casa",
+          "SUBTITLE": "Equipo de Batalla",
+          "NO_DIGIMON": "Sin digimon",
+          "HOSPITAL_TITLE": "Hospital:",
+          "NEXT_HEALING": "Próxima curación en",
+          "HEAL_ALL": "Curar todo por {{price}} Bits",
+          "NO_DIGIMON_HOSPITAL": "Sin Digimon"
+        },
+        "FARM_SECTION": {
+          "TITLE": "Granja",
+          "BITS_PER_MINUTE": "Bits por minuto:"
         }
       }
     }

@@ -10,6 +10,20 @@
         "LANGUAGE": {
           "LABEL": "Language"
         }
+      },
+      "BUTTONS": {
+        "DESKTOP": "Desktop",
+        "ADVENTURE": "Adventure",
+        "OPEN_DIGIMON_STORAGE": "Open digimon storage",
+        "LAB": "Lab",
+        "DEBUG": "Debug",
+        "PLAYER_INFO": "Player Info",
+        "CONFIG": "Config",
+        "SAVE_GAME": "Save Game"
+      },
+      "TOAST": {
+        "GAME_SAVED_SUCCESSFULLY": "Game saved successfully!",
+        "GAME_SAVE_FAILED": "Game save failed!"
       }
     }
   },

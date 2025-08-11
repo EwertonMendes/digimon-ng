@@ -11,6 +11,7 @@ import { GlobalStateDataSource } from '../../state/global-state.datasource';
 import { ToastService } from '../../shared/components/toast/toast.service';
 import { environment } from 'app/environments/environment';
 import { ConfigModalComponent } from './config-modal/config-modal.component';
+import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-action-bar',
@@ -20,7 +21,8 @@ import { ConfigModalComponent } from './config-modal/config-modal.component';
     StorageModalComponent,
     PlayerInfoModalComponent,
     DebugModalComponent,
-    ConfigModalComponent
+    ConfigModalComponent,
+    TranslocoModule,
   ],
   templateUrl: './action-bar.component.html',
   styleUrl: './action-bar.component.scss',
@@ -37,6 +39,7 @@ export class ActionBarComponent {
   router = inject(Router);
   globalState = inject(GlobalStateDataSource);
   toastService = inject(ToastService);
+  translocoService = inject(TranslocoService);
 
   openDigimonStorageModal() {
     this.audioService.playAudio(AudioEffects.CLICK);
@@ -67,10 +70,11 @@ export class ActionBarComponent {
     this.audioService.playAudio(AudioEffects.CLICK);
     try {
       await this.globalState.saveCurrentPlayerData();
-      this.toastService.showToast('Game saved successfully!', 'success');
+      console.log('teste', this.translocoService.translate('COMMON.ACTION_BAR.TOAST.GAME_SAVED_SUCCESSFULLY', {}, 'en'));
+      this.toastService.showToast(this.translocoService.translate('COMMON.ACTION_BAR.TOAST.GAME_SAVED_SUCCESSFULLY', {}, 'en'), 'success');
 
     } catch (err) {
-      this.toastService.showToast('Error saving game', 'error');
+      this.toastService.showToast(this.translocoService.translate('COMMON.ACTION_BAR.TOAST.GAME_SAVE_FAILED'), 'error');
     }
   }
 }

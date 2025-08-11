@@ -1,27 +1,27 @@
 <div class="action-bar-container">
   <div class="action-bar-buttons">
     <app-button
-      title="Desktop"
+      [title]="'COMMON.ACTION_BAR.BUTTONS.DESKTOP' | transloco"
       icon="ph-desktop"
       weight="bold"
       color="info"
       (onClick)="navigateTo('desktop')"
     />
     <app-button
-      title="Adventure"
+      [title]="'COMMON.ACTION_BAR.BUTTONS.ADVENTURE' | transloco"
       icon="ph-sword"
       weight="bold"
       color="danger"
       (onClick)="navigateTo('adventure')"
     />
     <app-button
-      title="Open digimon storage"
+      [title]="'COMMON.ACTION_BAR.BUTTONS.OPEN_DIGIMON_STORAGE' | transloco"
       icon="ph-database"
       weight="bold"
       (onClick)="openDigimonStorageModal()"
     />
     <app-button
-      title="Lab"
+      [title]="'COMMON.ACTION_BAR.BUTTONS.LAB' | transloco"
       icon="ph-test-tube"
       weight="bold"
       color="success"
@@ -31,7 +31,7 @@
   <div class="action-bar-buttons">
     @if(isDevMode) {
     <app-button
-      title="Debug"
+      [title]="'COMMON.ACTION_BAR.BUTTONS.DEBUG' | transloco"
       icon="ph-bug"
       weight="bold"
       color="dark"
@@ -39,21 +39,21 @@
     />
     }
     <app-button
-      title="Player Info"
+      [title]="'COMMON.ACTION_BAR.BUTTONS.PLAYER_INFO' | transloco"
       icon="ph-user-circle-gear"
       weight="bold"
       color="dark"
       (onClick)="openPlayerInfoModal()"
     />
     <app-button
-      title="Config"
+      [title]="'COMMON.ACTION_BAR.BUTTONS.CONFIG' | transloco"
       icon="ph-gear"
       weight="bold"
       color="dark"
       (onClick)="openConfigModal()"
     />
     <app-button
-      title="Save Game"
+      [title]="'COMMON.ACTION_BAR.BUTTONS.SAVE_GAME' | transloco"
       icon="ph-floppy-disk"
       weight="bold"
       color="dark"

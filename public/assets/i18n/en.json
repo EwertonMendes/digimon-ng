@@ -115,7 +115,27 @@
   "SHARED": {
     "COMPONENTS": {
       "BATTLE_MODAL": {
-        "TITLE": "Battle"
+        "TITLE": "Battle",
+        "TURN_ORDER_TITLE": "Turn Order",
+        "PLAYER_TEAM_TITLE": "Player Team",
+        "ENEMY_TEAM_TITLE": "Enemy Team",
+        "BATTLE_LOG_TITLE": "Battle Log",
+        "ATTACK_BUTTON": "Attack",
+        "RUN_AWAY_BUTTON": "Run away",
+        "CANCEL_ATTACK_BUTTON": "Cancel Attack",
+        "PLAYER_ATTACKS_LOG": "Player {{name}} attacks! Damage: {{damage}}. Enemy {{enemy}} has {{hp}} health left.",
+        "ENEMY_DEFEATED_LOG": "Enemy {{enemy}} has been defeated.",
+        "VICTORY_LOG": "Victory! All opponent Digimons were defeated.",
+        "YOU_GAINED_LOG": "You gained {{number}} {{type}}.",
+        "DIGI_DATA_GAINED_LOG": "You gained {{amount}} Digi-Data from {{name}}.",
+        "DEFEAT_LOG": "Defeat! Your Digimons were defeated.",
+        "BATTLE_ENDED_LOG": "Battle ended. You can now close this window.",
+        "ENEMY_ATTACKS_LOG": "Enemy {{name}} attacks! Damage: {{damage}}. Player {{player}} has {{hp}} health left.",
+        "PLAYER_DEFEATED_LOG": "Player {{player}} has been defeated.",
+        "ESCAPE_SUCCESS_TOAST": "Escape successful!",
+        "ESCAPE_SUCCESS_LOG": "Player escaped the battle.",
+        "ESCAPE_FAIL_TOAST": "Escape failed! Enemy attacks!",
+        "ESCAPE_FAIL_LOG": "Escape attempt failed. Enemy counterattacks."
       },
       "EVOLUTION_TREE_MODAL": {
         "SELECT_DIGIMON_PLACEHOLDER": "Select a digimon to view its stats",

@@ -25,7 +25,7 @@
     >
       <div class="turn-order-container">
         <div class="turn-order">
-          <h4 class="turn-order-title">Turn Order</h4>
+          <h4 class="turn-order-title">{{ 'SHARED.COMPONENTS.BATTLE_MODAL.TURN_ORDER_TITLE' | transloco }}</h4>
           @for(digimon of globalState.turnOrder; track digimon.seed + $index){
           <div
             class="turn-order-digimon"
@@ -49,7 +49,7 @@
       <div class="digimon-battle-content-container">
         <div class="teams-container">
           <div class="player-team-container">
-            <h4 class="team-title">Player Team</h4>
+            <h4 class="team-title">{{ 'SHARED.COMPONENTS.BATTLE_MODAL.PLAYER_TEAM_TITLE' | transloco }}</h4>
             <div class="player-team">
               @for(digimon of globalState.playerDataAcessor.digimonList; track
               digimon.id){
@@ -90,14 +90,14 @@
             !isChoosingDigimonToAttack() && globalState.isBattleActive) {
             <div class="player-actions-container">
               <app-button
-                text="Attack"
+                [text]="'SHARED.COMPONENTS.BATTLE_MODAL.ATTACK_BUTTON' | transloco"
                 icon="ph-sword"
                 weight="bold"
                 iconPosition="right"
                 (onClick)="onClickAttack()"
               />
               <app-button
-                text="Run away"
+                [text]="'SHARED.COMPONENTS.BATTLE_MODAL.RUN_AWAY_BUTTON' | transloco"
                 icon="ph-person-simple-run"
                 weight="bold"
                 color="danger"
@@ -109,7 +109,7 @@
             } @if(isChoosingDigimonToAttack() && globalState.isBattleActive) {
             <div class="player-actions-container">
               <app-button
-                text="Cancel Attack"
+                [text]="'SHARED.COMPONENTS.BATTLE_MODAL.CANCEL_ATTACK_BUTTON' | transloco"
                 icon="ph-x"
                 weight="bold"
                 color="secondary"
@@ -120,7 +120,7 @@
             }
           </span>
           <div class="enemy-team-container">
-            <h4 class="team-title">Enemy Team</h4>
+            <h4 class="team-title">{{ 'SHARED.COMPONENTS.BATTLE_MODAL.ENEMY_TEAM_TITLE' | transloco }}</h4>
             <div class="enemy-team">
               @for(digimon of globalState.enemyTeamAccessor; track digimon.id){
               <div class="digimon-container">
@@ -153,7 +153,7 @@
           </div>
         </div>
         <div class="battle-log-container">
-          <h4 class="battle-log-title">Battle Log</h4>
+          <h4 class="battle-log-title">{{ 'SHARED.COMPONENTS.BATTLE_MODAL.BATTLE_LOG_TITLE' | transloco }}</h4>
           @for(log of this.globalState.battleLogAccessor.slice().reverse();
           track $index){
           <span class="battle-log">▶ {{ log }}</span>

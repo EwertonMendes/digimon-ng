@@ -61,7 +61,12 @@ export class BattleModalComponent {
 
     const dealtDamage = this.globalState.attack(digimon, opponentDigimon);
     this.log(
-      `Player ${digimon.name} attacks! Damage: ${dealtDamage}. Enemy ${opponentDigimon.name} has ${opponentDigimon.currentHp} health left.`
+      this.globalState.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.PLAYER_ATTACKS_LOG', {
+        name: digimon.name,
+        damage: dealtDamage,
+        enemy: opponentDigimon.name,
+        hp: opponentDigimon.currentHp
+      })
     );
 
     if (dealtDamage === 0) {
@@ -73,7 +78,11 @@ export class BattleModalComponent {
     }
 
     if (opponentDigimon.currentHp <= 0) {
-      this.log(`Enemy ${opponentDigimon.name} has been defeated.`);
+      this.log(
+        this.globalState.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.ENEMY_DEFEATED_LOG', {
+          enemy: opponentDigimon.name
+        })
+      );
       this.globalState.turnOrder =
         this.globalState.turnOrder.filter(
           (d) => d.id !== opponentDigimon.id

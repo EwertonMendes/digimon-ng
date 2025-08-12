@@ -460,28 +460,40 @@ export class GlobalStateDataSource {
     if (endState === 'victory') {
       this.audioService.playAudio(AudioTracks.VICTORY);
       const { totalExp, totalBits, digiDataGains } = this.calculateRewards(this.enemyTeam());
-      this.log('Victory! Opponent Digimons were defeated.');
-      this.log(`You gained ${totalExp} exp.`);
-      this.log(`You gained ${totalBits} bits.`);
+
+      this.log(this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.YOU_GAINED_LOG', {
+        number: totalExp,
+        type: 'exp'
+      }));
+
+      this.log(this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.YOU_GAINED_LOG', {
+        number: totalBits,
+        type: 'bits'
+      }));
+
       for (const gain of digiDataGains) {
-        this.log(`You gained ${gain.amount} ${gain.name} Digi Data.`);
+        this.log(`You gained ${gain.amount} ${gain.name} Digi-Data.`);
+        this.log(this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.DIGI_DATA_GAINED_LOG', {
+          amount: gain.amount,
+          name: gain.name
+        }));
       }
       this.toastService.showToast(
-        'Victory! Opponent Digimons were defeated.',
+        this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.VICTORY_LOG'),
         'success'
       );
     }
 
     if (endState === 'defeat') {
       this.audioService.playAudio(AudioTracks.DEFEAT);
-      this.log('All player Digimon are defeated. Battle lost.');
+      this.log(this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.DEFEAT_LOG'));
       this.toastService.showToast(
-        'All player Digimon are defeated. Battle lost.',
+        this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.DEFEAT_LOG'),
         'error',
         'ph-skull'
       );
     }
-    this.log('Battle ended.');
+    this.log(this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.BATTLE_ENDED_LOG'));
   }
 
   private enemyAttack(digimon: Digimon) {
@@ -496,7 +508,12 @@ export class GlobalStateDataSource {
     setTimeout(() => {
       const dealtDamage = this.attack(digimon, target);
       this.log(
-        `Enemy ${digimon.name} attacks! Damage: ${dealtDamage}. Player ${target.name} has ${target.currentHp} health left.`
+        this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.ENEMY_ATTACKS_LOG', {
+          name: digimon.name,
+          damage: dealtDamage,
+          player: target.name,
+          hp: target.currentHp
+        })
       );
 
       if (dealtDamage === 0) {
@@ -510,7 +527,11 @@ export class GlobalStateDataSource {
       this.turnOrder.shift();
 
       if (target.currentHp <= 0) {
-        this.log(`Player ${target.name} has been defeated.`);
+        this.log(
+          this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.PLAYER_DEFEATED_LOG', {
+            player: target.name
+          })
+        );
         this.turnOrder = this.turnOrder.filter(
           (digimon) => digimon.id !== target.id
         );
@@ -640,16 +661,22 @@ export class GlobalStateDataSource {
     const chance = Math.random();
 
     if (chance <= escapeChance) {
-      this.toastService.showToast('Escape successful!', 'info');
+      this.toastService.showToast(
+        this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.ESCAPE_SUCCESS_TOAST'),
+        'info'
+      );
       this.audioService.playAudio(AudioEffects.MISS);
-      this.log('Player escaped the battle.');
+      this.log(this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.ESCAPE_SUCCESS_LOG'));
       this.endBattle();
       return;
     }
 
-    this.toastService.showToast('Escape failed! Enemy attacks!', 'error');
+    this.toastService.showToast(
+      this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.ESCAPE_FAIL_TOAST'),
+      'error'
+    );
     this.audioService.playAudio(AudioEffects.HIT);
-    this.log('Escape attempt failed. Enemy counterattacks.');
+    this.log(this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.ESCAPE_FAIL_LOG'));
 
     const enemy = this.turnOrder[0];
     if (!enemy || enemy.owner !== 'enemy') {

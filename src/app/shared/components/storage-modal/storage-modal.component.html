@@ -1,10 +1,10 @@
 <app-modal [id]="digimonStorageModalId">
   <div class="digimon-storage-container">
-    <h3 class="section-title">Digimon Storage</h3>
+  <h3 class="section-title">{{ 'SHARED.COMPONENTS.STORAGE_MODAL.TITLE' | transloco }}</h3>
     <div class="digimon-storage-content">
       @if(globalState.playerDataAcessor.digimonStorageList.length === 0){
       <div class="digimon-storage-content-no-data-container">
-        <h4>No digimon in storage</h4>
+        <h4>{{ 'SHARED.COMPONENTS.STORAGE_MODAL.NO_DIGIMON' | transloco }}</h4>
       </div>
       } @else {
       <div class="digimon-storage-content-list-container">
@@ -19,28 +19,28 @@
             <app-button
               icon="ph-users-three"
               weight="bold"
-              text="To team"
+              [text]="'SHARED.COMPONENTS.STORAGE_MODAL.TO_TEAM_BUTTON' | transloco"
               color="primary"
               (onClick)="addDigimonToTeam(digimon)"
             />
             <app-button
               icon="ph-barbell"
               weight="bold"
-              text="To training"
+              [text]="'SHARED.COMPONENTS.STORAGE_MODAL.TO_TRAINING_BUTTON' | transloco"
               color="secondary"
               (onClick)="addDigimonToTraining(digimon)"
             />
             <app-button
               icon="ph-coins"
               weight="bold"
-              text="To bit farm"
+              [text]="'SHARED.COMPONENTS.STORAGE_MODAL.TO_BIT_FARM_BUTTON' | transloco"
               color="tertiary"
               (onClick)="addDigimonToFarm(digimon)"
             />
             <app-button
               icon="ph-first-aid"
               weight="bold"
-              text="To Hospital"
+              [text]="'SHARED.COMPONENTS.STORAGE_MODAL.TO_HOSPITAL_BUTTON' | transloco"
               color="info"
               (onClick)="addDigimonToHospital(digimon)"
             />
@@ -50,11 +50,11 @@
       </div>
       }
       <div class="digimon-storage-content-footer">
-        <span
-          >Storage Capacity:
+        <span>
+          {{ 'SHARED.COMPONENTS.STORAGE_MODAL.STORAGE_CAPACITY' | transloco }}
           {{ globalState.playerDataAcessor.digimonStorageList.length }} /
-          {{ globalState.playerDataAcessor.digimonStorageCapacity }}</span
-        >
+          {{ globalState.playerDataAcessor.digimonStorageCapacity }}
+        </span>
       </div>
     </div>
   </div>

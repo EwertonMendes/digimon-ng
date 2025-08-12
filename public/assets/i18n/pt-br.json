@@ -154,6 +154,16 @@
         "BIT_GENERATION": "Geração de Bits:",
         "NO": "Não",
         "YES": "Sim"
+      },
+      "STORAGE_MODAL": {
+        "TITLE": "Armazenamento de Digimon",
+        "SEARCH_PLACEHOLDER": "Pesquisar Digimon",
+        "NO_DIGIMON": "Nenhum Digimon no armazenamento",
+        "TO_TEAM_BUTTON": "Para a Equipe",
+        "TO_TRAINING_BUTTON": "Para o Treinamento",
+        "TO_HOSPITAL_BUTTON": "Para o Hospital",
+        "TO_BIT_FARM_BUTTON": "Para a Fazenda de Bits",
+        "STORAGE_CAPACITY": "Capacidade de Armazenamento:"
       }
     }
   }

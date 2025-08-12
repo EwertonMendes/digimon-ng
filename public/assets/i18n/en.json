@@ -154,6 +154,16 @@
         "BIT_GENERATION": "Bit Generation:",
         "NO": "No",
         "YES": "Yes"
+      },
+      "STORAGE_MODAL": {
+        "TITLE": "Digimon Storage",
+        "SEARCH_PLACEHOLDER": "Search Digimon",
+        "NO_DIGIMON": "No Digimon in storage",
+        "TO_TEAM_BUTTON": "To Team",
+        "TO_TRAINING_BUTTON": "To Training",
+        "TO_HOSPITAL_BUTTON": "To Hospital",
+        "TO_BIT_FARM_BUTTON": "To Bit Farm",
+        "STORAGE_CAPACITY": "Storage Capacity:"
       }
     }
   }

@@ -8,11 +8,12 @@ import { ModalService } from '../modal/modal.service';
 import { ButtonComponent } from '../button/button.component';
 import { DigiStatusCardComponent } from '../digi-status-card/digi-status-card.component';
 import { ModalComponent } from '../modal/modal.component';
+import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-storage-modal',
   standalone: true,
-  imports: [ButtonComponent, ModalComponent, DigiStatusCardComponent],
+  imports: [ButtonComponent, ModalComponent, DigiStatusCardComponent, TranslocoModule],
   templateUrl: './storage-modal.component.html',
   styleUrl: './storage-modal.component.scss',
 })

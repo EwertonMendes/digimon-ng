@@ -1,174 +1,206 @@
  @use '@variables' as *;
 
-:host {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  background: $background;
-  color: $text;
-  overflow: hidden;
-}
+ :host {
+   display: flex;
+   width: 100%;
+   height: 100%;
+   background: $background;
+   color: $text;
+   overflow: hidden;
+ }
 
-.initial-setup {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 2rem;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  gap: 2rem;
+ .initial-setup {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-between;
+   padding: 2rem;
+   width: 100%;
+   max-width: 1200px;
+   margin: 0 auto;
+   gap: 2rem;
 
-  &__title {
-    text-align: center;
+   &__title {
+     margin-bottom: 1.5rem;
 
-    h1 {
-      font-size: 2.5rem;
-      color: $primary;
-      margin-bottom: 0.5rem;
-    }
+     &--grid {
+       display: grid;
+       grid-template-columns: 1fr minmax(0, 2fr) 220px;
+       align-items: center;
+       width: 100%;
+       gap: 0;
+     }
 
-    p {
-      font-size: 1.25rem;
-      color: $gray-300;
-    }
-  }
+     &-center {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+       width: 100%;
+     }
 
-  &__content {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    width: 100%;
-  }
+     h1 {
+       font-size: 2.5rem;
+       color: $primary;
+       margin-bottom: 0.25rem;
+       text-align: center;
+     }
 
-  &__form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
+     &-select {
+       min-width: 180px;
+       display: flex;
+       align-items: center;
+       justify-content: flex-end;
 
-    label,
-    span {
-      font-weight: 600;
-      font-size: 1rem;
-      color: $gray-200;
-    }
+       app-select {
+         width: 100%;
+         max-width: 210px;
+       }
+     }
 
-    #tamerName {
-      padding: 0.75rem 1rem;
-      border: 1px solid $gray-700;
-      border-radius: 12px;
-      font-size: 1rem;
-      background: rgba(255, 255, 255, 0.05);
-      color: $text;
-      backdrop-filter: blur(8px);
-      transition: border 0.3s;
+     p {
+       font-size: 1.25rem;
+       color: $gray-300;
+       margin-top: 0.5rem;
+       text-align: center;
+       width: 100%;
+     }
+   }
 
-      &:focus {
-        border-color: $primary;
-        outline: none;
-      }
-    }
-  }
+   &__content {
+     display: flex;
+     flex-direction: column;
+     gap: 2rem;
+     width: 100%;
+   }
 
-  &__team-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    width: 100%;
-    justify-content: center;
-  }
+   &__form-group {
+     display: flex;
+     flex-direction: column;
+     gap: 0.75rem;
 
-  &__team {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 1rem;
-    min-width: 300px;
-    max-width: 400px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 2px solid $gray-700;
-    border-radius: 20px;
-    padding: 1rem;
-    cursor: pointer;
-    transition: transform 0.3s ease, border-color 0.3s ease;
-    backdrop-filter: blur(12px);
+     label,
+     span {
+       font-weight: 600;
+       font-size: 1rem;
+       color: $gray-200;
+     }
 
-    &:hover {
-      transform: scale(1.03);
-      border-color: $primary-light;
-    }
+     #tamerName {
+       padding: 0.75rem 1rem;
+       border: 1px solid $gray-700;
+       border-radius: 12px;
+       font-size: 1rem;
+       background: rgba(255, 255, 255, 0.05);
+       color: $text;
+       backdrop-filter: blur(8px);
+       transition: border 0.3s;
 
-    &.selected {
-      border-color: $success;
-      background-color: rgba(34, 197, 94, 0.15);
-      transform: scale(1.05);
-    }
+       &:focus {
+         border-color: $primary;
+         outline: none;
+       }
+     }
+   }
 
-    &-header {
-      text-align: center;
+   &__team-list {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 20px;
+     width: 100%;
+     justify-content: center;
+   }
 
-      span {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: $accent;
-      }
-    }
+   &__team {
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     gap: 1rem;
+     min-width: 300px;
+     max-width: 400px;
+     background: rgba(255, 255, 255, 0.05);
+     border: 2px solid $gray-700;
+     border-radius: 20px;
+     padding: 1rem;
+     cursor: pointer;
+     transition: transform 0.3s ease, border-color 0.3s ease;
+     backdrop-filter: blur(12px);
 
-    &-members {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-      gap: 0.75rem;
-      justify-items: center;
-      flex-grow: 1;
-      overflow-y: auto;
-      padding-top: 0.5rem;
-    }
+     &:hover {
+       transform: scale(1.03);
+       border-color: $primary-light;
+     }
 
-    &-container {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-    }
-  }
+     &.selected {
+       border-color: $success;
+       background-color: rgba(34, 197, 94, 0.15);
+       transform: scale(1.05);
+     }
 
-  &__digimon {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 0.5rem;
-    text-align: center;
-    font-size: 1rem;
+     &-header {
+       text-align: center;
 
-    .image {
-      width: 70px;
-      height: 70px;
-      object-fit: contain;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
-      margin-bottom: 0.5rem;
-    }
+       span {
+         font-size: 1.5rem;
+         font-weight: bold;
+         color: $accent;
+       }
+     }
 
-    .name {
-      font-weight: bold;
-      color: $text;
-    }
+     &-members {
+       display: grid;
+       grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+       gap: 0.75rem;
+       justify-items: center;
+       flex-grow: 1;
+       overflow-y: auto;
+       padding-top: 0.5rem;
+     }
 
-    .rank {
-      font-size: 0.85rem;
-      color: $gray-300;
-    }
-  }
+     &-container {
+       display: flex;
+       justify-content: center;
+       width: 100%;
+     }
+   }
 
-  &__footer {
-    display: flex;
-    justify-content: center;
-    width: 100%;
+   &__digimon {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: flex-start;
+     padding: 0.5rem;
+     text-align: center;
+     font-size: 1rem;
 
-    app-button {
-      width: 50%;
-      max-width: 300px;
-    }
-  }
-}
+     .image {
+       width: 70px;
+       height: 70px;
+       object-fit: contain;
+       background: rgba(255, 255, 255, 0.1);
+       border-radius: 10px;
+       margin-bottom: 0.5rem;
+     }
+
+     .name {
+       font-weight: bold;
+       color: $text;
+     }
+
+     .rank {
+       font-size: 0.85rem;
+       color: $gray-300;
+     }
+   }
+
+   &__footer {
+     display: flex;
+     justify-content: center;
+     width: 100%;
+
+     app-button {
+       width: 50%;
+       max-width: 300px;
+     }
+   }
+ }

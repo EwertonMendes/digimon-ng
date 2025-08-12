@@ -1,10 +1,12 @@
 import { Component, inject, model, OnInit, signal } from '@angular/core';
+import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 import { GlobalStateDataSource } from '../../state/global-state.datasource';
 import { ButtonComponent } from '../../shared/components/button/button.component';
 import { FormsModule } from '@angular/forms';
 import { BaseDigimon, Digimon } from '../../core/interfaces/digimon.interface';
 import { CommonModule } from '@angular/common';
 import { DigimonSeeds } from '../../core/enums/digimon-seeds.enum';
+import { SelectComponent } from 'app/shared/components/select/select.component';
 
 type InitialTeam = {
   name: string;
@@ -14,16 +16,13 @@ type InitialTeam = {
 @Component({
   selector: 'app-initial-setup',
   standalone: true,
-  imports: [CommonModule, FormsModule, ButtonComponent],
+  imports: [CommonModule, FormsModule, ButtonComponent, TranslocoModule, SelectComponent],
   templateUrl: './initial-setup.component.html',
   styleUrl: './initial-setup.component.scss'
 })
 export class InitialSetupComponent implements OnInit {
-
   tamerName = model('');
-
   teams: InitialTeam[] = [];
-
   selectableTeams = [
     {
       name: 'Dragon Force',
@@ -75,8 +74,15 @@ export class InitialSetupComponent implements OnInit {
     }
   ]
   selectedTeam = signal<BaseDigimon[]>([]);
+  languageOptions = [
+    { label: 'English', value: 'en', icon: 'assets/flags/en.svg' },
+    { label: 'Español', value: 'es', icon: 'assets/flags/es.svg' },
+    { label: 'Português Brasil', value: 'pt-br', icon: 'assets/flags/pt-br.svg' },
+  ];
+  selectedLanguage = model('en');
 
   globalState = inject(GlobalStateDataSource);
+  translocoService = inject(TranslocoService);
 
   ngOnInit(): void {
     this.teams = this.selectableTeams.map((team) => {
@@ -96,13 +102,19 @@ export class InitialSetupComponent implements OnInit {
   }
 
   confirmInitialSetup() {
-
     let selectedDigimons: Digimon[] = [];
-
     this.selectedTeam().forEach((digimon) => {
       selectedDigimons.push(this.globalState.generateDigimonBySeed(digimon.seed));
     });
-
     this.globalState.confirmInitialSetup(this.tamerName(), selectedDigimons);
+  }
+
+  changeLanguage(language: string): void {
+    this.translocoService.setActiveLang(language);
+    this.selectedLanguage.set(language);
+  }
+
+  protected getTeamKey(name: string): string {
+    return `MODULES.INITIAL_SETUP.TEAMS.${name.replace(/\s/g, '_').toUpperCase()}`;
   }
 }

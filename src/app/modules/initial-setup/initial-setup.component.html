@@ -1,31 +1,47 @@
 <div class="initial-setup">
-  <div class="initial-setup__title">
-    <h1>Welcome to Digi-Angular!</h1>
-    <p>Let's get started by setting up your tamer name and initial team.</p>
+  <div class="initial-setup__title initial-setup__title--grid">
+    <div></div>
+    <div class="initial-setup__title-center">
+      <h1>{{ "MODULES.INITIAL_SETUP.TITLE" | transloco }}</h1>
+      <p>{{ "MODULES.INITIAL_SETUP.DESCRIPTION" | transloco }}</p>
+    </div>
+    <div class="initial-setup__title-select">
+      <app-select
+        [options]="languageOptions"
+        [(ngModel)]="selectedLanguage"
+        (ngModelChange)="changeLanguage($event)"
+      />
+    </div>
   </div>
   <div class="initial-setup__content">
     <div class="initial-setup__form-group">
-      <label for="tamerName">Tamer Name:</label>
+      <label for="tamerName">{{
+        "MODULES.INITIAL_SETUP.TAMER_NAME_LABEL" | transloco
+      }}</label>
       <input
         id="tamerName"
         type="text"
         [(ngModel)]="tamerName"
-        placeholder="Enter your tamer name"
+        [placeholder]="
+          'MODULES.INITIAL_SETUP.TAMER_NAME_PLACEHOLDER' | transloco
+        "
         maxlength="25"
       />
     </div>
     <div class="initial-setup__form-group">
-      <span for="teamName">Select Your Team:</span>
+      <span for="teamName">{{
+        "MODULES.INITIAL_SETUP.SELECT_TEAM_LABEL" | transloco
+      }}</span>
       <div class="initial-setup__team-list">
         @for (team of teams; track $index) {
         <div
           class="initial-setup__team"
-          [ngClass]="{ selected: selectedTeam() === team.members}"
+          [ngClass]="{ selected: selectedTeam() === team.members }"
           (click)="selectTeam(team.members)"
         >
           <div class="initial-setup__team-header">
             <div class="initial-setup__team-header-name">
-              <span>{{ team.name }}</span>
+              <span>{{ getTeamKey(team.name) | transloco }}</span>
             </div>
           </div>
           <div class="initial-setup__team-members">
@@ -46,7 +62,7 @@
   </div>
   <div class="initial-setup__footer">
     <app-button
-      text="Confirm"
+      [text]="'MODULES.INITIAL_SETUP.CONFIRM_BUTTON' | transloco"
       [disabled]="
         !tamerName() || tamerName().length < 3 || !selectedTeam().length
       "

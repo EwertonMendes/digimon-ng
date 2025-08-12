@@ -14,7 +14,7 @@
       "BUTTONS": {
         "DESKTOP": "Desktop",
         "ADVENTURE": "Adventure",
-        "OPEN_DIGIMON_STORAGE": "Open digimon storage",
+        "OPEN_DIGIMON_STORAGE": "Digimon storage",
         "LAB": "Lab",
         "DEBUG": "Debug",
         "PLAYER_INFO": "Player Info",
@@ -37,7 +37,13 @@
           "HOSPITAL_TITLE": "Hospital:",
           "NEXT_HEALING": "Next healing in",
           "HEAL_ALL": "Heal All for {{price}} Bits",
-          "NO_DIGIMON_HOSPITAL": "No Digimon"
+          "NO_DIGIMON_HOSPITAL": "No Digimon",
+          "TOAST": {
+            "TEAM_LIMIT_REACHED": "Team digimon limit reached!",
+            "TRAINING_LIMIT_REACHED": "Training digimon limit reached!",
+            "HOSPITAL_LIMIT_REACHED": "Hospital digimon limit reached!",
+            "FARM_LIMIT_REACHED": "Farm digimon limit reached!"
+          }
         },
         "FARM_SECTION": {
           "TITLE": "Farm",
@@ -51,6 +57,58 @@
           "NEXT_BIT_GENERATION": "Next bit generation in",
           "BITS_PER_MINUTE": "Bits per minute:"
         }
+      }
+    },
+    "ADVENTURE": {
+      "EXPLORE_SECTION": {
+        "TITLE": "Explore",
+        "LOCATIONS_TITLE": "Locations",
+        "LEVEL": "Level:",
+        "LOCATION_LOGIN_MOUNTAIN": "Login Mountain",
+        "LOCATION_PIXEL_DESERT": "Pixel Desert",
+        "LOCATION_LABEL_FOREST": "Label Forest",
+        "LOCATION_REGISTER_JUNGLE": "Register Jungle",
+        "LOCATION_PROXY_ISLAND": "Proxy Island",
+        "LOCATION_LIMIT_VALLEY": "Limit Valley",
+        "LOCATION_LOOP_SWAMP": "Loop Swamp",
+        "LOCATION_ACCESS_GLACIER": "Access Glacier",
+        "LOCATION_ANGLER_TUNNEL": "Angler Tunnel",
+        "LOCATION_MAGNET_MINE": "Magnet Mine",
+        "LOCATION_PACKET_COAST": "Packet Coast",
+        "LOCATION_PALLETE_AMAZON": "Pallete Amazon",
+        "LOCATION_THRILLER_RUINS": "Thriller Ruins",
+        "LOCATION_RISK_FACTORY": "Risk Factory",
+        "LOCATION_SHADOW_ABYSS": "Shadow Abyss",
+        "LOCATION_WIZARD_TEMPLE": "Wizard Temple",
+        "LOG_EXPLORING_LOCATION": "Exploring location {{location}}",
+        "NO_DIGIMON_TO_EXPLORE": "No Digimon to explore with.",
+        "ENEMY_FOUND": "(Enemy) {{name}} was found!"
+      },
+      "ARENA_SECTION": {
+        "TITLE": "Arena",
+        "DISCLAIMER": "Maybe one day... ¯\\_(ツ)_/¯"
+      }
+    },
+    "LAB": {
+      "CONVERT": "Convert",
+      "TOAST": {
+        "CONVERSION_SUCCESS": "You successfully converted Digi-Data into {{digimon}}"
+      }
+    },
+    "INITIAL_SETUP": {
+      "TITLE": "Welcome to Digi-Angular!",
+      "DESCRIPTION": "Let's get started by setting up your tamer name and initial team.",
+      "TAMER_NAME_LABEL": "Tamer Name:",
+      "TAMER_NAME_PLACEHOLDER": "Enter your tamer name",
+      "SELECT_TEAM_LABEL": "Select Your Team:",
+      "CONFIRM_BUTTON": "Confirm",
+      "TEAMS": {
+        "DRAGON_FORCE": "Dragon Force",
+        "AQUA_GUARDIANS": "Aqua Guardians",
+        "STORM_STRIKERS": "Storm Strikers",
+        "BEAST_BRIGADE": "Beast Brigade",
+        "CLAW_MASTERS": "Claw Masters",
+        "MYSTIC_WARRIORS": "Mystic Warriors"
       }
     }
   },

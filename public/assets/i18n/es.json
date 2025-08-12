@@ -10,6 +10,20 @@
         "LANGUAGE": {
           "LABEL": "Idioma"
         }
+      },
+      "BUTTONS": {
+        "DESKTOP": "Escritorio",
+        "ADVENTURE": "Aventura",
+        "OPEN_DIGIMON_STORAGE": "Almacenamiento de digimon",
+        "LAB": "Laboratorio",
+        "DEBUG": "Debug",
+        "PLAYER_INFO": "Información del jugador",
+        "CONFIG": "Configuraciones",
+        "SAVE_GAME": "Guardar juego"
+      },
+      "TOAST": {
+        "GAME_SAVED_SUCCESSFULLY": "¡Juego guardado con éxito!",
+        "GAME_SAVE_FAILED": "¡Error al guardar el juego!"
       }
     }
   },
@@ -23,7 +37,13 @@
           "HOSPITAL_TITLE": "Hospital:",
           "NEXT_HEALING": "Próxima curación en",
           "HEAL_ALL": "Curar todo por {{price}} Bits",
-          "NO_DIGIMON_HOSPITAL": "Sin Digimon"
+          "NO_DIGIMON_HOSPITAL": "Sin Digimon",
+          "TOAST": {
+            "TEAM_LIMIT_REACHED": "¡Límite de digimons en el equipo alcanzado!",
+            "TRAINING_LIMIT_REACHED": "¡Límite de digimons en entrenamiento alcanzado!",
+            "HOSPITAL_LIMIT_REACHED": "¡Límite de digimons en el hospital alcanzado!",
+            "FARM_LIMIT_REACHED": "¡Límite de digimons en la granja alcanzado!"
+          }
         },
         "FARM_SECTION": {
           "TITLE": "Granja",
@@ -37,6 +57,58 @@
           "NEXT_BIT_GENERATION": "Próxima generación de bits en",
           "BITS_PER_MINUTE": "Bits por minuto:"
         }
+      }
+    },
+    "ADVENTURE": {
+      "EXPLORE_SECTION": {
+        "TITLE": "Explorar",
+        "LOCATIONS_TITLE": "Ubicaciones",
+        "LEVEL": "Nivel:",
+        "LOCATION_LOGIN_MOUNTAIN": "Montaña del Inicio de Sesión",
+        "LOCATION_PIXEL_DESERT": "Desierto del Píxel",
+        "LOCATION_LABEL_FOREST": "Bosque de la Etiqueta",
+        "LOCATION_REGISTER_JUNGLE": "Selva del Registro",
+        "LOCATION_PROXY_ISLAND": "Isla del Proxy",
+        "LOCATION_LIMIT_VALLEY": "Valle del Límite",
+        "LOCATION_LOOP_SWAMP": "Pantano del Bucle",
+        "LOCATION_ACCESS_GLACIER": "Glaciar del Acceso",
+        "LOCATION_ANGLER_TUNNEL": "Túnel del Pescador",
+        "LOCATION_MAGNET_MINE": "Mina Magnética",
+        "LOCATION_PACKET_COAST": "Costa de los Paquetes",
+        "LOCATION_PALLETE_AMAZON": "Amazonas de los Colores",
+        "LOCATION_THRILLER_RUINS": "Ruinas del Terror",
+        "LOCATION_RISK_FACTORY": "Fábrica del Riesgo",
+        "LOCATION_SHADOW_ABYSS": "Abismo Sombrío",
+        "LOCATION_WIZARD_TEMPLE": "Templo del Mago",
+        "LOG_EXPLORING_LOCATION": "Explorando ubicación {{location}}",
+        "NO_DIGIMON_TO_EXPLORE": "No hay Digimon para explorar.",
+        "ENEMY_FOUND": "¡Se encontró al enemigo {{name}}!"
+      },
+      "ARENA_SECTION": {
+        "TITLE": "Arena",
+        "DISCLAIMER": "Quizás algún día... ¯\\_(ツ)_/¯"
+      }
+    },
+    "LAB": {
+      "CONVERT": "Convertir",
+      "TOAST": {
+        "CONVERSION_SUCCESS": "Has convertido con éxito los Digi-Datos en {{digimon}}"
+      }
+    },
+    "INITIAL_SETUP": {
+      "TITLE": "¡Bienvenido a Digi-Angular!",
+      "DESCRIPTION": "Comencemos configurando tu nombre de entrenador y equipo inicial.",
+      "TAMER_NAME_LABEL": "Nombre del Tamer:",
+      "TAMER_NAME_PLACEHOLDER": "Ingresa tu nombre de tamer",
+      "SELECT_TEAM_LABEL": "Selecciona tu equipo:",
+      "CONFIRM_BUTTON": "Confirmar",
+      "TEAMS": {
+        "DRAGON_FORCE": "Fuerza Dragón",
+        "AQUA_GUARDIANS": "Guardianes Aqua",
+        "STORM_STRIKERS": "Golpeadores de Tormenta",
+        "BEAST_BRIGADE": "Brigada Bestia",
+        "CLAW_MASTERS": "Maestros Garra",
+        "MYSTIC_WARRIORS": "Guerreros Místicos"
       }
     }
   },

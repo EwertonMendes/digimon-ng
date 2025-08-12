@@ -1,5 +1,5 @@
 <div class="explore-section">
-  <h4 class="explore-section-title">Locations</h4>
+  <h4 class="explore-section-title">{{ 'MODULES.ADVENTURE.EXPLORE_SECTION.LOCATIONS_TITLE' | transloco }}</h4>
   <div class="explore-section-container">
     <div class="location-list">
       <div class="location-list-container">
@@ -10,7 +10,7 @@
           </div>
           <h5>{{ location.name }}</h5>
           <div class="location-list-item-level-range">
-            <span>Level: {{ location.levelRange.min }} - {{ location.levelRange.max }}</span>
+            <span>{{ 'MODULES.ADVENTURE.EXPLORE_SECTION.LEVEL' | transloco }} {{ location.levelRange.min }} - {{ location.levelRange.max }}</span>
           </div>
         </div>
         }

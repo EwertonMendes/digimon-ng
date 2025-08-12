@@ -5,13 +5,14 @@ import { BaseDigimon } from '../../core/interfaces/digimon.interface';
 import { DigimonService } from '../../services/digimon.service';
 import { ToastService } from '../../shared/components/toast/toast.service';
 import { CommonModule } from '@angular/common';
+import { TranslocoModule } from '@jsverse/transloco';
 
 type LabDigimon = BaseDigimon & { amount: number; cost: number };
 
 @Component({
   selector: 'app-lab',
   standalone: true,
-  imports: [CommonModule,ButtonComponent],
+  imports: [CommonModule, ButtonComponent, TranslocoModule],
   templateUrl: './lab.component.html',
   styleUrl: './lab.component.scss'
 })
@@ -41,7 +42,7 @@ export class LabComponent {
 
     const newDigimon = this.digimonService.generateDigimonBySeed(digimon.seed);
 
-    if(!newDigimon) return;
+    if (!newDigimon) return;
 
     this.globalState.convertDigiData(newDigimon);
 

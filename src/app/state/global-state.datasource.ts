@@ -19,6 +19,7 @@ import { HospitalService } from './services/hospital.service';
 import { ToastService } from '../shared/components/toast/toast.service';
 import { AudioService } from '../services/audio.service';
 import { AudioEffects, AudioTracks } from '../core/enums/audio-tracks.enum';
+import { TranslocoService } from '@jsverse/transloco';
 
 type EndBattleState = 'victory' | 'defeat' | 'draw';
 type DigimonWithOwner = Digimon & { owner: string };
@@ -27,6 +28,7 @@ type DigimonWithOwner = Digimon & { owner: string };
 })
 export class GlobalStateDataSource {
   toastService = inject(ToastService);
+  translocoService = inject(TranslocoService);
   private playerData = signal<PlayerData>({
     name: '',
     level: 0,
@@ -908,7 +910,9 @@ export class GlobalStateDataSource {
     this.updatePlayerData(updatedPlayerData);
 
     this.toastService.showToast(
-      `You successfully converted Digi Data to ${digimon.name}!`,
+      this.translocoService.translate('MODULES.LAB.TOAST.CONVERSION_SUCCESS', {
+        digimon: digimon.name,
+      }),
       'success'
     );
   }

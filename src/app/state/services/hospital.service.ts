@@ -2,12 +2,14 @@ import { inject, Injectable } from '@angular/core';
 import { Digimon } from '../../core/interfaces/digimon.interface';
 import { PlayerData } from '../../core/interfaces/player-data.interface';
 import { ToastService } from '../../shared/components/toast/toast.service';
+import { TranslocoService } from '@jsverse/transloco';
 
 @Injectable({
   providedIn: 'root',
 })
 export class HospitalService {
   toastService = inject(ToastService);
+  translocoService = inject(TranslocoService);
 
   healDigimons(playerData: PlayerData) {
     playerData.hospitalDigimonList.forEach((digimon: Digimon) => {
@@ -40,8 +42,8 @@ export class HospitalService {
     if (!digimon || !digimon.id) return;
 
     if (playerData.hospitalDigimonList.length >= currentHospitalLimit) {
-      this.toastService.showToast('Hospital limit reached!', 'error');
-      throw Error('Hospital limit reached!');
+      this.toastService.showToast(this.translocoService.translate('MODULES.DESKTOP.COMPONENTS.HOME_SECTION.TOAST.HOSPITAL_LIMIT_REACHED'), 'error');
+      throw new Error('Hospital limit reached!');
     }
 
     playerData.hospitalDigimonList.push(digimon);

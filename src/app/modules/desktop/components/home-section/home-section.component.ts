@@ -15,11 +15,12 @@ import { AudioEffects } from '../../../../core/enums/audio-tracks.enum';
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
 import { HospitalService } from '../../../../state/services/hospital.service';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
+import { TooltipDirective } from 'app/directives/tooltip.directive';
 
 @Component({
   selector: 'app-home-section',
   standalone: true,
-  imports: [DigiStatusCardComponent, ButtonComponent, DragDropModule, TranslocoModule],
+  imports: [DigiStatusCardComponent, ButtonComponent, DragDropModule, TranslocoModule, TooltipDirective],
   templateUrl: './home-section.component.html',
   styleUrl: './home-section.component.scss',
 })
@@ -96,6 +97,18 @@ export class HomeSectionComponent {
       previousIndex,
       currentIndex
     );
+  }
+
+  canSendInjuredDigimonToHospital(): boolean {
+    return this.globalState.playerDataAcessor.digimonList.some(d => d.currentHp === 0 || d.currentHp <= 0.2 * d.maxHp);
+  }
+
+  sendInjuredDigimonToHospital(): void {
+    const lowHpDigimons = this.globalState.playerDataAcessor.digimonList.filter(d => d.currentHp === 0 || d.currentHp <= 0.2 * d.maxHp);
+    lowHpDigimons.forEach(digimon => {
+      this.globalState.addDigimonToHospital(digimon, DigimonListLocation.TEAM);
+    });
+    this.audioService.playAudio(AudioEffects.CLICK);
   }
 
   private handleSameContainerDrop(

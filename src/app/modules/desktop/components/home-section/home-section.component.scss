@@ -22,8 +22,11 @@
 
   .battle-team-area-sub-title-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     gap: 10px;
+    padding: 0 10px 0 10px;
   }
 
   .battle-team-area-sub-title {

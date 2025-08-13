@@ -6,6 +6,16 @@
         {{ globalState.playerDataAcessor.digimonList.length }}/
         {{ this.globalState.listsLimits.team }}
       </h4>
+      <app-button
+        [appTooltip]="
+          'MODULES.DESKTOP.COMPONENTS.HOME_SECTION.SEND_INJURED_DIGIMONS_TO_HOSPITAL'
+            | transloco
+        "
+        class="send-zero-hp-btn"
+        icon="ph-first-aid"
+        [disabled]="!canSendInjuredDigimonToHospital()"
+        (onClick)="sendInjuredDigimonToHospital()"
+      />
     </div>
     <div
       [id]="teamListId"
@@ -46,7 +56,7 @@
   <div class="hospital-area-container">
     <div class="hospital-area-header">
       <div class="hospital-area-header-column">
-        <h4 class="hospital-area-title">
+        <h4>
           {{
             "MODULES.DESKTOP.COMPONENTS.HOME_SECTION.HOSPITAL_TITLE" | transloco
           }}
@@ -54,7 +64,7 @@
             globalState.listsLimits.hospital
           }}
         </h4>
-        <span class="countdown">
+        <span>
           {{
             "MODULES.DESKTOP.COMPONENTS.HOME_SECTION.NEXT_HEALING" | transloco
           }}

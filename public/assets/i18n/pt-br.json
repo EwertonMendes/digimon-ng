@@ -34,6 +34,7 @@
           "TITLE": "Casa",
           "SUBTITLE": "Equipe de Batalha",
           "NO_DIGIMON": "Nenhum digimon",
+          "SEND_INJURED_DIGIMONS_TO_HOSPITAL": "Enviar digimons feridos ao hospital",
           "HOSPITAL_TITLE": "Hospital:",
           "NEXT_HEALING": "Próxima cura em",
           "HEAL_ALL": "Curar todos por {{price}} Bits",

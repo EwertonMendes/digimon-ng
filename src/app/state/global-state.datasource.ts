@@ -472,7 +472,6 @@ export class GlobalStateDataSource {
       }));
 
       for (const gain of digiDataGains) {
-        this.log(`You gained ${gain.amount} ${gain.name} Digi-Data.`);
         this.log(this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.DIGI_DATA_GAINED_LOG', {
           amount: gain.amount,
           name: gain.name
@@ -825,7 +824,10 @@ export class GlobalStateDataSource {
     if (!evolvedDigimon) return;
 
     this.toastService.showToast(
-      `${evolvingDigimonName} evolved to ${evolvedDigimon.name}!`,
+      this.translocoService.translate('SHARED.COMPONENTS.EVOLUTION_TREE_MODAL.EVOLUTION_SUCCESS', {
+        main: evolvingDigimonName,
+        target: evolvedDigimon.name
+      }),
       'success'
     );
 

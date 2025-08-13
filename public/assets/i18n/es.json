@@ -151,6 +151,7 @@
         "EVOLVE_INTO": "Evolucionar {{main}} en {{target}}",
         "EVOLUTION_CONFIRMATION_TITLE": "Confirmación de Evolución",
         "EVOLUTION_CONFIRMATION_TEXT": "¿Estás seguro de que quieres evolucionar {{main}} en {{target}}?",
+        "EVOLUTION_SUCCESS": "{{main}} evolucionó a {{target}} con éxito!",
         "BIT_GENERATION": "Generación de Bits:",
         "NO": "No",
         "YES": "Sí"

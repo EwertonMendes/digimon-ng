@@ -1,11 +1,11 @@
 <app-modal [id]="debugModalId" (openEvent)="onOpen()" (closeEvent)="onClose()">
   <div class="debug-modal-container">
-    <h3 class="section-title">Debug</h3>
+  <h3 class="section-title">{{ 'SHARED.COMPONENTS.DEBUG_MODAL.TITLE' | transloco }}</h3>
     <div class="debug-modal-content">
       @for (tool of tools; track $index) {
       <div class="debug-modal-content-row">
         <app-button
-          text="{{ tool.name }}"
+          [text]="tool.name | transloco"
           color="danger"
           (onClick)="tool.action()"
         />
@@ -22,7 +22,7 @@
 >
   <div class="options-container">
     <div class="level-select-container">
-      <label for="level-select">Select level:</label>
+  <label for="level-select">{{ 'SHARED.COMPONENTS.DEBUG_MODAL.SELECT_LEVEL' | transloco }}</label>
       <input
         type="number"
         id="level-select"
@@ -37,18 +37,18 @@
     </div>
     <div class="generate-evolution-line-select-container">
       <app-checkbox
-        label="Generate evolution line"
+  [label]="'SHARED.COMPONENTS.DEBUG_MODAL.GENERATE_EVOLUTION_LINE' | transloco"
         [(ngModel)]="generateEvolutionLine"
       />
     </div>
     <div class="generate-evolution-line-select-container">
       <app-button
-        text="Refresh digimon list"
+  [text]="'SHARED.COMPONENTS.DEBUG_MODAL.REFRESH_DIGIMON_LIST' | transloco"
         color="primary"
         (onClick)="refreshDigimonList()"
       />
     </div>
-    <div>Total: {{ totalDigimonAmount }}</div>
+  <div>{{ 'SHARED.COMPONENTS.DEBUG_MODAL.TOTAL' | transloco }}: {{ totalDigimonAmount }}</div>
   </div>
 </app-digimon-selection-modal>
 
@@ -58,7 +58,7 @@
   (onSelectDigimon)="openEvolutionTreeModal($event)"
 >
   <app-button
-    text="Refresh digimon list"
+    [text]="'SHARED.COMPONENTS.DEBUG_MODAL.REFRESH_DIGIMON_LIST' | transloco"
     color="primary"
     (onClick)="refreshDigimonList()"
   />

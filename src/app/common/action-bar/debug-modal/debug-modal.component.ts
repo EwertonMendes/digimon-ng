@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { EvolutionTreeModalComponent } from 'app/shared/components/evolution-tree-modal/evolution-tree-modal.component';
 import { Subject, takeUntil } from 'rxjs';
 import { CheckboxComponent } from 'app/shared/components/checkbox/checkbox.component';
+import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-debug-modal',
@@ -22,7 +23,8 @@ import { CheckboxComponent } from 'app/shared/components/checkbox/checkbox.compo
     DigimonSelectionModalComponent,
     FormsModule,
     EvolutionTreeModalComponent,
-    CheckboxComponent
+    CheckboxComponent,
+    TranslocoModule
   ],
   templateUrl: './debug-modal.component.html',
   styleUrl: './debug-modal.component.scss',
@@ -47,13 +49,13 @@ export class DebugModalComponent {
   changeDectorRef = inject(ChangeDetectorRef);
 
   tools = [
-    { name: 'Give Random Digimon', action: this.giveRandomDigimon.bind(this) },
+    { name: 'SHARED.COMPONENTS.DEBUG_MODAL.GIVE_RANDOM_DIGIMON', action: this.giveRandomDigimon.bind(this) },
     {
-      name: 'Give Certain Digimon',
+      name: 'SHARED.COMPONENTS.DEBUG_MODAL.GIVE_CERTAIN_DIGIMON',
       action: this.openGivenCertainDigimonModal.bind(this),
     },
-    { name: 'Reset Storage', action: this.resetStorage.bind(this) },
-    { name: 'See Evolution Lines', action: this.openSeeEvolutionLinesDigimonModal.bind(this) },
+    { name: 'SHARED.COMPONENTS.DEBUG_MODAL.RESET_STORAGE', action: this.resetStorage.bind(this) },
+    { name: 'SHARED.COMPONENTS.DEBUG_MODAL.SEE_EVOLUTION_LINES', action: this.openSeeEvolutionLinesDigimonModal.bind(this) },
   ];
 
   onOpen() {
@@ -76,7 +78,7 @@ export class DebugModalComponent {
     const digimon = this.globalState.generateRandomDigimon();
     this.globalState.addDigimonToStorage(digimon);
     this.toastService.showToast(
-      `${digimon.name} was added to storage!`,
+      this.globalState.translocoService.translate('SHARED.COMPONENTS.DEBUG_MODAL.ADDED_TO_STORAGE', { name: digimon.name }),
       'success'
     );
   }
@@ -91,7 +93,7 @@ export class DebugModalComponent {
     this.globalState.addDigimonToStorage(newDigimon);
 
     this.toastService.showToast(
-      `${digimon.name} (Lv. ${this.selectedLevel}) was added to storage!`,
+      this.globalState.translocoService.translate('SHARED.COMPONENTS.DEBUG_MODAL.ADDED_TO_STORAGE_LEVEL', { name: digimon.name, level: this.selectedLevel }),
       'success'
     );
 
@@ -115,7 +117,7 @@ export class DebugModalComponent {
 
   resetStorage() {
     this.globalState.resetStorage();
-    this.toastService.showToast('Storage reset!', 'success');
+    this.toastService.showToast(this.globalState.translocoService.translate('SHARED.COMPONENTS.DEBUG_MODAL.STORAGE_RESET'), 'success');
   }
 
   openGivenCertainDigimonModal() {

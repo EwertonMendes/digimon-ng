@@ -198,6 +198,23 @@
         "CURRENT_EXP": "Current Exp",
         "TOTAL_EXP": "Total Exp",
         "TOTAL_DIGIMONS": "Total Digimons"
+      },
+      "DEBUG_MODAL": {
+        "TITLE": "Debug",
+        "GIVE_RANDOM_DIGIMON": "Give Random Digimon",
+        "GIVE_CERTAIN_DIGIMON": "Give Certain Digimon",
+        "RESET_STORAGE": "Reset Storage",
+        "SEE_EVOLUTION_LINES": "See Evolution Lines",
+        "SELECT_LEVEL": "Select level:",
+        "GENERATE_EVOLUTION_LINE": "Generate evolution line",
+        "REFRESH_DIGIMON_LIST": "Refresh digimon list",
+        "TOTAL": "Total",
+        "ADDED_TO_STORAGE": "{{name}} was added to storage!",
+        "ADDED_TO_STORAGE_LEVEL": "{{name}} (Lv. {{level}}) was added to storage!",
+        "STORAGE_RESET": "Storage reset!"
+      },
+      "DIGIMON_SELECTION_MODAL": {
+        "TITLE": "Select your Digimon"
       }
     }
   }

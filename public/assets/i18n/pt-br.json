@@ -164,6 +164,32 @@
         "TO_HOSPITAL_BUTTON": "Para o Hospital",
         "TO_BIT_FARM_BUTTON": "Para a Fazenda de Bits",
         "STORAGE_CAPACITY": "Capacidade de Armazenamento:"
+      },
+      "DIGIMON_DETAILS_MODAL": {
+        "TITLE": "Detalhes do Digimon",
+        "AGE": "Idade:",
+        "SPECIES": "Espécie:",
+        "ATTRIBUTE": "Atributo:",
+        "LEVEL": "Nível:",
+        "CURRENT_EXP": "EXP atual:",
+        "TOTAL_EXP": "EXP total:",
+        "HP": "HP:",
+        "MP": "MP:",
+        "ATK": "ATQ:",
+        "DEF": "DEF:",
+        "SPD": "VEL:",
+        "BIT_GENERATION": "Geração de Bits:",
+        "CURRENT_EVOLUTION_ROUTE": "Rota de Evolução Atual:",
+        "EVOLUTION_TREE_BUTTON": "Árvore de Evolução",
+        "LESS_THAN_HOUR": "menos de uma hora",
+        "YEAR": "{{count}} ano",
+        "YEAR_PLURAL": "{{count}} anos",
+        "MONTH": "{{count}} mês",
+        "MONTH_PLURAL": "{{count}} meses",
+        "DAY": "{{count}} dia",
+        "DAY_PLURAL": "{{count}} dias",
+        "HOUR": "{{count}} hora",
+        "HOUR_PLURAL": "{{count}} horas"
       }
     }
   }

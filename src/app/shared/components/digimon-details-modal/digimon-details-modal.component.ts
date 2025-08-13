@@ -9,6 +9,7 @@ import { EvolutionTreeModalComponent } from '../evolution-tree-modal/evolution-t
 import { BaseDigimon } from '../../../core/interfaces/digimon.interface';
 import { AudioEffects } from '../../../core/enums/audio-tracks.enum';
 import { AudioService } from '../../../services/audio.service';
+import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 
 @Component({
   standalone: true,
@@ -21,6 +22,7 @@ import { AudioService } from '../../../services/audio.service';
     EvolutionRouteComponent,
     ButtonComponent,
     EvolutionTreeModalComponent,
+    TranslocoModule
   ],
 })
 export class DigimonDetailsModalComponent {
@@ -30,6 +32,7 @@ export class DigimonDetailsModalComponent {
   globalState = inject(GlobalStateDataSource);
   modalService = inject(ModalService);
   audioService = inject(AudioService);
+  translocoService = inject(TranslocoService);
 
   digimonDetailedAge = computed(() => {
     if (!this.globalState.selectedDigimonOnDetailsAccessor) return;
@@ -37,7 +40,7 @@ export class DigimonDetailsModalComponent {
     return this.formatAge(
       this.calculateDetailedAge(
         this.globalState.selectedDigimonOnDetailsAccessor.birthDate ??
-          new Date()
+        new Date()
       )
     );
   });
@@ -106,28 +109,27 @@ export class DigimonDetailsModalComponent {
     return { years, months, days, hours };
   }
 
-  formatAge(age: {
-    years: number;
-    months: number;
-    days: number;
-    hours: number;
-  }): string {
-    const parts = [];
+  formatAge(age: { years: number; months: number; days: number; hours: number }): string {
+    const t = this.translocoService;
+    const parts: string[] = [];
 
-    if (age.years > 0) {
-      parts.push(`${age.years} year${age.years > 1 ? 's' : ''}`);
-    }
-    if (age.months > 0) {
-      parts.push(`${age.months} month${age.months > 1 ? 's' : ''}`);
-    }
-    if (age.days > 0) {
-      parts.push(`${age.days} day${age.days > 1 ? 's' : ''}`);
-    }
-    if (age.hours > 0) {
-      parts.push(`${age.hours} hour${age.hours > 1 ? 's' : ''}`);
-    }
+    const addPart = (value: number, key: string) => {
+      if (value > 0) {
+        const pluralKey = value === 1
+          ? `SHARED.COMPONENTS.DIGIMON_DETAILS_MODAL.${key}`
+          : `SHARED.COMPONENTS.DIGIMON_DETAILS_MODAL.${key}_PLURAL`;
+        parts.push(t.translate(pluralKey, { count: value }));
+      }
+    };
 
-    return parts.join(', ') || 'less than an hour';
+    addPart(age.years, 'YEAR');
+    addPart(age.months, 'MONTH');
+    addPart(age.days, 'DAY');
+    addPart(age.hours, 'HOUR');
+
+    return parts.length > 0
+      ? parts.join(', ')
+      : t.translate('SHARED.COMPONENTS.DIGIMON_DETAILS_MODAL.LESS_THAN_HOUR');
   }
 
   openEvolutionTreeModal() {

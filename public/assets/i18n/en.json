@@ -164,6 +164,32 @@
         "TO_HOSPITAL_BUTTON": "To Hospital",
         "TO_BIT_FARM_BUTTON": "To Bit Farm",
         "STORAGE_CAPACITY": "Storage Capacity:"
+      },
+      "DIGIMON_DETAILS_MODAL": {
+        "TITLE": "Digimon Details",
+        "AGE": "Age:",
+        "SPECIES": "Species:",
+        "ATTRIBUTE": "Attribute:",
+        "LEVEL": "Level:",
+        "CURRENT_EXP": "Current Exp:",
+        "TOTAL_EXP": "Total Exp:",
+        "HP": "HP:",
+        "MP": "MP:",
+        "ATK": "ATK:",
+        "DEF": "DEF:",
+        "SPD": "SPD:",
+        "BIT_GENERATION": "Bit Generation:",
+        "CURRENT_EVOLUTION_ROUTE": "Current Evolution Route:",
+        "EVOLUTION_TREE_BUTTON": "Evolution Tree",
+        "LESS_THAN_HOUR": "less than an hour",
+        "YEAR": "{{count}} year",
+        "YEAR_PLURAL": "{{count}} years",
+        "MONTH": "{{count}} month",
+        "MONTH_PLURAL": "{{count}} months",
+        "DAY": "{{count}} day",
+        "DAY_PLURAL": "{{count}} days",
+        "HOUR": "{{count}} hour",
+        "HOUR_PLURAL": "{{count}} hours"
       }
     }
   }

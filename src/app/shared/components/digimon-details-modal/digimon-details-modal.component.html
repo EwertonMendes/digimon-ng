@@ -1,6 +1,6 @@
 <app-modal [id]="digimonDetailsModalId">
   <div class="digimon-details-container">
-    <h3 class="section-title">Digimon Details</h3>
+  <h3 class="section-title">{{ 'SHARED.COMPONENTS.DIGIMON_DETAILS_MODAL.TITLE' | transloco }}</h3>
     <div class="digimon-details-content">
       <div class="digimon-details-content-first-block">
         <img
@@ -24,29 +24,29 @@
         <div class="stats">
           <div class="digimon-details-content-info">
             <div class="digimon-details-content-info-item">
-              <span class="label">Age: </span>
+              <span class="label">{{ 'SHARED.COMPONENTS.DIGIMON_DETAILS_MODAL.AGE' | transloco }}</span>
               <span class="value">{{ digimonDetailedAge() }}</span>
             </div>
             <div class="digimon-details-content-info-item">
-              <span class="label">Species: </span>
+              <span class="label">{{ 'SHARED.COMPONENTS.DIGIMON_DETAILS_MODAL.SPECIES' | transloco }}</span>
               <span class="value">{{
                 globalState.selectedDigimonOnDetailsAccessor?.species
               }}</span>
             </div>
             <div class="digimon-details-content-info-item">
-              <span class="label">Attribute: </span>
+              <span class="label">{{ 'SHARED.COMPONENTS.DIGIMON_DETAILS_MODAL.ATTRIBUTE' | transloco }}</span>
               <span class="value">{{
                 globalState.selectedDigimonOnDetailsAccessor?.attribute
               }}</span>
             </div>
             <div class="digimon-details-content-info-item">
-              <span class="label">Level: </span>
+              <span class="label">{{ 'SHARED.COMPONENTS.DIGIMON_DETAILS_MODAL.LEVEL' | transloco }}</span>
               <span class="value">{{
                 globalState.selectedDigimonOnDetailsAccessor?.level
               }}</span>
             </div>
             <div class="digimon-details-content-info-item">
-              <span class="label">Current Exp: </span>
+              <span class="label">{{ 'SHARED.COMPONENTS.DIGIMON_DETAILS_MODAL.CURRENT_EXP' | transloco }}</span>
               <span class="value"
                 >{{
                   globalState.selectedDigimonOnDetailsAccessor?.exp
@@ -56,7 +56,7 @@
               >
             </div>
             <div class="digimon-details-content-info-item">
-              <span class="label">Total Exp: </span>
+              <span class="label">{{ 'SHARED.COMPONENTS.DIGIMON_DETAILS_MODAL.TOTAL_EXP' | transloco }}</span>
               <span class="value">{{
                 globalState.selectedDigimonOnDetailsAccessor?.totalExp
               }}</span>
@@ -65,7 +65,7 @@
           <div class="digimon-details-content-info">
             <div class="digimon-details-content-info-stats">
               <div class="digimon-details-content-info-stats-item">
-                <span class="label">HP: </span>
+                <span class="label">{{ 'SHARED.COMPONENTS.DIGIMON_DETAILS_MODAL.HP' | transloco }}</span>
                 <span class="value"
                   ><span
                     [ngClass]="{
@@ -94,7 +94,7 @@
                 >
               </div>
               <div class="digimon-details-content-info-stats-item">
-                <span class="label">MP: </span>
+                <span class="label">{{ 'SHARED.COMPONENTS.DIGIMON_DETAILS_MODAL.MP' | transloco }}</span>
                 <span class="value"
                   ><span
                     [ngClass]="{
@@ -123,28 +123,28 @@
                 >
               </div>
               <div class="digimon-details-content-info-stats-item">
-                <span class="label">ATK: </span>
+                <span class="label">{{ 'SHARED.COMPONENTS.DIGIMON_DETAILS_MODAL.ATK' | transloco }}</span>
                 <span class="value">{{
                   globalState.selectedDigimonOnDetailsAccessor?.atk
                     | number : "1.0-0"
                 }}</span>
               </div>
               <div class="digimon-details-content-info-stats-item">
-                <span class="label">DEF: </span>
+                <span class="label">{{ 'SHARED.COMPONENTS.DIGIMON_DETAILS_MODAL.DEF' | transloco }}</span>
                 <span class="value">{{
                   globalState.selectedDigimonOnDetailsAccessor?.def
                     | number : "1.0-0"
                 }}</span>
               </div>
               <div class="digimon-details-content-info-stats-item">
-                <span class="label">SPD: </span>
+                <span class="label">{{ 'SHARED.COMPONENTS.DIGIMON_DETAILS_MODAL.SPD' | transloco }}</span>
                 <span class="value">{{
                   globalState.selectedDigimonOnDetailsAccessor?.speed
                     | number : "1.0-0"
                 }}</span>
               </div>
               <div class="digimon-details-content-info-stats-item">
-                <span class="label">Bit Generation: </span>
+                <span class="label">{{ 'SHARED.COMPONENTS.DIGIMON_DETAILS_MODAL.BIT_GENERATION' | transloco }}</span>
                 <span class="value"
                   >{{
                     globalState.selectedDigimonOnDetailsAccessor?.bitFarmingRate
@@ -160,14 +160,14 @@
         @if( evolutionRoute().length > 0 ) {
         <div class="digimon-details-content-info-item">
           <div class="digimon-evolution-list">
-            <h4>Current Evolution Route:</h4>
+            <h4>{{ 'SHARED.COMPONENTS.DIGIMON_DETAILS_MODAL.CURRENT_EVOLUTION_ROUTE' | transloco }}</h4>
             <div class="digimon-evolution-list-container">
               <app-evolution-route [evolutionRoute]="evolutionRoute()" />
             </div>
           </div>
         </div>
         }
-        <app-button text="Evolution Tree" (onClick)="openEvolutionTreeModal()" />
+  <app-button [text]="'SHARED.COMPONENTS.DIGIMON_DETAILS_MODAL.EVOLUTION_TREE_BUTTON' | transloco" (onClick)="openEvolutionTreeModal()" />
       </div>
     </div>
   </div>

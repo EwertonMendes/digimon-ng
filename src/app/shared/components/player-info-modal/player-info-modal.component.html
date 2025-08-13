@@ -7,30 +7,48 @@
       </div>
       <div class="player-info-content">
         <div class="info-item">
-          <span class="label">Bits:</span>
+          <span class="label"
+            >{{ "SHARED.COMPONENTS.PLAYER_INFO_MODAL.BITS" | transloco }}:</span
+          >
           <span class="value">{{
             globalState.playerDataAcessor.bits | number : "1.0-0"
           }}</span>
         </div>
         <div class="info-item">
-          <span class="label">Level:</span>
+          <span class="label"
+            >{{
+              "SHARED.COMPONENTS.PLAYER_INFO_MODAL.LEVEL" | transloco
+            }}:</span
+          >
           <span class="value">{{ globalState.playerDataAcessor.level }}</span>
         </div>
         <div class="info-item">
-          <span class="label">Current Exp:</span>
+          <span class="label"
+            >{{
+              "SHARED.COMPONENTS.PLAYER_INFO_MODAL.CURRENT_EXP" | transloco
+            }}:</span
+          >
           <span class="value">
             {{ globalState.playerDataAcessor.exp | number : "1.0-0" }} /
             {{ neededExpForNextLevel() | number : "1.0-0" }}
           </span>
         </div>
         <div class="info-item">
-          <span class="label">Total Exp:</span>
+          <span class="label"
+            >{{
+              "SHARED.COMPONENTS.PLAYER_INFO_MODAL.TOTAL_EXP" | transloco
+            }}:</span
+          >
           <span class="value">{{
             globalState.playerDataAcessor.totalExp | number : "1.0-0"
           }}</span>
         </div>
         <div class="info-item">
-          <span class="label">Total Digimons:</span>
+          <span class="label"
+            >{{
+              "SHARED.COMPONENTS.PLAYER_INFO_MODAL.TOTAL_DIGIMONS" | transloco
+            }}:</span
+          >
           <span class="value">{{
             globalState.totalDigimonCount | number : "1.0-0"
           }}</span>

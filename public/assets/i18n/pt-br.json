@@ -190,6 +190,13 @@
         "DAY_PLURAL": "{{count}} dias",
         "HOUR": "{{count}} hora",
         "HOUR_PLURAL": "{{count}} horas"
+      },
+      "PLAYER_INFO_MODAL": {
+        "BITS": "Bits",
+        "LEVEL": "Nível",
+        "CURRENT_EXP": "EXP Atual",
+        "TOTAL_EXP": "EXP Total",
+        "TOTAL_DIGIMONS": "Total de Digimons"
       }
     }
   }

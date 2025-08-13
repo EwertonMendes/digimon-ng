@@ -9,11 +9,12 @@ import { ButtonComponent } from '../button/button.component';
 import { DigiStatusCardComponent } from '../digi-status-card/digi-status-card.component';
 import { ModalComponent } from '../modal/modal.component';
 import { TranslocoModule } from '@jsverse/transloco';
+import { TooltipDirective } from 'app/directives/tooltip.directive';
 
 @Component({
   selector: 'app-storage-modal',
   standalone: true,
-  imports: [ButtonComponent, ModalComponent, DigiStatusCardComponent, TranslocoModule],
+  imports: [ButtonComponent, ModalComponent, DigiStatusCardComponent, TranslocoModule, TooltipDirective],
   templateUrl: './storage-modal.component.html',
   styleUrl: './storage-modal.component.scss',
 })

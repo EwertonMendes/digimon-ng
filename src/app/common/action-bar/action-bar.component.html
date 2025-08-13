@@ -1,27 +1,34 @@
 <div class="action-bar-container">
   <div class="action-bar-buttons">
     <app-button
-      [title]="'COMMON.ACTION_BAR.BUTTONS.DESKTOP' | transloco"
+      [appTooltip]="'COMMON.ACTION_BAR.BUTTONS.DESKTOP' | transloco"
+      tooltipDirection="right"
+      [title]=""
       icon="ph-desktop"
       weight="bold"
       color="info"
       (onClick)="navigateTo('desktop')"
     />
     <app-button
-      [title]="'COMMON.ACTION_BAR.BUTTONS.ADVENTURE' | transloco"
+      [appTooltip]="'COMMON.ACTION_BAR.BUTTONS.ADVENTURE' | transloco"
+      tooltipDirection="right"
       icon="ph-sword"
       weight="bold"
       color="danger"
       (onClick)="navigateTo('adventure')"
     />
     <app-button
-      [title]="'COMMON.ACTION_BAR.BUTTONS.OPEN_DIGIMON_STORAGE' | transloco"
+      [appTooltip]="
+        'COMMON.ACTION_BAR.BUTTONS.OPEN_DIGIMON_STORAGE' | transloco
+      "
+      tooltipDirection="right"
       icon="ph-database"
       weight="bold"
       (onClick)="openDigimonStorageModal()"
     />
     <app-button
-      [title]="'COMMON.ACTION_BAR.BUTTONS.LAB' | transloco"
+      [appTooltip]="'COMMON.ACTION_BAR.BUTTONS.LAB' | transloco"
+      tooltipDirection="right"
       icon="ph-test-tube"
       weight="bold"
       color="success"
@@ -31,7 +38,8 @@
   <div class="action-bar-buttons">
     @if(isDevMode) {
     <app-button
-      [title]="'COMMON.ACTION_BAR.BUTTONS.DEBUG' | transloco"
+      [appTooltip]="'COMMON.ACTION_BAR.BUTTONS.DEBUG' | transloco"
+      tooltipDirection="right"
       icon="ph-bug"
       weight="bold"
       color="dark"
@@ -39,21 +47,24 @@
     />
     }
     <app-button
-      [title]="'COMMON.ACTION_BAR.BUTTONS.PLAYER_INFO' | transloco"
+      [appTooltip]="'COMMON.ACTION_BAR.BUTTONS.PLAYER_INFO' | transloco"
+      tooltipDirection="right"
       icon="ph-user-circle-gear"
       weight="bold"
       color="dark"
       (onClick)="openPlayerInfoModal()"
     />
     <app-button
-      [title]="'COMMON.ACTION_BAR.BUTTONS.CONFIG' | transloco"
+      [appTooltip]="'COMMON.ACTION_BAR.BUTTONS.CONFIG' | transloco"
+      tooltipDirection="right"
       icon="ph-gear"
       weight="bold"
       color="dark"
       (onClick)="openConfigModal()"
     />
     <app-button
-      [title]="'COMMON.ACTION_BAR.BUTTONS.SAVE_GAME' | transloco"
+      [appTooltip]="'COMMON.ACTION_BAR.BUTTONS.SAVE_GAME' | transloco"
+      tooltipDirection="right"
       icon="ph-floppy-disk"
       weight="bold"
       color="dark"

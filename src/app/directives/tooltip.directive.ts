@@ -65,10 +65,24 @@ export class TooltipDirective {
   }
 
   @HostListener('mouseleave') onMouseLeave() {
-    if (this.overlayRef) {
-      this.overlayRef.detach();
-      this.overlayRef.dispose();
-      this.overlayRef = undefined;
-    }
+    this.removeTooltip();
+  }
+
+  @HostListener('mousedown')
+  @HostListener('touchstart')
+  onPointerDown() {
+    this.removeTooltip();
+  }
+
+  ngOnDestroy() {
+    this.removeTooltip();
+  }
+
+  private removeTooltip() {
+    if (!this.overlayRef) return;
+    this.overlayRef.detach();
+    this.overlayRef.dispose();
+    this.overlayRef = undefined;
+
   }
 }

@@ -19,39 +19,42 @@
           />
           <div class="actions">
             <app-button
-              appTooltip="Este é um texto com tooltip"
-              icon="ph-users-three"
-              weight="bold"
-              [text]="
+              [appTooltip]="
                 'SHARED.COMPONENTS.STORAGE_MODAL.TO_TEAM_BUTTON' | transloco
               "
+              tooltipDirection="bottom"
+              icon="ph-users-three"
+              weight="bold"
               color="primary"
               (onClick)="addDigimonToTeam(digimon)"
             />
             <app-button
-              icon="ph-barbell"
-              weight="bold"
-              [text]="
+              [appTooltip]="
                 'SHARED.COMPONENTS.STORAGE_MODAL.TO_TRAINING_BUTTON' | transloco
               "
+              tooltipDirection="bottom"
+              icon="ph-barbell"
+              weight="bold"
               color="secondary"
               (onClick)="addDigimonToTraining(digimon)"
             />
             <app-button
-              icon="ph-coins"
-              weight="bold"
-              [text]="
+              [appTooltip]="
                 'SHARED.COMPONENTS.STORAGE_MODAL.TO_BIT_FARM_BUTTON' | transloco
               "
+              tooltipDirection="bottom"
+              icon="ph-coins"
+              weight="bold"
               color="tertiary"
               (onClick)="addDigimonToFarm(digimon)"
             />
             <app-button
-              icon="ph-first-aid"
-              weight="bold"
-              [text]="
+              [appTooltip]="
                 'SHARED.COMPONENTS.STORAGE_MODAL.TO_HOSPITAL_BUTTON' | transloco
               "
+              tooltipDirection="bottom"
+              icon="ph-first-aid"
+              weight="bold"
               color="info"
               (onClick)="addDigimonToHospital(digimon)"
             />

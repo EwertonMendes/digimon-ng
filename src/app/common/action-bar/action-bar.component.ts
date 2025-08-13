@@ -12,6 +12,7 @@ import { ToastService } from '../../shared/components/toast/toast.service';
 import { environment } from 'app/environments/environment';
 import { ConfigModalComponent } from './config-modal/config-modal.component';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
+import { TooltipDirective } from 'app/directives/tooltip.directive';
 
 @Component({
   selector: 'app-action-bar',
@@ -23,6 +24,7 @@ import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
     DebugModalComponent,
     ConfigModalComponent,
     TranslocoModule,
+    TooltipDirective
   ],
   templateUrl: './action-bar.component.html',
   styleUrl: './action-bar.component.scss',

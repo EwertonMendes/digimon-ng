@@ -1,5 +1,3 @@
-@use '@variables' as *;
-
 .digimon-details-container {
   display: flex;
   flex-direction: column;
@@ -7,14 +5,14 @@
   gap: 16px;
   width: 100%;
   height: 100%;
-  color: $text;
+  color: var(--text);
   padding: 24px;
 
   .section-title {
     font-size: 2rem;
     font-weight: bold;
     text-align: center;
-    color: $primary;
+    color: var(--primary);
   }
 
   .digimon-details-content {
@@ -66,7 +64,7 @@
         span {
           display: block;
           font-size: 0.9rem;
-          color: $text;
+          color: var(--text);
         }
       }
 
@@ -97,7 +95,7 @@
 
           .label {
             font-weight: 600;
-            color: $text;
+            color: var(--text);
           }
 
           .value {
@@ -105,11 +103,11 @@
           }
 
           .low-stat {
-            color: $warning;
+            color: var(--warning);
           }
 
           .zero-stat {
-            color: $danger;
+            color: var(--danger);
           }
         }
       }

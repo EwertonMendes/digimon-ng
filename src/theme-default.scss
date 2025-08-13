@@ -1,0 +1,57 @@
+@use 'sass:color';
+
+:root {
+  --primary: #FF2079;
+  --primary-light: #{color.adjust(#FF2079, $lightness: 5%)};
+  --primary-dark: #{color.adjust(#FF2079, $lightness: -5%)};
+  --text-on-primary: #FFFFFF;
+
+  --secondary: #731DD8;
+  --secondary-light: #{color.adjust(#731DD8, $lightness: 5%)};
+  --secondary-dark: #{color.adjust(#731DD8, $lightness: -5%)};
+  --text-on-secondary: #FFFFFF;
+  --secondary-light-transparent: rgba(115, 29, 216, 0.7);
+  --secondary-dark-transparent: rgba(91, 23, 172, 0.7);
+
+  --tertiary: #1DE0FF;
+  --tertiary-light: #{color.adjust(#1DE0FF, $lightness: 5%)};
+  --tertiary-dark: #{color.adjust(#1DE0FF, $lightness: -5%)};
+  --text-on-tertiary: #000000;
+
+  --dark: #0A0A0A;
+  --dark-hover: #1C1C1C;
+  --dark-active: #000000;
+  --text-on-dark: #FFFFFF;
+  --dark-transparent: rgba(10, 10, 10, 0.7);
+
+  --accent: #9D4CFF;
+
+  --danger: #f44336;
+  --danger-light: #{color.adjust(#f44336, $lightness: 5%)};
+  --danger-hover: #{color.adjust(#f44336, $lightness: -5%)};
+  --text-on-danger: #FFFFFF;
+
+  --success: #22C55E;
+  --success-hover: #{color.adjust(#22C55E, $lightness: 5%)};
+  --success-dark: #{color.adjust(#22C55E, $lightness: -5%)};
+  --text-on-success: #FFFFFF;
+
+  --info: #3B82F6;
+  --info-hover: #{color.adjust(#3B82F6, $lightness: 5%)};
+  --info-dark: #{color.adjust(#3B82F6, $lightness: -5%)};
+  --text-on-info: #FFFFFF;
+
+  --warning: #FACC15;
+
+  --background: #121212;
+  --surface: #1e1e1e;
+  --text: #FFFFFF;
+  --text-transparent-75: rgba(255, 255, 255, 0.75);
+
+  --gray-100: #F5F5F5;
+  --gray-200: #E0E0E0;
+  --gray-300: #BDBDBD;
+  --gray-400: #9E9E9E;
+  --gray-700: #424242;
+  --gray-800: #212121;
+}

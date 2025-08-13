@@ -1,5 +1,3 @@
-@use '@variables' as *;
-
 .digimon-battle-container {
   display: flex;
   flex-direction: column;
@@ -8,13 +6,13 @@
   gap: 10px;
   width: 100%;
   height: 100%;
-  color: $text;
+  color: var(--text);
 
   .section-title {
     font-size: 2rem;
     font-weight: bold;
     text-align: center;
-    color: $primary;
+    color: var(--primary);
   }
 
   .digimon-battle-content {
@@ -28,7 +26,7 @@
     border-radius: 15px;
 
     &-colored-background {
-      background-color: rgba(orangered, 0.7);
+      background-color: rgba(var(--background), 0.7);
     }
 
     .turn-order-container {
@@ -64,11 +62,11 @@
           background: rgba(255, 255, 255, 0.08);
 
           &.player-digimon {
-            border-left: 4px solid $info;
+            border-left: 4px solid var(--info);
           }
 
           &.enemy-digimon {
-            border-left: 4px solid $danger
+            border-left: 4px solid var(--danger);
           }
 
           img {
@@ -108,8 +106,7 @@
           .player-team {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            grid-template-areas: "second first"
-              "fourth third";
+            grid-template-areas: "second first" "fourth third";
             gap: 10px;
             width: 100%;
             height: -webkit-fill-available;
@@ -160,7 +157,6 @@
           justify-content: center;
           padding: 10px;
 
-
           .player-actions-container {
             display: flex;
             flex-direction: column;
@@ -203,10 +199,10 @@
               }
 
               app-digi-status-card.selectable {
-                border: 10px solid $primary;
+                border: 10px solid var(--primary);
 
                 &:hover {
-                  border: 10px solid $secondary;
+                  border: 10px solid var(--secondary);
                   scale: 1.1;
                 }
               }
@@ -226,7 +222,7 @@
         overflow-y: auto;
         font-family: monospace;
         font-size: 0.9rem;
-        color: $gray-200;
+        color: var(--gray-200);
 
         .battle-log-title {
           font-weight: bold;

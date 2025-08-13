@@ -1,0 +1,23 @@
+@use 'sass:color';
+
+.theme-digimon {
+  --primary: #FF7A00;
+  --primary-light: #{color.adjust(#FF7A00, $lightness: 5%)};
+  --primary-dark: #{color.adjust(#FF7A00, $lightness: -5%)};
+  --text-on-primary: #FFFFFF;
+
+  --secondary: #0056B8;
+  --secondary-light: #{color.adjust(#0056B8, $lightness: 5%)};
+  --secondary-dark: #{color.adjust(#0056B8, $lightness: -5%)};
+  --text-on-secondary: #FFFFFF;
+  --secondary-light-transparent: rgba(77, 143, 230, 0.7);
+  --secondary-dark-transparent: rgba(0, 61, 128, 0.7);
+
+  --background: #121212;
+  --surface: #1e1e1e;
+  --text: #FFFFFF;
+  --text-transparent-75: rgba(255, 255, 255, 0.75);
+
+  --danger: #EF4444;
+  --text-on-danger: #FFFFFF;
+}

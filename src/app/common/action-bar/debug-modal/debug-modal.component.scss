@@ -1,5 +1,3 @@
- @use '@variables' as *;
-
 .debug-modal-container {
   display: flex;
   flex-direction: column;
@@ -7,13 +5,13 @@
   gap: 10px;
   width: 100%;
   height: 100%;
-  color: $text;
+  color: var(--text);
 
   .section-title {
     font-size: 2rem;
     font-weight: bold;
     text-align: center;
-    color: $primary;
+    color: var(--primary);
   }
 
   .debug-modal-content {
@@ -52,14 +50,13 @@
       font-size: 14px;
       font-weight: bold;
       color: #333;
-      background-color: $gray-100;
-      border-color: $primary-light;
+      background-color: var(--gray-100);
+      border: 1px solid var(--primary-light);
       border-radius: 10px;
       outline: none;
       transition: border-color 0.3s ease, box-shadow 0.3s ease;
       text-align: center;
     }
-
 
     .level-select-input::-webkit-inner-spin-button,
     .level-select-input::-webkit-outer-spin-button {

@@ -10,7 +10,7 @@
   >div {
     display: flex;
     justify-content: center;
-    border: 2px solid #e78514;
+    border: 2px solid var(--primary-dark);
     width: 50%;
     height: 50%;
     box-sizing: border-box;
@@ -21,7 +21,7 @@
     position: relative;
     overflow: auto;
     height: inherit;
-    color: aliceblue;
+    color: var(--text);
 
     &::before {
       content: '';
@@ -63,7 +63,7 @@
     position: relative;
     overflow: hidden;
     height: 100%;
-    color: aliceblue;
+    color: var(--text);
 
     &::before {
       content: '';

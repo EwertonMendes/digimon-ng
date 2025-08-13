@@ -9,6 +9,11 @@
         },
         "LANGUAGE": {
           "LABEL": "Language"
+        },
+        "THEME": {
+          "LABEL": "Theme",
+          "DEFAULT": "Default",
+          "DIGIMON": "Digimon"
         }
       },
       "BUTTONS": {

@@ -18,6 +18,14 @@
       (onClick)="navigateTo('adventure')"
     />
     <app-button
+      [appTooltip]="'COMMON.ACTION_BAR.BUTTONS.LAB' | transloco"
+      tooltipDirection="right"
+      icon="ph-test-tube"
+      weight="bold"
+      color="success"
+      (onClick)="navigateTo('lab')"
+    />
+    <app-button
       [appTooltip]="
         'COMMON.ACTION_BAR.BUTTONS.OPEN_DIGIMON_STORAGE' | transloco
       "
@@ -25,14 +33,6 @@
       icon="ph-database"
       weight="bold"
       (onClick)="openDigimonStorageModal()"
-    />
-    <app-button
-      [appTooltip]="'COMMON.ACTION_BAR.BUTTONS.LAB' | transloco"
-      tooltipDirection="right"
-      icon="ph-test-tube"
-      weight="bold"
-      color="success"
-      (onClick)="navigateTo('lab')"
     />
   </div>
   <div class="action-bar-buttons">

@@ -1,14 +1,11 @@
- @use '@variables' as *;
-
 .my-digimon-card {
   position: relative;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
   background-image: linear-gradient(to right bottom,
-      rgba($secondary-dark, 0.7),
-      rgba($secondary-light, 0.7),
-    );
+      var(--secondary-dark-transparent),
+      var(--secondary-light-transparent));
   color: white;
   padding: 10px;
   width: 200px;
@@ -17,7 +14,7 @@
   gap: 10px;
 
   &:hover {
-    background-color: rgba(white, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);
     cursor: pointer;
   }
 
@@ -44,7 +41,7 @@
   }
 
   &-name {
-    background-color: rgba(black, 0.7);
+    background-color: rgba(0, 0, 0, 0.7);
     width: 100%;
     padding: 5px;
     border-radius: 5px;

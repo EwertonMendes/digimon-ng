@@ -1,5 +1,3 @@
- @use '@variables' as *;
-
 .player-info-modal-container {
   display: flex;
   justify-content: center;
@@ -14,7 +12,7 @@
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(16px);
-    color: $text;
+    color: var(--text);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
     width: 90%;
     max-width: 800px;
@@ -33,14 +31,14 @@
         height: 140px;
         border-radius: 50%;
         object-fit: cover;
-        border: 4px solid $primary;
+        border: 4px solid var(--primary);
         box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
       }
 
       .player-name {
         font-size: 2rem;
         font-weight: bold;
-        color: $primary;
+        color: var(--primary);
       }
     }
 
@@ -61,7 +59,7 @@
       .info-item {
         display: flex;
         flex-direction: column;
-        background: $secondary-dark;
+        background: var(--secondary-dark);
         padding: 16px 20px;
         border-radius: 14px;
         box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.1),
@@ -74,13 +72,13 @@
 
         .label {
           font-size: 0.9rem;
-          color: rgba($text, 0.75);
+          color: var(--text-transparent-75);
         }
 
         .value {
           font-size: 1.3rem;
           font-weight: 600;
-          color: $text;
+          color: var(--text);
         }
       }
     }

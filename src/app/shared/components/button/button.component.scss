@@ -1,4 +1,3 @@
-@use '@variables' as *;
 @use "sass:color";
 
 .app-button {
@@ -15,7 +14,7 @@
   width: 100%;
   position: relative;
   overflow: hidden;
-  color: $text;
+  color: var(--text);
   background-color: transparent;
 
   &__container {
@@ -55,100 +54,100 @@
   }
 
   &--primary {
-    background-color: $primary;
-    color: $text;
+    background-color: var(--primary);
+    color: var(--text-on-primary, #fff); // Usando a variável de texto sobre a cor primária
 
     &:not(.app-button--disabled):hover {
-      background-color: $primary-light;
-      box-shadow: 0 0 12px $primary-light;
+      background-color: var(--primary-light);
+      box-shadow: 0 0 12px var(--primary-light);
     }
 
     &:not(.app-button--disabled):active {
-      background-color: $primary-dark;
+      background-color: var(--primary-dark);
     }
   }
 
   &--secondary {
-    background-color: $secondary;
-    color: $text;
+    background-color: var(--secondary);
+    color: var(--text-on-secondary, #fff);
 
     &:not(.app-button--disabled):hover {
-      background-color: $secondary-light;
-      box-shadow: 0 0 12px $secondary-light;
+      background-color: var(--secondary-light);
+      box-shadow: 0 0 12px var(--secondary-light);
     }
 
     &:not(.app-button--disabled):active {
-      background-color: $secondary-dark;
+      background-color: var(--secondary-dark);
     }
   }
 
   &--tertiary {
-    background-color: $tertiary;
+    background-color: var(--tertiary);
     color: #000;
 
     &:not(.app-button--disabled):hover {
-      background-color: $tertiary-light;
-      box-shadow: 0 0 12px $tertiary-light;
+      background-color: var(--tertiary-light);
+      box-shadow: 0 0 12px var(--tertiary-light);
     }
 
     &:not(.app-button--disabled):active {
-      background-color: $tertiary-dark;
+      background-color: var(--tertiary-dark);
     }
   }
 
   &--danger {
-    background-color: $danger;
-    color: $text;
+    background-color: var(--danger);
+    color: var(--text-on-danger, #fff);
 
     &:not(.app-button--disabled):hover {
-      background-color: color.adjust($danger, $lightness: 5%);
-      box-shadow: 0 0 12px color.adjust($danger, $lightness: 10%);
+      background-color: var(--danger-light);
+      box-shadow: 0 0 12px var(--danger-glow);
     }
 
     &:not(.app-button--disabled):active {
-      background-color: color.adjust($danger, $lightness: -5%);
+      background-color: var(--danger-hover);
     }
   }
 
   &--success {
-    background-color: $success;
-    color: #000;
+    background-color: var(--success);
+    color: var(--text-on-success, #fff);
 
     &:not(.app-button--disabled):hover {
-      background-color: color.adjust($success, $lightness: 5%);
-      box-shadow: 0 0 12px color.adjust($success, $lightness: 10%);
+      background-color: var(--success-hover);
+      box-shadow: 0 0 12px var(--success-glow);
     }
 
     &:not(.app-button--disabled):active {
-      background-color: color.adjust($success, $lightness: -5%);
+      background-color: var(--success-dark);
     }
   }
 
   &--info {
-    background-color: $info;
-    color: $text;
+    background-color: var(--info);
+    color: var(--text-on-info, #fff);
 
     &:not(.app-button--disabled):hover {
-      background-color: color.adjust($info, $lightness: 5%);
-      box-shadow: 0 0 12px color.adjust($info, $lightness: 10%);
+      background-color: var(--info-hover);
+      box-shadow: 0 0 12px var(--info-glow);
     }
 
     &:not(.app-button--disabled):active {
-      background-color: color.adjust($info, $lightness: -5%);
+      background-color: var(--info-dark);
     }
   }
 
   &--dark {
-    background-color: $dark;
+    background-color: var(--dark);
     color: #fff;
 
     &:not(.app-button--disabled):hover {
-      background-color: $dark-hover;
+      background-color: var(--dark-hover);
       box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
     }
 
     &:not(.app-button--disabled):active {
-      background-color: $dark-active;
+      background-color: var(--dark-active);
     }
   }
 

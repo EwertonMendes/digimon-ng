@@ -1,6 +1,8 @@
 <app-modal [id]="configModalId">
   <div class="config-modal-container">
-    <h3 class="section-title">{{ "COMMON.ACTION_BAR.CONFIG_MODAL.TITLE" | transloco }}</h3>
+    <h3 class="section-title">
+      {{ "COMMON.ACTION_BAR.CONFIG_MODAL.TITLE" | transloco }}
+    </h3>
     <div class="config-modal-content">
       <div class="config-item">
         <app-checkbox
@@ -19,13 +21,19 @@
       </div>
       <div class="config-item">
         <app-select
-          [label]="
-            'COMMON.ACTION_BAR.CONFIG_MODAL.LANGUAGE.LABEL' | transloco
-          "
+          [label]="'COMMON.ACTION_BAR.CONFIG_MODAL.LANGUAGE.LABEL' | transloco"
           [options]="languageOptions"
           [(ngModel)]="selectedLanguage"
           (ngModelChange)="changeLanguage($event)"
         />
+      </div>
+      <div class="config-item">
+        <app-select
+          [label]="'COMMON.ACTION_BAR.CONFIG_MODAL.THEME.LABEL' | transloco"
+          [options]="themeOptions()"
+          [ngModel]="selectedTheme().name"
+          (ngModelChange)="onThemeChange($event)"
+        ></app-select>
       </div>
     </div>
   </div>

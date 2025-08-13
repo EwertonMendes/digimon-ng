@@ -1,36 +1,56 @@
-// Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
 @use '@angular/material' as mat;
-// Plus imports for other components in your app.
+@use './theme-default';
+@use './theme-digimon';
 
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
-@include mat.elevation-classes();
-@include mat.app-background();
+@include mat.core();
 
-// Define the theme object.
-$digi-angular-theme: mat.define-theme((color: (theme-type: light,
-        primary: mat.$azure-palette,
-        tertiary: mat.$blue-palette,
-      ),
-      density: (scale: 0,
-      )));
+.mat-mdc-button,
+.mat-mdc-unelevated-button,
+.mat-mdc-raised-button,
+.mat-mdc-stroked-button {
+  &.mat-primary {
+    --mdc-protected-button-container-color: var(--primary);
+    --mdc-protected-button-label-text-color: var(--text-on-primary, #fff);
+    --mat-mdc-button-persistent-ripple-color: var(--text-on-primary, #fff);
+  }
 
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
-:root {
-  @include mat.all-component-themes($digi-angular-theme);
+  &.mat-warn {
+    --mdc-protected-button-container-color: var(--danger);
+    --mdc-protected-button-label-text-color: var(--text-on-danger, #fff);
+    --mat-mdc-button-persistent-ripple-color: var(--text-on-danger, #fff);
+  }
 }
 
-// Comment out the line below if you want to use the pre-defined typography utility classes.
-// For more information: https://material.angular.io/guide/typography#using-typography-styles-in-your-application.
-// @include mat.typography-hierarchy($digi-angular-theme);
+.mat-mdc-card {
+  background-color: var(--surface);
+  color: var(--text);
+}
 
-// Comment out the line below if you want to use the deprecated `color` inputs.
-// @include mat.color-variants-backwards-compatibility($digi-angular-theme);
-/* You can add global styles to this file, and also import other style files */
+.mat-mdc-form-field {
+  --mdc-filled-text-field-container-color: var(--surface);
+  --mat-form-field-container-text-color: var(--text);
+  --mdc-text-field-label-text-color: var(--text-secondary);
+  --mdc-text-field-input-text-color: var(--text);
+  --mat-form-field-focus-outline-color: var(--primary);
+  --mdc-text-field-caret-color: var(--primary);
+}
+
+.mat-mdc-checkbox {
+  --mdc-checkbox-selected-focus-icon-color: var(--primary);
+  --mdc-checkbox-selected-hover-icon-color: var(--primary);
+  --mdc-checkbox-selected-icon-color: var(--primary);
+  --mdc-checkbox-selected-pressed-icon-color: var(--primary);
+}
+
+.mat-mdc-progress-bar,
+.mat-mdc-progress-spinner {
+  --mdc-linear-progress-active-indicator-color: var(--primary);
+  --mdc-circular-progress-active-indicator-color: var(--primary);
+}
+
+.mat-mdc-dialog-container .mdc-dialog__surface {
+  background-color: var(--surface);
+}
 
 /*
   1. Use a more-intuitive box-sizing model.
@@ -57,27 +77,6 @@ $digi-angular-theme: mat.define-theme((color: (theme-type: light,
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-}
-
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #140F2D;
-  border-radius: 60px;
-  padding: 20px;
-}
-
-::-webkit-scrollbar-thumb {
-  border-radius: 60px;
-  background: #F49D37;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: #be7a2b;
-  cursor: pointer;
 }
 
 /*
@@ -135,6 +134,30 @@ img {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark, #140F2D);
+  /* Fundo escuro consistente */
+  border-radius: 60px;
+  padding: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 60px;
+  background: var(--primary);
+  /* Usa a cor primária do tema ativo */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--primary-dark);
+  /* Usa a variação escura da cor primária */
+  cursor: pointer;
 }
 
 .cdk-drag-preview {

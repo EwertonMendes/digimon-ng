@@ -7,7 +7,7 @@
     "frontendDist": "../dist/digi-angular/browser",
     "devUrl": "http://localhost:4200",
     "beforeDevCommand": "npm run web",
-    "beforeBuildCommand": "npm run build"
+    "beforeBuildCommand": "npm run build:angular"
   },
   "app": {
     "withGlobalTauri": true,

@@ -1,21 +1,25 @@
 <button
-  class="app-button app-button--{{ color() }} {{ disabled() ? 'app-button--disabled' : '' }}"
+  class="app-button app-button--{{ color() }} app-button--{{
+    size()
+  }} {{ disabled() ? 'app-button--disabled' : '' }}"
   [disabled]="disabled()"
   (click)="performClick()"
 >
   @if (icon()) {
-    <div class="app-button__container app-button__container--{{ iconPosition() }}">
-      <i class="ph-{{ weight() }} {{ icon() }}"></i>
-      @if (text()) {
-        <span class="app-button__text">{{ text() }}</span>
-      }
-    </div>
+  <div
+    class="app-button__container app-button__container--{{ iconPosition() }}"
+  >
+    <i class="ph-{{ weight() }} {{ icon() }}"></i>
+    @if (text()) {
+    <span class="app-button__text">{{ text() }}</span>
+    }
+  </div>
   } @else {
-    <span
-      class="app-button__text"
-      [ngStyle]="{ 'font-weight': weight() === 'light' ? 'normal' : 'bold' }"
-    >
-      {{ text() }}
-    </span>
+  <span
+    class="app-button__text"
+    [ngStyle]="{ 'font-weight': weight() === 'light' ? 'normal' : 'bold' }"
+  >
+    {{ text() }}
+  </span>
   }
 </button>

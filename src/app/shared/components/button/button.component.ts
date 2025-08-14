@@ -4,6 +4,7 @@ import '@phosphor-icons/web/light';
 import '@phosphor-icons/web/bold';
 
 type IconPosition = 'left' | 'right' | 'top' | 'bottom';
+type ButtonSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
 
 @Component({
   selector: 'app-button',
@@ -19,11 +20,12 @@ export class ButtonComponent {
   weight = input<string>('light');
   color = input<string>('primary');
   disabled = input<boolean>(false);
+  size = input<ButtonSize>('md');
 
   onClick = output();
 
   performClick() {
-    if(this.disabled()) return;
+    if (this.disabled()) return;
     this.onClick.emit();
   }
 }

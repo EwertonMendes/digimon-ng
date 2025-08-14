@@ -53,9 +53,33 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   }
 
+  &--xs {
+    font-size: 10px;
+  }
+
+  &--sm {
+    font-size: 12px;
+  }
+
+  &--md {
+    font-size: 14px;
+  }
+
+  &--lg {
+    font-size: 18px;
+  }
+
+  &--xl {
+    font-size: 20px;
+  }
+
+  &--xxl {
+    font-size: 30px;
+  }
+
   &--primary {
     background-color: var(--primary);
-    color: var(--text-on-primary, #fff); // Usando a variável de texto sobre a cor primária
+    color: var(--text-on-primary, #fff);
 
     &:not(.app-button--disabled):hover {
       background-color: var(--primary-light);

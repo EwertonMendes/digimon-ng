@@ -12,7 +12,9 @@
             | transloco
         "
         class="send-zero-hp-btn"
-        icon="ph-first-aid"
+        icon="ph-ambulance"
+        size="xl"
+        color="danger"
         [disabled]="!canSendInjuredDigimonToHospital()"
         (onClick)="sendInjuredDigimonToHospital()"
       />
@@ -73,10 +75,13 @@
       </div>
       <div class="hospital-area-header-column">
         <app-button
-          [text]="
+          [appTooltip]="
             'MODULES.DESKTOP.COMPONENTS.HOME_SECTION.HEAL_ALL'
               | transloco : { price: fullHealPrice }
           "
+          icon="ph-first-aid"
+          size="xl"
+          color="success"
           [disabled]="!canHealAll()"
           (onClick)="healAll()"
         />

@@ -24,8 +24,8 @@
     .panel {
       display: flex;
       flex-direction: column;
-      background: rgba(0, 0, 0, 0.50);
-      backdrop-filter: blur(12px);
+      background: var(--primary-dark-transparent);
+      backdrop-filter: blur(2px);
       gap: 10px;
       border-radius: 10px;
       padding: 10px;

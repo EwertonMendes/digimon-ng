@@ -10,8 +10,8 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    background: rgba(0, 0, 0, 0.50);
-    backdrop-filter: blur(12px);
+    background: var(--primary-dark-transparent);
+    backdrop-filter: blur(2px);
     border-radius: 10px;
     width: 100%;
     padding: 10px;
@@ -63,8 +63,8 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    background: rgba(0, 0, 0, 0.50);
-    backdrop-filter: blur(12px);
+    background: var(--primary-dark-transparent);
+    backdrop-filter: blur(2px);
     border-radius: 10px;
     width: 100%;
     padding: 10px;

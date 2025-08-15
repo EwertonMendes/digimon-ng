@@ -2,52 +2,56 @@
 
 .theme-nature-spirits {
   --primary: #3C8A3C;
-    --primary-light: #{color.adjust(#3C8A3C, $lightness: 5%)};
-    --primary-dark: #{color.adjust(#3C8A3C, $lightness: -5%)};
-    --text-on-primary: #FFFFFF;
+  --primary-light: #{color.adjust(#3C8A3C, $lightness: 5%)};
+  --primary-dark: #{color.adjust(#3C8A3C, $lightness: -5%)};
+  --text-on-primary: #FFFFFF;
+  --primary-light-transparent: rgba(74, 155, 74, 0.5);
+  --primary-dark-transparent: rgba(43, 117, 43, 0.5);
 
-    --secondary: #7FC44F;
-    --secondary-light: #{color.adjust(#7FC44F, $lightness: 5%)};
-    --secondary-dark: #{color.adjust(#7FC44F, $lightness: -5%)};
-    --text-on-secondary: #FFFFFF;
-    --secondary-light-transparent: rgba(127, 196, 79, 0.7);
-    --secondary-dark-transparent: rgba(102, 157, 63, 0.7);
+  --secondary: #7FC44F;
+  --secondary-light: #{color.adjust(#7FC44F, $lightness: 5%)};
+  --secondary-dark: #{color.adjust(#7FC44F, $lightness: -5%)};
+  --text-on-secondary: #FFFFFF;
+  --secondary-light-transparent: rgba(144, 214, 101, 0.5);
+  --secondary-dark-transparent: rgba(102, 157, 63, 0.5);
 
-    --tertiary: #8A3C00;
-    --tertiary-light: #{color.adjust(#8A3C00, $lightness: 5%)};
-    --tertiary-dark: #{color.adjust(#8A3C00, $lightness: -5%)};
-    --text-on-tertiary: #FFFFFF;
+  --tertiary: #8A3C00;
+  --tertiary-light: #{color.adjust(#8A3C00, $lightness: 5%)};
+  --tertiary-dark: #{color.adjust(#8A3C00, $lightness: -5%)};
+  --text-on-tertiary: #FFFFFF;
+  --tertiary-light-transparent: rgba(162, 78, 0, 0.5);
+  --tertiary-dark-transparent: rgba(99, 46, 0, 0.5);
 
-    --dark: #141414;
-    --dark-hover: #1E1E1E;
-    --dark-active: #0F0F0F;
-    --text-on-dark: #EAEAEA;
-    --dark-transparent: rgba(20, 20, 20, 0.7);
+  --dark: #141414;
+  --dark-hover: #1E1E1E;
+  --dark-active: #0F0F0F;
+  --text-on-dark: #EAEAEA;
+  --dark-transparent: rgba(20, 20, 20, 0.7);
 
-    --accent: #FFC75F;
+  --accent: #FFC75F;
 
-    --danger: #D72638;
-    --danger-light: #{color.adjust(#D72638, $lightness: 5%)};
-    --danger-hover: #{color.adjust(#D72638, $lightness: -5%)};
-    --danger-glow: rgba(215, 38, 56, 0.5);
-    --text-on-danger: #FFFFFF;
+  --danger: #D72638;
+  --danger-light: #{color.adjust(#D72638, $lightness: 5%)};
+  --danger-hover: #{color.adjust(#D72638, $lightness: -5%)};
+  --danger-glow: rgba(215, 38, 56, 0.5);
+  --text-on-danger: #FFFFFF;
 
-    --success: #06D6A0;
-    --success-hover: #{color.adjust(#06D6A0, $lightness: 5%)};
-    --success-glow: rgba(6, 214, 160, 0.5);
-    --success-dark: #{color.adjust(#06D6A0, $lightness: -5%)};
-    --text-on-success: #FFFFFF;
+  --success: #06D6A0;
+  --success-hover: #{color.adjust(#06D6A0, $lightness: 5%)};
+  --success-glow: rgba(6, 214, 160, 0.5);
+  --success-dark: #{color.adjust(#06D6A0, $lightness: -5%)};
+  --text-on-success: #FFFFFF;
 
-    --info: #FFD166;
-    --info-hover: #{color.adjust(#FFD166, $lightness: 5%)};
-    --info-glow: rgba(255, 209, 102, 0.5);
-    --info-dark: #{color.adjust(#FFD166, $lightness: -5%)};
-    --text-on-info: #000000;
+  --info: #FFD166;
+  --info-hover: #{color.adjust(#FFD166, $lightness: 5%)};
+  --info-glow: rgba(255, 209, 102, 0.5);
+  --info-dark: #{color.adjust(#FFD166, $lightness: -5%)};
+  --text-on-info: #000000;
 
-    --warning: #FFB347;
-    --text-on-warning: #000000;
+  --warning: #FFB347;
+  --text-on-warning: #000000;
 
-    --background: #141414;
-    --surface: #1E1E1E;
-    --text: #EAEAEA;
+  --background: #141414;
+  --surface: #1E1E1E;
+  --text: #EAEAEA;
 }

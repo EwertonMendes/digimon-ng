@@ -21,20 +21,20 @@
     position: relative;
     overflow: auto;
     height: inherit;
-    color: var(--text);
+    color: var(--text-on-secondary);
 
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-image: url('/assets/backgrounds/bg-1.gif');
-      background-size: cover;
-      filter: brightness(50%);
-      z-index: -1;
-    }
+    // &::before {
+    //   content: '';
+    //   position: absolute;
+    //   top: 0;
+    //   right: 0;
+    //   bottom: 0;
+    //   left: 0;
+    //   background-image: url('/assets/backgrounds/bg-1.gif');
+    //   background-size: cover;
+    //   filter: brightness(50%);
+    //   z-index: -1;
+    // }
 
     .desktop-home-container {
       display: flex;
@@ -63,20 +63,20 @@
     position: relative;
     overflow: hidden;
     height: 100%;
-    color: var(--text);
+    color: var(--text-on-secondary);
 
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-image: url('/assets/backgrounds/bg-2.gif');
-      background-size: cover;
-      filter: brightness(50%);
-      z-index: -1;
-    }
+    // &::before {
+    //   content: '';
+    //   position: absolute;
+    //   top: 0;
+    //   right: 0;
+    //   bottom: 0;
+    //   left: 0;
+    //   background-image: url('/assets/backgrounds/bg-2.gif');
+    //   background-size: cover;
+    //   filter: brightness(50%);
+    //   z-index: -1;
+    // }
 
     .desktop-farm-container {
       display: flex;
@@ -102,5 +102,47 @@
 
   .home-title {
     margin-bottom: 25px;
+  }
+}
+
+.desktop-home-wrapper::before,
+.desktop-farm-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: var(--secondary-dark-transparent);
+  z-index: -1;
+  overflow: hidden;
+}
+
+.desktop-home-wrapper::after,
+.desktop-farm-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image:
+    radial-gradient(1.5px 1.5px, var(--text-on-primary) 100%, transparent 0),
+    radial-gradient(2px 2px, var(--text-on-primary) 100%, transparent 0),
+    radial-gradient(1px 1px, var(--text-on-primary) 100%, transparent 0);
+  background-repeat: repeat;
+  background-size: 100px 100px, 150px 150px, 200px 200px;
+  animation: stars 60s linear infinite;
+  z-index: -1;
+  opacity: 0.8;
+}
+
+@keyframes stars {
+  0% {
+    background-position: 0 0, 0 0, 0 0;
+  }
+
+  100% {
+    background-position: 1200px 800px, 1500px 1000px, 1800px 1200px;
   }
 }

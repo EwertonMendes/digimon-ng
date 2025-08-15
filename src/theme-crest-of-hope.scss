@@ -5,18 +5,25 @@
   --primary-light: #{color.adjust(#FFFFFF, $lightness: 5%)};
   --primary-dark: #{color.adjust(#FFFFFF, $lightness: -5%)};
   --text-on-primary: #D4AF37;
+  --primary-light-transparent: rgba(255, 255, 255, 0.5);
+  --primary-dark-transparent: rgba(242, 242, 242, 0.5);
 
   --secondary: #F7E7A9;
   --secondary-light: #{color.adjust(#F7E7A9, $lightness: 5%)};
   --secondary-dark: #{color.adjust(#F7E7A9, $lightness: -5%)};
   --text-on-secondary: #6A5300;
-  --secondary-light-transparent: rgba(247, 231, 169, 0.7);
-  --secondary-dark-transparent: rgba(217, 201, 149, 0.7);
+  --secondary-light-transparent: rgba(249, 236, 185, 0.5);
+  --secondary-dark-transparent: rgba(217, 201, 149, 0.5);
 
   --tertiary: #D4AF37;
   --tertiary-light: #{color.adjust(#D4AF37, $lightness: 5%)};
   --tertiary-dark: #{color.adjust(#D4AF37, $lightness: -5%)};
   --text-on-tertiary: #FFFFFF;
+  --tertiary-light-transparent: rgba(223, 188, 58, 0.5);
+  --tertiary-dark-transparent: rgba(179, 144, 33, 0.5);
+
+  --warning: #B8862B;
+  --text-on-warning: #FFFFFF;
 
   --danger: #E67A7A;
   --text-on-danger: #FFFFFF;

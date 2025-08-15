@@ -5,18 +5,22 @@
   --primary-light: #{color.adjust(#1DE9B6, $lightness: 5%)};
   --primary-dark: #{color.adjust(#1DE9B6, $lightness: -5%)};
   --text-on-primary: #000000;
+  --primary-light-transparent: rgba(46, 239, 194, 0.5);
+  --primary-dark-transparent: rgba(16, 210, 160, 0.5);
 
   --secondary: #33FFC6;
   --secondary-light: #{color.adjust(#33FFC6, $lightness: 5%)};
   --secondary-dark: #{color.adjust(#33FFC6, $lightness: -5%)};
   --text-on-secondary: #000000;
-  --secondary-light-transparent: rgba(51, 255, 198, 0.7);
-  --secondary-dark-transparent: rgba(25, 233, 182, 0.7);
+  --secondary-light-transparent: rgba(51, 255, 198, 0.5);
+  --secondary-dark-transparent: rgba(25, 233, 182, 0.5);
 
   --tertiary: #118C74;
   --tertiary-light: #{color.adjust(#118C74, $lightness: 5%)};
   --tertiary-dark: #{color.adjust(#118C74, $lightness: -5%)};
   --text-on-tertiary: #FFFFFF;
+  --tertiary-light-transparent: rgba(22, 157, 132, 0.5);
+  --tertiary-dark-transparent: rgba(13, 116, 98, 0.5);
 
   --dark: #141414;
   --dark-hover: #1E1E1E;

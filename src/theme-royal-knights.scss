@@ -1,25 +1,27 @@
 @use 'sass:color';
 
 .theme-royal-knights {
-  // Paleta revisada para melhor harmonia e contraste
-  --primary: #FFC300; // Dourado mais vibrante
+  --primary: #FFC300;
   --primary-light: #{color.adjust(#FFC300, $lightness: 5%)};
   --primary-dark: #{color.adjust(#FFC300, $lightness: -5%)};
-  --text-on-primary: #000000; // Contraste alto garantido
+  --text-on-primary: #000000;
+  --primary-light-transparent: rgba(255, 205, 38, 0.5);
+  --primary-dark-transparent: rgba(229, 173, 0, 0.5);
 
   --secondary: #167A5A;
   --secondary-light: #{color.adjust(#167A5A, $lightness: 5%)};
   --secondary-dark: #{color.adjust(#167A5A, $lightness: -5%)};
   --text-on-secondary: #FFFFFF;
-  --secondary-light-transparent: rgba(22, 122, 90, 0.7);
-  --secondary-dark-transparent: rgba(14, 84, 63, 0.7);
+  --secondary-light-transparent: rgba(26, 140, 103, 0.5);
+  --secondary-dark-transparent: rgba(14, 84, 63, 0.5);
 
-  --tertiary: #E6D69B; // Bege dourado suave
+  --tertiary: #E6D69B;
   --tertiary-light: #{color.adjust(#E6D69B, $lightness: 5%)};
   --tertiary-dark: #{color.adjust(#E6D69B, $lightness: -5%)};
-  --text-on-tertiary: #000000; // Contraste suficiente
+  --text-on-tertiary: #000000;
+  --tertiary-light-transparent: rgba(240, 229, 173, 0.5);
+  --tertiary-dark-transparent: rgba(207, 192, 128, 0.5);
 
-  // Cores de status ajustadas à paleta
   --danger: #D62828;
   --text-on-danger: #FFFFFF;
   --success: #2A9D8F;
@@ -27,7 +29,6 @@
   --info: #3A86FF;
   --text-on-info: #FFFFFF;
 
-  // Cores base mantidas
   --background: #121212;
   --surface: #1e1e1e;
   --text: #FFFFFF;

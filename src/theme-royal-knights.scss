@@ -22,11 +22,19 @@
   --tertiary-light-transparent: rgba(240, 229, 173, 0.5);
   --tertiary-dark-transparent: rgba(207, 192, 128, 0.5);
 
-  --danger: #D62828;
+  --danger: #DC3545;
+  --danger-light: #{color.adjust(#DC3545, $lightness: 5%)};
+  --danger-dark: #{color.adjust(#DC3545, $lightness: -5%)};
   --text-on-danger: #FFFFFF;
-  --success: #2A9D8F;
+
+  --success: #28A745;
+  --success-light: #{color.adjust(#28A745, $lightness: 5%)};
+  --success-dark: #{color.adjust(#28A745, $lightness: -5%)};
   --text-on-success: #FFFFFF;
-  --info: #3A86FF;
+
+  --info: #007BFF;
+  --info-light: #{color.adjust(#007BFF, $lightness: 5%)};
+  --info-dark: #{color.adjust(#007BFF, $lightness: -5%)};
   --text-on-info: #FFFFFF;
 
   --background: #121212;

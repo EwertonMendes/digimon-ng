@@ -30,23 +30,20 @@
 
   --accent: #FFC75F;
 
-  --danger: #D72638;
-  --danger-light: #{color.adjust(#D72638, $lightness: 5%)};
-  --danger-hover: #{color.adjust(#D72638, $lightness: -5%)};
-  --danger-glow: rgba(215, 38, 56, 0.5);
+  --danger: #9B2226;
+  --danger-light: #{color.adjust(#9B2226, $lightness: 5%)};
+  --danger-dark: #{color.adjust(#9B2226, $lightness: -5%)};
   --text-on-danger: #FFFFFF;
 
-  --success: #06D6A0;
-  --success-hover: #{color.adjust(#06D6A0, $lightness: 5%)};
-  --success-glow: rgba(6, 214, 160, 0.5);
-  --success-dark: #{color.adjust(#06D6A0, $lightness: -5%)};
+  --success: #28A745;
+  --success-light: #{color.adjust(#28A745, $lightness: 5%)};
+  --success-dark: #{color.adjust(#28A745, $lightness: -5%)};
   --text-on-success: #FFFFFF;
 
-  --info: #FFD166;
-  --info-hover: #{color.adjust(#FFD166, $lightness: 5%)};
-  --info-glow: rgba(255, 209, 102, 0.5);
-  --info-dark: #{color.adjust(#FFD166, $lightness: -5%)};
-  --text-on-info: #000000;
+  --info: #5F9EA0;
+  --info-light: #{color.adjust(#5F9EA0, $lightness: 5%)};
+  --info-dark: #{color.adjust(#5F9EA0, $lightness: -5%)};
+  --text-on-info: #FFFFFF;
 
   --warning: #FFB347;
   --text-on-warning: #000000;

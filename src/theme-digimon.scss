@@ -3,7 +3,7 @@
 .theme-digimon {
   --primary: #FF7A00;
   --primary-light: #{color.adjust(#FF7A00, $lightness: 5%)};
-  --primary-dark: #{color.adjust(#FF7A00, $lightness: -5%)};
+  --primary-dark: #{color.adjust(#f0e6dc, $lightness: -5%)};
   --text-on-primary: #FFFFFF;
   --primary-light-transparent: rgba(255, 144, 38, 0.5);
   --primary-dark-transparent: rgba(229, 108, 0, 0.5);
@@ -26,6 +26,18 @@
   --surface: #1e1e1e;
   --text: #FFFFFF;
 
-  --danger: #EF4444;
+  --danger: #E74C3C;
+  --danger-light: #{color.adjust(#E74C3C, $lightness: 5%)};
+  --danger-dark: #{color.adjust(#E74C3C, $lightness: -5%)};
   --text-on-danger: #FFFFFF;
+
+  --success: #2ECC71;
+  --success-light: #{color.adjust(#2ECC71, $lightness: 5%)};
+  --success-dark: #{color.adjust(#2ECC71, $lightness: -5%)};
+  --text-on-success: #FFFFFF;
+
+  --info: #3498DB;
+  --info-light: #{color.adjust(#3498DB, $lightness: 5%)};
+  --info-dark: #{color.adjust(#3498DB, $lightness: -5%)};
+  --text-on-info: #FFFFFF;
 }

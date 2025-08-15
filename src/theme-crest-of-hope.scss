@@ -25,12 +25,20 @@
   --warning: #B8862B;
   --text-on-warning: #FFFFFF;
 
-  --danger: #E67A7A;
+  --danger: #E57373;
+  --danger-light: #{color.adjust(#E57373, $lightness: 5%)};
+  --danger-dark: #{color.adjust(#E57373, $lightness: -5%)};
   --text-on-danger: #FFFFFF;
-  --success: #8FD694;
-  --text-on-success: #4A6B4F;
-  --info: #A4C8E1;
-  --text-on-info: #274D68;
+
+  --success: #81C784;
+  --success-light: #{color.adjust(#81C784, $lightness: 5%)};
+  --success-dark: #{color.adjust(#81C784, $lightness: -5%)};
+  --text-on-success: #000000;
+
+  --info: #64B5F6;
+  --info-light: #{color.adjust(#64B5F6, $lightness: 5%)};
+  --info-dark: #{color.adjust(#64B5F6, $lightness: -5%)};
+  --text-on-info: #FFFFFF;
 
   --text: #D4AF37;
 }

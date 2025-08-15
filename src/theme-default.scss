@@ -1,54 +1,54 @@
 @use 'sass:color';
 
 :root {
-  --primary: #1DE9B6;
-  --primary-light: #{color.adjust(#1DE9B6, $lightness: 5%)};
-  --primary-dark: #{color.adjust(#1DE9B6, $lightness: -5%)};
-  --text-on-primary: #000000;
-  --primary-light-transparent: rgba(46, 239, 194, 0.5);
-  --primary-dark-transparent: rgba(16, 210, 160, 0.5);
+  --primary: #3D78E7;
+  --primary-light: #{color.adjust(#3D78E7, $lightness: 5%)};
+  --primary-dark: #{color.adjust(#3D78E7, $lightness: -5%)};
+  --text-on-primary: #FFFFFF;
+  --primary-light-transparent: rgba(61, 120, 231, 0.5);
+  --primary-dark-transparent: rgba(49, 95, 182, 0.5);
 
-  --secondary: #33FFC6;
-  --secondary-light: #{color.adjust(#33FFC6, $lightness: 5%)};
-  --secondary-dark: #{color.adjust(#33FFC6, $lightness: -5%)};
+  --secondary: #7DA77A;
+  --secondary-light: #{color.adjust(#7DA77A, $lightness: 5%)};
+  --secondary-dark: #{color.adjust(#7DA77A, $lightness: -5%)};
   --text-on-secondary: #000000;
-  --secondary-light-transparent: rgba(51, 255, 198, 0.5);
-  --secondary-dark-transparent: rgba(25, 233, 182, 0.5);
+  --secondary-light-transparent: rgba(125, 167, 122, 0.5);
+  --secondary-dark-transparent: rgba(102, 136, 99, 0.5);
 
-  --tertiary: #118C74;
-  --tertiary-light: #{color.adjust(#118C74, $lightness: 5%)};
-  --tertiary-dark: #{color.adjust(#118C74, $lightness: -5%)};
-  --text-on-tertiary: #FFFFFF;
-  --tertiary-light-transparent: rgba(22, 157, 132, 0.5);
-  --tertiary-dark-transparent: rgba(13, 116, 98, 0.5);
+  --tertiary: #F7D56C;
+  --tertiary-light: #{color.adjust(#F7D56C, $lightness: 5%)};
+  --tertiary-dark: #{color.adjust(#F7D56C, $lightness: -5%)};
+  --text-on-tertiary: #000000;
+  --tertiary-light-transparent: rgba(247, 213, 108, 0.5);
+  --tertiary-dark-transparent: rgba(215, 186, 94, 0.5);
 
   --dark: #141414;
   --dark-hover: #1E1E1E;
   --dark-active: #0F0F0F;
   --text-on-dark: #EAEAEA;
-  --dark-transparent: rgba(20, 20, 20, 0.7);
+  --dark-transparent: rgba(20, 20, 20, 0.5);
 
   --accent: #00FFD1;
 
-  --danger: #E53935;
-  --danger-light: #{color.adjust(#E53935, $lightness: 5%)};
-  --danger-hover: #{color.adjust(#E53935, $lightness: -5%)};
-  --danger-glow: rgba(229, 57, 53, 0.5);
+  --danger: #E74C3C;
+  --danger-light: #{color.adjust(#E74C3C, $lightness: 5%)};
+  --danger-hover: #{color.adjust(#E74C3C, $lightness: -5%)};
+  --danger-glow: rgba(231, 76, 60, 0.5);
   --text-on-danger: #FFFFFF;
 
-  --success: #43A047;
-  --success-hover: #{color.adjust(#43A047, $lightness: 5%)};
-  --success-glow: rgba(67, 160, 71, 0.5);
-  --success-dark: #{color.adjust(#43A047, $lightness: -5%)};
+  --success: #27AE60;
+  --success-hover: #{color.adjust(#27AE60, $lightness: 5%)};
+  --success-glow: rgba(39, 174, 96, 0.5);
+  --success-dark: #{color.adjust(#27AE60, $lightness: -5%)};
   --text-on-success: #FFFFFF;
 
-  --info: #2979FF;
-  --info-hover: #{color.adjust(#2979FF, $lightness: 5%)};
-  --info-glow: rgba(41, 121, 255, 0.5);
-  --info-dark: #{color.adjust(#2979FF, $lightness: -5%)};
+  --info: #2980B9;
+  --info-hover: #{color.adjust(#2980B9, $lightness: 5%)};
+  --info-glow: rgba(41, 128, 185, 0.5);
+  --info-dark: #{color.adjust(#2980B9, $lightness: -5%)};
   --text-on-info: #FFFFFF;
 
-  --warning: #FFC107;
+  --warning: #F7D56C;
   --text-on-warning: #000000;
 
   --background: #141414;

@@ -5,13 +5,11 @@
   gap: 10px;
   padding: 10px;
   border-radius: 10px;
-  color: white;
-  background-image: linear-gradient(to right bottom,
-      var(--primary-dark-transparent),
-      var(--primary-light-transparent));
+  color: var(--text-on-primary);
+  background: var(--primary-dark);
 
   &:hover {
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: var(--primary);
     cursor: pointer;
   }
 
@@ -43,8 +41,4 @@
   .digimon-work-item-attributes {
     font-size: 11px;
   }
-}
-
-.cdk-drag-placeholder {
-  background-color: blue !important;
 }

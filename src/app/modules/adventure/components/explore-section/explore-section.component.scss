@@ -36,18 +36,17 @@
           display: flex;
           flex-direction: column;
           align-items: center;
-          background: rgba(255, 255, 255, 0.06);
+          background: var(--primary-light-transparent);
           border-radius: 20px;
           padding: 16px;
-          backdrop-filter: blur(10px);
+          backdrop-filter: blur(7px);
           box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
           transition: all 0.3s ease;
-          color: var(--text);
 
           &:hover,
           &:focus {
             cursor: pointer;
-            background: rgba(255, 255, 255, 0.12);
+            background: var(--primary-dark-transparent);
             transform: translateY(-4px);
             outline: none;
           }
@@ -68,17 +67,36 @@
             font-size: 1.1rem;
             font-weight: 600;
             text-align: center;
-            color: var(--text);
+            color: var(--text-on-primary);
           }
 
           &-level-range {
             font-size: 0.95rem;
             font-weight: 400;
-            color: var(--text-light);
+            color: var(--text);
             margin-top: 4px;
           }
         }
       }
+    }
+  }
+}
+
+:host-context(.theme-crest-of-hope) {
+  .explore-section-container .location-list-container .location-list-item {
+    background: var(--primary-dark-transparent);
+
+    &:hover,
+    &:focus {
+      background: var(--primary-light-transparent);
+    }
+
+    h5 {
+      color: var(--primary);
+    }
+
+    &-level-range {
+      color: var(--dark);
     }
   }
 }

@@ -1,0 +1,31 @@
+@use 'sass:color';
+
+.theme-dark-masters {
+  --primary: #7A3EB1;
+  --primary-light: #{color.adjust(#7A3EB1, $lightness: 5%)};
+  --primary-dark: #{color.adjust(#7A3EB1, $lightness: -5%)};
+  --text-on-primary: #FFFFFF;
+
+  --secondary: #2E4A8C;
+  --secondary-light: #{color.adjust(#2E4A8C, $lightness: 5%)};
+  --secondary-dark: #{color.adjust(#2E4A8C, $lightness: -5%)};
+  --text-on-secondary: #FFFFFF;
+  --secondary-light-transparent: rgba(46, 74, 140, 0.7);
+  --secondary-dark-transparent: rgba(28, 46, 92, 0.7);
+
+  --tertiary: #D5CBA3;
+  --tertiary-light: #{color.adjust(#D5CBA3, $lightness: 5%)};
+  --tertiary-dark: #{color.adjust(#D5CBA3, $lightness: -5%)};
+  --text-on-tertiary: #000000;
+
+  --danger: #C0392B;
+  --text-on-danger: #FFFFFF;
+  --success: #4C9A4C;
+  --text-on-success: #FFFFFF;
+  --info: #5C6BC0;
+  --text-on-info: #FFFFFF;
+
+  --background: #121212;
+  --surface: #1E1E1E;
+  --text: #FFFFFF;
+}

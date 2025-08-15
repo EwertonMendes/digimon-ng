@@ -61,11 +61,12 @@ export class ConfigModalComponent implements OnInit, OnDestroy {
       this.selectedTheme.set(newTheme);
     }
 
-    const themeToRemove = document.body.className.match(/theme-\w+/);
+    const themeToRemove = document.body.className.match(/theme-[a-z0-9]+(?:-[a-z0-9]+)*$/);
     if (themeToRemove) {
       document.body.classList.remove(themeToRemove[0]);
     }
-    const themeClass = themeName === 'digimon' ? 'theme-digimon' : '';
+
+    const themeClass = this.themes.find(t => t.name === themeName)?.className ?? '';
     if (themeClass) {
       document.body.classList.add(themeClass);
     }

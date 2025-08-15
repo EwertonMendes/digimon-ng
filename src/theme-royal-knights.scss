@@ -1,0 +1,34 @@
+@use 'sass:color';
+
+.theme-royal-knights {
+  // Paleta revisada para melhor harmonia e contraste
+  --primary: #FFC300; // Dourado mais vibrante
+  --primary-light: #{color.adjust(#FFC300, $lightness: 5%)};
+  --primary-dark: #{color.adjust(#FFC300, $lightness: -5%)};
+  --text-on-primary: #000000; // Contraste alto garantido
+
+  --secondary: #167A5A;
+  --secondary-light: #{color.adjust(#167A5A, $lightness: 5%)};
+  --secondary-dark: #{color.adjust(#167A5A, $lightness: -5%)};
+  --text-on-secondary: #FFFFFF;
+  --secondary-light-transparent: rgba(22, 122, 90, 0.7);
+  --secondary-dark-transparent: rgba(14, 84, 63, 0.7);
+
+  --tertiary: #E6D69B; // Bege dourado suave
+  --tertiary-light: #{color.adjust(#E6D69B, $lightness: 5%)};
+  --tertiary-dark: #{color.adjust(#E6D69B, $lightness: -5%)};
+  --text-on-tertiary: #000000; // Contraste suficiente
+
+  // Cores de status ajustadas à paleta
+  --danger: #D62828;
+  --text-on-danger: #FFFFFF;
+  --success: #2A9D8F;
+  --text-on-success: #FFFFFF;
+  --info: #3A86FF;
+  --text-on-info: #FFFFFF;
+
+  // Cores base mantidas
+  --background: #121212;
+  --surface: #1e1e1e;
+  --text: #FFFFFF;
+}

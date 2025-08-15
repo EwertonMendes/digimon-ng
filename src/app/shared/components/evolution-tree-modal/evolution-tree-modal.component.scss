@@ -38,7 +38,7 @@
 
       h2 {
         font-size: 2rem;
-        color: var(--primary);
+        color: var(--text);
       }
     }
 
@@ -88,7 +88,7 @@
 
         .placeholder {
           font-size: 1.5rem;
-          color: var(--primary);
+          color: var(--text);
         }
       }
 
@@ -133,7 +133,7 @@
 
             .label {
               font-weight: bold;
-              color: var(--primary);
+              color: var(--text);
               margin-bottom: 5px;
             }
 
@@ -169,6 +169,7 @@
     justify-self: center;
     align-self: center;
     background: var(--secondary);
+    color: var(--text-on-secondary);
     padding: 50px 50px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
@@ -193,7 +194,7 @@
 
     .arrow-icon {
       font-size: 45px;
-      color: var(--success);
+      color: var(--tertiary);
       animation: moveRight 0.4s infinite;
 
       @keyframes moveRight {
@@ -235,7 +236,7 @@
       }
 
       .new-value {
-        color: var(--success);
+        color: var(--tertiary);
       }
     }
 

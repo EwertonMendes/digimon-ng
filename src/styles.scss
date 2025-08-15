@@ -1,6 +1,11 @@
 @use '@angular/material' as mat;
 @use './theme-default';
 @use './theme-digimon';
+@use './theme-royal-knights';
+@use './theme-dark-masters';
+@use './theme-digital-hazard';
+@use './theme-crest-of-hope.scss';
+@use './theme-nature-spirits.scss';
 
 @include mat.core();
 

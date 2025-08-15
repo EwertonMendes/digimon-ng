@@ -21,7 +21,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     text-align: center;
     background: var(--secondary);
-    color: var(--text);
+    color: var(--text-on-secondary);
     padding: 1rem;
     width: 100%;
     border-radius: 0 0 10px 10px;
@@ -43,13 +43,13 @@
 
       &-text {
         font-size: 1.5rem;
-        color: var(--text);
+        color: var(--text-on-secondary);
       }
 
       &-amount {
         font-size: 1.5rem;
         font-weight: bold;
-        color: var(--primary-light);
+        color: var(--text-on-secondary);
       }
     }
   }

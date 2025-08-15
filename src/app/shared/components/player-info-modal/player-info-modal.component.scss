@@ -72,13 +72,13 @@
 
         .label {
           font-size: 0.9rem;
-          color: var(--text-transparent-75);
+          color: var(--text-on-secondary);
         }
 
         .value {
           font-size: 1.3rem;
           font-weight: 600;
-          color: var(--text);
+          color: var(--text-on-secondary);
         }
       }
     }

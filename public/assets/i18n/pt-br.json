@@ -13,7 +13,12 @@
         "THEME": {
           "LABEL": "Tema",
           "DEFAULT": "Padrão",
-          "DIGIMON": "Digimon"
+          "DIGIMON": "Digimon",
+          "ROYAL-KNIGHTS": "Cavaleiros Reais",
+          "DARK-MASTERS": "Mestres das Trevas",
+          "DIGITAL-HAZARD": "Perigo Digital",
+          "CREST-OF-HOPE": "Cresta da Esperança",
+          "NATURE-SPIRITS": "Espíritos da Natureza"
         }
       },
       "BUTTONS": {

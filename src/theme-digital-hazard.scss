@@ -1,0 +1,31 @@
+@use 'sass:color';
+
+.theme-digital-hazard {
+  --primary: #D72638;
+  --primary-light: #{color.adjust(#D72638, $lightness: 5%)};
+  --primary-dark: #{color.adjust(#D72638, $lightness: -5%)};
+  --text-on-primary: #FFFFFF;
+
+  --secondary: #F4D35E;
+  --secondary-light: #{color.adjust(#F4D35E, $lightness: 5%)};
+  --secondary-dark: #{color.adjust(#F4D35E, $lightness: -5%)};
+  --text-on-secondary: #000000;
+  --secondary-light-transparent: rgba(247, 211, 94, 0.7);
+  --secondary-dark-transparent: rgba(228, 196, 68, 0.7);
+
+  --tertiary: #B04A2F;
+  --tertiary-light: #{color.adjust(#B04A2F, $lightness: 5%)};
+  --tertiary-dark: #{color.adjust(#B04A2F, $lightness: -5%)};
+  --text-on-tertiary: #FFFFFF;
+
+  --danger: #E01E37;
+  --text-on-danger: #FFFFFF;
+  --success: #22C55E;
+  --text-on-success: #FFFFFF;
+  --info: #0081A7;
+  --text-on-info: #FFFFFF;
+
+  --background: #121212;
+  --surface: #1E1E1E;
+  --text: #FFFFFF;
+}

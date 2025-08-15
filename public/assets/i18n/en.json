@@ -13,7 +13,12 @@
         "THEME": {
           "LABEL": "Theme",
           "DEFAULT": "Default",
-          "DIGIMON": "Digimon"
+          "DIGIMON": "Digimon",
+          "ROYAL-KNIGHTS": "Royal Knights",
+          "DARK-MASTERS": "Dark Masters",
+          "DIGITAL-HAZARD": "Digital Hazard",
+          "CREST-OF-HOPE": "Crest of Hope",
+          "NATURE-SPIRITS": "Nature Spirits"
         }
       },
       "BUTTONS": {

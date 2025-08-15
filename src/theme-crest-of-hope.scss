@@ -1,0 +1,29 @@
+@use 'sass:color';
+
+.theme-crest-of-hope {
+  --primary: #FFFFFF;
+  --primary-light: #{color.adjust(#FFFFFF, $lightness: 5%)};
+  --primary-dark: #{color.adjust(#FFFFFF, $lightness: -5%)};
+  --text-on-primary: #D4AF37;
+
+  --secondary: #F7E7A9;
+  --secondary-light: #{color.adjust(#F7E7A9, $lightness: 5%)};
+  --secondary-dark: #{color.adjust(#F7E7A9, $lightness: -5%)};
+  --text-on-secondary: #6A5300;
+  --secondary-light-transparent: rgba(247, 231, 169, 0.7);
+  --secondary-dark-transparent: rgba(217, 201, 149, 0.7);
+
+  --tertiary: #D4AF37;
+  --tertiary-light: #{color.adjust(#D4AF37, $lightness: 5%)};
+  --tertiary-dark: #{color.adjust(#D4AF37, $lightness: -5%)};
+  --text-on-tertiary: #FFFFFF;
+
+  --danger: #E67A7A;
+  --text-on-danger: #FFFFFF;
+  --success: #8FD694;
+  --text-on-success: #4A6B4F;
+  --info: #A4C8E1;
+  --text-on-info: #274D68;
+
+  --text: #D4AF37;
+}

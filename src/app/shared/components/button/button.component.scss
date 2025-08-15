@@ -162,16 +162,16 @@
   }
 
   &--dark {
-    background-color: var(--dark);
+    background-color: var(--gray-700);
     color: #fff;
 
     &:not(.app-button--disabled):hover {
-      background-color: var(--dark-hover);
+      background-color: var(--dark-active);
       box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
     }
 
     &:not(.app-button--disabled):active {
-      background-color: var(--dark-active);
+      background-color: var(--gray-400);
     }
   }
 

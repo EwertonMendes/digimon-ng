@@ -5,7 +5,6 @@ import {
   inject,
   input,
   Input,
-  OnDestroy,
   OnInit,
   output,
   ViewEncapsulation,
@@ -13,6 +12,7 @@ import {
 import { ModalService } from './modal.service';
 import { AudioService } from '../../../services/audio.service';
 import { AudioEffects } from '../../../core/enums/audio-tracks.enum';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-modal',
@@ -22,7 +22,7 @@ import { AudioEffects } from '../../../core/enums/audio-tracks.enum';
   styleUrl: './modal.component.scss',
   encapsulation: ViewEncapsulation.None,
 })
-export class ModalComponent implements OnInit, OnDestroy {
+export class ModalComponent implements OnInit {
   @Input({ required: true }) id!: string;
   isUnique = input<boolean>(false);
   closable = input<boolean>(true);
@@ -34,6 +34,7 @@ export class ModalComponent implements OnInit, OnDestroy {
   modalService = inject(ModalService);
   audioService = inject(AudioService);
   elementRef = inject(ElementRef<HTMLElement>);
+  private document = inject(DOCUMENT);
 
   @HostListener('document:keydown.escape', ['$event']) onKeydownHandler() {
     this.close(true);
@@ -47,11 +48,8 @@ export class ModalComponent implements OnInit, OnDestroy {
     this.modalService.add(this);
   }
 
-  ngOnDestroy(): void {
-    this.modalService.remove(this.id);
-  }
-
   open(): void {
+    this.document.body.appendChild(this.element);
     this.element.style.display = 'block';
     this.openEvent.emit();
   }
@@ -63,7 +61,8 @@ export class ModalComponent implements OnInit, OnDestroy {
     if (playClickSound) {
       this.audioService.playAudio(AudioEffects.CLICK_ALTERNATIVE);
     }
-    this.element.style.display = 'none';
+
+    this.document.body.removeChild(this.element);
     this.closeEvent.emit();
   }
 }

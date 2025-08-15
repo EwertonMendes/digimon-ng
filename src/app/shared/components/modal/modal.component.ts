@@ -5,6 +5,7 @@ import {
   inject,
   input,
   Input,
+  OnDestroy,
   OnInit,
   output,
   ViewEncapsulation,
@@ -12,7 +13,7 @@ import {
 import { ModalService } from './modal.service';
 import { AudioService } from '../../../services/audio.service';
 import { AudioEffects } from '../../../core/enums/audio-tracks.enum';
-import { DOCUMENT } from '@angular/common';
+import { DOCUMENT } from '@angular/common'; // 1. Importar o DOCUMENT
 
 @Component({
   selector: 'app-modal',
@@ -22,7 +23,7 @@ import { DOCUMENT } from '@angular/common';
   styleUrl: './modal.component.scss',
   encapsulation: ViewEncapsulation.None,
 })
-export class ModalComponent implements OnInit {
+export class ModalComponent implements OnInit, OnDestroy {
   @Input({ required: true }) id!: string;
   isUnique = input<boolean>(false);
   closable = input<boolean>(true);
@@ -46,6 +47,11 @@ export class ModalComponent implements OnInit {
 
   ngOnInit(): void {
     this.modalService.add(this);
+  }
+
+  ngOnDestroy(): void {
+    this.modalService.remove(this.id);
+    this.element.remove();
   }
 
   open(): void {

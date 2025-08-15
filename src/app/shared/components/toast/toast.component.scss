@@ -34,6 +34,7 @@
 
   &.success {
     background-color: var(--success);
+    color: var(--text-on-success);
 
     &:hover {
       background-color: var(--success-dark);
@@ -42,6 +43,7 @@
 
   &.error {
     background-color: var(--danger);
+    color: var(--text-on-danger);
 
     &:hover {
       background-color: var(--danger-hover);
@@ -50,6 +52,7 @@
 
   &.info {
     background-color: var(--info);
+    color: var(--text-on-info);
 
     &:hover {
       background-color: var(--info-hover);

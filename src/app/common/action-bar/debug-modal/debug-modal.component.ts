@@ -56,9 +56,9 @@ export class DebugModalComponent {
     },
     { name: 'SHARED.COMPONENTS.DEBUG_MODAL.RESET_STORAGE', action: this.resetStorage.bind(this) },
     { name: 'SHARED.COMPONENTS.DEBUG_MODAL.SEE_EVOLUTION_LINES', action: this.openSeeEvolutionLinesDigimonModal.bind(this) },
-    { name: 'Teste de toast info', action: this.toastService.showToast.bind(this.toastService, 'This is an info toast', 'info') },
-    { name: 'Teste de toast success', action: this.toastService.showToast.bind(this.toastService, 'This is a success toast', 'success') },
-    { name: 'Teste de toast error', action: this.toastService.showToast.bind(this.toastService, 'This is an error toast', 'error') },
+    { name: 'SHARED.COMPONENTS.DEBUG_MODAL.INFO_TOAST_TEST', action: this.toastService.showToast.bind(this.toastService, 'Info!', 'info') },
+    { name: 'SHARED.COMPONENTS.DEBUG_MODAL.SUCCESS_TOAST_TEST', action: this.toastService.showToast.bind(this.toastService, 'Success!', 'success') },
+    { name: 'SHARED.COMPONENTS.DEBUG_MODAL.ERROR_TOAST_TEST', action: this.toastService.showToast.bind(this.toastService, 'Error!', 'error') },
   ];
 
   onOpen() {

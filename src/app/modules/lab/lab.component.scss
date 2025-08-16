@@ -4,7 +4,6 @@
   display: flex;
   width: 100%;
   height: 100%;
-  background: url('/assets/backgrounds/bg-lab.gif') center center / cover no-repeat fixed;
   color: var(--text);
   overflow: hidden;
 }
@@ -14,7 +13,42 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  background-color: var(--dark-transparent);
+  min-height: 100dvh;
+  background-color: var(--dark);
+  position: relative;
+  z-index: 0;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background-repeat: repeat;
+    border-radius: 50%;
+    opacity: 0.5;
+  }
+
+  &::before {
+    background-image:
+      radial-gradient(circle, var(--primary-light-transparent) 8px, transparent 9px),
+      radial-gradient(circle, var(--secondary-light-transparent) 6px, transparent 7px),
+      radial-gradient(circle, var(--tertiary-light-transparent) 10px, transparent 11px);
+    background-size: 200px 200px, 250px 250px, 300px 300px;
+    background-position: 0 100vh, 50px 120vh, 100px 140vh;
+    animation: bubblesA 40s linear infinite;
+  }
+
+  &::after {
+    background-image:
+      radial-gradient(circle, var(--tertiary-light-transparent) 5px, transparent 6px),
+      radial-gradient(circle, var(--primary-light-transparent) 7px, transparent 8px),
+      radial-gradient(circle, var(--secondary-light-transparent) 9px, transparent 10px);
+    background-size: 220px 220px, 280px 280px, 320px 320px;
+    background-position: 80px 130vh, 150px 160vh, 200px 180vh;
+    animation: bubblesB 60s linear infinite;
+  }
 
   &__title {
     display: grid;
@@ -27,6 +61,8 @@
     border-radius: 0 0 10px 10px;
     font-weight: bold;
     letter-spacing: 2px;
+    position: relative;
+    z-index: 1;
 
     h1 {
       grid-column: 2;
@@ -62,6 +98,8 @@
     flex-wrap: wrap;
     overflow-y: auto;
     justify-content: center;
+    position: relative;
+    z-index: 1;
 
     &-card {
       display: flex;
@@ -73,14 +111,14 @@
       padding: 1rem;
       border-radius: 1rem;
       background: var(--background-transparent);
-      backdrop-filter: blur(8px);
+      backdrop-filter: blur(3px);
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
       border: 1px solid var(--gray-100-transparent);
       transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 
       &:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        transform: translateY(-4px) scale(1.03);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
       }
 
       &-body {
@@ -99,6 +137,7 @@
             height: 150px;
             width: 150px;
             object-fit: contain;
+            animation: shake 3s ease-in-out infinite;
           }
         }
 
@@ -159,5 +198,45 @@
         }
       }
     }
+  }
+}
+
+@keyframes bubblesA {
+  from {
+    background-position: 0 100vh, 50px 120vh, 100px 140vh;
+  }
+
+  to {
+    background-position: 0 -200vh, 50px -220vh, 100px -240vh;
+  }
+}
+
+@keyframes bubblesB {
+  from {
+    background-position: 80px 130vh, 150px 160vh, 200px 180vh;
+  }
+
+  to {
+    background-position: 80px -230vh, 150px -260vh, 200px -280vh;
+  }
+}
+
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(2deg);
+  }
+
+  50% {
+    transform: rotate(-2deg);
+  }
+
+  75% {
+    transform: rotate(1deg);
   }
 }

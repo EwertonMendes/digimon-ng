@@ -13,7 +13,7 @@ import {
 import { ModalService } from './modal.service';
 import { AudioService } from '../../../services/audio.service';
 import { AudioEffects } from '../../../core/enums/audio-tracks.enum';
-import { DOCUMENT } from '@angular/common'; // 1. Importar o DOCUMENT
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-modal',

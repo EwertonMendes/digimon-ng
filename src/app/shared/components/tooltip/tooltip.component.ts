@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, HostBinding } from '@angular/core';
 
 @Component({
   selector: 'app-tooltip',
@@ -10,4 +10,7 @@ import { Component, Input } from '@angular/core';
 export class TooltipComponent {
   @Input() text = '';
   @Input() direction: 'top' | 'bottom' | 'left' | 'right' = 'top';
+  @HostBinding('attr.role') role = 'tooltip';
+  @HostBinding('style.pointerEvents') pointerEvents = 'none';
+  @HostBinding('attr.data-direction') get dataDirection() { return this.direction; }
 }

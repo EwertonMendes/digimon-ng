@@ -9,15 +9,15 @@
   transform: translate(-50%, -100%);
   opacity: 1;
   transition: opacity 0.2s ease-in-out;
+  z-index: auto;
+  pointer-events: none;
 
   &.top {
     opacity: 1;
-    transform: translate(-50%, -100%);
-    margin-bottom: 8px;
 
     .tooltip-arrow {
-      bottom: -6px;
       left: 50%;
+      bottom: -6px;
       transform: translateX(-50%);
       border-width: 6px 6px 0 6px;
       border-color: rgba(0, 0, 0, 0.85) transparent transparent transparent;
@@ -29,13 +29,11 @@
   }
 
   &.bottom {
-    opacity: 1;
-    transform: translate(-50%, 0%);
-    margin-top: 8px;
+    transform: translate(-50%, 0);
 
     .tooltip-arrow {
-      top: -6px;
       left: 50%;
+      top: -6px;
       transform: translateX(-50%);
       border-width: 0 6px 6px 6px;
       border-color: transparent transparent rgba(0, 0, 0, 0.85) transparent;
@@ -47,9 +45,7 @@
   }
 
   &.left {
-    opacity: 1;
     transform: translate(-100%, -50%);
-    margin-right: 8px;
 
     .tooltip-arrow {
       right: -6px;
@@ -65,9 +61,7 @@
   }
 
   &.right {
-    opacity: 1;
-    transform: translate(0%, -50%);
-    margin-left: 8px;
+    transform: translate(0, -50%);
 
     .tooltip-arrow {
       left: -6px;

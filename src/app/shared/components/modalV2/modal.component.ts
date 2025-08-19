@@ -4,8 +4,8 @@ import {
   HostListener,
   inject,
   input,
-  Input,
   OnDestroy,
+  OnInit,
   output,
   ViewEncapsulation,
 } from '@angular/core';
@@ -21,8 +21,8 @@ import { AudioEffects } from 'app/core/enums/audio-tracks.enum';
   styleUrl: './modal.component.scss',
   encapsulation: ViewEncapsulation.None,
 })
-export class ModalV2Component implements OnDestroy {
-  @Input({ required: true }) id!: string;
+export class ModalV2Component implements OnInit, OnDestroy {
+  id = input.required<string>();
   closable = input<boolean>(true);
 
   element: HTMLElement;
@@ -36,6 +36,10 @@ export class ModalV2Component implements OnDestroy {
 
   constructor() {
     this.element = this.elementRef.nativeElement;
+  }
+
+  ngOnInit(): void {
+    this.openEvent.emit();
   }
 
   @HostListener('document:keydown.escape')
@@ -56,6 +60,6 @@ export class ModalV2Component implements OnDestroy {
 
     this.closeEvent.emit();
 
-    closeLast ? this.modalService.closeLast() : this.modalService.close(this.id);
+    closeLast ? this.modalService.closeLast() : this.modalService.close(this.id());
   }
 }

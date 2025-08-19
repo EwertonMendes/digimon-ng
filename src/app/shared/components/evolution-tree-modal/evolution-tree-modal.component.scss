@@ -25,6 +25,7 @@
 
       #evolutionTreeWrapper {
         height: 100%;
+        width: 100%;
       }
     }
 
@@ -148,105 +149,6 @@
             }
           }
         }
-      }
-    }
-  }
-}
-
-#evolution-confirmation-modal {
-  .evolution-confirmation-modal-container {
-    display: flex;
-    justify-content: center;
-    height: -webkit-fill-available;
-  }
-
-  .evolution-confirmation-container {
-    display: flex;
-    flex-direction: column;
-    border-radius: 16px;
-    width: fit-content;
-    height: fit-content;
-    justify-self: center;
-    align-self: center;
-    background: var(--secondary);
-    color: var(--text-on-secondary);
-    padding: 50px 50px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-
-  .evolution-confirmation-header {
-    text-align: center;
-    margin-bottom: 20px;
-
-    h2 {
-      margin: 0;
-      font-size: 24px;
-      font-weight: bold;
-    }
-  }
-
-  .evolution-confirmation-digimon {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    gap: 10px;
-
-    .arrow-icon {
-      font-size: 45px;
-      color: var(--tertiary);
-      animation: moveRight 0.4s infinite;
-
-      @keyframes moveRight {
-        0% {
-          transform: translateX(0);
-        }
-
-        50% {
-          transform: translateX(20px);
-        }
-
-        100% {
-          transform: translateX(0);
-        }
-      }
-    }
-  }
-
-  .evolution-confirmation-content {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: fit-content;
-
-    &-info {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(2, auto);
-      gap: 10px;
-
-      span {
-        display: flex;
-        justify-content: center;
-        font-size: 16px;
-
-        strong {
-          font-weight: bold;
-        }
-      }
-
-      .new-value {
-        color: var(--tertiary);
-      }
-    }
-
-    &-actions {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-
-      app-button {
-        flex: 1;
       }
     }
   }

@@ -13,9 +13,8 @@ import { PlayerDataService } from './services/player-data.service';
     RouterOutlet,
     ActionBarComponent,
     ToastComponent,
-    InitialSetupComponent
+    InitialSetupComponent,
   ],
-  providers: [GlobalStateDataSource],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

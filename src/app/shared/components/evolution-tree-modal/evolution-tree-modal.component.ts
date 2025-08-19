@@ -1,6 +1,16 @@
-import { AfterViewInit, Component, effect, ElementRef, HostListener, inject, input, signal } from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectorRef,
+  Component,
+  DestroyRef,
+  effect,
+  ElementRef,
+  HostListener,
+  inject,
+  input,
+  signal,
+} from '@angular/core';
 import { TranslocoModule } from '@jsverse/transloco';
-import { ModalComponent } from '../modal/modal.component';
 import {
   BaseDigimon,
   Digimon,
@@ -10,16 +20,19 @@ import { GraphService } from '../../../services/graph.service';
 import Sigma from 'sigma';
 import { ButtonComponent } from '../button/button.component';
 import { GlobalStateDataSource } from '../../../state/global-state.datasource';
-import { ModalService } from '../modal/modal.service';
 import '@phosphor-icons/web/light';
 import '@phosphor-icons/web/bold';
 import { AudioEffects } from '../../../core/enums/audio-tracks.enum';
 import { AudioService } from '../../../services/audio.service';
+import { ModalV2Component } from '../modalV2/modal.component';
+import { ModalV2Service } from '../modalV2/modal.service';
+import { EvolutionConfirmationModalCloseEvent, EvolutionConfirmationModalComponent } from './components/evolution-confirmation-modal/evolution-confirmation-modal.component';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-evolution-tree-modal',
   standalone: true,
-  imports: [ModalComponent, ButtonComponent, TranslocoModule],
+  imports: [ModalV2Component, ButtonComponent, TranslocoModule],
   templateUrl: './evolution-tree-modal.component.html',
   styleUrls: ['./evolution-tree-modal.component.scss'],
 })
@@ -44,16 +57,17 @@ export class EvolutionTreeModalComponent implements AfterViewInit {
   currentRank: string = 'Fresh';
   evolutionRouteDigimons: BaseDigimon[] = [];
   canEvolve = signal<boolean>(false);
-  selectedDigimon = signal<BaseDigimon | undefined>(undefined);
-  selectedPossibleEvolutionStats = signal<any | undefined>(undefined);
-  isEvolving = signal<boolean>(false);
+  selectedDigimon = signal<BaseDigimon | null>(null);
+  selectedPossibleEvolutionStats = signal<any | null>(null);
 
   digimonService = inject(DigimonService);
   graphService = inject(GraphService);
   globalState = inject(GlobalStateDataSource);
-  modalService = inject(ModalService);
+  modalService = inject(ModalV2Service);
   audioService = inject(AudioService);
   elementRef = inject(ElementRef<HTMLElement>);
+  destroyRef = inject(DestroyRef);
+  changeDetectorRef = inject(ChangeDetectorRef)
 
   constructor() {
     effect(
@@ -81,17 +95,19 @@ export class EvolutionTreeModalComponent implements AfterViewInit {
 
   onOpen() {
     const container = this.elementRef.nativeElement.querySelector('#evolutionTreeWrapper')!;
+
     if (!container) return;
 
     this.evolutionRouteDigimons = this.getEvolutionRouteDigimons();
 
-    this.sigma = this.graphService.createGraph(
-      container,
-      this.mainDigimon()!,
-      this.evolutionRouteDigimons
-    );
-
-    this.setupGraphEventHandlers(container);
+    setTimeout(() => {
+      this.sigma = this.graphService.createGraph(
+        container,
+        this.mainDigimon()!,
+        this.evolutionRouteDigimons
+      );
+      this.setupGraphEventHandlers(container);
+    }, 0)
   }
 
   private setupGraphEventHandlers(container: HTMLElement) {
@@ -283,7 +299,7 @@ export class EvolutionTreeModalComponent implements AfterViewInit {
   }
 
   onClose() {
-    this.selectedDigimon.set(undefined);
+    this.selectedDigimon.set(null);
     if (!this.sigma) return;
     this.sigma.kill();
   }
@@ -293,26 +309,8 @@ export class EvolutionTreeModalComponent implements AfterViewInit {
     return digimon.hasOwnProperty('id');
   }
 
-  async evolveDigimon() {
-    if (!this.mainDigimon() || !this.selectedDigimon() || !this.isDigimon(this.mainDigimon())) return;
-
-
-    this.isEvolving.set(true)
-
-    await this.globalState.evolveDigimon(
-      this.mainDigimon()! as Digimon,
-      this.selectedDigimon()?.seed!
-    );
-
-    this.onClose();
-    this.onOpen();
-    this.modalService.close('evolution-confirmation-modal');
-    this.isEvolving.set(false)
-  }
-
   showEvolutionConfirmationModal() {
     this.audioService.playAudio(AudioEffects.CLICK);
-    this.modalService.open('evolution-confirmation-modal');
 
     this.selectedPossibleEvolutionStats.set(
       this.digimonService.getPossibleEvolutionStats(
@@ -320,6 +318,24 @@ export class EvolutionTreeModalComponent implements AfterViewInit {
         this.selectedDigimon()!
       )
     );
+
+    this.modalService.open('evolution-confirmation-modal', EvolutionConfirmationModalComponent, {
+      mainDigimon: this.mainDigimon(),
+      selectedDigimon: this.selectedDigimon(),
+      selectedPossibleEvolutionStats: this.selectedPossibleEvolutionStats()
+    });
+
+    this.modalService.onClose('evolution-confirmation-modal')
+      .pipe(
+        takeUntilDestroyed(this.destroyRef)
+      )
+      .subscribe(async (result: EvolutionConfirmationModalCloseEvent) => {
+
+        if (!this.mainDigimon() || !this.selectedDigimon() || !this.isDigimon(this.mainDigimon()) || !result.refreshGraph) return;
+
+        this.onClose();
+        this.onOpen();
+      });
   }
 
   adjustEvolutionTreeZoom() {

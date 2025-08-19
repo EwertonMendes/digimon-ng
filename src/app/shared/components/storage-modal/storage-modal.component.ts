@@ -4,12 +4,13 @@ import { DigimonListLocation } from '../../../core/enums/digimon-list-location.e
 import { Digimon } from '../../../core/interfaces/digimon.interface';
 import { AudioService } from '../../../services/audio.service';
 import { GlobalStateDataSource } from '../../../state/global-state.datasource';
-import { ModalService } from '../modal/modal.service';
 import { ButtonComponent } from '../button/button.component';
 import { DigiStatusCardComponent } from '../digi-status-card/digi-status-card.component';
 import { ModalComponent } from '../modal/modal.component';
 import { TranslocoModule } from '@jsverse/transloco';
 import { TooltipDirective } from 'app/directives/tooltip.directive';
+import { ModalV2Service } from '../modalV2/modal.service';
+import { DigimonDetailsModalComponent } from '../digimon-details-modal/digimon-details-modal.component';
 
 @Component({
   selector: 'app-storage-modal',
@@ -23,13 +24,13 @@ export class StorageModalComponent {
   digimonDetailsModalId = 'digimon-details-modal';
 
   globalState = inject(GlobalStateDataSource);
-  modalService = inject(ModalService);
+  modalService = inject(ModalV2Service);
   audioService = inject(AudioService);
 
   openDigimonDetailsModal(digimon: Digimon) {
     this.audioService.playAudio(AudioEffects.CLICK);
     this.globalState.setSelectedDigimonOnDetailsAccessor(digimon);
-    this.modalService.open(this.digimonDetailsModalId);
+    this.modalService.open(this.digimonDetailsModalId, DigimonDetailsModalComponent);
   }
 
   addDigimonToTeam(digimon: Digimon) {

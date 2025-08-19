@@ -9,7 +9,6 @@ import { DigiStatusCardComponent } from '../../../../shared/components/digi-stat
 import { GlobalStateDataSource } from '../../../../state/global-state.datasource';
 import { Digimon } from '../../../../core/interfaces/digimon.interface';
 import { DigimonFarmCardComponent } from './components/digimon-farm-card/digimon-farm-card.component';
-import { ModalService } from '../../../../shared/components/modal/modal.service';
 import {
   CdkDragDrop,
   DragDropModule,
@@ -20,6 +19,8 @@ import { PlayerData } from '../../../../core/interfaces/player-data.interface';
 import { AudioEffects } from '../../../../core/enums/audio-tracks.enum';
 import { AudioService } from '../../../../services/audio.service';
 import { TranslocoModule } from '@jsverse/transloco';
+import { ModalV2Service } from 'app/shared/components/modalV2/modal.service';
+import { DigimonDetailsModalComponent } from 'app/shared/components/digimon-details-modal/digimon-details-modal.component';
 
 @Component({
   selector: 'app-farm-section',
@@ -38,7 +39,7 @@ export class FarmSectionComponent {
   digimonDetailsModalId = 'digimon-details-modal';
 
   globalState = inject(GlobalStateDataSource);
-  modalService = inject(ModalService);
+  modalService = inject(ModalV2Service);
   audioService = inject(AudioService);
 
   bitGenerationTotalRate = signal<number>(0);
@@ -83,7 +84,7 @@ export class FarmSectionComponent {
   openDigimonDetailsModal(digimon: Digimon): void {
     this.audioService.playAudio(AudioEffects.CLICK);
     this.globalState.setSelectedDigimonOnDetailsAccessor(digimon);
-    this.modalService.open(this.digimonDetailsModalId);
+    this.modalService.open(this.digimonDetailsModalId, DigimonDetailsModalComponent);
   }
 
   drop(event: CdkDragDrop<PlayerData>) {

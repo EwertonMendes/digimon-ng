@@ -24,16 +24,16 @@ export class DigimonService {
     this.baseDigimonDataSubject.next(data);
   }
 
-  getBaseDigimonDataBySeed(seed: string): BaseDigimon | undefined {
+  getBaseDigimonDataBySeed(seed: string): BaseDigimon | null {
     return this.baseDigimonDataSubject.value.find(
       (digimon) => digimon.seed === seed
-    );
+    ) ?? null;
   }
 
-  getBaseDigimonDataById(id: string): BaseDigimon | undefined {
+  getBaseDigimonDataById(id: string): BaseDigimon | null {
     return this.baseDigimonDataSubject.value.find(
       (digimon) => digimon.seed === id
-    );
+    ) ?? null;
   }
 
   getDigimonEvolutions(digimon?: Digimon | BaseDigimon): BaseDigimon[] {
@@ -55,7 +55,7 @@ export class DigimonService {
 
   getDigimonCurrentEvolutionRoute(
     digimon?: Digimon
-  ): BaseDigimon[] | undefined {
+  ): BaseDigimon[] | null {
     return digimon?.currentEvolutionRoute?.map((route) =>
       this.getBaseDigimonDataBySeed(route.seed)
     ) as BaseDigimon[];
@@ -69,9 +69,9 @@ export class DigimonService {
     return this.createDigimonFromBase(baseDigimon);
   }
 
-  generateDigimonBySeed(seed: string): Digimon | undefined {
+  generateDigimonBySeed(seed: string): Digimon | null {
     const baseDigimon = this.getBaseDigimonDataBySeed(seed);
-    return baseDigimon ? this.createDigimonFromBase(baseDigimon) : undefined;
+    return baseDigimon ? this.createDigimonFromBase(baseDigimon) : null;
   }
 
   private createDigimonFromBase(baseDigimon: BaseDigimon): Digimon {
@@ -222,12 +222,14 @@ export class DigimonService {
       rankMultiplier,
       this.maxHpMp
     );
+
     evolvingDigimon.maxMp = this.calculateStat(
       evolvingDigimon.maxMp,
       targetDigimon.mp,
       rankMultiplier,
       this.maxHpMp
     );
+
     evolvingDigimon.currentHp = evolvingDigimon.maxHp;
     evolvingDigimon.currentMp = evolvingDigimon.maxMp;
 
@@ -237,18 +239,21 @@ export class DigimonService {
       rankMultiplier,
       this.maxOtherStats
     );
+
     evolvingDigimon.def = this.calculateStat(
       evolvingDigimon.def,
       targetDigimon.def,
       rankMultiplier,
       this.maxOtherStats
     );
+
     evolvingDigimon.speed = this.calculateStat(
       evolvingDigimon.speed,
       targetDigimon.speed,
       rankMultiplier,
       this.maxOtherStats
     );
+
     evolvingDigimon.bitFarmingRate! += targetDigimon.bitFarmingRate + 1;
 
     this.resetDigimonStats(evolvingDigimon);

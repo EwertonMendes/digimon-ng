@@ -1,10 +1,4 @@
-import {
-  ChangeDetectorRef,
-  computed,
-  inject,
-  Injectable,
-  signal,
-} from '@angular/core';
+import { computed, inject, Injectable, signal } from '@angular/core';
 import { TrainingService } from './services/training.service';
 import { FarmingService } from './services/farming.service';
 import { BattleService } from './services/battle.service';
@@ -140,8 +134,6 @@ export class GlobalStateDataSource {
   battleService = inject(BattleService);
   storageService = inject(StorageService);
   hospitalService = inject(HospitalService);
-
-  changeDectorRef = inject(ChangeDetectorRef);
 
   listHandlers: Record<string, Function> = {
     [DigimonListLocation.IN_TRAINING]:
@@ -833,11 +825,9 @@ export class GlobalStateDataSource {
 
     const playerData = this.playerData();
     const lists = this.getAllDigimonLists(playerData);
-
     this.updateDigimonInLists(lists, digimon, evolvedDigimon);
     this.updateSelectedDigimonDetails(evolvedDigimon);
 
-    this.changeDectorRef.detectChanges();
   }
 
   private getAllDigimonLists(playerData: PlayerData): Digimon[][] {
@@ -872,7 +862,6 @@ export class GlobalStateDataSource {
       ...this.playerData(),
       ...playerData,
     });
-    this.changeDectorRef.detectChanges();
   }
 
   private removeFromPreviousList(digimonId: string, from: string) {
@@ -898,7 +887,6 @@ export class GlobalStateDataSource {
       }
 
       isFirstRun = false;
-      this.changeDectorRef.detectChanges();
     });
   }
 

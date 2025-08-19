@@ -1,4 +1,4 @@
-<app-modal [id]="digimonDetailsModalId">
+<app-modal [id]="digimonDetailsModalId()">
   <div class="digimon-details-container">
     <h3 class="section-title">
       {{ "SHARED.COMPONENTS.DIGIMON_DETAILS_MODAL.TITLE" | transloco }}
@@ -216,6 +216,3 @@
   </div>
 </app-modal>
 
-<app-evolution-tree-modal
-  [mainDigimon]="globalState.selectedDigimonOnDetailsAccessor"
-/>

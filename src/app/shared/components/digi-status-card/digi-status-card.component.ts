@@ -1,4 +1,4 @@
-import { Component, computed, inject, input, signal } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, computed, effect, inject, input, signal } from '@angular/core';
 import { Digimon } from '../../../core/interfaces/digimon.interface';
 import { CommonModule } from '@angular/common';
 import {
@@ -18,6 +18,7 @@ import { pairwise, startWith } from 'rxjs';
   imports: [CommonModule],
   templateUrl: './digi-status-card.component.html',
   styleUrls: ['./digi-status-card.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('damage', [
       state('normal', style({ transform: 'translateX(0)' })),
@@ -40,6 +41,7 @@ import { pairwise, startWith } from 'rxjs';
     ]),
   ],
 })
+
 export class DigiStatusCardComponent {
   digimon = input.required<Digimon>();
   globalState = inject(GlobalStateDataSource);
@@ -49,6 +51,8 @@ export class DigiStatusCardComponent {
   });
   showHpChange = signal(false);
 
+  change = inject(ChangeDetectorRef);
+
   damageState = computed(() => {
     return this.globalState.currentDefendingDigimon()?.id === this.digimon().id
       ? 'attacked'
@@ -56,6 +60,11 @@ export class DigiStatusCardComponent {
   });
 
   constructor() {
+    effect(() => {
+      if (this.digimon().id !== this.globalState.selectedDigimonOnDetailsAccessor?.id) return;
+      this.change.detectChanges();
+    });
+
     this.globalState.digimonHpChanges$
       .pipe(startWith(null), pairwise())
       .subscribe(([prev, current]) => {

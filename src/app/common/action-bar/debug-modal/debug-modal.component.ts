@@ -9,10 +9,11 @@ import { DigimonService } from '../../../services/digimon.service';
 import { BaseDigimon } from '../../../core/interfaces/digimon.interface';
 
 import { FormsModule } from '@angular/forms';
-import { EvolutionTreeModalComponent } from 'app/shared/components/evolution-tree-modal/evolution-tree-modal.component';
 import { Subject, takeUntil } from 'rxjs';
 import { CheckboxComponent } from 'app/shared/components/checkbox/checkbox.component';
 import { TranslocoModule } from '@jsverse/transloco';
+import { ModalV2Service } from 'app/shared/components/modalV2/modal.service';
+import { EvolutionTreeModalComponent } from 'app/shared/components/evolution-tree-modal/evolution-tree-modal.component';
 
 @Component({
   selector: 'app-debug-modal',
@@ -22,7 +23,6 @@ import { TranslocoModule } from '@jsverse/transloco';
     ButtonComponent,
     DigimonSelectionModalComponent,
     FormsModule,
-    EvolutionTreeModalComponent,
     CheckboxComponent,
     TranslocoModule
   ],
@@ -45,6 +45,7 @@ export class DebugModalComponent {
   globalState = inject(GlobalStateDataSource);
   toastService = inject(ToastService);
   modalService = inject(ModalService);
+  modalServiceV2 = inject(ModalV2Service)
   digimonService = inject(DigimonService);
   changeDectorRef = inject(ChangeDetectorRef);
 
@@ -106,7 +107,9 @@ export class DebugModalComponent {
   openEvolutionTreeModal(digimon: BaseDigimon) {
     this.selectedEvolutionLineDigimon.set(digimon);
     this.changeDectorRef.detectChanges();
-    this.modalService.open(this.evolutionTreeModalId);
+    this.modalServiceV2.open(this.evolutionTreeModalId, EvolutionTreeModalComponent, {
+      mainDigimon: digimon
+    });
   }
 
   async refreshDigimonList() {

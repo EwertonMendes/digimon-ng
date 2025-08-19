@@ -2,7 +2,6 @@ import { Component, effect, inject, signal } from '@angular/core';
 import { DigiStatusCardComponent } from '../../../../shared/components/digi-status-card/digi-status-card.component';
 import { GlobalStateDataSource } from '../../../../state/global-state.datasource';
 import { Digimon } from '../../../../core/interfaces/digimon.interface';
-import { ModalService } from '../../../../shared/components/modal/modal.service';
 import {
   CdkDragDrop,
   DragDropModule,
@@ -16,6 +15,8 @@ import { ButtonComponent } from '../../../../shared/components/button/button.com
 import { HospitalService } from '../../../../state/services/hospital.service';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 import { TooltipDirective } from 'app/directives/tooltip.directive';
+import { ModalV2Service } from 'app/shared/components/modalV2/modal.service';
+import { DigimonDetailsModalComponent } from 'app/shared/components/digimon-details-modal/digimon-details-modal.component';
 
 @Component({
   selector: 'app-home-section',
@@ -28,7 +29,7 @@ export class HomeSectionComponent {
   digimonDetailsModalId = 'digimon-details-modal';
   globalState = inject(GlobalStateDataSource);
   hospitalService = inject(HospitalService);
-  modalService = inject(ModalService);
+  modalService = inject(ModalV2Service);
   audioService = inject(AudioService);
 
   teamListId = 'team-list';
@@ -80,7 +81,7 @@ export class HomeSectionComponent {
   openDigimonDetailsModal(digimon: Digimon): void {
     this.audioService.playAudio(AudioEffects.CLICK);
     this.globalState.setSelectedDigimonOnDetailsAccessor(digimon);
-    this.modalService.open(this.digimonDetailsModalId);
+    this.modalService.open(this.digimonDetailsModalId, DigimonDetailsModalComponent);
   }
 
   drop(event: CdkDragDrop<PlayerData>) {

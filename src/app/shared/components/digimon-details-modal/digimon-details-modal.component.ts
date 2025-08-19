@@ -1,15 +1,15 @@
 import { Component, computed, effect, inject, signal } from '@angular/core';
-import { ModalComponent } from '../modal/modal.component';
 import { GlobalStateDataSource } from '../../../state/global-state.datasource';
 import { CommonModule } from '@angular/common';
 import { EvolutionRouteComponent } from '../evolution-route/evolution-route.component';
 import { ButtonComponent } from '../button/button.component';
-import { ModalService } from '../modal/modal.service';
 import { EvolutionTreeModalComponent } from '../evolution-tree-modal/evolution-tree-modal.component';
 import { BaseDigimon } from '../../../core/interfaces/digimon.interface';
 import { AudioEffects } from '../../../core/enums/audio-tracks.enum';
 import { AudioService } from '../../../services/audio.service';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
+import { ModalV2Component } from '../modalV2/modal.component';
+import { ModalV2Service } from '../modalV2/modal.service';
 
 @Component({
   standalone: true,
@@ -17,20 +17,19 @@ import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
   templateUrl: './digimon-details-modal.component.html',
   styleUrl: './digimon-details-modal.component.scss',
   imports: [
-    ModalComponent,
+    ModalV2Component,
     CommonModule,
     EvolutionRouteComponent,
     ButtonComponent,
-    EvolutionTreeModalComponent,
     TranslocoModule
   ],
 })
 export class DigimonDetailsModalComponent {
-  digimonDetailsModalId = 'digimon-details-modal';
+  digimonDetailsModalId = signal('digimon-details-modal');
   evolutionTreeModalId = 'evolution-tree-modal';
 
   globalState = inject(GlobalStateDataSource);
-  modalService = inject(ModalService);
+  modalService = inject(ModalV2Service);
   audioService = inject(AudioService);
   translocoService = inject(TranslocoService);
 
@@ -134,6 +133,8 @@ export class DigimonDetailsModalComponent {
 
   openEvolutionTreeModal() {
     this.audioService.playAudio(AudioEffects.CLICK);
-    this.modalService.open(this.evolutionTreeModalId);
+    this.modalService.open(this.evolutionTreeModalId, EvolutionTreeModalComponent, {
+      mainDigimon: this.globalState.selectedDigimonOnDetailsAccessor
+    });
   }
 }

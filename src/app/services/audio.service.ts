@@ -6,7 +6,6 @@ import { AudioEffects, AudioTracks } from '../core/enums/audio-tracks.enum';
 })
 export class AudioService {
   private audioMap: { [key: string]: HTMLAudioElement } = {};
-
   private shouldPlayAudio: boolean = true;
 
   constructor() {
@@ -28,7 +27,6 @@ export class AudioService {
     Object.values(AudioTracks).forEach((trackUrl) => {
       this.preloadAudio(trackUrl);
     });
-
     Object.values(AudioEffects).forEach((trackUrl) => {
       this.preloadAudio(trackUrl);
     });
@@ -55,11 +53,17 @@ export class AudioService {
     audio.currentTime = 0;
     audio.loop = loop;
 
-    return new Promise((resolve) => {
+    return new Promise((resolve, reject) => {
       audio.onended = () => resolve();
+      audio.onerror = () => reject(new Error(`Error playing audio track ${trackUrl}`));
+
       audio.play().catch((error) => {
+        if (error.name === 'AbortError') {
+          resolve();
+          return;
+        }
         console.error(`Error playing audio track ${trackUrl}:`, error);
-        resolve();
+        reject(error);
       });
     });
   }

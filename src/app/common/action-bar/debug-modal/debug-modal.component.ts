@@ -1,5 +1,4 @@
 import { ChangeDetectorRef, Component, inject, signal } from '@angular/core';
-import { ModalComponent } from '../../../shared/components/modal/modal.component';
 import { ButtonComponent } from '../../../shared/components/button/button.component';
 import { GlobalStateDataSource } from '../../../state/global-state.datasource';
 import { ToastService } from '../../../shared/components/toast/toast.service';
@@ -7,19 +6,19 @@ import { DigimonSelectionModalComponent } from '../../../shared/components/digim
 import { ModalService } from '../../../shared/components/modal/modal.service';
 import { DigimonService } from '../../../services/digimon.service';
 import { BaseDigimon } from '../../../core/interfaces/digimon.interface';
-
 import { FormsModule } from '@angular/forms';
 import { Subject, takeUntil } from 'rxjs';
 import { CheckboxComponent } from 'app/shared/components/checkbox/checkbox.component';
 import { TranslocoModule } from '@jsverse/transloco';
 import { ModalV2Service } from 'app/shared/components/modalV2/modal.service';
 import { EvolutionTreeModalComponent } from 'app/shared/components/evolution-tree-modal/evolution-tree-modal.component';
+import { ModalV2Component } from 'app/shared/components/modalV2/modal.component';
 
 @Component({
   selector: 'app-debug-modal',
   standalone: true,
   imports: [
-    ModalComponent,
+    ModalV2Component,
     ButtonComponent,
     DigimonSelectionModalComponent,
     FormsModule,
@@ -42,12 +41,12 @@ export class DebugModalComponent {
   generateEvolutionLine = false;
   $OnDestroy = new Subject<void>();
 
-  globalState = inject(GlobalStateDataSource);
-  toastService = inject(ToastService);
-  modalService = inject(ModalService);
-  modalServiceV2 = inject(ModalV2Service)
-  digimonService = inject(DigimonService);
-  changeDectorRef = inject(ChangeDetectorRef);
+  private globalState = inject(GlobalStateDataSource);
+  private toastService = inject(ToastService);
+  private modalService = inject(ModalService);
+  private modalServiceV2 = inject(ModalV2Service)
+  private digimonService = inject(DigimonService);
+  private changeDectorRef = inject(ChangeDetectorRef);
 
   tools = [
     { name: 'SHARED.COMPONENTS.DEBUG_MODAL.GIVE_RANDOM_DIGIMON', action: this.giveRandomDigimon.bind(this) },

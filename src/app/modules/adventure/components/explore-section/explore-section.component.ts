@@ -2,12 +2,12 @@ import { Component, inject, signal } from '@angular/core';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 import { GlobalStateDataSource } from '../../../../state/global-state.datasource';
 import { BattleModalComponent } from '../../../../shared/components/battle-modal/battle-modal.component';
-import { ModalService } from '../../../../shared/components/modal/modal.service';
 import { Digimon } from '../../../../core/interfaces/digimon.interface';
 import { ToastService } from '../../../../shared/components/toast/toast.service';
 import { DigimonSeeds } from '../../../../core/enums/digimon-seeds.enum';
 import { AudioService } from '../../../../services/audio.service';
 import { AudioEffects } from '../../../../core/enums/audio-tracks.enum';
+import { ModalV2Service } from 'app/shared/components/modalV2/modal.service';
 
 interface Location {
   name: string;
@@ -24,15 +24,15 @@ interface Location {
   styleUrl: './explore-section.component.scss',
 })
 export class ExploreSectionComponent {
-  translocoService = inject(TranslocoService);
-  globalState = inject(GlobalStateDataSource);
-  modalService = inject(ModalService);
-  toastService = inject(ToastService);
-  audioService = inject(AudioService);
+  protected globalState = inject(GlobalStateDataSource);
+  private modalService = inject(ModalV2Service);
+  private translocoService = inject(TranslocoService);
+  private toastService = inject(ToastService);
+  private audioService = inject(AudioService);
 
   locations: Location[] = [
     {
-  name: this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_LOGIN_MOUNTAIN'),
+      name: this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_LOGIN_MOUNTAIN'),
       img: 'assets/environments/loginmountain.png',
       possibleEcounterDigimonSeeds: [
         DigimonSeeds.BOTAMON,
@@ -48,7 +48,7 @@ export class ExploreSectionComponent {
       levelRange: { min: 1, max: 10 },
     },
     {
-  name: this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_PIXEL_DESERT'),
+      name: this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_PIXEL_DESERT'),
       img: 'assets/environments/pixeldesert.png',
       possibleEcounterDigimonSeeds: [
         DigimonSeeds.KOROMON,
@@ -65,7 +65,7 @@ export class ExploreSectionComponent {
       levelRange: { min: 5, max: 15 },
     },
     {
-  name: this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_LABEL_FOREST'),
+      name: this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_LABEL_FOREST'),
       img: 'assets/environments/labelforest.png',
       possibleEcounterDigimonSeeds: [
         DigimonSeeds.TENTOMON,
@@ -81,7 +81,7 @@ export class ExploreSectionComponent {
       levelRange: { min: 10, max: 20 },
     },
     {
-  name: this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_REGISTER_JUNGLE'),
+      name: this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_REGISTER_JUNGLE'),
       img: 'assets/environments/registerjungle.png',
       possibleEcounterDigimonSeeds: [
         DigimonSeeds.GABUMON,
@@ -97,7 +97,7 @@ export class ExploreSectionComponent {
       levelRange: { min: 15, max: 25 },
     },
     {
-  name: this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_PROXY_ISLAND'),
+      name: this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_PROXY_ISLAND'),
       img: 'assets/environments/proxyisland.png',
       possibleEcounterDigimonSeeds: [
         DigimonSeeds.GOMAMON,
@@ -111,7 +111,7 @@ export class ExploreSectionComponent {
       levelRange: { min: 20, max: 30 },
     },
     {
-  name: this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_LIMIT_VALLEY'),
+      name: this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_LIMIT_VALLEY'),
       img: 'assets/environments/limitvalley.png',
       possibleEcounterDigimonSeeds: [
         DigimonSeeds.AGUMON,
@@ -128,7 +128,7 @@ export class ExploreSectionComponent {
       levelRange: { min: 25, max: 35 },
     },
     {
-  name: this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_LOOP_SWAMP'),
+      name: this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_LOOP_SWAMP'),
       img: 'assets/environments/loopswamp.png',
       possibleEcounterDigimonSeeds: [
         DigimonSeeds.BETAMON,
@@ -144,7 +144,7 @@ export class ExploreSectionComponent {
       levelRange: { min: 30, max: 40 },
     },
     {
-  name: this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_ACCESS_GLACIER'),
+      name: this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_ACCESS_GLACIER'),
       img: 'assets/environments/accessglacier.png',
       possibleEcounterDigimonSeeds: [
         DigimonSeeds.GABUMON,
@@ -157,7 +157,7 @@ export class ExploreSectionComponent {
       levelRange: { min: 35, max: 45 },
     },
     {
-  name: this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_ANGLER_TUNNEL'),
+      name: this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_ANGLER_TUNNEL'),
       img: 'assets/environments/anglertunnel.png',
       possibleEcounterDigimonSeeds: [
         DigimonSeeds.KOKUWAMON,
@@ -169,7 +169,7 @@ export class ExploreSectionComponent {
       levelRange: { min: 40, max: 50 },
     },
     {
-  name: this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_MAGNET_MINE'),
+      name: this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_MAGNET_MINE'),
       img: 'assets/environments/magnetmine.png',
       possibleEcounterDigimonSeeds: [
         DigimonSeeds.RIZE_GREYMON,
@@ -181,7 +181,7 @@ export class ExploreSectionComponent {
       levelRange: { min: 45, max: 55 },
     },
     {
-  name: this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_PACKET_COAST'),
+      name: this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_PACKET_COAST'),
       img: 'assets/environments/packetcoast.png',
       possibleEcounterDigimonSeeds: [
         DigimonSeeds.TSUNOMON,
@@ -196,7 +196,7 @@ export class ExploreSectionComponent {
       levelRange: { min: 50, max: 60 },
     },
     {
-  name: this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_PALLETE_AMAZON'),
+      name: this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_PALLETE_AMAZON'),
       img: 'assets/environments/paletteamazon.png',
       possibleEcounterDigimonSeeds: [
         DigimonSeeds.BETAMON,
@@ -212,7 +212,7 @@ export class ExploreSectionComponent {
       levelRange: { min: 55, max: 65 },
     },
     {
-  name: this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_THRILLER_RUINS'),
+      name: this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_THRILLER_RUINS'),
       img: 'assets/environments/thrillerruins.png',
       possibleEcounterDigimonSeeds: [
         DigimonSeeds.MACHINEDRAMON,
@@ -225,7 +225,7 @@ export class ExploreSectionComponent {
       levelRange: { min: 60, max: 70 },
     },
     {
-  name: this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_RISK_FACTORY'),
+      name: this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_RISK_FACTORY'),
       img: 'assets/environments/riskfactory.png',
       possibleEcounterDigimonSeeds: [
         DigimonSeeds.AIRDRAMON,
@@ -240,7 +240,7 @@ export class ExploreSectionComponent {
       levelRange: { min: 65, max: 75 },
     },
     {
-  name: this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_SHADOW_ABYSS'),
+      name: this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_SHADOW_ABYSS'),
       img: 'assets/environments/shadowabyss.png',
       possibleEcounterDigimonSeeds: [
         DigimonSeeds.BETAMON,
@@ -257,7 +257,7 @@ export class ExploreSectionComponent {
       levelRange: { min: 70, max: 85 },
     },
     {
-  name: this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_WIZARD_TEMPLE'),
+      name: this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_WIZARD_TEMPLE'),
       img: 'assets/environments/wizardtemple.png',
       possibleEcounterDigimonSeeds: [
         DigimonSeeds.ANGEWOMON,
@@ -283,17 +283,19 @@ export class ExploreSectionComponent {
   exploreLocation(location: Location) {
     this.currentLocation.set(location);
     this.audioService.playAudio(AudioEffects.CLICK);
-  this.log(this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.LOG_EXPLORING_LOCATION', { location: location.name }));
+    this.log(this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.LOG_EXPLORING_LOCATION', { location: location.name }));
 
     if (this.isPlayerTeamEmpty()) {
-  const noDigimonMsg = this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.NO_DIGIMON_TO_EXPLORE');
-  this.log(noDigimonMsg);
-  this.toastService.showToast(noDigimonMsg, 'error');
+      const noDigimonMsg = this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.NO_DIGIMON_TO_EXPLORE');
+      this.log(noDigimonMsg);
+      this.toastService.showToast(noDigimonMsg, 'error');
       return;
     }
 
     this.generateOpponentsOnExploreLocation(location);
-    this.modalService.open('battle-modal');
+    this.modalService.open('battle-modal', BattleModalComponent, {
+      imageBackground: location.img
+    });
 
     this.startBattle();
   }
@@ -313,12 +315,12 @@ export class ExploreSectionComponent {
       for (let i = 0; i < randomNumber; i++) {
         const randomLevel = Math.floor(
           Math.random() * (location.levelRange.max - location.levelRange.min) +
-            location.levelRange.min
+          location.levelRange.min
         );
         const opponentDigimon =
           this.globalState.generateRandomDigimon(randomLevel);
         this.globalState.enemyTeamAccessor.push(opponentDigimon);
-  this.log(this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.ENEMY_FOUND', { name: opponentDigimon.name }));
+        this.log(this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.ENEMY_FOUND', { name: opponentDigimon.name }));
       }
       return;
     }
@@ -326,7 +328,7 @@ export class ExploreSectionComponent {
     for (let i = 0; i < randomNumber; i++) {
       const randomLevel = Math.floor(
         Math.random() * (location.levelRange.max - location.levelRange.min) +
-          location.levelRange.min
+        location.levelRange.min
       );
       const randomPossibleSeedIndex = Math.floor(
         Math.random() * location.possibleEcounterDigimonSeeds.length
@@ -337,7 +339,7 @@ export class ExploreSectionComponent {
       );
       if (!opponentDigimon) return;
       this.globalState.enemyTeamAccessor.push(opponentDigimon);
-  this.log(this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.ENEMY_FOUND', { name: opponentDigimon.name }));
+      this.log(this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.ENEMY_FOUND', { name: opponentDigimon.name }));
     }
   }
 

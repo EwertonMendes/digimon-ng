@@ -1,21 +1,20 @@
 import { Component, inject, input, signal } from '@angular/core';
-import { ModalComponent } from '../modal/modal.component';
 import { GlobalStateDataSource } from '../../../state/global-state.datasource';
 import { DigiStatusCardComponent } from '../digi-status-card/digi-status-card.component';
-import { ToastService } from '../toast/toast.service';
 import { ButtonComponent } from '../button/button.component';
 import { AudioService } from '../../../services/audio.service';
 import { AudioEffects } from '../../../core/enums/audio-tracks.enum';
 import { CommonModule } from '@angular/common';
 import { Digimon } from 'app/core/interfaces/digimon.interface';
 import { TranslocoModule } from '@jsverse/transloco';
+import { ModalV2Component } from '../modalV2/modal.component';
 
 @Component({
   selector: 'app-battle-modal',
   standalone: true,
   imports: [
     CommonModule,
-    ModalComponent,
+    ModalV2Component,
     DigiStatusCardComponent,
     ButtonComponent,
     TranslocoModule
@@ -29,9 +28,8 @@ export class BattleModalComponent {
   showPlayerAttackButton = false;
   isChoosingDigimonToAttack = signal(false);
 
-  globalState = inject(GlobalStateDataSource);
-  toastService = inject(ToastService);
-  audioService = inject(AudioService);
+  protected globalState = inject(GlobalStateDataSource);
+  private audioService = inject(AudioService);
 
   onBattleModalClose() {
     this.globalState.resetBattleState();

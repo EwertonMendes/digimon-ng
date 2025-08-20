@@ -6,12 +6,12 @@ import { AudioService } from 'app/services/audio.service';
 import { SelectComponent } from 'app/shared/components/select/select.component';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 import { Subscription } from 'rxjs';
-import { ModalComponent } from 'app/shared/components/modal/modal.component';
+import { ModalV2Component } from 'app/shared/components/modalV2/modal.component';
 
 @Component({
   selector: 'app-config-modal',
   standalone: true,
-  imports: [ModalComponent, CheckboxComponent, SelectComponent, FormsModule, TranslocoModule],
+  imports: [ModalV2Component, CheckboxComponent, SelectComponent, FormsModule, TranslocoModule],
   templateUrl: './config-modal.component.html',
   styleUrls: ['./config-modal.component.scss']
 })
@@ -29,8 +29,8 @@ export class ConfigModalComponent implements OnInit, OnDestroy {
   themes = THEMES;
   selectedTheme = signal(THEMES[0]);
 
-  audioService = inject(AudioService);
-  translocoService = inject(TranslocoService);
+  private audioService = inject(AudioService);
+  private translocoService = inject(TranslocoService);
 
   private translationSubscription: Subscription | undefined;
 

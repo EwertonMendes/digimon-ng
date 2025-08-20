@@ -3,9 +3,9 @@ import { DigiStatusCardComponent } from '../../../../shared/components/digi-stat
 import { GlobalStateDataSource } from '../../../../state/global-state.datasource';
 import { Digimon } from '../../../../core/interfaces/digimon.interface';
 import {
-    CdkDragDrop,
-    DragDropModule,
-    moveItemInArray,
+  CdkDragDrop,
+  DragDropModule,
+  moveItemInArray,
 } from '@angular/cdk/drag-drop';
 import { DigimonListLocation } from '../../../../core/enums/digimon-list-location.enum';
 import { PlayerData } from '../../../../core/interfaces/player-data.interface';
@@ -13,7 +13,7 @@ import { AudioService } from '../../../../services/audio.service';
 import { AudioEffects } from '../../../../core/enums/audio-tracks.enum';
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
 import { HospitalService } from '../../../../state/services/hospital.service';
-import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
+import { TranslocoModule } from '@jsverse/transloco';
 import { TooltipDirective } from 'app/directives/tooltip.directive';
 import { ModalService } from 'app/shared/components/modal/modal.service';
 import { DigimonDetailsModalComponent } from 'app/shared/components/digimon-details-modal/digimon-details-modal.component';
@@ -45,8 +45,7 @@ export class HomeSectionComponent {
     'hospital-digimon-list': DigimonListLocation.HOSPITAL,
   };
 
-  constructor(private translocoService: TranslocoService) {
-    this.translocoService.setActiveLang('pt-br');
+  constructor() {
     effect(() => {
       this.canHealAll.set(
         this.globalState.playerDataAcessor.hospitalDigimonList.length > 0 &&

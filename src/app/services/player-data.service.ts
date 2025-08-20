@@ -10,6 +10,15 @@ export class PlayerDataService {
 
   private readonly fileName = 'player-data.json';
   private readonly baseDir = BaseDirectory.AppData;
+  private playerId!: string;
+
+  set currentPlayerId(value: string) {
+    this.playerId = value
+  }
+
+  get currentPlayerId() {
+    return this.playerId;
+  }
 
   private async getFilePath(): Promise<string> {
     const dir = await appDataDir();
@@ -36,7 +45,9 @@ export class PlayerDataService {
       }
 
       const fileContent = await readTextFile(filePath, { baseDir: this.baseDir });
-      return JSON.parse(fileContent) as PlayerData;
+      const loadedPlayerData = JSON.parse(fileContent) as PlayerData;
+      this.playerId = loadedPlayerData.id;
+      return loadedPlayerData;
     } catch (err) {
       console.error('Error loading player data:', err);
       return null;

@@ -85,6 +85,7 @@ export class InitialSetupComponent implements OnInit {
   translocoService = inject(TranslocoService);
 
   ngOnInit(): void {
+    this.changeLanguage('en')
     this.teams = this.selectableTeams.map((team) => {
       return {
         name: team.name,

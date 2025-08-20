@@ -6,7 +6,7 @@ import { AudioEffects, AudioTracks } from '../core/enums/audio-tracks.enum';
 })
 export class AudioService {
   private audioMap: { [key: string]: HTMLAudioElement } = {};
-  private shouldPlayAudio: boolean = true;
+  private shouldPlayAudio!: boolean;
 
   constructor() {
     this.preloadAllAudios();

@@ -15,6 +15,9 @@ import { AudioService } from '../services/audio.service';
 import { AudioEffects, AudioTracks } from '../core/enums/audio-tracks.enum';
 import { TranslocoService } from '@jsverse/transloco';
 import { v4 as uuidv4 } from 'uuid';
+import { ConfigService } from 'app/services/config.service';
+import { ThemeService } from 'app/services/theme.service';
+import { PlayerConfig } from 'app/core/interfaces/player-config.interface';
 
 type EndBattleState = 'victory' | 'defeat' | 'draw';
 type DigimonWithOwner = Digimon & { owner: string };
@@ -24,6 +27,7 @@ type DigimonWithOwner = Digimon & { owner: string };
 export class GlobalStateDataSource {
   toastService = inject(ToastService);
   translocoService = inject(TranslocoService);
+
   private playerData = signal<PlayerData>({
     id: '',
     name: '',
@@ -130,6 +134,8 @@ export class GlobalStateDataSource {
   digimonService = inject(DigimonService);
   playerDataService = inject(PlayerDataService);
   audioService = inject(AudioService);
+  configService = inject(ConfigService)
+  themeService = inject(ThemeService);
 
   trainingService = inject(TrainingService);
   farmingService = inject(FarmingService);
@@ -248,8 +254,24 @@ export class GlobalStateDataSource {
     }
   }
 
-  initializeGame(playerData: PlayerData) {
+  loadConfigs(newGame: boolean) {
+    const initialConfig: PlayerConfig = {
+      ...this.configService.defaultInitialConfig,
+      language: this.translocoService.getActiveLang()
+    };
+    this.configService.loadConfig().then(config => {
+      this.audioService.isAudioEnabled = initialConfig.enableAudio
+      this.themeService.setTheme(initialConfig.theme);
+      this.translocoService.setActiveLang(newGame ? initialConfig.language : config.language);
+    });
+  }
+
+  initializeGame(playerData: PlayerData, newGame = false) {
     this.playerData.set(playerData);
+
+    this.playerDataService.currentPlayerId = playerData.id;
+
+    this.loadConfigs(newGame);
 
     this.allPlayerDigimonList().forEach((digimon) => {
       this.trackDigimon(digimon);
@@ -284,7 +306,7 @@ export class GlobalStateDataSource {
 
     this.playerDataService.savePlayerData(newPlayerData);
 
-    this.initializeGame(newPlayerData);
+    this.initializeGame(newPlayerData, true);
 
     this.showInitialSetupScreen.set(false);;
   }

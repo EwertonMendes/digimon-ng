@@ -1,6 +1,7 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { THEMES } from 'app/core/consts/themes';
 import { BehaviorSubject } from 'rxjs';
+import { ConfigService } from './config.service';
 
 export interface Theme {
   name: string;
@@ -16,9 +17,7 @@ export class ThemeService {
   private currentThemeSubject = new BehaviorSubject<Theme>(this.themes[0]);
   currentTheme$ = this.currentThemeSubject.asObservable();
 
-  constructor() {
-    this.applyTheme(this.themes[0].name);
-  }
+  private configService = inject(ConfigService);
 
   getThemes(): Theme[] {
     return this.themes;
@@ -34,6 +33,7 @@ export class ThemeService {
 
     this.currentThemeSubject.next(newTheme);
     this.applyTheme(newTheme.name);
+    this.configService.updateConfig("theme", newTheme.name);
   }
 
   private applyTheme(themeName: string): void {

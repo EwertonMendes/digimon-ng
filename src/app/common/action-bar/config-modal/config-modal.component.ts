@@ -7,6 +7,7 @@ import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 import { Subscription } from 'rxjs';
 import { ModalComponent } from 'app/shared/components/modal/modal.component';
 import { ThemeService } from 'app/services/theme.service';
+import { ConfigService } from 'app/services/config.service';
 
 @Component({
   selector: 'app-config-modal',
@@ -38,6 +39,7 @@ export class ConfigModalComponent implements OnInit, OnDestroy {
   private audioService = inject(AudioService);
   private translocoService = inject(TranslocoService);
   private themeService = inject(ThemeService);
+  private configService = inject(ConfigService);
 
   private translationSubscription?: Subscription;
 
@@ -58,10 +60,12 @@ export class ConfigModalComponent implements OnInit, OnDestroy {
 
     this.form.get('enableAudio')?.valueChanges.subscribe(value => {
       this.audioService.isAudioEnabled = value;
+      this.configService.updateConfig("enableAudio", value);
     });
 
     this.form.get('selectedLanguage')?.valueChanges.subscribe(lang => {
       this.translocoService.setActiveLang(lang);
+      this.configService.updateConfig("language", lang);
     });
 
     this.form.get('selectedTheme')?.valueChanges.subscribe(themeName => {

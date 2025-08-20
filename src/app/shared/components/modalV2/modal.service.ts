@@ -1,4 +1,4 @@
-import { ApplicationRef, Injectable, Type, ComponentRef, createComponent } from '@angular/core';
+import { ApplicationRef, Injectable, Type, ComponentRef, createComponent, reflectComponentType } from '@angular/core';
 import { Subject, BehaviorSubject, Observable } from 'rxjs';
 import { filter, shareReplay, distinctUntilChanged, map } from 'rxjs/operators';
 
@@ -56,6 +56,12 @@ export class ModalV2Service {
 
     const domElement = ((componentRef.hostView as any).rootNodes[0] as HTMLElement);
     const modalElement = domElement.getElementsByTagName("app-modal")[0] as HTMLElement
+
+    const componentMetadata = reflectComponentType(component);
+    const hasIdInput = componentMetadata?.inputs.some(input => input.propName === 'id');
+
+    if (hasIdInput) componentRef.setInput('id', id);
+
     modalElement.id = id;
 
     modalElement.style.display = 'block';

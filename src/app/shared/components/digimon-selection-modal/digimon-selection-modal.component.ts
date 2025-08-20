@@ -1,7 +1,7 @@
 import { Component, input, output } from '@angular/core';
 import { BaseDigimon } from '../../../core/interfaces/digimon.interface';
 import { TranslocoModule } from '@jsverse/transloco';
-import { ModalComponent } from '../modalV2/modal.component';
+import { ModalComponent } from '../modal/modal.component';
 
 @Component({
   selector: 'app-digimon-selection-modal',

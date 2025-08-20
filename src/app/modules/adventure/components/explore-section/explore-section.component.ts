@@ -7,7 +7,7 @@ import { ToastService } from '../../../../shared/components/toast/toast.service'
 import { DigimonSeeds } from '../../../../core/enums/digimon-seeds.enum';
 import { AudioService } from '../../../../services/audio.service';
 import { AudioEffects } from '../../../../core/enums/audio-tracks.enum';
-import { ModalService } from 'app/shared/components/modalV2/modal.service';
+import { ModalService } from 'app/shared/components/modal/modal.service';
 
 interface Location {
   name: string;

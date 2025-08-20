@@ -7,7 +7,7 @@ import { DigimonService } from 'app/services/digimon.service';
 import { ButtonComponent } from 'app/shared/components/button/button.component';
 import { CheckboxComponent } from 'app/shared/components/checkbox/checkbox.component';
 import { DigimonSelectionModalComponent } from 'app/shared/components/digimon-selection-modal/digimon-selection-modal.component';
-import { ModalService } from 'app/shared/components/modalV2/modal.service';
+import { ModalService } from 'app/shared/components/modal/modal.service';
 import { ToastService } from 'app/shared/components/toast/toast.service';
 import { GlobalStateDataSource } from 'app/state/global-state.datasource';
 import { Subject } from 'rxjs';

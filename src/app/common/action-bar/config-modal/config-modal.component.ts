@@ -6,7 +6,7 @@ import { AudioService } from 'app/services/audio.service';
 import { SelectComponent } from 'app/shared/components/select/select.component';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 import { Subscription } from 'rxjs';
-import { ModalComponent } from 'app/shared/components/modalV2/modal.component';
+import { ModalComponent } from 'app/shared/components/modal/modal.component';
 
 @Component({
   selector: 'app-config-modal',

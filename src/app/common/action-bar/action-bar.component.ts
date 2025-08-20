@@ -12,7 +12,7 @@ import { environment } from 'app/environments/environment';
 import { ConfigModalComponent } from './config-modal/config-modal.component';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 import { TooltipDirective } from 'app/directives/tooltip.directive';
-import { ModalService } from 'app/shared/components/modalV2/modal.service';
+import { ModalService } from 'app/shared/components/modal/modal.service';
 
 @Component({
   selector: 'app-action-bar',

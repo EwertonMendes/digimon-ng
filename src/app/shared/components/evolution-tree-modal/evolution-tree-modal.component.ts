@@ -23,8 +23,8 @@ import '@phosphor-icons/web/light';
 import '@phosphor-icons/web/bold';
 import { AudioEffects } from '../../../core/enums/audio-tracks.enum';
 import { AudioService } from '../../../services/audio.service';
-import { ModalComponent } from '../modalV2/modal.component';
-import { ModalService } from '../modalV2/modal.service';
+import { ModalComponent } from '../modal/modal.component';
+import { ModalService } from '../modal/modal.service';
 import { EvolutionConfirmationModalCloseEvent, EvolutionConfirmationModalComponent } from './components/evolution-confirmation-modal/evolution-confirmation-modal.component';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 

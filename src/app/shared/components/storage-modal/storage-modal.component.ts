@@ -8,9 +8,9 @@ import { ButtonComponent } from '../button/button.component';
 import { DigiStatusCardComponent } from '../digi-status-card/digi-status-card.component';
 import { TranslocoModule } from '@jsverse/transloco';
 import { TooltipDirective } from 'app/directives/tooltip.directive';
-import { ModalService } from '../modalV2/modal.service';
+import { ModalService } from '../modal/modal.service';
 import { DigimonDetailsModalComponent } from '../digimon-details-modal/digimon-details-modal.component';
-import { ModalComponent } from '../modalV2/modal.component';
+import { ModalComponent } from '../modal/modal.component';
 
 @Component({
   selector: 'app-storage-modal',

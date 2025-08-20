@@ -15,7 +15,7 @@ import { ButtonComponent } from '../../../../shared/components/button/button.com
 import { HospitalService } from '../../../../state/services/hospital.service';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 import { TooltipDirective } from 'app/directives/tooltip.directive';
-import { ModalService } from 'app/shared/components/modalV2/modal.service';
+import { ModalService } from 'app/shared/components/modal/modal.service';
 import { DigimonDetailsModalComponent } from 'app/shared/components/digimon-details-modal/digimon-details-modal.component';
 
 @Component({

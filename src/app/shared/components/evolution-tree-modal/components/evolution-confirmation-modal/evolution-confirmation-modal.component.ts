@@ -2,8 +2,8 @@ import { Component, inject, input, signal } from "@angular/core";
 import { TranslocoModule } from "@jsverse/transloco";
 import { Digimon, BaseDigimon } from "app/core/interfaces/digimon.interface";
 import { ButtonComponent } from "app/shared/components/button/button.component";
-import { ModalComponent } from "app/shared/components/modalV2/modal.component";
-import { ModalService } from "app/shared/components/modalV2/modal.service";
+import { ModalComponent } from "app/shared/components/modal/modal.component";
+import { ModalService } from "app/shared/components/modal/modal.service";
 import { GlobalStateDataSource } from "app/state/global-state.datasource";
 
 export interface EvolutionConfirmationModalCloseEvent {

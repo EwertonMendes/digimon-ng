@@ -8,8 +8,8 @@ import { BaseDigimon } from '../../../core/interfaces/digimon.interface';
 import { AudioEffects } from '../../../core/enums/audio-tracks.enum';
 import { AudioService } from '../../../services/audio.service';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
-import { ModalComponent } from '../modalV2/modal.component';
-import { ModalService } from '../modalV2/modal.service';
+import { ModalComponent } from '../modal/modal.component';
+import { ModalService } from '../modal/modal.service';
 
 @Component({
   standalone: true,

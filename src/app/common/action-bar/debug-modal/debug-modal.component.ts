@@ -3,8 +3,8 @@ import { ButtonComponent } from '../../../shared/components/button/button.compon
 import { GlobalStateDataSource } from '../../../state/global-state.datasource';
 import { ToastService } from '../../../shared/components/toast/toast.service';
 import { TranslocoModule } from '@jsverse/transloco';
-import { ModalService } from 'app/shared/components/modalV2/modal.service';
-import { ModalComponent } from 'app/shared/components/modalV2/modal.component';
+import { ModalService } from 'app/shared/components/modal/modal.service';
+import { ModalComponent } from 'app/shared/components/modal/modal.component';
 import { GiveSelectedDigimonModalComponent } from './components/give-selected-digimon-modal/give-selected-digimon-modal.component';
 import { SeeEvolutionTreeModalComponent } from './components/see-evolution-tree-modal/see-evolution-tree-modal.component';
 

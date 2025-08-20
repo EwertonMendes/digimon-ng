@@ -1,4 +1,8 @@
-<app-modal [id]="id()">
+<app-modal
+  [id]="id()"
+  (openEvent)="onOpen.emit()"
+  (closeEvent)="onClose.emit()"
+>
   <div class="digimon-selection-modal-container">
     <h3 class="section-title">
       {{ "SHARED.COMPONENTS.DIGIMON_SELECTION_MODAL.TITLE" | transloco }}

@@ -1,6 +1,5 @@
 import {
   AfterViewInit,
-  ChangeDetectorRef,
   Component,
   DestroyRef,
   effect,
@@ -60,14 +59,13 @@ export class EvolutionTreeModalComponent implements AfterViewInit {
   selectedDigimon = signal<BaseDigimon | null>(null);
   selectedPossibleEvolutionStats = signal<any | null>(null);
 
-  digimonService = inject(DigimonService);
-  graphService = inject(GraphService);
-  globalState = inject(GlobalStateDataSource);
-  modalService = inject(ModalV2Service);
-  audioService = inject(AudioService);
-  elementRef = inject(ElementRef<HTMLElement>);
-  destroyRef = inject(DestroyRef);
-  changeDetectorRef = inject(ChangeDetectorRef)
+  private digimonService = inject(DigimonService);
+  private graphService = inject(GraphService);
+  protected globalState = inject(GlobalStateDataSource);
+  private modalService = inject(ModalV2Service);
+  private audioService = inject(AudioService);
+  private elementRef = inject(ElementRef<HTMLElement>);
+  private destroyRef = inject(DestroyRef);
 
   constructor() {
     effect(

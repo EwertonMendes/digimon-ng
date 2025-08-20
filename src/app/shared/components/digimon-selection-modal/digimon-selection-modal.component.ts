@@ -1,21 +1,24 @@
 import { Component, input, output } from '@angular/core';
-import { ModalComponent } from '../modal/modal.component';
 import { BaseDigimon } from '../../../core/interfaces/digimon.interface';
 import { TranslocoModule } from '@jsverse/transloco';
+import { ModalV2Component } from '../modalV2/modal.component';
 
 @Component({
   selector: 'app-digimon-selection-modal',
   standalone: true,
-  imports: [ModalComponent, TranslocoModule],
+  imports: [ModalV2Component, TranslocoModule],
   templateUrl: './digimon-selection-modal.component.html',
   styleUrl: './digimon-selection-modal.component.scss',
 })
 export class DigimonSelectionModalComponent {
-  id = input<string>('digimon-selection-modal');
+  id = input.required<string>();
 
   digimonList = input<BaseDigimon[]>();
 
   onSelectDigimon = output<BaseDigimon>();
+
+  onOpen = output<void>();
+  onClose = output<void>();
 
   get groupedDigimonList() {
     const digimonList = this.digimonList();

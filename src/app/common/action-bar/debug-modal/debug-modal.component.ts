@@ -1,15 +1,12 @@
-import { ChangeDetectorRef, Component, inject, input, signal } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { ButtonComponent } from '../../../shared/components/button/button.component';
 import { GlobalStateDataSource } from '../../../state/global-state.datasource';
 import { ToastService } from '../../../shared/components/toast/toast.service';
-import { DigimonSelectionModalComponent } from '../../../shared/components/digimon-selection-modal/digimon-selection-modal.component';
-import { DigimonService } from '../../../services/digimon.service';
-import { BaseDigimon } from '../../../core/interfaces/digimon.interface';
 import { TranslocoModule } from '@jsverse/transloco';
 import { ModalV2Service } from 'app/shared/components/modalV2/modal.service';
-import { EvolutionTreeModalComponent } from 'app/shared/components/evolution-tree-modal/evolution-tree-modal.component';
 import { ModalV2Component } from 'app/shared/components/modalV2/modal.component';
 import { GiveSelectedDigimonModalComponent } from './components/give-selected-digimon-modal/give-selected-digimon-modal.component';
+import { SeeEvolutionTreeModalComponent } from './components/see-evolution-tree-modal/see-evolution-tree-modal.component';
 
 @Component({
   selector: 'app-debug-modal',
@@ -17,8 +14,6 @@ import { GiveSelectedDigimonModalComponent } from './components/give-selected-di
   imports: [
     ModalV2Component,
     ButtonComponent,
-    DigimonSelectionModalComponent,
-
     TranslocoModule
   ],
   templateUrl: './debug-modal.component.html',
@@ -28,17 +23,10 @@ export class DebugModalComponent {
   id = input('debug-modal');
   giveSelectedDigimonModalId = 'give-selected-digimon-modal-debug';
   seeEvolutionTreeModalId = 'see-evolution-tree-modal-debug';
-  evolutionTreeModalId = 'evolution-tree-modal-debug';
-
-  selectedEvolutionLineDigimon = signal<BaseDigimon>({} as BaseDigimon);
-  selectableDigimonList = signal<BaseDigimon[]>([]);
 
   private globalState = inject(GlobalStateDataSource);
   private toastService = inject(ToastService);
-  private modalService = inject(ModalV2Service);
-  private modalServiceV2 = inject(ModalV2Service)
-  private digimonService = inject(DigimonService);
-  private changeDetectorRef = inject(ChangeDetectorRef);
+  private modalService = inject(ModalV2Service)
 
   tools = [
     { name: 'SHARED.COMPONENTS.DEBUG_MODAL.GIVE_RANDOM_DIGIMON', action: this.giveRandomDigimon.bind(this) },
@@ -53,12 +41,6 @@ export class DebugModalComponent {
     { name: 'SHARED.COMPONENTS.DEBUG_MODAL.ERROR_TOAST_TEST', action: this.toastService.showToast.bind(this.toastService, 'Error!', 'error') },
   ];
 
-
-  async refreshDigimonList() {
-    await this.digimonService.readBaseDigimonDatabase();
-    this.changeDetectorRef.detectChanges();
-  }
-
   giveRandomDigimon() {
     const digimon = this.globalState.generateRandomDigimon();
     this.globalState.addDigimonToStorage(digimon);
@@ -66,14 +48,6 @@ export class DebugModalComponent {
       this.globalState.translocoService.translate('SHARED.COMPONENTS.DEBUG_MODAL.ADDED_TO_STORAGE', { name: digimon.name }),
       'success'
     );
-  }
-
-  openEvolutionTreeModal(digimon: BaseDigimon) {
-    this.selectedEvolutionLineDigimon.set(digimon);
-    this.changeDetectorRef.detectChanges();
-    this.modalServiceV2.open(this.evolutionTreeModalId, EvolutionTreeModalComponent, {
-      mainDigimon: digimon
-    });
   }
 
   resetStorage() {
@@ -86,6 +60,6 @@ export class DebugModalComponent {
   }
 
   openSeeEvolutionLinesDigimonModal() {
-    this.modalService.open(this.seeEvolutionTreeModalId, DigimonSelectionModalComponent);
+    this.modalService.open(this.seeEvolutionTreeModalId, SeeEvolutionTreeModalComponent);
   }
 }

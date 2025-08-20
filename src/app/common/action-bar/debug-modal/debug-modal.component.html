@@ -16,16 +16,3 @@
     </div>
   </div>
 </app-modal>
-
-<app-digimon-selection-modal
-  [id]="seeEvolutionTreeModalId"
-  [digimonList]="selectableDigimonList()"
-  (onSelectDigimon)="openEvolutionTreeModal($event)"
->
-  <app-button
-    [text]="'SHARED.COMPONENTS.DEBUG_MODAL.REFRESH_DIGIMON_LIST' | transloco"
-    color="primary"
-    (onClick)="refreshDigimonList()"
-  />
-</app-digimon-selection-modal>
-

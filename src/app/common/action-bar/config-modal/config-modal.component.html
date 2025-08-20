@@ -1,17 +1,18 @@
 <app-modal [id]="configModalId">
-  <div class="config-modal-container">
+  <form [formGroup]="form" class="config-modal-container">
     <h3 class="section-title">
       {{ "COMMON.ACTION_BAR.CONFIG_MODAL.TITLE" | transloco }}
     </h3>
+
     <div class="config-modal-content">
       <div class="config-item">
         <app-checkbox
           [label]="
             'COMMON.ACTION_BAR.CONFIG_MODAL.ENABLE_AUDIO.LABEL' | transloco
           "
-          [(ngModel)]="enableAudio"
-          (ngModelChange)="toggleAudio()"
-        />
+          formControlName="enableAudio"
+        >
+        </app-checkbox>
         <p class="config-description">
           {{
             "COMMON.ACTION_BAR.CONFIG_MODAL.ENABLE_AUDIO.DESCRIPTION"
@@ -19,22 +20,24 @@
           }}
         </p>
       </div>
+
       <div class="config-item">
         <app-select
           [label]="'COMMON.ACTION_BAR.CONFIG_MODAL.LANGUAGE.LABEL' | transloco"
           [options]="languageOptions"
-          [(ngModel)]="selectedLanguage"
-          (ngModelChange)="changeLanguage($event)"
-        />
+          formControlName="selectedLanguage"
+        >
+        </app-select>
       </div>
+
       <div class="config-item">
         <app-select
           [label]="'COMMON.ACTION_BAR.CONFIG_MODAL.THEME.LABEL' | transloco"
           [options]="themeOptions()"
-          [ngModel]="selectedTheme().name"
-          (ngModelChange)="onThemeChange($event)"
-        ></app-select>
+          formControlName="selectedTheme"
+        >
+        </app-select>
       </div>
     </div>
-  </div>
+  </form>
 </app-modal>

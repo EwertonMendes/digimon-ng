@@ -1,6 +1,7 @@
 import { Digimon } from "./digimon.interface";
 
 export interface PlayerData {
+  id: string;
   name: string;
   level: number;
   exp: number;

@@ -14,6 +14,7 @@ import { ToastService } from '../shared/components/toast/toast.service';
 import { AudioService } from '../services/audio.service';
 import { AudioEffects, AudioTracks } from '../core/enums/audio-tracks.enum';
 import { TranslocoService } from '@jsverse/transloco';
+import { v4 as uuidv4 } from 'uuid';
 
 type EndBattleState = 'victory' | 'defeat' | 'draw';
 type DigimonWithOwner = Digimon & { owner: string };
@@ -24,6 +25,7 @@ export class GlobalStateDataSource {
   toastService = inject(ToastService);
   translocoService = inject(TranslocoService);
   private playerData = signal<PlayerData>({
+    id: '',
     name: '',
     level: 0,
     exp: 0,
@@ -260,6 +262,7 @@ export class GlobalStateDataSource {
 
   confirmInitialSetup(playerName: string, selectedDigimons: Digimon[]) {
     const newPlayerData: PlayerData = {
+      id: uuidv4(),
       name: playerName,
       level: 1,
       exp: 0,

@@ -1,4 +1,11 @@
-import { ApplicationRef, Injectable, Type, ComponentRef, createComponent, reflectComponentType } from '@angular/core';
+import {
+  ApplicationRef,
+  Injectable,
+  Type,
+  ComponentRef,
+  createComponent,
+  reflectComponentType,
+} from '@angular/core';
 import { Subject, BehaviorSubject, Observable } from 'rxjs';
 import { filter, shareReplay, distinctUntilChanged, map } from 'rxjs/operators';
 
@@ -108,5 +115,9 @@ export class ModalService {
     if (lastModalId) {
       this.close(lastModalId, false);
     }
+  }
+
+  isLastModal(id: string): boolean {
+    return this.modalStack[this.modalStack.length - 1] === id;
   }
 }

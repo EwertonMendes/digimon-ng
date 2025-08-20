@@ -22,6 +22,13 @@ import { AudioEffects } from 'app/core/enums/audio-tracks.enum';
   encapsulation: ViewEncapsulation.None,
 })
 export class ModalComponent implements OnInit, OnDestroy {
+  @HostListener('document:keydown.escape')
+  handleEscapeKey(): void {
+    if (this.modalService.isLastModal(this.id()!)) {
+      this.close(true);
+    }
+  }
+
   id = input.required<string>();
   closable = input<boolean>(true);
 
@@ -42,16 +49,11 @@ export class ModalComponent implements OnInit, OnDestroy {
     this.openEvent.emit();
   }
 
-  @HostListener('document:keydown.escape')
-  handleEscapeKey(): void {
-    this.close(true, true);
-  }
-
   ngOnDestroy(): void {
     this.element.remove();
   }
 
-  close(playClickSound = false, closeLast = false): void {
+  close(playClickSound = false): void {
     if (!this.closable()) return;
 
     if (playClickSound) {
@@ -59,7 +61,6 @@ export class ModalComponent implements OnInit, OnDestroy {
     }
 
     this.closeEvent.emit();
-
-    closeLast ? this.modalService.closeLast() : this.modalService.close(this.id());
+    this.modalService.close(this.id()!);
   }
 }

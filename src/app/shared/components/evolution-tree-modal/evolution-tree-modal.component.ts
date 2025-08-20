@@ -329,7 +329,7 @@ export class EvolutionTreeModalComponent implements AfterViewInit {
       )
       .subscribe(async (result: EvolutionConfirmationModalCloseEvent) => {
 
-        if (!this.mainDigimon() || !this.selectedDigimon() || !this.isDigimon(this.mainDigimon()) || !result.refreshGraph) return;
+        if (!this.mainDigimon() || !this.selectedDigimon() || !this.isDigimon(this.mainDigimon()) || !result?.refreshGraph) return;
 
         this.onClose();
         this.onOpen();

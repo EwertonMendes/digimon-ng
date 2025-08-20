@@ -6,7 +6,7 @@ import { DigimonService } from 'app/services/digimon.service';
 import { ButtonComponent } from 'app/shared/components/button/button.component';
 import { DigimonSelectionModalComponent } from 'app/shared/components/digimon-selection-modal/digimon-selection-modal.component';
 import { EvolutionTreeModalComponent } from 'app/shared/components/evolution-tree-modal/evolution-tree-modal.component';
-import { ModalV2Service } from 'app/shared/components/modalV2/modal.service';
+import { ModalService } from 'app/shared/components/modalV2/modal.service';
 
 @Component({
   selector: 'app-see-evolution-tree-modal',
@@ -23,7 +23,7 @@ export class SeeEvolutionTreeModalComponent {
   selectableDigimonList = signal<BaseDigimon[]>([]);
   totalDigimonAmount = signal<number>(0);
 
-  private modalService = inject(ModalV2Service)
+  private modalService = inject(ModalService)
 
   private digimonService = inject(DigimonService);
   private changeDetectorRef = inject(ChangeDetectorRef);

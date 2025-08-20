@@ -3,8 +3,8 @@ import { ButtonComponent } from '../../../shared/components/button/button.compon
 import { GlobalStateDataSource } from '../../../state/global-state.datasource';
 import { ToastService } from '../../../shared/components/toast/toast.service';
 import { TranslocoModule } from '@jsverse/transloco';
-import { ModalV2Service } from 'app/shared/components/modalV2/modal.service';
-import { ModalV2Component } from 'app/shared/components/modalV2/modal.component';
+import { ModalService } from 'app/shared/components/modalV2/modal.service';
+import { ModalComponent } from 'app/shared/components/modalV2/modal.component';
 import { GiveSelectedDigimonModalComponent } from './components/give-selected-digimon-modal/give-selected-digimon-modal.component';
 import { SeeEvolutionTreeModalComponent } from './components/see-evolution-tree-modal/see-evolution-tree-modal.component';
 
@@ -12,7 +12,7 @@ import { SeeEvolutionTreeModalComponent } from './components/see-evolution-tree-
   selector: 'app-debug-modal',
   standalone: true,
   imports: [
-    ModalV2Component,
+    ModalComponent,
     ButtonComponent,
     TranslocoModule
   ],
@@ -26,7 +26,7 @@ export class DebugModalComponent {
 
   private globalState = inject(GlobalStateDataSource);
   private toastService = inject(ToastService);
-  private modalService = inject(ModalV2Service)
+  private modalService = inject(ModalService)
 
   tools = [
     { name: 'SHARED.COMPONENTS.DEBUG_MODAL.GIVE_RANDOM_DIGIMON', action: this.giveRandomDigimon.bind(this) },

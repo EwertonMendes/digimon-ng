@@ -8,8 +8,8 @@ import { BaseDigimon } from '../../../core/interfaces/digimon.interface';
 import { AudioEffects } from '../../../core/enums/audio-tracks.enum';
 import { AudioService } from '../../../services/audio.service';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
-import { ModalV2Component } from '../modalV2/modal.component';
-import { ModalV2Service } from '../modalV2/modal.service';
+import { ModalComponent } from '../modalV2/modal.component';
+import { ModalService } from '../modalV2/modal.service';
 
 @Component({
   standalone: true,
@@ -17,7 +17,7 @@ import { ModalV2Service } from '../modalV2/modal.service';
   templateUrl: './digimon-details-modal.component.html',
   styleUrl: './digimon-details-modal.component.scss',
   imports: [
-    ModalV2Component,
+    ModalComponent,
     CommonModule,
     EvolutionRouteComponent,
     ButtonComponent,
@@ -29,7 +29,7 @@ export class DigimonDetailsModalComponent {
   evolutionTreeModalId = 'evolution-tree-modal';
 
   globalState = inject(GlobalStateDataSource);
-  modalService = inject(ModalV2Service);
+  modalService = inject(ModalService);
   audioService = inject(AudioService);
   translocoService = inject(TranslocoService);
 

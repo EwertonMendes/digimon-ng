@@ -2,8 +2,8 @@ import { Component, inject, input, signal } from "@angular/core";
 import { TranslocoModule } from "@jsverse/transloco";
 import { Digimon, BaseDigimon } from "app/core/interfaces/digimon.interface";
 import { ButtonComponent } from "app/shared/components/button/button.component";
-import { ModalV2Component } from "app/shared/components/modalV2/modal.component";
-import { ModalV2Service } from "app/shared/components/modalV2/modal.service";
+import { ModalComponent } from "app/shared/components/modalV2/modal.component";
+import { ModalService } from "app/shared/components/modalV2/modal.service";
 import { GlobalStateDataSource } from "app/state/global-state.datasource";
 
 export interface EvolutionConfirmationModalCloseEvent {
@@ -13,7 +13,7 @@ export interface EvolutionConfirmationModalCloseEvent {
 @Component({
   selector: 'app-evolution-confirmation-modal',
   standalone: true,
-  imports: [ModalV2Component, ButtonComponent, TranslocoModule],
+  imports: [ModalComponent, ButtonComponent, TranslocoModule],
   templateUrl: './evolution-confirmation-modal.component.html',
   styleUrl: './evolution-confirmation-modal.component.scss',
 })
@@ -27,7 +27,7 @@ export class EvolutionConfirmationModalComponent {
 
   globalState = inject(GlobalStateDataSource);
 
-  constructor(private modalService: ModalV2Service) { }
+  constructor(private modalService: ModalService) { }
 
   close() {
     this.modalService.close(this.id(), {

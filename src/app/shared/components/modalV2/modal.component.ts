@@ -10,7 +10,7 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { AudioService } from '../../../services/audio.service';
-import { ModalV2Service } from './modal.service';
+import { ModalService } from './modal.service';
 import { AudioEffects } from 'app/core/enums/audio-tracks.enum';
 
 @Component({
@@ -21,7 +21,7 @@ import { AudioEffects } from 'app/core/enums/audio-tracks.enum';
   styleUrl: './modal.component.scss',
   encapsulation: ViewEncapsulation.None,
 })
-export class ModalV2Component implements OnInit, OnDestroy {
+export class ModalComponent implements OnInit, OnDestroy {
   id = input.required<string>();
   closable = input<boolean>(true);
 
@@ -30,7 +30,7 @@ export class ModalV2Component implements OnInit, OnDestroy {
   openEvent = output<void>();
   closeEvent = output<void>();
 
-  private readonly modalService = inject(ModalV2Service);
+  private readonly modalService = inject(ModalService);
   private readonly audioService = inject(AudioService);
   private readonly elementRef = inject(ElementRef<HTMLElement>);
 

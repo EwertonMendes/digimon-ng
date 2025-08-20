@@ -8,14 +8,14 @@ import { ButtonComponent } from '../button/button.component';
 import { DigiStatusCardComponent } from '../digi-status-card/digi-status-card.component';
 import { TranslocoModule } from '@jsverse/transloco';
 import { TooltipDirective } from 'app/directives/tooltip.directive';
-import { ModalV2Service } from '../modalV2/modal.service';
+import { ModalService } from '../modalV2/modal.service';
 import { DigimonDetailsModalComponent } from '../digimon-details-modal/digimon-details-modal.component';
-import { ModalV2Component } from '../modalV2/modal.component';
+import { ModalComponent } from '../modalV2/modal.component';
 
 @Component({
   selector: 'app-storage-modal',
   standalone: true,
-  imports: [ButtonComponent, ModalV2Component, DigiStatusCardComponent, TranslocoModule, TooltipDirective],
+  imports: [ButtonComponent, ModalComponent, DigiStatusCardComponent, TranslocoModule, TooltipDirective],
   templateUrl: './storage-modal.component.html',
   styleUrl: './storage-modal.component.scss',
 })
@@ -24,7 +24,7 @@ export class StorageModalComponent {
   digimonDetailsModalId = 'digimon-details-modal';
 
   protected globalState = inject(GlobalStateDataSource);
-  private modalService = inject(ModalV2Service);
+  private modalService = inject(ModalService);
   private audioService = inject(AudioService);
 
   openDigimonDetailsModal(digimon: Digimon) {

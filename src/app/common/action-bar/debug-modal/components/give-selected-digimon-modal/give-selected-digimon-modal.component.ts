@@ -7,7 +7,7 @@ import { DigimonService } from 'app/services/digimon.service';
 import { ButtonComponent } from 'app/shared/components/button/button.component';
 import { CheckboxComponent } from 'app/shared/components/checkbox/checkbox.component';
 import { DigimonSelectionModalComponent } from 'app/shared/components/digimon-selection-modal/digimon-selection-modal.component';
-import { ModalV2Service } from 'app/shared/components/modalV2/modal.service';
+import { ModalService } from 'app/shared/components/modalV2/modal.service';
 import { ToastService } from 'app/shared/components/toast/toast.service';
 import { GlobalStateDataSource } from 'app/state/global-state.datasource';
 import { Subject } from 'rxjs';
@@ -38,7 +38,7 @@ export class GiveSelectedDigimonModalComponent implements OnInit {
   private globalState = inject(GlobalStateDataSource);
   private digimonService = inject(DigimonService);
   private toastService = inject(ToastService);
-  private modalService = inject(ModalV2Service);
+  private modalService = inject(ModalService);
   private changeDetectorRef = inject(ChangeDetectorRef);
   private destroyRef = inject(DestroyRef);
 

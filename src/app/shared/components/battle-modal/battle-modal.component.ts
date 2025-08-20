@@ -7,14 +7,14 @@ import { AudioEffects } from '../../../core/enums/audio-tracks.enum';
 import { CommonModule } from '@angular/common';
 import { Digimon } from 'app/core/interfaces/digimon.interface';
 import { TranslocoModule } from '@jsverse/transloco';
-import { ModalV2Component } from '../modalV2/modal.component';
+import { ModalComponent } from '../modalV2/modal.component';
 
 @Component({
   selector: 'app-battle-modal',
   standalone: true,
   imports: [
     CommonModule,
-    ModalV2Component,
+    ModalComponent,
     DigiStatusCardComponent,
     ButtonComponent,
     TranslocoModule

@@ -7,7 +7,7 @@ import { ToastService } from '../../../../shared/components/toast/toast.service'
 import { DigimonSeeds } from '../../../../core/enums/digimon-seeds.enum';
 import { AudioService } from '../../../../services/audio.service';
 import { AudioEffects } from '../../../../core/enums/audio-tracks.enum';
-import { ModalV2Service } from 'app/shared/components/modalV2/modal.service';
+import { ModalService } from 'app/shared/components/modalV2/modal.service';
 
 interface Location {
   name: string;
@@ -25,7 +25,7 @@ interface Location {
 })
 export class ExploreSectionComponent {
   protected globalState = inject(GlobalStateDataSource);
-  private modalService = inject(ModalV2Service);
+  private modalService = inject(ModalService);
   private translocoService = inject(TranslocoService);
   private toastService = inject(ToastService);
   private audioService = inject(AudioService);

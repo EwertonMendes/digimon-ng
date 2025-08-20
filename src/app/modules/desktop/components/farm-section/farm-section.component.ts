@@ -1,25 +1,25 @@
 import {
-  ChangeDetectionStrategy,
-  Component,
-  effect,
-  inject,
-  signal,
+    ChangeDetectionStrategy,
+    Component,
+    effect,
+    inject,
+    signal,
 } from '@angular/core';
 import { DigiStatusCardComponent } from '../../../../shared/components/digi-status-card/digi-status-card.component';
 import { GlobalStateDataSource } from '../../../../state/global-state.datasource';
 import { Digimon } from '../../../../core/interfaces/digimon.interface';
 import { DigimonFarmCardComponent } from './components/digimon-farm-card/digimon-farm-card.component';
 import {
-  CdkDragDrop,
-  DragDropModule,
-  moveItemInArray,
+    CdkDragDrop,
+    DragDropModule,
+    moveItemInArray,
 } from '@angular/cdk/drag-drop';
 import { DigimonListLocation } from '../../../../core/enums/digimon-list-location.enum';
 import { PlayerData } from '../../../../core/interfaces/player-data.interface';
 import { AudioEffects } from '../../../../core/enums/audio-tracks.enum';
 import { AudioService } from '../../../../services/audio.service';
 import { TranslocoModule } from '@jsverse/transloco';
-import { ModalV2Service } from 'app/shared/components/modalV2/modal.service';
+import { ModalService } from 'app/shared/components/modalV2/modal.service';
 import { DigimonDetailsModalComponent } from 'app/shared/components/digimon-details-modal/digimon-details-modal.component';
 
 @Component({
@@ -39,7 +39,7 @@ export class FarmSectionComponent {
   digimonDetailsModalId = 'digimon-details-modal';
 
   globalState = inject(GlobalStateDataSource);
-  modalService = inject(ModalV2Service);
+  modalService = inject(ModalService);
   audioService = inject(AudioService);
 
   bitGenerationTotalRate = signal<number>(0);

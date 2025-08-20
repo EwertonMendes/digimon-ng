@@ -8,7 +8,7 @@ interface ModalCloseEvent {
 }
 
 @Injectable({ providedIn: 'root' })
-export class ModalV2Service {
+export class ModalService {
   private modals: Map<string, ComponentRef<any>> = new Map();
   private modalStack: string[] = [];
 

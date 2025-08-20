@@ -3,9 +3,9 @@ import { DigiStatusCardComponent } from '../../../../shared/components/digi-stat
 import { GlobalStateDataSource } from '../../../../state/global-state.datasource';
 import { Digimon } from '../../../../core/interfaces/digimon.interface';
 import {
-  CdkDragDrop,
-  DragDropModule,
-  moveItemInArray,
+    CdkDragDrop,
+    DragDropModule,
+    moveItemInArray,
 } from '@angular/cdk/drag-drop';
 import { DigimonListLocation } from '../../../../core/enums/digimon-list-location.enum';
 import { PlayerData } from '../../../../core/interfaces/player-data.interface';
@@ -15,7 +15,7 @@ import { ButtonComponent } from '../../../../shared/components/button/button.com
 import { HospitalService } from '../../../../state/services/hospital.service';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 import { TooltipDirective } from 'app/directives/tooltip.directive';
-import { ModalV2Service } from 'app/shared/components/modalV2/modal.service';
+import { ModalService } from 'app/shared/components/modalV2/modal.service';
 import { DigimonDetailsModalComponent } from 'app/shared/components/digimon-details-modal/digimon-details-modal.component';
 
 @Component({
@@ -29,7 +29,7 @@ export class HomeSectionComponent {
   digimonDetailsModalId = 'digimon-details-modal';
   globalState = inject(GlobalStateDataSource);
   hospitalService = inject(HospitalService);
-  modalService = inject(ModalV2Service);
+  modalService = inject(ModalService);
   audioService = inject(AudioService);
 
   teamListId = 'team-list';

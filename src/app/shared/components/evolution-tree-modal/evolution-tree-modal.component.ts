@@ -23,15 +23,15 @@ import '@phosphor-icons/web/light';
 import '@phosphor-icons/web/bold';
 import { AudioEffects } from '../../../core/enums/audio-tracks.enum';
 import { AudioService } from '../../../services/audio.service';
-import { ModalV2Component } from '../modalV2/modal.component';
-import { ModalV2Service } from '../modalV2/modal.service';
+import { ModalComponent } from '../modalV2/modal.component';
+import { ModalService } from '../modalV2/modal.service';
 import { EvolutionConfirmationModalCloseEvent, EvolutionConfirmationModalComponent } from './components/evolution-confirmation-modal/evolution-confirmation-modal.component';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-evolution-tree-modal',
   standalone: true,
-  imports: [ModalV2Component, ButtonComponent, TranslocoModule],
+  imports: [ModalComponent, ButtonComponent, TranslocoModule],
   templateUrl: './evolution-tree-modal.component.html',
   styleUrls: ['./evolution-tree-modal.component.scss'],
 })
@@ -62,7 +62,7 @@ export class EvolutionTreeModalComponent implements AfterViewInit {
   private digimonService = inject(DigimonService);
   private graphService = inject(GraphService);
   protected globalState = inject(GlobalStateDataSource);
-  private modalService = inject(ModalV2Service);
+  private modalService = inject(ModalService);
   private audioService = inject(AudioService);
   private elementRef = inject(ElementRef<HTMLElement>);
   private destroyRef = inject(DestroyRef);

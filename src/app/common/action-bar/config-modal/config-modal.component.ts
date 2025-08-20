@@ -6,12 +6,12 @@ import { AudioService } from 'app/services/audio.service';
 import { SelectComponent } from 'app/shared/components/select/select.component';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 import { Subscription } from 'rxjs';
-import { ModalV2Component } from 'app/shared/components/modalV2/modal.component';
+import { ModalComponent } from 'app/shared/components/modalV2/modal.component';
 
 @Component({
   selector: 'app-config-modal',
   standalone: true,
-  imports: [ModalV2Component, CheckboxComponent, SelectComponent, FormsModule, TranslocoModule],
+  imports: [ModalComponent, CheckboxComponent, SelectComponent, FormsModule, TranslocoModule],
   templateUrl: './config-modal.component.html',
   styleUrls: ['./config-modal.component.scss']
 })

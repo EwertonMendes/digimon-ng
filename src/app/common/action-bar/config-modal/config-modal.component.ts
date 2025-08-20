@@ -65,7 +65,7 @@ export class ConfigModalComponent implements OnInit, OnDestroy {
     });
 
     this.form.get('selectedTheme')?.valueChanges.subscribe(themeName => {
-      this.themeService.setTheme(themeName); // <-- usa service
+      this.themeService.setTheme(themeName);
     });
   }
 

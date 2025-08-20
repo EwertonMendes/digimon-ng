@@ -46,8 +46,12 @@ export class ToastComponent implements OnInit {
         this.toasts.shift();
       }
       this.toasts.push(toast);
+
       this.changeDetectorRef.detectChanges();
-      setTimeout(() => this.removeToast(0), 5000);
+      setTimeout(() => {
+        this.removeToast(0)
+        this.changeDetectorRef.detectChanges();
+      }, 5000);
     });
   }
 

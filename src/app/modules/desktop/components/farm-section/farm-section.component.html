@@ -23,6 +23,11 @@
       "MODULES.DESKTOP.COMPONENTS.FARM_SECTION.TITLE" | transloco
     }}</span>
     <app-button
+      [appTooltip]="
+        'MODULES.DESKTOP.COMPONENTS.FARM_SECTION.LAYOUT_TOOLTIP'
+          | transloco
+      "
+      tooltipDirection="left"
       [icon]="
         selectedLayout() === 'horizontal' ? 'ph-layout' : 'ph-align-bottom'
       "

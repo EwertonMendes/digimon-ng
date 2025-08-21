@@ -23,6 +23,7 @@ import { TranslocoModule } from '@jsverse/transloco';
 import { ModalService } from 'app/shared/components/modal/modal.service';
 import { DigimonDetailsModalComponent } from 'app/shared/components/digimon-details-modal/digimon-details-modal.component';
 import { ButtonComponent } from 'app/shared/components/button/button.component';
+import { TooltipDirective } from "app/directives/tooltip.directive";
 
 @Component({
   selector: 'app-farm-section',
@@ -32,8 +33,9 @@ import { ButtonComponent } from 'app/shared/components/button/button.component';
     DigimonFarmCardComponent,
     ButtonComponent,
     DragDropModule,
-    TranslocoModule
-  ],
+    TranslocoModule,
+    TooltipDirective
+],
   templateUrl: './farm-section.component.html',
   styleUrl: './farm-section.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

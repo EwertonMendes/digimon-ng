@@ -43,6 +43,7 @@
         "HOME_SECTION": {
           "TITLE": "Home",
           "SUBTITLE": "Battle Team",
+          "LAYOUT_TOOLTIP": "Change layout",
           "NO_DIGIMON": "No digimon",
           "SEND_INJURED_DIGIMONS_TO_HOSPITAL": "Send injured digimons to hospital",
           "HOSPITAL_TITLE": "Hospital:",
@@ -58,6 +59,7 @@
         },
         "FARM_SECTION": {
           "TITLE": "Farm",
+          "LAYOUT_TOOLTIP": "Change layout",
           "BITS": "Bits:",
           "BIT_GENERATION_RATE": "Generation rate:",
           "BITS_PER_MINUTE_SHORT": "bits /min",

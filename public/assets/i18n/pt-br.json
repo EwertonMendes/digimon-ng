@@ -43,6 +43,7 @@
         "HOME_SECTION": {
           "TITLE": "Casa",
           "SUBTITLE": "Equipe de Batalha",
+          "LAYOUT_TOOLTIP": "Mudar layout",
           "NO_DIGIMON": "Nenhum digimon",
           "SEND_INJURED_DIGIMONS_TO_HOSPITAL": "Enviar digimons feridos ao hospital",
           "HOSPITAL_TITLE": "Hospital:",
@@ -58,6 +59,7 @@
         },
         "FARM_SECTION": {
           "TITLE": "Fazenda",
+          "LAYOUT_TOOLTIP": "Mudar layout",
           "BITS": "Bits:",
           "BIT_GENERATION_RATE": "Taxa de geração:",
           "BITS_PER_MINUTE_SHORT": "bits /min",

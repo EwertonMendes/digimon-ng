@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, computed, effect, inject, input, signal } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, computed, DestroyRef, effect, inject, input, signal } from '@angular/core';
 import { Digimon } from '../../../core/interfaces/digimon.interface';
 import { CommonModule } from '@angular/common';
 import {
@@ -11,6 +11,7 @@ import {
 } from '@angular/animations';
 import { GlobalStateDataSource } from '../../../state/global-state.datasource';
 import { pairwise, startWith } from 'rxjs';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-digi-status-card',
@@ -52,6 +53,7 @@ export class DigiStatusCardComponent {
   showHpChange = signal(false);
 
   change = inject(ChangeDetectorRef);
+  destroyRef = inject(DestroyRef);
 
   damageState = computed(() => {
     return this.globalState.currentDefendingDigimon()?.id === this.digimon().id
@@ -66,8 +68,9 @@ export class DigiStatusCardComponent {
     });
 
     this.globalState.digimonHpChanges$
-      .pipe(startWith(null), pairwise())
+      .pipe(takeUntilDestroyed(this.destroyRef), startWith(null), pairwise())
       .subscribe(([prev, current]) => {
+        this.change.markForCheck();
         if (current?.digimonId !== this.digimon().id || !prev || !current)
           return;
         if (this.showHpChange()) {
@@ -80,6 +83,7 @@ export class DigiStatusCardComponent {
             changeType:
               current.currentHp >= prev.currentHp ? 'healing' : 'damage',
           });
+
         }, 100);
       });
   }

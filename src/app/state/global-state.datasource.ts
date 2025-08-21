@@ -25,8 +25,8 @@ type DigimonWithOwner = Digimon & { owner: string };
   providedIn: 'root',
 })
 export class GlobalStateDataSource {
-  toastService = inject(ToastService);
-  translocoService = inject(TranslocoService);
+  private toastService = inject(ToastService);
+  private translocoService = inject(TranslocoService);
 
   private playerData = signal<PlayerData>({
     id: '',
@@ -131,17 +131,17 @@ export class GlobalStateDataSource {
     ].flat()
   );
 
-  digimonService = inject(DigimonService);
-  playerDataService = inject(PlayerDataService);
-  audioService = inject(AudioService);
-  configService = inject(ConfigService)
-  themeService = inject(ThemeService);
+  private digimonService = inject(DigimonService);
+  private playerDataService = inject(PlayerDataService);
+  private audioService = inject(AudioService);
+  private configService = inject(ConfigService)
+  private themeService = inject(ThemeService);
 
-  trainingService = inject(TrainingService);
-  farmingService = inject(FarmingService);
-  battleService = inject(BattleService);
-  storageService = inject(StorageService);
-  hospitalService = inject(HospitalService);
+  private trainingService = inject(TrainingService);
+  private farmingService = inject(FarmingService);
+  private battleService = inject(BattleService);
+  private storageService = inject(StorageService);
+  private hospitalService = inject(HospitalService);
 
   listHandlers: Record<string, Function> = {
     [DigimonListLocation.IN_TRAINING]:

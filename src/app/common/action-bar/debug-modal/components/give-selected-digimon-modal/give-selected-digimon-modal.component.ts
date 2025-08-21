@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, DestroyRef, inject, input, OnInit, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormsModule } from '@angular/forms';
-import { TranslocoModule } from '@jsverse/transloco';
+import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 import { BaseDigimon } from 'app/core/interfaces/digimon.interface';
 import { DigimonService } from 'app/services/digimon.service';
 import { ButtonComponent } from 'app/shared/components/button/button.component';
@@ -39,6 +39,7 @@ export class GiveSelectedDigimonModalComponent implements OnInit {
   private digimonService = inject(DigimonService);
   private toastService = inject(ToastService);
   private modalService = inject(ModalService);
+  private translocoService = inject(TranslocoService);
   private changeDetectorRef = inject(ChangeDetectorRef);
   private destroyRef = inject(DestroyRef);
 
@@ -72,7 +73,7 @@ export class GiveSelectedDigimonModalComponent implements OnInit {
     this.globalState.addDigimonToStorage(newDigimon);
 
     this.toastService.showToast(
-      this.globalState.translocoService.translate(
+      this.translocoService.translate(
         'SHARED.COMPONENTS.DEBUG_MODAL.ADDED_TO_STORAGE_LEVEL',
         { name: digimon.name, level: this.selectedLevel }
       ),

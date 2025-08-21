@@ -2,7 +2,7 @@ import { Component, inject, input } from '@angular/core';
 import { ButtonComponent } from '../../../shared/components/button/button.component';
 import { GlobalStateDataSource } from '../../../state/global-state.datasource';
 import { ToastService } from '../../../shared/components/toast/toast.service';
-import { TranslocoModule } from '@jsverse/transloco';
+import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 import { ModalService } from 'app/shared/components/modal/modal.service';
 import { ModalComponent } from 'app/shared/components/modal/modal.component';
 import { GiveSelectedDigimonModalComponent } from './components/give-selected-digimon-modal/give-selected-digimon-modal.component';
@@ -27,6 +27,7 @@ export class DebugModalComponent {
   private globalState = inject(GlobalStateDataSource);
   private toastService = inject(ToastService);
   private modalService = inject(ModalService)
+  private translocoService = inject(TranslocoService);
 
   tools = [
     { name: 'SHARED.COMPONENTS.DEBUG_MODAL.GIVE_RANDOM_DIGIMON', action: this.giveRandomDigimon.bind(this) },
@@ -45,14 +46,14 @@ export class DebugModalComponent {
     const digimon = this.globalState.generateRandomDigimon();
     this.globalState.addDigimonToStorage(digimon);
     this.toastService.showToast(
-      this.globalState.translocoService.translate('SHARED.COMPONENTS.DEBUG_MODAL.ADDED_TO_STORAGE', { name: digimon.name }),
+      this.translocoService.translate('SHARED.COMPONENTS.DEBUG_MODAL.ADDED_TO_STORAGE', { name: digimon.name }),
       'success'
     );
   }
 
   resetStorage() {
     this.globalState.resetStorage();
-    this.toastService.showToast(this.globalState.translocoService.translate('SHARED.COMPONENTS.DEBUG_MODAL.STORAGE_RESET'), 'success');
+    this.toastService.showToast(this.translocoService.translate('SHARED.COMPONENTS.DEBUG_MODAL.STORAGE_RESET'), 'success');
   }
 
   openGivenCertainDigimonModal() {

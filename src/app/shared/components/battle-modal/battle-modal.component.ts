@@ -6,7 +6,7 @@ import { AudioService } from '../../../services/audio.service';
 import { AudioEffects } from '../../../core/enums/audio-tracks.enum';
 import { CommonModule } from '@angular/common';
 import { Digimon } from 'app/core/interfaces/digimon.interface';
-import { TranslocoModule } from '@jsverse/transloco';
+import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 import { ModalComponent } from '../modal/modal.component';
 
 @Component({
@@ -30,6 +30,7 @@ export class BattleModalComponent {
 
   protected globalState = inject(GlobalStateDataSource);
   private audioService = inject(AudioService);
+  private translocoService = inject(TranslocoService);
 
   onBattleModalClose() {
     this.globalState.resetBattleState();
@@ -59,7 +60,7 @@ export class BattleModalComponent {
 
     const dealtDamage = this.globalState.attack(digimon, opponentDigimon);
     this.log(
-      this.globalState.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.PLAYER_ATTACKS_LOG', {
+      this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.PLAYER_ATTACKS_LOG', {
         name: digimon.name,
         damage: dealtDamage,
         enemy: opponentDigimon.name,
@@ -77,7 +78,7 @@ export class BattleModalComponent {
 
     if (opponentDigimon.currentHp <= 0) {
       this.log(
-        this.globalState.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.ENEMY_DEFEATED_LOG', {
+        this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.ENEMY_DEFEATED_LOG', {
           enemy: opponentDigimon.name
         })
       );

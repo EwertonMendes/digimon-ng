@@ -76,6 +76,12 @@
     height: -webkit-fill-available;
     box-sizing: border-box;
 
+    &.cdk-drop-list-dragging {
+      .my-digimon-list-no-data-container {
+        display: none;
+      }
+    }
+
     .home-section-battle-team-container {
       display: flex;
       flex-direction: row;
@@ -127,6 +133,12 @@
     flex-direction: row-reverse;
     height: -webkit-fill-available;
     box-sizing: border-box;
+
+    &.cdk-drop-list-dragging {
+      .hospital-digimon-list-no-data-container {
+        display: none;
+      }
+    }
 
     &-container {
       display: flex;
@@ -165,6 +177,12 @@
     height: -webkit-fill-available;
     box-sizing: border-box;
 
+    &.cdk-drop-list-dragging {
+      .my-digimon-list-no-data-container {
+        display: none;
+      }
+    }
+
     .home-section-battle-team-container {
       display: flex;
       flex-direction: column;
@@ -214,6 +232,12 @@
     flex-direction: row-reverse;
     height: -webkit-fill-available;
     box-sizing: border-box;
+
+    &.cdk-drop-list-dragging {
+      .hospital-digimon-list-no-data-container {
+        display: none;
+      }
+    }
 
     &-container {
       display: flex;

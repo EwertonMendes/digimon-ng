@@ -98,6 +98,12 @@
     height: -webkit-fill-available;
     overflow-x: auto;
 
+    &.cdk-drop-list-dragging {
+      .in-training-list-no-data-container {
+        display: none;
+      }
+    }
+
     .in-training-digimon-list-container {
       display: flex;
       flex-direction: row;
@@ -131,6 +137,12 @@
     overflow: auto;
     height: -webkit-fill-available;
     box-sizing: border-box;
+
+    &.cdk-drop-list-dragging {
+      .bit-farming-list-no-data-container {
+        display: none;
+      }
+    }
 
     .bit-farming-digimon-list-container {
       display: flex;
@@ -181,6 +193,12 @@
     height: -webkit-fill-available;
     box-sizing: border-box;
 
+    &.cdk-drop-list-dragging {
+      .in-training-list-no-data-container {
+        display: none;
+      }
+    }
+
     &-container {
       display: flex;
       flex-direction: column;
@@ -214,6 +232,12 @@
     flex-direction: column;
     align-self: center;
     box-sizing: border-box;
+
+    &.cdk-drop-list-dragging {
+      .bit-farming-list-no-data-container {
+        display: none;
+      }
+    }
 
     &-container {
       display: flex;

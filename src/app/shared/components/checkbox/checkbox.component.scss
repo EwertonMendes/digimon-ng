@@ -45,3 +45,15 @@
     opacity: 0.5;
   }
 }
+
+:host-context(.theme-crest-of-hope) {
+  input[type='checkbox'] {
+    border: 2px solid var(--tertiary);
+    background-color: var(--primary-light);
+
+    &:checked {
+      border-color: var(--tertiary);
+      background-color: var(--tertiary);
+    }
+  }
+}

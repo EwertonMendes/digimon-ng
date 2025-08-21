@@ -74,6 +74,7 @@
     padding: 10px;
     flex-direction: row-reverse;
     height: -webkit-fill-available;
+    box-sizing: border-box;
 
     .home-section-battle-team-container {
       display: flex;
@@ -125,6 +126,7 @@
     padding: 10px;
     flex-direction: row-reverse;
     height: -webkit-fill-available;
+    box-sizing: border-box;
 
     &-container {
       display: flex;
@@ -161,6 +163,7 @@
     justify-content: center;
     padding: 10px;
     height: -webkit-fill-available;
+    box-sizing: border-box;
 
     .home-section-battle-team-container {
       display: flex;
@@ -210,6 +213,7 @@
     padding: 10px;
     flex-direction: row-reverse;
     height: -webkit-fill-available;
+    box-sizing: border-box;
 
     &-container {
       display: flex;

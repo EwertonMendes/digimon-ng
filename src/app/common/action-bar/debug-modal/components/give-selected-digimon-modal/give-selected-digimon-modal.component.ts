@@ -78,8 +78,6 @@ export class GiveSelectedDigimonModalComponent implements OnInit {
       ),
       'success'
     );
-
-    this.modalService.close(this.id());
   }
 
   async refreshDigimonList() {

@@ -214,23 +214,31 @@
       .battle-log-container {
         display: flex;
         flex-direction: column;
-        background: rgba(0, 0, 0, 0.3);
-        backdrop-filter: blur(10px);
+        background-color: var(--dark-transparent);
+        backdrop-filter: blur(5px);
         border-radius: 12px;
         padding: 1rem;
         height: 100%;
         overflow-y: auto;
         font-family: monospace;
         font-size: 0.9rem;
-        color: var(--gray-200);
+        color: var(--text);
 
         .battle-log-title {
           font-weight: bold;
-          margin-bottom: 0.5rem;
+          margin-bottom: 0.75rem;
+          color: var(--primary-light);
+          text-transform: uppercase;
+          letter-spacing: 1px;
         }
 
         .battle-log {
           white-space: pre-line;
+          color: var(--text);
+          transition: color 0.3s ease;
+          &:hover {
+            color: var(--secondary-light);
+          }
         }
       }
     }

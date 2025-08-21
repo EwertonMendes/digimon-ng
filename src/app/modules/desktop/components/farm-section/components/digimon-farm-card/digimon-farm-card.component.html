@@ -1,13 +1,17 @@
-<div class="digimon-work-item" tabindex="0">
-  <div class="digimon-work-item-image">
+<div tabindex="0" class="digimon-farm-card">
+  <div class="digimon-farm-card-image">
     <img [src]="digimon()?.img" [alt]="digimon()?.name" />
   </div>
-  <div class="digimon-work-item-content">
-    <span class="digimon-work-item-name">
+  <div class="digimon-farm-card-content">
+    <span class="digimon-farm-card-name">
+      <span> Lv. {{ digimon()?.level }} </span>
       {{ digimon()?.name }}
     </span>
-    <div class="digimon-work-item-attributes">
-  <span>{{ 'MODULES.DESKTOP.COMPONENTS.FARM_SECTION.BITS_PER_MINUTE' | transloco }} {{ digimon()?.bitFarmingRate }}</span>
+    <div class="digimon-farm-card-attributes">
+      <span>{{
+        "MODULES.DESKTOP.COMPONENTS.FARM_SECTION.BITS_PER_MINUTE" | transloco
+      }}</span>
+      <span>{{ digimon()?.bitFarmingRate }}</span>
     </div>
   </div>
 </div>

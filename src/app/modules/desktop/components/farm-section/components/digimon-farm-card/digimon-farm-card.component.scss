@@ -1,19 +1,30 @@
-.digimon-work-item {
+.digimon-farm-card {
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
   gap: 10px;
-  padding: 10px;
   border-radius: 10px;
-  color: var(--text-on-primary);
-  background: var(--primary-dark);
+  background: var(--dark-transparent);
+  color: var(--text-on-dark);
+  backdrop-filter: blur(2px);
+  padding: 10px;
+  width: 200px;
+  height: fit-content;
+  min-height: 210px;
+  overflow: visible;
+  transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: var(--primary);
+    background-color: var(--primary-dark-transparent);
     cursor: pointer;
+
+    .digimon-farm-card-name {
+      background-color: var(--secondary-light-transparent);
+    }
   }
 
-  .digimon-work-item-image {
+  .digimon-farm-card-image {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -21,24 +32,64 @@
     gap: 10px;
 
     img {
-      max-width: 50px;
-      max-height: 50px;
-      object-fit: cover;
+      max-width: 100px;
+      height: 100px;
+      object-fit: scale-down;
     }
   }
 
-  .digimon-work-item-content {
+  &-content {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 5px;
   }
 
-  .digimon-work-item-name {
-    font-size: 16px;
+  &-name {
+    background-color: var(--primary-light-transparent);
+    color: var(--text);
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 14px;
     font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
   }
 
-  .digimon-work-item-attributes {
-    font-size: 11px;
+  &-attributes {
+    display: flex;
+    font-size: 14px;
+    justify-content: center;
+    align-items: center;
+    height: -webkit-fill-available;
+    width: -webkit-fill-available;
+    padding-left: 3px;
+    gap: 5px;
+  }
+}
+
+:host-context(.theme-crest-of-hope) {
+  .digimon-farm-card {
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    &:hover {
+      color: var(--text-on-secondary);
+      background-color: var(--secondary-dark);
+
+      .digimon-farm-card-name {
+        color: var(--text-on-danger);
+        background-color: var(--danger);
+      }
+    }
+
+    &-name {
+      color: var(--text-on-secondary);
+      background-color: var(--primary);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
   }
 }

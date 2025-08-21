@@ -29,14 +29,6 @@
       width: 100%;
       align-items: center;
 
-      .title-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        gap: 10px;
-        width: 100%;
-      }
-
       app-home-section {
         display: flex;
         flex-grow: 1;
@@ -66,16 +58,6 @@
         overflow: auto;
       }
     }
-  }
-
-  .section-title {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
-    font-size: 1.5rem;
-  }
-
-  .home-title {
-    margin-bottom: 25px;
   }
 }
 

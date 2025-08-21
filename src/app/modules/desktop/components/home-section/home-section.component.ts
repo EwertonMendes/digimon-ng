@@ -5,6 +5,7 @@ import { Digimon } from '../../../../core/interfaces/digimon.interface';
 import {
   CdkDragDrop,
   DragDropModule,
+  DropListOrientation,
   moveItemInArray,
 } from '@angular/cdk/drag-drop';
 import { DigimonListLocation } from '../../../../core/enums/digimon-list-location.enum';
@@ -17,20 +18,23 @@ import { TranslocoModule } from '@jsverse/transloco';
 import { TooltipDirective } from 'app/directives/tooltip.directive';
 import { ModalService } from 'app/shared/components/modal/modal.service';
 import { DigimonDetailsModalComponent } from 'app/shared/components/digimon-details-modal/digimon-details-modal.component';
+import { FormsModule } from "@angular/forms";
 
 @Component({
   selector: 'app-home-section',
   standalone: true,
-  imports: [DigiStatusCardComponent, ButtonComponent, DragDropModule, TranslocoModule, TooltipDirective],
+  imports: [DigiStatusCardComponent, ButtonComponent, DragDropModule, TranslocoModule, TooltipDirective, FormsModule],
   templateUrl: './home-section.component.html',
   styleUrl: './home-section.component.scss',
 })
 export class HomeSectionComponent {
-  digimonDetailsModalId = 'digimon-details-modal';
-  globalState = inject(GlobalStateDataSource);
-  hospitalService = inject(HospitalService);
-  modalService = inject(ModalService);
-  audioService = inject(AudioService);
+  private digimonDetailsModalId = 'digimon-details-modal';
+  protected globalState = inject(GlobalStateDataSource);
+  private hospitalService = inject(HospitalService);
+  private modalService = inject(ModalService);
+  private audioService = inject(AudioService);
+
+  protected selectedLayout = signal<DropListOrientation>('horizontal')
 
   teamListId = 'team-list';
   inTrainingListId = 'in-training-digimon-list';
@@ -55,6 +59,12 @@ export class HomeSectionComponent {
         this.globalState.playerDataAcessor.bits >= this.fullHealPrice
       )
     });
+  }
+
+  setLayout() {
+    const current = this.selectedLayout();
+    const next = current === 'horizontal' ? 'vertical' : 'horizontal';
+    this.selectedLayout.set(next);
   }
 
   canHealAll = signal(false)

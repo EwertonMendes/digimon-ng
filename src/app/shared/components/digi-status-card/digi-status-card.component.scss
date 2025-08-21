@@ -10,6 +10,7 @@
   height: fit-content;
   overflow: visible;
   gap: 10px;
+  transition: background-color 0.3s ease;
 
   &:hover {
     background-color: var(--secondary);

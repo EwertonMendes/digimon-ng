@@ -1,18 +1,19 @@
 import {
-    ChangeDetectionStrategy,
-    Component,
-    effect,
-    inject,
-    signal,
+  ChangeDetectionStrategy,
+  Component,
+  effect,
+  inject,
+  signal,
 } from '@angular/core';
 import { DigiStatusCardComponent } from '../../../../shared/components/digi-status-card/digi-status-card.component';
 import { GlobalStateDataSource } from '../../../../state/global-state.datasource';
 import { Digimon } from '../../../../core/interfaces/digimon.interface';
 import { DigimonFarmCardComponent } from './components/digimon-farm-card/digimon-farm-card.component';
 import {
-    CdkDragDrop,
-    DragDropModule,
-    moveItemInArray,
+  CdkDragDrop,
+  DragDropModule,
+  DropListOrientation,
+  moveItemInArray,
 } from '@angular/cdk/drag-drop';
 import { DigimonListLocation } from '../../../../core/enums/digimon-list-location.enum';
 import { PlayerData } from '../../../../core/interfaces/player-data.interface';
@@ -21,6 +22,7 @@ import { AudioService } from '../../../../services/audio.service';
 import { TranslocoModule } from '@jsverse/transloco';
 import { ModalService } from 'app/shared/components/modal/modal.service';
 import { DigimonDetailsModalComponent } from 'app/shared/components/digimon-details-modal/digimon-details-modal.component';
+import { ButtonComponent } from 'app/shared/components/button/button.component';
 
 @Component({
   selector: 'app-farm-section',
@@ -28,6 +30,7 @@ import { DigimonDetailsModalComponent } from 'app/shared/components/digimon-deta
   imports: [
     DigiStatusCardComponent,
     DigimonFarmCardComponent,
+    ButtonComponent,
     DragDropModule,
     TranslocoModule
   ],
@@ -36,11 +39,13 @@ import { DigimonDetailsModalComponent } from 'app/shared/components/digimon-deta
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FarmSectionComponent {
-  digimonDetailsModalId = 'digimon-details-modal';
+  private digimonDetailsModalId = 'digimon-details-modal';
 
-  globalState = inject(GlobalStateDataSource);
-  modalService = inject(ModalService);
-  audioService = inject(AudioService);
+  protected globalState = inject(GlobalStateDataSource);
+  private modalService = inject(ModalService);
+  private audioService = inject(AudioService);
+
+  protected selectedLayout = signal<DropListOrientation>('horizontal');
 
   bitGenerationTotalRate = signal<number>(0);
 
@@ -64,6 +69,12 @@ export class FarmSectionComponent {
         );
       }
     );
+  }
+
+  setLayout() {
+    const current = this.selectedLayout();
+    const next = current === 'horizontal' ? 'vertical' : 'horizontal';
+    this.selectedLayout.set(next);
   }
 
   removeDigimonFromTraining(event: MouseEvent, digimon: Digimon): void {

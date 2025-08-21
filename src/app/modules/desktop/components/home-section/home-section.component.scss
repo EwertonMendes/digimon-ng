@@ -1,46 +1,71 @@
-.home-section {
+.home-section-container {
+  display: flex;
+  flex-direction: column;
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+  align-items: center;
+  gap: 10px;
+
+  .home-section-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background: var(--secondary-dark-transparent);
+    backdrop-filter: blur(2px);
+    width: -webkit-fill-available;
+    gap: 10px;
+    padding: 12px 10px;
+    border-radius: 10px;
+    align-items: center;
+  }
+
+  .home-section-header> :first-child {
+    grid-column: 2;
+    justify-self: center;
+  }
+
+  .home-section-header> :last-child {
+    grid-column: 3;
+    justify-self: end;
+    padding-right: 5px;
+  }
+}
+
+.home-section-horizontal {
   display: flex;
   flex-direction: column;
   width: -webkit-fill-available;
   height: -webkit-fill-available;
   align-items: center;
   gap: 15px;
+}
 
-  .battle-team-area-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    background: var(--primary-dark-transparent);
-    backdrop-filter: blur(2px);
-    border-radius: 10px;
-    width: 100%;
-    padding: 10px;
-    height: 315px;
-    width: -webkit-fill-available;
-    height: -webkit-fill-available;
-  }
+.home-section-vertical {
+  display: flex;
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+  justify-content: center;
+  gap: 15px;
+  overflow: hidden;
+}
 
-  .battle-team-area-sub-title-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    padding: 0 10px 0 10px;
-  }
+.section-title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
 
-  .battle-team-area-sub-title {
-    margin: 10px;
-  }
-
-  &-battle-team-container {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    width: -webkit-fill-available;
-    height: -webkit-fill-available;
-    overflow-x: auto;
-  }
+.panel-horizontal {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: var(--primary-dark-transparent);
+  backdrop-filter: blur(2px);
+  border-radius: 10px;
+  width: 100%;
+  padding: 10px;
+  height: 315px;
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
 
   .my-digimon-list {
     display: flex;
@@ -49,6 +74,15 @@
     padding: 10px;
     flex-direction: row-reverse;
     height: -webkit-fill-available;
+
+    .home-section-battle-team-container {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      width: -webkit-fill-available;
+      height: -webkit-fill-available;
+      overflow-x: auto;
+    }
 
     .my-digimon-list-no-data-container {
       display: flex;
@@ -69,46 +103,145 @@
     width: 100%;
     padding: 10px;
     height: -webkit-fill-available;
+  }
 
-    .hospital-area-header {
+  .hospital-area-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 0 10px 0 10px;
+
+    &-column {
       display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      padding: 0 10px 0 10px;
-
-      &-column {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-      }
-    }
-
-    .hospital-digimon-list {
-      display: flex;
-      overflow: auto;
-      gap: 10px;
-      padding: 10px;
-      flex-direction: row-reverse;
-      height: -webkit-fill-available;
-
-      &-container {
-        display: flex;
-        flex-direction: row;
-        gap: 10px;
-        width: -webkit-fill-available;
-        height: -webkit-fill-available;
-        overflow-x: auto;
-      }
-
-      .hospital-digimon-list-no-data-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-      }
+      flex-direction: column;
+      gap: 5px;
     }
   }
+
+  .hospital-digimon-list {
+    display: flex;
+    overflow: auto;
+    gap: 10px;
+    padding: 10px;
+    flex-direction: row-reverse;
+    height: -webkit-fill-available;
+
+    &-container {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      width: -webkit-fill-available;
+      height: -webkit-fill-available;
+      overflow-x: auto;
+    }
+
+    .hospital-digimon-list-no-data-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+  }
+}
+
+.panel-vertical {
+  display: flex;
+  flex-direction: column;
+  background: var(--primary-dark-transparent);
+  backdrop-filter: blur(2px);
+  gap: 10px;
+  border-radius: 10px;
+  padding: 10px;
+  width: 300px;
+
+  .my-digimon-list {
+    display: flex;
+    overflow: auto;
+    justify-content: center;
+    padding: 10px;
+    height: -webkit-fill-available;
+
+    .home-section-battle-team-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .my-digimon-list-no-data-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+  }
+
+  .hospital-area-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: var(--primary-dark-transparent);
+    backdrop-filter: blur(2px);
+    border-radius: 10px;
+    width: 100%;
+    padding: 10px;
+    height: -webkit-fill-available;
+  }
+
+  .hospital-area-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 0 10px 0 10px;
+
+    &-column {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+  }
+
+  .hospital-digimon-list {
+    display: flex;
+    overflow: auto;
+    gap: 10px;
+    padding: 10px;
+    flex-direction: row-reverse;
+    height: -webkit-fill-available;
+
+    &-container {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 10px;
+      width: -webkit-fill-available;
+      height: -webkit-fill-available;
+      overflow-x: auto;
+    }
+
+    .hospital-digimon-list-no-data-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+  }
+}
+
+.battle-team-area-sub-title-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 0 10px 0 10px;
+}
+
+.battle-team-area-sub-title {
+  margin: 10px;
 }
 
 app-digi-status-card {

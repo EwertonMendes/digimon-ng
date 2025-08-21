@@ -1,125 +1,142 @@
-<div class="home-section">
-  <div class="battle-team-area-container">
-    <div class="battle-team-area-sub-title-container">
-      <h4 class="battle-team-area-sub-title">
-        {{ "MODULES.DESKTOP.COMPONENTS.HOME_SECTION.SUBTITLE" | transloco }}:
-        {{ globalState.playerDataAcessor.digimonList.length }}/
-        {{ this.globalState.listsLimits.team }}
-      </h4>
-      <app-button
-        [appTooltip]="
-          'MODULES.DESKTOP.COMPONENTS.HOME_SECTION.SEND_INJURED_DIGIMONS_TO_HOSPITAL'
-            | transloco
-        "
-        class="send-zero-hp-btn"
-        icon="ph-ambulance"
-        size="xl"
-        color="danger"
-        [disabled]="!canSendInjuredDigimonToHospital()"
-        (onClick)="sendInjuredDigimonToHospital()"
-      />
-    </div>
-    <div
-      [id]="teamListId"
-      class="my-digimon-list"
-      #teamList="cdkDropList"
-      cdkDropList
-      cdkDropListOrientation="horizontal"
-      [cdkDropListData]="globalState.playerDataAcessor"
-      [cdkDropListConnectedTo]="[
-        hospitalListId,
-        inTrainingListId,
-        bitFarmingListId
-      ]"
-      (cdkDropListDropped)="drop($event)"
-    >
-      <div class="home-section-battle-team-container">
-        @for(digimon of globalState.playerDataAcessor.digimonList; track
-        digimon.id){
-        <app-digi-status-card
-          cdkDrag
-          [digimon]="digimon"
-          (click)="openDigimonDetailsModal(digimon)"
-          (contextmenu)="removeDigimonFromLocation($event, digimon, 'team')"
-        />
-        } @empty {
-        <div class="my-digimon-list-no-data-container">
-          <h4>
-            {{
-              "MODULES.DESKTOP.COMPONENTS.HOME_SECTION.NO_DIGIMON" | transloco
-            }}
-          </h4>
-        </div>
-        }
-      </div>
-    </div>
+<div class="home-section-container">
+  <div class="home-section-header">
+    <span class="section-title home-title">{{
+      "MODULES.DESKTOP.COMPONENTS.HOME_SECTION.TITLE" | transloco
+    }}</span>
+    <app-button
+      [icon]="
+        selectedLayout() === 'horizontal' ? 'ph-layout' : 'ph-align-bottom'
+      "
+      size="xl"
+      (onClick)="setLayout()"
+    />
   </div>
 
-  <div class="hospital-area-container">
-    <div class="hospital-area-header">
-      <div class="hospital-area-header-column">
-        <h4>
-          {{
-            "MODULES.DESKTOP.COMPONENTS.HOME_SECTION.HOSPITAL_TITLE" | transloco
-          }}
-          {{ globalState.playerDataAcessor.hospitalDigimonList.length }}/{{
-            globalState.listsLimits.hospital
-          }}
+  <div [class]="'home-section-' + selectedLayout()">
+    <div [class]="'panel-' + selectedLayout()">
+      <div class="battle-team-area-sub-title-container">
+        <h4 class="battle-team-area-sub-title">
+          {{ "MODULES.DESKTOP.COMPONENTS.HOME_SECTION.SUBTITLE" | transloco }}:
+          {{ globalState.playerDataAcessor.digimonList.length }}/
+          {{ this.globalState.listsLimits.team }}
         </h4>
-        <span>
-          {{
-            "MODULES.DESKTOP.COMPONENTS.HOME_SECTION.NEXT_HEALING" | transloco
-          }}
-          {{ globalState.hospitalHealingCountdown() }}
-        </span>
-      </div>
-      <div class="hospital-area-header-column">
         <app-button
           [appTooltip]="
-            'MODULES.DESKTOP.COMPONENTS.HOME_SECTION.HEAL_ALL'
-              | transloco : { price: fullHealPrice }
+            'MODULES.DESKTOP.COMPONENTS.HOME_SECTION.SEND_INJURED_DIGIMONS_TO_HOSPITAL'
+              | transloco
           "
-          icon="ph-first-aid"
+          icon="ph-ambulance"
           size="xl"
-          color="success"
-          [disabled]="!canHealAll()"
-          (onClick)="healAll()"
+          color="danger"
+          [disabled]="!canSendInjuredDigimonToHospital()"
+          (onClick)="sendInjuredDigimonToHospital()"
         />
       </div>
+      <div
+        [id]="teamListId"
+        class="my-digimon-list"
+        #teamList="cdkDropList"
+        cdkDropList
+        [cdkDropListOrientation]="selectedLayout()"
+        [cdkDropListData]="globalState.playerDataAcessor"
+        [cdkDropListConnectedTo]="[
+          hospitalListId,
+          inTrainingListId,
+          bitFarmingListId
+        ]"
+        (cdkDropListDropped)="drop($event)"
+      >
+        <div class="home-section-battle-team-container">
+          @for(digimon of globalState.playerDataAcessor.digimonList; track
+          digimon.id){
+          <app-digi-status-card
+            cdkDrag
+            [digimon]="digimon"
+            (click)="openDigimonDetailsModal(digimon)"
+            (contextmenu)="removeDigimonFromLocation($event, digimon, 'team')"
+          />
+          } @empty {
+          <div class="my-digimon-list-no-data-container">
+            <h4>
+              {{
+                "MODULES.DESKTOP.COMPONENTS.HOME_SECTION.NO_DIGIMON" | transloco
+              }}
+            </h4>
+          </div>
+          }
+        </div>
+      </div>
     </div>
-    <div
-      [id]="hospitalListId"
-      class="hospital-digimon-list"
-      #inTrainingList="cdkDropList"
-      cdkDropList
-      cdkDropListOrientation="horizontal"
-      [cdkDropListData]="globalState.playerDataAcessor"
-      [cdkDropListConnectedTo]="[
-        teamListId,
-        bitFarmingListId,
-        inTrainingListId
-      ]"
-      (cdkDropListDropped)="drop($event)"
-    >
-      <div class="hospital-digimon-list-container">
-        @for(digimon of globalState.playerDataAcessor.hospitalDigimonList; track
-        digimon.id){
-        <app-digi-status-card
-          cdkDrag
-          [digimon]="digimon"
-          (click)="openDigimonDetailsModal(digimon)"
-          (contextmenu)="removeDigimonFromLocation($event, digimon, 'hospital')"
-        />
-        } @empty {
-        <div class="hospital-digimon-list-no-data-container">
+
+    <div [class]="'panel-' + selectedLayout()">
+      <div class="hospital-area-header">
+        <div [class]="'hospital-area-header-' + selectedLayout()">
           <h4>
             {{
-              "MODULES.DESKTOP.COMPONENTS.HOME_SECTION.NO_DIGIMON_HOSPITAL"
+              "MODULES.DESKTOP.COMPONENTS.HOME_SECTION.HOSPITAL_TITLE"
                 | transloco
             }}
+            {{ globalState.playerDataAcessor.hospitalDigimonList.length }}/{{
+              globalState.listsLimits.hospital
+            }}
           </h4>
+          <span>
+            {{
+              "MODULES.DESKTOP.COMPONENTS.HOME_SECTION.NEXT_HEALING" | transloco
+            }}
+            {{ globalState.hospitalHealingCountdown() }}
+          </span>
         </div>
-        }
+        <div class="hospital-area-header-column">
+          <app-button
+            [appTooltip]="
+              'MODULES.DESKTOP.COMPONENTS.HOME_SECTION.HEAL_ALL'
+                | transloco : { price: fullHealPrice }
+            "
+            icon="ph-first-aid"
+            size="xl"
+            color="success"
+            [disabled]="!canHealAll()"
+            (onClick)="healAll()"
+          />
+        </div>
+      </div>
+      <div
+        [id]="hospitalListId"
+        class="hospital-digimon-list"
+        #inTrainingList="cdkDropList"
+        cdkDropList
+        cdkDropListOrientation="horizontal"
+        [cdkDropListData]="globalState.playerDataAcessor"
+        [cdkDropListConnectedTo]="[
+          teamListId,
+          bitFarmingListId,
+          inTrainingListId
+        ]"
+        (cdkDropListDropped)="drop($event)"
+      >
+        <div class="hospital-digimon-list-container">
+          @for(digimon of globalState.playerDataAcessor.hospitalDigimonList;
+          track digimon.id){
+          <app-digi-status-card
+            cdkDrag
+            [digimon]="digimon"
+            (click)="openDigimonDetailsModal(digimon)"
+            (contextmenu)="
+              removeDigimonFromLocation($event, digimon, 'hospital')
+            "
+          />
+          } @empty {
+          <div class="hospital-digimon-list-no-data-container">
+            <h4>
+              {{
+                "MODULES.DESKTOP.COMPONENTS.HOME_SECTION.NO_DIGIMON_HOSPITAL"
+                  | transloco
+              }}
+            </h4>
+          </div>
+          }
+        </div>
       </div>
     </div>
   </div>

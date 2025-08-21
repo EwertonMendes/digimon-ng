@@ -1,52 +1,67 @@
-<div class="farm-section">
+<div class="farm-section-container">
   <div class="farm-section-header">
-    <span
-      >{{ "MODULES.DESKTOP.COMPONENTS.FARM_SECTION.BITS" | transloco }}
-      {{ globalState.playerDataAcessor.bits }}</span
-    >
-    <span
-      >{{
-        "MODULES.DESKTOP.COMPONENTS.FARM_SECTION.BIT_GENERATION_RATE"
-          | transloco
-      }}
-      {{ bitGenerationTotalRate() }}
-      {{
-        "MODULES.DESKTOP.COMPONENTS.FARM_SECTION.BITS_PER_MINUTE_SHORT"
-          | transloco
-      }}</span
-    >
+    <div class="bits-container">
+      <span>
+        <span class="label">{{
+          "MODULES.DESKTOP.COMPONENTS.FARM_SECTION.BITS" | transloco
+        }}</span>
+        {{ globalState.playerDataAcessor.bits }}
+      </span>
+      <span class="farm-bit-generation">
+        <span class="label">{{
+          "MODULES.DESKTOP.COMPONENTS.FARM_SECTION.BIT_GENERATION_RATE"
+            | transloco
+        }}</span>
+        {{ bitGenerationTotalRate() }}
+        {{
+          "MODULES.DESKTOP.COMPONENTS.FARM_SECTION.BITS_PER_MINUTE_SHORT"
+            | transloco
+        }}
+      </span>
+    </div>
+    <span class="section-title farm-title">{{
+      "MODULES.DESKTOP.COMPONENTS.FARM_SECTION.TITLE" | transloco
+    }}</span>
+    <app-button
+      [icon]="
+        selectedLayout() === 'horizontal' ? 'ph-layout' : 'ph-align-bottom'
+      "
+      size="xl"
+      (onClick)="setLayout()"
+    />
   </div>
-  <div class="farm-section-container">
-    <div class="panel">
+
+  <div [class]="'farm-section-' + selectedLayout()">
+    <div [class]="'panel-' + selectedLayout()">
+      <div class="in-training-list-header">
+        <h4>
+          {{
+            "MODULES.DESKTOP.COMPONENTS.FARM_SECTION.IN_TRAINING_HEADER"
+              | transloco
+          }}
+        </h4>
+        <h4>
+          {{ globalState.playerDataAcessor.inTrainingDigimonList.length }}/{{
+            this.globalState.listsLimits.inTraining
+          }}
+        </h4>
+      </div>
+      <span class="countdown">
+        {{
+          "MODULES.DESKTOP.COMPONENTS.FARM_SECTION.NEXT_TRAINING" | transloco
+        }}
+        {{ globalState.trainingDigimonCountdown() }}
+      </span>
       <div
         [id]="inTrainingListId"
         class="in-training-digimon-list"
         #inTrainingList="cdkDropList"
         cdkDropList
-        cdkDropListOrientation="vertical"
+        [cdkDropListOrientation]="selectedLayout()"
         [cdkDropListData]="globalState.playerDataAcessor"
         [cdkDropListConnectedTo]="[bitFarmingList, teamListId, hospitalListId]"
         (cdkDropListDropped)="drop($event)"
       >
-        <div class="in-training-list-header">
-          <h4>
-            {{
-              "MODULES.DESKTOP.COMPONENTS.FARM_SECTION.IN_TRAINING_HEADER"
-                | transloco
-            }}
-          </h4>
-          <h4>
-            {{ globalState.playerDataAcessor.inTrainingDigimonList.length }}/{{
-              this.globalState.listsLimits.inTraining
-            }}
-          </h4>
-        </div>
-        <span class="countdown">
-          {{
-            "MODULES.DESKTOP.COMPONENTS.FARM_SECTION.NEXT_TRAINING" | transloco
-          }}
-          {{ globalState.trainingDigimonCountdown() }}
-        </span>
         @for(digimon of globalState.playerDataAcessor.inTrainingDigimonList;
         track digimon.id){
         <app-digi-status-card
@@ -66,37 +81,38 @@
         }
       </div>
     </div>
-    <div class="panel">
+
+    <div [class]="'panel-' + selectedLayout()">
+      <div class="bit-farming-list-header">
+        <h4>
+          {{
+            "MODULES.DESKTOP.COMPONENTS.FARM_SECTION.BIT_FARM_HEADER"
+              | transloco
+          }}
+        </h4>
+        <h4>
+          {{ globalState.playerDataAcessor.bitFarmDigimonList.length }}/{{
+            this.globalState.listsLimits.bitFarm
+          }}
+        </h4>
+      </div>
+      <span class="countdown">
+        {{
+          "MODULES.DESKTOP.COMPONENTS.FARM_SECTION.NEXT_BIT_GENERATION"
+            | transloco
+        }}
+        {{ globalState.bitFarmingCountdown() }}
+      </span>
       <div
         [id]="bitFarmingListId"
         class="bit-farming-digimon-list"
         #bitFarmingList="cdkDropList"
         cdkDropList
-        cdkDropListOrientation="vertical"
+        [cdkDropListOrientation]="selectedLayout()"
         [cdkDropListData]="globalState.playerDataAcessor"
         [cdkDropListConnectedTo]="[inTrainingList, teamListId, hospitalListId]"
         (cdkDropListDropped)="drop($event)"
       >
-        <div class="bit-farming-list-header">
-          <h4>
-            {{
-              "MODULES.DESKTOP.COMPONENTS.FARM_SECTION.BIT_FARM_HEADER"
-                | transloco
-            }}
-          </h4>
-          <h4>
-            {{ globalState.playerDataAcessor.bitFarmDigimonList.length }}/{{
-              this.globalState.listsLimits.bitFarm
-            }}
-          </h4>
-        </div>
-        <span class="countdown">
-          {{
-            "MODULES.DESKTOP.COMPONENTS.FARM_SECTION.NEXT_BIT_GENERATION"
-              | transloco
-          }}
-          {{ globalState.bitFarmingCountdown() }}
-        </span>
         @for(digimon of globalState.playerDataAcessor.bitFarmDigimonList; track
         digimon.id){
         <app-digimon-farm-card

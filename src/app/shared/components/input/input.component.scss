@@ -1,0 +1,33 @@
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  label,
+  span {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--gray-200);
+  }
+
+  input {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--gray-700);
+    border-radius: 12px;
+    font-size: 1rem;
+    background: var(--dark-transparent);
+    color: var(--text);
+    backdrop-filter: blur(8px);
+    transition: border 0.3s;
+
+    &:focus {
+      border-color: var(--primary);
+      outline: none;
+    }
+
+    &:disabled {
+      background: rgba(255, 255, 255, 0.1);
+      cursor: not-allowed;
+    }
+  }
+}

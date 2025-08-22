@@ -1,0 +1,16 @@
+<div class="form-group">
+  @if(label()){
+
+  <label [for]="id()">{{ label() }}</label>
+  }
+  <input
+    [id]="id()"
+    [type]="type()"
+    [placeholder]="placeholder()"
+    [maxLength]="maxlength()"
+    [disabled]="disabled()"
+    [value]="value()"
+    (input)="handleInput($event)"
+    (blur)="onTouched()"
+  />
+</div>

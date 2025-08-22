@@ -5,7 +5,7 @@
   <div class="digimon-farm-card-content">
     <span class="digimon-farm-card-name">
       <span> Lv. {{ digimon()?.level }} </span>
-      {{ digimon()?.name }}
+      {{ digimon()?.nickName ? digimon()?.nickName : digimon()?.name }}
     </span>
     <div class="digimon-farm-card-attributes">
       <span>{{

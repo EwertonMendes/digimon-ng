@@ -129,6 +129,8 @@
     "COMPONENTS": {
       "BATTLE_MODAL": {
         "TITLE": "Batalla",
+        "PLAYER_TURN": "Turno de {{playerName}}",
+        "ENEMY_TURN": "Turno del Enemigo",
         "TURN_ORDER_TITLE": "Orden de Turno",
         "PLAYER_TEAM_TITLE": "Equipo del Jugador",
         "ENEMY_TEAM_TITLE": "Equipo Enemigo",

@@ -45,11 +45,6 @@ export class EvolutionTreeModalComponent implements AfterViewInit {
     this.adjustEvolutionTreeZoom();
   }
 
-  private static readonly NODE_SIZE = 40;
-  private static readonly EDGE_SIZE = 2;
-  private static readonly NODE_COLOR = '#191919';
-  private static readonly EDGE_COLOR = 'black';
-
   id = input<string>('evolution-tree-modal');
   mainDigimon = input<Digimon | BaseDigimon>();
   sigma!: Sigma;
@@ -229,8 +224,8 @@ export class EvolutionTreeModalComponent implements AfterViewInit {
       label: `${digimon.name} (${digimon.rank})`,
       x,
       y,
-      size: EvolutionTreeModalComponent.NODE_SIZE,
-      color: EvolutionTreeModalComponent.NODE_COLOR,
+      size: this.graphService.NODE_SIZE,
+      color: this.graphService.NODE_COLOR,
       type: 'image',
       image: digimon.img,
       seed: digimon.seed,
@@ -240,8 +235,8 @@ export class EvolutionTreeModalComponent implements AfterViewInit {
 
   private addEdgeToGraph(sourceSeed: string, targetSeed: string) {
     this.sigma.getGraph().addEdge(sourceSeed, targetSeed, {
-      size: EvolutionTreeModalComponent.EDGE_SIZE,
-      color: EvolutionTreeModalComponent.EDGE_COLOR,
+      size: this.graphService.EDGE_SIZE,
+      color: this.graphService.EDGE_COLOR,
       sourceSeed,
       targetSeed,
     });

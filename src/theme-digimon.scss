@@ -26,6 +26,8 @@
   --surface: #1e1e1e;
   --text: #FFFFFF;
 
+  --accent: #2563EB;
+
   --danger: #E74C3C;
   --danger-light: #{color.adjust(#E74C3C, $lightness: 5%)};
   --danger-dark: #{color.adjust(#E74C3C, $lightness: -5%)};

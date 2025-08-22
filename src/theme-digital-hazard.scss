@@ -22,6 +22,8 @@
   --tertiary-light-transparent: rgba(191, 88, 55, 0.5);
   --tertiary-dark-transparent: rgba(140, 54, 31, 0.5);
 
+  --accent: #0EA5E9;
+
   --danger: var(--primary);
   --danger-light: #{color.adjust(#D72638, $lightness: 5%)};
   --danger-dark: #{color.adjust(#D72638, $lightness: -5%)};

@@ -6,22 +6,56 @@
     <div class="digimon-details-content">
       <div class="digimon-details-content-first-block">
         <img
-          [src]="globalState.selectedDigimonOnDetailsAccessor?.img"
+          [src]="globalState.selectedDigimonOnDetails()?.img"
           alt="digimon"
         />
       </div>
       <div class="digimon-details-content-container">
         <div class="digimon-details-header">
-          <h4>
-            {{
-              globalState.selectedDigimonOnDetailsAccessor?.nickName ??
-                globalState.selectedDigimonOnDetailsAccessor?.name
-            }}
-          </h4>
-          @if (globalState.selectedDigimonOnDetailsAccessor?.nickName) {
-          <span>{{ globalState.selectedDigimonOnDetailsAccessor?.name }}</span>
+          @if(!isEditingName()) {
+          <div class="name-rank-container">
+            <h4>
+              {{
+                globalState.selectedDigimonOnDetails()?.nickName ??
+                  globalState.selectedDigimonOnDetails()?.name
+              }}
+            </h4>
+            @if (globalState.selectedDigimonOnDetails()?.nickName &&
+            globalState.selectedDigimonOnDetails()?.nickName !==
+            globalState.selectedDigimonOnDetails()?.name) {
+            <span>{{
+              globalState.selectedDigimonOnDetails()?.name
+            }}</span>
+            }
+            <span>{{
+              globalState.selectedDigimonOnDetails()?.rank
+            }}</span>
+          </div>
+          <div class="change-name-button-container">
+            <i
+              class="change-name-button ph-bold ph-note-pencil"
+              (click)="showChangeNameField()"
+            ></i>
+          </div>
+          }@else {
+          <div class="change-name-input-container">
+            <app-input
+              [placeholder]="
+                'SHARED.COMPONENTS.DIGIMON_DETAILS_MODAL.CHANGE_NAME_PLACEHOLDER'
+                  | transloco
+              "
+              [maxlength]="20"
+              [(ngModel)]="digimonNickname"
+              [focused]="isEditingName()"
+            ></app-input>
+          </div>
+          <div class="change-name-button-container">
+            <i
+              class="change-name-button ph-bold ph-check-fat"
+              (click)="saveNewDigimonName()"
+            ></i>
+          </div>
           }
-          <span>{{ globalState.selectedDigimonOnDetailsAccessor?.rank }}</span>
         </div>
         <div class="stats">
           <div class="digimon-details-content-info">
@@ -36,7 +70,7 @@
                 "SHARED.COMPONENTS.DIGIMON_DETAILS_MODAL.SPECIES" | transloco
               }}</span>
               <span class="value">{{
-                globalState.selectedDigimonOnDetailsAccessor?.species
+                globalState.selectedDigimonOnDetails()?.species
               }}</span>
             </div>
             <div class="digimon-details-content-info-item">
@@ -44,7 +78,7 @@
                 "SHARED.COMPONENTS.DIGIMON_DETAILS_MODAL.ATTRIBUTE" | transloco
               }}</span>
               <span class="value">{{
-                globalState.selectedDigimonOnDetailsAccessor?.attribute
+                globalState.selectedDigimonOnDetails()?.attribute
               }}</span>
             </div>
             <div class="digimon-details-content-info-item">
@@ -52,7 +86,7 @@
                 "SHARED.COMPONENTS.DIGIMON_DETAILS_MODAL.LEVEL" | transloco
               }}</span>
               <span class="value">{{
-                globalState.selectedDigimonOnDetailsAccessor?.level
+                globalState.selectedDigimonOnDetails()?.level
               }}</span>
             </div>
             <div class="digimon-details-content-info-item">
@@ -62,7 +96,7 @@
               }}</span>
               <span class="value"
                 >{{
-                  globalState.selectedDigimonOnDetailsAccessor?.exp
+                  globalState.selectedDigimonOnDetails()?.exp
                     | number : "1.0-0"
                 }}
                 / {{ neededExpForNextLevel() | number : "1.0-0" }}</span
@@ -73,7 +107,7 @@
                 "SHARED.COMPONENTS.DIGIMON_DETAILS_MODAL.TOTAL_EXP" | transloco
               }}</span>
               <span class="value">{{
-                globalState.selectedDigimonOnDetailsAccessor?.totalExp
+                globalState.selectedDigimonOnDetails()?.totalExp
               }}</span>
             </div>
           </div>
@@ -87,25 +121,25 @@
                   ><span
                     [ngClass]="{
                       'low-stat':
-                        globalState.selectedDigimonOnDetailsAccessor
+                        globalState.selectedDigimonOnDetails()
                           ?.currentHp! <=
                           0.2 *
-                            globalState.selectedDigimonOnDetailsAccessor
+                            globalState.selectedDigimonOnDetails()
                               ?.maxHp! &&
-                        globalState.selectedDigimonOnDetailsAccessor
+                        globalState.selectedDigimonOnDetails()
                           ?.currentHp! > 0,
                       'zero-stat':
-                        globalState.selectedDigimonOnDetailsAccessor
+                        globalState.selectedDigimonOnDetails()
                           ?.currentHp === 0
                     }"
                     >{{
-                      globalState.selectedDigimonOnDetailsAccessor?.currentHp
+                      globalState.selectedDigimonOnDetails()?.currentHp
                         | number : "1.0-0"
                     }}</span
                   >
                   /
                   {{
-                    globalState.selectedDigimonOnDetailsAccessor?.maxHp
+                    globalState.selectedDigimonOnDetails()?.maxHp
                       | number : "1.0-0"
                   }}</span
                 >
@@ -118,25 +152,25 @@
                   ><span
                     [ngClass]="{
                       'low-stat':
-                        globalState.selectedDigimonOnDetailsAccessor
+                        globalState.selectedDigimonOnDetails()
                           ?.currentMp! <=
                           0.2 *
-                            globalState.selectedDigimonOnDetailsAccessor
+                            globalState.selectedDigimonOnDetails()
                               ?.maxMp! &&
-                        globalState.selectedDigimonOnDetailsAccessor
+                        globalState.selectedDigimonOnDetails()
                           ?.currentMp! > 0,
                       'zero-stat':
-                        globalState.selectedDigimonOnDetailsAccessor
+                        globalState.selectedDigimonOnDetails()
                           ?.currentMp === 0
                     }"
                     >{{
-                      globalState.selectedDigimonOnDetailsAccessor?.currentMp
+                      globalState.selectedDigimonOnDetails()?.currentMp
                         | number : "1.0-0"
                     }}</span
                   >
                   /
                   {{
-                    globalState.selectedDigimonOnDetailsAccessor?.maxMp
+                    globalState.selectedDigimonOnDetails()?.maxMp
                       | number : "1.0-0"
                   }}</span
                 >
@@ -146,7 +180,7 @@
                   "SHARED.COMPONENTS.DIGIMON_DETAILS_MODAL.ATK" | transloco
                 }}</span>
                 <span class="value">{{
-                  globalState.selectedDigimonOnDetailsAccessor?.atk
+                  globalState.selectedDigimonOnDetails()?.atk
                     | number : "1.0-0"
                 }}</span>
               </div>
@@ -155,7 +189,7 @@
                   "SHARED.COMPONENTS.DIGIMON_DETAILS_MODAL.DEF" | transloco
                 }}</span>
                 <span class="value">{{
-                  globalState.selectedDigimonOnDetailsAccessor?.def
+                  globalState.selectedDigimonOnDetails()?.def
                     | number : "1.0-0"
                 }}</span>
               </div>
@@ -164,7 +198,7 @@
                   "SHARED.COMPONENTS.DIGIMON_DETAILS_MODAL.SPD" | transloco
                 }}</span>
                 <span class="value">{{
-                  globalState.selectedDigimonOnDetailsAccessor?.speed
+                  globalState.selectedDigimonOnDetails()?.speed
                     | number : "1.0-0"
                 }}</span>
               </div>
@@ -175,7 +209,7 @@
                 }}</span>
                 <span class="value"
                   >{{
-                    globalState.selectedDigimonOnDetailsAccessor?.bitFarmingRate
+                    globalState.selectedDigimonOnDetails()?.bitFarmingRate
                       | number : "1.0-0"
                   }}
                   /m</span
@@ -208,11 +242,9 @@
           weight="bold"
           icon="ph-graph"
           size="xl"
-
           (onClick)="openEvolutionTreeModal()"
         />
       </div>
     </div>
   </div>
 </app-modal>
-

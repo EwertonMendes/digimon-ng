@@ -1,4 +1,4 @@
-import { computed, inject, Injectable, signal } from '@angular/core';
+import { ApplicationRef, computed, inject, Injectable, signal } from '@angular/core';
 import { TrainingService } from './services/training.service';
 import { FarmingService } from './services/farming.service';
 import { BattleService } from './services/battle.service';
@@ -68,15 +68,7 @@ export class GlobalStateDataSource {
     );
   }
 
-  private selectedDigimonOnDetails = signal<Digimon | undefined>(undefined);
-
-  get selectedDigimonOnDetailsAccessor() {
-    return this.selectedDigimonOnDetails();
-  }
-
-  setSelectedDigimonOnDetailsAccessor(digimon: Digimon | undefined) {
-    this.selectedDigimonOnDetails.set(digimon);
-  }
+  selectedDigimonOnDetails = signal<Digimon | undefined>(undefined);
 
   private enemyTeam = signal<Digimon[]>([]);
 
@@ -136,6 +128,7 @@ export class GlobalStateDataSource {
   private audioService = inject(AudioService);
   private configService = inject(ConfigService)
   private themeService = inject(ThemeService);
+  private applicationRef = inject(ApplicationRef);
 
   private trainingService = inject(TrainingService);
   private farmingService = inject(FarmingService);
@@ -779,6 +772,23 @@ export class GlobalStateDataSource {
     return this.digimonService.getDigimonCurrentEvolutionRoute(digimon);
   }
 
+  getDigimonById(id: string): Digimon | undefined {
+    const digimonLists = [
+      'digimonList',
+      'bitFarmDigimonList',
+      'inTrainingDigimonList',
+      'hospitalDigimonList',
+      'digimonStorageList'
+    ] as const;
+
+    for (const listName of digimonLists) {
+      const found = this.playerData()[listName].find(d => d.id === id);
+      if (found) return found;
+    }
+
+    return undefined;
+  }
+
   resetBattleState() {
     this.enemyTeam.set([]);
     this.battleLog.set([]);
@@ -819,7 +829,7 @@ export class GlobalStateDataSource {
 
   getDigimonNeededExpForNextLevel() {
     return this.battleService.calculateRequiredExpForLevel(
-      this.selectedDigimonOnDetailsAccessor?.level ?? 1
+      this.selectedDigimonOnDetails()?.level ?? 1
     );
   }
 

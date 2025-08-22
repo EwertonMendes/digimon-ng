@@ -29,7 +29,7 @@ export class StorageModalComponent {
 
   openDigimonDetailsModal(digimon: Digimon) {
     this.audioService.playAudio(AudioEffects.CLICK);
-    this.globalState.setSelectedDigimonOnDetailsAccessor(digimon);
+    this.globalState.selectedDigimonOnDetails.set(digimon);
     this.modalService.open(this.digimonDetailsModalId, DigimonDetailsModalComponent);
   }
 

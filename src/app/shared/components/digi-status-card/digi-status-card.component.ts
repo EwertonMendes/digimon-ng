@@ -1,4 +1,14 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, computed, DestroyRef, effect, inject, input, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  computed,
+  DestroyRef,
+  effect,
+  inject,
+  input,
+  signal,
+} from '@angular/core';
 import { Digimon } from '../../../core/interfaces/digimon.interface';
 import { CommonModule } from '@angular/common';
 import {
@@ -61,10 +71,21 @@ export class DigiStatusCardComponent {
       : 'normal';
   });
 
+  changedName = computed(() => {
+    if (this.isThisDigimon()) return;
+
+    return this.globalState.getDigimonById(this.globalState.selectedDigimonOnDetails()?.id!)?.nickName;
+  })
+
   constructor() {
     effect(() => {
-      if (this.digimon().id !== this.globalState.selectedDigimonOnDetailsAccessor?.id) return;
+
+      if (this.isThisDigimon()) return;
       this.change.detectChanges();
+
+      if (this.changedName()) {
+        this.digimon().nickName = this.changedName();
+      }
     });
 
     this.globalState.digimonHpChanges$
@@ -86,6 +107,10 @@ export class DigiStatusCardComponent {
 
         }, 100);
       });
+  }
+
+  isThisDigimon(): boolean {
+    return this.digimon().id !== this.globalState.selectedDigimonOnDetails()?.id;
   }
 
   resetDamageState() {

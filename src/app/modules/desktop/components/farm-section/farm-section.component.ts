@@ -96,7 +96,7 @@ export class FarmSectionComponent {
 
   openDigimonDetailsModal(digimon: Digimon): void {
     this.audioService.playAudio(AudioEffects.CLICK);
-    this.globalState.setSelectedDigimonOnDetailsAccessor(digimon);
+    this.globalState.selectedDigimonOnDetails.set(digimon);
     this.modalService.open(this.digimonDetailsModalId, DigimonDetailsModalComponent);
   }
 

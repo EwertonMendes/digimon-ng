@@ -181,6 +181,7 @@
       },
       "DIGIMON_DETAILS_MODAL": {
         "TITLE": "Detalhes do Digimon",
+        "CHANGE_NAME_PLACEHOLDER": "Dê a seu digimon um nome novinho em folha",
         "AGE": "Idade:",
         "SPECIES": "Espécie:",
         "ATTRIBUTE": "Atributo:",

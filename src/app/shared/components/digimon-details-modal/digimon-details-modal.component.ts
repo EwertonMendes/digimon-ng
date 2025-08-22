@@ -1,61 +1,80 @@
-import { Component, computed, effect, inject, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  effect,
+  inject,
+  model,
+  signal,
+} from '@angular/core';
 import { GlobalStateDataSource } from '../../../state/global-state.datasource';
 import { CommonModule } from '@angular/common';
 import { EvolutionRouteComponent } from '../evolution-route/evolution-route.component';
 import { ButtonComponent } from '../button/button.component';
 import { EvolutionTreeModalComponent } from '../evolution-tree-modal/evolution-tree-modal.component';
-import { BaseDigimon } from '../../../core/interfaces/digimon.interface';
+import { BaseDigimon, Digimon } from '../../../core/interfaces/digimon.interface';
 import { AudioEffects } from '../../../core/enums/audio-tracks.enum';
 import { AudioService } from '../../../services/audio.service';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 import { ModalComponent } from '../modal/modal.component';
 import { ModalService } from '../modal/modal.service';
+import { InputComponent } from '../input/input.component';
+import { FormsModule } from '@angular/forms';
+import '@phosphor-icons/web/light';
+import '@phosphor-icons/web/bold';
 
 @Component({
   standalone: true,
   selector: 'app-digimon-details-modal',
   templateUrl: './digimon-details-modal.component.html',
   styleUrl: './digimon-details-modal.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     ModalComponent,
     CommonModule,
     EvolutionRouteComponent,
     ButtonComponent,
-    TranslocoModule
+    TranslocoModule,
+    InputComponent,
+    FormsModule
   ],
 })
 export class DigimonDetailsModalComponent {
-  digimonDetailsModalId = signal('digimon-details-modal');
-  evolutionTreeModalId = 'evolution-tree-modal';
+  protected digimonDetailsModalId = signal('digimon-details-modal');
+  private evolutionTreeModalId = 'evolution-tree-modal';
 
-  globalState = inject(GlobalStateDataSource);
-  modalService = inject(ModalService);
-  audioService = inject(AudioService);
-  translocoService = inject(TranslocoService);
+  protected globalState = inject(GlobalStateDataSource);
+  private modalService = inject(ModalService);
+  private audioService = inject(AudioService);
+  private translocoService = inject(TranslocoService);
 
-  digimonDetailedAge = computed(() => {
-    if (!this.globalState.selectedDigimonOnDetailsAccessor) return;
+  protected digimonDetailedAge = computed(() => {
+    if (!this.globalState.selectedDigimonOnDetails()) return;
 
     return this.formatAge(
       this.calculateDetailedAge(
-        this.globalState.selectedDigimonOnDetailsAccessor.birthDate ??
+        this.globalState.selectedDigimonOnDetails()?.birthDate ??
         new Date()
       )
     );
   });
 
-  neededExpForNextLevel = computed(() =>
+  protected neededExpForNextLevel = computed(() =>
     this.globalState.getDigimonNeededExpForNextLevel()
   );
 
-  evolutionRoute = signal<BaseDigimon[]>([]);
+  protected evolutionRoute = signal<BaseDigimon[]>([]);
+
+  protected isEditingName = signal<boolean>(false);
+
+  protected digimonNickname = model<string>(this.globalState.selectedDigimonOnDetails()?.nickName ?? '')
 
   constructor() {
     effect(
       () => {
-        this.globalState.selectedDigimonOnDetailsAccessor;
+        this.globalState.selectedDigimonOnDetails();
         const evolutionList = this.globalState.getDigimonCurrentEvolutionRoute(
-          this.globalState.selectedDigimonOnDetailsAccessor!
+          this.globalState.selectedDigimonOnDetails()!
         );
 
         if (!evolutionList) {
@@ -134,7 +153,21 @@ export class DigimonDetailsModalComponent {
   openEvolutionTreeModal() {
     this.audioService.playAudio(AudioEffects.CLICK);
     this.modalService.open(this.evolutionTreeModalId, EvolutionTreeModalComponent, {
-      mainDigimon: this.globalState.selectedDigimonOnDetailsAccessor
+      mainDigimon: this.globalState.selectedDigimonOnDetails()
     });
+  }
+
+  showChangeNameField() {
+    this.isEditingName.set(true);
+  }
+
+  saveNewDigimonName() {
+    this.isEditingName.set(false);
+
+    if (!this.digimonNickname() || !this.globalState.selectedDigimonOnDetails() || this.digimonNickname() === this.globalState.selectedDigimonOnDetails()?.nickName) return;
+
+    this.globalState.getDigimonById(this.globalState.selectedDigimonOnDetails()!.id!)!.nickName = this.digimonNickname().trim();
+
+    this.globalState.selectedDigimonOnDetails.update(d => ({ ...d, nickname: this.digimonNickname().trim() } as Digimon));
   }
 }

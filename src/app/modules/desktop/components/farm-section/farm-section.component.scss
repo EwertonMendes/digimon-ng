@@ -111,6 +111,10 @@
       width: -webkit-fill-available;
       height: -webkit-fill-available;
       overflow-x: auto;
+
+      app-digi-status-card {
+        height: fit-content;
+      }
     }
 
     .in-training-list-no-data-container {
@@ -150,6 +154,10 @@
       width: -webkit-fill-available;
       height: -webkit-fill-available;
       overflow-x: auto;
+
+      app-digimon-farm-card {
+        height: fit-content;
+      }
     }
 
     .bit-farming-list-no-data-container {

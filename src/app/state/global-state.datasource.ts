@@ -520,7 +520,8 @@ export class GlobalStateDataSource {
         this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.ENEMY_ATTACKS_LOG', {
           name: digimon.name,
           damage: dealtDamage,
-          player: target.name,
+          player: this.playerData().name,
+          digimon: target.nickName ? target.nickName : target.name,
           hp: target.currentHp
         })
       );
@@ -538,7 +539,8 @@ export class GlobalStateDataSource {
       if (target.currentHp <= 0) {
         this.log(
           this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.PLAYER_DEFEATED_LOG', {
-            player: target.name
+            player: this.playerData().name,
+            digimon: target.nickName ? target.nickName : target.name,
           })
         );
         this.turnOrder = this.turnOrder.filter(

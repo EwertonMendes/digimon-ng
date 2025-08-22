@@ -61,7 +61,8 @@ export class BattleModalComponent {
     const dealtDamage = this.globalState.attack(digimon, opponentDigimon);
     this.log(
       this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.PLAYER_ATTACKS_LOG', {
-        name: digimon.name,
+        player: this.globalState.playerDataAcessor.name,
+        digimon: digimon.nickName ? digimon.nickName : digimon.name,
         damage: dealtDamage,
         enemy: opponentDigimon.name,
         hp: opponentDigimon.currentHp

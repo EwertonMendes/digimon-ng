@@ -224,6 +224,8 @@
         "INFO_TOAST_TEST": "Info toast test",
         "SUCCESS_TOAST_TEST": "Success toast test",
         "ERROR_TOAST_TEST": "Error toast test",
+        "KILL_ALL_DIGIMON": "Kill all Digimon",
+        "GIVE_1_MILLION_BITS": "Give 1 million bits",
         "SELECT_LEVEL": "Select level:",
         "GENERATE_EVOLUTION_LINE": "Generate evolution line",
         "REFRESH_DIGIMON_LIST": "Refresh digimon list",

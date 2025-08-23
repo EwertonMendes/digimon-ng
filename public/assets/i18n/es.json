@@ -223,6 +223,8 @@
         "SEE_EVOLUTION_LINES": "Ver Líneas de Evolución",
         "INFO_TOAST_TEST": "Teste de toast info",
         "SUCCESS_TOAST_TEST": "Teste de toast success",
+        "KILL_ALL_DIGIMON": "Matar todos los Digimons",
+        "GIVE_1_MILLION_BITS": "Dar 1 millón de bits",
         "ERROR_TOAST_TEST": "Teste de toast error",
         "SELECT_LEVEL": "Seleccionar nivel:",
         "GENERATE_EVOLUTION_LINE": "Generar línea de evolución",

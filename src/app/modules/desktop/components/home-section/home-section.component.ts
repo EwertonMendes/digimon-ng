@@ -52,7 +52,7 @@ export class HomeSectionComponent {
   protected inTrainingListId = 'in-training-digimon-list';
   protected bitFarmingListId = 'bit-farming-digimon-list';
   protected hospitalListId = 'hospital-digimon-list';
-  protected fullHealPrice = signal(this.calculateFullHealPrice(this.globalState.playerDataAcessor.hospitalDigimonList));
+  protected fullHealPrice = signal(0);
 
   private listLocations: Record<string, string> = {
     'in-training-digimon-list': DigimonListLocation.IN_TRAINING,
@@ -64,6 +64,7 @@ export class HomeSectionComponent {
   constructor() {
     effect(() => {
       this.isHealAllEnabled.set(this.canHealAll());
+      this.fullHealPrice.set(this.calculateFullHealPrice(this.globalState.playerDataAcessor.hospitalDigimonList));
     });
 
     this.globalState.digimonHpChanges$

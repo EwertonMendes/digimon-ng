@@ -248,6 +248,7 @@ export class HomeSectionComponent {
     };
 
     hospitalDigimonList.forEach(digimon => {
+      if (digimon.currentHp >= digimon.maxHp) return;
 
       let digimonCost = BASE_HEAL_PRICE;
 

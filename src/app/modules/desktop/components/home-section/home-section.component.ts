@@ -7,21 +7,21 @@ import {
   inject,
   signal,
 } from '@angular/core';
-import { DigiStatusCardComponent } from '../../../../shared/components/digi-status-card/digi-status-card.component';
-import { GlobalStateDataSource } from '../../../../state/global-state.datasource';
-import { Digimon } from '../../../../core/interfaces/digimon.interface';
+import { DigiStatusCardComponent } from '@shared/components/digi-status-card/digi-status-card.component';
+import { GlobalStateDataSource } from '@state/global-state.datasource';
+import { Digimon } from '@core/interfaces/digimon.interface';
 import {
   CdkDragDrop,
   DragDropModule,
   DropListOrientation,
   moveItemInArray,
 } from '@angular/cdk/drag-drop';
-import { DigimonListLocation } from '../../../../core/enums/digimon-list-location.enum';
-import { PlayerData } from '../../../../core/interfaces/player-data.interface';
-import { AudioService } from '../../../../services/audio.service';
-import { AudioEffects } from '../../../../core/enums/audio-tracks.enum';
-import { ButtonComponent } from '../../../../shared/components/button/button.component';
-import { HospitalService } from '../../../../state/services/hospital.service';
+import { DigimonListLocation } from '@core/enums/digimon-list-location.enum';
+import { PlayerData } from '@core/interfaces/player-data.interface';
+import { AudioService } from '@services/audio.service';
+import { AudioEffects } from '@core/enums/audio-tracks.enum';
+import { ButtonComponent } from '@shared/components/button/button.component';
+import { HospitalService } from '@state/services/hospital.service';
 import { TranslocoModule } from '@jsverse/transloco';
 import { TooltipDirective } from 'app/directives/tooltip.directive';
 import { ModalService } from 'app/shared/components/modal/modal.service';

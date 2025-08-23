@@ -1,20 +1,20 @@
 import {
-  ChangeDetectionStrategy,
-  Component,
-  computed,
-  effect,
-  inject,
-  model,
-  signal,
+    ChangeDetectionStrategy,
+    Component,
+    computed,
+    effect,
+    inject,
+    model,
+    signal,
 } from '@angular/core';
-import { GlobalStateDataSource } from '../../../state/global-state.datasource';
+import { GlobalStateDataSource } from '@state/global-state.datasource';
 import { CommonModule } from '@angular/common';
 import { EvolutionRouteComponent } from '../evolution-route/evolution-route.component';
 import { ButtonComponent } from '../button/button.component';
 import { EvolutionTreeModalComponent } from '../evolution-tree-modal/evolution-tree-modal.component';
-import { BaseDigimon, Digimon } from '../../../core/interfaces/digimon.interface';
-import { AudioEffects } from '../../../core/enums/audio-tracks.enum';
-import { AudioService } from '../../../services/audio.service';
+import { BaseDigimon, Digimon } from '@core/interfaces/digimon.interface';
+import { AudioEffects } from '@core/enums/audio-tracks.enum';
+import { AudioService } from '@services/audio.service';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 import { ModalComponent } from '../modal/modal.component';
 import { ModalService } from '../modal/modal.service';

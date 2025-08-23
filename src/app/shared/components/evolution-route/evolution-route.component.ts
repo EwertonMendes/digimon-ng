@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { BaseDigimon } from '../../../core/interfaces/digimon.interface';
+import { BaseDigimon } from '@core/interfaces/digimon.interface';
 
 @Component({
   selector: 'app-evolution-route',

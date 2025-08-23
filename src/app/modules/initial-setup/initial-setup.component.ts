@@ -1,11 +1,11 @@
 import { Component, inject, model, OnInit, signal } from '@angular/core';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
-import { GlobalStateDataSource } from '../../state/global-state.datasource';
-import { ButtonComponent } from '../../shared/components/button/button.component';
+import { GlobalStateDataSource } from '@state/global-state.datasource';
+import { ButtonComponent } from '@shared/components/button/button.component';
 import { FormsModule } from '@angular/forms';
-import { BaseDigimon, Digimon } from '../../core/interfaces/digimon.interface';
+import { BaseDigimon, Digimon } from '@core/interfaces/digimon.interface';
 import { CommonModule } from '@angular/common';
-import { DigimonSeeds } from '../../core/enums/digimon-seeds.enum';
+import { DigimonSeeds } from '@core/enums/digimon-seeds.enum';
 import { SelectComponent } from 'app/shared/components/select/select.component';
 
 type InitialTeam = {

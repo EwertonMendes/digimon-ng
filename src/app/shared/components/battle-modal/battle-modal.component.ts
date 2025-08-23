@@ -1,9 +1,9 @@
 import { Component, inject, input, signal } from '@angular/core';
-import { GlobalStateDataSource } from '../../../state/global-state.datasource';
+import { GlobalStateDataSource } from '@state/global-state.datasource';
 import { DigiStatusCardComponent } from '../digi-status-card/digi-status-card.component';
 import { ButtonComponent } from '../button/button.component';
-import { AudioService } from '../../../services/audio.service';
-import { AudioEffects } from '../../../core/enums/audio-tracks.enum';
+import { AudioService } from '@services/audio.service';
+import { AudioEffects } from '@core/enums/audio-tracks.enum';
 import { CommonModule } from '@angular/common';
 import { Digimon } from 'app/core/interfaces/digimon.interface';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';

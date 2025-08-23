@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Digimon } from '../../core/interfaces/digimon.interface';
-import { PlayerData } from '../../core/interfaces/player-data.interface';
+import { Digimon } from '@core/interfaces/digimon.interface';
+import { PlayerData } from '@core/interfaces/player-data.interface';
 
 @Injectable({
   providedIn: 'root',

@@ -1,6 +1,6 @@
 import { Component, inject, OnDestroy, OnInit, signal } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { CheckboxComponent } from "../../../shared/components/checkbox/checkbox.component";
+import { CheckboxComponent } from "@shared/components/checkbox/checkbox.component";
 import { AudioService } from 'app/services/audio.service';
 import { SelectComponent } from 'app/shared/components/select/select.component';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';

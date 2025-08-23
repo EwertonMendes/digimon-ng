@@ -24,8 +24,20 @@
     ],
     "baseUrl": "./src",
     "paths": {
-      "@variables": [
-        "./variables.scss"
+      "@core/*": [
+        "./app/core/*"
+      ],
+      "@shared/*": [
+        "./app/shared/*"
+      ],
+      "@state/*": [
+        "./app/state/*"
+      ],
+      "@modules/*": [
+        "./app/modules/*"
+      ],
+      "@services/*": [
+        "./app/services/*"
       ],
     }
   },

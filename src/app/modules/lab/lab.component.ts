@@ -1,9 +1,9 @@
 import { Component, effect, inject, signal } from '@angular/core';
-import { ButtonComponent } from "../../shared/components/button/button.component";
-import { GlobalStateDataSource } from '../../state/global-state.datasource';
-import { BaseDigimon } from '../../core/interfaces/digimon.interface';
-import { DigimonService } from '../../services/digimon.service';
-import { ToastService } from '../../shared/components/toast/toast.service';
+import { ButtonComponent } from "@shared/components/button/button.component";
+import { GlobalStateDataSource } from '@state/global-state.datasource';
+import { BaseDigimon } from '@core/interfaces/digimon.interface';
+import { DigimonService } from '@services/digimon.service';
+import { ToastService } from '@shared/components/toast/toast.service';
 import { CommonModule } from '@angular/common';
 import { TranslocoModule } from '@jsverse/transloco';
 

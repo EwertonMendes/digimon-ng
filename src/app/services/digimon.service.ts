@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { BaseDigimon, Digimon } from '../core/interfaces/digimon.interface';
+import { BaseDigimon, Digimon } from '@core/interfaces/digimon.interface';
 import { v4 as uuidv4 } from 'uuid';
 
 @Injectable({

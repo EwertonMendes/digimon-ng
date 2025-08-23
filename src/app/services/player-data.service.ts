@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { PlayerData } from "../core/interfaces/player-data.interface";
+import { PlayerData } from "@core/interfaces/player-data.interface";
 import { exists, writeTextFile, mkdir, readTextFile } from '@tauri-apps/plugin-fs';
 import { appDataDir, BaseDirectory, join } from '@tauri-apps/api/path';
 

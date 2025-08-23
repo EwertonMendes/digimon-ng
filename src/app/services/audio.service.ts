@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AudioEffects, AudioTracks } from '../core/enums/audio-tracks.enum';
+import { AudioEffects, AudioTracks } from '@core/enums/audio-tracks.enum';
 
 @Injectable({
   providedIn: 'root',

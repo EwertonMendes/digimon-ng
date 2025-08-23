@@ -1,5 +1,5 @@
 import { Component, computed, inject } from '@angular/core';
-import { GlobalStateDataSource } from '../../../state/global-state.datasource';
+import { GlobalStateDataSource } from '@state/global-state.datasource';
 import { CommonModule } from '@angular/common';
 import { TranslocoModule } from '@jsverse/transloco';
 import { ModalComponent } from '../modal/modal.component';

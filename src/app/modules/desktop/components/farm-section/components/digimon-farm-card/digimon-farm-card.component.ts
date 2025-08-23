@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 import { TranslocoModule } from '@jsverse/transloco';
-import { Digimon } from '../../../../../../core/interfaces/digimon.interface';
+import { Digimon } from '@core/interfaces/digimon.interface';
 
 @Component({
   selector: 'app-digimon-farm-card',

@@ -4,7 +4,7 @@ import { inject, Injectable } from '@angular/core';
 import { createNodeImageProgram } from '@sigma/node-image';
 import { Settings } from 'sigma/settings';
 import { NodeDisplayData, PartialButFor } from 'sigma/types';
-import { BaseDigimon, Digimon } from '../core/interfaces/digimon.interface';
+import { BaseDigimon, Digimon } from '@core/interfaces/digimon.interface';
 import { DigimonService } from './digimon.service';
 
 @Injectable({

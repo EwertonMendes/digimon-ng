@@ -5,9 +5,9 @@ import {
   inject,
   signal,
 } from '@angular/core';
-import { DigiStatusCardComponent } from '../../../../shared/components/digi-status-card/digi-status-card.component';
-import { GlobalStateDataSource } from '../../../../state/global-state.datasource';
-import { Digimon } from '../../../../core/interfaces/digimon.interface';
+import { DigiStatusCardComponent } from '@shared/components/digi-status-card/digi-status-card.component';
+import { GlobalStateDataSource } from '@state/global-state.datasource';
+import { Digimon } from '@core/interfaces/digimon.interface';
 import { DigimonFarmCardComponent } from './components/digimon-farm-card/digimon-farm-card.component';
 import {
   CdkDragDrop,
@@ -15,10 +15,10 @@ import {
   DropListOrientation,
   moveItemInArray,
 } from '@angular/cdk/drag-drop';
-import { DigimonListLocation } from '../../../../core/enums/digimon-list-location.enum';
-import { PlayerData } from '../../../../core/interfaces/player-data.interface';
-import { AudioEffects } from '../../../../core/enums/audio-tracks.enum';
-import { AudioService } from '../../../../services/audio.service';
+import { DigimonListLocation } from '@core/enums/digimon-list-location.enum';
+import { PlayerData } from '@core/interfaces/player-data.interface';
+import { AudioEffects } from '@core/enums/audio-tracks.enum';
+import { AudioService } from '@services/audio.service';
 import { TranslocoModule } from '@jsverse/transloco';
 import { ModalService } from 'app/shared/components/modal/modal.service';
 import { DigimonDetailsModalComponent } from 'app/shared/components/digimon-details-modal/digimon-details-modal.component';

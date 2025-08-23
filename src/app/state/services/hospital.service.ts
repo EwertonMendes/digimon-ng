@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
-import { Digimon } from '../../core/interfaces/digimon.interface';
-import { PlayerData } from '../../core/interfaces/player-data.interface';
-import { ToastService } from '../../shared/components/toast/toast.service';
+import { Digimon } from '@core/interfaces/digimon.interface';
+import { PlayerData } from '@core/interfaces/player-data.interface';
+import { ToastService } from '@shared/components/toast/toast.service';
 import { TranslocoService } from '@jsverse/transloco';
 
 @Injectable({

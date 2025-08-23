@@ -1,5 +1,5 @@
 import { Component, input, output } from '@angular/core';
-import { BaseDigimon } from '../../../core/interfaces/digimon.interface';
+import { BaseDigimon } from '@core/interfaces/digimon.interface';
 import { TranslocoModule } from '@jsverse/transloco';
 import { ModalComponent } from '../modal/modal.component';
 

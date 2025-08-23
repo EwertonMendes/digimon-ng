@@ -1,15 +1,15 @@
 import {
-  Component,
-  ElementRef,
-  HostListener,
-  inject,
-  input,
-  OnDestroy,
-  OnInit,
-  output,
-  ViewEncapsulation,
+    Component,
+    ElementRef,
+    HostListener,
+    inject,
+    input,
+    OnDestroy,
+    OnInit,
+    output,
+    ViewEncapsulation,
 } from '@angular/core';
-import { AudioService } from '../../../services/audio.service';
+import { AudioService } from '@services/audio.service';
 import { ModalService } from './modal.service';
 import { AudioEffects } from 'app/core/enums/audio-tracks.enum';
 

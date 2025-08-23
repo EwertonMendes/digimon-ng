@@ -1,12 +1,12 @@
 import { Component, inject, signal } from '@angular/core';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
-import { GlobalStateDataSource } from '../../../../state/global-state.datasource';
-import { BattleModalComponent } from '../../../../shared/components/battle-modal/battle-modal.component';
-import { Digimon } from '../../../../core/interfaces/digimon.interface';
-import { ToastService } from '../../../../shared/components/toast/toast.service';
-import { DigimonSeeds } from '../../../../core/enums/digimon-seeds.enum';
-import { AudioService } from '../../../../services/audio.service';
-import { AudioEffects } from '../../../../core/enums/audio-tracks.enum';
+import { GlobalStateDataSource } from '@state/global-state.datasource';
+import { BattleModalComponent } from '@shared/components/battle-modal/battle-modal.component';
+import { Digimon } from '@core/interfaces/digimon.interface';
+import { ToastService } from '@shared/components/toast/toast.service';
+import { DigimonSeeds } from '@core/enums/digimon-seeds.enum';
+import { AudioService } from '@services/audio.service';
+import { AudioEffects } from '@core/enums/audio-tracks.enum';
 import { ModalService } from 'app/shared/components/modal/modal.service';
 
 interface Location {

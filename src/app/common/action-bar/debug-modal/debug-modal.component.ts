@@ -1,7 +1,7 @@
 import { Component, inject, input } from '@angular/core';
-import { ButtonComponent } from '../../../shared/components/button/button.component';
-import { GlobalStateDataSource } from '../../../state/global-state.datasource';
-import { ToastService } from '../../../shared/components/toast/toast.service';
+import { ButtonComponent } from '@shared/components/button/button.component';
+import { GlobalStateDataSource } from '@state/global-state.datasource';
+import { ToastService } from '@shared/components/toast/toast.service';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 import { ModalService } from 'app/shared/components/modal/modal.service';
 import { ModalComponent } from 'app/shared/components/modal/modal.component';

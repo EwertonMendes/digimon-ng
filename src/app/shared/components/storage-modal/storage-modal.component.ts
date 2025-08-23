@@ -1,9 +1,9 @@
 import { Component, inject } from '@angular/core';
-import { AudioEffects } from '../../../core/enums/audio-tracks.enum';
-import { DigimonListLocation } from '../../../core/enums/digimon-list-location.enum';
-import { Digimon } from '../../../core/interfaces/digimon.interface';
-import { AudioService } from '../../../services/audio.service';
-import { GlobalStateDataSource } from '../../../state/global-state.datasource';
+import { AudioEffects } from '@core/enums/audio-tracks.enum';
+import { DigimonListLocation } from '@core/enums/digimon-list-location.enum';
+import { Digimon } from '@core/interfaces/digimon.interface';
+import { AudioService } from '@services/audio.service';
+import { GlobalStateDataSource } from '@state/global-state.datasource';
 import { ButtonComponent } from '../button/button.component';
 import { DigiStatusCardComponent } from '../digi-status-card/digi-status-card.component';
 import { TranslocoModule } from '@jsverse/transloco';

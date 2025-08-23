@@ -9,7 +9,7 @@ import {
   input,
   signal,
 } from '@angular/core';
-import { Digimon } from '../../../core/interfaces/digimon.interface';
+import { Digimon } from '@core/interfaces/digimon.interface';
 import { CommonModule } from '@angular/common';
 import {
   animate,
@@ -19,7 +19,7 @@ import {
   trigger,
   keyframes,
 } from '@angular/animations';
-import { GlobalStateDataSource } from '../../../state/global-state.datasource';
+import { GlobalStateDataSource } from '@state/global-state.datasource';
 import { pairwise, startWith } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 

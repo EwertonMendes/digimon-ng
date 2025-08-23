@@ -48,7 +48,8 @@
           "SEND_INJURED_DIGIMONS_TO_HOSPITAL": "Enviar digimons feridos ao hospital",
           "HOSPITAL_TITLE": "Hospital:",
           "NEXT_HEALING": "Próxima cura em",
-          "HEAL_ALL": "Curar todos por {{price}} Bits",
+          "HEAL_ALL_TOOLTIP": "Curar todos por {{price}} Bits",
+          "HEAL_ALL_DISABLED_TOOLTIP": "Nenhum digimon para curar",
           "NO_DIGIMON_HOSPITAL": "Nenhum Digimon",
           "TOAST": {
             "TEAM_LIMIT_REACHED": "Limite de digimons na equipe alcançado!",

@@ -94,8 +94,10 @@
         <div class="hospital-area-header-column">
           <app-button
             [appTooltip]="
-              'MODULES.DESKTOP.COMPONENTS.HOME_SECTION.HEAL_ALL'
-                | transloco : { price: fullHealPrice() }
+              isHealAllEnabled()
+                ? ('MODULES.DESKTOP.COMPONENTS.HOME_SECTION.HEAL_ALL_TOOLTIP'
+                  | transloco : { price: fullHealPrice() })
+                : 'MODULES.DESKTOP.COMPONENTS.HOME_SECTION.HEAL_ALL_DISABLED_TOOLTIP' | transloco
             "
             icon="ph-first-aid"
             size="xl"

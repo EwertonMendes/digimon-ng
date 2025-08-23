@@ -49,7 +49,8 @@
           "HOSPITAL_TITLE": "Hospital:",
           "NEXT_HEALING": "Próxima curación en",
           "HEAL_ALL": "Curar todo por {{price}} Bits",
-          "NO_DIGIMON_HOSPITAL": "Sin Digimon",
+          "HEAL_ALL_TOOLTIP": "Curar todo por {{price}} Bits",
+          "HEAL_ALL_DISABLED_TOOLTIP": "No hay digimon para curar",
           "TOAST": {
             "TEAM_LIMIT_REACHED": "¡Límite de digimons en el equipo alcanzado!",
             "TRAINING_LIMIT_REACHED": "¡Límite de digimons en entrenamiento alcanzado!",

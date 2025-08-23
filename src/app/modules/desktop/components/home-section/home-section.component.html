@@ -95,12 +95,12 @@
           <app-button
             [appTooltip]="
               'MODULES.DESKTOP.COMPONENTS.HOME_SECTION.HEAL_ALL'
-                | transloco : { price: fullHealPrice }
+                | transloco : { price: fullHealPrice() }
             "
             icon="ph-first-aid"
             size="xl"
             color="success"
-            [disabled]="!canHealAll()"
+            [disabled]="!isHealAllEnabled()"
             (onClick)="healAll()"
           />
         </div>

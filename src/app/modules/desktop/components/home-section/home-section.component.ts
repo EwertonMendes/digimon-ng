@@ -1,4 +1,12 @@
-import { Component, effect, inject, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  DestroyRef,
+  effect,
+  inject,
+  signal,
+} from '@angular/core';
 import { DigiStatusCardComponent } from '../../../../shared/components/digi-status-card/digi-status-card.component';
 import { GlobalStateDataSource } from '../../../../state/global-state.datasource';
 import { Digimon } from '../../../../core/interfaces/digimon.interface';
@@ -19,6 +27,7 @@ import { TooltipDirective } from 'app/directives/tooltip.directive';
 import { ModalService } from 'app/shared/components/modal/modal.service';
 import { DigimonDetailsModalComponent } from 'app/shared/components/digimon-details-modal/digimon-details-modal.component';
 import { FormsModule } from "@angular/forms";
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-home-section',
@@ -26,6 +35,7 @@ import { FormsModule } from "@angular/forms";
   imports: [DigiStatusCardComponent, ButtonComponent, DragDropModule, TranslocoModule, TooltipDirective, FormsModule],
   templateUrl: './home-section.component.html',
   styleUrl: './home-section.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeSectionComponent {
   private digimonDetailsModalId = 'digimon-details-modal';
@@ -33,16 +43,18 @@ export class HomeSectionComponent {
   private hospitalService = inject(HospitalService);
   private modalService = inject(ModalService);
   private audioService = inject(AudioService);
+  private changeDetectorRef = inject(ChangeDetectorRef);
+  private destroyRef = inject(DestroyRef);
 
   protected selectedLayout = signal<DropListOrientation>('horizontal')
 
-  teamListId = 'team-list';
-  inTrainingListId = 'in-training-digimon-list';
-  bitFarmingListId = 'bit-farming-digimon-list';
-  hospitalListId = 'hospital-digimon-list';
-  fullHealPrice = 150;
+  protected teamListId = 'team-list';
+  protected inTrainingListId = 'in-training-digimon-list';
+  protected bitFarmingListId = 'bit-farming-digimon-list';
+  protected hospitalListId = 'hospital-digimon-list';
+  protected fullHealPrice = signal(this.calculateFullHealPrice(this.globalState.playerDataAcessor.hospitalDigimonList));
 
-  listLocations: Record<string, string> = {
+  private listLocations: Record<string, string> = {
     'in-training-digimon-list': DigimonListLocation.IN_TRAINING,
     'bit-farming-digimon-list': DigimonListLocation.BIT_FARM,
     'team-list': DigimonListLocation.TEAM,
@@ -51,14 +63,16 @@ export class HomeSectionComponent {
 
   constructor() {
     effect(() => {
-      this.canHealAll.set(
-        this.globalState.playerDataAcessor.hospitalDigimonList.length > 0 &&
-        this.globalState.playerDataAcessor.hospitalDigimonList.some(
-          (digimon) => digimon.currentHp < digimon.maxHp
-        ) &&
-        this.globalState.playerDataAcessor.bits >= this.fullHealPrice
-      )
+      this.isHealAllEnabled.set(this.canHealAll());
     });
+
+    this.globalState.digimonHpChanges$
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(() => {
+        this.isHealAllEnabled.set(this.canHealAll());
+        this.fullHealPrice.set(this.calculateFullHealPrice(this.globalState.playerDataAcessor.hospitalDigimonList));
+        this.changeDetectorRef.detectChanges();
+      });
   }
 
   setLayout() {
@@ -67,13 +81,21 @@ export class HomeSectionComponent {
     this.selectedLayout.set(next);
   }
 
-  canHealAll = signal(false)
+  isHealAllEnabled = signal(this.canHealAll());
 
   healAll() {
-    if (!this.canHealAll()) return;
+    if (!this.isHealAllEnabled()) return;
     this.audioService.playAudio(AudioEffects.CLICK);
     this.hospitalService.fullHealHospitalDigimons(this.globalState.playerDataAcessor);
-    this.globalState.playerDataAcessor.bits -= this.fullHealPrice;
+    this.globalState.playerDataAcessor.bits -= this.fullHealPrice();
+    this.isHealAllEnabled.set(this.canHealAll());
+    this.changeDetectorRef.detectChanges();
+  }
+
+  canHealAll() {
+    return this.globalState.playerDataAcessor.hospitalDigimonList.length > 0
+      && this.globalState.playerDataAcessor.hospitalDigimonList.some(d => d.currentHp < d.maxHp)
+      && this.globalState.playerDataAcessor.bits >= this.fullHealPrice();
   }
 
   removeDigimonFromLocation(
@@ -205,5 +227,42 @@ export class HomeSectionComponent {
     }
 
     throw new Error('Invalid container ID');
+  }
+
+  calculateFullHealPrice(hospitalDigimonList: Digimon[]): number {
+    const BASE_HEAL_PRICE = 100;
+    if (hospitalDigimonList.length === 0) {
+      return 0;
+    }
+
+    let totalCost = 0;
+
+    const rankMultiplier: Record<string, number> = {
+      Mega: 3.5,
+      Ultimate: 2.5,
+      Champion: 1.5,
+      Rookie: 1.0,
+      'In-Training': 0.6,
+      Fresh: 0.3,
+    };
+
+    hospitalDigimonList.forEach(digimon => {
+
+      let digimonCost = BASE_HEAL_PRICE;
+
+      const rankMult = rankMultiplier[digimon.rank] || 1.0;
+      digimonCost *= rankMult;
+
+      const levelMultiplier = 1 + (digimon.level - 1) * 0.05;
+      digimonCost *= levelMultiplier;
+
+      const hpPercentage = digimon.currentHp / digimon.maxHp;
+      const damageMultiplier = 2 - hpPercentage;
+      digimonCost *= damageMultiplier;
+
+      totalCost += Math.ceil(digimonCost);
+    });
+
+    return totalCost;
   }
 }

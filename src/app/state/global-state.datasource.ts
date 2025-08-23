@@ -972,7 +972,7 @@ export class GlobalStateDataSource {
   }
 
   getBitCost(rank: string): number {
-    const costMap: Record<string, number> = {
+  const costMap: Record<string, number> = {
       "Fresh": 100,
       "In-Training": 200,
       "Rookie": 500,
@@ -981,5 +981,13 @@ export class GlobalStateDataSource {
       "Mega": 15000
     };
     return costMap[rank] || 1000;
+  }
+
+  killAllDigimon() {
+    this.playerDataAcessor.digimonList.forEach(digimon => digimon.currentHp = 0);
+    this.playerDataAcessor.inTrainingDigimonList.forEach(digimon => digimon.currentHp = 0);
+    this.playerDataAcessor.bitFarmDigimonList.forEach(digimon => digimon.currentHp = 0);
+    this.playerDataAcessor.hospitalDigimonList.forEach(digimon => digimon.currentHp = 0);
+    this.playerDataAcessor.digimonStorageList.forEach(digimon => digimon.currentHp = 0);
   }
 }

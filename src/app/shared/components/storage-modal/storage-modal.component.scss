@@ -40,9 +40,9 @@
 
     &-list-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fill, 330px);
+      justify-content: space-around;
       gap: 20px;
-      justify-content: center;
 
       .digimon-storage-content-list-item {
         display: flex;

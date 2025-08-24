@@ -11,7 +11,12 @@
       <span> Lv. {{ digimon().level }} </span>
       {{ digimon().nickName ? digimon().nickName : digimon().name }}
     </span>
-    <div class="digimon-farm-card-attributes">
+    <div
+      class="digimon-farm-card-attributes"
+      [ngStyle]="{
+        'text-decoration': digimon().currentHp <= 0 ? 'line-through' : 'none'
+      }"
+    >
       <span>{{
         "MODULES.DESKTOP.COMPONENTS.FARM_SECTION.BITS_PER_MINUTE" | transloco
       }}</span>

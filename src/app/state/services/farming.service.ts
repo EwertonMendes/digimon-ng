@@ -20,7 +20,8 @@ export class FarmingService {
   getBitGenerationTotalRate(playerData: PlayerData) {
     const bitFarmDigimonList = playerData.bitFarmDigimonList;
     return bitFarmDigimonList.reduce(
-      (acc: number, digimon: Digimon) => acc + digimon.bitFarmingRate!,
+      (acc: number, digimon: Digimon) =>
+        digimon.currentHp > 0 ? acc + (digimon.bitFarmingRate ?? 0) : acc,
       0
     );
   }

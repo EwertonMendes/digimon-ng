@@ -15,6 +15,7 @@ export class TrainingService {
 
   trainDigimons(playerData: PlayerData) {
     playerData.inTrainingDigimonList.forEach((digimon: Digimon) => {
+      if(digimon.currentHp <= 0) return;
       const randomAttributeToTrainIndex = Math.floor(
         Math.random() * this.modifiableAttributes.length
       );

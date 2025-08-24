@@ -1,17 +1,21 @@
-<div tabindex="0" class="digimon-farm-card">
+<div
+  tabindex="0"
+  class="digimon-farm-card"
+  [ngStyle]="{ filter: digimon().currentHp <= 0 ? 'brightness(0.6)' : '' }"
+>
   <div class="digimon-farm-card-image">
-    <img [src]="digimon()?.img" [alt]="digimon()?.name" />
+    <img [src]="digimon().img" [alt]="digimon().name" />
   </div>
   <div class="digimon-farm-card-content">
     <span class="digimon-farm-card-name">
-      <span> Lv. {{ digimon()?.level }} </span>
-      {{ digimon()?.nickName ? digimon()?.nickName : digimon()?.name }}
+      <span> Lv. {{ digimon().level }} </span>
+      {{ digimon().nickName ? digimon().nickName : digimon().name }}
     </span>
     <div class="digimon-farm-card-attributes">
       <span>{{
         "MODULES.DESKTOP.COMPONENTS.FARM_SECTION.BITS_PER_MINUTE" | transloco
       }}</span>
-      <span>{{ digimon()?.bitFarmingRate }}</span>
+      <span>{{ digimon().bitFarmingRate }}</span>
     </div>
   </div>
 </div>

@@ -49,6 +49,7 @@
           "HOSPITAL_TITLE": "Hospital:",
           "NEXT_HEALING": "Próxima cura em",
           "HEAL_ALL_TOOLTIP": "Curar todos por {{price}} Bits",
+          "NOT_ENOUGH_BITS_TOOLTIP": "Você precisa de {{price}} bits para curar todos",
           "HEAL_ALL_DISABLED_TOOLTIP": "Nenhum digimon para curar",
           "NO_DIGIMON_HOSPITAL": "Nenhum Digimon",
           "TOAST": {

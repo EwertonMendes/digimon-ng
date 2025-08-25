@@ -94,10 +94,14 @@
         <div class="hospital-area-header-column">
           <app-button
             [appTooltip]="
-              isHealAllEnabled()
-                ? ('MODULES.DESKTOP.COMPONENTS.HOME_SECTION.HEAL_ALL_TOOLTIP'
+              !hasDigimonsToHeal()
+                ? ('MODULES.DESKTOP.COMPONENTS.HOME_SECTION.HEAL_ALL_DISABLED_TOOLTIP'
+                  | transloco)
+                : !hasEnoughBits()
+                ? ('MODULES.DESKTOP.COMPONENTS.HOME_SECTION.NOT_ENOUGH_BITS_TOOLTIP'
                   | transloco : { price: fullHealPrice() })
-                : 'MODULES.DESKTOP.COMPONENTS.HOME_SECTION.HEAL_ALL_DISABLED_TOOLTIP' | transloco
+                : ('MODULES.DESKTOP.COMPONENTS.HOME_SECTION.HEAL_ALL_TOOLTIP'
+                  | transloco : { price: fullHealPrice() })
             "
             icon="ph-first-aid"
             size="xl"

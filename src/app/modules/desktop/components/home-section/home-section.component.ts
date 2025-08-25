@@ -53,6 +53,8 @@ export class HomeSectionComponent {
   protected bitFarmingListId = 'bit-farming-digimon-list';
   protected hospitalListId = 'hospital-digimon-list';
   protected fullHealPrice = signal(0);
+  protected hasDigimonsToHeal = signal(false);
+  protected hasEnoughBits = signal(false);
 
   private listLocations: Record<string, string> = {
     'in-training-digimon-list': DigimonListLocation.IN_TRAINING,
@@ -63,15 +65,29 @@ export class HomeSectionComponent {
 
   constructor() {
     effect(() => {
-      this.isHealAllEnabled.set(this.canHealAll());
-      this.fullHealPrice.set(this.calculateFullHealPrice(this.globalState.playerDataAcessor.hospitalDigimonList));
+      const hospital = this.globalState.playerDataAcessor.hospitalDigimonList;
+      const price = this.calculateFullHealPrice(hospital);
+      this.fullHealPrice.set(price);
+      const hasToHeal = hospital.length > 0 && hospital.some(d => d.currentHp < d.maxHp);
+      this.hasDigimonsToHeal.set(hasToHeal);
+      const bits = this.globalState.playerDataAcessor.bits;
+      const enough = bits >= price;
+      this.hasEnoughBits.set(enough);
+      this.isHealAllEnabled.set(hasToHeal && enough);
     });
 
     this.globalState.digimonHpChanges$
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(() => {
-        this.isHealAllEnabled.set(this.canHealAll());
-        this.fullHealPrice.set(this.calculateFullHealPrice(this.globalState.playerDataAcessor.hospitalDigimonList));
+        const hospital = this.globalState.playerDataAcessor.hospitalDigimonList;
+        const price = this.calculateFullHealPrice(hospital);
+        this.fullHealPrice.set(price);
+        const hasToHeal = hospital.length > 0 && hospital.some(d => d.currentHp < d.maxHp);
+        this.hasDigimonsToHeal.set(hasToHeal);
+        const bits = this.globalState.playerDataAcessor.bits;
+        const enough = bits >= price;
+        this.hasEnoughBits.set(enough);
+        this.isHealAllEnabled.set(hasToHeal && enough);
         this.changeDetectorRef.detectChanges();
       });
   }
@@ -94,9 +110,7 @@ export class HomeSectionComponent {
   }
 
   canHealAll() {
-    return this.globalState.playerDataAcessor.hospitalDigimonList.length > 0
-      && this.globalState.playerDataAcessor.hospitalDigimonList.some(d => d.currentHp < d.maxHp)
-      && this.globalState.playerDataAcessor.bits >= this.fullHealPrice();
+    return this.hasDigimonsToHeal() && this.hasEnoughBits();
   }
 
   removeDigimonFromLocation(

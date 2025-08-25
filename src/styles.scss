@@ -148,7 +148,6 @@ body {
 
 ::-webkit-scrollbar-track {
   background: var(--dark, #140F2D);
-  /* Fundo escuro consistente */
   border-radius: 60px;
   padding: 20px;
 }
@@ -156,12 +155,10 @@ body {
 ::-webkit-scrollbar-thumb {
   border-radius: 60px;
   background: var(--primary);
-  /* Usa a cor primária do tema ativo */
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: var(--primary-dark);
-  /* Usa a variação escura da cor primária */
   cursor: pointer;
 }
 

@@ -132,8 +132,9 @@ export class DigimonService {
   getPossibleEvolutionStats(
     evolvingDigimon: Digimon,
     targetDigimon: BaseDigimon
-  ): any {
+  ) {
     const growthFactor = 0.5;
+
     return {
       maxHp: Math.min(
         evolvingDigimon.maxHp + Math.round(targetDigimon.hp * growthFactor),
@@ -155,9 +156,42 @@ export class DigimonService {
         evolvingDigimon.speed + Math.round(targetDigimon.speed * growthFactor),
         this.maxOtherStats
       ),
-      bitFarmingRate:
-        evolvingDigimon.bitFarmingRate! + targetDigimon.bitFarmingRate + 1,
+      bitFarmingRate: this.generateNewBitFarmingRate(evolvingDigimon, targetDigimon),
     };
+  }
+
+  private generateNewBitFarmingRate(evolvingDigimon: Digimon, targetDigimon: BaseDigimon): number {
+
+    const rankMultiplier: Record<string, number> = {
+      Fresh: 0.25,
+      "In-Training": 0.5,
+      Rookie: 1,
+      Champion: 3,
+      Ultimate: 6,
+      Mega: 10,
+    };
+
+    const baseRate = targetDigimon.bitFarmingRate || 1;
+    const rankFactor = rankMultiplier[targetDigimon.rank] || 1;
+
+    const powerFactor =
+      (targetDigimon.hp +
+        targetDigimon.mp +
+        targetDigimon.atk +
+        targetDigimon.def +
+        targetDigimon.speed) / 10;
+
+    const evolutionBonus =
+      evolvingDigimon.rank !== targetDigimon.rank ? 50 : 0;
+
+    const randomFactor = 0.9 + Math.random() * 0.2;
+
+    return Math.min(
+      Math.round(
+        (baseRate * rankFactor + powerFactor + evolutionBonus) * randomFactor
+      ),
+      2000
+    );
   }
 
   evolveDigimon(evolvingDigimon: Digimon, targetSeed: string): Digimon | void {

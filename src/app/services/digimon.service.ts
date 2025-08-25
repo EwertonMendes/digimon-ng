@@ -130,43 +130,29 @@ export class DigimonService {
   }
 
   getPossibleEvolutionStats(
-    evolvingDigimon: Digimon | BaseDigimon,
+    evolvingDigimon: Digimon,
     targetDigimon: BaseDigimon
   ): any {
-    const rankMultiplier = this.calculateRankMultiplier(
-      evolvingDigimon.rank,
-      targetDigimon.rank
-    );
-
+    const growthFactor = 0.5;
     return {
-      maxHp: this.calculateStat(
-        evolvingDigimon.maxHp,
-        targetDigimon.hp,
-        rankMultiplier,
+      maxHp: Math.min(
+        evolvingDigimon.maxHp + Math.round(targetDigimon.hp * growthFactor),
         this.maxHpMp
       ),
-      maxMp: this.calculateStat(
-        evolvingDigimon.maxMp,
-        targetDigimon.mp,
-        rankMultiplier,
+      maxMp: Math.min(
+        evolvingDigimon.maxMp + Math.round(targetDigimon.mp * growthFactor),
         this.maxHpMp
       ),
-      atk: this.calculateStat(
-        evolvingDigimon.atk,
-        targetDigimon.atk,
-        rankMultiplier,
+      atk: Math.min(
+        evolvingDigimon.atk + Math.round(targetDigimon.atk * growthFactor),
         this.maxOtherStats
       ),
-      def: this.calculateStat(
-        evolvingDigimon.def,
-        targetDigimon.def,
-        rankMultiplier,
+      def: Math.min(
+        evolvingDigimon.def + Math.round(targetDigimon.def * growthFactor),
         this.maxOtherStats
       ),
-      speed: this.calculateStat(
-        evolvingDigimon.speed,
-        targetDigimon.speed,
-        rankMultiplier,
+      speed: Math.min(
+        evolvingDigimon.speed + Math.round(targetDigimon.speed * growthFactor),
         this.maxOtherStats
       ),
       bitFarmingRate:
@@ -174,91 +160,29 @@ export class DigimonService {
     };
   }
 
-  private calculateRankMultiplier(
-    evolvingRank: string,
-    targetRank: string
-  ): number {
-    const rankMultipliers: Record<string, number> = {
-      Fresh: 1.0,
-      'In-Training': 1.1,
-      Rookie: 1.2,
-      Champion: 1.3,
-      Ultimate: 1.5,
-      Mega: 1.8,
-    };
-
-    return rankMultipliers[targetRank] / rankMultipliers[evolvingRank];
-  }
-
-  private calculateStat(
-    evolvingStat: number,
-    targetStat: number,
-    rankMultiplier: number,
-    maxStat: number
-  ): number {
-    return Math.min(
-      Math.round(
-        (evolvingStat > targetStat ? evolvingStat : targetStat) * rankMultiplier
-      ),
-      maxStat
-    );
-  }
-
   evolveDigimon(evolvingDigimon: Digimon, targetSeed: string): Digimon | void {
     const targetDigimon = this.getBaseDigimonDataBySeed(targetSeed);
-
     if (!targetDigimon) throw Error('Target Digimon not found!');
     if (!this.checkRequirements(evolvingDigimon, targetDigimon))
       throw Error('Evolution requirements not met!');
 
-    const rankMultiplier = this.calculateRankMultiplier(
-      evolvingDigimon.rank,
-      targetDigimon.rank
+    const newStats = this.getPossibleEvolutionStats(
+      evolvingDigimon,
+      targetDigimon
     );
 
-    evolvingDigimon.maxHp = this.calculateStat(
-      evolvingDigimon.maxHp,
-      targetDigimon.hp,
-      rankMultiplier,
-      this.maxHpMp
-    );
-
-    evolvingDigimon.maxMp = this.calculateStat(
-      evolvingDigimon.maxMp,
-      targetDigimon.mp,
-      rankMultiplier,
-      this.maxHpMp
-    );
+    evolvingDigimon.maxHp = newStats.maxHp;
+    evolvingDigimon.maxMp = newStats.maxMp;
+    evolvingDigimon.atk = newStats.atk;
+    evolvingDigimon.def = newStats.def;
+    evolvingDigimon.speed = newStats.speed;
+    evolvingDigimon.bitFarmingRate = newStats.bitFarmingRate;
 
     evolvingDigimon.currentHp = evolvingDigimon.maxHp;
     evolvingDigimon.currentMp = evolvingDigimon.maxMp;
 
-    evolvingDigimon.atk = this.calculateStat(
-      evolvingDigimon.atk,
-      targetDigimon.atk,
-      rankMultiplier,
-      this.maxOtherStats
-    );
-
-    evolvingDigimon.def = this.calculateStat(
-      evolvingDigimon.def,
-      targetDigimon.def,
-      rankMultiplier,
-      this.maxOtherStats
-    );
-
-    evolvingDigimon.speed = this.calculateStat(
-      evolvingDigimon.speed,
-      targetDigimon.speed,
-      rankMultiplier,
-      this.maxOtherStats
-    );
-
-    evolvingDigimon.bitFarmingRate! += targetDigimon.bitFarmingRate + 1;
-
     this.resetDigimonStats(evolvingDigimon);
     this.updateEvolutionRoute(evolvingDigimon, targetDigimon);
-
     return evolvingDigimon;
   }
 

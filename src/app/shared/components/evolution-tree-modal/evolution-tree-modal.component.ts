@@ -307,7 +307,7 @@ export class EvolutionTreeModalComponent implements AfterViewInit {
 
     this.selectedPossibleEvolutionStats.set(
       this.digimonService.getPossibleEvolutionStats(
-        this.mainDigimon()!,
+        this.mainDigimon()! as Digimon,
         this.selectedDigimon()!
       )
     );

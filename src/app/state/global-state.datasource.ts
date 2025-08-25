@@ -1,4 +1,4 @@
-import { ApplicationRef, computed, inject, Injectable, signal } from '@angular/core';
+import { computed, inject, Injectable, signal } from '@angular/core';
 import { TrainingService } from './services/training.service';
 import { FarmingService } from './services/farming.service';
 import { BattleService } from './services/battle.service';
@@ -18,6 +18,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { ConfigService } from 'app/services/config.service';
 import { ThemeService } from 'app/services/theme.service';
 import { PlayerConfig } from 'app/core/interfaces/player-config.interface';
+import { getDefaultPotential } from '@core/utils/digimon.utils';
 
 type EndBattleState = 'victory' | 'defeat' | 'draw';
 type DigimonWithOwner = Digimon & { owner: string };
@@ -25,9 +26,19 @@ type DigimonWithOwner = Digimon & { owner: string };
   providedIn: 'root',
 })
 export class GlobalStateDataSource {
+
   private toastService = inject(ToastService);
   private translocoService = inject(TranslocoService);
-
+  private digimonService = inject(DigimonService);
+  private playerDataService = inject(PlayerDataService);
+  private audioService = inject(AudioService);
+  private configService = inject(ConfigService);
+  private themeService = inject(ThemeService);
+  private trainingService = inject(TrainingService);
+  private farmingService = inject(FarmingService);
+  private battleService = inject(BattleService);
+  private storageService = inject(StorageService);
+  private hospitalService = inject(HospitalService);
   private playerData = signal<PlayerData>({
     id: '',
     name: '',
@@ -43,17 +54,35 @@ export class GlobalStateDataSource {
     bits: 0,
     digiData: {},
   });
-
   showInitialSetupScreen = signal<boolean>(false);
-
-  listsLimits = {
-    [DigimonListLocation.TEAM]: 4,
-    [DigimonListLocation.IN_TRAINING]: 10,
-    [DigimonListLocation.BIT_FARM]: 10,
-    [DigimonListLocation.STORAGE]: 5,
-    [DigimonListLocation.HOSPITAL]: 10,
-  };
-
+  selectedDigimonOnDetails = signal<Digimon | undefined>(undefined);
+  private enemyTeam = signal<Digimon[]>([]);
+  private battleLog = signal<string[]>([]);
+  turnOrder: Array<DigimonWithOwner> = [];
+  currentAttackingDigimon = signal<DigimonWithOwner | null>(null);
+  currentDefendingDigimon = signal<DigimonWithOwner | null>(null);
+  isBattleActive = false;
+  showPlayerAttackButton = signal<boolean>(false);
+  private trainingDigimonIntervalDurationInSeconds = signal<number>(30);
+  trainingDigimonCountdown = signal<number>(0);
+  private bitFarmingIntervalDurationInSeconds = signal<number>(60);
+  bitFarmingCountdown = signal<number>(0);
+  private hospitalHealingIntervalDurationInSeconds = signal<number>(20);
+  hospitalHealingCountdown = signal<number>(0);
+  digimonHpChanges$ = new Subject<{
+    digimonId: string;
+    previousHp: number;
+    currentHp: number;
+    difference: number;
+    isPositive: boolean;
+  }>();
+  digimonMpChanges$ = new Subject<{
+    digimonId: string;
+    previousMp: number;
+    currentMp: number;
+    difference: number;
+    isPositive: boolean;
+  }>();
   get playerDataAcessor() {
     return this.playerData();
   }
@@ -68,51 +97,13 @@ export class GlobalStateDataSource {
     );
   }
 
-  selectedDigimonOnDetails = signal<Digimon | undefined>(undefined);
-
-  private enemyTeam = signal<Digimon[]>([]);
-
   get enemyTeamAccessor() {
     return this.enemyTeam();
   }
 
-  private battleLog = signal<string[]>([]);
-
   get battleLogAccessor() {
     return this.battleLog();
   }
-  turnOrder: Array<DigimonWithOwner> = [];
-
-  currentAttackingDigimon = signal<DigimonWithOwner | null>(null);
-  currentDefendingDigimon = signal<DigimonWithOwner | null>(null);
-
-  isBattleActive = false;
-  showPlayerAttackButton = signal<boolean>(false);
-
-  private trainingDigimonIntervalDurationInSeconds = signal<number>(30);
-  trainingDigimonCountdown = signal<number>(0);
-
-  private bitFarmingIntervalDurationInSeconds = signal<number>(60);
-  bitFarmingCountdown = signal<number>(0);
-
-  private hospitalHealingIntervalDurationInSeconds = signal<number>(20);
-  hospitalHealingCountdown = signal<number>(0);
-
-  digimonHpChanges$ = new Subject<{
-    digimonId: string;
-    previousHp: number;
-    currentHp: number;
-    difference: number;
-    isPositive: boolean;
-  }>();
-
-  digimonMpChanges$ = new Subject<{
-    digimonId: string;
-    previousMp: number;
-    currentMp: number;
-    difference: number;
-    isPositive: boolean;
-  }>();
 
   allPlayerDigimonList = computed(() =>
     [
@@ -123,137 +114,71 @@ export class GlobalStateDataSource {
     ].flat()
   );
 
-  private digimonService = inject(DigimonService);
-  private playerDataService = inject(PlayerDataService);
-  private audioService = inject(AudioService);
-  private configService = inject(ConfigService)
-  private themeService = inject(ThemeService);
-  private applicationRef = inject(ApplicationRef);
-
-  private trainingService = inject(TrainingService);
-  private farmingService = inject(FarmingService);
-  private battleService = inject(BattleService);
-  private storageService = inject(StorageService);
-  private hospitalService = inject(HospitalService);
-
-  listHandlers: Record<string, Function> = {
-    [DigimonListLocation.IN_TRAINING]:
-      this.removeDigimonFromTraining.bind(this),
-    [DigimonListLocation.BIT_FARM]: this.removeDigimonFromFarm.bind(this),
-    [DigimonListLocation.STORAGE]: this.removeDigimonFromStorage.bind(this),
-    [DigimonListLocation.TEAM]: this.removeDigimonFromList.bind(this),
-    [DigimonListLocation.HOSPITAL]: this.removeDigimonFromHospital.bind(this),
-  };
-
-  intervalConfigurations: Record<string, any> = {
-    digimonTraining: {
-      intervalDurationInSeconds:
-        this.trainingDigimonIntervalDurationInSeconds.bind(this),
-      countdownSetter: this.trainingDigimonCountdown.set.bind(
-        this.trainingDigimonCountdown
-      ),
-      action: () => {
-        const updatedPlayerData = this.trainingService.trainDigimons(
-          this.playerData()
-        );
-        this.updatePlayerData(updatedPlayerData);
-      },
-    },
-    bitFarmingGeneration: {
-      intervalDurationInSeconds:
-        this.bitFarmingIntervalDurationInSeconds.bind(this),
-      countdownSetter: this.bitFarmingCountdown.set.bind(
-        this.bitFarmingCountdown
-      ),
-      action: () => {
-        const updatedPlayerData =
-          this.farmingService.generateBitsBasedOnGenerationTotalRate(
-            this.playerData()
-          );
-        this.updatePlayerData(updatedPlayerData);
-      },
-    },
-    hospitalHealing: {
-      intervalDurationInSeconds:
-        this.hospitalHealingIntervalDurationInSeconds.bind(this),
-      countdownSetter: this.hospitalHealingCountdown.set.bind(
-        this.hospitalHealingCountdown
-      ),
-      action: () => {
-        const updatedPlayerData = this.hospitalService.healDigimons(
-          this.playerData()
-        );
-        this.updatePlayerData(updatedPlayerData);
-      },
-    },
-  };
-
-  private createDigimonProxy(digimon: Digimon): Digimon {
-    return new Proxy(digimon, {
-      set: (target, property, value) => {
-        if (property === 'currentHp' && target.currentHp !== value) {
-          this.handleHpChange(target, value);
-        } else if (property === 'currentMp' && target.currentMp !== value) {
-          this.handleMpChange(target, value);
-        }
-        target[property as keyof Digimon] = value;
-        return true;
-      },
-    });
+  getDigimonEvolutions() {
+    return this.digimonService.getDigimonEvolutions(
+      this.selectedDigimonOnDetails()
+    );
   }
 
-  private handleHpChange(digimon: Digimon, newHp: number) {
-    const previousHp = digimon.currentHp;
-    this.digimonHpChanges$.next({
-      digimonId: digimon.id!,
-      previousHp,
-      currentHp: newHp,
-      difference: Math.abs(previousHp - newHp),
-      isPositive: previousHp < newHp,
-    });
+  getBaseDigimonDataBySeed(seed: string) {
+    return this.digimonService.getBaseDigimonDataBySeed(seed);
   }
 
-  private handleMpChange(digimon: Digimon, newMp: number) {
-    const previousMp = digimon.currentMp;
-    this.digimonMpChanges$.next({
-      digimonId: digimon.id!,
-      previousMp,
-      currentMp: newMp,
-      difference: Math.abs(previousMp - newMp),
-      isPositive: previousMp < newMp,
-    });
+  getDigimonCurrentEvolutionRoute(digimon: Digimon) {
+    return this.digimonService.getDigimonCurrentEvolutionRoute(digimon);
   }
 
-  private updatePlayerDataList(listName: keyof PlayerData, digimon: Digimon) {
-    const list = this.playerData()[listName];
-    const digimonIndex = list.findIndex((d: Digimon) => d.id === digimon.id);
+  getBitGenerationTotalRate() {
+    return this.farmingService.getBitGenerationTotalRate(this.playerData());
+  }
 
-    if (digimonIndex !== -1) {
-      const updatedList = [...list];
-      updatedList[digimonIndex] = digimon;
-      this.playerData.set({
-        ...this.playerData(),
-        [listName]: updatedList,
-      });
+  getPlayerNeededExpForNextLevel() {
+    return this.battleService.calculateRequiredExpForPlayerLevel(
+      this.playerDataAcessor.level
+    );
+  }
+
+  getDigimonNeededExpForNextLevel() {
+    return this.battleService.calculateRequiredExpForLevel(
+      this.selectedDigimonOnDetails()?.level ?? 1
+    );
+  }
+
+  getDigimonById(id: string): Digimon | undefined {
+    const digimonLists = [
+      'digimonList',
+      'bitFarmDigimonList',
+      'inTrainingDigimonList',
+      'hospitalDigimonList',
+      'digimonStorageList'
+    ] as const;
+
+    for (const listName of digimonLists) {
+      const found = this.playerData()[listName].find(d => d.id === id);
+      if (found) return found;
     }
+
+    return undefined;
   }
 
-  private trackDigimon(digimon: Digimon) {
-    const proxy = this.createDigimonProxy(digimon);
-    const found = this.findDigimonInLists(digimon.id!);
-
-    if (found) {
-      this.updatePlayerDataList(found.listName, proxy);
-    }
+  getBitCost(rank: string): number {
+    const costMap: Record<string, number> = {
+      "Fresh": 100,
+      "In-Training": 200,
+      "Rookie": 500,
+      "Champion": 1500,
+      "Ultimate": 5000,
+      "Mega": 15000
+    };
+    return costMap[rank] || 1000;
   }
-
   loadConfigs(newGame: boolean) {
     const initialConfig: PlayerConfig = {
       ...this.configService.defaultInitialConfig,
       language: this.translocoService.getActiveLang()
     };
     this.configService.loadConfig().then(config => {
-      this.audioService.isAudioEnabled = initialConfig.enableAudio
+      this.audioService.isAudioEnabled = initialConfig.enableAudio;
       this.themeService.setTheme(initialConfig.theme);
       this.translocoService.setActiveLang(newGame ? initialConfig.language : config.language);
     });
@@ -261,15 +186,11 @@ export class GlobalStateDataSource {
 
   initializeGame(playerData: PlayerData, newGame = false) {
     this.playerData.set(playerData);
-
     this.playerDataService.currentPlayerId = playerData.id;
-
     this.loadConfigs(newGame);
-
     this.allPlayerDigimonList().forEach((digimon) => {
       this.trackDigimon(digimon);
     });
-
     this.initDigimonTraining();
     this.initBitFarmingGeneration();
     this.initHospitalHealing();
@@ -296,33 +217,108 @@ export class GlobalStateDataSource {
         [selectedDigimons[2].seed!]: 10,
       },
     };
-
     this.playerDataService.savePlayerData(newPlayerData);
-
     this.initializeGame(newPlayerData, true);
-
-    this.showInitialSetupScreen.set(false);;
+    this.showInitialSetupScreen.set(false);
   }
 
   async saveCurrentPlayerData() {
     await this.playerDataService.savePlayerData(this.playerData());
   }
-
-  initDigimonTraining() {
-    this.initIntervalCountdown('digimonTraining');
+  addBits(bits: number) {
+    const updatedPlayerData = {
+      ...this.playerData(),
+      bits: this.playerData().bits + bits,
+    };
+    this.updatePlayerData(updatedPlayerData);
   }
 
-  initBitFarmingGeneration() {
-    this.initIntervalCountdown('bitFarmingGeneration');
+  addGainedDigiData(gainedDigiData: { seed: string; name: string; amount: number }[]) {
+    const digiData = { ...this.playerData().digiData };
+    gainedDigiData.forEach(({ seed, amount }) => {
+      digiData[seed] = (digiData[seed] || 0) + amount;
+    });
+    const updatedPlayerData = {
+      ...this.playerData(),
+      digiData,
+    };
+    this.updatePlayerData(updatedPlayerData);
   }
 
-  initHospitalHealing() {
-    this.initIntervalCountdown('hospitalHealing');
+  async evolveDigimon(digimon: Digimon, targetSeed: string) {
+    const evolvingDigimonName = digimon.name;
+    await this.audioService.playAudio(AudioEffects.EVOLUTION);
+    const evolvedDigimon = this.digimonService.evolveDigimon(
+      digimon,
+      targetSeed
+    );
+    if (!evolvedDigimon) return;
+    this.toastService.showToast(
+      this.translocoService.translate('SHARED.COMPONENTS.EVOLUTION_TREE_MODAL.EVOLUTION_SUCCESS', {
+        main: evolvingDigimonName,
+        target: evolvedDigimon.name
+      }),
+      'success'
+    );
+    const playerData = this.playerData();
+    const lists = this.getAllDigimonLists(playerData);
+    this.updateDigimonInLists(lists, digimon, evolvedDigimon);
+    this.updateSelectedDigimonDetails(evolvedDigimon);
   }
 
-  log(message: string) {
-    this.battleLog().push(message);
+  addHpToDigimon(digimon: Digimon, amount: number) {
+    const digimonInList = this.allPlayerDigimonList().find(
+      (d) => d.id === digimon.id
+    );
+    if (!digimonInList) return;
+    digimonInList.currentHp += amount;
+    digimon.currentHp = digimonInList.currentHp;
   }
+
+  removeHpFromDigimon(digimon: Digimon, amount: number) {
+    const digimonInList = this.allPlayerDigimonList().find(
+      (d) => d.id === digimon.id
+    );
+    if (!digimonInList) return;
+    digimonInList.currentHp -= amount;
+    digimon.currentHp = digimonInList.currentHp;
+  }
+
+  killAllDigimon() {
+    this.playerDataAcessor.digimonList.forEach(digimon => digimon.currentHp = 0);
+    this.playerDataAcessor.inTrainingDigimonList.forEach(digimon => digimon.currentHp = 0);
+    this.playerDataAcessor.bitFarmDigimonList.forEach(digimon => digimon.currentHp = 0);
+    this.playerDataAcessor.hospitalDigimonList.forEach(digimon => digimon.currentHp = 0);
+    this.playerDataAcessor.digimonStorageList.forEach(digimon => digimon.currentHp = 0);
+  }
+
+  levelUpDigimonToLevel(digimon: Digimon, level: number) {
+    const potential = digimon.potential ?? getDefaultPotential(digimon.rank);
+    if (level <= digimon.level || digimon.level >= potential) return digimon;
+    while (digimon.level < level && digimon.level < potential) {
+      const expForNextLevel = this.battleService.calculateRequiredExpForLevel(digimon.level);
+      if (!digimon.exp) digimon.exp = 0;
+      digimon.exp += expForNextLevel;
+      this.battleService.levelUpDigimon(digimon);
+    }
+    return digimon;
+  }
+  listsLimits = {
+    [DigimonListLocation.TEAM]: 4,
+    [DigimonListLocation.IN_TRAINING]: 10,
+    [DigimonListLocation.BIT_FARM]: 10,
+    [DigimonListLocation.STORAGE]: 5,
+    [DigimonListLocation.HOSPITAL]: 10,
+  };
+
+  listHandlers: Record<string, Function> = {
+    [DigimonListLocation.IN_TRAINING]:
+      this.removeDigimonFromTraining.bind(this),
+    [DigimonListLocation.BIT_FARM]: this.removeDigimonFromFarm.bind(this),
+    [DigimonListLocation.STORAGE]: this.removeDigimonFromStorage.bind(this),
+    [DigimonListLocation.TEAM]: this.removeDigimonFromList.bind(this),
+    [DigimonListLocation.HOSPITAL]: this.removeDigimonFromHospital.bind(this),
+  };
 
   addDigimonToTraining(digimon: Digimon, from: string) {
     const updatedPlayerData = this.trainingService.addDigimonToTraining(
@@ -349,7 +345,6 @@ export class GlobalStateDataSource {
       digimon
     );
     this.updatePlayerData(updatedPlayerData);
-
     this.removeFromPreviousList(digimon.id!, from);
   }
 
@@ -367,9 +362,7 @@ export class GlobalStateDataSource {
       digimon
     );
     this.updatePlayerData(updatedPlayerData);
-
     if (!from) return;
-
     this.removeFromPreviousList(digimon.id!, from);
   }
 
@@ -439,12 +432,10 @@ export class GlobalStateDataSource {
         list: this.playerData().digimonStorageList,
       },
     ];
-
     for (const { name, list } of lists) {
       const foundDigimon = list.find(
         (digimon: Digimon) => digimon.id === digimonId
       );
-
       if (foundDigimon) {
         return {
           digimon: foundDigimon,
@@ -452,10 +443,36 @@ export class GlobalStateDataSource {
         };
       }
     }
-
     return undefined;
   }
 
+  resetStorage() {
+    this.playerData.set({
+      ...this.playerData(),
+      digimonStorageList: [],
+    });
+  }
+
+  convertDigiData(digimon: Digimon) {
+    this.addDigimonToStorage(digimon);
+    const currentAmount = this.playerData().digiData?.[digimon.seed] || 0;
+    const bitCost = this.getBitCost(digimon.rank);
+    const updatedPlayerData = {
+      ...this.playerData(),
+      bits: this.playerData().bits - bitCost,
+      digiData: {
+        ...this.playerData().digiData,
+        [digimon.seed]: currentAmount - 100,
+      },
+    };
+    this.updatePlayerData(updatedPlayerData);
+    this.toastService.showToast(
+      this.translocoService.translate('MODULES.LAB.TOAST.CONVERSION_SUCCESS', {
+        digimon: digimon.name,
+      }),
+      'success'
+    );
+  }
   startBattle() {
     this.repopulateTurnOrder();
     this.isBattleActive = true;
@@ -466,21 +483,17 @@ export class GlobalStateDataSource {
     this.isBattleActive = false;
     this.currentAttackingDigimon.set(null);
     this.currentDefendingDigimon.set(null);
-
     if (endState === 'victory') {
       this.audioService.playAudio(AudioTracks.VICTORY);
       const { totalExp, totalBits, digiDataGains } = this.calculateRewards(this.enemyTeam());
-
       this.log(this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.YOU_GAINED_LOG', {
         number: totalExp,
         type: 'exp'
       }));
-
       this.log(this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.YOU_GAINED_LOG', {
         number: totalBits,
         type: 'bits'
       }));
-
       for (const gain of digiDataGains) {
         this.log(this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.DIGI_DATA_GAINED_LOG', {
           amount: gain.amount,
@@ -492,7 +505,6 @@ export class GlobalStateDataSource {
         'success'
       );
     }
-
     if (endState === 'defeat') {
       this.audioService.playAudio(AudioTracks.DEFEAT);
       this.log(this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.DEFEAT_LOG'));
@@ -505,15 +517,86 @@ export class GlobalStateDataSource {
     this.log(this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.BATTLE_ENDED_LOG'));
   }
 
+  nextTurn() {
+    if (!this.isBattleActive) {
+      this.showPlayerAttackButton.set(false);
+      this.endBattle();
+      return;
+    }
+    if (this.enemyTeamAccessor.every((d) => d.currentHp <= 0)) {
+      this.isBattleActive = false;
+      this.showPlayerAttackButton.set(false);
+      this.endBattle('victory');
+      return;
+    }
+    if (this.playerDataAcessor.digimonList.every((d) => d.currentHp <= 0)) {
+      this.isBattleActive = false;
+      this.showPlayerAttackButton.set(false);
+      this.endBattle('defeat');
+      return;
+    }
+    if (this.turnOrder.length <= 5) {
+      this.repopulateTurnOrder();
+    }
+    const digimon = this.turnOrder[0];
+    if (!digimon) {
+      this.showPlayerAttackButton.set(false);
+      this.endBattle();
+      return;
+    }
+    if (digimon.owner === 'player') {
+      this.currentAttackingDigimon.set(digimon);
+      this.showPlayerAttackButton.set(true);
+    }
+    if (digimon.owner === 'enemy') {
+      this.currentAttackingDigimon.set(digimon);
+      this.showPlayerAttackButton.set(false);
+      this.enemyAttack(digimon);
+    }
+  }
+
+  attemptRunAway() {
+    const playerScore = this.battleService.calculateTeamScore(this.playerData().digimonList);
+    const enemyScore = this.battleService.calculateTeamScore(this.enemyTeam());
+    const escapeChance = this.battleService.calculateEscapeChance(playerScore, enemyScore);
+    const chance = Math.random();
+    if (chance <= escapeChance) {
+      this.toastService.showToast(
+        this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.ESCAPE_SUCCESS_TOAST'),
+        'info'
+      );
+      this.audioService.playAudio(AudioEffects.MISS);
+      this.log(this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.ESCAPE_SUCCESS_LOG'));
+      this.endBattle();
+      return;
+    }
+    this.toastService.showToast(
+      this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.ESCAPE_FAIL_TOAST'),
+      'error'
+    );
+    this.audioService.playAudio(AudioEffects.HIT);
+    this.log(this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.ESCAPE_FAIL_LOG'));
+    const enemy = this.turnOrder[0];
+    if (!enemy || enemy.owner !== 'enemy') {
+      this.enemyAttack(enemy);
+      return;
+    }
+    this.nextTurn();
+  }
+
+  attack(attacker: Digimon, defender: Digimon) {
+    return this.battleService.attack(attacker, defender);
+  }
+
+  resetBattleState() {
+    this.enemyTeam.set([]);
+    this.battleLog.set([]);
+  }
   private enemyAttack(digimon: Digimon) {
     if (!this.isBattleActive) return;
-
     const target = this.getTargetBasedOnStrategy();
-
     if (!target) return;
-
     this.currentDefendingDigimon.set({ ...target, owner: 'player' });
-
     setTimeout(() => {
       const dealtDamage = this.attack(digimon, target);
       this.log(
@@ -525,17 +608,13 @@ export class GlobalStateDataSource {
           hp: target.currentHp
         })
       );
-
       if (dealtDamage === 0) {
         this.audioService.playAudio(AudioEffects.MISS);
       }
-
       if (dealtDamage > 0) {
         this.audioService.playAudio(AudioEffects.HIT);
       }
-
       this.turnOrder.shift();
-
       if (target.currentHp <= 0) {
         this.log(
           this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.PLAYER_DEFEATED_LOG', {
@@ -547,7 +626,6 @@ export class GlobalStateDataSource {
           (digimon) => digimon.id !== target.id
         );
       }
-
       this.nextTurn();
     }, 1000);
   }
@@ -556,9 +634,7 @@ export class GlobalStateDataSource {
     const playerTeam = this.playerDataAcessor.digimonList.filter(
       (d) => d.currentHp > 0
     );
-
     if (playerTeam.length === 0) return null;
-
     const strategies: Record<string, () => Digimon> = {
       lowestHp: () =>
         playerTeam.reduce((lowest, digimon) =>
@@ -574,10 +650,8 @@ export class GlobalStateDataSource {
           digimon.speed > fastest.speed ? digimon : fastest
         ),
     };
-
     const strategyKeys = Object.keys(strategies);
     const randomStrategy = strategyKeys[Math.floor(Math.random() * strategyKeys.length)];
-
     return strategies[randomStrategy]();
   }
 
@@ -585,25 +659,19 @@ export class GlobalStateDataSource {
     const playerTeam = this.playerDataAcessor.digimonList
       .filter((playerDigimon) => playerDigimon.currentHp > 0)
       .map((playerDigimon) => ({ ...playerDigimon, owner: 'player' }));
-
     const enemyTeam = this.enemyTeamAccessor
       .filter((enemyDigimon) => enemyDigimon.currentHp > 0)
       .map((enemyDigimon) => ({ ...enemyDigimon, owner: 'enemy' }));
-
     const allDigimons = [...playerTeam, ...enemyTeam];
-
     allDigimons.sort((a, b) => b.speed - a.speed);
-
     const turnOrder: Array<DigimonWithOwner> = [];
     for (const digimon of allDigimons) {
       turnOrder.push(digimon);
-
       const averageSpeed = allDigimons.reduce((acc, d) => acc + d.speed, 0) / allDigimons.length;
       if (digimon.speed > averageSpeed * 1.5) {
         turnOrder.push(digimon);
       }
     }
-
     return turnOrder;
   }
 
@@ -615,256 +683,129 @@ export class GlobalStateDataSource {
     this.turnOrder = [...this.turnOrder, ...this.getTurnOrder(), ...this.getTurnOrder()];
   }
 
-  nextTurn() {
-    if (!this.isBattleActive) {
-      this.showPlayerAttackButton.set(false);
-      this.endBattle();
-      return;
-    }
-
-    if (this.enemyTeamAccessor.every((d) => d.currentHp <= 0)) {
-      this.isBattleActive = false;
-      this.showPlayerAttackButton.set(false);
-      this.endBattle('victory');
-      return;
-    }
-
-    if (this.playerDataAcessor.digimonList.every((d) => d.currentHp <= 0)) {
-      this.isBattleActive = false;
-      this.showPlayerAttackButton.set(false);
-      this.endBattle('defeat');
-      return;
-    }
-
-    if (this.turnOrder.length <= 5) {
-      this.repopulateTurnOrder();
-    }
-
-    const digimon = this.turnOrder[0];
-
-    if (!digimon) {
-      this.showPlayerAttackButton.set(false);
-      this.endBattle();
-      return;
-    }
-
-    if (digimon.owner === 'player') {
-      this.currentAttackingDigimon.set(digimon);
-      this.showPlayerAttackButton.set(true);
-    }
-
-    if (digimon.owner === 'enemy') {
-      this.currentAttackingDigimon.set(digimon);
-      this.showPlayerAttackButton.set(false);
-      this.enemyAttack(digimon);
-    }
-  }
-
-  attack(attacker: Digimon, defender: Digimon) {
-    return this.battleService.attack(attacker, defender);
-  }
-
-  attemptRunAway() {
-    const playerScore = this.battleService.calculateTeamScore(this.playerData().digimonList);
-    const enemyScore = this.battleService.calculateTeamScore(this.enemyTeam());
-
-    const escapeChance = this.battleService.calculateEscapeChance(playerScore, enemyScore);
-    const chance = Math.random();
-
-    if (chance <= escapeChance) {
-      this.toastService.showToast(
-        this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.ESCAPE_SUCCESS_TOAST'),
-        'info'
-      );
-      this.audioService.playAudio(AudioEffects.MISS);
-      this.log(this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.ESCAPE_SUCCESS_LOG'));
-      this.endBattle();
-      return;
-    }
-
-    this.toastService.showToast(
-      this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.ESCAPE_FAIL_TOAST'),
-      'error'
+  calculateRewards(defeatedDigimons: Digimon[]) {
+    const { playerData, totalExp } = this.battleService.calculateTotalGainedExp(
+      this.playerData(),
+      defeatedDigimons
     );
-    this.audioService.playAudio(AudioEffects.HIT);
-    this.log(this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.ESCAPE_FAIL_LOG'));
-
-    const enemy = this.turnOrder[0];
-    if (!enemy || enemy.owner !== 'enemy') {
-      this.enemyAttack(enemy);
-      return;
+    const totalBits = this.battleService.calculateTotalGainedBits(defeatedDigimons);
+    const digiDataGains = this.battleService.calculateGainedDigiData(defeatedDigimons);
+    const updatedDigiData = { ...(playerData.digiData || {}) };
+    for (const gain of digiDataGains) {
+      const { seed, amount } = gain;
+      updatedDigiData[seed] = Math.min((updatedDigiData[seed] || 0) + amount, 999);
     }
-
-    this.nextTurn();
+    this.updatePlayerData({
+      ...playerData,
+      bits: (playerData.bits || 0) + totalBits,
+      digiData: updatedDigiData
+    });
+    return { totalExp, totalBits, digiDataGains };
   }
 
-  getBitGenerationTotalRate() {
-    return this.farmingService.getBitGenerationTotalRate(this.playerData());
+  log(message: string) {
+    this.battleLog().push(message);
   }
-
   generateRandomDigimon(level?: number) {
     let digimon = this.digimonService.generateRandomDigimon();
-
     if (level) {
       digimon = this.battleService.levelUpDigimonToLevel(digimon, level)!;
     }
-
     return digimon;
-  }
-
-  getDigimonEvolutions() {
-    return this.digimonService.getDigimonEvolutions(
-      this.selectedDigimonOnDetails()
-    );
-  }
-
-  getBaseDigimonDataBySeed(seed: string) {
-    return this.digimonService.getBaseDigimonDataBySeed(seed);
   }
 
   generateDigimonBySeed(seed: string, level = 1, withEvolutionRoute = false) {
     let digimon = this.digimonService.generateDigimonBySeed(seed);
     if (!digimon) throw Error('Digimon not found');
-
     if (withEvolutionRoute && digimon.degenerateSeedList[0]) {
       const baseDigimon = this.digimonService.getBaseDigimonDataBySeed(
         digimon.degenerateSeedList[0]
       );
-
       if (!baseDigimon) throw Error('Digimon not found');
-
       const evolutionRoute = this.generateEvolutionRoute(baseDigimon);
-
       digimon.currentEvolutionRoute = evolutionRoute;
     }
-
     if (level > 1) {
       digimon = this.battleService.levelUpDigimonToLevel(digimon, level)!;
     }
-
     return digimon;
   }
 
   private generateEvolutionRoute(baseDigimon: BaseDigimon) {
     const evolutionRoute = [];
     let currentDigimon: BaseDigimon | null = baseDigimon;
-
     while (currentDigimon) {
       evolutionRoute.unshift({
         seed: currentDigimon.seed,
         rank: currentDigimon.rank,
       });
-
       if (
         !currentDigimon.degenerateSeedList ||
         currentDigimon.degenerateSeedList.length === 0
       ) {
         break;
       }
-
       const nextSeed: string = currentDigimon.degenerateSeedList[0];
       currentDigimon =
         this.digimonService.getBaseDigimonDataBySeed(nextSeed) || null;
     }
-
     return evolutionRoute;
   }
-
-  getDigimonCurrentEvolutionRoute(digimon: Digimon) {
-    return this.digimonService.getDigimonCurrentEvolutionRoute(digimon);
-  }
-
-  getDigimonById(id: string): Digimon | undefined {
-    const digimonLists = [
-      'digimonList',
-      'bitFarmDigimonList',
-      'inTrainingDigimonList',
-      'hospitalDigimonList',
-      'digimonStorageList'
-    ] as const;
-
-    for (const listName of digimonLists) {
-      const found = this.playerData()[listName].find(d => d.id === id);
-      if (found) return found;
-    }
-
-    return undefined;
-  }
-
-  resetBattleState() {
-    this.enemyTeam.set([]);
-    this.battleLog.set([]);
-  }
-
-  resetStorage() {
-    this.playerData.set({
-      ...this.playerData(),
-      digimonStorageList: [],
+  private createDigimonProxy(digimon: Digimon): Digimon {
+    return new Proxy(digimon, {
+      set: (target, property, value) => {
+        if (property === 'currentHp' && target.currentHp !== value) {
+          this.handleHpChange(target, value);
+        } else if (property === 'currentMp' && target.currentMp !== value) {
+          this.handleMpChange(target, value);
+        }
+        target[property as keyof Digimon] = value;
+        return true;
+      },
     });
   }
 
-  calculateRewards(defeatedDigimons: Digimon[]) {
-    const { playerData, totalExp } = this.battleService.calculateTotalGainedExp(
-      this.playerData(),
-      defeatedDigimons
-    );
-
-    const totalBits = this.battleService.calculateTotalGainedBits(defeatedDigimons);
-
-    const digiDataGains = this.battleService.calculateGainedDigiData(defeatedDigimons);
-
-    const updatedDigiData = { ...(playerData.digiData || {}) };
-
-    for (const gain of digiDataGains) {
-      const { seed, amount } = gain;
-      updatedDigiData[seed] = Math.min((updatedDigiData[seed] || 0) + amount, 999);
-    }
-
-    this.updatePlayerData({
-      ...playerData,
-      bits: (playerData.bits || 0) + totalBits,
-      digiData: updatedDigiData
+  private handleHpChange(digimon: Digimon, newHp: number) {
+    const previousHp = digimon.currentHp;
+    this.digimonHpChanges$.next({
+      digimonId: digimon.id!,
+      previousHp,
+      currentHp: newHp,
+      difference: Math.abs(previousHp - newHp),
+      isPositive: previousHp < newHp,
     });
-
-    return { totalExp, totalBits, digiDataGains };
   }
 
-  getDigimonNeededExpForNextLevel() {
-    return this.battleService.calculateRequiredExpForLevel(
-      this.selectedDigimonOnDetails()?.level ?? 1
-    );
+  private handleMpChange(digimon: Digimon, newMp: number) {
+    const previousMp = digimon.currentMp;
+    this.digimonMpChanges$.next({
+      digimonId: digimon.id!,
+      previousMp,
+      currentMp: newMp,
+      difference: Math.abs(previousMp - newMp),
+      isPositive: previousMp < newMp,
+    });
   }
 
-  getPlayerNeededExpForNextLevel() {
-    return this.battleService.calculateRequiredExpForPlayerLevel(
-      this.playerDataAcessor.level
-    );
+  private updatePlayerDataList(listName: keyof PlayerData, digimon: Digimon) {
+    const list = this.playerData()[listName];
+    const digimonIndex = list.findIndex((d: Digimon) => d.id === digimon.id);
+    if (digimonIndex !== -1) {
+      const updatedList = [...list];
+      updatedList[digimonIndex] = digimon;
+      this.playerData.set({
+        ...this.playerData(),
+        [listName]: updatedList,
+      });
+    }
   }
 
-  async evolveDigimon(digimon: Digimon, targetSeed: string) {
-    const evolvingDigimonName = digimon.name;
-    await this.audioService.playAudio(AudioEffects.EVOLUTION);
-
-    const evolvedDigimon = this.digimonService.evolveDigimon(
-      digimon,
-      targetSeed
-    );
-
-    if (!evolvedDigimon) return;
-
-    this.toastService.showToast(
-      this.translocoService.translate('SHARED.COMPONENTS.EVOLUTION_TREE_MODAL.EVOLUTION_SUCCESS', {
-        main: evolvingDigimonName,
-        target: evolvedDigimon.name
-      }),
-      'success'
-    );
-
-    const playerData = this.playerData();
-    const lists = this.getAllDigimonLists(playerData);
-    this.updateDigimonInLists(lists, digimon, evolvedDigimon);
-    this.updateSelectedDigimonDetails(evolvedDigimon);
-
+  private trackDigimon(digimon: Digimon) {
+    const proxy = this.createDigimonProxy(digimon);
+    const found = this.findDigimonInLists(digimon.id!);
+    if (found) {
+      this.updatePlayerDataList(found.listName, proxy);
+    }
   }
 
   private getAllDigimonLists(playerData: PlayerData): Digimon[][] {
@@ -883,7 +824,6 @@ export class GlobalStateDataSource {
   ): void {
     const allDigimons = lists.flatMap((list) => list);
     const digimonToUpdate = allDigimons.find((d) => d.id === digimon.id);
-
     if (digimonToUpdate) {
       Object.assign(digimonToUpdate, evolvedDigimon);
     }
@@ -907,6 +847,60 @@ export class GlobalStateDataSource {
       handler(digimonId);
     }
   }
+  intervalConfigurations: Record<string, any> = {
+    digimonTraining: {
+      intervalDurationInSeconds:
+        this.trainingDigimonIntervalDurationInSeconds.bind(this),
+      countdownSetter: this.trainingDigimonCountdown.set.bind(
+        this.trainingDigimonCountdown
+      ),
+      action: () => {
+        const updatedPlayerData = this.trainingService.trainDigimons(
+          this.playerData()
+        );
+        this.updatePlayerData(updatedPlayerData);
+      },
+    },
+    bitFarmingGeneration: {
+      intervalDurationInSeconds:
+        this.bitFarmingIntervalDurationInSeconds.bind(this),
+      countdownSetter: this.bitFarmingCountdown.set.bind(
+        this.bitFarmingCountdown
+      ),
+      action: () => {
+        const updatedPlayerData =
+          this.farmingService.generateBitsBasedOnGenerationTotalRate(
+            this.playerData()
+          );
+        this.updatePlayerData(updatedPlayerData);
+      },
+    },
+    hospitalHealing: {
+      intervalDurationInSeconds:
+        this.hospitalHealingIntervalDurationInSeconds.bind(this),
+      countdownSetter: this.hospitalHealingCountdown.set.bind(
+        this.hospitalHealingCountdown
+      ),
+      action: () => {
+        const updatedPlayerData = this.hospitalService.healDigimons(
+          this.playerData()
+        );
+        this.updatePlayerData(updatedPlayerData);
+      },
+    },
+  };
+
+  initDigimonTraining() {
+    this.initIntervalCountdown('digimonTraining');
+  }
+
+  initBitFarmingGeneration() {
+    this.initIntervalCountdown('bitFarmingGeneration');
+  }
+
+  initHospitalHealing() {
+    this.initIntervalCountdown('hospitalHealing');
+  }
 
   private initIntervalCountdown(
     configKey: keyof typeof this.intervalConfigurations
@@ -918,76 +912,10 @@ export class GlobalStateDataSource {
         config.intervalDurationInSeconds() -
         (secondsPassed % config.intervalDurationInSeconds());
       config.countdownSetter(remainingTime);
-
       if (remainingTime === config.intervalDurationInSeconds() && !isFirstRun) {
         config.action();
       }
-
       isFirstRun = false;
     });
-  }
-
-  addHpToDigimon(digimon: Digimon, amount: number) {
-    const digimonInList = this.allPlayerDigimonList().find(
-      (d) => d.id === digimon.id
-    );
-    if (!digimonInList) return;
-    digimonInList.currentHp += amount;
-    digimon.currentHp = digimonInList.currentHp;
-  }
-
-  removeHpFromDigimon(digimon: Digimon, amount: number) {
-    const digimonInList = this.allPlayerDigimonList().find(
-      (d) => d.id === digimon.id
-    );
-    if (!digimonInList) return;
-    digimonInList.currentHp -= amount;
-    digimon.currentHp = digimonInList.currentHp;
-  }
-
-  convertDigiData(digimon: Digimon) {
-    this.addDigimonToStorage(digimon);
-
-    const currentAmount = this.playerData().digiData?.[digimon.seed] || 0;
-
-    const bitCost = this.getBitCost(digimon.rank);
-
-    const updatedPlayerData = {
-      ...this.playerData(),
-      bits: this.playerData().bits - bitCost,
-      digiData: {
-        ...this.playerData().digiData,
-        [digimon.seed]: currentAmount - 100,
-      },
-    };
-
-    this.updatePlayerData(updatedPlayerData);
-
-    this.toastService.showToast(
-      this.translocoService.translate('MODULES.LAB.TOAST.CONVERSION_SUCCESS', {
-        digimon: digimon.name,
-      }),
-      'success'
-    );
-  }
-
-  getBitCost(rank: string): number {
-  const costMap: Record<string, number> = {
-      "Fresh": 100,
-      "In-Training": 200,
-      "Rookie": 500,
-      "Champion": 1500,
-      "Ultimate": 5000,
-      "Mega": 15000
-    };
-    return costMap[rank] || 1000;
-  }
-
-  killAllDigimon() {
-    this.playerDataAcessor.digimonList.forEach(digimon => digimon.currentHp = 0);
-    this.playerDataAcessor.inTrainingDigimonList.forEach(digimon => digimon.currentHp = 0);
-    this.playerDataAcessor.bitFarmDigimonList.forEach(digimon => digimon.currentHp = 0);
-    this.playerDataAcessor.hospitalDigimonList.forEach(digimon => digimon.currentHp = 0);
-    this.playerDataAcessor.digimonStorageList.forEach(digimon => digimon.currentHp = 0);
   }
 }

@@ -22,6 +22,7 @@ export interface Digimon {
   digiEvolutionSeedList: string[];
   degenerateSeedList: string[];
   currentEvolutionRoute?: Array<{ seed: string; rank: string }>;
+  potential?: number;
   [key: string]: any;
 }
 
@@ -41,5 +42,6 @@ export interface BaseDigimon {
   digiEvolutionSeedList: string[];
   degenerateSeedList: string[];
   evolutionRequirements?: Array<{ type: string; value: any }>;
+  potential?: number;
   [key: string]: any;
 }

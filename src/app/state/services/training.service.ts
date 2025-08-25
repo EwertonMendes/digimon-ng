@@ -3,6 +3,7 @@ import { Digimon } from '@core/interfaces/digimon.interface';
 import { PlayerData } from '@core/interfaces/player-data.interface';
 import { ToastService } from '@shared/components/toast/toast.service';
 import { TranslocoService } from '@jsverse/transloco';
+import { applyCaps } from '@core/utils/digimon.utils';
 
 @Injectable({
   providedIn: 'root',
@@ -15,21 +16,15 @@ export class TrainingService {
 
   trainDigimons(playerData: PlayerData) {
     playerData.inTrainingDigimonList.forEach((digimon: Digimon) => {
-      if(digimon.currentHp <= 0) return;
-      const randomAttributeToTrainIndex = Math.floor(
-        Math.random() * this.modifiableAttributes.length
-      );
-      const randomAttributeToTrain =
-        this.modifiableAttributes[randomAttributeToTrainIndex];
-      let randomAttributeTrainingValue = Math.floor(Math.random() * 10);
+      if (digimon.currentHp <= 0) return;
+      const randomAttributeIndex = Math.floor(Math.random() * this.modifiableAttributes.length);
+      const attr = this.modifiableAttributes[randomAttributeIndex];
+      let gain = Math.floor(Math.random() * 3);
+      if (attr === 'maxHp' || attr === 'maxMp') gain += 2;
 
-      if (
-        randomAttributeToTrain === 'maxHp' ||
-        randomAttributeToTrain === 'maxMp'
-      )
-        randomAttributeTrainingValue += 10;
+      (digimon as any)[attr] += gain;
 
-      digimon[randomAttributeToTrain] += randomAttributeTrainingValue;
+      applyCaps(digimon.rank, digimon);
     });
 
     return playerData;

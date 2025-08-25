@@ -1,32 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Digimon } from '@core/interfaces/digimon.interface';
 import { PlayerData } from '@core/interfaces/player-data.interface';
+import { applyCaps, calculateGains, getDefaultPotential } from '@core/utils/digimon.utils';
 
 @Injectable({
   providedIn: 'root',
 })
 export class BattleService {
-  rankDamageMultiplier: Record<string, number> = {
-    Mega: 2.0,
-    Ultimate: 1.75,
-    Champion: 1.5,
-    Rookie: 1.0,
-    'In-Training': 0.6,
-    Fresh: 0.3,
-  };
+  private maxLevel = 99;
 
-  rankGrowthMultiplier: Record<string, number> = {
-    Fresh: 2,
-    'In-Training': 3,
-    Rookie: 4,
-    Champion: 6,
-    Ultimate: 8,
-    Mega: 12,
+  private attributeAdvantages: Record<string, Record<string, number>> = {
+    Vaccine: { Virus: 1.3, Data: 0.7, Vaccine: 1.0 },
+    Virus: { Data: 1.3, Vaccine: 0.7, Virus: 1.0 },
+    Data: { Vaccine: 1.3, Virus: 0.7, Data: 1.0 },
   };
-
-  private maxLevel = 100;
-  private maxHpMp = 999999;
-  private maxOtherStats = 99999;
 
   private getRankOrder(rank: string): number {
     const rankOrder: Record<string, number> = {
@@ -60,43 +47,24 @@ export class BattleService {
   }
 
   private calculateDamage(attacker: Digimon, defender: Digimon) {
-    const atkPower =
-      attacker.atk * (this.rankDamageMultiplier[attacker.rank] || 1);
-    const defPower =
-      defender.def * (this.rankDamageMultiplier[defender.rank] || 1);
-
-    let baseDamage =
-      (Math.pow(atkPower, 1.1) /
-        Math.pow(defPower + 1, 0.9)) *
-      10;
-    const rankDom = this.calculateRankDominance(
-      attacker.rank,
-      defender.rank
-    );
-    baseDamage *= rankDom.damageMultiplier;
-
-    const crit = Math.random() < 0.1 ? 1.5 : 1.0;
-
-    const variance = 0.85 + Math.random() * 0.3;
-
-
     const speedDiff = defender.speed - attacker.speed;
     const baseMissChance = Math.max(0, Math.min(0.4, speedDiff / 150));
-    const totalMissChance = Math.min(
-      0.8,
-      baseMissChance + rankDom.missChanceBonus
-    );
+    const rankDom = this.calculateRankDominance(attacker.rank, defender.rank);
+    const totalMissChance = Math.min(0.8, baseMissChance + rankDom.missChanceBonus);
 
     if (Math.random() < totalMissChance) {
       return 0;
     }
 
-    let finalDamage = baseDamage * crit * variance;
+    const attrFactor = this.attributeAdvantages[attacker.attribute]?.[defender.attribute] ?? 1.0;
+    const crit = Math.random() < 0.05 ? 1.5 : 1.0;
+    const variance = 0.85 + Math.random() * 0.3;
 
-    finalDamage = Math.max(1, finalDamage);
-    finalDamage = Math.min(finalDamage, defender.maxHp / 2);
+    let baseDamage = (attacker.atk - defender.def / 2) * 10 * attrFactor * crit * variance * rankDom.damageMultiplier;
+    baseDamage = Math.max(1, baseDamage);
+    baseDamage = Math.min(baseDamage, defender.maxHp / 2);
 
-    return Math.floor(finalDamage);
+    return Math.floor(baseDamage);
   }
 
   attack(attacker: Digimon, defender: Digimon) {
@@ -110,14 +78,12 @@ export class BattleService {
   }
 
   calculateExpGiven(defeatedDigimon: Digimon): number {
-    const baseExp = 100;
-    const rankMultiplier = this.getRankOrder(defeatedDigimon.rank);
-    const levelMultiplier = Math.pow(defeatedDigimon.level, 1.5);
-    return Math.floor(baseExp * rankMultiplier * levelMultiplier);
+    const potential = defeatedDigimon.potential ?? getDefaultPotential(defeatedDigimon.rank);
+    return Math.floor(100 * potential * Math.pow(defeatedDigimon.level, 1.5) / 100);
   }
 
   calculateRequiredExpForLevel(level: number, baseExp: number = 100): number {
-    return Math.floor(baseExp * (Math.pow(level, 1.75) + 3 * level));
+    return Math.floor(100 * Math.pow(level, 2));
   }
 
   calculateTotalGainedExp(playerData: PlayerData, defeatedDigimons: Digimon[]) {
@@ -147,41 +113,20 @@ export class BattleService {
       string,
       { baseBits: number; multiplier: number }
     > = {
+      Fresh: { baseBits: 10, multiplier: 1 },
+      'In-Training': { baseBits: 20, multiplier: 1.2 },
+      Rookie: { baseBits: 50, multiplier: 1.5 },
+      Champion: { baseBits: 100, multiplier: 2 },
+      Ultimate: { baseBits: 200, multiplier: 3 },
       Mega: { baseBits: 500, multiplier: 5 },
-      Ultimate: { baseBits: 400, multiplier: 4 },
-      Champion: { baseBits: 200, multiplier: 2 },
-      Rookie: { baseBits: 75, multiplier: 1 },
-      'In-Training': { baseBits: 50, multiplier: 1 },
-      Fresh: { baseBits: 15, multiplier: 1 },
     };
-    const rankData = rankBitsMultiplier[defeatedDigimon.rank];
-    return Math.floor(rankData.baseBits * rankData.multiplier);
-  }
-
-  improveDigimonStats(digimon: Digimon) {
-    const hpMpGrowth =
-      this.rankGrowthMultiplier[digimon.rank] +
-      Math.floor(digimon.level * 0.2);
-    const otherStatsGrowth = Math.max(1, Math.floor(hpMpGrowth * 0.5));
-
-    digimon.maxHp = Math.min(digimon.maxHp + hpMpGrowth, this.maxHpMp);
-    digimon.currentHp = digimon.maxHp;
-
-    digimon.maxMp = Math.min(digimon.maxMp + hpMpGrowth, this.maxHpMp);
-    digimon.currentMp = digimon.maxMp;
-
-    digimon.atk = Math.min(digimon.atk + otherStatsGrowth, this.maxOtherStats);
-    digimon.def = Math.min(digimon.def + otherStatsGrowth, this.maxOtherStats);
-    digimon.speed = Math.min(
-      digimon.speed + otherStatsGrowth,
-      this.maxOtherStats
-    );
+    const { baseBits, multiplier } = rankBitsMultiplier[defeatedDigimon.rank] || { baseBits: 10, multiplier: 1 };
+    return Math.floor(baseBits + defeatedDigimon.level * multiplier);
   }
 
   private updatePlayerDigimonsExp(playerData: PlayerData, totalExp: number) {
     playerData.digimonList.forEach((playerDigimon) => {
       if (!playerDigimon || playerDigimon.currentHp <= 0) return;
-      if (playerDigimon.level >= this.maxLevel) return;
 
       playerDigimon.exp = Math.floor((playerDigimon.exp || 0) + totalExp);
       playerDigimon.totalExp = Math.floor(
@@ -192,24 +137,35 @@ export class BattleService {
     });
   }
 
-  private levelUpDigimon(digimon: Digimon) {
-    if (digimon.level >= this.maxLevel) return;
+  levelUpDigimon(digimon: Digimon) {
+    const potential = digimon.potential ?? getDefaultPotential(digimon.rank);
+    if (digimon.level >= potential || digimon.level >= this.maxLevel) return;
     if (!digimon.exp) digimon.exp = 0;
 
     let expForNextLevel = this.calculateRequiredExpForLevel(digimon.level);
 
-    while (digimon.exp >= expForNextLevel && digimon.level < this.maxLevel) {
+    while (digimon.exp >= expForNextLevel && digimon.level < potential && digimon.level < this.maxLevel) {
       digimon.exp -= expForNextLevel;
       digimon.level++;
 
-      if (digimon.level >= this.maxLevel) {
-        digimon.level = this.maxLevel;
+      const gains = calculateGains(digimon.rank);
+      digimon.maxHp += gains.hp;
+      digimon.maxMp += gains.mp;
+      digimon.atk += gains.atk;
+      digimon.def += gains.def;
+      digimon.speed += gains.speed;
+
+      applyCaps(digimon.rank, digimon);
+
+      digimon.currentHp = digimon.maxHp;
+      digimon.currentMp = digimon.maxMp;
+
+      if (digimon.level >= potential || digimon.level >= this.maxLevel) {
         digimon.exp = 0;
         break;
       }
 
       expForNextLevel = this.calculateRequiredExpForLevel(digimon.level);
-      this.improveDigimonStats(digimon);
     }
   }
 
@@ -218,18 +174,17 @@ export class BattleService {
     if (playerData.level >= playerMaxLevel) return;
 
     playerData.exp += totalExp;
-    playerData.totalExp += playerData.exp;
+    playerData.totalExp += totalExp;
 
     let expForNextLevel = this.calculateRequiredExpForPlayerLevel(
       playerData.level
     );
 
-    while (playerData.exp >= expForNextLevel) {
+    while (playerData.exp >= expForNextLevel && playerData.level < playerMaxLevel) {
       playerData.exp -= expForNextLevel;
       playerData.level++;
 
       if (playerData.level >= playerMaxLevel) {
-        playerData.level = playerMaxLevel;
         playerData.exp = 0;
         break;
       }
@@ -252,9 +207,10 @@ export class BattleService {
   }
 
   levelUpDigimonToLevel(digimon: Digimon, level: number) {
-    if (level <= digimon.level) return digimon;
+    const potential = digimon.potential ?? getDefaultPotential(digimon.rank);
+    if (level <= digimon.level || digimon.level >= potential) return digimon;
 
-    while (digimon.level < level) {
+    while (digimon.level < level && digimon.level < potential) {
       const expForNextLevel = this.calculateRequiredExpForLevel(digimon.level);
 
       if (!digimon.exp) digimon.exp = 0;

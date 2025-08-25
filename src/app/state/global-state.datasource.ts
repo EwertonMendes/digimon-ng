@@ -39,6 +39,7 @@ export class GlobalStateDataSource {
   private battleService = inject(BattleService);
   private storageService = inject(StorageService);
   private hospitalService = inject(HospitalService);
+
   private playerData = signal<PlayerData>({
     id: '',
     name: '',
@@ -69,6 +70,7 @@ export class GlobalStateDataSource {
   bitFarmingCountdown = signal<number>(0);
   private hospitalHealingIntervalDurationInSeconds = signal<number>(20);
   hospitalHealingCountdown = signal<number>(0);
+
   digimonHpChanges$ = new Subject<{
     digimonId: string;
     previousHp: number;
@@ -76,6 +78,7 @@ export class GlobalStateDataSource {
     difference: number;
     isPositive: boolean;
   }>();
+
   digimonMpChanges$ = new Subject<{
     digimonId: string;
     previousMp: number;
@@ -83,6 +86,7 @@ export class GlobalStateDataSource {
     difference: number;
     isPositive: boolean;
   }>();
+
   get playerDataAcessor() {
     return this.playerData();
   }

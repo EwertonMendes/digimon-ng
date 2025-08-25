@@ -10,9 +10,9 @@ export class BattleService {
     Mega: 2.0,
     Ultimate: 1.75,
     Champion: 1.5,
-    Rookie: 1.2,
-    'In-Training': 0.7,
-    Fresh: 0.4,
+    Rookie: 1.0,
+    'In-Training': 0.6,
+    Fresh: 0.3,
   };
 
   rankGrowthMultiplier: Record<string, number> = {
@@ -40,43 +40,63 @@ export class BattleService {
     return rankOrder[rank] || 0;
   }
 
-  private calculateRankDominance(attackerRank: string, defenderRank: string): { damageMultiplier: number; missChanceBonus: number } {
+  private calculateRankDominance(
+    attackerRank: string,
+    defenderRank: string
+  ): { damageMultiplier: number; missChanceBonus: number } {
     const attackerOrder = this.getRankOrder(attackerRank);
     const defenderOrder = this.getRankOrder(defenderRank);
-    const rankDifference = attackerOrder - defenderOrder;
+    const diff = attackerOrder - defenderOrder;
 
-    if (rankDifference >= 3) {
-      return { damageMultiplier: 2.0, missChanceBonus: 0 };
-    } else if (rankDifference >= 2) {
-      return { damageMultiplier: 1.6, missChanceBonus: 0 };
-    } else if (rankDifference <= -3) {
-      return { damageMultiplier: 0.15, missChanceBonus: 0.6 };
-    } else if (rankDifference <= -2) {
-      return { damageMultiplier: 0.25, missChanceBonus: 0.4 };
-    }
+    if (diff >= 3) return { damageMultiplier: 2.5, missChanceBonus: -0.1 };
+    if (diff === 2) return { damageMultiplier: 1.8, missChanceBonus: -0.05 };
+    if (diff === 1) return { damageMultiplier: 1.3, missChanceBonus: 0 };
+
+    if (diff <= -3) return { damageMultiplier: 0.1, missChanceBonus: 0.4 };
+    if (diff === -2) return { damageMultiplier: 0.25, missChanceBonus: 0.25 };
+    if (diff === -1) return { damageMultiplier: 0.6, missChanceBonus: 0.1 };
 
     return { damageMultiplier: 1.0, missChanceBonus: 0 };
   }
 
   private calculateDamage(attacker: Digimon, defender: Digimon) {
-    let baseDamage = (attacker.atk - defender.def) * this.rankDamageMultiplier[attacker.rank];
-    baseDamage = Math.max(1, baseDamage);
+    const atkPower =
+      attacker.atk * (this.rankDamageMultiplier[attacker.rank] || 1);
+    const defPower =
+      defender.def * (this.rankDamageMultiplier[defender.rank] || 1);
 
-    const rankDominance = this.calculateRankDominance(attacker.rank, defender.rank);
-    baseDamage *= rankDominance.damageMultiplier;
+    let baseDamage =
+      (Math.pow(atkPower, 1.1) /
+        Math.pow(defPower + 1, 0.9)) *
+      10;
+    const rankDom = this.calculateRankDominance(
+      attacker.rank,
+      defender.rank
+    );
+    baseDamage *= rankDom.damageMultiplier;
 
-    const criticalHit = Math.random() < 0.1 ? 1.5 : 1.0;
-    const randomVariance = 0.9 + Math.random() * 0.2;
+    const crit = Math.random() < 0.1 ? 1.5 : 1.0;
 
-    const speedDifference = defender.speed - attacker.speed;
-    const baseMissChance = Math.max(0, Math.min(0.5, speedDifference / 100));
-    const totalMissChance = Math.min(0.8, baseMissChance + rankDominance.missChanceBonus);
+    const variance = 0.85 + Math.random() * 0.3;
+
+
+    const speedDiff = defender.speed - attacker.speed;
+    const baseMissChance = Math.max(0, Math.min(0.4, speedDiff / 150));
+    const totalMissChance = Math.min(
+      0.8,
+      baseMissChance + rankDom.missChanceBonus
+    );
 
     if (Math.random() < totalMissChance) {
       return 0;
     }
 
-    return Math.floor(baseDamage * criticalHit * randomVariance);
+    let finalDamage = baseDamage * crit * variance;
+
+    finalDamage = Math.max(1, finalDamage);
+    finalDamage = Math.min(finalDamage, defender.maxHp / 2);
+
+    return Math.floor(finalDamage);
   }
 
   attack(attacker: Digimon, defender: Digimon) {
@@ -93,7 +113,7 @@ export class BattleService {
     const baseExp = 100;
     const rankMultiplier = this.getRankOrder(defeatedDigimon.rank);
     const levelMultiplier = Math.pow(defeatedDigimon.level, 1.5);
-    return Math.floor(baseExp * rankMultiplier * levelMultiplier * 999999);
+    return Math.floor(baseExp * rankMultiplier * levelMultiplier);
   }
 
   calculateRequiredExpForLevel(level: number, baseExp: number = 100): number {
@@ -123,7 +143,10 @@ export class BattleService {
   }
 
   private calculateBitsGiven(defeatedDigimon: Digimon): number {
-    const rankBitsMultiplier: Record<string, { baseBits: number; multiplier: number }> = {
+    const rankBitsMultiplier: Record<
+      string,
+      { baseBits: number; multiplier: number }
+    > = {
       Mega: { baseBits: 500, multiplier: 5 },
       Ultimate: { baseBits: 400, multiplier: 4 },
       Champion: { baseBits: 200, multiplier: 2 },
@@ -132,13 +155,13 @@ export class BattleService {
       Fresh: { baseBits: 15, multiplier: 1 },
     };
     const rankData = rankBitsMultiplier[defeatedDigimon.rank];
-    const baseBits = rankData.baseBits;
-    const multiplier = rankData.multiplier;
-    return Math.floor(baseBits * multiplier);
+    return Math.floor(rankData.baseBits * rankData.multiplier);
   }
 
   improveDigimonStats(digimon: Digimon) {
-    const hpMpGrowth = this.rankGrowthMultiplier[digimon.rank] + Math.floor(digimon.level * 0.2);
+    const hpMpGrowth =
+      this.rankGrowthMultiplier[digimon.rank] +
+      Math.floor(digimon.level * 0.2);
     const otherStatsGrowth = Math.max(1, Math.floor(hpMpGrowth * 0.5));
 
     digimon.maxHp = Math.min(digimon.maxHp + hpMpGrowth, this.maxHpMp);
@@ -149,7 +172,10 @@ export class BattleService {
 
     digimon.atk = Math.min(digimon.atk + otherStatsGrowth, this.maxOtherStats);
     digimon.def = Math.min(digimon.def + otherStatsGrowth, this.maxOtherStats);
-    digimon.speed = Math.min(digimon.speed + otherStatsGrowth, this.maxOtherStats);
+    digimon.speed = Math.min(
+      digimon.speed + otherStatsGrowth,
+      this.maxOtherStats
+    );
   }
 
   private updatePlayerDigimonsExp(playerData: PlayerData, totalExp: number) {
@@ -183,7 +209,6 @@ export class BattleService {
       }
 
       expForNextLevel = this.calculateRequiredExpForLevel(digimon.level);
-
       this.improveDigimonStats(digimon);
     }
   }
@@ -240,17 +265,22 @@ export class BattleService {
     return digimon;
   }
 
-  calculateGainedDigiData(defeatedDigimons: Digimon[]): { seed: string; name: string; amount: number }[] {
+  calculateGainedDigiData(
+    defeatedDigimons: Digimon[]
+  ): { seed: string; name: string; amount: number }[] {
     const digiDataGainPerRank: Record<string, number> = {
-      "Fresh": 30,
-      "In-Training": 25,
-      "Rookie": 15,
-      "Champion": 10,
-      "Ultimate": 5,
-      "Mega": 2
+      Fresh: 30,
+      'In-Training': 25,
+      Rookie: 15,
+      Champion: 10,
+      Ultimate: 5,
+      Mega: 2,
     };
 
-    const gainMap: Record<string, { seed: string; name: string; amount: number }> = {};
+    const gainMap: Record<
+      string,
+      { seed: string; name: string; amount: number }
+    > = {};
 
     for (const digimon of defeatedDigimons) {
       const { seed, name, rank } = digimon;
@@ -268,11 +298,12 @@ export class BattleService {
 
   calculateTeamScore(team: Digimon[]): number {
     const rankWeights: Record<string, number> = {
-      "In-Training": 1,
-      "Rookie": 2,
-      "Champion": 3,
-      "Ultimate": 4,
-      "Mega": 5,
+      Fresh: 0.5,
+      'In-Training': 1,
+      Rookie: 2,
+      Champion: 3,
+      Ultimate: 4,
+      Mega: 5,
     };
 
     let totalScore = 0;

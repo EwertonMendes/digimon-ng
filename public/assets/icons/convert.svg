@@ -1,0 +1,31 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" style="display:block; margin:auto;">
+  <g class="swap">
+    <rect class="block-left" x="16" y="26" width="12" height="12" rx="2" fill="#3B82F6" stroke="#1E40AF"
+      stroke-width="1.5" />
+
+    <rect class="block-right" x="36" y="26" width="12" height="12" rx="2" fill="#10B981" stroke="#065F46"
+      stroke-width="1.5" />
+
+    <circle cx="32" cy="32" r="2" fill="#333333" />
+  </g>
+
+  <style>
+    .swap rect {
+      transition: transform 0.6s ease, fill 0.6s ease;
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+
+    svg:hover .block-left {
+      transform: translateX(20px);
+      fill: #10B981;
+      stroke: #065F46;
+    }
+
+    svg:hover .block-right {
+      transform: translateX(-20px);
+      fill: #3B82F6;
+      stroke: #1E40AF;
+    }
+  </style>
+</svg>

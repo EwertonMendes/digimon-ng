@@ -10,7 +10,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div [innerHTML]="svgContent() || fallbackSvg" [ngStyle]="{'width': size(), 'height': size(), 'display': 'block', 'vertical-align': 'middle', 'margin': '0', 'padding': '0', 'overflow': 'visible', 'box-sizing': 'border-box', 'position': 'relative'}" [attr.aria-label]="ariaLabel()"></div>
+    <div [innerHTML]="svgContent() || fallbackSvg" [ngStyle]="{'width': size(), 'height': size(), scale: scale(), 'display': 'block', 'vertical-align': 'middle', 'margin': '0', 'padding': '0', 'overflow': 'visible', 'box-sizing': 'border-box', 'position': 'relative'}" [attr.aria-label]="ariaLabel()"></div>
   `,
   styles: `
     :host {
@@ -31,6 +31,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 export class IconComponent {
   name = input.required<string>();
   size = input<string>('24px');
+  scale = input<string>('1');
   color = input<string>('currentColor');
   ariaLabel = input<string>('icon');
 

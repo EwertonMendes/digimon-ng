@@ -1,7 +1,7 @@
 <button
-  class="app-button app-button--{{ color() }} app-button--{{
-    size()
-  }} {{ disabled() ? 'app-button--disabled' : '' }}"
+  class="app-button app-button--{{ color() }} app-button--{{ size() }} {{
+    disabled() ? 'app-button--disabled' : ''
+  }}"
   [disabled]="disabled()"
   (click)="performClick()"
 >
@@ -9,7 +9,7 @@
   <div
     class="app-button__container app-button__container--{{ iconPosition() }}"
   >
-    <i class="ph-{{ weight() }} {{ icon() }}"></i>
+    <app-icon [name]="icon()!" [size]="iconSize()" [scale]="iconScale()"/>
     @if (text()) {
     <span class="app-button__text">{{ text() }}</span>
     }

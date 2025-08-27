@@ -18,10 +18,6 @@
   <circle cx="32" cy="32" r="2" fill="#fff" stroke="#222" stroke-width="1" />
 
   <style>
-    .digimon-compass {
-      cursor: pointer;
-    }
-
     .digimon-compass .compass-pointer {
       transform-origin: 32px 32px;
       transition: transform 0.3s ease;

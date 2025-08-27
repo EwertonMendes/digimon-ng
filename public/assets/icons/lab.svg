@@ -1,0 +1,73 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" style="cursor:pointer">
+  <style>
+    svg {
+      display: block;
+      margin: 0 auto;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: rotate(15deg); }
+      25% { transform: rotate(16deg); }
+      50% { transform: rotate(15deg); }
+      75% { transform: rotate(14deg); }
+    }
+
+    svg g#tube {
+      transform: rotate(15deg);
+      transform-origin: 32px 32px;
+      transition: transform 0.3s ease;
+    }
+
+    svg:hover g#tube {
+      animation: shake 0.3s infinite;
+    }
+  </style>
+  <defs>
+    <linearGradient id="liquidGrad" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#6fe0d6" />
+      <stop offset="100%" stop-color="#1aa6a0" />
+    </linearGradient>
+
+    <clipPath id="tubeClip">
+      <path d="M32 12
+               c4 0 8 1 8 3
+               v36
+               a8 8 0 0 1 -16 0
+               v-36
+               c0 -2 4 -3 8 -3z" />
+    </clipPath>
+  </defs>
+
+  <g id="tube" transform="rotate(15 24 32)">
+    <g clip-path="url(#tubeClip)">
+      <rect x="24" y="34" width="16" height="30" fill="url(#liquidGrad)" opacity="0.95" />
+      <rect x="28" y="34" width="3" height="30" fill="#ffffff" opacity="0.15" />
+    </g>
+
+    <path d="M32 12
+             c4 0 8 1 8 3
+             v36
+             a8 8 0 0 1 -16 0
+             v-36
+             c0 -2 4 -3 8 -3z" fill="none" stroke="#22313f" stroke-width="2.5" />
+
+    <ellipse cx="32" cy="12" rx="8" ry="3" fill="white" stroke="#22313f" stroke-width="2.5" />
+
+    <g clip-path="url(#tubeClip)">
+      <circle cx="34" cy="56" r="1.6" fill="#e8ffff">
+        <animate attributeName="cy" from="56" to="26" dur="2.5s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="1;0.6;0" dur="2.5s" repeatCount="indefinite" />
+      </circle>
+
+      <circle cx="30" cy="58" r="1.2" fill="#e8ffff">
+        <animate attributeName="cy" from="58" to="26" dur="3s" begin="0.6s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="1;0.5;0" dur="3s" begin="0.6s" repeatCount="indefinite" />
+      </circle>
+
+      <circle cx="36" cy="60" r="1.4" fill="#e8ffff">
+        <animate attributeName="cy" from="60" to="26" dur="3.4s" begin="1s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="1;0.5;0" dur="3.4s" begin="1s" repeatCount="indefinite" />
+      </circle>
+    </g>
+  </g>
+</svg>

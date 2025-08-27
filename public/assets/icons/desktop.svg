@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" style="cursor:pointer">
+  <style>
+    @keyframes jump {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      45% {
+        transform: translateY(-12px);
+      }
+    }
+
+    @keyframes squish {
+
+      0%,
+      100% {
+        transform: scale(1, 1);
+        opacity: .18;
+      }
+
+      45% {
+        transform: scale(1.25, .8);
+        opacity: .09;
+      }
+    }
+
+    svg:hover #monWrap {
+      animation: jump .7s ease-in-out infinite;
+    }
+
+    svg:hover #shadow {
+      animation: squish .7s ease-in-out infinite;
+    }
+
+    #monWrap,
+    #shadow {
+      transform-box: fill-box;
+      transform-origin: 50% 100%;
+    }
+
+    .pixel {
+      shape-rendering: crispEdges;
+    }
+  </style>
+
+  <g transform="translate(-11.85 -2.37) scale(1.185)">
+    <rect x="12" y="16" width="104" height="80" rx="14" fill="#f5d142" stroke="#000" stroke-width="4" />
+
+    <rect id="screenFill" x="26" y="30" width="76" height="52" rx="8" fill="#88ccee" />
+    <clipPath id="clipScreen">
+      <rect x="26" y="30" width="76" height="52" rx="8" />
+    </clipPath>
+
+    <g clip-path="url(#clipScreen)">
+      <g transform="translate(64 78)">
+        <ellipse id="shadow" cx="0" cy="0" rx="14" ry="5" fill="#000" opacity=".18" />
+
+        <g id="monWrap">
+          <rect class="pixel" x="-18" y="-28" width="36" height="28" fill="#ff8c42" />
+          <rect class="pixel" x="-18" y="-36" width="8" height="8" fill="#ff8c42" />
+          <rect class="pixel" x="10" y="-36" width="8" height="8" fill="#ff8c42" />
+          <rect class="pixel" x="-6" y="-38" width="4" height="4" fill="#ffbf69" />
+          <rect class="pixel" x="2" y="-38" width="4" height="4" fill="#ffbf69" />
+          <rect class="pixel" x="-8" y="-16" width="16" height="12" fill="#ffd7a8" />
+          <rect class="pixel" x="-26" y="-14" width="8" height="8" fill="#ff8c42" />
+          <rect class="pixel" x="18" y="-14" width="8" height="8" fill="#ff8c42" />
+          <rect class="pixel" x="-12" y="0" width="8" height="8" fill="#ff8c42" />
+          <rect class="pixel" x="4" y="0" width="8" height="8" fill="#ff8c42" />
+          <rect class="pixel" x="22" y="-18" width="6" height="6" fill="#ff8c42" />
+          <rect class="pixel" x="-10" y="-22" width="4" height="4" fill="#000" />
+          <rect class="pixel" x="6" y="-22" width="4" height="4" fill="#000" />
+          <rect class="pixel" x="-9" y="-21" width="2" height="2" fill="#fff" />
+          <rect class="pixel" x="7" y="-21" width="2" height="2" fill="#fff" />
+          <rect class="pixel" x="-2" y="-12" width="4" height="2" fill="#a13d2d" />
+
+          <rect class="pixel" x="-18" y="-28" width="36" height="28" fill="none" stroke="#000" stroke-width="1" />
+          <rect class="pixel" x="-18" y="-36" width="8" height="8" fill="none" stroke="#000" stroke-width="1" />
+          <rect class="pixel" x="10" y="-36" width="8" height="8" fill="none" stroke="#000" stroke-width="1" />
+          <rect class="pixel" x="-26" y="-14" width="8" height="8" fill="none" stroke="#000" stroke-width="1" />
+          <rect class="pixel" x="18" y="-14" width="8" height="8" fill="none" stroke="#000" stroke-width="1" />
+          <rect class="pixel" x="-12" y="0" width="8" height="8" fill="none" stroke="#000" stroke-width="1" />
+          <rect class="pixel" x="4" y="0" width="8" height="8" fill="none" stroke="#000" stroke-width="1" />
+          <rect class="pixel" x="22" y="-18" width="6" height="6" fill="none" stroke="#000" stroke-width="1" />
+        </g>
+      </g>
+    </g>
+
+    <rect x="26" y="30" width="76" height="52" rx="8" fill="none" stroke="#000" stroke-width="3" />
+
+    <circle cx="114" cy="38" r="4" fill="#000" />
+    <circle cx="114" cy="56" r="4" fill="#000" />
+    <circle cx="114" cy="74" r="4" fill="#000" />
+  </g>
+</svg>

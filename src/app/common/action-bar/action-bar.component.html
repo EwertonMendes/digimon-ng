@@ -1,81 +1,80 @@
 <div class="action-bar-container">
   <div class="action-bar-buttons">
-    <app-button
+    <app-icon
       [appTooltip]="'COMMON.ACTION_BAR.BUTTONS.DESKTOP' | transloco"
+      [ngClass]="{
+        'action-bar-button--active': currentRoute() === 'desktop'
+      }"
       tooltipDirection="right"
-      icon="ph-desktop"
-      weight="bold"
-      size="xl"
-      color="info"
-      (onClick)="navigateTo('desktop')"
+      [name]="'desktop'"
+      [size]="'100%'"
+      class="action-bar-button"
+      (click)="navigateTo('desktop')"
     />
-    <app-button
+    <app-icon
       [appTooltip]="'COMMON.ACTION_BAR.BUTTONS.ADVENTURE' | transloco"
+      [ngClass]="{
+        'action-bar-button--active': currentRoute() === 'adventure'
+      }"
       tooltipDirection="right"
-      icon="ph-sword"
-      weight="bold"
-      size="xl"
-      color="danger"
-      (onClick)="navigateTo('adventure')"
+      [name]="'compass'"
+      [size]="'100%'"
+      class="action-bar-button"
+      (click)="navigateTo('adventure')"
     />
-    <app-button
+    <app-icon
       [appTooltip]="'COMMON.ACTION_BAR.BUTTONS.LAB' | transloco"
+      [ngClass]="{
+        'action-bar-button--active': currentRoute() === 'lab'
+      }"
       tooltipDirection="right"
-      icon="ph-test-tube"
-      weight="bold"
-      size="xl"
-      color="success"
-      (onClick)="navigateTo('lab')"
+      [name]="'lab'"
+      [size]="'100%'"
+      class="action-bar-button"
+      (click)="navigateTo('lab')"
     />
-    <app-button
+    <app-icon
       [appTooltip]="
         'COMMON.ACTION_BAR.BUTTONS.OPEN_DIGIMON_STORAGE' | transloco
       "
       tooltipDirection="right"
-      icon="ph-database"
-      size="xl"
-      weight="bold"
-      (onClick)="openDigimonStorageModal()"
+      [name]="'storage'"
+      [size]="'100%'"
+      class="action-bar-button"
+      (click)="openDigimonStorageModal()"
     />
   </div>
   <div class="action-bar-buttons">
     @if(isDevMode) {
-    <app-button
+    <app-icon
       [appTooltip]="'COMMON.ACTION_BAR.BUTTONS.DEBUG' | transloco"
       tooltipDirection="right"
-      icon="ph-bug"
-      weight="bold"
-      size="xl"
-      color="dark"
-      (onClick)="openDebugModal()"
+      [name]="'debug'"
+      [size]="'100%'"
+      class="icon-test"
+      (click)="openDebugModal()"
     />
     }
-    <app-button
+    <app-icon
       [appTooltip]="'COMMON.ACTION_BAR.BUTTONS.PLAYER_INFO' | transloco"
       tooltipDirection="right"
-      icon="ph-user-circle-gear"
-      weight="bold"
-      size="xl"
-      color="dark"
-      (onClick)="openPlayerInfoModal()"
+      [name]="'player-info'"
+      [size]="'100%'"
+      (click)="openPlayerInfoModal()"
     />
-    <app-button
+    <app-icon
       [appTooltip]="'COMMON.ACTION_BAR.BUTTONS.CONFIG' | transloco"
       tooltipDirection="right"
-      icon="ph-gear"
-      weight="bold"
-      size="xl"
-      color="dark"
-      (onClick)="openConfigModal()"
+      [name]="'config'"
+      [size]="'100%'"
+      (click)="openConfigModal()"
     />
-    <app-button
+    <app-icon
       [appTooltip]="'COMMON.ACTION_BAR.BUTTONS.SAVE_GAME' | transloco"
       tooltipDirection="right"
-      icon="ph-floppy-disk"
-      weight="bold"
-      size="xl"
-      color="dark"
-      (onClick)="saveGame()"
+      [name]="'save'"
+      [size]="'100%'"
+      (click)="saveGame()"
     />
   </div>
 </div>

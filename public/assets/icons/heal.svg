@@ -3,20 +3,15 @@
     <g class="first-aid-kit">
       <ellipse cx="32" cy="54" rx="18" ry="3" fill="#000000" opacity="0.2" />
 
-      <!-- Corpo principal da maleta -->
       <rect x="16" y="30" width="32" height="18" rx="3" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1.5" />
 
-      <!-- Tampa da maleta -->
       <rect x="16" y="24" width="32" height="8" rx="3" fill="#F8FAFC" stroke="#D1D5DB" stroke-width="1.5" />
 
-      <!-- Alça -->
       <rect x="26" y="20" width="12" height="4" rx="2" fill="none" stroke="#9CA3AF" stroke-width="1.8" />
 
-      <!-- Fechos laterais -->
       <rect x="15" y="28" width="2" height="4" fill="#9CA3AF" rx="0.5" />
       <rect x="47" y="28" width="2" height="4" fill="#9CA3AF" rx="0.5" />
 
-      <!-- Cruz vermelha principal -->
       <g class="red-cross">
         <rect x="26" y="35" width="12" height="4" fill="#EF4444" rx="0.8" />
         <rect x="30" y="31" width="4" height="12" fill="#EF4444" rx="0.8" />
@@ -25,7 +20,6 @@
 
 
 
-      <!-- Linhas de detalhes -->
       <rect x="18" y="45" width="28" height="0.8" fill="#E5E7EB" />
     </g>
   </g>
@@ -46,18 +40,24 @@
     }
 
     @keyframes heal-pulse {
-      0%, 100% {
+
+      0%,
+      100% {
         transform: translateY(0px) scale(1);
       }
+
       50% {
         transform: translateY(-1px) scale(1.02);
       }
     }
 
     @keyframes cross-glow {
-      0%, 100% {
+
+      0%,
+      100% {
         opacity: 1;
       }
+
       50% {
         opacity: 1.3;
         filter: drop-shadow(0 0 4px rgba(239, 68, 68, 0.6));

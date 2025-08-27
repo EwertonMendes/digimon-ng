@@ -1,0 +1,45 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(0, -8)">
+    <g class="layout-horizontal">
+      <ellipse cx="32" cy="54" rx="18" ry="3" fill="#000000" opacity="0.2" />
+
+      <rect x="14" y="24" width="36" height="26" rx="3" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1.5" />
+
+      <rect x="16" y="26" width="32" height="10" rx="1.5" fill="#60A5FA" opacity="0.4" stroke="#3B82F6"
+        stroke-width="1" />
+
+      <rect x="16" y="38" width="32" height="10" rx="1.5" fill="#34D399" opacity="0.4" stroke="#10B981"
+        stroke-width="1" />
+
+      <rect x="18" y="29" width="8" height="1" fill="#3B82F6" opacity="0.6" rx="0.5" />
+      <rect x="18" y="31" width="6" height="1" fill="#3B82F6" opacity="0.6" rx="0.5" />
+
+      <rect x="18" y="41" width="7" height="1" fill="#10B981" opacity="0.6" rx="0.5" />
+      <rect x="18" y="43" width="5" height="1" fill="#10B981" opacity="0.6" rx="0.5" />
+    </g>
+  </g>
+
+  <style>
+    .layout-horizontal {
+      transition: transform 0.3s ease;
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+
+    svg:hover .layout-horizontal {
+      animation: stretch-bounce 1.2s ease-in-out infinite;
+    }
+
+    @keyframes stretch-bounce {
+
+      0%,
+      100% {
+        transform: translateX(0px) scale(1);
+      }
+
+      50% {
+        transform: translateX(1px) scale(1.02, 1);
+      }
+    }
+  </style>
+</svg>

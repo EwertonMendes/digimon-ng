@@ -1,0 +1,111 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <g class="evolution-expand">
+    <g class="connection-lines">
+      <line x1="32" y1="32" x2="22" y2="22" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" opacity="0" />
+      <line x1="32" y1="32" x2="42" y2="22" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" opacity="0" />
+      <line x1="32" y1="32" x2="32" y2="49" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" opacity="0" />
+    </g>
+
+    <g class="evolution-nodes">
+      <circle cx="22" cy="22" r="4" fill="#FFFFFF" stroke="#10B981" stroke-width="2" opacity="0"
+        transform="scale(0)" />
+      <circle cx="22" cy="22" r="2" fill="#34D399" opacity="0" transform="scale(0)" />
+
+      <circle cx="42" cy="22" r="4" fill="#FFFFFF" stroke="#F59E0B" stroke-width="2" opacity="0"
+        transform="scale(0)" />
+      <circle cx="42" cy="22" r="2" fill="#FCD34D" opacity="0" transform="scale(0)" />
+
+      <circle cx="32" cy="47" r="4" fill="#FFFFFF" stroke="#EF4444" stroke-width="2" opacity="0" transform="scale(0)"
+        transform-origin="32 47" />
+      <circle cx="32" cy="47" r="2" fill="#F87171" opacity="0" transform="scale(0)" transform-origin="32 47" />
+    </g>
+
+    <circle cx="32" cy="32" r="5" fill="#FFFFFF" stroke="#3B82F6" stroke-width="2.5" />
+    <circle cx="32" cy="32" r="2.5" fill="#60A5FA" />
+  </g>
+
+  <style>
+    .evolution-expand {
+      transition: all 0.3s ease;
+    }
+
+    svg:hover .connection-lines line {
+      animation: line-appear 0.6s ease-out forwards;
+    }
+
+    svg:not(:hover) .connection-lines line {
+      animation: line-disappear 0.4s ease-out forwards;
+    }
+
+    svg:hover .evolution-nodes circle {
+      animation: node-appear 0.8s ease-out forwards;
+    }
+
+    svg:not(:hover) .evolution-nodes circle {
+      animation: node-disappear 0.4s ease-out forwards;
+    }
+
+    svg:hover .evolution-nodes circle:nth-child(1),
+    svg:hover .evolution-nodes circle:nth-child(2) {
+      animation-delay: 0.1s;
+    }
+
+    svg:hover .evolution-nodes circle:nth-child(3),
+    svg:hover .evolution-nodes circle:nth-child(4) {
+      animation-delay: 0.2s;
+    }
+
+    svg:hover .evolution-nodes circle:nth-child(5),
+    svg:hover .evolution-nodes circle:nth-child(6) {
+      animation-delay: 0.3s;
+    }
+
+    @keyframes line-appear {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes line-disappear {
+      0% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes node-appear {
+      0% {
+        opacity: 0;
+        transform: scale(0);
+      }
+
+      70% {
+        transform: scale(1.1);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes node-disappear {
+      0% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      100% {
+        opacity: 0;
+        transform: scale(0);
+      }
+    }
+  </style>
+</svg>

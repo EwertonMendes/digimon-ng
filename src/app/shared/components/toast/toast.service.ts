@@ -24,9 +24,9 @@ export class ToastService {
     position: 'top' | 'bottom' = 'bottom'
   ) {
     const iconMap: Record<string, string> = {
-      success: 'ph-check-fat',
-      error: 'ph-x-circle',
-      info: 'ph-info',
+      success: 'check-fat',
+      error: 'x-circle',
+      info: 'info',
     };
 
     if (!icon) {

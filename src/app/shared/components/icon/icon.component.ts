@@ -10,7 +10,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div [innerHTML]="svgContent() || fallbackSvg" [ngStyle]="{'width': size(), 'height': size(), scale: scale(), 'display': 'block', 'vertical-align': 'middle', 'margin': '0', 'padding': '0', 'overflow': 'visible', 'box-sizing': 'border-box', 'position': 'relative'}" [attr.aria-label]="ariaLabel()"></div>
+    <div [innerHTML]="svgContent() || fallbackSvg" class="icon-container" [ngStyle]="{'width': size(), 'height': size(), scale: scale()}" [attr.aria-label]="ariaLabel()"></div>
   `,
   styles: `
     :host {
@@ -25,6 +25,14 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
     div > svg {
       width: 100%;
       height: 100%;
+    }
+    .icon-container {
+      display: flex;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      overflow: visible;
+      position: relative;
     }
   `
 })

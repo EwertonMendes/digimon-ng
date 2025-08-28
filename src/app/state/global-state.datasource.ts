@@ -567,7 +567,8 @@ export class GlobalStateDataSource {
     if (chance <= escapeChance) {
       this.toastService.showToast(
         this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.ESCAPE_SUCCESS_TOAST'),
-        'info'
+        'info',
+        'run'
       );
       this.audioService.playAudio(AudioEffects.MISS);
       this.log(this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.ESCAPE_SUCCESS_LOG'));

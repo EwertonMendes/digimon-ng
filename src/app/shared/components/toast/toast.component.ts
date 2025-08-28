@@ -8,11 +8,12 @@ import {
   transition,
   animate,
 } from '@angular/animations';
+import { IconComponent } from "../icon/icon.component";
 
 @Component({
   selector: 'app-toast',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, IconComponent],
   templateUrl: './toast.component.html',
   styleUrls: ['./toast.component.scss'],
   animations: [

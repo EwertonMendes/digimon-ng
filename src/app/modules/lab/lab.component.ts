@@ -6,13 +6,14 @@ import { DigimonService } from '@services/digimon.service';
 import { ToastService } from '@shared/components/toast/toast.service';
 import { CommonModule } from '@angular/common';
 import { TranslocoModule } from '@jsverse/transloco';
+import { IconComponent } from "@shared/components/icon/icon.component";
 
 type LabDigimon = BaseDigimon & { amount: number; cost: number };
 
 @Component({
   selector: 'app-lab',
   standalone: true,
-  imports: [CommonModule, ButtonComponent, TranslocoModule],
+  imports: [CommonModule, ButtonComponent, TranslocoModule, IconComponent],
   templateUrl: './lab.component.html',
   styleUrl: './lab.component.scss'
 })

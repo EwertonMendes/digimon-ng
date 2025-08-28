@@ -1,0 +1,23 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(0, -8)">
+    <g transform="translate(16, 22)">
+      <circle cx="16" cy="16" r="12" fill="#FFD700" stroke="#DAA520" stroke-width="2" />
+
+      <rect x="9" y="11" width="3" height="1" fill="#00BFFF" />
+      <rect x="9" y="11" width="1" height="8" fill="#00BFFF" />
+      <rect x="12" y="11" width="1" height="8" fill="#00BFFF" />
+      <rect x="9" y="19" width="3" height="1" fill="#00BFFF" />
+
+      <rect x="14" y="11" width="1" height="9" fill="#00BFFF" />
+
+      <rect x="16" y="11" width="3" height="1" fill="#00BFFF" />
+      <rect x="16" y="11" width="1" height="8" fill="#00BFFF" />
+      <rect x="19" y="11" width="1" height="8" fill="#00BFFF" />
+      <rect x="16" y="19" width="3" height="1" fill="#00BFFF" />
+
+      <rect x="21" y="11" width="1" height="9" fill="#00BFFF" />
+
+      <circle cx="16" cy="16" r="14" fill="none" stroke="#FFFF00" stroke-width="1" opacity="0.5" />
+    </g>
+  </g>
+</svg>

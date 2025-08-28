@@ -1,7 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { Component, input, output } from '@angular/core';
-import '@phosphor-icons/web/light';
-import '@phosphor-icons/web/bold';
 import { IconComponent } from '../icon/icon.component';
 
 type IconPosition = 'left' | 'right' | 'top' | 'bottom';

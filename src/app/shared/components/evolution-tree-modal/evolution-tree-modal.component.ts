@@ -19,8 +19,6 @@ import { GraphService } from '@services/graph.service';
 import Sigma from 'sigma';
 import { ButtonComponent } from '../button/button.component';
 import { GlobalStateDataSource } from '@state/global-state.datasource';
-import '@phosphor-icons/web/light';
-import '@phosphor-icons/web/bold';
 import { AudioEffects } from '@core/enums/audio-tracks.enum';
 import { AudioService } from '@services/audio.service';
 import { ModalComponent } from '../modal/modal.component';

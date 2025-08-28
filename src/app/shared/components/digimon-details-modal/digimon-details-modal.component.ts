@@ -1,11 +1,11 @@
 import {
-    ChangeDetectionStrategy,
-    Component,
-    computed,
-    effect,
-    inject,
-    model,
-    signal,
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  effect,
+  inject,
+  model,
+  signal,
 } from '@angular/core';
 import { GlobalStateDataSource } from '@state/global-state.datasource';
 import { CommonModule } from '@angular/common';
@@ -20,8 +20,6 @@ import { ModalComponent } from '../modal/modal.component';
 import { ModalService } from '../modal/modal.service';
 import { InputComponent } from '../input/input.component';
 import { FormsModule } from '@angular/forms';
-import '@phosphor-icons/web/light';
-import '@phosphor-icons/web/bold';
 
 @Component({
   standalone: true,

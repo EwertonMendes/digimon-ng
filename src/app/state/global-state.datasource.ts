@@ -182,8 +182,8 @@ export class GlobalStateDataSource {
       language: this.translocoService.getActiveLang()
     };
     this.configService.loadConfig().then(config => {
-      this.audioService.isAudioEnabled = initialConfig.enableAudio;
-      this.themeService.setTheme(initialConfig.theme);
+      this.audioService.isAudioEnabled = newGame ? initialConfig.enableAudio : config.enableAudio;
+      this.themeService.setTheme(newGame ? initialConfig.theme : config.theme);
       this.translocoService.setActiveLang(newGame ? initialConfig.language : config.language);
     });
   }

@@ -3,6 +3,9 @@
     <h3 class="section-title">
       {{ "SHARED.COMPONENTS.STORAGE_MODAL.TITLE" | transloco }}
     </h3>
+    <span class="digimon-storage-container-count">
+      {{ globalState.playerDataAcessor.digimonStorageList.length }} Digimons
+    </span>
     <div class="digimon-storage-content">
       @if(globalState.playerDataAcessor.digimonStorageList.length === 0){
       <div class="digimon-storage-content-no-data-container">
@@ -64,13 +67,6 @@
         }
       </div>
       }
-      <div class="digimon-storage-content-footer">
-        <span>
-          {{ "SHARED.COMPONENTS.STORAGE_MODAL.STORAGE_CAPACITY" | transloco }}
-          {{ globalState.playerDataAcessor.digimonStorageList.length }} /
-          {{ globalState.playerDataAcessor.digimonStorageCapacity }}
-        </span>
-      </div>
     </div>
   </div>
 </app-modal>

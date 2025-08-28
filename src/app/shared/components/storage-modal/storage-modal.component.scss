@@ -14,6 +14,10 @@
     color: var(--primary-light);
   }
 
+  &-count {
+    font-size: 1.5rem;
+  }
+
   .digimon-storage-content {
     display: flex;
     flex-direction: column;
@@ -60,13 +64,6 @@
           justify-content: center;
         }
       }
-    }
-
-    &-footer {
-      display: flex;
-      flex-direction: row;
-      justify-content: end;
-      gap: 10px;
     }
   }
 }

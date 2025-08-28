@@ -515,7 +515,7 @@ export class GlobalStateDataSource {
       this.toastService.showToast(
         this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.DEFEAT_LOG'),
         'error',
-        'ph-skull'
+        'skull'
       );
     }
     this.log(this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.BATTLE_ENDED_LOG'));

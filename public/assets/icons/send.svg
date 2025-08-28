@@ -1,0 +1,25 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" class="team-icon-container">
+  <g class="team-icon" transform="translate(0,-2)">
+    <ellipse cx="32" cy="56" rx="18" ry="3" fill="#000000" opacity="0.15" />
+
+    <circle cx="22" cy="34" r="7" fill="#60A5FA" stroke="#3B82F6" stroke-width="1.5" />
+    <circle cx="32" cy="26" r="7" fill="#34D399" stroke="#059669" stroke-width="1.5" />
+    <circle cx="42" cy="34" r="7" fill="#FBBF24" stroke="#D97706" stroke-width="1.5" />
+
+    <path d="M24 44 L40 44 L40 40 L48 47 L40 54 L40 50 L24 50 Z" fill="#EF4444" stroke="#B91C1C" stroke-width="1.2"
+      rx="2" />
+  </g>
+
+  <style>
+    .team-icon {
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      transform-box: fill-box;
+      transform-origin: 32px 32px;
+    }
+
+    .team-icon-container:hover .team-icon {
+      transform: scale(1.08);
+      opacity: 0.9;
+    }
+  </style>
+</svg>

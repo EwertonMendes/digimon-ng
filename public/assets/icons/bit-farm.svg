@@ -1,0 +1,46 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" class="bit-farm-icon-container">
+  <g class="bit-farm-icon" transform="translate(0,0)">
+    <path d="M18 27 L46 27 L40 43 L24 43 Z" fill="#A3A3A3" stroke="#000" stroke-width="2" rx="1" />
+
+    <circle cx="26" cy="33" r="5" fill="#FFD700" stroke="#000" stroke-width="1.5" />
+    <circle cx="32" cy="31" r="5" fill="#FFD700" stroke="#000" stroke-width="1.5" />
+    <circle cx="38" cy="33" r="5" fill="#FFD700" stroke="#000" stroke-width="1.5" />
+
+    <rect x="25" y="29" width="2" height="1" fill="#00BFFF" stroke="#000" stroke-width="0.5" />
+    <rect x="29" y="29" width="2" height="1" fill="#00BFFF" stroke="#000" stroke-width="0.5" />
+    <rect x="33" y="29" width="2" height="1" fill="#00BFFF" stroke="#000" stroke-width="0.5" />
+    <rect x="37" y="29" width="2" height="1" fill="#00BFFF" stroke="#000" stroke-width="0.5" />
+  </g>
+
+  <style>
+    .bit-farm-icon {
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      transform-box: fill-box;
+      transform-origin: 32px 32px;
+    }
+
+    .bit-farm-icon-container:hover .bit-farm-icon {
+      transform: scale(1.05);
+      opacity: 0.95;
+    }
+
+    .bit-farm-icon-container:hover circle {
+      animation: bitPulse 0.6s infinite alternate;
+      transform-origin: center;
+    }
+
+    @keyframes bitPulse {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.1);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+  </style>
+</svg>

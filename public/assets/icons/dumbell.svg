@@ -1,0 +1,30 @@
+<svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg" style="cursor:pointer" class="container">
+  <ellipse cx="60" cy="70" rx="35" ry="6" fill="black" opacity="0.25" />
+
+  <rect x="40" y="35" width="40" height="10" rx="2" fill="#555" />
+
+  <rect x="32" y="28" width="6" height="24" rx="2" fill="#444" />
+  <rect x="26" y="30" width="5" height="20" rx="2" fill="#666" />
+  <rect x="21" y="32" width="4" height="16" rx="2" fill="#888" />
+
+  <rect x="82" y="28" width="6" height="24" rx="2" fill="#444" />
+  <rect x="89" y="30" width="5" height="20" rx="2" fill="#666" />
+  <rect x="95" y="32" width="4" height="16" rx="2" fill="#888" />
+
+  <style>
+    .container:hover rect {
+      animation: lift 0.6s infinite alternate;
+      transform-origin: center;
+    }
+
+    @keyframes lift {
+      from {
+        transform: translateY(0px);
+      }
+
+      to {
+        transform: translateY(-4px);
+      }
+    }
+  </style>
+</svg>

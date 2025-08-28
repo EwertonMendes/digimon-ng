@@ -79,7 +79,7 @@ export class BattleService {
 
   calculateExpGiven(defeatedDigimon: Digimon): number {
     const potential = defeatedDigimon.potential ?? getDefaultPotential(defeatedDigimon.rank);
-    return Math.floor(100 * potential * Math.pow(defeatedDigimon.level, 1.5) / 100);
+    return Math.floor(100 * potential * Math.pow(defeatedDigimon.level, 2.2) / 100);
   }
 
   calculateRequiredExpForLevel(level: number, baseExp: number = 100): number {
@@ -148,7 +148,7 @@ export class BattleService {
       digimon.exp -= expForNextLevel;
       digimon.level++;
 
-      const gains = calculateGains(digimon.rank);
+      const gains = calculateGains();
       digimon.maxHp += gains.hp;
       digimon.maxMp += gains.mp;
       digimon.atk += gains.atk;

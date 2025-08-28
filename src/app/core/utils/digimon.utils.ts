@@ -18,7 +18,7 @@ export const RANK_DEFAULT_POTENTIAL: Record<string, number> = {
   Mega: 99,
 };
 
-export function calculateGains(rank: string): { hp: number; mp: number; atk: number; def: number; speed: number } {
+export function calculateGains(): { hp: number; mp: number; atk: number; def: number; speed: number } {
   return {
     hp: Math.floor(Math.random() * 5) + 4,
     mp: Math.floor(Math.random() * 5) + 4,

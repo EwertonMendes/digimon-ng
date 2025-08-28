@@ -83,7 +83,7 @@ export class DigimonService {
     };
 
     for (let i = 2; i <= level; i++) {
-      const gains = calculateGains(baseDigimon.rank);
+      const gains = calculateGains();
       stats.maxHp! += gains.hp;
       stats.maxMp! += gains.mp;
       stats.atk! += gains.atk;

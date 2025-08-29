@@ -1,11 +1,11 @@
 import {
-  ChangeDetectionStrategy,
-  Component,
-  computed,
-  effect,
-  inject,
-  model,
-  signal,
+    ChangeDetectionStrategy,
+    Component,
+    computed,
+    effect,
+    inject,
+    model,
+    signal,
 } from '@angular/core';
 import { GlobalStateDataSource } from '@state/global-state.datasource';
 import { CommonModule } from '@angular/common';
@@ -20,6 +20,7 @@ import { ModalComponent } from '../modal/modal.component';
 import { ModalService } from '../modal/modal.service';
 import { InputComponent } from '../input/input.component';
 import { FormsModule } from '@angular/forms';
+import { IconComponent } from "../icon/icon.component";
 
 @Component({
   standalone: true,
@@ -34,8 +35,9 @@ import { FormsModule } from '@angular/forms';
     ButtonComponent,
     TranslocoModule,
     InputComponent,
-    FormsModule
-  ],
+    FormsModule,
+    IconComponent
+],
 })
 export class DigimonDetailsModalComponent {
   protected digimonDetailsModalId = signal('digimon-details-modal');

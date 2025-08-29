@@ -3,6 +3,14 @@
   class="digimon-farm-card"
   [ngStyle]="{ filter: digimon().currentHp <= 0 ? 'brightness(0.6)' : '' }"
 >
+  @if(isHovered() && isDeletable()) {
+  <div
+    class="delete-button"
+    (click)="openDeleteConfirmationModal(); $event.stopPropagation()"
+  >
+    x
+  </div>
+  }
   <div class="digimon-farm-card-image">
     <img [src]="digimon().img" [alt]="digimon().name" />
   </div>

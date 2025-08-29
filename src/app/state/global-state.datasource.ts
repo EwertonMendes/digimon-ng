@@ -22,6 +22,14 @@ import { getDefaultPotential } from '@core/utils/digimon.utils';
 
 type EndBattleState = 'victory' | 'defeat' | 'draw';
 type DigimonWithOwner = Digimon & { owner: string };
+
+const DIGIMON_LIST_KEYS: (keyof PlayerData)[] = [
+  'digimonList',
+  'inTrainingDigimonList',
+  'bitFarmDigimonList',
+  'hospitalDigimonList',
+  'digimonStorageList',
+];
 @Injectable({
   providedIn: 'root',
 })
@@ -115,6 +123,7 @@ export class GlobalStateDataSource {
       this.playerDataAcessor.inTrainingDigimonList,
       this.playerDataAcessor.bitFarmDigimonList,
       this.playerDataAcessor.hospitalDigimonList,
+      this.playerDataAcessor.digimonStorageList,
     ].flat()
   );
 
@@ -149,16 +158,8 @@ export class GlobalStateDataSource {
   }
 
   getDigimonById(id: string): Digimon | undefined {
-    const digimonLists = [
-      'digimonList',
-      'bitFarmDigimonList',
-      'inTrainingDigimonList',
-      'hospitalDigimonList',
-      'digimonStorageList'
-    ] as const;
-
-    for (const listName of digimonLists) {
-      const found = this.playerData()[listName].find(d => d.id === id);
+    for (const listName of DIGIMON_LIST_KEYS) {
+      const found = this.playerData()[listName].find((d: Digimon) => d.id === id);
       if (found) return found;
     }
 
@@ -294,6 +295,20 @@ export class GlobalStateDataSource {
     this.playerDataAcessor.bitFarmDigimonList.forEach(digimon => digimon.currentHp = 0);
     this.playerDataAcessor.hospitalDigimonList.forEach(digimon => digimon.currentHp = 0);
     this.playerDataAcessor.digimonStorageList.forEach(digimon => digimon.currentHp = 0);
+  }
+
+  deleteDigimon(digimonId: string): void {
+    this.playerData.update((currentData) => {
+      const updatedData = { ...currentData };
+
+      for (const key of DIGIMON_LIST_KEYS) {
+        const list = updatedData[key];
+        if (list.some((d: Digimon) => d.id === digimonId)) {
+          updatedData[key] = list.filter((d: Digimon) => d.id !== digimonId);
+        }
+      }
+      return updatedData;
+    });
   }
 
   levelUpDigimonToLevel(digimon: Digimon, level: number) {

@@ -5,6 +5,7 @@ import {
   computed,
   DestroyRef,
   effect,
+  HostListener,
   inject,
   input,
   signal,
@@ -22,6 +23,8 @@ import {
 import { GlobalStateDataSource } from '@state/global-state.datasource';
 import { pairwise, startWith } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { ModalService } from '../modal/modal.service';
+import { DeletionConfirmationModalComponent } from '@shared/deletion-confirmation-modal/deletion-confirmation-modal.component';
 
 @Component({
   selector: 'app-digi-status-card',
@@ -62,8 +65,12 @@ export class DigiStatusCardComponent {
   });
   showHpChange = signal(false);
 
-  change = inject(ChangeDetectorRef);
-  destroyRef = inject(DestroyRef);
+  protected isHovered = signal(false);
+  protected isDeletable = signal(false);
+
+  private change = inject(ChangeDetectorRef);
+  private destroyRef = inject(DestroyRef);
+  private modalService = inject(ModalService);
 
   damageState = computed(() => {
     return this.globalState.currentDefendingDigimon()?.id === this.digimon().id
@@ -77,11 +84,26 @@ export class DigiStatusCardComponent {
     return this.globalState.getDigimonById(this.globalState.selectedDigimonOnDetails()?.id!)?.nickName;
   })
 
+  @HostListener('mouseenter')
+  onMouseEnter(): void {
+    this.isHovered.set(true);
+    const allPlayerDigimons = this.globalState.allPlayerDigimonList();
+    const isPlayerDigimon = allPlayerDigimons.some(digimon => digimon.id === this.digimon().id);
+    const hasMultipleDigimons = allPlayerDigimons.length > 1;
+    this.isDeletable.set(isPlayerDigimon && hasMultipleDigimons && !this.globalState.isBattleActive);
+  }
+
+  @HostListener('mouseleave')
+  public mouseleaveListener(): void {
+    this.isHovered.set(false);
+    this.isDeletable.set(false);
+  }
+
   constructor() {
     effect(() => {
 
       if (this.isThisDigimon()) return;
-      this.change.detectChanges();
+      this.change.markForCheck();
 
       if (this.changedName()) {
         this.digimon().nickName = this.changedName();
@@ -104,7 +126,6 @@ export class DigiStatusCardComponent {
             changeType:
               current.currentHp >= prev.currentHp ? 'healing' : 'damage',
           });
-
         }, 100);
       });
   }
@@ -122,6 +143,12 @@ export class DigiStatusCardComponent {
     this.hpChange.set({
       hpChangeValue: 0,
       changeType: 'none',
+    });
+  }
+
+  openDeleteConfirmationModal() {
+    this.modalService.open('deletion-confirmation-modal', DeletionConfirmationModalComponent, {
+      digimon: this.digimon()
     });
   }
 }

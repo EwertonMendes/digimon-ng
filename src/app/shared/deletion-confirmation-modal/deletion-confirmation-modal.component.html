@@ -1,0 +1,58 @@
+<app-modal [id]="id()">
+  <div class="deletion-confirmation-modal-container">
+    <div class="deletion-confirmation-container">
+      <div class="deletion-confirmation-header">
+        <h2>
+          {{
+            "SHARED.COMPONENTS.DIGI_STATUS_CARD.COMPONENTS.DELETION_CONFIRMATION_MODAL.TITLE"
+              | transloco
+          }}
+        </h2>
+
+        <p
+          [innerHTML]="
+            'SHARED.COMPONENTS.DIGI_STATUS_CARD.COMPONENTS.DELETION_CONFIRMATION_MODAL.TEXT'
+              | transloco
+                : {
+                    name: digimon().nickName
+                      ? digimon().nickName
+                      : digimon().name
+                  }
+          "
+        ></p>
+
+        <p class="disclaimer">
+          {{
+            "SHARED.COMPONENTS.DIGI_STATUS_CARD.COMPONENTS.DELETION_CONFIRMATION_MODAL.DISCLAIMER"
+              | transloco
+          }}
+        </p>
+      </div>
+
+      <div class="deletion-confirmation-digimon">
+        <img [src]="digimon().img" [alt]="digimon().name" />
+      </div>
+
+      <div class="deletion-confirmation-content">
+        <div class="deletion-confirmation-content-actions">
+          <app-button
+            [text]="
+              'SHARED.COMPONENTS.DIGI_STATUS_CARD.COMPONENTS.DELETION_CONFIRMATION_MODAL.CANCEL'
+                | transloco
+            "
+            (click)="close()"
+          ></app-button>
+          <app-button
+            [text]="
+              'SHARED.COMPONENTS.DIGI_STATUS_CARD.COMPONENTS.DELETION_CONFIRMATION_MODAL.DELETE'
+                | transloco
+            "
+            (click)="deleteDigimon()"
+            color="danger"
+            [disabled]="isDeleting()"
+          ></app-button>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-modal>

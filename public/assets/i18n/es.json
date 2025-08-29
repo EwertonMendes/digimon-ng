@@ -238,6 +238,18 @@
       },
       "DIGIMON_SELECTION_MODAL": {
         "TITLE": "Selecciona tu Digimon"
+      },
+      "DIGI_STATUS_CARD": {
+        "COMPONENTS": {
+          "DELETION_CONFIRMATION_MODAL": {
+            "TITLE": "Confirmación de eliminación",
+            "TEXT": "¿Estás seguro de que quieres eliminar los datos de <span class='digimon-name'>{{name}}</span> de tu servidor?",
+            "DISCLAIMER": "¡Atención: Esta acción es irreversible.",
+            "CANCEL": "Cancelar",
+            "DELETE": "Eliminar",
+            "DIGIMON_REMOVED_TOAST": "¡Datos de {{name}} eliminados!"
+          }
+        }
       }
     }
   }

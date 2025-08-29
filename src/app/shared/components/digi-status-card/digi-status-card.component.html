@@ -5,6 +5,14 @@
   [@damage]="damageState()"
   (@damage.done)="resetDamageState()"
 >
+  @if(isHovered() && isDeletable()) {
+  <div
+    class="delete-button"
+    (click)="openDeleteConfirmationModal(); $event.stopPropagation()"
+  >
+    x
+  </div>
+  }
   <div class="modifications">
     @if(showHpChange()) {
     <span

@@ -1,0 +1,98 @@
+.deletion-confirmation-modal-container {
+  display: flex;
+  justify-content: center;
+  height: -webkit-fill-available;
+}
+
+.deletion-confirmation-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  border-radius: 16px;
+  width: fit-content;
+  height: fit-content;
+  justify-self: center;
+  align-self: center;
+  align-items: center;
+  background: var(--secondary);
+  color: var(--text-on-secondary);
+  padding: 50px 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  app-button {
+    width: -webkit-fill-available;
+  }
+}
+
+.deletion-confirmation-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  text-align: center;
+  align-items: center;
+
+  h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+    .digimon-name {
+      font-size: 1.2em;
+      background-color: var(--background);
+      color: var(--warning);
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+  .disclaimer {
+    font-size: 1.5em;
+    color: var(--text-on-danger);
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--danger-light);
+    width: fit-content;
+  }
+}
+
+.deletion-confirmation-digimon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.deletion-confirmation-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: fit-content;
+
+  &-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 10px;
+
+    span {
+      display: flex;
+      justify-content: center;
+      font-size: 16px;
+
+      strong {
+        font-weight: bold;
+      }
+    }
+  }
+
+  &-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    app-button {
+      flex: 1;
+    }
+  }
+}

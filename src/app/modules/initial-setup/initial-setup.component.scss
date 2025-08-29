@@ -14,7 +14,7 @@
   justify-content: space-between;
   padding: 2rem;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1366px;
   margin: 0 auto;
   gap: 2rem;
 
@@ -112,7 +112,6 @@
   &__team {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     gap: 1rem;
     min-width: 300px;
     max-width: 400px;
@@ -147,7 +146,7 @@
 
     &-members {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+      grid-template-columns: repeat(3, minmax(80px, 1fr));
       gap: 0.75rem;
       justify-items: center;
       flex-grow: 1;

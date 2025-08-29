@@ -25,51 +25,51 @@ export class InitialSetupComponent implements OnInit {
   teams: InitialTeam[] = [];
   selectableTeams = [
     {
-      name: 'Dragon Force',
-      seeds: [
-        DigimonSeeds.KOROMON,
-        DigimonSeeds.AGUMON,
-        DigimonSeeds.AIRDRAMON,
-      ]
-    },
-    {
-      name: 'Aqua Guardians',
-      seeds: [
-        DigimonSeeds.PUKAMON,
-        DigimonSeeds.BETAMON,
-        DigimonSeeds.SEADRAMON,
-      ]
-    },
-    {
-      name: 'Storm Strikers',
-      seeds: [
-        DigimonSeeds.DORIMON,
-        DigimonSeeds.ARMADILLOMON,
-        DigimonSeeds.BLUE_GREYMON,
-      ]
-    },
-    {
-      name: 'Beast Brigade',
-      seeds: [
-        DigimonSeeds.PUTTIMON,
-        DigimonSeeds.GOBURIMON,
-        DigimonSeeds.APEMON,
-      ]
-    },
-    {
-      name: 'Claw Masters',
+      name: 'MODULES.INITIAL_SETUP.TEAMS.FIERY_ASSAULT',
       seeds: [
         DigimonSeeds.GIGIMON,
-        DigimonSeeds.GABUMON,
-        DigimonSeeds.GEO_GREYMON,
+        DigimonSeeds.VEEMON,
+        DigimonSeeds.TYRANNOMON,
       ]
     },
     {
-      name: 'Mystic Warriors',
+      name: 'MODULES.INITIAL_SETUP.TEAMS.SWIFTY_SHADOWS',
       seeds: [
-        DigimonSeeds.MINOMON,
+        DigimonSeeds.TOKOMON,
         DigimonSeeds.FALCOMON,
-        DigimonSeeds.GARURUMON,
+        DigimonSeeds.AQUILAMON,
+      ]
+    },
+    {
+      name: 'MODULES.INITIAL_SETUP.TEAMS.STURDY_DEFENDERS',
+      seeds: [
+        DigimonSeeds.DODOMON,
+        DigimonSeeds.GOTSUMON,
+        DigimonSeeds.ANKYLOMON,
+      ]
+    },
+    {
+      name: 'MODULES.INITIAL_SETUP.TEAMS.MYSTIC_BALANCE',
+      seeds: [
+        DigimonSeeds.GUMMYMON,
+        DigimonSeeds.LOPMON,
+        DigimonSeeds.GARGOMON,
+      ]
+    },
+    {
+      name: 'MODULES.INITIAL_SETUP.TEAMS.AQUATIC_SURGE',
+      seeds: [
+        DigimonSeeds.PUKAMON,
+        DigimonSeeds.KAMEMON,
+        DigimonSeeds.GEKOMON,
+      ]
+    },
+    {
+      name: 'MODULES.INITIAL_SETUP.TEAMS.DARK_VANGUARD',
+      seeds: [
+        DigimonSeeds.PAGUMON,
+        DigimonSeeds.IMPMON,
+        DigimonSeeds.DEVIMON,
       ]
     }
   ]
@@ -113,9 +113,5 @@ export class InitialSetupComponent implements OnInit {
   changeLanguage(language: string): void {
     this.translocoService.setActiveLang(language);
     this.selectedLanguage.set(language);
-  }
-
-  protected getTeamKey(name: string): string {
-    return `MODULES.INITIAL_SETUP.TEAMS.${name.replace(/\s/g, '_').toUpperCase()}`;
   }
 }

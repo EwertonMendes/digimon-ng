@@ -118,12 +118,12 @@
       "SELECT_TEAM_LABEL": "Select Your Team:",
       "CONFIRM_BUTTON": "Confirm",
       "TEAMS": {
-        "DRAGON_FORCE": "Dragon Force",
-        "AQUA_GUARDIANS": "Aqua Guardians",
-        "STORM_STRIKERS": "Storm Strikers",
-        "BEAST_BRIGADE": "Beast Brigade",
-        "CLAW_MASTERS": "Claw Masters",
-        "MYSTIC_WARRIORS": "Mystic Warriors"
+        "FIERY_ASSAULT": "Fiery Assault",
+        "SWIFTY_SHADOWS": "Swifty Shadows",
+        "STURDY_DEFENDERS": "Sturdy Defenders",
+        "MYSTIC_BALANCE": "Mystic Balance",
+        "AQUATIC_SURGE": "Aquatic Surge",
+        "DARK_VANGUARD": "Dark Vanguard"
       }
     }
   },

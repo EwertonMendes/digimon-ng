@@ -118,12 +118,12 @@
       "SELECT_TEAM_LABEL": "Selecciona tu equipo:",
       "CONFIRM_BUTTON": "Confirmar",
       "TEAMS": {
-        "DRAGON_FORCE": "Fuerza Dragón",
-        "AQUA_GUARDIANS": "Guardianes Aqua",
-        "STORM_STRIKERS": "Golpeadores de Tormenta",
-        "BEAST_BRIGADE": "Brigada Bestia",
-        "CLAW_MASTERS": "Maestros Garra",
-        "MYSTIC_WARRIORS": "Guerreros Místicos"
+        "FIERY_ASSAULT": "Asalto Ardiente",
+        "SWIFTY_SHADOWS": "Sombras Veloces",
+        "STURDY_DEFENDERS": "Defensores Robustos",
+        "MYSTIC_BALANCE": "Equilibrio Místico",
+        "AQUATIC_SURGE": "Oleada Acuática",
+        "DARK_VANGUARD": "Vanguardia Oscura"
       }
     }
   },

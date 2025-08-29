@@ -8,7 +8,7 @@
           <div class="location-list-item-image">
             <img [src]="location.img" alt="location-image" />
           </div>
-          <h5>{{ location.name }}</h5>
+          <h5>{{ location.name | transloco}}</h5>
           <div class="location-list-item-level-range">
             <span>{{ 'MODULES.ADVENTURE.EXPLORE_SECTION.LEVEL' | transloco }} {{ location.levelRange.min }} - {{ location.levelRange.max }}</span>
           </div>

@@ -1,4 +1,14 @@
-import { ChangeDetectorRef, Component, DestroyRef, inject, input, OnInit, signal } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  DestroyRef,
+  inject,
+  input,
+  OnInit,
+  computed,
+  signal,
+  model,
+} from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormsModule } from '@angular/forms';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
@@ -10,7 +20,6 @@ import { DigimonSelectionModalComponent } from 'app/shared/components/digimon-se
 import { ModalService } from 'app/shared/components/modal/modal.service';
 import { ToastService } from 'app/shared/components/toast/toast.service';
 import { GlobalStateDataSource } from 'app/state/global-state.datasource';
-import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-give-selected-digimon-modal',
@@ -26,44 +35,64 @@ import { Subject } from 'rxjs';
 })
 export class GiveSelectedDigimonModalComponent implements OnInit {
   id = input.required<string>();
+
   selectableDigimonList = signal<BaseDigimon[]>([]);
 
   generateEvolutionLine = false;
-
   selectedLevel = 1;
-  totalDigimonAmount = 0;
 
-  $OnDestroy = new Subject<void>();
+  protected showFreshDigimons = model<boolean>(true);
+  protected showInTrainingDigimons = model<boolean>(true);
+  protected showRookieDigimons = model<boolean>(true);
+  protected showChampionDigimons = model<boolean>(true);
+  protected showUltimateDigimons = model<boolean>(true);
+  protected showMegaDigimons = model<boolean>(true);
 
-  private globalState = inject(GlobalStateDataSource);
-  private digimonService = inject(DigimonService);
-  private toastService = inject(ToastService);
-  private modalService = inject(ModalService);
-  private translocoService = inject(TranslocoService);
-  private changeDetectorRef = inject(ChangeDetectorRef);
-  private destroyRef = inject(DestroyRef);
+  private readonly rankSignalMap: Record<string, () => boolean> = {
+    Fresh: () => this.showFreshDigimons(),
+    'In-Training': () => this.showInTrainingDigimons(),
+    Rookie: () => this.showRookieDigimons(),
+    Champion: () => this.showChampionDigimons(),
+    Ultimate: () => this.showUltimateDigimons(),
+    Mega: () => this.showMegaDigimons(),
+  };
+
+  protected filteredDigimonList = computed(() => {
+    const all = this.selectableDigimonList();
+    if (!all?.length) return [];
+
+    return all.filter((d) => {
+      const rank = d.rank.toString();
+      return this.rankSignalMap[rank]();
+    });
+  });
+
+  private readonly globalState = inject(GlobalStateDataSource);
+  private readonly digimonService = inject(DigimonService);
+  private readonly toastService = inject(ToastService);
+  private readonly modalService = inject(ModalService);
+  private readonly translocoService = inject(TranslocoService);
+  private readonly changeDetectorRef = inject(ChangeDetectorRef);
+  private readonly destroyRef = inject(DestroyRef);
 
   ngOnInit(): void {
-    this.modalService.onOpen$.pipe(
-      takeUntilDestroyed(this.destroyRef)
-    ).subscribe(() => {
+    this.modalService.onOpen$.pipe(takeUntilDestroyed(this.destroyRef)).subscribe(() => {
       this.onOpen();
-    })
+    });
   }
 
-  onOpen() {
+   onOpen(): void {
     if (this.selectableDigimonList().length !== 0) return;
+
     this.digimonService.baseDigimonData$
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe((data) => {
-        this.selectableDigimonList.set(
-          data.sort((a, b) => a.name.localeCompare(b.name))
-        );
-        this.totalDigimonAmount = data.length;
+        const sorted = (data ?? []).slice().sort((a, b) => a.name.localeCompare(b.name));
+        this.selectableDigimonList.set(sorted);
       });
   }
 
-  giveSelectedDigimon(digimon: BaseDigimon) {
+  giveSelectedDigimon(digimon: BaseDigimon): void {
     const newDigimon = this.globalState.generateDigimonBySeed(
       digimon.seed,
       this.selectedLevel,
@@ -73,15 +102,15 @@ export class GiveSelectedDigimonModalComponent implements OnInit {
     this.globalState.addDigimonToStorage(newDigimon);
 
     this.toastService.showToast(
-      this.translocoService.translate(
-        'SHARED.COMPONENTS.DEBUG_MODAL.ADDED_TO_STORAGE_LEVEL',
-        { name: digimon.name, level: this.selectedLevel }
-      ),
+      this.translocoService.translate('SHARED.COMPONENTS.DEBUG_MODAL.ADDED_TO_STORAGE_LEVEL', {
+        name: digimon.name,
+        level: this.selectedLevel,
+      }),
       'success'
     );
   }
 
-  async refreshDigimonList() {
+  async refreshDigimonList(): Promise<void> {
     await this.digimonService.readBaseDigimonDatabase();
     this.changeDetectorRef.detectChanges();
   }

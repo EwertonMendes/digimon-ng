@@ -231,7 +231,7 @@
         "SELECT_LEVEL": "Select level:",
         "GENERATE_EVOLUTION_LINE": "Generate evolution line",
         "REFRESH_DIGIMON_LIST": "Refresh digimon list",
-        "TOTAL": "Total",
+        "SHOWING": "Showing",
         "ADDED_TO_STORAGE": "{{name}} was added to storage!",
         "ADDED_TO_STORAGE_LEVEL": "{{name}} (Lv. {{level}}) was added to storage!",
         "STORAGE_RESET": "Storage reset!"

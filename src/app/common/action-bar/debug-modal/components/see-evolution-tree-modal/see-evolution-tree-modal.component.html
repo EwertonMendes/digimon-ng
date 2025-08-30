@@ -1,6 +1,6 @@
 <app-digimon-selection-modal
   [id]="id()"
-  [digimonList]="selectableDigimonList()"
+  [digimonList]="filteredDigimonList()"
   (onSelectDigimon)="openEvolutionTreeModal($event)"
   (onOpen)="onOpen()"
 >
@@ -11,7 +11,15 @@
   />
 
   <div>
-    {{ "SHARED.COMPONENTS.DEBUG_MODAL.TOTAL" | transloco }}:
-    {{ totalDigimonAmount() }}
+    {{ "SHARED.COMPONENTS.DEBUG_MODAL.SHOWING" | transloco }}:
+    {{ filteredDigimonList().length }} / {{ selectableDigimonList().length }}
+  </div>
+  <div class="filters-container">
+    <app-checkbox label="Fresh" [(ngModel)]="showFreshDigimons" />
+    <app-checkbox label="In-Training" [(ngModel)]="showInTrainingDigimons" />
+    <app-checkbox label="Rookie" [(ngModel)]="showRookieDigimons" />
+    <app-checkbox label="Champion" [(ngModel)]="showChampionDigimons" />
+    <app-checkbox label="Ultimate" [(ngModel)]="showUltimateDigimons" />
+    <app-checkbox label="Mega" [(ngModel)]="showMegaDigimons" />
   </div>
 </app-digimon-selection-modal>

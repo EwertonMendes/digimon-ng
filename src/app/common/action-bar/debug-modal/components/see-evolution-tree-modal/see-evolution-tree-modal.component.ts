@@ -1,6 +1,8 @@
-import { ChangeDetectorRef, Component, DestroyRef, inject, input, signal } from '@angular/core';
+import { ChangeDetectorRef, Component, computed, DestroyRef, inject, input, model, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { FormsModule } from '@angular/forms';
 import { TranslocoModule } from '@jsverse/transloco';
+import { CheckboxComponent } from '@shared/components/checkbox/checkbox.component';
 import { BaseDigimon } from 'app/core/interfaces/digimon.interface';
 import { DigimonService } from 'app/services/digimon.service';
 import { ButtonComponent } from 'app/shared/components/button/button.component';
@@ -10,7 +12,7 @@ import { ModalService } from 'app/shared/components/modal/modal.service';
 
 @Component({
   selector: 'app-see-evolution-tree-modal',
-  imports: [DigimonSelectionModalComponent, ButtonComponent, TranslocoModule],
+  imports: [DigimonSelectionModalComponent, ButtonComponent, TranslocoModule, CheckboxComponent, FormsModule],
   templateUrl: './see-evolution-tree-modal.component.html',
   styleUrl: './see-evolution-tree-modal.component.scss'
 })
@@ -22,6 +24,32 @@ export class SeeEvolutionTreeModalComponent {
   selectedEvolutionLineDigimon = signal<BaseDigimon>({} as BaseDigimon);
   selectableDigimonList = signal<BaseDigimon[]>([]);
   totalDigimonAmount = signal<number>(0);
+
+  protected showFreshDigimons = model<boolean>(true);
+  protected showInTrainingDigimons = model<boolean>(true);
+  protected showRookieDigimons = model<boolean>(true);
+  protected showChampionDigimons = model<boolean>(true);
+  protected showUltimateDigimons = model<boolean>(true);
+  protected showMegaDigimons = model<boolean>(true);
+
+  private readonly rankSignalMap: Record<string, () => boolean> = {
+    Fresh: () => this.showFreshDigimons(),
+    'In-Training': () => this.showInTrainingDigimons(),
+    Rookie: () => this.showRookieDigimons(),
+    Champion: () => this.showChampionDigimons(),
+    Ultimate: () => this.showUltimateDigimons(),
+    Mega: () => this.showMegaDigimons(),
+  };
+
+  protected filteredDigimonList = computed(() => {
+    const all = this.selectableDigimonList();
+    if (!all?.length) return [];
+
+    return all.filter((d) => {
+      const rank = d.rank.toString();
+      return this.rankSignalMap[rank]();
+    });
+  });
 
   private modalService = inject(ModalService)
 

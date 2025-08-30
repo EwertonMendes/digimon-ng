@@ -1,0 +1,10 @@
+.filters-container {
+  display: flex;
+  gap: 10px;
+
+  app-checkbox {
+    padding: 10px;
+    background: var(--secondary-dark-transparent);
+    border-radius: 10px;
+  }
+}

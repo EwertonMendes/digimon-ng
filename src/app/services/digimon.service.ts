@@ -59,6 +59,10 @@ export class DigimonService {
     ) as BaseDigimon[] ?? null;
   }
 
+  getBaseDigimonsByRank(rank: string): BaseDigimon[] {
+    return this.baseDigimonDataSubject.value.filter((digimon) => digimon.rank === rank);
+  }
+
   generateRandomDigimon(level: number = 1): Digimon {
     const randomIndex = Math.floor(
       Math.random() * this.baseDigimonDataSubject.value.length

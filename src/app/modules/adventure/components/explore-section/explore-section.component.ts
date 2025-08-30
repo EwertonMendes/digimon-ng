@@ -40,7 +40,7 @@ export class ExploreSectionComponent {
   exploreLocation(location: Location) {
     this.currentLocation.set(location);
     this.audioService.playAudio(AudioEffects.CLICK);
-    this.log(this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.LOG_EXPLORING_LOCATION', { location: location.name }));
+    this.log(this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.LOG_EXPLORING_LOCATION', { location: this.translocoService.translate(location.name) }));
 
     if (this.isPlayerTeamEmpty()) {
       const noDigimonMsg = this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.NO_DIGIMON_TO_EXPLORE');

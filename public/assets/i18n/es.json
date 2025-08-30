@@ -52,6 +52,7 @@
           "HEAL_ALL_TOOLTIP": "Curar todo por {{price}} Bits",
           "NOT_ENOUGH_BITS_TOOLTIP": "Necesitas {{price}} bits para curar todo",
           "HEAL_ALL_DISABLED_TOOLTIP": "No hay digimon para curar",
+          "NO_DIGIMON_HOSPITAL": "Sin Digimon",
           "TOAST": {
             "TEAM_LIMIT_REACHED": "¡Límite de digimons en el equipo alcanzado!",
             "TRAINING_LIMIT_REACHED": "¡Límite de digimons en entrenamiento alcanzado!",

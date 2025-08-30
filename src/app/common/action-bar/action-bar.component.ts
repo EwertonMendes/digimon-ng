@@ -1,4 +1,12 @@
-import { Component, DestroyRef, inject, OnInit, signal, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  DestroyRef,
+  HostListener,
+  inject,
+  OnInit,
+  signal,
+  ViewEncapsulation,
+} from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { AudioService } from '@services/audio.service';
 import { AudioEffects } from '@core/enums/audio-tracks.enum';
@@ -35,7 +43,8 @@ export class ActionBarComponent implements OnInit {
   digimonStorageModalId = 'digimon-storage-modal';
   debugModalId = 'debug-modal';
   configModalId = 'config-modal';
-  isDevMode = !environment.production;
+
+  protected isDebugMenuUnlocked = signal<boolean>(!environment.production);
 
   protected currentRoute = signal<string>('');
 
@@ -46,6 +55,24 @@ export class ActionBarComponent implements OnInit {
   private toastService = inject(ToastService);
   private translocoService = inject(TranslocoService);
   private destroyRef = inject(DestroyRef);
+
+  private numberOfClicks = signal<number>(0);
+  private clickTimeout: NodeJS.Timeout | null = null;
+
+  @HostListener('click')
+  onClick() {
+    if (this.isDebugMenuUnlocked()) return;
+    if (this.clickTimeout) {
+      clearTimeout(this.clickTimeout);
+    }
+    this.numberOfClicks.set(this.numberOfClicks() + 1);
+    if (this.numberOfClicks() >= 15) {
+      this.isDebugMenuUnlocked.set(true);
+    }
+    this.clickTimeout = setTimeout(() => {
+      this.numberOfClicks.set(0);
+    }, 500);
+  }
 
   ngOnInit(): void {
     this.router.events.pipe(

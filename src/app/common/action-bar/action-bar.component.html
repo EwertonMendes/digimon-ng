@@ -9,7 +9,7 @@
       [name]="'desktop'"
       [size]="'100%'"
       class="action-bar-button"
-      (click)="navigateTo('desktop')"
+      (click)="navigateTo('desktop'); $event.stopPropagation()"
     />
     <app-icon
       [appTooltip]="'COMMON.ACTION_BAR.BUTTONS.ADVENTURE' | transloco"
@@ -20,7 +20,7 @@
       [name]="'compass'"
       [size]="'100%'"
       class="action-bar-button"
-      (click)="navigateTo('adventure')"
+      (click)="navigateTo('adventure'); $event.stopPropagation()"
     />
     <app-icon
       [appTooltip]="'COMMON.ACTION_BAR.BUTTONS.LAB' | transloco"
@@ -41,18 +41,18 @@
       [name]="'storage'"
       [size]="'100%'"
       class="action-bar-button"
-      (click)="openDigimonStorageModal()"
+      (click)="openDigimonStorageModal(); $event.stopPropagation()"
     />
   </div>
   <div class="action-bar-buttons">
-    @if(isDevMode) {
+    @if(isDebugMenuUnlocked()) {
     <app-icon
       [appTooltip]="'COMMON.ACTION_BAR.BUTTONS.DEBUG' | transloco"
       tooltipDirection="right"
       [name]="'debug'"
       [size]="'100%'"
       class="icon-test"
-      (click)="openDebugModal()"
+      (click)="openDebugModal(); $event.stopPropagation()"
     />
     }
     <app-icon
@@ -60,21 +60,21 @@
       tooltipDirection="right"
       [name]="'player-info'"
       [size]="'100%'"
-      (click)="openPlayerInfoModal()"
+      (click)="openPlayerInfoModal(); $event.stopPropagation()"
     />
     <app-icon
       [appTooltip]="'COMMON.ACTION_BAR.BUTTONS.CONFIG' | transloco"
       tooltipDirection="right"
       [name]="'config'"
       [size]="'100%'"
-      (click)="openConfigModal()"
+      (click)="openConfigModal(); $event.stopPropagation()"
     />
     <app-icon
       [appTooltip]="'COMMON.ACTION_BAR.BUTTONS.SAVE_GAME' | transloco"
       tooltipDirection="right"
       [name]="'save'"
       [size]="'100%'"
-      (click)="saveGame()"
+      (click)="saveGame(); $event.stopPropagation()"
     />
   </div>
 </div>

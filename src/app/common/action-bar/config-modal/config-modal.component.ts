@@ -8,6 +8,7 @@ import { Subscription } from 'rxjs';
 import { ModalComponent } from 'app/shared/components/modal/modal.component';
 import { ThemeService } from 'app/services/theme.service';
 import { ConfigService } from 'app/services/config.service';
+import { WindowService } from '@services/window.service';
 
 @Component({
   selector: 'app-config-modal',
@@ -36,6 +37,7 @@ export class ConfigModalComponent implements OnInit, OnDestroy {
   themeOptions = signal<{ label: string; value: string }[]>([]);
 
   private fb = inject(FormBuilder);
+  private windowService = inject(WindowService);
   private audioService = inject(AudioService);
   private translocoService = inject(TranslocoService);
   private themeService = inject(ThemeService);
@@ -48,6 +50,7 @@ export class ConfigModalComponent implements OnInit, OnDestroy {
       enableAudio: [this.audioService.isAudioEnabled],
       selectedLanguage: [this.translocoService.getActiveLang() ?? 'en'],
       selectedTheme: [this.themeService.getCurrentTheme().name],
+      toggleFullscreen: [this.windowService.isFullscreen()],
     });
 
     this.setTranslatedThemeOptions();
@@ -57,6 +60,11 @@ export class ConfigModalComponent implements OnInit, OnDestroy {
       .subscribe(() => {
         this.setTranslatedThemeOptions();
       });
+
+    this.form.get('toggleFullscreen')?.valueChanges.subscribe(async (value) => {
+      await this.windowService.toggleFullscreen();
+      this.configService.updateConfig("toggleFullscreen", value);
+    });
 
     this.form.get('enableAudio')?.valueChanges.subscribe(value => {
       this.audioService.isAudioEnabled = value;

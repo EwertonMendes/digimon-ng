@@ -8,6 +8,22 @@
       <div class="config-item">
         <app-checkbox
           [label]="
+            'COMMON.ACTION_BAR.CONFIG_MODAL.TOGGLE_FULLSCREEN.LABEL' | transloco
+          "
+          formControlName="toggleFullscreen"
+        >
+        </app-checkbox>
+        <p class="config-description">
+          {{
+            "COMMON.ACTION_BAR.CONFIG_MODAL.TOGGLE_FULLSCREEN.DESCRIPTION"
+              | transloco
+          }}
+        </p>
+      </div>
+
+      <div class="config-item">
+        <app-checkbox
+          [label]="
             'COMMON.ACTION_BAR.CONFIG_MODAL.ENABLE_AUDIO.LABEL' | transloco
           "
           formControlName="enableAudio"

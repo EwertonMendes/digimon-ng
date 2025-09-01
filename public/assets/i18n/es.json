@@ -3,6 +3,10 @@
     "ACTION_BAR": {
       "CONFIG_MODAL": {
         "TITLE": "Configuraciones",
+        "TOGGLE_FULLSCREEN": {
+          "LABEL": "Pantalla Completa",
+          "DESCRIPTION": "Activar o desactivar la pantalla completa."
+        },
         "ENABLE_AUDIO": {
           "LABEL": "Habilitar Audio",
           "DESCRIPTION": "Activar o desactivar los efectos de sonido y la música."

@@ -3,6 +3,10 @@
     "ACTION_BAR": {
       "CONFIG_MODAL": {
         "TITLE": "Settings",
+        "TOGGLE_FULLSCREEN": {
+          "LABEL": "Fullscreen",
+          "DESCRIPTION": "Turn fullscreen on or off."
+        },
         "ENABLE_AUDIO": {
           "LABEL": "Enable Audio",
           "DESCRIPTION": "Turn the sound effects and music on or off."

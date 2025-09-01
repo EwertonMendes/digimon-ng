@@ -3,6 +3,10 @@
     "ACTION_BAR": {
       "CONFIG_MODAL": {
         "TITLE": "Configurações",
+        "TOGGLE_FULLSCREEN": {
+          "LABEL": "Tela Cheia",
+          "DESCRIPTION": "Ativar ou desativar a tela cheia."
+        },
         "ENABLE_AUDIO": {
           "LABEL": "Habilitar Áudio",
           "DESCRIPTION": "Ativar ou desativar os efeitos sonoros e a música."

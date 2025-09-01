@@ -13,6 +13,7 @@ export class ConfigService {
 
   private defaultConfig: PlayerConfig = {
     enableAudio: true,
+    toggleFullscreen: false,
     language: "en",
     theme: "default",
   };

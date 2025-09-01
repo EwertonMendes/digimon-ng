@@ -19,6 +19,7 @@ import { ConfigService } from 'app/services/config.service';
 import { ThemeService } from 'app/services/theme.service';
 import { PlayerConfig } from 'app/core/interfaces/player-config.interface';
 import { getDefaultPotential } from '@core/utils/digimon.utils';
+import { WindowService } from '@services/window.service';
 
 type EndBattleState = 'victory' | 'defeat' | 'draw';
 type DigimonWithOwner = Digimon & { owner: string };
@@ -39,6 +40,7 @@ export class GlobalStateDataSource {
   private translocoService = inject(TranslocoService);
   private digimonService = inject(DigimonService);
   private playerDataService = inject(PlayerDataService);
+  private windowService = inject(WindowService);
   private audioService = inject(AudioService);
   private configService = inject(ConfigService);
   private themeService = inject(ThemeService);
@@ -181,6 +183,7 @@ export class GlobalStateDataSource {
     const initialConfig: PlayerConfig = {
       ...this.configService.defaultInitialConfig,
       language: this.translocoService.getActiveLang()
+
     };
     this.configService.loadConfig().then(config => {
       this.audioService.isAudioEnabled = newGame ? initialConfig.enableAudio : config.enableAudio;

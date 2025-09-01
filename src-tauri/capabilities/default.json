@@ -9,6 +9,8 @@
       "allow": [{ "path": "$APPDATA" }, { "path": "$APPDATA/**" }]
     },
     "core:default",
+    "core:window:allow-is-fullscreen",
+    "core:window:allow-set-fullscreen",
     "fs:default",
     "fs:allow-app-write-recursive",
     "fs:allow-app-read-recursive"

@@ -162,3 +162,11 @@
     }
   }
 }
+
+@media screen and (max-width: 1366px) {
+  .digimon-details-container {
+    .digimon-details-content {
+      min-height: auto;
+    }
+  }
+}

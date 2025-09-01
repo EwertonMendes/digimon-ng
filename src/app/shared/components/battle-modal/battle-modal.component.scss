@@ -236,11 +236,36 @@
           white-space: pre-line;
           color: var(--text);
           transition: color 0.3s ease;
+
           &:hover {
             color: var(--secondary-light);
           }
         }
       }
     }
+  }
+}
+
+@media screen and (max-width: 1366px) {
+
+  .digimon-battle-container .digimon-battle-content .turn-order-container {
+    display: none;
+  }
+
+  .digimon-battle-container .digimon-battle-content-container .battle-log-container {
+    display: none;
+  }
+
+  .digimon-battle-container .digimon-battle-content-container .teams-container .player-team-container .team-title,
+  .digimon-battle-container .digimon-battle-content-container .teams-container .enemy-team-container .team-title {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1230px) {
+
+  .digimon-battle-container .digimon-battle-content-container .teams-container {
+    justify-content: unset;
+    overflow: auto;
   }
 }

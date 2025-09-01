@@ -1,13 +1,13 @@
 import {
-    Component,
-    ElementRef,
-    HostListener,
-    inject,
-    input,
-    OnDestroy,
-    OnInit,
-    output,
-    ViewEncapsulation,
+  Component,
+  ElementRef,
+  HostListener,
+  inject,
+  input,
+  OnDestroy,
+  OnInit,
+  output,
+  ViewEncapsulation,
 } from '@angular/core';
 import { AudioService } from '@services/audio.service';
 import { ModalService } from './modal.service';

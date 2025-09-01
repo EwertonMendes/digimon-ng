@@ -58,39 +58,60 @@
         align-items: center;
         width: 100%;
         height: 250px;
+        text-align: center;
+        min-height: 0;
+        overflow: hidden;
+      }
 
-        img {
-          transition: height 0.1s ease-in-out;
-        }
+      .selected-digimon-image img {
+        display: block;
+        height: auto;
+        max-height: 100%;
+        width: auto;
+        transition: height 0.1s ease-in-out;
+        margin: 0 auto;
+      }
 
-        .fresh {
-          height: 50px;
-        }
+      .selected-digimon-image .fresh,
+      .selected-digimon-image img.fresh {
+        height: 50px;
+        max-height: 50px;
+      }
 
-        .in-training {
-          height: 70px;
-        }
+      .selected-digimon-image .in-training,
+      .selected-digimon-image img.in-training {
+        height: 70px;
+        max-height: 70px;
+      }
 
-        .rookie {
-          height: 100px;
-        }
+      .selected-digimon-image .rookie,
+      .selected-digimon-image img.rookie {
+        height: 100px;
+        max-height: 100px;
+      }
 
-        .champion {
-          height: 150px;
-        }
+      .selected-digimon-image .champion,
+      .selected-digimon-image img.champion {
+        height: 150px;
+        max-height: 150px;
+      }
 
-        .ultimate {
-          height: 200px;
-        }
+      .selected-digimon-image .ultimate,
+      .selected-digimon-image img.ultimate {
+        height: 200px;
+        max-height: 200px;
+      }
 
-        .mega {
-          height: 220px;
-        }
+      .selected-digimon-image .mega,
+      .selected-digimon-image img.mega {
+        height: 220px;
+        max-height: 220px;
+      }
 
-        .placeholder {
-          font-size: 1.5rem;
-          color: var(--text);
-        }
+      .selected-digimon-image .placeholder,
+      .selected-digimon-image img.placeholder {
+        font-size: 1.5rem;
+        color: var(--text);
       }
 
       .selected-digimon-content {
@@ -151,5 +172,41 @@
         }
       }
     }
+  }
+}
+
+@media screen and (max-width: 1366px) {
+
+  .evolution-tree-container .evolution-tree-content .selected-digimon-container .selected-digimon-image {
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+
+  .evolution-tree-container .evolution-tree-content .selected-digimon-container .selected-digimon-image img,
+  .evolution-tree-container .evolution-tree-content .selected-digimon-container .selected-digimon-image img.fresh,
+  .evolution-tree-container .evolution-tree-content .selected-digimon-container .selected-digimon-image img.in-training,
+  .evolution-tree-container .evolution-tree-content .selected-digimon-container .selected-digimon-image img.rookie,
+  .evolution-tree-container .evolution-tree-content .selected-digimon-container .selected-digimon-image img.champion,
+  .evolution-tree-container .evolution-tree-content .selected-digimon-container .selected-digimon-image img.ultimate,
+  .evolution-tree-container .evolution-tree-content .selected-digimon-container .selected-digimon-image img.mega {
+    height: auto;
+    max-height: 100%;
+    width: auto;
+  }
+
+  .evolution-tree-container .evolution-tree-content .selected-digimon-container .selected-digimon-image .fresh,
+  .evolution-tree-container .evolution-tree-content .selected-digimon-container .selected-digimon-image .in-training,
+  .evolution-tree-container .evolution-tree-content .selected-digimon-container .selected-digimon-image .rookie,
+  .evolution-tree-container .evolution-tree-content .selected-digimon-container .selected-digimon-image .champion,
+  .evolution-tree-container .evolution-tree-content .selected-digimon-container .selected-digimon-image .ultimate,
+  .evolution-tree-container .evolution-tree-content .selected-digimon-container .selected-digimon-image .mega {
+    height: auto;
+    max-height: none;
+  }
+
+  .evolution-tree-container .evolution-tree-content .selected-digimon-container .selected-digimon-image img[style] {
+    height: auto;
+    max-height: 100%;
   }
 }

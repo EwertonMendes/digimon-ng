@@ -56,3 +56,45 @@ app-modal {
     z-index: 900;
   }
 }
+
+@media (max-width: 1366px) {
+  .modal-container {
+    .inner-container {
+      padding: 5px 10px 5px 10px;
+    }
+
+    .content-container {
+      padding: 0 10px 10px;
+    }
+  }
+
+  .close-button {
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    line-height: 35px;
+  }
+}
+
+@media (max-width: 767px) {
+  .modal-container {
+    .inner-container {
+      padding: 5px 10px 5px 10px;
+    }
+
+    .content-container {
+      padding: 0 10px 10px;
+    }
+  }
+
+  .close-button {
+    font-size: 22px;
+    width: 35px;
+    height: 35px;
+    line-height: 30px;
+  }
+
+  .modal-background {
+    backdrop-filter: blur(8px);
+  }
+}

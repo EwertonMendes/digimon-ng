@@ -161,10 +161,3 @@ body {
   background-color: var(--primary-dark);
   cursor: pointer;
 }
-
-.cdk-drag-preview {
-  zoom: scale(0.5) !important;
-  width: auto !important;
-  max-width: fit-content !important;
-  height: auto !important;
-}

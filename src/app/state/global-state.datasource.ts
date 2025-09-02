@@ -186,6 +186,7 @@ export class GlobalStateDataSource {
 
     };
     this.configService.loadConfig().then(config => {
+      this.windowService.setFullscreen(newGame ? initialConfig.toggleFullscreen : config.toggleFullscreen);
       this.audioService.isAudioEnabled = newGame ? initialConfig.enableAudio : config.enableAudio;
       this.themeService.setTheme(newGame ? initialConfig.theme : config.theme);
       this.translocoService.setActiveLang(newGame ? initialConfig.language : config.language);

@@ -45,12 +45,18 @@ export class ConfigModalComponent implements OnInit, OnDestroy {
 
   private translationSubscription?: Subscription;
 
-  ngOnInit() {
+  async ngOnInit() {
     this.form = this.fb.group({
       enableAudio: [this.audioService.isAudioEnabled],
       selectedLanguage: [this.translocoService.getActiveLang() ?? 'en'],
       selectedTheme: [this.themeService.getCurrentTheme().name],
-      toggleFullscreen: [this.windowService.isFullscreen()],
+      toggleFullscreen: [false],
+    });
+
+    const isFullscreen = await this.windowService.isFullscreen();
+
+    this.form.patchValue({
+      toggleFullscreen: isFullscreen,
     });
 
     this.setTranslatedThemeOptions();

@@ -12,6 +12,10 @@ export class WindowService {
     await getCurrentWindow().setFullscreen(!isFullscreen);
   }
 
+  async setFullscreen(value: boolean) {
+    await getCurrentWindow().setFullscreen(value);
+  }
+
   async isFullscreen() {
     return await getCurrentWindow().isFullscreen();
   }

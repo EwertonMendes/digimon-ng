@@ -5,10 +5,21 @@
     </h3>
     <div class="digimon-details-content">
       <div class="digimon-details-content-first-block">
-        <img
-          [src]="globalState.selectedDigimonOnDetails()?.img"
-          alt="digimon"
-        />
+        <div class="digimon-details-image-container">
+          <img
+            [src]="globalState.selectedDigimonOnDetails()?.img"
+            alt="digimon"
+          />
+          @if( evolutionRoute().length > 0 ) {
+          <div class="digimon-details-content-info-item">
+            <div class="digimon-evolution-list">
+              <div class="digimon-evolution-list-container">
+                <app-evolution-route [evolutionRoute]="evolutionRoute()" />
+              </div>
+            </div>
+          </div>
+          }
+        </div>
       </div>
       <div class="digimon-details-content-container">
         <div class="digimon-details-header">
@@ -218,22 +229,6 @@
             </div>
           </div>
         </div>
-
-        @if( evolutionRoute().length > 0 ) {
-        <div class="digimon-details-content-info-item">
-          <div class="digimon-evolution-list">
-            <h4>
-              {{
-                "SHARED.COMPONENTS.DIGIMON_DETAILS_MODAL.CURRENT_EVOLUTION_ROUTE"
-                  | transloco
-              }}
-            </h4>
-            <div class="digimon-evolution-list-container">
-              <app-evolution-route [evolutionRoute]="evolutionRoute()" />
-            </div>
-          </div>
-        </div>
-        }
       </div>
     </div>
   </div>

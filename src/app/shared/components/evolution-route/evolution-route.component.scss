@@ -1,23 +1,75 @@
 .evolution-route {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.evolution-stage {
-  display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 10px;
+  justify-content: center;
+  margin: 0 auto;
+  width: fit-content;
+  padding: 20px;
+}
+
+.avatars-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.names-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.evolution-stage-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 15px;
+}
+
+.digimon-avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: var(--dark);
+  border: 3px solid var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .digimon-image {
-  width: 100px;
-  height: 100px;
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
   object-fit: scale-down;
 }
 
 .digimon-info {
-  text-align: center;
+  font-size: 14px;
+  color: var(--text-color, #333);
+}
+
+.evolution-connector {
+  width: 30px;
+  height: 4px;
+  background-color: var(--primary);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.evolution-connector::after {
+  content: '';
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left: 8px solid var(--primary);
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
 }

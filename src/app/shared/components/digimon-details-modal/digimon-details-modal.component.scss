@@ -53,28 +53,42 @@
       gap: 16px;
 
       .digimon-details-header {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         text-align: center;
         gap: 10px;
         align-items: center;
         justify-content: center;
         margin-bottom: 12px;
 
-        .name-rank-container {
+        .change-name-container {
           display: flex;
-          flex-direction: column;
+          gap: 10px;
+          justify-self: center;
+          grid-column: 2;
 
-          h4 {
-            font-size: 1.5rem;
-            font-weight: bold;
-          }
+          .name-rank-container {
+            display: flex;
+            flex-direction: column;
 
-          span {
-            display: block;
-            font-size: 0.9rem;
-            color: var(--text);
+            h4 {
+              font-size: 1.5rem;
+              font-weight: bold;
+            }
+
+            span {
+              display: block;
+              font-size: 0.9rem;
+              color: var(--text);
+            }
           }
         }
+
+        app-button {
+          grid-column: 3;
+          justify-self: end;
+        }
+
 
         .change-name-input-container {
           display: flex;

@@ -1,11 +1,11 @@
 import {
-    ChangeDetectionStrategy,
-    Component,
-    computed,
-    effect,
-    inject,
-    model,
-    signal,
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  effect,
+  inject,
+  model,
+  signal,
 } from '@angular/core';
 import { GlobalStateDataSource } from '@state/global-state.datasource';
 import { CommonModule } from '@angular/common';
@@ -21,6 +21,7 @@ import { ModalService } from '../modal/modal.service';
 import { InputComponent } from '../input/input.component';
 import { FormsModule } from '@angular/forms';
 import { IconComponent } from "../icon/icon.component";
+import { TooltipDirective } from "app/directives/tooltip.directive";
 
 @Component({
   standalone: true,
@@ -36,7 +37,8 @@ import { IconComponent } from "../icon/icon.component";
     TranslocoModule,
     InputComponent,
     FormsModule,
-    IconComponent
+    IconComponent,
+    TooltipDirective
 ],
 })
 export class DigimonDetailsModalComponent {

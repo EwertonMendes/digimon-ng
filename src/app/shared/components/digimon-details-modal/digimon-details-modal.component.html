@@ -12,50 +12,61 @@
       </div>
       <div class="digimon-details-content-container">
         <div class="digimon-details-header">
-          @if(!isEditingName()) {
-          <div class="name-rank-container">
-            <h4>
-              {{
-                globalState.selectedDigimonOnDetails()?.nickName ??
-                  globalState.selectedDigimonOnDetails()?.name
-              }}
-            </h4>
-            @if (globalState.selectedDigimonOnDetails()?.nickName &&
-            globalState.selectedDigimonOnDetails()?.nickName !==
-            globalState.selectedDigimonOnDetails()?.name) {
-            <span>{{ globalState.selectedDigimonOnDetails()?.name }}</span>
+          <div class="change-name-container">
+            @if(!isEditingName()) {
+            <div class="name-rank-container">
+              <h4>
+                {{
+                  globalState.selectedDigimonOnDetails()?.nickName ??
+                    globalState.selectedDigimonOnDetails()?.name
+                }}
+              </h4>
+              @if (globalState.selectedDigimonOnDetails()?.nickName &&
+              globalState.selectedDigimonOnDetails()?.nickName !==
+              globalState.selectedDigimonOnDetails()?.name) {
+              <span>{{ globalState.selectedDigimonOnDetails()?.name }}</span>
+              }
+              <span>{{ globalState.selectedDigimonOnDetails()?.rank }}</span>
+            </div>
+            <div class="change-name-button-container">
+              <app-icon
+                name="note-pencil"
+                clickable
+                (click)="showChangeNameField()"
+                style="cursor: pointer"
+              ></app-icon>
+            </div>
+            }@else {
+            <div class="change-name-input-container">
+              <app-input
+                [placeholder]="
+                  'SHARED.COMPONENTS.DIGIMON_DETAILS_MODAL.CHANGE_NAME_PLACEHOLDER'
+                    | transloco
+                "
+                [maxlength]="20"
+                [(ngModel)]="digimonNickname"
+                [focused]="isEditingName()"
+              ></app-input>
+            </div>
+            <div class="change-name-button-container">
+              <app-icon
+                name="check-fat"
+                clickable
+                (click)="saveNewDigimonName()"
+                style="cursor: pointer"
+              ></app-icon>
+            </div>
             }
-            <span>{{ globalState.selectedDigimonOnDetails()?.rank }}</span>
           </div>
-          <div class="change-name-button-container">
-            <app-icon
-              name="note-pencil"
-              clickable
-              (click)="showChangeNameField()"
-              style="cursor: pointer"
-            ></app-icon>
-          </div>
-          }@else {
-          <div class="change-name-input-container">
-            <app-input
-              [placeholder]="
-                'SHARED.COMPONENTS.DIGIMON_DETAILS_MODAL.CHANGE_NAME_PLACEHOLDER'
-                  | transloco
-              "
-              [maxlength]="20"
-              [(ngModel)]="digimonNickname"
-              [focused]="isEditingName()"
-            ></app-input>
-          </div>
-          <div class="change-name-button-container">
-            <app-icon
-              name="check-fat"
-              clickable
-              (click)="saveNewDigimonName()"
-              style="cursor: pointer"
-            ></app-icon>
-          </div>
-          }
+          <app-button
+            icon="graph"
+            iconScale="2"
+            [appTooltip]="
+              'SHARED.COMPONENTS.DIGIMON_DETAILS_MODAL.EVOLUTION_TREE_BUTTON'
+                | transloco
+            "
+            (onClick)="openEvolutionTreeModal()"
+          />
         </div>
         <div class="stats">
           <div class="digimon-details-content-info">
@@ -223,16 +234,6 @@
           </div>
         </div>
         }
-        <app-button
-          [text]="
-            'SHARED.COMPONENTS.DIGIMON_DETAILS_MODAL.EVOLUTION_TREE_BUTTON'
-              | transloco
-          "
-          weight="bold"
-          icon="graph"
-          iconScale="2"
-          (onClick)="openEvolutionTreeModal()"
-        />
       </div>
     </div>
   </div>

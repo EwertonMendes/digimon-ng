@@ -111,3 +111,26 @@
   font-weight: bold;
   z-index: 10;
 }
+
+@media screen and (max-width: 1366px) {
+  .my-digimon-card {
+    width: 165px;
+    height: 165px;
+    padding: 5px;
+
+    .my-digimon-card-image img {
+      max-width: 80px;
+      height: 80px;
+    }
+
+    &-name {
+      font-size: 12px;
+    }
+
+    &-attributes {
+      flex-direction: row;
+      justify-content: space-between;
+      font-size: 10px;
+    }
+  }
+}

@@ -111,3 +111,24 @@
   font-weight: bold;
   z-index: 10;
 }
+
+
+@media screen and (max-width: 1366px) {
+  .digimon-farm-card {
+    width: 165px;
+    min-height: 165px;
+
+    .digimon-farm-card-image img {
+      max-width: 80px;
+      height: 80px;
+    }
+
+    .digimon-farm-card-name {
+      font-size: 12px;
+    }
+
+    .digimon-farm-card-attributes {
+      font-size: 12px;
+    }
+  }
+}

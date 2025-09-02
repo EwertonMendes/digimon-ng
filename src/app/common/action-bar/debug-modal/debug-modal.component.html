@@ -4,15 +4,15 @@
       {{ "SHARED.COMPONENTS.DEBUG_MODAL.TITLE" | transloco }}
     </h3>
     <div class="debug-modal-content">
-      @for (tool of tools; track $index) {
-      <div class="debug-modal-content-row">
+      <div class="debug-modal-content-container">
+        @for (tool of tools; track $index) {
         <app-button
           [text]="tool.name | transloco"
           color="primary"
           (onClick)="tool.action()"
         />
+        }
       </div>
-      }
     </div>
   </div>
 </app-modal>

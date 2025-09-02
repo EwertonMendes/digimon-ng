@@ -1,5 +1,11 @@
 <div class="home-section-container">
   <div class="home-section-header">
+    <span>
+      <span class="label">{{
+        "MODULES.DESKTOP.COMPONENTS.HOME_SECTION.BITS" | transloco
+      }}</span>
+      {{ globalState.playerDataAcessor.bits }}
+    </span>
     <span class="section-title home-title">{{
       "MODULES.DESKTOP.COMPONENTS.HOME_SECTION.TITLE" | transloco
     }}</span>
@@ -9,7 +15,9 @@
       "
       tooltipDirection="left"
       [icon]="
-        selectedLayout() === 'horizontal' ? 'vertical-layout' : 'horizontal-layout'
+        selectedLayout() === 'horizontal'
+          ? 'vertical-layout'
+          : 'horizontal-layout'
       "
       iconScale="2"
       (onClick)="setLayout()"
@@ -21,8 +29,9 @@
       <div class="battle-team-area-sub-title-container">
         <h4 class="battle-team-area-sub-title">
           {{ "MODULES.DESKTOP.COMPONENTS.HOME_SECTION.SUBTITLE" | transloco }}:
-          {{ globalState.playerDataAcessor.digimonList.length }}/
-          {{ this.globalState.listsLimits.team }}
+          {{ globalState.playerDataAcessor.digimonList.length }}/{{
+            this.globalState.listsLimits.team
+          }}
         </h4>
         <app-button
           [appTooltip]="

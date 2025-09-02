@@ -13,21 +13,28 @@
     backdrop-filter: blur(2px);
     width: -webkit-fill-available;
     gap: 10px;
-    padding: 12px 10px;
+    padding: 10px;
     border-radius: 10px;
     align-items: center;
   }
 
-  .home-section-header> :first-child {
-    grid-column: 2;
-    justify-self: center;
-  }
+    .home-section-header> :first-child {
+      grid-column: 1;
+      justify-self: start;
+    }
 
-  .home-section-header> :last-child {
-    grid-column: 3;
-    justify-self: end;
-    padding-right: 5px;
-  }
+    .home-section-header> :nth-child(2) {
+      grid-column: 2;
+      justify-self: center;
+      align-self: center;
+      padding-right: 5px;
+    }
+
+    .home-section-header> :last-child {
+      grid-column: 3;
+      align-self: center;
+      justify-self: end;
+    }
 }
 
 .home-section-horizontal {

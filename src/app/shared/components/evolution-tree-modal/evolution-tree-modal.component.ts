@@ -1,14 +1,4 @@
-import {
-  AfterViewInit,
-  Component,
-  DestroyRef,
-  effect,
-  ElementRef,
-  HostListener,
-  inject,
-  input,
-  signal,
-} from '@angular/core';
+import { Component, DestroyRef, effect, ElementRef, inject, input, signal } from '@angular/core';
 import { TranslocoModule } from '@jsverse/transloco';
 import {
   BaseDigimon,
@@ -33,16 +23,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
   templateUrl: './evolution-tree-modal.component.html',
   styleUrls: ['./evolution-tree-modal.component.scss'],
 })
-export class EvolutionTreeModalComponent implements AfterViewInit {
-  @HostListener('window:resize', [])
-  onResize() {
-    this.adjustEvolutionTreeZoom();
-  }
-
-  ngAfterViewInit() {
-    this.adjustEvolutionTreeZoom();
-  }
-
+export class EvolutionTreeModalComponent{
   id = input<string>('evolution-tree-modal');
   mainDigimon = input<Digimon | BaseDigimon>();
   sigma!: Sigma;
@@ -327,17 +308,5 @@ export class EvolutionTreeModalComponent implements AfterViewInit {
         this.onClose();
         this.onOpen();
       });
-  }
-
-  adjustEvolutionTreeZoom() {
-    const appRoot = document.getElementsByTagName('app-root')[0];
-    const evolutionTreeWrapper = document.getElementById('evolutionTreeWrapper');
-
-    if (!appRoot || !evolutionTreeWrapper) return;
-
-    const zoom = Number(getComputedStyle(appRoot).zoom || '1');
-
-    const adjustedZoom = 1 / zoom;
-    evolutionTreeWrapper.style.zoom = `${adjustedZoom}`;
   }
 }

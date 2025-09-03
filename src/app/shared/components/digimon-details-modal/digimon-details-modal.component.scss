@@ -68,7 +68,6 @@
         gap: 10px;
         align-items: center;
         justify-content: center;
-        margin-bottom: 12px;
 
         .change-name-container {
           display: flex;
@@ -173,14 +172,6 @@
 
         h4 {
           margin-bottom: 8px;
-        }
-
-        .digimon-evolution-list-container {
-          display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
-          gap: 12px;
-          justify-content: center;
         }
       }
     }

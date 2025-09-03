@@ -10,15 +10,6 @@
             [src]="globalState.selectedDigimonOnDetails()?.img"
             alt="digimon"
           />
-          @if( evolutionRoute().length > 0 ) {
-          <div class="digimon-details-content-info-item">
-            <div class="digimon-evolution-list">
-              <div class="digimon-evolution-list-container">
-                <app-evolution-route [evolutionRoute]="evolutionRoute()" />
-              </div>
-            </div>
-          </div>
-          }
         </div>
       </div>
       <div class="digimon-details-content-container">
@@ -79,6 +70,10 @@
             (onClick)="openEvolutionTreeModal()"
           />
         </div>
+        @if( evolutionRoute().length > 0 ) {
+        <app-evolution-route [evolutionRoute]="evolutionRoute()" />
+
+        }
         <div class="stats">
           <div class="digimon-details-content-info">
             <div class="digimon-details-content-info-item">

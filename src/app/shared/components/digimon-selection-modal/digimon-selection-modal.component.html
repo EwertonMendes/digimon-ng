@@ -9,7 +9,7 @@
     </h3>
     <ng-content></ng-content>
     <div class="digimon-selection-modal-content">
-      @for (group of groupedDigimonList; track group.letter) {
+      @defer { @for (group of groupedDigimonList; track group.letter) {
       <div class="digimon-group-header">{{ group.letter }}</div>
       <div class="digimon-selection-modal-content-items-container">
         @for (digimon of group.digimons; track digimon.seed + $index) {
@@ -27,7 +27,7 @@
         </div>
         }
       </div>
-      }
+      } }
     </div>
   </div>
 </app-modal>

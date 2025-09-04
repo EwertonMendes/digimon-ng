@@ -232,7 +232,14 @@ export class GlobalStateDataSource {
   }
 
   async saveCurrentPlayerData() {
-    await this.playerDataService.savePlayerData(this.playerData());
+    if(this.isBattleActive) return;
+    this.audioService.playAudio(AudioEffects.CLICK);
+    try {
+      this.toastService.showToast(this.translocoService.translate('COMMON.ACTION_BAR.TOAST.GAME_SAVED_SUCCESSFULLY'), 'success');
+      await this.playerDataService.savePlayerData(this.playerData());
+    } catch (err) {
+      this.toastService.showToast(this.translocoService.translate('COMMON.ACTION_BAR.TOAST.GAME_SAVE_FAILED'), 'error');
+    }
   }
   addBits(bits: number) {
     const updatedPlayerData = {

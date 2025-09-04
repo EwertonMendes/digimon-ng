@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
+import { GlobalStateDataSource } from '@state/global-state.datasource';
 import { invoke } from '@tauri-apps/api/core';
 
 interface ShortcutConfig {
@@ -11,6 +12,9 @@ interface ShortcutConfig {
   providedIn: 'root'
 })
 export class ShortcutService {
+
+  private readonly globalState = inject(GlobalStateDataSource);
+
   private shortcuts: Record<string, ShortcutConfig> = {
     'exitApp': {
       key: 'F4',
@@ -34,8 +38,7 @@ export class ShortcutService {
   }
 
   private async saveGame() {
-    // TODO: Implement save game functionality
-    console.log('Saving game...');
+    await this.globalState.saveCurrentPlayerData();
   }
 
   private async handleKeyDown(event: KeyboardEvent) {

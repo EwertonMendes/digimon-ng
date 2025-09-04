@@ -109,13 +109,6 @@ export class ActionBarComponent implements OnInit {
   }
 
   async saveGame() {
-    this.audioService.playAudio(AudioEffects.CLICK);
-    try {
-      await this.globalState.saveCurrentPlayerData();
-      this.toastService.showToast(this.translocoService.translate('COMMON.ACTION_BAR.TOAST.GAME_SAVED_SUCCESSFULLY'), 'success');
-
-    } catch (err) {
-      this.toastService.showToast(this.translocoService.translate('COMMON.ACTION_BAR.TOAST.GAME_SAVE_FAILED'), 'error');
-    }
+    this.globalState.saveCurrentPlayerData();
   }
 }

@@ -12,6 +12,11 @@ fn close_splashscreen(app: AppHandle) {
   app.get_webview_window("main").unwrap().show().unwrap();
 }
 
+#[tauri::command]
+fn exit_app(app: AppHandle) {
+  app.exit(0);
+}
+
 fn main() {
   tauri::Builder::default()
     .plugin(tauri_plugin_fs::init())
@@ -26,7 +31,7 @@ fn main() {
       main_window.hide().unwrap();
       Ok(())
     })
-    .invoke_handler(tauri::generate_handler![close_splashscreen])
+    .invoke_handler(tauri::generate_handler![close_splashscreen, exit_app])
     .run(tauri::generate_context!(
       "../src-tauri/tauri.conf.json",
     ))

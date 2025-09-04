@@ -1,9 +1,10 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { GlobalStateDataSource } from './state/global-state.datasource';
 import { ToastComponent } from './shared/components/toast/toast.component';
 import { InitialSetupComponent } from './modules/initial-setup/initial-setup.component';
 import { PlayerDataService } from './services/player-data.service';
 import { RouterOutlet } from '@angular/router';
+import { ShortcutService } from '@services/shortcut.service';
 
 @Component({
   selector: 'app-root',
@@ -16,11 +17,13 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
+
   title = 'digi-angular';
 
   globalState = inject(GlobalStateDataSource);
   playerDataService = inject(PlayerDataService);
+  private shortcutService = inject(ShortcutService);
 
   async ngOnInit() {
     if (window.location.pathname === '/splashscreen') {
@@ -34,5 +37,9 @@ export class AppComponent implements OnInit {
       return;
     }
     this.globalState.initializeGame(playerData);
+  }
+
+  ngOnDestroy(): void {
+    this.shortcutService.destroy();
   }
 }

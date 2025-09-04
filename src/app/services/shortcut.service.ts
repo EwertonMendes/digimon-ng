@@ -17,6 +17,11 @@ export class ShortcutService {
       modifiers: ['Alt'],
       action: async () => invoke('exit_app')
     },
+    'preventReload': {
+      key: 'F5',
+      modifiers: [],
+      action: async () => { }
+    },
     'saveGame': { key: 'S', modifiers: ['Ctrl'], action: () => this.saveGame() }
   };
 
@@ -34,17 +39,10 @@ export class ShortcutService {
   }
 
   private async handleKeyDown(event: KeyboardEvent) {
-    console.log('Key pressed:', event.key, 'Modifiers:', {
-      alt: event.altKey,
-      ctrl: event.ctrlKey,
-      shift: event.shiftKey,
-      meta: event.metaKey
-    });
     for (const config of Object.values(this.shortcuts)) {
       if (event.key.toUpperCase() === config.key.toUpperCase() &&
         this.checkModifiers(event, config.modifiers)) {
         event.preventDefault();
-        console.log('Shortcut triggered:', config.key);
         await config.action();
       }
     }

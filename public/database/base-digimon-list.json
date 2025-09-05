@@ -82,8 +82,8 @@
     "speed": 28,
     "bitFarmingRate": 2,
     "digiEvolutionSeedList": [
-      "lmn3456o-789p-qr01-stuv-wxyzabcd34",
-      "b127c8d9-e0f1-4a2b-3c4d-6e7f8a9b0c1d",
+      "42e8ce3c-0f51-4238-866e-a195628b165c",
+      "605568d6-840c-4cd0-bdf4-b7d04819f149",
       "96c23ff9-d6b4-43da-91e6-f0c9799c65d7"
     ],
     "degenerateSeedList": ["b5ac222a-e653-4543-923e-77355dd24686"],
@@ -134,7 +134,7 @@
     "digiEvolutionSeedList": [
       "083241cc-fcf8-4101-a58d-09b0e6b375b6",
       "1e4a6cd2-b5f2-40c9-abc1-e2d4f5b6a789",
-      "78d3f4a5-b6c7-4d8e-0f1a-2b3c4d5e6f7a"
+      "58278402-c731-40ae-aea6-40ad6263465c"
     ],
     "degenerateSeedList": ["9fb1302d-6916-4237-a80f-fa4e5e69decc"],
     "evolutionRequirements": [
@@ -160,8 +160,8 @@
     "bitFarmingRate": 3,
     "digiEvolutionSeedList": [
       "986f4b59-c234-44fa-b5bc-456736578f67",
-      "6cd2791a-e1f2-4a3b-4c5d-7e8f9a0b1c2d",
-      "9f05ac4d-b4c5-4d6e-7f8a-0b1c2d3e4f5a"
+      "f4bf9c27-147a-46ed-b069-c13e8d934be2",
+      "8d68e936-fcc3-478b-bcc7-0160ef26c4df"
     ],
     "degenerateSeedList": [],
     "evolutionRequirements": [
@@ -173,7 +173,7 @@
     "checked": true
   },
   {
-    "seed": "abc1234f-5678-90de-bc12-3456789abcde",
+    "seed": "1e42aedf-c746-44aa-8163-52abe272521a",
     "name": "Mochimon",
     "img": "/assets/digimons/Mochimon.webp",
     "rank": "In-Training",
@@ -185,7 +185,7 @@
     "def": 30,
     "speed": 25,
     "bitFarmingRate": 3,
-    "digiEvolutionSeedList": ["ghi9012j-3456-kl78-mn90-1234567opqrs"],
+    "digiEvolutionSeedList": ["935f8d3f-e4b9-47d6-b168-a80eb4dae568"],
     "degenerateSeedList": [],
     "evolutionRequirements": [
       {
@@ -196,7 +196,7 @@
     "checked": true
   },
   {
-    "seed": "def5678g-9012-34hi-jk56-7890123lmnop",
+    "seed": "794bdb0d-eb9b-450b-bbc6-bbee53bd163e",
     "name": "Minomon",
     "img": "/assets/digimons/Minomon.webp",
     "rank": "In-Training",
@@ -209,9 +209,9 @@
     "speed": 26,
     "bitFarmingRate": 2,
     "digiEvolutionSeedList": [
-      "ghi9012j-3456-kl78-mn90-1234567opqrs",
-      "abc1234d-5678-efgh-9101-ijklmnopqrst",
-      "dfa3b4c5-e6f7-4a8b-0c1d-2e3f4a5b6c7d"
+      "935f8d3f-e4b9-47d6-b168-a80eb4dae568",
+      "4e6904cc-d3c0-4363-b8a8-bebc1da167ab",
+      "0bb2202b-a2a0-45db-b9a9-f1a80b74d682"
     ],
     "degenerateSeedList": [],
     "evolutionRequirements": [
@@ -223,7 +223,7 @@
     "checked": true
   },
   {
-    "seed": "ijk9012l-3456-789m-nopq-rstuvwxyz23",
+    "seed": "60a9abac-e232-458d-a137-353e6ce15d03",
     "name": "Gigimon",
     "img": "/assets/digimons/Gigimon.webp",
     "rank": "In-Training",
@@ -234,8 +234,8 @@
     "atk": 50,
     "def": 39,
     "speed": 29,
-    "bitFarmingRate": 1,
-    "digiEvolutionSeedList": ["lmn3456o-789p-qr01-stuv-wxyzabcd34"],
+    "bitFarmingRate": 12,
+    "digiEvolutionSeedList": ["42e8ce3c-0f51-4238-866e-a195628b165c"],
     "degenerateSeedList": [],
     "evolutionRequirements": [
       {
@@ -260,7 +260,7 @@
     "bitFarmingRate": 1,
     "digiEvolutionSeedList": [
       "768e6d1a-5c3b-4ed2-991f-e4a1c16357a6",
-      "uvw1234a-567b-cdef-890g-hijklmn1234"
+      "55121c1b-5f45-4f28-ad8f-d1a5573c3101"
     ],
     "degenerateSeedList": [],
     "evolutionRequirements": [
@@ -285,8 +285,8 @@
     "speed": 40,
     "bitFarmingRate": 3,
     "digiEvolutionSeedList": [
-      "45a0c1d2-e3f4-4a5b-7c8d-9e0f1a2b3c4d",
-      "c238d9e0-f1a2-4b3c-4d5e-7f8a9b0c1d2e"
+      "2f06b76f-a29b-415c-86be-05cc8dbaef17",
+      "9c64088a-5693-4583-ba0d-47b117d2ab79"
     ],
     "degenerateSeedList": [],
     "evolutionRequirements": [
@@ -312,8 +312,8 @@
     "bitFarmingRate": 3,
     "digiEvolutionSeedList": [
       "6ce78264-cbb0-4e10-8f55-89336f93d8dd",
-      "d349e0f1-a2b3-4c5d-5e6f-8a9b0c1d2e3f",
-      "7de38a2b-f2a3-4b4c-5d6e-8f9a0b1c2d3e"
+      "9c7bdff5-ad50-4cc5-ac80-805e59e2da57",
+      "59051cd2-4842-49ff-b95f-8f529f5070b0"
     ],
     "degenerateSeedList": [],
     "evolutionRequirements": [
@@ -339,9 +339,9 @@
     "bitFarmingRate": 3,
     "digiEvolutionSeedList": [
       "e5c3b6f1-ae43-4d5e-9f0a-1b2c3d4e5f67",
-      "c238df70-e7f8-4a9b-0c1d-3e4f5a6b7c8d",
-      "xyz5678a-123b-cdef-456g-hijklmn5678",
-      "eab4c5d6-f7a8-4b9c-0d1e-2f3a4b5c6d7e"
+      "82a4f7b8-e302-4771-8d58-927c2d34e717",
+      "dfeeb1ca-a077-4e90-84ae-8a8a6490a992",
+      "2fb84d71-5d4b-4cbf-a0bb-f1ce33f2f2de"
     ],
     "degenerateSeedList": [],
     "evolutionRequirements": [
@@ -368,7 +368,7 @@
     "digiEvolutionSeedList": [
       "6a7b8c9d-e0f1-4a2b-8c3d-4e5f6a7b8c9d",
       "178d24e5-f6a7-4b9c-9d0e-2f3a4b5c6d7e",
-      "e45af1b2-c3d4-4e6f-6a7b-9c0d1e2f3a4b"
+      "354d34aa-d686-434c-b2ef-fdc7ce403c25"
     ],
     "degenerateSeedList": [],
     "evolutionRequirements": [
@@ -393,8 +393,8 @@
     "speed": 35,
     "bitFarmingRate": 4,
     "digiEvolutionSeedList": [
-      "ad0e2f3b-c4d5-4e6f-7a8b-9c0d1e2f3a4b",
-      "23e8a9b0-c1d2-4e3f-5a6b-7c8d9e0f1a2b"
+      "7db14a16-d501-421f-a403-f00ef6bdbeda",
+      "30478c8e-4673-4526-a502-5160536d0ac5"
     ],
     "degenerateSeedList": [],
     "evolutionRequirements": [
@@ -420,7 +420,7 @@
     "bitFarmingRate": 5,
     "digiEvolutionSeedList": [
       "cf2a3b4c-d5e6-4f7a-9b0c-1d2e3f4a5b6c",
-      "4ab057f8-c9d0-4e1f-2a3b-5c6d7e8f9a0b",
+      "a05f17f2-7f47-44dd-ae69-b46896e08043",
       "67c2e3f4-a5b6-4c7d-9e0f-1a2b3c4d5e6f"
     ],
     "degenerateSeedList": [],
@@ -445,7 +445,7 @@
     "def": 28,
     "speed": 29,
     "bitFarmingRate": 3,
-    "digiEvolutionSeedList": ["39af46e7-b8c9-4d0e-1f2a-4b5c6d7e8f9a"],
+    "digiEvolutionSeedList": ["05be89f5-5da3-4026-afcf-443ee072e0eb"],
     "degenerateSeedList": [],
     "evolutionRequirements": [
       {
@@ -513,9 +513,9 @@
     "speed": 35,
     "bitFarmingRate": 3,
     "digiEvolutionSeedList": [
-      "feb5d6e7-a8b9-4c0d-1e2f-3a4b5c6d7e8f",
-      "9d0e1f2a-b3c4-4d5e-1f6a-2b3c4d5e6f7a",
-      "12d7f8a9-b0c1-4d2e-3f4a-5b6c7d8e9f0a"
+      "ab31784f-d09b-473a-ad58-27c40b50ae53",
+      "0ba4bbe8-1f8f-4252-a7c5-6380981d6567",
+      "d948e2f9-e282-4c59-8a0b-0d761f649922"
     ],
     "degenerateSeedList": [],
     "evolutionRequirements": [
@@ -539,7 +539,7 @@
     "def": 33,
     "speed": 35,
     "bitFarmingRate": 3,
-    "digiEvolutionSeedList": ["01c6e7f8-b9a0-4c1d-2e3f-4a5b6c7d8e9f"],
+    "digiEvolutionSeedList": ["b1905950-9981-4544-a642-69f106e4889d"],
     "degenerateSeedList": [],
     "evolutionRequirements": [
       {
@@ -563,8 +563,8 @@
     "speed": 39,
     "bitFarmingRate": 5,
     "digiEvolutionSeedList": [
-      "34f9b0c1-d2e3-4f4a-6b7c-8d9e0f1a2b3c",
-      "8ef49b3c-a3b4-4c5d-6e7f-9a0b1c2d3e4f"
+      "116e09ec-921e-42e3-9de6-05681965d7af",
+      "08f6ce0c-91ad-409a-aa7e-31c35623c37d"
     ],
     "degenerateSeedList": [],
     "evolutionRequirements": [
@@ -589,7 +589,7 @@
     "speed": 38,
     "bitFarmingRate": 4,
     "digiEvolutionSeedList": [
-      "5bc16809-d0e1-4f2a-3b4c-6d7e8f9a0b1c",
+      "8f1df616-ba64-456a-8ebd-2f18e17c07f3",
       "56b1d2e3-f4a5-4b6c-8d9e-0f1a2b3c4d5e"
     ],
     "degenerateSeedList": [],
@@ -617,7 +617,7 @@
     "digiEvolutionSeedList": [
       "067c13d4-e5f6-4a8b-8c9d-1e2f3a4b5c6d",
       "a016bd5e-c5d6-4e7f-8a9b-1c2d3e4f5a6b",
-      "d349f081-f8a9-4b0c-1d2e-4f5a6b7c8d9e"
+      "8bbb294e-b9dd-4ab9-8629-f46872e9cbd4"
     ],
     "degenerateSeedList": [],
     "evolutionRequirements": [
@@ -641,7 +641,7 @@
     "def": 39,
     "speed": 33,
     "bitFarmingRate": 4,
-    "digiEvolutionSeedList": ["e45a0912-0b1c-4d2e-3f4a-5b6c7d8e9f0a"],
+    "digiEvolutionSeedList": ["d8b07898-1585-41b6-bcde-2f571243f424"],
     "degenerateSeedList": [],
     "evolutionRequirements": [
       {
@@ -664,7 +664,7 @@
     "def": 30,
     "speed": 39,
     "bitFarmingRate": 4,
-    "digiEvolutionSeedList": ["f56b1023-1c2d-4e3f-4a5b-6c7d8e9f0a1b"],
+    "digiEvolutionSeedList": ["489e2e68-fb20-4aa9-bb97-dbfbcf03b2ba"],
     "degenerateSeedList": [],
     "evolutionRequirements": [
       {
@@ -702,7 +702,7 @@
     "checked": true
   },
   {
-    "seed": "xyz5678a-123b-cdef-456g-hijklmn7890",
+    "seed": "67307a7e-681f-4b3b-a71e-16baae4ea11f",
     "name": "Betamon",
     "img": "/assets/digimons/Betamon.webp",
     "rank": "Rookie",
@@ -713,7 +713,7 @@
     "atk": 76,
     "def": 66,
     "speed": 53,
-    "bitFarmingRate": 2,
+    "bitFarmingRate": 19,
     "digiEvolutionSeedList": [
       "76c5f4e2-1a0b-42f7-9e4d-b3f0d8a1c2e6",
       "03de2f94-6a3b-457a-a0f1-fb2c9e57c8a3",
@@ -729,7 +729,7 @@
     "checked": true
   },
   {
-    "seed": "uvw1234a-567b-cdef-890g-hijklmn1234",
+    "seed": "55121c1b-5f45-4f28-ad8f-d1a5573c3101",
     "name": "Goburimon",
     "img": "/assets/digimons/Goburimon.webp",
     "rank": "Rookie",
@@ -740,7 +740,7 @@
     "atk": 82,
     "def": 72,
     "speed": 50,
-    "bitFarmingRate": 1,
+    "bitFarmingRate": 14,
     "digiEvolutionSeedList": [
       "87a9e123-4f23-42b3-9d83-3c7e4382c3d5",
       "46c1f3e9-5a4d-4b7c-8e1f-cb7a0f9d2e3c",
@@ -756,7 +756,7 @@
     "checked": true
   },
   {
-    "seed": "xyz5678a-123b-cdef-456g-hijklmn5678",
+    "seed": "dfeeb1ca-a077-4e90-84ae-8a8a6490a992",
     "name": "Falcomon",
     "img": "/assets/digimons/Falcomon.webp",
     "rank": "Rookie",
@@ -767,7 +767,7 @@
     "atk": 72,
     "def": 63,
     "speed": 71,
-    "bitFarmingRate": 5,
+    "bitFarmingRate": 20,
     "digiEvolutionSeedList": ["fa3e15c0-4a3f-45e1-b75e-1b2d1b16a377"],
     "degenerateSeedList": ["2c011b3c-727f-4f36-aeb7-18e94eb4801e"],
     "evolutionRequirements": [
@@ -854,7 +854,7 @@
     "checked": true
   },
   {
-    "seed": "ghi9012j-3456-kl78-mn90-1234567opqrs",
+    "seed": "935f8d3f-e4b9-47d6-b168-a80eb4dae568",
     "name": "Tentomon",
     "img": "/assets/digimons/Tentomon.webp",
     "rank": "Rookie",
@@ -865,14 +865,14 @@
     "atk": 75,
     "def": 71,
     "speed": 63,
-    "bitFarmingRate": 3,
+    "bitFarmingRate": 22,
     "digiEvolutionSeedList": [
-      "jkl3456m-7890-no12-pq34-567890rstuvw",
+      "fdb6bc88-8ab6-4d27-af65-8c26b7df9c86",
       "f0e2b4d1-59c3-41a7-9d2e-85c7f31b06a4"
     ],
     "degenerateSeedList": [
-      "abc1234f-5678-90de-bc12-3456789abcde",
-      "def5678g-9012-34hi-jk56-7890123lmnop"
+      "1e42aedf-c746-44aa-8163-52abe272521a",
+      "794bdb0d-eb9b-450b-bbc6-bbee53bd163e"
     ],
     "evolutionRequirements": [
       {
@@ -883,7 +883,7 @@
     "checked": true
   },
   {
-    "seed": "abc1234d-5678-efgh-9101-ijklmnopqrst",
+    "seed": "4e6904cc-d3c0-4363-b8a8-bebc1da167ab",
     "name": "Kunemon",
     "img": "/assets/digimons/Kunemon.webp",
     "rank": "Rookie",
@@ -894,13 +894,13 @@
     "atk": 75,
     "def": 68,
     "speed": 52,
-    "bitFarmingRate": 6,
+    "bitFarmingRate": 25,
     "digiEvolutionSeedList": [
       "9f207e7b-2e92-4cfc-8e44-94cf25e0fdb5",
       "0a1d3e9f-b7c2-4f8a-84e1-d0c9f27b1356",
       "c6e9a3b7-1f5d-4e8a-9c2b-0d3a5e7f9b6c"
     ],
-    "degenerateSeedList": ["def5678g-9012-34hi-jk56-7890123lmnop"],
+    "degenerateSeedList": ["794bdb0d-eb9b-450b-bbc6-bbee53bd163e"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -910,7 +910,7 @@
     "checked": true
   },
   {
-    "seed": "xyz1234a-5678-bc90-defg-1234567890ab",
+    "seed": "ac35cc98-95f2-46d4-bcfb-a1633de6161e",
     "name": "Kokuwamon",
     "img": "/assets/digimons/Kokuwamon.webp",
     "rank": "Rookie",
@@ -921,7 +921,7 @@
     "atk": 79,
     "def": 57,
     "speed": 60,
-    "bitFarmingRate": 3,
+    "bitFarmingRate": 30,
     "digiEvolutionSeedList": ["28e7b03d-c49a-431b-81f2-d3a0f8c197e0"],
     "degenerateSeedList": [],
     "evolutionRequirements": [
@@ -933,7 +933,7 @@
     "checked": true
   },
   {
-    "seed": "lmn3456o-789p-qr01-stuv-wxyzabcd34",
+    "seed": "42e8ce3c-0f51-4238-866e-a195628b165c",
     "name": "Guilmon",
     "img": "/assets/digimons/Guilmon.webp",
     "rank": "Rookie",
@@ -944,13 +944,13 @@
     "atk": 87,
     "def": 67,
     "speed": 50,
-    "bitFarmingRate": 5,
+    "bitFarmingRate": 12,
     "digiEvolutionSeedList": [
-      "opq6789r-012s-tuvw-xyza-bcdefg5678",
+      "124e3f9c-0f48-402c-9f29-b92ff742a965",
       "d7e9f1a3-5b2c-4d8a-9c6e-1f0b3a5d7e2c"
     ],
     "degenerateSeedList": [
-      "ijk9012l-3456-789m-nopq-rstuvwxyz23",
+      "60a9abac-e232-458d-a137-353e6ce15d03",
       "edc9812f-82a6-487f-9a4d-52b845643176"
     ],
     "evolutionRequirements": [
@@ -1001,7 +1001,7 @@
     "speed": 69,
     "bitFarmingRate": 76,
     "digiEvolutionSeedList": [
-      "def5678a-9012-345b-cdef-6789012345gh",
+      "b7569307-7fd2-4ebb-a05f-6b1b30410921",
       "b9c0f3a7-2d5a-4e6b-8c1d-9f0e3a5d7b2c"
     ],
     "degenerateSeedList": ["048cb7ff-ec92-47e3-bc1d-73f89d73b0cb"],
@@ -1169,7 +1169,7 @@
     "checked": true
   },
   {
-    "seed": "8c9d0e1f-a2b3-4c5d-0e6f-7a8b9c0d1e2f",
+    "seed": "b61f8053-a7e7-4a30-80ab-64d494ba6c24",
     "name": "Otamamon",
     "img": "/assets/digimons/Otamamon.webp",
     "rank": "Rookie",
@@ -1180,7 +1180,7 @@
     "atk": 75,
     "def": 63,
     "speed": 53,
-    "bitFarmingRate": 40,
+    "bitFarmingRate": 16,
     "digiEvolutionSeedList": [
       "d9e3c6b5-2f1a-4e7b-8c9d-0f5a3e7b2d6c",
       "b3e6a9c5-2d1f-4e7a-8c9b-0f5d3a7e2b6c",
@@ -1196,7 +1196,7 @@
     "checked": true
   },
   {
-    "seed": "9d0e1f2a-b3c4-4d5e-1f6a-2b3c4d5e6f7a",
+    "seed": "0ba4bbe8-1f8f-4252-a7c5-6380981d6567",
     "name": "Tapirmon",
     "img": "/assets/digimons/Tapirmon.webp",
     "rank": "Rookie",
@@ -1222,7 +1222,7 @@
     "checked": true
   },
   {
-    "seed": "ad0e2f3b-c4d5-4e6f-7a8b-9c0d1e2f3a4b",
+    "seed": "7db14a16-d501-421f-a403-f00ef6bdbeda",
     "name": "DemiDevimon",
     "img": "/assets/digimons/DemiDevimon.webp",
     "rank": "Rookie",
@@ -1300,7 +1300,7 @@
     "checked": true
   },
   {
-    "seed": "dfa3b4c5-e6f7-4a8b-0c1d-2e3f4a5b6c7d",
+    "seed": "0bb2202b-a2a0-45db-b9a9-f1a80b74d682",
     "name": "Wormmon",
     "img": "/assets/digimons/Wormmon.webp",
     "rank": "Rookie",
@@ -1316,7 +1316,7 @@
       "f0c7e9b3-1a5d-4e6b-8c2b-9d3a5e0f7c6b",
       "f71c8e04-3b7d-4d20-86f1-efb9403a19d6"
     ],
-    "degenerateSeedList": ["def5678g-9012-34hi-jk56-7890123lmnop"],
+    "degenerateSeedList": ["794bdb0d-eb9b-450b-bbc6-bbee53bd163e"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -1326,7 +1326,7 @@
     "checked": true
   },
   {
-    "seed": "eab4c5d6-f7a8-4b9c-0d1e-2f3a4b5c6d7e",
+    "seed": "2fb84d71-5d4b-4cbf-a0bb-f1ce33f2f2de",
     "name": "Hawkmon",
     "img": "/assets/digimons/Hawkmon.webp",
     "rank": "Rookie",
@@ -1349,7 +1349,7 @@
     "checked": true
   },
   {
-    "seed": "feb5d6e7-a8b9-4c0d-1e2f-3a4b5c6d7e8f",
+    "seed": "ab31784f-d09b-473a-ad58-27c40b50ae53",
     "name": "Terriermon",
     "img": "/assets/digimons/Terriermon.webp",
     "rank": "Rookie",
@@ -1372,7 +1372,7 @@
     "checked": true
   },
   {
-    "seed": "01c6e7f8-b9a0-4c1d-2e3f-4a5b6c7d8e9f",
+    "seed": "b1905950-9981-4544-a642-69f106e4889d",
     "name": "Lopmon",
     "img": "/assets/digimons/Lopmon.webp",
     "rank": "Rookie",
@@ -1398,7 +1398,7 @@
     "checked": true
   },
   {
-    "seed": "12d7f8a9-b0c1-4d2e-3f4a-5b6c7d8e9f0a",
+    "seed": "d948e2f9-e282-4c59-8a0b-0d761f649922",
     "name": "Renamon",
     "img": "/assets/digimons/Renamon.webp",
     "rank": "Rookie",
@@ -1424,7 +1424,7 @@
     "checked": true
   },
   {
-    "seed": "23e8a9b0-c1d2-4e3f-5a6b-7c8d9e0f1a2b",
+    "seed": "30478c8e-4673-4526-a502-5160536d0ac5",
     "name": "Impmon",
     "img": "/assets/digimons/Impmon.webp",
     "rank": "Rookie",
@@ -1450,7 +1450,7 @@
     "checked": true
   },
   {
-    "seed": "34f9b0c1-d2e3-4f4a-6b7c-8d9e0f1a2b3c",
+    "seed": "116e09ec-921e-42e3-9de6-05681965d7af",
     "name": "Keramon",
     "img": "/assets/digimons/Keramon.webp",
     "rank": "Rookie",
@@ -1473,7 +1473,7 @@
     "checked": true
   },
   {
-    "seed": "45a0c1d2-e3f4-4a5b-7c8d-9e0f1a2b3c4d",
+    "seed": "2f06b76f-a29b-415c-86be-05cc8dbaef17",
     "name": "Penguinmon",
     "img": "/assets/digimons/Penguinmon.webp",
     "rank": "Rookie",
@@ -1551,7 +1551,7 @@
     "checked": true
   },
   {
-    "seed": "78d3f4a5-b6c7-4d8e-0f1a-2b3c4d5e6f7a",
+    "seed": "58278402-c731-40ae-aea6-40ad6263465c",
     "name": "Shamamon",
     "img": "/assets/digimons/Shamamon.webp",
     "rank": "Rookie",
@@ -1577,7 +1577,7 @@
     "checked": true
   },
   {
-    "seed": "89e4a5b6-c7d8-4e9f-0a1b-3c4d5e6f7a8b",
+    "seed": "866066a0-da28-4baa-ba13-f5259d24e39c",
     "name": "SnowGoburimon",
     "img": "/assets/digimons/SnowGoburimon.webp",
     "rank": "Rookie",
@@ -1603,7 +1603,7 @@
     "checked": true
   },
   {
-    "seed": "90f5a6b7-c8d9-4f0a-1b2c-4d5e6f7a8b9c",
+    "seed": "ff9c95dd-3f18-418a-8a69-5ae3d038dec8",
     "name": "Syakomon",
     "img": "/assets/digimons/Syakomon.webp",
     "rank": "Rookie",
@@ -1630,7 +1630,7 @@
     "checked": true
   },
   {
-    "seed": "a016b7c8-d9e0-4f1a-2b3c-5d6e7f8a9b0c",
+    "seed": "02e00ed9-be0c-4e24-9e6a-1bce6407ba67",
     "name": "SnowAgumon",
     "img": "/assets/digimons/SnowAgumon.webp",
     "rank": "Rookie",
@@ -1653,7 +1653,7 @@
     "checked": true
   },
   {
-    "seed": "b127c8d9-e0f1-4a2b-3c4d-6e7f8a9b0c1d",
+    "seed": "605568d6-840c-4cd0-bdf4-b7d04819f149",
     "name": "BlackAgumon",
     "img": "/assets/digimons/BlackAgumon.webp",
     "rank": "Rookie",
@@ -1679,7 +1679,7 @@
     "checked": true
   },
   {
-    "seed": "c238d9e0-f1a2-4b3c-4d5e-7f8a9b0c1d2e",
+    "seed": "9c64088a-5693-4583-ba0d-47b117d2ab79",
     "name": "Muchomon",
     "img": "/assets/digimons/Muchomon.webp",
     "rank": "Rookie",
@@ -1705,7 +1705,7 @@
     "checked": true
   },
   {
-    "seed": "d349e0f1-a2b3-4c5d-5e6f-8a9b0c1d2e3f",
+    "seed": "9c7bdff5-ad50-4cc5-ac80-805e59e2da57",
     "name": "Crabmon",
     "img": "/assets/digimons/Crabmon.webp",
     "rank": "Rookie",
@@ -1728,7 +1728,7 @@
     "checked": true
   },
   {
-    "seed": "e45af1b2-c3d4-4e6f-6a7b-9c0d1e2f3a4b",
+    "seed": "354d34aa-d686-434c-b2ef-fdc7ce403c25",
     "name": "Floramon",
     "img": "/assets/digimons/Floramon.webp",
     "rank": "Rookie",
@@ -1751,7 +1751,7 @@
     "checked": true
   },
   {
-    "seed": "f56b02c3-d4e5-4f7a-7b8c-0d1e2f3a4b5c",
+    "seed": "a5d75ad2-b8ce-487d-9a15-f26d8b78fce9",
     "name": "Gizamon",
     "img": "/assets/digimons/Gizamon.webp",
     "rank": "Rookie",
@@ -1829,7 +1829,7 @@
     "checked": true
   },
   {
-    "seed": "289e35f6-a7b8-4c0d-0e1f-3a4b5c6d7e8f",
+    "seed": "264ecbe7-d857-48dc-94d5-418f1dd5ac4b",
     "name": "ToyAgumon (Black)",
     "img": "/assets/digimons/ToyAgumon (Black).webp",
     "rank": "Rookie",
@@ -1852,7 +1852,7 @@
     "checked": true
   },
   {
-    "seed": "39af46e7-b8c9-4d0e-1f2a-4b5c6d7e8f9a",
+    "seed": "05be89f5-5da3-4026-afcf-443ee072e0eb",
     "name": "Tsukaimon",
     "img": "/assets/digimons/Tsukaimon.webp",
     "rank": "Rookie",
@@ -1878,7 +1878,7 @@
     "checked": true
   },
   {
-    "seed": "4ab057f8-c9d0-4e1f-2a3b-5c6d7e8f9a0b",
+    "seed": "a05f17f2-7f47-44dd-ae69-b46896e08043",
     "name": "PawnChessmon (Black)",
     "img": "/assets/digimons/PawnChessmon (Black).webp",
     "rank": "Rookie",
@@ -1901,7 +1901,7 @@
     "checked": true
   },
   {
-    "seed": "5bc16809-d0e1-4f2a-3b4c-6d7e8f9a0b1c",
+    "seed": "8f1df616-ba64-456a-8ebd-2f18e17c07f3",
     "name": "Gaomon",
     "img": "/assets/digimons/Gaomon.webp",
     "rank": "Rookie",
@@ -1927,7 +1927,7 @@
     "checked": true
   },
   {
-    "seed": "6cd2791a-e1f2-4a3b-4c5d-7e8f9a0b1c2d",
+    "seed": "f4bf9c27-147a-46ed-b069-c13e8d934be2",
     "name": "Kudamon",
     "img": "/assets/digimons/Kudamon.webp",
     "rank": "Rookie",
@@ -1953,7 +1953,7 @@
     "checked": true
   },
   {
-    "seed": "7de38a2b-f2a3-4b4c-5d6e-8f9a0b1c2d3e",
+    "seed": "59051cd2-4842-49ff-b95f-8f529f5070b0",
     "name": "Kamemon",
     "img": "/assets/digimons/Kamemon.webp",
     "rank": "Rookie",
@@ -1979,7 +1979,7 @@
     "checked": true
   },
   {
-    "seed": "8ef49b3c-a3b4-4c5d-6e7f-9a0b1c2d3e4f",
+    "seed": "08f6ce0c-91ad-409a-aa7e-31c35623c37d",
     "name": "Dracmon",
     "img": "/assets/digimons/Dracmon.webp",
     "rank": "Rookie",
@@ -2002,7 +2002,7 @@
     "checked": true
   },
   {
-    "seed": "9f05ac4d-b4c5-4d6e-7f8a-0b1c2d3e4f5a",
+    "seed": "8d68e936-fcc3-478b-bcc7-0160ef26c4df",
     "name": "PawnChessmon (White)",
     "img": "/assets/digimons/PawnChessmon (White).webp",
     "rank": "Rookie",
@@ -2014,7 +2014,7 @@
     "def": 75,
     "speed": 53,
     "bitFarmingRate": 42,
-    "digiEvolutionSeedList": ["a1b2c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d"],
+    "digiEvolutionSeedList": ["09f69899-b91d-4ec5-9a4e-74641b692291"],
     "degenerateSeedList": ["4f2a5a34-f37e-4e2e-9429-5fa6a7b36c1b"],
     "evolutionRequirements": [
       {
@@ -2077,7 +2077,7 @@
     "checked": true
   },
   {
-    "seed": "c238df70-e7f8-4a9b-0c1d-3e4f5a6b7c8d",
+    "seed": "82a4f7b8-e302-4771-8d58-927c2d34e717",
     "name": "Candlemon",
     "img": "/assets/digimons/Candlemon.webp",
     "rank": "Rookie",
@@ -2103,7 +2103,7 @@
     "checked": true
   },
   {
-    "seed": "d349f081-f8a9-4b0c-1d2e-4f5a6b7c8d9e",
+    "seed": "8bbb294e-b9dd-4ab9-8629-f46872e9cbd4",
     "name": "DoKunemon",
     "img": "/assets/digimons/DoKunemon.webp",
     "rank": "Rookie",
@@ -2117,7 +2117,7 @@
     "bitFarmingRate": 40,
     "digiEvolutionSeedList": [
       "f0b7e9c5-2a1d-4e6b-8c3b-9d5a3e0f7c2b",
-      "hij6789k-0123-456l-mnop-qrstuvwxyz01",
+      "6f43524a-b8fd-4514-b5f9-03dbc7710b85",
       "c0f3a7b9-2d5a-4e6b-8c1d-9f0e3a5d7b2c"
     ],
     "degenerateSeedList": ["7dbd69e3-62f3-4433-a8de-12c8ae5c1ea6"],
@@ -2130,7 +2130,7 @@
     "checked": true
   },
   {
-    "seed": "e45a0912-0b1c-4d2e-3f4a-5b6c7d8e9f0a",
+    "seed": "d8b07898-1585-41b6-bcde-2f571243f424",
     "name": "Coronamon",
     "img": "/assets/digimons/Coronamon.webp",
     "rank": "Rookie",
@@ -2153,7 +2153,7 @@
     "checked": true
   },
   {
-    "seed": "f56b1023-1c2d-4e3f-4a5b-6c7d8e9f0a1b",
+    "seed": "489e2e68-fb20-4aa9-bb97-dbfbcf03b2ba",
     "name": "Lunamon",
     "img": "/assets/digimons/Lunamon.webp",
     "rank": "Rookie",
@@ -2261,7 +2261,7 @@
     "speed": 88,
     "bitFarmingRate": 10,
     "digiEvolutionSeedList": ["e5a57e68-7e23-4314-bd93-ea8c7d5fca85"],
-    "degenerateSeedList": ["xyz5678a-123b-cdef-456g-hijklmn5678"],
+    "degenerateSeedList": ["dfeeb1ca-a077-4e90-84ae-8a8a6490a992"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -2307,7 +2307,7 @@
     "speed": 91,
     "bitFarmingRate": 15,
     "digiEvolutionSeedList": ["c67f1a0b-f889-438b-9cc0-885f9f711a26"],
-    "degenerateSeedList": ["78d3f4a5-b6c7-4d8e-0f1a-2b3c4d5e6f7a"],
+    "degenerateSeedList": ["58278402-c731-40ae-aea6-40ad6263465c"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -2333,7 +2333,7 @@
       "28228629-5abc-4fdb-b94d-360783b2ff2c",
       "43cdb81a-3316-4e2b-8c6d-4bc9f8aa99f0",
       "c4f8a2d6-9b3e-4e1f-8d7c-5a9f2b6e3d1c",
-      "4a6b9c3e-2c7b-7d5c-a9d2-1b0e8c3e5f3c"
+      "d9652444-162c-4443-8001-d29b9d23c57b"
     ],
     "degenerateSeedList": ["986f4b59-c234-44fa-b5bc-456736578f67"],
     "evolutionRequirements": [
@@ -2368,7 +2368,7 @@
     "checked": true
   },
   {
-    "seed": "jkl3456m-7890-no12-pq34-567890rstuvw",
+    "seed": "fdb6bc88-8ab6-4d27-af65-8c26b7df9c86",
     "name": "Kabuterimon",
     "img": "/assets/digimons/Kabuterimon.webp",
     "rank": "Champion",
@@ -2381,10 +2381,10 @@
     "speed": 81,
     "bitFarmingRate": 4,
     "digiEvolutionSeedList": [
-      "pqr1234s-5678-tu90-vw12-345678xyzabc",
-      "mno7890p-1234-qr56-st78-901234uvwxzy"
+      "5f18edb4-a732-41e4-93e6-e65164091ea6",
+      "77399b55-9e54-4ed3-8fc5-e20ee7d7dc9a"
     ],
-    "degenerateSeedList": ["ghi9012j-3456-kl78-mn90-1234567opqrs"],
+    "degenerateSeedList": ["935f8d3f-e4b9-47d6-b168-a80eb4dae568"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -2406,8 +2406,8 @@
     "def": 86,
     "speed": 81,
     "bitFarmingRate": 12,
-    "digiEvolutionSeedList": ["5f3c9a1b-1b0e-6e5f-8c3e-4f3d2c7b3c1b"],
-    "degenerateSeedList": ["abc1234d-5678-efgh-9101-ijklmnopqrst"],
+    "digiEvolutionSeedList": ["9799592e-7012-4855-b1a8-2f5d1e27e196"],
+    "degenerateSeedList": ["4e6904cc-d3c0-4363-b8a8-bebc1da167ab"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -2431,7 +2431,7 @@
     "bitFarmingRate": 3,
     "digiEvolutionSeedList": [
       "a7e2f3b1-03e4-40fc-b80b-8db60f4f616b",
-      "a7b8c9d0-1e2f-3a4b-5c6d-7e8f9a0b1c2d"
+      "7a27b835-293f-46db-9606-7a2aab66b0be"
     ],
     "degenerateSeedList": ["cf2a3b4c-d5e6-4f7a-9b0c-1d2e3f4a5b6c"],
     "evolutionRequirements": [
@@ -2443,7 +2443,7 @@
     "checked": true
   },
   {
-    "seed": "def5678a-9012-345b-cdef-6789012345gh",
+    "seed": "b7569307-7fd2-4ebb-a05f-6b1b30410921",
     "name": "Airdramon",
     "img": "/assets/digimons/Airdramon.webp",
     "rank": "Champion",
@@ -2466,7 +2466,7 @@
     "checked": true
   },
   {
-    "seed": "hij6789k-0123-456l-mnop-qrstuvwxyz01",
+    "seed": "6f43524a-b8fd-4514-b5f9-03dbc7710b85",
     "name": "Dokugumon",
     "img": "/assets/digimons/Dokugumon.webp",
     "rank": "Champion",
@@ -2479,7 +2479,7 @@
     "speed": 84,
     "bitFarmingRate": 5,
     "digiEvolutionSeedList": ["e49a85fa-77ea-4a06-9a65-bd3133e2c1e4"],
-    "degenerateSeedList": ["d349f081-f8a9-4b0c-1d2e-4f5a6b7c8d9e"],
+    "degenerateSeedList": ["8bbb294e-b9dd-4ab9-8629-f46872e9cbd4"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -2489,7 +2489,7 @@
     "checked": true
   },
   {
-    "seed": "opq6789r-012s-tuvw-xyza-bcdefg5678",
+    "seed": "124e3f9c-0f48-402c-9f29-b92ff742a965",
     "name": "Growlmon",
     "img": "/assets/digimons/Growlmon.webp",
     "rank": "Champion",
@@ -2502,10 +2502,10 @@
     "speed": 67,
     "bitFarmingRate": 4,
     "digiEvolutionSeedList": [
-      "rst9012u-345v-wxyz-abcd-efghij6789",
-      "2c7b4f3d-8c3e-9a1b-3c1b-1b0e6e5f5f3c"
+      "070340f1-64a6-4b2a-a068-47d00e4de3a1",
+      "fcda1569-46f3-4ccd-8838-a55e447a005c"
     ],
-    "degenerateSeedList": ["ijk9012l-3456-789m-nopq-rstuvwxyz23"],
+    "degenerateSeedList": ["60a9abac-e232-458d-a137-353e6ce15d03"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -2551,7 +2551,7 @@
     "speed": 73,
     "bitFarmingRate": 8,
     "digiEvolutionSeedList": ["a2fd5cd4-16dc-4422-8e94-7129b75478ce"],
-    "degenerateSeedList": ["a016b7c8-d9e0-4f1a-2b3c-5d6e7f8a9b0c"],
+    "degenerateSeedList": ["02e00ed9-be0c-4e24-9e6a-1bce6407ba67"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -2574,7 +2574,7 @@
     "speed": 78,
     "bitFarmingRate": 2,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["78d3f4a5-b6c7-4d8e-0f1a-2b3c4d5e6f7a"],
+    "degenerateSeedList": ["58278402-c731-40ae-aea6-40ad6263465c"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -2596,8 +2596,8 @@
     "def": 95,
     "speed": 70,
     "bitFarmingRate": 2,
-    "digiEvolutionSeedList": ["f9a5d7b2-4e3c-5f6a-8b9d-0c1e2f3a4b5d"],
-    "degenerateSeedList": ["uvw1234a-567b-cdef-890g-hijklmn1234"],
+    "digiEvolutionSeedList": ["4aa02e4b-b20a-4faf-9269-0ba18a1e7d08"],
+    "degenerateSeedList": ["55121c1b-5f45-4f28-ad8f-d1a5573c3101"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -2619,8 +2619,8 @@
     "def": 96,
     "speed": 74,
     "bitFarmingRate": 15,
-    "digiEvolutionSeedList": ["5f3c9a1b-6e5f-1b0e-4f3d-8c3e2c7b3c1b"],
-    "degenerateSeedList": ["289e35f6-a7b8-4c0d-0e1f-3a4b5c6d7e8f"],
+    "digiEvolutionSeedList": ["1b765eb3-b253-4266-a449-f48cc1713dac"],
+    "degenerateSeedList": ["264ecbe7-d857-48dc-94d5-418f1dd5ac4b"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -2643,10 +2643,10 @@
     "speed": 75,
     "bitFarmingRate": 18,
     "digiEvolutionSeedList": [
-      "9a1b5f3c-8c3e-2c7b-3c1b-1b0e6e5f4f3d",
-      "6e5f4f3d-1b0e-3c1b-8c3e-5f3c9a1b2c7b"
+      "86661f39-b878-4321-9533-0b95d434ef43",
+      "60205c40-0925-406f-93aa-511df01826bf"
     ],
-    "degenerateSeedList": ["lmn3456o-789p-qr01-stuv-wxyzabcd34"],
+    "degenerateSeedList": ["42e8ce3c-0f51-4238-866e-a195628b165c"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -2669,7 +2669,7 @@
     "speed": 79,
     "bitFarmingRate": 20,
     "digiEvolutionSeedList": ["fef29128-0270-4e25-befc-bc9f2c4dd853"],
-    "degenerateSeedList": ["ad0e2f3b-c4d5-4e6f-7a8b-9c0d1e2f3a4b"],
+    "degenerateSeedList": ["7db14a16-d501-421f-a403-f00ef6bdbeda"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -2692,7 +2692,7 @@
     "speed": 69,
     "bitFarmingRate": 12,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["8c9d0e1f-a2b3-4c5d-0e6f-7a8b9c0d1e2f"],
+    "degenerateSeedList": ["b61f8053-a7e7-4a30-80ab-64d494ba6c24"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -2738,7 +2738,7 @@
     "speed": 73,
     "bitFarmingRate": 14,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["e45af1b2-c3d4-4e6f-6a7b-9c0d1e2f3a4b"],
+    "degenerateSeedList": ["354d34aa-d686-434c-b2ef-fdc7ce403c25"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -2760,8 +2760,8 @@
     "def": 93,
     "speed": 84,
     "bitFarmingRate": 16,
-    "digiEvolutionSeedList": ["f4a5b6c7-8d9e-0f1a-2b3c-4d5e6f7a8b9c"],
-    "degenerateSeedList": ["39af46e7-b8c9-4d0e-1f2a-4b5c6d7e8f9a"],
+    "digiEvolutionSeedList": ["01cf1fc3-911e-4a79-a14a-c2de553edecb"],
+    "degenerateSeedList": ["05be89f5-5da3-4026-afcf-443ee072e0eb"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -2784,10 +2784,10 @@
     "speed": 77,
     "bitFarmingRate": 13,
     "digiEvolutionSeedList": [
-      "9a1b7d5c-6e5f-5f3c-8c3e-a9d21b0e4f3d",
-      "d2e3f4a5-6b7c-8d9e-0f1a-2b3c4d5e6f7a"
+      "8f22778f-d315-42f9-8eb9-83c63c8603ba",
+      "11431f1e-5428-4cd4-a0de-559e4e7e0f64"
     ],
-    "degenerateSeedList": ["abc1234d-5678-efgh-9101-ijklmnopqrst"],
+    "degenerateSeedList": ["4e6904cc-d3c0-4363-b8a8-bebc1da167ab"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -2810,7 +2810,7 @@
     "speed": 80,
     "bitFarmingRate": 17,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["45a0c1d2-e3f4-4a5b-7c8d-9e0f1a2b3c4d"],
+    "degenerateSeedList": ["2f06b76f-a29b-415c-86be-05cc8dbaef17"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -2832,8 +2832,8 @@
     "def": 78,
     "speed": 75,
     "bitFarmingRate": 19,
-    "digiEvolutionSeedList": ["c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"],
-    "degenerateSeedList": ["5bc16809-d0e1-4f2a-3b4c-6d7e8f9a0b1c"],
+    "digiEvolutionSeedList": ["64eecdac-3722-4999-941c-eb21a60fd301"],
+    "degenerateSeedList": ["8f1df616-ba64-456a-8ebd-2f18e17c07f3"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -2856,7 +2856,7 @@
     "speed": 82,
     "bitFarmingRate": 18,
     "digiEvolutionSeedList": ["2f1a57b3-4fc2-4a7b-97a5-8b5f6886ec14"],
-    "degenerateSeedList": ["d349f081-f8a9-4b0c-1d2e-4f5a6b7c8d9e"],
+    "degenerateSeedList": ["8bbb294e-b9dd-4ab9-8629-f46872e9cbd4"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -2878,8 +2878,8 @@
     "def": 117,
     "speed": 62,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": ["f6a7b8c9-0d1e-2f3a-4b5c-6d7e8f9a0b1c"],
-    "degenerateSeedList": ["f56b02c3-d4e5-4f7a-7b8c-0d1e2f3a4b5c"],
+    "digiEvolutionSeedList": ["707cf9e9-48a1-4087-87d9-f3c53447e100"],
+    "degenerateSeedList": ["a5d75ad2-b8ce-487d-9a15-f26d8b78fce9"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -2902,7 +2902,7 @@
     "speed": 80,
     "bitFarmingRate": 14,
     "digiEvolutionSeedList": ["b7e2c9d4-1f6a-4d3b-8e5c-9a2f7d6b3c1e"],
-    "degenerateSeedList": ["8c9d0e1f-a2b3-4c5d-0e6f-7a8b9c0d1e2f"],
+    "degenerateSeedList": ["b61f8053-a7e7-4a30-80ab-64d494ba6c24"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -2925,10 +2925,10 @@
     "speed": 84,
     "bitFarmingRate": 17,
     "digiEvolutionSeedList": [
-      "f2a3b4c5-6d7e-8f9a-0b1c-2d3e4f5a6b7c",
-      "5f3c2c7b-8c3e-4f3d-1b0e-9a1b6e5f3c1b"
+      "9288669d-6431-4bbf-9ffd-916280cd1c3f",
+      "b7d29106-ee09-4b38-913f-cdb1ef06b347"
     ],
-    "degenerateSeedList": ["23e8a9b0-c1d2-4e3f-5a6b-7c8d9e0f1a2b"],
+    "degenerateSeedList": ["30478c8e-4673-4526-a502-5160536d0ac5"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -2952,7 +2952,7 @@
     "bitFarmingRate": 16,
     "digiEvolutionSeedList": [
       "1d47f42d-b6b5-4896-b205-cd648f25c444",
-      "b8c9d0e1-2f3a-4b5c-6d7e-8f9a0b1c2d3e"
+      "cbc465d6-5f37-466c-a5d0-2cb2c48878e6"
     ],
     "degenerateSeedList": ["6a7b8c9d-e0f1-4a2b-8c3d-4e5f6a7b8c9d"],
     "evolutionRequirements": [
@@ -3002,8 +3002,8 @@
     "def": 79,
     "speed": 86,
     "bitFarmingRate": 18,
-    "digiEvolutionSeedList": ["a6f79b4c-0a3e-d2f8-b1c5-e8b3c7f07d9"],
-    "degenerateSeedList": ["dfa3b4c5-e6f7-4a8b-0c1d-2e3f4a5b6c7d"],
+    "digiEvolutionSeedList": ["e7db2137-9d39-40f4-9fef-8ef42bcff938"],
+    "degenerateSeedList": ["0bb2202b-a2a0-45db-b9a9-f1a80b74d682"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -3026,7 +3026,7 @@
     "speed": 90,
     "bitFarmingRate": 16,
     "digiEvolutionSeedList": [
-      "c3d4e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
+      "5d236da1-b31c-445d-b819-fa8154273dd6",
       "75c6c6ce-68c9-4c32-a678-d9f59406d3a0"
     ],
     "degenerateSeedList": ["5f6e7d8c-9b0a-4c1d-8e2f-3a4b5c6d7e8f"],
@@ -3051,7 +3051,7 @@
     "def": 109,
     "speed": 68,
     "bitFarmingRate": 21,
-    "digiEvolutionSeedList": ["8c3e2c7b-4f3d-3c1b-6e5f-1b0e9a1b5f3c"],
+    "digiEvolutionSeedList": ["528427d9-196e-4b85-9680-ccf401515ff7"],
     "degenerateSeedList": ["083241cc-fcf8-4101-a58d-09b0e6b375b6"],
     "evolutionRequirements": [
       {
@@ -3075,10 +3075,10 @@
     "speed": 81,
     "bitFarmingRate": 19,
     "digiEvolutionSeedList": [
-      "a3b4c5d6-7e8f-9a0b-1c2d-3e4f5a6b7c8d",
+      "1df7c621-07e1-4db9-9922-b7664b6306a0",
       "c4cfed7d-2b3b-4fa4-8a4f-09ef2b709c7e"
     ],
-    "degenerateSeedList": ["feb5d6e7-a8b9-4c0d-1e2f-3a4b5c6d7e8f"],
+    "degenerateSeedList": ["ab31784f-d09b-473a-ad58-27c40b50ae53"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -3101,10 +3101,10 @@
     "speed": 86,
     "bitFarmingRate": 17,
     "digiEvolutionSeedList": [
-      "b4c5d6e7-8f9a-0b1c-2d3e-4f5a6b7c8d9e",
+      "aa2232d5-12ee-4538-b7d3-63d95977137a",
       "1dc4e899-b0db-435f-a9e3-6fa7c94836aa"
     ],
-    "degenerateSeedList": ["12d7f8a9-b0c1-4d2e-3f4a-5b6c7d8e9f0a"],
+    "degenerateSeedList": ["d948e2f9-e282-4c59-8a0b-0d761f649922"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -3127,10 +3127,10 @@
     "speed": 60,
     "bitFarmingRate": 20,
     "digiEvolutionSeedList": [
-      "d6e7f8a9-0b1c-2d3e-4f5a-6b7c8d9e0f1a",
-      "c9d0e1f2-3a4b-5c6d-7e8f-9a0b1c2d3e4f"
+      "6c695951-a9dc-4fea-aab4-792814356e9f",
+      "d957cf56-107d-4523-96cb-2aeffadbc64a"
     ],
-    "degenerateSeedList": ["34f9b0c1-d2e3-4f4a-6b7c-8d9e0f1a2b3c"],
+    "degenerateSeedList": ["116e09ec-921e-42e3-9de6-05681965d7af"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -3153,7 +3153,7 @@
     "speed": 79,
     "bitFarmingRate": 15,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["9d0e1f2a-b3c4-4d5e-1f6a-2b3c4d5e6f7a"],
+    "degenerateSeedList": ["0ba4bbe8-1f8f-4252-a7c5-6380981d6567"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -3176,7 +3176,7 @@
     "speed": 82,
     "bitFarmingRate": 15,
     "digiEvolutionSeedList": ["a49fd2ae-e98d-4c4b-9c53-708e6f019af2"],
-    "degenerateSeedList": ["23e8a9b0-c1d2-4e3f-5a6b-7c8d9e0f1a2b"],
+    "degenerateSeedList": ["30478c8e-4673-4526-a502-5160536d0ac5"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -3199,12 +3199,12 @@
     "speed": 81,
     "bitFarmingRate": 18,
     "digiEvolutionSeedList": [
-      "5f3c3c1b-8c3e-9a1b-2c7b-1b0e6e5f4f3d",
+      "de7c5e6e-92fc-4f99-98b1-abe628acedd2",
       "24772f7f-d86c-4e77-bc3b-c9f4b0ef7f9c",
       "1fc3d08b-7a62-4c3e-bf9d-3a179f5a3642",
-      "f0a1b2c3-4d5e-6f7a-8b9c-0d1e2f3a4b5c"
+      "2b4b8b25-e810-45a2-a7f1-3e6642b50352"
     ],
-    "degenerateSeedList": ["eab4c5d6-f7a8-4b9c-0d1e-2f3a4b5c6d7e"],
+    "degenerateSeedList": ["2fb84d71-5d4b-4cbf-a0bb-f1ce33f2f2de"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -3227,7 +3227,7 @@
     "speed": 99,
     "bitFarmingRate": 17,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["d349f081-f8a9-4b0c-1d2e-4f5a6b7c8d9e"],
+    "degenerateSeedList": ["8bbb294e-b9dd-4ab9-8629-f46872e9cbd4"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -3251,7 +3251,7 @@
     "bitFarmingRate": 16,
     "digiEvolutionSeedList": [
       "0fc5bcd7-7cbe-4aa7-8c60-1225d2b297d9",
-      "5f3c8e2a-6e5f-9a1b-2c8e-1b0e7d5c4f3d"
+      "36fad7a1-ec3c-4781-bc2b-db41f0d79e01"
     ],
     "degenerateSeedList": ["d9a452f3-71d0-4b1a-9bee-8e4c36b9e1a3"],
     "evolutionRequirements": [
@@ -3300,7 +3300,7 @@
     "bitFarmingRate": 19,
     "digiEvolutionSeedList": [
       "bcdefa01-2345-4678-9abc-def012345678",
-      "f8a9b0c1-2d3e-4f5a-6b7c-8d9e0f1a2b3c"
+      "f525814d-b2a1-4988-b767-ccb7cdb61454"
     ],
     "degenerateSeedList": ["56b1d2e3-f4a5-4b6c-8d9e-0f1a2b3c4d5e"],
     "evolutionRequirements": [
@@ -3324,7 +3324,7 @@
     "def": 102,
     "speed": 80,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": ["1b0e4f3d-5f3c-2c7b-9a1b-8c3e6e5f3c1b"],
+    "digiEvolutionSeedList": ["0cd5fdf6-ff56-4196-92f7-79f0c32bcc31"],
     "degenerateSeedList": ["1e4a6cd2-b5f2-40c9-abc1-e2d4f5b6a789"],
     "evolutionRequirements": [
       {
@@ -3370,8 +3370,8 @@
     "def": 91,
     "speed": 80,
     "bitFarmingRate": 16,
-    "digiEvolutionSeedList": ["4f3d6e5f-1b0e-2c7b-5f3c-8c3e9a1b3c1b"],
-    "degenerateSeedList": ["6cd2791a-e1f2-4a3b-4c5d-7e8f9a0b1c2d"],
+    "digiEvolutionSeedList": ["4b81a3d1-02d9-433b-8591-eeef611f6a02"],
+    "degenerateSeedList": ["f4bf9c27-147a-46ed-b069-c13e8d934be2"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -3393,7 +3393,7 @@
     "def": 87,
     "speed": 79,
     "bitFarmingRate": 17,
-    "digiEvolutionSeedList": ["5f3c9a1b-3c1b-8c3e-6e5f-1b0e2c7b4f3d"],
+    "digiEvolutionSeedList": ["e88b06f2-180d-4cb7-926a-8c215d717e5b"],
     "degenerateSeedList": ["b127ce6f-d6e7-4f8a-9b0c-2d3e4f5a6b7c"],
     "evolutionRequirements": [
       {
@@ -3416,8 +3416,8 @@
     "def": 90,
     "speed": 88,
     "bitFarmingRate": 15,
-    "digiEvolutionSeedList": ["9a1b2c7b-8c3e-6e5f-4f3d-1b0e3c1b5f3c"],
-    "degenerateSeedList": ["45a0c1d2-e3f4-4a5b-7c8d-9e0f1a2b3c4d"],
+    "digiEvolutionSeedList": ["b5a7b775-04b8-436a-b17a-29f7307c682e"],
+    "degenerateSeedList": ["2f06b76f-a29b-415c-86be-05cc8dbaef17"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -3439,8 +3439,8 @@
     "def": 75,
     "speed": 87,
     "bitFarmingRate": 16,
-    "digiEvolutionSeedList": ["defabc87-6543-210f-edcb-a9876543210f"],
-    "degenerateSeedList": ["9d0e1f2a-b3c4-4d5e-1f6a-2b3c4d5e6f7a"],
+    "digiEvolutionSeedList": ["2645815a-a9a0-4e53-b0a9-28cbfc7d5e61"],
+    "degenerateSeedList": ["0ba4bbe8-1f8f-4252-a7c5-6380981d6567"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -3463,7 +3463,7 @@
     "speed": 83,
     "bitFarmingRate": 17,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["12d7f8a9-b0c1-4d2e-3f4a-5b6c7d8e9f0a"],
+    "degenerateSeedList": ["d948e2f9-e282-4c59-8a0b-0d761f649922"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -3487,9 +3487,9 @@
     "bitFarmingRate": 20,
     "digiEvolutionSeedList": [
       "66e5a6ea-93a5-47f8-91d9-8601857496f6",
-      "9a1b5f3c-8c3e-2c7b-3c1b-1b0e6e5f4f3d"
+      "86661f39-b878-4321-9533-0b95d434ef43"
     ],
-    "degenerateSeedList": ["b127c8d9-e0f1-4a2b-3c4d-6e7f8a9b0c1d"],
+    "degenerateSeedList": ["605568d6-840c-4cd0-bdf4-b7d04819f149"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -3511,8 +3511,8 @@
     "def": 93,
     "speed": 80,
     "bitFarmingRate": 15,
-    "digiEvolutionSeedList": ["c5d6e7f8-9a0b-1c2d-3e4f-5a6b7c8d9e0f"],
-    "degenerateSeedList": ["c238d9e0-f1a2-4b3c-4d5e-7f8a9b0c1d2e"],
+    "digiEvolutionSeedList": ["1ec3c641-3763-4c9e-8834-26f7aaf3fd09"],
+    "degenerateSeedList": ["9c64088a-5693-4583-ba0d-47b117d2ab79"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -3558,7 +3558,7 @@
     "speed": 76,
     "bitFarmingRate": 17,
     "digiEvolutionSeedList": ["8f14e45f-ceea-41d4-9a3d-3e8d2e9f6b2c"],
-    "degenerateSeedList": ["uvw1234a-567b-cdef-890g-hijklmn1234"],
+    "degenerateSeedList": ["55121c1b-5f45-4f28-ad8f-d1a5573c3101"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -3604,7 +3604,7 @@
     "speed": 78,
     "bitFarmingRate": 19,
     "digiEvolutionSeedList": ["a1b2c3d4-e5f6-4789-9012-34567890abcd"],
-    "degenerateSeedList": ["c238df70-e7f8-4a9b-0c1d-3e4f5a6b7c8d"],
+    "degenerateSeedList": ["82a4f7b8-e302-4771-8d58-927c2d34e717"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -3627,7 +3627,7 @@
     "speed": 80,
     "bitFarmingRate": 18,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["c238df70-e7f8-4a9b-0c1d-3e4f5a6b7c8d"],
+    "degenerateSeedList": ["82a4f7b8-e302-4771-8d58-927c2d34e717"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -3650,7 +3650,7 @@
     "speed": 86,
     "bitFarmingRate": 17,
     "digiEvolutionSeedList": ["43bfe4a9-f09e-4016-b26c-7a0d6948f58d"],
-    "degenerateSeedList": ["5bc16809-d0e1-4f2a-3b4c-6d7e8f9a0b1c"],
+    "degenerateSeedList": ["8f1df616-ba64-456a-8ebd-2f18e17c07f3"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -3672,8 +3672,8 @@
     "def": 95,
     "speed": 76,
     "bitFarmingRate": 18,
-    "digiEvolutionSeedList": ["c1d2e3f4-5a6b-7c8d-9e0f-1a2b3c4d5e6f"],
-    "degenerateSeedList": ["c238d9e0-f1a2-4b3c-4d5e-7f8a9b0c1d2e"],
+    "digiEvolutionSeedList": ["3806f254-dcf8-44b7-9384-edddef3c6bba"],
+    "degenerateSeedList": ["9c64088a-5693-4583-ba0d-47b117d2ab79"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -3696,7 +3696,7 @@
     "speed": 89,
     "bitFarmingRate": 21,
     "digiEvolutionSeedList": ["1dc4e899-b0db-435f-a9e3-6fa7c94836aa"],
-    "degenerateSeedList": ["6cd2791a-e1f2-4a3b-4c5d-7e8f9a0b1c2d"],
+    "degenerateSeedList": ["f4bf9c27-147a-46ed-b069-c13e8d934be2"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -3718,7 +3718,7 @@
     "def": 89,
     "speed": 71,
     "bitFarmingRate": 16,
-    "digiEvolutionSeedList": ["7d5c4f3d-1b0e-8c3e-f8a7-a9d29e5f2c7b"],
+    "digiEvolutionSeedList": ["978dfa7e-4c2e-4390-b40f-ac1cd8f0bbea"],
     "degenerateSeedList": ["067c13d4-e5f6-4a8b-8c9d-1e2f3a4b5c6d"],
     "evolutionRequirements": [
       {
@@ -3741,8 +3741,8 @@
     "def": 89,
     "speed": 79,
     "bitFarmingRate": 16,
-    "digiEvolutionSeedList": ["b2c3d4e5-6f7a-8b9c-0d1e-2f3a4b5c6d7e"],
-    "degenerateSeedList": ["7de38a2b-f2a3-4b4c-5d6e-8f9a0b1c2d3e"],
+    "digiEvolutionSeedList": ["965f036a-e7a9-4a59-b192-db5b57636af8"],
+    "degenerateSeedList": ["59051cd2-4842-49ff-b95f-8f529f5070b0"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -3765,10 +3765,10 @@
     "speed": 86,
     "bitFarmingRate": 18,
     "digiEvolutionSeedList": [
-      "9e5f2c7b-8c3e-5f3c-3c1b-6e5f1a0b4a6b",
-      "1b0e4f3d-a9d2-9a1b-2c7b-8c3e6e5f5f3c"
+      "68de0bbe-a11d-4452-bdb6-f6b4478d06ad",
+      "9450b4b1-b3e2-4b66-9055-b2923d2e6236"
     ],
-    "degenerateSeedList": ["8ef49b3c-a3b4-4c5d-6e7f-9a0b1c2d3e4f"],
+    "degenerateSeedList": ["08f6ce0c-91ad-409a-aa7e-31c35623c37d"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -3859,8 +3859,8 @@
     "def": 74,
     "speed": 87,
     "bitFarmingRate": 19,
-    "digiEvolutionSeedList": ["e1f2a3b4-5c6d-7e8f-9a0b-1c2d3e4f5a6b"],
-    "degenerateSeedList": ["01c6e7f8-b9a0-4c1d-2e3f-4a5b6c7d8e9f"],
+    "digiEvolutionSeedList": ["952a2766-db94-4c37-9c25-efee8bfdc9a3"],
+    "degenerateSeedList": ["b1905950-9981-4544-a642-69f106e4889d"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -3905,8 +3905,8 @@
     "def": 111,
     "speed": 67,
     "bitFarmingRate": 19,
-    "digiEvolutionSeedList": ["e9f0a1b2-3c4d-5e6f-7a8b-9c0d1e2f3a4b"],
-    "degenerateSeedList": ["7de38a2b-f2a3-4b4c-5d6e-8f9a0b1c2d3e"],
+    "digiEvolutionSeedList": ["db096107-34c6-4f22-b8a1-8b5c7265edb2"],
+    "degenerateSeedList": ["59051cd2-4842-49ff-b95f-8f529f5070b0"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -3929,7 +3929,7 @@
     "speed": 76,
     "bitFarmingRate": 20,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["d349e0f1-a2b3-4c5d-5e6f-8a9b0c1d2e3f"],
+    "degenerateSeedList": ["9c7bdff5-ad50-4cc5-ac80-805e59e2da57"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -3952,7 +3952,7 @@
     "speed": 79,
     "bitFarmingRate": 18,
     "digiEvolutionSeedList": ["e9371c75-61b2-4645-938b-41b87588ae83"],
-    "degenerateSeedList": ["xyz5678a-123b-cdef-456g-hijklmn7890"],
+    "degenerateSeedList": ["67307a7e-681f-4b3b-a71e-16baae4ea11f"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -3975,7 +3975,7 @@
     "speed": 83,
     "bitFarmingRate": 16,
     "digiEvolutionSeedList": ["e8f4c6a1-3d2b-4e5f-9a8c-7b6d5e4f3a2c"],
-    "degenerateSeedList": ["xyz5678a-123b-cdef-456g-hijklmn7890"],
+    "degenerateSeedList": ["67307a7e-681f-4b3b-a71e-16baae4ea11f"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -3998,7 +3998,7 @@
     "speed": 81,
     "bitFarmingRate": 15,
     "digiEvolutionSeedList": ["d9e3b7f2-5c1a-4f6d-8e9b-2a7c6d3f1e4b"],
-    "degenerateSeedList": ["90f5a6b7-c8d9-4f0a-1b2c-4d5e6f7a8b9c"],
+    "degenerateSeedList": ["ff9c95dd-3f18-418a-8a69-5ae3d038dec8"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -4021,7 +4021,7 @@
     "speed": 63,
     "bitFarmingRate": 18,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["90f5a6b7-c8d9-4f0a-1b2c-4d5e6f7a8b9c"],
+    "degenerateSeedList": ["ff9c95dd-3f18-418a-8a69-5ae3d038dec8"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -4044,7 +4044,7 @@
     "speed": 67,
     "bitFarmingRate": 16,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["89e4a5b6-c7d8-4e9f-0a1b-3c4d5e6f7a8b"],
+    "degenerateSeedList": ["866066a0-da28-4baa-ba13-f5259d24e39c"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -4067,7 +4067,7 @@
     "speed": 72,
     "bitFarmingRate": 14,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["8c9d0e1f-a2b3-4c5d-0e6f-7a8b9c0d1e2f"],
+    "degenerateSeedList": ["b61f8053-a7e7-4a30-80ab-64d494ba6c24"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -4090,7 +4090,7 @@
     "speed": 72,
     "bitFarmingRate": 18,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["89e4a5b6-c7d8-4e9f-0a1b-3c4d5e6f7a8b"],
+    "degenerateSeedList": ["866066a0-da28-4baa-ba13-f5259d24e39c"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -4112,8 +4112,8 @@
     "def": 105,
     "speed": 68,
     "bitFarmingRate": 17,
-    "digiEvolutionSeedList": ["9a1b8c3e-4f3d-5f3c-2c7b-1b0e6e5f3c1b"],
-    "degenerateSeedList": ["90f5a6b7-c8d9-4f0a-1b2c-4d5e6f7a8b9c"],
+    "digiEvolutionSeedList": ["d991c296-78da-46e4-82a7-a4ae997f5a98"],
+    "degenerateSeedList": ["ff9c95dd-3f18-418a-8a69-5ae3d038dec8"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -4135,8 +4135,8 @@
     "def": 90,
     "speed": 75,
     "bitFarmingRate": 16,
-    "digiEvolutionSeedList": ["a9b0c1d2-3e4f-5a6b-7c8d-9e0f1a2b3c4d"],
-    "degenerateSeedList": ["f56b02c3-d4e5-4f7a-7b8c-0d1e2f3a4b5c"],
+    "digiEvolutionSeedList": ["b4cf1769-9b50-4aeb-be2b-f0aaaad4d5e0"],
+    "degenerateSeedList": ["a5d75ad2-b8ce-487d-9a15-f26d8b78fce9"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -4159,10 +4159,10 @@
     "speed": 86,
     "bitFarmingRate": 15,
     "digiEvolutionSeedList": [
-      "8c3e6e5f-3c1b-1b0e-5f3c-9a1b4f3d2c7b",
+      "49896ce6-92dd-46ff-af5f-699bc73a9507",
       "bdc9e5c4-49b1-4ee5-9b86-9b52c76b3b6f"
     ],
-    "degenerateSeedList": ["xyz5678a-123b-cdef-456g-hijklmn7890"],
+    "degenerateSeedList": ["67307a7e-681f-4b3b-a71e-16baae4ea11f"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -4184,7 +4184,7 @@
     "def": 72,
     "speed": 90,
     "bitFarmingRate": 16,
-    "digiEvolutionSeedList": ["b0c1d2e3-4f5a-6b7c-8d9e-0f1a2b3c4d5e"],
+    "digiEvolutionSeedList": ["ea1c73e6-dca5-405c-a89d-983e495a89b3"],
     "degenerateSeedList": ["5f6e7d8c-9b0a-4c1d-8e2f-3a4b5c6d7e8f"],
     "evolutionRequirements": [
       {
@@ -4207,7 +4207,7 @@
     "def": 109,
     "speed": 65,
     "bitFarmingRate": 18,
-    "digiEvolutionSeedList": ["5f3c8e2a-a9d2-1b0e-6e5f-3c1b7d5c9a1b"],
+    "digiEvolutionSeedList": ["52112c31-2f69-435d-bc56-69f4be1e508d"],
     "degenerateSeedList": ["178d24e5-f6a7-4b9c-9d0e-2f3a4b5c6d7e"],
     "evolutionRequirements": [
       {
@@ -4230,8 +4230,8 @@
     "def": 79,
     "speed": 86,
     "bitFarmingRate": 19,
-    "digiEvolutionSeedList": ["d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a"],
-    "degenerateSeedList": ["dfa3b4c5-e6f7-4a8b-0c1d-2e3f4a5b6c7d"],
+    "digiEvolutionSeedList": ["846e2f00-60d3-4d9a-bb62-792154622ea6"],
+    "degenerateSeedList": ["0bb2202b-a2a0-45db-b9a9-f1a80b74d682"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -4254,7 +4254,7 @@
     "speed": 79,
     "bitFarmingRate": 16,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["abc1234d-5678-efgh-9101-ijklmnopqrst"],
+    "degenerateSeedList": ["4e6904cc-d3c0-4363-b8a8-bebc1da167ab"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -4277,7 +4277,7 @@
     "speed": 76,
     "bitFarmingRate": 16,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["ghi9012j-3456-kl78-mn90-1234567opqrs"],
+    "degenerateSeedList": ["935f8d3f-e4b9-47d6-b168-a80eb4dae568"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -4391,7 +4391,7 @@
     "def": 98,
     "speed": 75,
     "bitFarmingRate": 17,
-    "digiEvolutionSeedList": ["4f3d1b0e-3c1b-9a1b-6e5f-8c3e2c7b5f3c"],
+    "digiEvolutionSeedList": ["823fd608-feb2-415c-99be-f144a51fbd91"],
     "degenerateSeedList": ["67c2e3f4-a5b6-4c7d-9e0f-1a2b3c4d5e6f"],
     "evolutionRequirements": [
       {
@@ -4414,7 +4414,7 @@
     "def": 91,
     "speed": 72,
     "bitFarmingRate": 18,
-    "digiEvolutionSeedList": ["d8e9f0a1-2b3c-4d5e-6f7a-8b9c0d1e2f3a"],
+    "digiEvolutionSeedList": ["2dd48272-ac88-4367-a6d6-59b6dc3de237"],
     "degenerateSeedList": ["b127ce6f-d6e7-4f8a-9b0c-2d3e4f5a6b7c"],
     "evolutionRequirements": [
       {
@@ -4438,7 +4438,7 @@
     "speed": 89,
     "bitFarmingRate": 19,
     "digiEvolutionSeedList": ["2f601348-8b9f-456e-98e5-b2133a734203"],
-    "degenerateSeedList": ["xyz1234a-5678-bc90-defg-1234567890ab"],
+    "degenerateSeedList": ["ac35cc98-95f2-46d4-bcfb-a1633de6161e"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -4484,7 +4484,7 @@
     "speed": 70,
     "bitFarmingRate": 15,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["uvw1234a-567b-cdef-890g-hijklmn1234"],
+    "degenerateSeedList": ["55121c1b-5f45-4f28-ad8f-d1a5573c3101"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -4529,8 +4529,8 @@
     "def": 99,
     "speed": 73,
     "bitFarmingRate": 19,
-    "digiEvolutionSeedList": ["e3f4a5b6-7c8d-9e0f-1a2b-3c4d5e6f7a8b"],
-    "degenerateSeedList": ["b127c8d9-e0f1-4a2b-3c4d-6e7f8a9b0c1d"],
+    "digiEvolutionSeedList": ["88a7bd2c-77fb-469e-abc8-bd67c4ea5924"],
+    "degenerateSeedList": ["605568d6-840c-4cd0-bdf4-b7d04819f149"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -4552,7 +4552,7 @@
     "def": 102,
     "speed": 67,
     "bitFarmingRate": 16,
-    "digiEvolutionSeedList": ["efabcd76-5432-10fe-dcba-9876543210fe"],
+    "digiEvolutionSeedList": ["2b8a73da-3f0a-4fe3-b6c7-b8c1b06673ba"],
     "degenerateSeedList": ["56b1d2e3-f4a5-4b6c-8d9e-0f1a2b3c4d5e"],
     "evolutionRequirements": [
       {
@@ -4598,7 +4598,7 @@
     "def": 77,
     "speed": 79,
     "bitFarmingRate": 16,
-    "digiEvolutionSeedList": ["8c3e6e5f-2c7b-1b0e-3c1b-a9d25f3c9a1b"],
+    "digiEvolutionSeedList": ["3481f925-3014-43ed-8f3a-715232b923f3"],
     "degenerateSeedList": ["be1f2a3b-c4d5-4e6f-8a9b-0c1d2e3f4a5b"],
     "evolutionRequirements": [
       {
@@ -4621,8 +4621,8 @@
     "def": 97,
     "speed": 88,
     "bitFarmingRate": 17,
-    "digiEvolutionSeedList": ["e7f8a9b0-1c2d-3e4f-5a6b-7c8d9e0f1a2b"],
-    "degenerateSeedList": ["01c6e7f8-b9a0-4c1d-2e3f-4a5b6c7d8e9f"],
+    "digiEvolutionSeedList": ["afaf7d25-99b6-498b-80bb-70cd4a278189"],
+    "degenerateSeedList": ["b1905950-9981-4544-a642-69f106e4889d"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -4646,9 +4646,9 @@
     "bitFarmingRate": 19,
     "digiEvolutionSeedList": [
       "e11a28bb-64a3-49bc-8770-065728c1d8fa",
-      "2c7b9a1b-5f3c-8c3e-3c1b-1b0e4f3d6e5f"
+      "8c0f5a17-16a5-409a-bac1-1c63aeaa611a"
     ],
-    "degenerateSeedList": ["39af46e7-b8c9-4d0e-1f2a-4b5c6d7e8f9a"],
+    "degenerateSeedList": ["05be89f5-5da3-4026-afcf-443ee072e0eb"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -4670,7 +4670,7 @@
     "def": 103,
     "speed": 82,
     "bitFarmingRate": 21,
-    "digiEvolutionSeedList": ["b6c7d8e9-0f1a-2b3c-4d5e-6f7a8b9c0d1e"],
+    "digiEvolutionSeedList": ["a43b028d-860e-4b36-93f9-c3d3b52db64c"],
     "degenerateSeedList": ["3c827fbe-aa3d-4b2b-9cb3-5a6d4fc8e47f"],
     "evolutionRequirements": [
       {
@@ -4693,8 +4693,8 @@
     "def": 99,
     "speed": 70,
     "bitFarmingRate": 38,
-    "digiEvolutionSeedList": ["a5b6c7d8-9e0f-1a2b-3c4d-5e6f7a8b9c0d"],
-    "degenerateSeedList": ["ad0e2f3b-c4d5-4e6f-7a8b-9c0d1e2f3a4b"],
+    "digiEvolutionSeedList": ["a5598598-d29a-4858-8f30-ec5f2acf107b"],
+    "degenerateSeedList": ["7db14a16-d501-421f-a403-f00ef6bdbeda"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -4704,7 +4704,7 @@
     "checked": true
   },
   {
-    "seed": "a1b2c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+    "seed": "09f69899-b91d-4ec5-9a4e-74641b692291",
     "name": "KnightChessmon (White)",
     "img": "/assets/digimons/KnightChessmon (White).webp",
     "rank": "Champion",
@@ -4717,7 +4717,7 @@
     "speed": 79,
     "bitFarmingRate": 34,
     "digiEvolutionSeedList": ["d8bbebbb-b512-4ae6-a499-cfe208cce34b"],
-    "degenerateSeedList": ["9f05ac4d-b4c5-4d6e-7f8a-0b1c2d3e4f5a"],
+    "degenerateSeedList": ["8d68e936-fcc3-478b-bcc7-0160ef26c4df"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -4740,7 +4740,7 @@
     "speed": 81,
     "bitFarmingRate": 34,
     "digiEvolutionSeedList": ["6c121f02-4c0e-46a2-b2c7-f0b602267107"],
-    "degenerateSeedList": ["4ab057f8-c9d0-4e1f-2a3b-5c6d7e8f9a0b"],
+    "degenerateSeedList": ["a05f17f2-7f47-44dd-ae69-b46896e08043"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -4762,8 +4762,8 @@
     "def": 97,
     "speed": 82,
     "bitFarmingRate": 45,
-    "digiEvolutionSeedList": ["e5f6a7b8-9c0d-1e2f-3a4b-5c6d7e8f9a0b"],
-    "degenerateSeedList": ["e45a0912-0b1c-4d2e-3f4a-5b6c7d8e9f0a"],
+    "digiEvolutionSeedList": ["622e72a1-7f0f-465e-b4f4-2ba9fb6a73a0"],
+    "degenerateSeedList": ["d8b07898-1585-41b6-bcde-2f571243f424"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -4786,7 +4786,7 @@
     "speed": 89,
     "bitFarmingRate": 45,
     "digiEvolutionSeedList": ["c77b7715-f25c-4b3a-b77f-199188d1e7f7"],
-    "degenerateSeedList": ["f56b1023-1c2d-4e3f-4a5b-6c7d8e9f0a1b"],
+    "degenerateSeedList": ["489e2e68-fb20-4aa9-bb97-dbfbcf03b2ba"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -4837,7 +4837,7 @@
     "digiEvolutionSeedList": [
       "df67cc96-4a69-4f26-88d6-2c98ccaecfe6",
       "1f8b2c41-6d7a-4f1d-8a79-1d3c2a96c1b7",
-      "cdefab32-10fe-0cba-a876-543210fedabc"
+      "49d973b4-549f-45ff-9c41-e43dcc8b43f6"
     ],
     "degenerateSeedList": ["70dbb38a-690e-45b3-bfc5-eccba64fbd9b"],
     "evolutionRequirements": [
@@ -4863,7 +4863,7 @@
     "bitFarmingRate": 4,
     "digiEvolutionSeedList": [
       "f1b3b3b4-1b3b-4b3b-8b3b-3b3b3b3b3b3b",
-      "2e1f9e6a-4d1c-7b8a-5b3c-1f0c8a7d9d2e"
+      "42528387-e8e5-4a69-adaa-7089aeb620a1"
     ],
     "degenerateSeedList": [
       "70dbb38a-690e-45b3-bfc5-eccba64fbd9b",
@@ -4892,7 +4892,7 @@
     "bitFarmingRate": 20,
     "digiEvolutionSeedList": [
       "c2b04d58-6c74-49ea-902f-b7fc16a1e342",
-      "f7d9e8b3-1c5f-a6f5-d2f8-7d9b0a3ec4b"
+      "03277ace-25c2-404f-b975-f71ac309c8b0"
     ],
     "degenerateSeedList": ["fa3e15c0-4a3f-45e1-b75e-1b2d1b16a377"],
     "evolutionRequirements": [
@@ -4999,7 +4999,7 @@
     "checked": true
   },
   {
-    "seed": "mno7890p-1234-qr56-st78-901234uvwxzy",
+    "seed": "77399b55-9e54-4ed3-8fc5-e20ee7d7dc9a",
     "name": "Mega Kabuterimon (Blue)",
     "img": "/assets/digimons/Megakabuterimon_Blue.webp",
     "rank": "Ultimate",
@@ -5011,8 +5011,8 @@
     "def": 127,
     "speed": 92,
     "bitFarmingRate": 7,
-    "digiEvolutionSeedList": ["stu9012v-3456-wx78-yz90-123456abcdef"],
-    "degenerateSeedList": ["jkl3456m-7890-no12-pq34-567890rstuvw"],
+    "digiEvolutionSeedList": ["63a998c8-6ffd-4727-b324-7bac55f75275"],
+    "degenerateSeedList": ["fdb6bc88-8ab6-4d27-af65-8c26b7df9c86"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -5022,7 +5022,7 @@
     "checked": true
   },
   {
-    "seed": "pqr1234s-5678-tu90-vw12-345678xyzabc",
+    "seed": "5f18edb4-a732-41e4-93e6-e65164091ea6",
     "name": "Mega Kabuterimon (Red)",
     "img": "/assets/digimons/MegaKabuterimon_Red.webp",
     "rank": "Ultimate",
@@ -5034,8 +5034,8 @@
     "def": 121,
     "speed": 94,
     "bitFarmingRate": 7,
-    "digiEvolutionSeedList": ["stu9012v-3456-wx78-yz90-123456abcdef"],
-    "degenerateSeedList": ["jkl3456m-7890-no12-pq34-567890rstuvw"],
+    "digiEvolutionSeedList": ["63a998c8-6ffd-4727-b324-7bac55f75275"],
+    "degenerateSeedList": ["fdb6bc88-8ab6-4d27-af65-8c26b7df9c86"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -5104,7 +5104,7 @@
     "speed": 96,
     "bitFarmingRate": 1,
     "digiEvolutionSeedList": ["5c59bdf1-0288-4a39-bfbc-3d513a6dfe4c"],
-    "degenerateSeedList": ["def5678a-9012-345b-cdef-6789012345gh"],
+    "degenerateSeedList": ["b7569307-7fd2-4ebb-a05f-6b1b30410921"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -5127,7 +5127,7 @@
     "speed": 112,
     "bitFarmingRate": 2,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["hij6789k-0123-456l-mnop-qrstuvwxyz01"],
+    "degenerateSeedList": ["6f43524a-b8fd-4514-b5f9-03dbc7710b85"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -5137,7 +5137,7 @@
     "checked": true
   },
   {
-    "seed": "rst9012u-345v-wxyz-abcd-efghij6789",
+    "seed": "070340f1-64a6-4b2a-a068-47d00e4de3a1",
     "name": "War Growlmon",
     "img": "/assets/digimons/WarGrowlmon.webp",
     "rank": "Ultimate",
@@ -5150,10 +5150,10 @@
     "speed": 92,
     "bitFarmingRate": 5,
     "digiEvolutionSeedList": [
-      "uvw1234x-567y-zabc-defg-hijklmno890",
+      "0d320f41-5176-4d9d-88ea-59b037d5bc6b",
       "7b3a9d1e-2c8f-4a5b-9e6d-1f0c7b8a9d2e"
     ],
-    "degenerateSeedList": ["opq6789r-012s-tuvw-xyza-bcdefg5678"],
+    "degenerateSeedList": ["124e3f9c-0f48-402c-9f29-b92ff742a965"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -5178,7 +5178,7 @@
     "digiEvolutionSeedList": [
       "d9f9c182-731b-4f21-8e2f-167b2d663e34",
       "e6a29e6f-9a3d-41a3-87c3-7c0c573b42de",
-      "cdefab32-10fe-0cba-a876-543210fedabc"
+      "49d973b4-549f-45ff-9c41-e43dcc8b43f6"
     ],
     "degenerateSeedList": ["80c6f1b9-648a-49b3-92c9-01d6e2f4bc8e"],
     "evolutionRequirements": [
@@ -5274,7 +5274,7 @@
     "def": 122,
     "speed": 90,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": ["c7f0b1c5-d2f8-a6f7-e8b3-5d2f9b4c0a3"],
+    "digiEvolutionSeedList": ["2cb8232c-c35f-4a7b-b3a5-fa7ed495e33b"],
     "degenerateSeedList": ["f3a7b9c0-1d5a-4e6b-8c2d-9f0e3a5d7c6b"],
     "evolutionRequirements": [
       {
@@ -5297,7 +5297,7 @@
     "def": 119,
     "speed": 106,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": ["5b3c8a7d-4d1c-1f0c-9e6a-2e1f7b8a9d2e"],
+    "digiEvolutionSeedList": ["5ae9417e-592a-446b-874e-cf46575efd9b"],
     "degenerateSeedList": ["bc8f1703-4769-4c3b-b8a2-e4f1d7ce9a02"],
     "evolutionRequirements": [
       {
@@ -5331,7 +5331,7 @@
     "checked": true
   },
   {
-    "seed": "defabc87-6543-210f-edcb-a9876543210f",
+    "seed": "2645815a-a9a0-4e53-b0a9-28cbfc7d5e61",
     "name": "Piximon",
     "img": "/assets/digimons/Piximon.webp",
     "rank": "Ultimate",
@@ -5343,7 +5343,7 @@
     "def": 108,
     "speed": 112,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": ["e7b1c5d2-f8b3-c7f0-b4e8-a6f7d99b2a"],
+    "digiEvolutionSeedList": ["2d8e7094-e209-49af-ac57-b24ca1a26415"],
     "degenerateSeedList": ["17d0f8b3-4e1a-49c7-9cf2-e03d7a2b5f64"],
     "evolutionRequirements": [
       {
@@ -5354,7 +5354,7 @@
     "checked": true
   },
   {
-    "seed": "9a1b8c3e-4f3d-5f3c-2c7b-1b0e6e5f3c1b",
+    "seed": "d991c296-78da-46e4-82a7-a4ae997f5a98",
     "name": "Digitamamon",
     "img": "/assets/digimons/Digitamamon.webp",
     "rank": "Ultimate",
@@ -5380,7 +5380,7 @@
     "checked": true
   },
   {
-    "seed": "efabcd76-5432-10fe-dcba-9876543210fe",
+    "seed": "2b8a73da-3f0a-4fe3-b6c7-b8c1b06673ba",
     "name": "Mammothmon",
     "img": "/assets/digimons/Mammothmon.webp",
     "rank": "Ultimate",
@@ -5392,7 +5392,7 @@
     "def": 122,
     "speed": 90,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": ["f0a3b4e8-c7f0-d9b4-b1c5-d2f8a6f7e99"],
+    "digiEvolutionSeedList": ["3fbcadc8-da96-4739-b2e9-f285952aa689"],
     "degenerateSeedList": ["c2d84f3e-0b97-402d-9ef1-b38f7051c4ad"],
     "evolutionRequirements": [
       {
@@ -5461,7 +5461,7 @@
     "def": 123,
     "speed": 92,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": ["1f0c2e1f-7b8a-9e6a-4d1c-5b3c8a7d9d2e"],
+    "digiEvolutionSeedList": ["70a0a853-63c1-4f47-855d-e8fb27625ce3"],
     "degenerateSeedList": ["de3f9b70-2c4a-45f1-83bd-ae170d8c9f1e"],
     "evolutionRequirements": [
       {
@@ -5484,7 +5484,7 @@
     "def": 114,
     "speed": 89,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": ["9d2e7b8a-1f0c-4d1c-5b3c-2e1f8a7d9e6a"],
+    "digiEvolutionSeedList": ["610af57b-d922-4d43-bb51-9c884875709e"],
     "degenerateSeedList": ["03de2f94-6a3b-457a-a0f1-fb2c9e57c8a3"],
     "evolutionRequirements": [
       {
@@ -5495,7 +5495,7 @@
     "checked": true
   },
   {
-    "seed": "f9a5d7b2-4e3c-5f6a-8b9d-0c1e2f3a4b5d",
+    "seed": "4aa02e4b-b20a-4faf-9269-0ba18a1e7d08",
     "name": "WarGarurumon (Black)",
     "img": "/assets/digimons/WarGarurumon (Black).webp",
     "rank": "Ultimate",
@@ -5507,7 +5507,7 @@
     "def": 115,
     "speed": 113,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": ["7b8a4d1c-2e1f-9e6a-8a7d-5b3c1f0c9d2e"],
+    "digiEvolutionSeedList": ["186679a0-9fd2-4f85-af92-78085cf216bf"],
     "degenerateSeedList": ["87a9e123-4f23-42b3-9d83-3c7e4382c3d5"],
     "evolutionRequirements": [
       {
@@ -5531,8 +5531,8 @@
     "speed": 95,
     "bitFarmingRate": 21,
     "digiEvolutionSeedList": [
-      "bcdefa43-210f-0ecb-9a87-6543210fedab",
-      "9d2e4d1c-7b8a-1f0c-5b3c-2e1f8a7d9e6a"
+      "854269a7-33fa-47ca-94b7-a07e8c4da1bf",
+      "53885aa6-dd9b-4667-b582-422d76781132"
     ],
     "degenerateSeedList": ["c4a7b9d2-1e5f-4c8a-9b3e-6d0f2a5e7c1b"],
     "evolutionRequirements": [
@@ -5570,7 +5570,7 @@
     "checked": true
   },
   {
-    "seed": "c3d4e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
+    "seed": "5d236da1-b31c-445d-b819-fa8154273dd6",
     "name": "Garudamon",
     "img": "/assets/digimons/Garudamon.webp",
     "rank": "Ultimate",
@@ -5582,7 +5582,7 @@
     "def": 99,
     "speed": 115,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": ["9d2e8a7d-5b3c-1f0c-2e1f-7b8a4d1c9e6a"],
+    "digiEvolutionSeedList": ["388ffee3-92ff-453b-bc5d-fae5d69801d0"],
     "degenerateSeedList": ["e3b9c6f0-2d5a-4e7b-8c1d-9f0a5e3d7b2c"],
     "evolutionRequirements": [
       {
@@ -5639,7 +5639,7 @@
     "checked": true
   },
   {
-    "seed": "f6a7b8c9-0d1e-2f3a-4b5c-6d7e8f9a0b1c",
+    "seed": "707cf9e9-48a1-4087-87d9-f3c53447e100",
     "name": "Datamon",
     "img": "/assets/digimons/Datamon.webp",
     "rank": "Ultimate",
@@ -5651,7 +5651,7 @@
     "def": 116,
     "speed": 109,
     "bitFarmingRate": 19,
-    "digiEvolutionSeedList": ["8a7d9d2e-1f0c-4d1c-5b3c-9e6a2e1f0b9a"],
+    "digiEvolutionSeedList": ["d31306f8-a586-461e-ac6a-03774baa9f40"],
     "degenerateSeedList": ["e3a5c9b7-3d1f-4e6a-8c2b-9f0d5a3e7b6c"],
     "evolutionRequirements": [
       {
@@ -5674,7 +5674,7 @@
     "def": 124,
     "speed": 110,
     "bitFarmingRate": 21,
-    "digiEvolutionSeedList": ["a6f7d99b-2a6f-8b1c-5d2f-e8c7f0a3b4e"],
+    "digiEvolutionSeedList": ["03598e86-91f9-4afa-ad89-6e4bc8511eac"],
     "degenerateSeedList": ["b9c0f3a7-2d5a-4e6b-8c1d-9f0e3a5d7b2c"],
     "evolutionRequirements": [
       {
@@ -5711,7 +5711,7 @@
     "checked": true
   },
   {
-    "seed": "5f3c8e2a-6e5f-9a1b-2c8e-1b0e7d5c4f3d",
+    "seed": "36fad7a1-ec3c-4781-bc2b-db41f0d79e01",
     "name": "Paildramon",
     "img": "/assets/digimons/Paildramon.webp",
     "rank": "Ultimate",
@@ -5737,7 +5737,7 @@
     "checked": true
   },
   {
-    "seed": "5f3c9a1b-1b0e-6e5f-8c3e-4f3d2c7b3c1b",
+    "seed": "9799592e-7012-4855-b1a8-2f5d1e27e196",
     "name": "Dinobeemon",
     "img": "/assets/digimons/Dinobeemon.webp",
     "rank": "Ultimate",
@@ -5749,7 +5749,7 @@
     "def": 101,
     "speed": 119,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": ["5b3c8a7d-2e1f-9d2e-4d1c-7b8a1f0c9e6a"],
+    "digiEvolutionSeedList": ["e40a8d93-221c-4bd5-8bec-e574d0c1b087"],
     "degenerateSeedList": ["9f207e7b-2e92-4cfc-8e44-94cf25e0fdb5"],
     "evolutionRequirements": [
       {
@@ -5760,7 +5760,7 @@
     "checked": true
   },
   {
-    "seed": "e1f2a3b4-5c6d-7e8f-9a0b-1c2d3e4f5a6b",
+    "seed": "952a2766-db94-4c37-9c25-efee8bfdc9a3",
     "name": "Antylamon",
     "img": "/assets/digimons/Antylamon.webp",
     "rank": "Ultimate",
@@ -5775,7 +5775,7 @@
     "digiEvolutionSeedList": [
       "a7b9c2d3-4e5f-4a8b-9c1d-2e3f4a5b6c7d",
       "b8c1d3e4-5f6a-4b9c-8d2e-3f4a5b6c7d8e",
-      "8a7d9e6a-1f0c-5b3c-9d2e-7b8a4d1c2e1f"
+      "e3006fe9-b0b7-403c-85f6-109da77d4dd2"
     ],
     "degenerateSeedList": ["e01c59b2-8f7a-49f2-914d-6ac9d3ef2b84"],
     "evolutionRequirements": [
@@ -5799,7 +5799,7 @@
     "def": 115,
     "speed": 140,
     "bitFarmingRate": 35,
-    "digiEvolutionSeedList": ["9d2e6c5b-8a7d-2e1f-9e6d-1f0c4d1c7b8a"],
+    "digiEvolutionSeedList": ["1c8626b0-da18-489f-83ee-83d27199fe02"],
     "degenerateSeedList": ["f604d614-12f3-4f68-8582-779e561fcd91"],
     "evolutionRequirements": [
       {
@@ -5810,7 +5810,7 @@
     "checked": true
   },
   {
-    "seed": "f2a3b4c5-6d7e-8f9a-0b1c-2d3e4f5a6b7c",
+    "seed": "9288669d-6431-4bbf-9ffd-916280cd1c3f",
     "name": "Mummymon",
     "img": "/assets/digimons/Mummymon.webp",
     "rank": "Ultimate",
@@ -5822,7 +5822,7 @@
     "def": 116,
     "speed": 97,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": ["4d1c8b2f-9e6a-5b3c-8a7d-2e1f0b9a6c5"],
+    "digiEvolutionSeedList": ["fe69ceaa-854f-450d-b494-386b263b24a5"],
     "degenerateSeedList": ["c6b9e0f3-2a5d-4e7b-8c1d-9f0a3e5d7b2c"],
     "evolutionRequirements": [
       {
@@ -5833,7 +5833,7 @@
     "checked": true
   },
   {
-    "seed": "a3b4c5d6-7e8f-9a0b-1c2d-3e4f5a6b7c8d",
+    "seed": "1df7c621-07e1-4db9-9922-b7664b6306a0",
     "name": "Rapidmon",
     "img": "/assets/digimons/Rapidmon.webp",
     "rank": "Ultimate",
@@ -5845,7 +5845,7 @@
     "def": 106,
     "speed": 109,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": ["7b8a9d2e-5b3c-9e6d-2e1f-1f0c8a7d4d1c"],
+    "digiEvolutionSeedList": ["601ab91e-bae5-4177-bc6e-3974fd13ca2c"],
     "degenerateSeedList": ["c9f0e3a7-1d5b-4e6a-8c2b-9f3a5e0d7b6c"],
     "evolutionRequirements": [
       {
@@ -5856,7 +5856,7 @@
     "checked": true
   },
   {
-    "seed": "b4c5d6e7-8f9a-0b1c-2d3e-4f5a6b7c8d9e",
+    "seed": "aa2232d5-12ee-4538-b7d3-63d95977137a",
     "name": "Taomon",
     "img": "/assets/digimons/Taomon.webp",
     "rank": "Ultimate",
@@ -5868,7 +5868,7 @@
     "def": 109,
     "speed": 116,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": ["4d1c8b2f-1f0c-7b8a-9d2e-5b3c2e1f9e6a"],
+    "digiEvolutionSeedList": ["70534944-b963-476c-92e0-8cd37e6cf32d"],
     "degenerateSeedList": ["b3c9f0e7-1a5d-4e6b-8c2b-9f0d5a3e7c6b"],
     "evolutionRequirements": [
       {
@@ -5879,7 +5879,7 @@
     "checked": true
   },
   {
-    "seed": "c5d6e7f8-9a0b-1c2d-3e4f-5a6b7c8d9e0f",
+    "seed": "1ec3c641-3763-4c9e-8834-26f7aaf3fd09",
     "name": "Parrotmon",
     "img": "/assets/digimons/Parrotmon.webp",
     "rank": "Ultimate",
@@ -5891,7 +5891,7 @@
     "def": 104,
     "speed": 108,
     "bitFarmingRate": 19,
-    "digiEvolutionSeedList": ["7b8a5b3c-8a7d-1f0c-9d2e-2e1f9e6a4d1c"],
+    "digiEvolutionSeedList": ["a6d2f9a9-f8e8-4bc4-b137-0db50a8fa500"],
     "degenerateSeedList": ["ae4c3d8f-0a9b-4950-8c3d-2b9f1f0871e5"],
     "evolutionRequirements": [
       {
@@ -5902,7 +5902,7 @@
     "checked": true
   },
   {
-    "seed": "d6e7f8a9-0b1c-2d3e-4f5a-6b7c8d9e0f1a",
+    "seed": "6c695951-a9dc-4fea-aab4-792814356e9f",
     "name": "Infermon",
     "img": "/assets/digimons/Infermon.webp",
     "rank": "Ultimate",
@@ -5915,8 +5915,8 @@
     "speed": 102,
     "bitFarmingRate": 20,
     "digiEvolutionSeedList": [
-      "1f0c9d2e-2e1f-9e6a-4d1c-7b8a5b3c8a7d",
-      "4d1c9e6a-2e1f-7b8a-1f0c-5b3c8a7d9d2e"
+      "fb4c9abd-426d-44aa-b06f-6a3dfa21196a",
+      "86d24d95-9244-48cd-94e0-be4e74f9ddf1"
     ],
     "degenerateSeedList": ["a5d7b9c0-2f1a-4e6b-8c3d-9f0a5e3d7b2c"],
     "evolutionRequirements": [
@@ -5928,7 +5928,7 @@
     "checked": true
   },
   {
-    "seed": "e7f8a9b0-1c2d-3e4f-5a6b-7c8d9e0f1a2b",
+    "seed": "afaf7d25-99b6-498b-80bb-70cd4a278189",
     "name": "BlackRapidmon",
     "img": "/assets/digimons/BlackRapidmon.webp",
     "rank": "Ultimate",
@@ -5940,7 +5940,7 @@
     "def": 109,
     "speed": 108,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": ["7d9b4c5d-2f8b-1e3a-0a3e-9b4c6f5d8b2"],
+    "digiEvolutionSeedList": ["f5eee0ae-a180-46a7-a6bb-70d72f0e78a5"],
     "degenerateSeedList": ["c7e0f2d9-b5a3-4b18-91f2-8d9c0e7a6f13"],
     "evolutionRequirements": [
       {
@@ -5951,7 +5951,7 @@
     "checked": true
   },
   {
-    "seed": "f8a9b0c1-2d3e-4f5a-6b7c-8d9e0f1a2b3c",
+    "seed": "f525814d-b2a1-4988-b767-ccb7cdb61454",
     "name": "Pandamon",
     "img": "/assets/digimons/Pandamon.webp",
     "rank": "Ultimate",
@@ -5974,7 +5974,7 @@
     "checked": true
   },
   {
-    "seed": "a9b0c1d2-3e4f-5a6b-7c8d-9e0f1a2b3c4d",
+    "seed": "b4cf1769-9b50-4aeb-be2b-f0aaaad4d5e0",
     "name": "Marine Devimon",
     "img": "/assets/digimons/Marine_Devimon.webp",
     "rank": "Ultimate",
@@ -5997,7 +5997,7 @@
     "checked": true
   },
   {
-    "seed": "b0c1d2e3-4f5a-6b7c-8d9e-0f1a2b3c4d5e",
+    "seed": "ea1c73e6-dca5-405c-a89d-983e495a89b3",
     "name": "Karatenmon",
     "img": "/assets/digimons/Karatenmon.webp",
     "rank": "Ultimate",
@@ -6020,7 +6020,7 @@
     "checked": true
   },
   {
-    "seed": "c1d2e3f4-5a6b-7c8d-9e0f-1a2b3c4d5e6f",
+    "seed": "3806f254-dcf8-44b7-9384-edddef3c6bba",
     "name": "Sinduramon",
     "img": "/assets/digimons/Sinduramon.webp",
     "rank": "Ultimate",
@@ -6032,7 +6032,7 @@
     "def": 125,
     "speed": 107,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": ["9d2e5b3c-2e1f-7b8a-4d1c-1f0c8a7d9e6a"],
+    "digiEvolutionSeedList": ["d182efd5-f240-4aaf-bb6b-3ef0afa6bc43"],
     "degenerateSeedList": ["12bfe8d3-7c6e-4e0f-9a2b-f1d3c87b20f5"],
     "evolutionRequirements": [
       {
@@ -6043,7 +6043,7 @@
     "checked": true
   },
   {
-    "seed": "d2e3f4a5-6b7c-8d9e-0f1a-2b3c4d5e6f7a",
+    "seed": "11431f1e-5428-4cd4-a0de-559e4e7e0f64",
     "name": "Pipismon",
     "img": "/assets/digimons/Pipismon.webp",
     "rank": "Ultimate",
@@ -6055,7 +6055,7 @@
     "def": 95,
     "speed": 112,
     "bitFarmingRate": 19,
-    "digiEvolutionSeedList": ["bcdefa43-210f-0ecb-9a87-6543210fedab"],
+    "digiEvolutionSeedList": ["854269a7-33fa-47ca-94b7-a07e8c4da1bf"],
     "degenerateSeedList": ["c6e9a3b7-1f5d-4e8a-9c2b-0d3a5e7f9b6c"],
     "evolutionRequirements": [
       {
@@ -6066,7 +6066,7 @@
     "checked": true
   },
   {
-    "seed": "1b0e4f3d-5f3c-2c7b-9a1b-8c3e6e5f3c1b",
+    "seed": "0cd5fdf6-ff56-4196-92f7-79f0c32bcc31",
     "name": "DoruGreymon",
     "img": "/assets/digimons/DoruGreymon.webp",
     "rank": "Ultimate",
@@ -6078,7 +6078,7 @@
     "def": 122,
     "speed": 104,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": ["5b3c8a7d-9e6a-2e1f-1f0c-7b8a4d1c9d2e"],
+    "digiEvolutionSeedList": ["bd9ff932-4112-4307-bbbd-36aa78bc130d"],
     "degenerateSeedList": ["e7b9c0f3-1a5d-4e6b-8c2d-9f0a3e5d7c6b"],
     "evolutionRequirements": [
       {
@@ -6089,7 +6089,7 @@
     "checked": true
   },
   {
-    "seed": "8c3e6e5f-3c1b-1b0e-5f3c-9a1b4f3d2c7b",
+    "seed": "49896ce6-92dd-46ff-af5f-699bc73a9507",
     "name": "Divermon",
     "img": "/assets/digimons/Divermon.webp",
     "rank": "Ultimate",
@@ -6112,7 +6112,7 @@
     "checked": true
   },
   {
-    "seed": "2c7b9a1b-5f3c-8c3e-3c1b-1b0e4f3d6e5f",
+    "seed": "8c0f5a17-16a5-409a-bac1-1c63aeaa611a",
     "name": "Kimeramon",
     "img": "/assets/digimons/Kimeramon.webp",
     "rank": "Ultimate",
@@ -6125,7 +6125,7 @@
     "speed": 111,
     "bitFarmingRate": 22,
     "digiEvolutionSeedList": [
-      "8a7d9d2e-5b3c-1f0c-2e1f-7b8a4d1c9e6a",
+      "cb130bef-eec8-4f09-8b50-f5c66118fe5f",
       "37d122c0-59c8-4638-a8f6-75972a7a9cd6"
     ],
     "degenerateSeedList": ["56a2e212-2c89-46c4-b7b4-36bba1dbd7b7"],
@@ -6138,7 +6138,7 @@
     "checked": true
   },
   {
-    "seed": "6e5f4f3d-1b0e-3c1b-8c3e-5f3c9a1b2c7b",
+    "seed": "60205c40-0925-406f-93aa-511df01826bf",
     "name": "Triceramon",
     "img": "/assets/digimons/Triceramon.webp",
     "rank": "Ultimate",
@@ -6150,7 +6150,7 @@
     "def": 127,
     "speed": 96,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": ["1f0c7b8a-9d2e-9e6a-8a7d-4d1c5b3c2e1f"],
+    "digiEvolutionSeedList": ["8e081427-8054-4a05-bfa0-200d5f471a8b"],
     "degenerateSeedList": ["d7e9f1a3-5b2c-4d8a-9c6e-1f0b3a5d7e2c"],
     "evolutionRequirements": [
       {
@@ -6161,7 +6161,7 @@
     "checked": true
   },
   {
-    "seed": "9a1b2c7b-8c3e-6e5f-4f3d-1b0e3c1b5f3c",
+    "seed": "b5a7b775-04b8-436a-b17a-29f7307c682e",
     "name": "Deramon",
     "img": "/assets/digimons/Deramon.webp",
     "rank": "Ultimate",
@@ -6184,7 +6184,7 @@
     "checked": true
   },
   {
-    "seed": "5f3c3c1b-8c3e-9a1b-2c7b-1b0e6e5f4f3d",
+    "seed": "de7c5e6e-92fc-4f99-98b1-abe628acedd2",
     "name": "Silphymon",
     "img": "/assets/digimons/Silphymon.webp",
     "rank": "Ultimate",
@@ -6196,7 +6196,7 @@
     "def": 101,
     "speed": 117,
     "bitFarmingRate": 21,
-    "digiEvolutionSeedList": ["9b4c6f5d-8b2e-7d9b-e8c7-f0a3a1c5d2f"],
+    "digiEvolutionSeedList": ["e30d7b71-6e51-45af-a30e-b53b4a04735a"],
     "degenerateSeedList": ["d7b9c0e3-1a5f-4e6b-8c2d-9f0a3e5d7c6b"],
     "evolutionRequirements": [
       {
@@ -6207,7 +6207,7 @@
     "checked": true
   },
   {
-    "seed": "4f3d6e5f-1b0e-2c7b-5f3c-8c3e9a1b3c1b",
+    "seed": "4b81a3d1-02d9-433b-8591-eeef611f6a02",
     "name": "SuperStarmon",
     "img": "/assets/digimons/SuperStarmon.webp",
     "rank": "Ultimate",
@@ -6230,7 +6230,7 @@
     "checked": true
   },
   {
-    "seed": "2c7b4f3d-8c3e-9a1b-3c1b-1b0e6e5f5f3c",
+    "seed": "fcda1569-46f3-4ccd-8838-a55e447a005c",
     "name": "BlackWarGrowlmon",
     "img": "/assets/digimons/BlackWarGrowlmon.webp",
     "rank": "Ultimate",
@@ -6242,8 +6242,8 @@
     "def": 110,
     "speed": 91,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": ["c1a7e8b3-5d2f-4e9a-8b1c-6f0a3e7d9b4"],
-    "degenerateSeedList": ["opq6789r-012s-tuvw-xyza-bcdefg5678"],
+    "digiEvolutionSeedList": ["859bce6e-ced6-4864-8a32-b4690e499b37"],
+    "degenerateSeedList": ["124e3f9c-0f48-402c-9f29-b92ff742a965"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -6265,7 +6265,7 @@
     "def": 122,
     "speed": 90,
     "bitFarmingRate": 21,
-    "digiEvolutionSeedList": ["5f3c2c7b-1b0e-6e5f-4f3d-8c3e9a1b3c1b"],
+    "digiEvolutionSeedList": ["b39a9a43-d7b6-4c24-91f2-0ebb53dd8258"],
     "degenerateSeedList": ["76c5f4e2-1a0b-42f7-9e4d-b3f0d8a1c2e6"],
     "evolutionRequirements": [
       {
@@ -6312,7 +6312,7 @@
     "speed": 94,
     "bitFarmingRate": 20,
     "digiEvolutionSeedList": [
-      "9d2e8a7d-5b3c-1f0c-2e1f-7b8a4d1c9e6a",
+      "388ffee3-92ff-453b-bc5d-fae5d69801d0",
       "f6a8b1c2-3d4e-4f7a-9b8c-1d2e3f4a5b6c"
     ],
     "degenerateSeedList": ["d7b9c0e3-1a5f-4e6b-8c2d-9f0a3e5d7c6b"],
@@ -6337,7 +6337,7 @@
     "def": 96,
     "speed": 110,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": ["9b4c6f5d-8b2e-7d9b-e8c7-f0a3a1c5d2f"],
+    "digiEvolutionSeedList": ["e30d7b71-6e51-45af-a30e-b53b4a04735a"],
     "degenerateSeedList": ["e3b9c6f0-2d5a-4e7b-8c1d-9f0a5e3d7b2c"],
     "evolutionRequirements": [
       {
@@ -6406,7 +6406,7 @@
     "def": 99,
     "speed": 118,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": ["2e1f5b3c-1f0c-9d2e-7b8a-4d1c8a7d9e6a"],
+    "digiEvolutionSeedList": ["f0bc93ba-8d0f-478a-b731-671cefb2b5c9"],
     "degenerateSeedList": ["19f74d0b-2eac-4398-b7d3-ecf25198a302"],
     "evolutionRequirements": [
       {
@@ -6430,8 +6430,8 @@
     "speed": 118,
     "bitFarmingRate": 21,
     "digiEvolutionSeedList": [
-      "2e1f4d1c-7b8a-9d2e-5b3c-1f0c8a7d9e6a",
-      "1f0c9e6a-5b3c-2e1f-9d2e-7b8a4d1c8a7d"
+      "02cb1173-7e3d-477a-b388-6e46acb9aa65",
+      "4e9ee336-86e1-43aa-bb62-93a10f82a0f6"
     ],
     "degenerateSeedList": [
       "b3c9f0e7-1a5d-4e6b-8c2b-9f0d5a3e7c6b",
@@ -6446,7 +6446,7 @@
     "checked": true
   },
   {
-    "seed": "7d5c4f3d-1b0e-8c3e-f8a7-a9d29e5f2c7b",
+    "seed": "978dfa7e-4c2e-4390-b40f-ac1cd8f0bbea",
     "name": "Lilamon",
     "img": "/assets/digimons/Lilamon.webp",
     "rank": "Ultimate",
@@ -6459,8 +6459,8 @@
     "speed": 117,
     "bitFarmingRate": 20,
     "digiEvolutionSeedList": [
-      "abcdef54-3210-0fec-b9a8-76543210feda",
-      "2e1f0b9a-4a5b-1f0c-7b8a-9e6d8a7d9d2e"
+      "b54f3c5a-6af7-46de-abcb-92e4521d2a0c",
+      "70dc0025-a6fd-4659-8a6d-77f8ce051054"
     ],
     "degenerateSeedList": ["2d83fa14-b1ae-44fa-9a1c-046af2d2306c"],
     "evolutionRequirements": [
@@ -6472,7 +6472,7 @@
     "checked": true
   },
   {
-    "seed": "a6f79b4c-0a3e-d2f8-b1c5-e8b3c7f07d9",
+    "seed": "e7db2137-9d39-40f4-9fef-8ef42bcff938",
     "name": "Shadramon",
     "img": "/assets/digimons/Shadramon.webp",
     "rank": "Ultimate",
@@ -6495,7 +6495,7 @@
     "checked": true
   },
   {
-    "seed": "9e5f2c7b-8c3e-5f3c-3c1b-6e5f1a0b4a6b",
+    "seed": "68de0bbe-a11d-4452-bdb6-f6b4478d06ad",
     "name": "Matadormon",
     "img": "/assets/digimons/Matadormon.webp",
     "rank": "Ultimate",
@@ -6518,7 +6518,7 @@
     "checked": true
   },
   {
-    "seed": "4a6b9c3e-2c7b-7d5c-a9d2-1b0e8c3e5f3c",
+    "seed": "d9652444-162c-4443-8001-d29b9d23c57b",
     "name": "Kabukimon",
     "img": "/assets/digimons/Kabukimon.webp",
     "rank": "Ultimate",
@@ -6541,7 +6541,7 @@
     "checked": true
   },
   {
-    "seed": "5f3c8e2a-a9d2-1b0e-6e5f-3c1b7d5c9a1b",
+    "seed": "52112c31-2f69-435d-bc56-69f4be1e508d",
     "name": "Cherrymon",
     "img": "/assets/digimons/Cherrymon.webp",
     "rank": "Ultimate",
@@ -6564,7 +6564,7 @@
     "checked": true
   },
   {
-    "seed": "9a1b7d5c-6e5f-5f3c-8c3e-a9d21b0e4f3d",
+    "seed": "8f22778f-d315-42f9-8eb9-83c63c8603ba",
     "name": "Garbagemon",
     "img": "/assets/digimons/Garbagemon.webp",
     "rank": "Ultimate",
@@ -6587,7 +6587,7 @@
     "checked": true
   },
   {
-    "seed": "1b0e4f3d-a9d2-9a1b-2c7b-8c3e6e5f5f3c",
+    "seed": "9450b4b1-b3e2-4b66-9055-b2923d2e6236",
     "name": "Lucemon Chaos Mode",
     "img": "/assets/digimons/Lucemon_Chaos_Mode.webp",
     "rank": "Ultimate",
@@ -6610,7 +6610,7 @@
     "checked": true
   },
   {
-    "seed": "8c3e6e5f-2c7b-1b0e-3c1b-a9d25f3c9a1b",
+    "seed": "3481f925-3014-43ed-8f3a-715232b923f3",
     "name": "MameTyramon",
     "img": "/assets/digimons/MameTyramon.webp",
     "rank": "Ultimate",
@@ -6633,7 +6633,7 @@
     "checked": true
   },
   {
-    "seed": "5f3c9a1b-3c1b-8c3e-6e5f-1b0e2c7b4f3d",
+    "seed": "e88b06f2-180d-4cb7-926a-8c215d717e5b",
     "name": "Giromon",
     "img": "/assets/digimons/Giromon.webp",
     "rank": "Ultimate",
@@ -6656,7 +6656,7 @@
     "checked": true
   },
   {
-    "seed": "2c7b4f3d-1b0e-6e5f-a9d2-8c3e9a1b5f3c",
+    "seed": "b651ef8e-ee49-40e6-8854-434a5e6217db",
     "name": "Vademon",
     "img": "/assets/digimons/Vademon.webp",
     "rank": "Ultimate",
@@ -6668,7 +6668,7 @@
     "def": 119,
     "speed": 92,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": ["9d2e8a7d-5b3c-1f0c-7b8a-2e1f4d1c9e6a"],
+    "digiEvolutionSeedList": ["259b5023-6f5c-4543-879d-c5e73f09680d"],
     "degenerateSeedList": [],
     "evolutionRequirements": [
       {
@@ -6679,7 +6679,7 @@
     "checked": true
   },
   {
-    "seed": "9a1b5f3c-8c3e-2c7b-3c1b-1b0e6e5f4f3d",
+    "seed": "86661f39-b878-4321-9533-0b95d434ef43",
     "name": "MetalTyrannomon",
     "img": "/assets/digimons/MetalTyrannomon.webp",
     "rank": "Ultimate",
@@ -6705,7 +6705,7 @@
     "checked": true
   },
   {
-    "seed": "4f3d1b0e-3c1b-9a1b-6e5f-8c3e2c7b5f3c",
+    "seed": "823fd608-feb2-415c-99be-f144a51fbd91",
     "name": "Tekkamon",
     "img": "/assets/digimons/Tekkamon.webp",
     "rank": "Ultimate",
@@ -6717,7 +6717,7 @@
     "def": 115,
     "speed": 104,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": ["fabcde65-4321-0fed-cba9-876543210fed"],
+    "digiEvolutionSeedList": ["30a2feb7-e2c9-4094-aa4e-b3b307a44581"],
     "degenerateSeedList": ["8b7f0e3d-3c2a-4671-b9f1-e0d5a4c78b20"],
     "evolutionRequirements": [
       {
@@ -6728,7 +6728,7 @@
     "checked": true
   },
   {
-    "seed": "5f3c2c7b-8c3e-4f3d-1b0e-9a1b6e5f3c1b",
+    "seed": "b7d29106-ee09-4b38-913f-cdb1ef06b347",
     "name": "Big Mamemon",
     "img": "/assets/digimons/Big Mamemon.webp",
     "rank": "Ultimate",
@@ -6751,7 +6751,7 @@
     "checked": true
   },
   {
-    "seed": "5f3c9a1b-6e5f-1b0e-4f3d-8c3e2c7b3c1b",
+    "seed": "1b765eb3-b253-4266-a449-f48cc1713dac",
     "name": "EXTyrannomon",
     "img": "/assets/digimons/ExTyrannomon.webp",
     "rank": "Ultimate",
@@ -6774,7 +6774,7 @@
     "checked": true
   },
   {
-    "seed": "e3f4a5b6-7c8d-9e0f-1a2b-3c4d5e6f7a8b",
+    "seed": "88a7bd2c-77fb-469e-abc8-bd67c4ea5924",
     "name": "Vermilimon",
     "img": "/assets/digimons/Vermilimon.webp",
     "rank": "Ultimate",
@@ -6797,7 +6797,7 @@
     "checked": true
   },
   {
-    "seed": "f4a5b6c7-8d9e-0f1a-2b3c-4d5e6f7a8b9c",
+    "seed": "01cf1fc3-911e-4a79-a14a-c2de553edecb",
     "name": "Phantomon",
     "img": "/assets/digimons/Phantomon.webp",
     "rank": "Ultimate",
@@ -6810,8 +6810,8 @@
     "speed": 115,
     "bitFarmingRate": 20,
     "digiEvolutionSeedList": [
-      "5b3c2e1f-8a7d-9d2e-1f0c-7b8a9e6a4d1c",
-      "2e1f7b8a-9d2e-8a7d-4d1c-1f0c5b3c9e6a"
+      "cd02d04b-219d-4bc9-a92a-7580da263ac0",
+      "8f9dec20-c882-4aba-8689-c408e5422d95"
     ],
     "degenerateSeedList": ["d9a3c6e0-2f5b-4e7a-8c1b-9f0d5a3e7b2c"],
     "evolutionRequirements": [
@@ -6823,7 +6823,7 @@
     "checked": true
   },
   {
-    "seed": "a5b6c7d8-9e0f-1a2b-3c4d-5e6f7a8b9c0d",
+    "seed": "a5598598-d29a-4858-8f30-ec5f2acf107b",
     "name": "Vajiramon",
     "img": "/assets/digimons/Vajiramon.webp",
     "rank": "Ultimate",
@@ -6836,7 +6836,7 @@
     "speed": 93,
     "bitFarmingRate": 20,
     "digiEvolutionSeedList": [
-      "e8c7f0d9-a2b6-f0a3-7d9b-4c5d2f8b1e3",
+      "c461ea05-0599-49d9-81cc-e2f27373b763",
       "6c3b5d02-1a9b-4b1d-a8ee-84a6eebc3e1a"
     ],
     "degenerateSeedList": ["1449e5fc-0412-44f2-8b2d-b005419ea5c6"],
@@ -6849,7 +6849,7 @@
     "checked": true
   },
   {
-    "seed": "b6c7d8e9-0f1a-2b3c-4d5e-6f7a8b9c0d1e",
+    "seed": "a43b028d-860e-4b36-93f9-c3d3b52db64c",
     "name": "AeroVeedramon",
     "img": "/assets/digimons/AeroVeedramon.webp",
     "rank": "Ultimate",
@@ -6861,7 +6861,7 @@
     "def": 126,
     "speed": 109,
     "bitFarmingRate": 21,
-    "digiEvolutionSeedList": ["8a7d4d1c-9e6a-2e1f-5b3c-1f0c7b8a9d2e"],
+    "digiEvolutionSeedList": ["48756847-94ea-46e6-aae4-ed75c0dd8e1f"],
     "degenerateSeedList": ["c7b9e0f3-2d5a-4e6b-8c1d-9f0e3a5d7b2c"],
     "evolutionRequirements": [
       {
@@ -6872,7 +6872,7 @@
     "checked": true
   },
   {
-    "seed": "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
+    "seed": "64eecdac-3722-4999-941c-eb21a60fd301",
     "name": "GrapLeomon",
     "img": "/assets/digimons/GrapLeomon.webp",
     "rank": "Ultimate",
@@ -6885,8 +6885,8 @@
     "speed": 107,
     "bitFarmingRate": 21,
     "digiEvolutionSeedList": [
-      "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
-      "7b8a4d1c-9e6a-2e1f-8a7d-1f0c5b3c9d2e"
+      "89a74286-d589-4f93-ae34-d456bf9e693f",
+      "600cfcc7-2b9e-4be1-b0f7-81cf1ef9a70c"
     ],
     "degenerateSeedList": ["a7c0f3e9-1d5b-4e6a-8c2b-9f3a5e0d7b6c"],
     "evolutionRequirements": [
@@ -6898,7 +6898,7 @@
     "checked": true
   },
   {
-    "seed": "d8e9f0a1-2b3c-4d5e-6f7a-8b9c0d1e2f3a",
+    "seed": "2dd48272-ac88-4367-a6d6-59b6dc3de237",
     "name": "Knightmon",
     "img": "/assets/digimons/Knightmon.webp",
     "rank": "Ultimate",
@@ -6910,7 +6910,7 @@
     "def": 124,
     "speed": 90,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": ["9d2e6c5b-8a7d-2e1f-9e6d-1f0c4d1c7b8a"],
+    "digiEvolutionSeedList": ["1c8626b0-da18-489f-83ee-83d27199fe02"],
     "degenerateSeedList": ["3e04bb4b-6e1a-4c57-9f7d-bd9e21048c5d"],
     "evolutionRequirements": [
       {
@@ -6921,7 +6921,7 @@
     "checked": true
   },
   {
-    "seed": "e9f0a1b2-3c4d-5e6f-7a8b-9c0d1e2f3a4b",
+    "seed": "db096107-34c6-4f22-b8a1-8b5c7265edb2",
     "name": "Brachiomon",
     "img": "/assets/digimons/Brachiomon.webp",
     "rank": "Ultimate",
@@ -6933,7 +6933,7 @@
     "def": 120,
     "speed": 87,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": ["9e6a4d1c-7b8a-1f0c-8a7d-5b3c2e1f9d2e"],
+    "digiEvolutionSeedList": ["f6c16216-77a5-4b56-ae37-1f9e33b3abfd"],
     "degenerateSeedList": ["93c1a5e7-1f0d-48b9-aeb2-6f8c5d4e3b1a"],
     "evolutionRequirements": [
       {
@@ -6944,7 +6944,7 @@
     "checked": true
   },
   {
-    "seed": "f0a1b2c3-4d5e-6f7a-8b9c-0d1e2f3a4b5c",
+    "seed": "2b4b8b25-e810-45a2-a7f1-3e6642b50352",
     "name": "Allomon",
     "img": "/assets/digimons/Allomon.webp",
     "rank": "Ultimate",
@@ -6990,7 +6990,7 @@
     "checked": true
   },
   {
-    "seed": "b2c3d4e5-6f7a-8b9c-0d1e-2f3a4b5c6d7e",
+    "seed": "965f036a-e7a9-4a59-b192-db5b57636af8",
     "name": "Shaujinmon",
     "img": "/assets/digimons/Shaujinmon.webp",
     "rank": "Ultimate",
@@ -7025,8 +7025,8 @@
     "def": 102,
     "speed": 109,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": ["1f0c5b3c-9d2e-8a7d-2e1f-7b8a4d1c9e6a"],
-    "degenerateSeedList": ["a1b2c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d"],
+    "digiEvolutionSeedList": ["6813bc53-5bea-424c-8dc1-ec0a1e7f381c"],
+    "degenerateSeedList": ["09f69899-b91d-4ec5-9a4e-74641b692291"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -7048,7 +7048,7 @@
     "def": 131,
     "speed": 96,
     "bitFarmingRate": 21,
-    "digiEvolutionSeedList": ["8a7d1f0c-9d2e-5b3c-2e1f-7b8a4d1c9e6a"],
+    "digiEvolutionSeedList": ["7a3a7560-bdec-405b-94bb-18f5b2d3ca58"],
     "degenerateSeedList": ["5a9c1a2a-79b5-4de4-bc0a-d0fcd149e9d6"],
     "evolutionRequirements": [
       {
@@ -7059,7 +7059,7 @@
     "checked": true
   },
   {
-    "seed": "e5f6a7b8-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
+    "seed": "622e72a1-7f0f-465e-b4f4-2ba9fb6a73a0",
     "name": "Flaremon",
     "img": "/assets/digimons/Flaremon.webp",
     "rank": "Ultimate",
@@ -7071,7 +7071,7 @@
     "def": 120,
     "speed": 105,
     "bitFarmingRate": 21,
-    "digiEvolutionSeedList": ["6f0a3e7d-9b4c-5d2f-b3a1-e8c7f0d9a2b"],
+    "digiEvolutionSeedList": ["ff254538-4f21-4cb1-84d9-f60fbd757893"],
     "degenerateSeedList": ["f1d36141-5f0e-40e3-9ad4-ccdbbffb65fd"],
     "evolutionRequirements": [
       {
@@ -7094,7 +7094,7 @@
     "def": 108,
     "speed": 118,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": ["f0a3a1c5-d2f8-b3a1-c7f0-d9b4e8a6f7d"],
+    "digiEvolutionSeedList": ["9d2afd12-c1fe-49e9-8691-f5060c2abc07"],
     "degenerateSeedList": ["3c0a1f29-0f53-41e6-a6fc-4d0b1d9811d6"],
     "evolutionRequirements": [
       {
@@ -7174,7 +7174,7 @@
     "checked": true
   },
   {
-    "seed": "d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
+    "seed": "846e2f00-60d3-4d9a-bb62-792154622ea6",
     "name": "Kongoumon",
     "img": "/assets/digimons/Kongoumon.webp",
     "rank": "Ultimate",
@@ -7243,7 +7243,7 @@
     "checked": true
   },
   {
-    "seed": "a7b8c9d0-1e2f-3a4b-5c6d-7e8f9a0b1c2d",
+    "seed": "7a27b835-293f-46db-9606-7a2aab66b0be",
     "name": "Kenkimon",
     "img": "/assets/digimons/Kenkimon.webp",
     "rank": "Ultimate",
@@ -7266,7 +7266,7 @@
     "checked": true
   },
   {
-    "seed": "b8c9d0e1-2f3a-4b5c-6d7e-8f9a0b1c2d3e",
+    "seed": "cbc465d6-5f37-466c-a5d0-2cb2c48878e6",
     "name": "Ponchomon",
     "img": "/assets/digimons/Ponchomon.webp",
     "rank": "Ultimate",
@@ -7289,7 +7289,7 @@
     "checked": true
   },
   {
-    "seed": "c9d0e1f2-3a4b-5c6d-7e8f-9a0b1c2d3e4f",
+    "seed": "d957cf56-107d-4523-96cb-2aeffadbc64a",
     "name": "Argomon Ultimate",
     "img": "/assets/digimons/Argomon_Ultimate.webp",
     "rank": "Ultimate",
@@ -7302,8 +7302,8 @@
     "speed": 110,
     "bitFarmingRate": 20,
     "digiEvolutionSeedList": [
-      "4d1c9e6a-2e1f-8a7d-1f0c-7b8a5b3c9d2e",
-      "8a7d9d2e-4d1c-7b8a-5b3c-1f0c9e6a2e1f"
+      "3f2bf06d-1081-4c12-ac9d-f0d04e27aecc",
+      "e5205de4-2a24-4e30-b940-e6537def8e11"
     ],
     "degenerateSeedList": ["a5d7b9c0-2f1a-4e6b-8c3d-9f0a5e3d7b2c"],
     "evolutionRequirements": [
@@ -7315,7 +7315,7 @@
     "checked": true
   },
   {
-    "seed": "8c3e2c7b-4f3d-3c1b-6e5f-1b0e9a1b5f3c",
+    "seed": "528427d9-196e-4b85-9680-ccf401515ff7",
     "name": "Shakkoumon",
     "img": "/assets/digimons/Shakkoumon.webp",
     "rank": "Ultimate",
@@ -7352,7 +7352,7 @@
     "bitFarmingRate": 34,
     "digiEvolutionSeedList": [
       "1f8b2c41-6d7a-4f1d-8a79-1d3c2a96c1b7",
-      "9e6d1f0c-7b8a-2e1f-4a5b-8a7d9d2e6c5b"
+      "2b224086-a176-4d0e-8b71-d710a22cc26d"
     ],
     "degenerateSeedList": ["8f1d1fbb-3c4d-4b95-9437-889af207f7a0"],
     "evolutionRequirements": [
@@ -7564,7 +7564,7 @@
     "speed": 127,
     "bitFarmingRate": 5,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["e3f4a5b6-7c8d-9e0f-1a2b-3c4d5e6f7a8b"],
+    "degenerateSeedList": ["88a7bd2c-77fb-469e-abc8-bd67c4ea5924"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -7597,7 +7597,7 @@
     "checked": true
   },
   {
-    "seed": "stu9012v-3456-wx78-yz90-123456abcdef",
+    "seed": "63a998c8-6ffd-4727-b324-7bac55f75275",
     "name": "Hercules Kabuterimon",
     "img": "/assets/digimons/HerculesKabuterimon.webp",
     "rank": "Mega",
@@ -7611,8 +7611,8 @@
     "bitFarmingRate": 12,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": [
-      "mno7890p-1234-qr56-st78-901234uvwxzy",
-      "pqr1234s-5678-tu90-vw12-345678xyzabc"
+      "77399b55-9e54-4ed3-8fc5-e20ee7d7dc9a",
+      "5f18edb4-a732-41e4-93e6-e65164091ea6"
     ],
     "evolutionRequirements": [
       {
@@ -7661,7 +7661,7 @@
     "digiEvolutionSeedList": [],
     "degenerateSeedList": [
       "40ed91a1-d2e3-47dc-8c18-64a55757e6b1",
-      "9a1b5f3c-8c3e-2c7b-3c1b-1b0e6e5f4f3d"
+      "86661f39-b878-4321-9533-0b95d434ef43"
     ],
     "evolutionRequirements": [
       {
@@ -7695,7 +7695,7 @@
     "checked": true
   },
   {
-    "seed": "uvw1234x-567y-zabc-defg-hijklmno890",
+    "seed": "0d320f41-5176-4d9d-88ea-59b037d5bc6b",
     "name": "Megidramon",
     "img": "/assets/digimons/Megidramon.webp",
     "rank": "Mega",
@@ -7708,7 +7708,7 @@
     "speed": 112,
     "bitFarmingRate": 13,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["rst9012u-345v-wxyz-abcd-efghij6789"],
+    "degenerateSeedList": ["070340f1-64a6-4b2a-a068-47d00e4de3a1"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -7823,7 +7823,7 @@
     "speed": 126,
     "bitFarmingRate": 26,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["9a1b8c3e-4f3d-5f3c-2c7b-1b0e6e5f3c1b"],
+    "degenerateSeedList": ["d991c296-78da-46e4-82a7-a4ae997f5a98"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -7833,7 +7833,7 @@
     "checked": true
   },
   {
-    "seed": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "seed": "89a74286-d589-4f93-ae34-d456bf9e693f",
     "name": "SaberLeomon",
     "img": "/assets/digimons/SaberLeomon.webp",
     "rank": "Mega",
@@ -7846,7 +7846,7 @@
     "speed": 132,
     "bitFarmingRate": 26,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"],
+    "degenerateSeedList": ["64eecdac-3722-4999-941c-eb21a60fd301"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -7879,7 +7879,7 @@
     "checked": true
   },
   {
-    "seed": "5f3c2c7b-1b0e-6e5f-4f3d-8c3e9a1b3c1b",
+    "seed": "b39a9a43-d7b6-4c24-91f2-0ebb53dd8258",
     "name": "MarineAngemon",
     "img": "/assets/digimons/MarineAngemon.webp",
     "rank": "Mega",
@@ -7915,7 +7915,7 @@
     "speed": 133,
     "bitFarmingRate": 27,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["9e5f2c7b-8c3e-5f3c-3c1b-6e5f1a0b4a6b"],
+    "degenerateSeedList": ["68de0bbe-a11d-4452-bdb6-f6b4478d06ad"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -7938,7 +7938,7 @@
     "speed": 131,
     "bitFarmingRate": 29,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["1b0e4f3d-a9d2-9a1b-2c7b-8c3e6e5f5f3c"],
+    "degenerateSeedList": ["9450b4b1-b3e2-4b66-9055-b2923d2e6236"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -7961,7 +7961,7 @@
     "speed": 141,
     "bitFarmingRate": 28,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["9a1b2c7b-8c3e-6e5f-4f3d-1b0e3c1b5f3c"],
+    "degenerateSeedList": ["b5a7b775-04b8-436a-b17a-29f7307c682e"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -7971,7 +7971,7 @@
     "checked": true
   },
   {
-    "seed": "fabcde65-4321-0fed-cba9-876543210fed",
+    "seed": "30a2feb7-e2c9-4094-aa4e-b3b307a44581",
     "name": "Puppetmon",
     "img": "/assets/digimons/Puppetmon.webp",
     "rank": "Mega",
@@ -7984,7 +7984,7 @@
     "speed": 130,
     "bitFarmingRate": 26,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["4f3d1b0e-3c1b-9a1b-6e5f-8c3e2c7b5f3c"],
+    "degenerateSeedList": ["823fd608-feb2-415c-99be-f144a51fbd91"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -7994,7 +7994,7 @@
     "checked": true
   },
   {
-    "seed": "abcdef54-3210-0fec-b9a8-76543210feda",
+    "seed": "b54f3c5a-6af7-46de-abcb-92e4521d2a0c",
     "name": "Rosemon",
     "img": "/assets/digimons/Rosemon.webp",
     "rank": "Mega",
@@ -8007,7 +8007,7 @@
     "speed": 129,
     "bitFarmingRate": 26,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["7d5c4f3d-1b0e-8c3e-f8a7-a9d29e5f2c7b"],
+    "degenerateSeedList": ["978dfa7e-4c2e-4390-b40f-ac1cd8f0bbea"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -8017,7 +8017,7 @@
     "checked": true
   },
   {
-    "seed": "bcdefa43-210f-0ecb-9a87-6543210fedab",
+    "seed": "854269a7-33fa-47ca-94b7-a07e8c4da1bf",
     "name": "VenomMyotismon",
     "img": "/assets/digimons/VenomMyotismon.webp",
     "rank": "Mega",
@@ -8032,7 +8032,7 @@
     "digiEvolutionSeedList": [],
     "degenerateSeedList": [
       "fef29128-0270-4e25-befc-bc9f2c4dd853",
-      "d2e3f4a5-6b7c-8d9e-0f1a-2b3c4d5e6f7a"
+      "11431f1e-5428-4cd4-a0de-559e4e7e0f64"
     ],
     "evolutionRequirements": [
       {
@@ -8043,7 +8043,7 @@
     "checked": true
   },
   {
-    "seed": "cdefab32-10fe-0cba-a876-543210fedabc",
+    "seed": "49d973b4-549f-45ff-9c41-e43dcc8b43f6",
     "name": "Omnimon",
     "img": "/assets/digimons/Omnimon.webp",
     "rank": "Mega",
@@ -8082,7 +8082,7 @@
     "speed": 126,
     "bitFarmingRate": 26,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["5f3c8e2a-6e5f-9a1b-2c8e-1b0e7d5c4f3d"],
+    "degenerateSeedList": ["36fad7a1-ec3c-4781-bc2b-db41f0d79e01"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -8105,7 +8105,7 @@
     "speed": 128,
     "bitFarmingRate": 27,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["5f3c8e2a-6e5f-9a1b-2c8e-1b0e7d5c4f3d"],
+    "degenerateSeedList": ["36fad7a1-ec3c-4781-bc2b-db41f0d79e01"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -8128,7 +8128,7 @@
     "speed": 145,
     "bitFarmingRate": 30,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["f0a1b2c3-4d5e-6f7a-8b9c-0d1e2f3a4b5c"],
+    "degenerateSeedList": ["2b4b8b25-e810-45a2-a7f1-3e6642b50352"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -8152,8 +8152,8 @@
     "bitFarmingRate": 28,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": [
-      "5f3c9a1b-6e5f-1b0e-4f3d-8c3e2c7b3c1b",
-      "b8c9d0e1-2f3a-4b5c-6d7e-8f9a0b1c2d3e"
+      "1b765eb3-b253-4266-a449-f48cc1713dac",
+      "cbc465d6-5f37-466c-a5d0-2cb2c48878e6"
     ],
     "evolutionRequirements": [
       {
@@ -8225,7 +8225,7 @@
     "digiEvolutionSeedList": [],
     "degenerateSeedList": [
       "1fc3d08b-7a62-4c3e-bf9d-3a179f5a3642",
-      "9a1b8c3e-4f3d-5f3c-2c7b-1b0e6e5f3c1b"
+      "d991c296-78da-46e4-82a7-a4ae997f5a98"
     ],
     "evolutionRequirements": [
       {
@@ -8250,7 +8250,7 @@
     "bitFarmingRate": 28,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": [
-      "e1f2a3b4-5c6d-7e8f-9a0b-1c2d3e4f5a6b",
+      "952a2766-db94-4c37-9c25-efee8bfdc9a3",
       "c4cfed7d-2b3b-4fa4-8a4f-09ef2b709c7e"
     ],
     "evolutionRequirements": [
@@ -8275,7 +8275,7 @@
     "speed": 134,
     "bitFarmingRate": 28,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["e1f2a3b4-5c6d-7e8f-9a0b-1c2d3e4f5a6b"],
+    "degenerateSeedList": ["952a2766-db94-4c37-9c25-efee8bfdc9a3"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -8298,7 +8298,7 @@
     "speed": 137,
     "bitFarmingRate": 28,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["rst9012u-345v-wxyz-abcd-efghij6789"],
+    "degenerateSeedList": ["070340f1-64a6-4b2a-a068-47d00e4de3a1"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -8308,7 +8308,7 @@
     "checked": true
   },
   {
-    "seed": "2e1f0b9a-6c5b-8a7d-9d2e-1f0c7b8a4a5b",
+    "seed": "e218ca43-f503-407a-beae-0e208594c4bf",
     "name": "Gallantmon (Crimson Mode)",
     "img": "/assets/digimons/Gallantmon (Crimson Mode).webp",
     "rank": "Mega",
@@ -8330,7 +8330,7 @@
     ]
   },
   {
-    "seed": "7b8a9d2e-5b3c-9e6d-2e1f-1f0c8a7d4d1c",
+    "seed": "601ab91e-bae5-4177-bc6e-3974fd13ca2c",
     "name": "Mega Gargomon",
     "img": "/assets/digimons/Mega Gargomon.webp",
     "rank": "Mega",
@@ -8343,7 +8343,7 @@
     "speed": 114,
     "bitFarmingRate": 27,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["a3b4c5d6-7e8f-9a0b-1c2d-3e4f5a6b7c8d"],
+    "degenerateSeedList": ["1df7c621-07e1-4db9-9922-b7664b6306a0"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -8353,7 +8353,7 @@
     "checked": true
   },
   {
-    "seed": "4d1c8b2f-1f0c-7b8a-9d2e-5b3c2e1f9e6a",
+    "seed": "70534944-b963-476c-92e0-8cd37e6cf32d",
     "name": "Sakuyamon",
     "img": "/assets/digimons/Sakuyamon.webp",
     "rank": "Mega",
@@ -8366,7 +8366,7 @@
     "speed": 133,
     "bitFarmingRate": 26,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["b4c5d6e7-8f9a-0b1c-2d3e-4f5a6b7c8d9e"],
+    "degenerateSeedList": ["aa2232d5-12ee-4538-b7d3-63d95977137a"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -8376,7 +8376,7 @@
     "checked": true
   },
   {
-    "seed": "1f0c9d2e-2e1f-9e6a-4d1c-7b8a5b3c8a7d",
+    "seed": "fb4c9abd-426d-44aa-b06f-6a3dfa21196a",
     "name": "Diaboromon",
     "img": "/assets/digimons/Diaboromon.webp",
     "rank": "Mega",
@@ -8389,7 +8389,7 @@
     "speed": 131,
     "bitFarmingRate": 26,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["d6e7f8a9-0b1c-2d3e-4f5a-6b7c8d9e0f1a"],
+    "degenerateSeedList": ["6c695951-a9dc-4fea-aab4-792814356e9f"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -8399,7 +8399,7 @@
     "checked": true
   },
   {
-    "seed": "9d2e7b8a-1f0c-4d1c-5b3c-2e1f8a7d9e6a",
+    "seed": "610af57b-d922-4d43-bb51-9c884875709e",
     "name": "Neptunmon",
     "img": "/assets/digimons/Neptunmon.webp",
     "rank": "Mega",
@@ -8422,7 +8422,7 @@
     "checked": true
   },
   {
-    "seed": "1f0c2e1f-7b8a-9e6a-4d1c-5b3c8a7d9d2e",
+    "seed": "70a0a853-63c1-4f47-855d-e8fb27625ce3",
     "name": "Pukumon",
     "img": "/assets/digimons/Pukumon.webp",
     "rank": "Mega",
@@ -8445,7 +8445,7 @@
     "checked": true
   },
   {
-    "seed": "9d2e8a7d-5b3c-1f0c-2e1f-7b8a4d1c9e6a",
+    "seed": "388ffee3-92ff-453b-bc5d-fae5d69801d0",
     "name": "Gryphonmon",
     "img": "/assets/digimons/Gryphonmon.webp",
     "rank": "Mega",
@@ -8459,7 +8459,7 @@
     "bitFarmingRate": 26,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": [
-      "c3d4e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
+      "5d236da1-b31c-445d-b819-fa8154273dd6",
       "1fc3d08b-7a62-4c3e-bf9d-3a179f5a3642"
     ],
     "evolutionRequirements": [
@@ -8471,7 +8471,7 @@
     "checked": true
   },
   {
-    "seed": "9e6a4d1c-7b8a-1f0c-8a7d-5b3c2e1f9d2e",
+    "seed": "f6c16216-77a5-4b56-ae37-1f9e33b3abfd",
     "name": "Preciomon",
     "img": "/assets/digimons/Preciomon.webp",
     "rank": "Mega",
@@ -8484,7 +8484,7 @@
     "speed": 116,
     "bitFarmingRate": 26,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["e9f0a1b2-3c4d-5e6f-7a8b-9c0d1e2f3a4b"],
+    "degenerateSeedList": ["db096107-34c6-4f22-b8a1-8b5c7265edb2"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -8494,7 +8494,7 @@
     "checked": true
   },
   {
-    "seed": "4d1c9e6a-2e1f-7b8a-1f0c-5b3c8a7d9d2e",
+    "seed": "86d24d95-9244-48cd-94e0-be4e74f9ddf1",
     "name": "Armageddemon",
     "img": "/assets/digimons/Armageddemon.webp",
     "rank": "Mega",
@@ -8507,7 +8507,7 @@
     "speed": 126,
     "bitFarmingRate": 29,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["d6e7f8a9-0b1c-2d3e-4f5a-6b7c8d9e0f1a"],
+    "degenerateSeedList": ["6c695951-a9dc-4fea-aab4-792814356e9f"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -8517,7 +8517,7 @@
     "checked": true
   },
   {
-    "seed": "9d2e4d1c-7b8a-1f0c-5b3c-2e1f8a7d9e6a",
+    "seed": "53885aa6-dd9b-4667-b582-422d76781132",
     "name": "MaloMyotismon",
     "img": "/assets/digimons/MaloMyotismon.webp",
     "rank": "Mega",
@@ -8540,7 +8540,7 @@
     "checked": true
   },
   {
-    "seed": "5b3c8a7d-2e1f-9d2e-4d1c-7b8a1f0c9e6a",
+    "seed": "e40a8d93-221c-4bd5-8bec-e574d0c1b087",
     "name": "Imperialdramon (Dragon Mode) (Black)",
     "img": "/assets/digimons/Imperialdramon (Dragon Mode) (Black).webp",
     "rank": "Mega",
@@ -8553,7 +8553,7 @@
     "speed": 127,
     "bitFarmingRate": 27,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["5f3c9a1b-1b0e-6e5f-8c3e-4f3d2c7b3c1b"],
+    "degenerateSeedList": ["9799592e-7012-4855-b1a8-2f5d1e27e196"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -8576,7 +8576,7 @@
     "speed": 125,
     "bitFarmingRate": 27,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["a5b6c7d8-9e0f-1a2b-3c4d-5e6f7a8b9c0d"],
+    "degenerateSeedList": ["a5598598-d29a-4858-8f30-ec5f2acf107b"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -8586,7 +8586,7 @@
     "checked": true
   },
   {
-    "seed": "5b3c8a7d-4d1c-1f0c-9e6a-2e1f7b8a9d2e",
+    "seed": "5ae9417e-592a-446b-874e-cf46575efd9b",
     "name": "PrinceMamemon",
     "img": "/assets/digimons/PrinceMamemon.webp",
     "rank": "Mega",
@@ -8609,7 +8609,7 @@
     "checked": true
   },
   {
-    "seed": "e8c7f0d9-a2b6-f0a3-7d9b-4c5d2f8b1e3",
+    "seed": "c461ea05-0599-49d9-81cc-e2f27373b763",
     "name": "Zanbamon",
     "img": "/assets/digimons/Zanbamon.webp",
     "rank": "Mega",
@@ -8622,7 +8622,7 @@
     "speed": 130,
     "bitFarmingRate": 26,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["a5b6c7d8-9e0f-1a2b-3c4d-5e6f7a8b9c0d"],
+    "degenerateSeedList": ["a5598598-d29a-4858-8f30-ec5f2acf107b"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -8632,7 +8632,7 @@
     "checked": true
   },
   {
-    "seed": "7d9b4c5d-2f8b-1e3a-0a3e-9b4c6f5d8b2",
+    "seed": "f5eee0ae-a180-46a7-a6bb-70d72f0e78a5",
     "name": "Black SaintGargomon",
     "img": "/assets/digimons/Black SaintGargomon.webp",
     "rank": "Mega",
@@ -8645,7 +8645,7 @@
     "speed": 111,
     "bitFarmingRate": 27,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["e7f8a9b0-1c2d-3e4f-5a6b-7c8d9e0f1a2b"],
+    "degenerateSeedList": ["afaf7d25-99b6-498b-80bb-70cd4a278189"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -8655,7 +8655,7 @@
     "checked": true
   },
   {
-    "seed": "e7b1c5d2-f8b3-c7f0-b4e8-a6f7d99b2a",
+    "seed": "2d8e7094-e209-49af-ac57-b24ca1a26415",
     "name": "Jijimon",
     "img": "/assets/digimons/Jijimon.webp",
     "rank": "Mega",
@@ -8668,7 +8668,7 @@
     "speed": 126,
     "bitFarmingRate": 26,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["defabc87-6543-210f-edcb-a9876543210f"],
+    "degenerateSeedList": ["2645815a-a9a0-4e53-b0a9-28cbfc7d5e61"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -8678,7 +8678,7 @@
     "checked": true
   },
   {
-    "seed": "c7f0b1c5-d2f8-a6f7-e8b3-5d2f9b4c0a3",
+    "seed": "2cb8232c-c35f-4a7b-b3a5-fa7ed495e33b",
     "name": "Babamon",
     "img": "/assets/digimons/Babamon.webp",
     "rank": "Mega",
@@ -8701,7 +8701,7 @@
     "checked": true
   },
   {
-    "seed": "f7d9e8b3-1c5f-a6f5-d2f8-7d9b0a3ec4b",
+    "seed": "03277ace-25c2-404f-b975-f71ac309c8b0",
     "name": "Anubismon",
     "img": "/assets/digimons/Anubismon.webp",
     "rank": "Mega",
@@ -8724,7 +8724,7 @@
     "checked": true
   },
   {
-    "seed": "8a7d9d2e-1f0c-4d1c-5b3c-9e6a2e1f0b9a",
+    "seed": "d31306f8-a586-461e-ac6a-03774baa9f40",
     "name": "Parasimon",
     "img": "/assets/digimons/Parasimon.webp",
     "rank": "Mega",
@@ -8737,7 +8737,7 @@
     "speed": 131,
     "bitFarmingRate": 26,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["f6a7b8c9-0d1e-2f3a-4b5c-6d7e8f9a0b1c"],
+    "degenerateSeedList": ["707cf9e9-48a1-4087-87d9-f3c53447e100"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -8747,7 +8747,7 @@
     "checked": true
   },
   {
-    "seed": "1f0c7b8a-9d2e-9e6a-8a7d-4d1c5b3c2e1f",
+    "seed": "8e081427-8054-4a05-bfa0-200d5f471a8b",
     "name": "Cannondramon",
     "img": "/assets/digimons/Cannondramon.webp",
     "rank": "Mega",
@@ -8760,7 +8760,7 @@
     "speed": 119,
     "bitFarmingRate": 27,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["6e5f4f3d-1b0e-3c1b-8c3e-5f3c9a1b2c7b"],
+    "degenerateSeedList": ["60205c40-0925-406f-93aa-511df01826bf"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -8793,7 +8793,7 @@
     "checked": true
   },
   {
-    "seed": "7b8a5b3c-8a7d-1f0c-9d2e-2e1f9e6a4d1c",
+    "seed": "a6d2f9a9-f8e8-4bc4-b137-0db50a8fa500",
     "name": "Eaglemon",
     "img": "/assets/digimons/Eaglemon.webp",
     "rank": "Mega",
@@ -8806,7 +8806,7 @@
     "speed": 114,
     "bitFarmingRate": 27,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["c5d6e7f8-9a0b-1c2d-3e4f-5a6b7c8d9e0f"],
+    "degenerateSeedList": ["1ec3c641-3763-4c9e-8834-26f7aaf3fd09"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -8816,7 +8816,7 @@
     "checked": true
   },
   {
-    "seed": "5b3c8a7d-9e6a-2e1f-1f0c-7b8a4d1c9d2e",
+    "seed": "bd9ff932-4112-4307-bbbd-36aa78bc130d",
     "name": "Dorugoramon",
     "img": "/assets/digimons/Dorugoramon.webp",
     "rank": "Mega",
@@ -8829,7 +8829,7 @@
     "speed": 123,
     "bitFarmingRate": 28,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["1b0e4f3d-5f3c-2c7b-9a1b-8c3e6e5f3c1b"],
+    "degenerateSeedList": ["0cd5fdf6-ff56-4196-92f7-79f0c32bcc31"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -8839,7 +8839,7 @@
     "checked": true
   },
   {
-    "seed": "7b8a4d1c-9e6a-2e1f-8a7d-1f0c5b3c9d2e",
+    "seed": "600cfcc7-2b9e-4be1-b0f7-81cf1ef9a70c",
     "name": "Bantyo Leomon",
     "img": "/assets/digimons/Bantyo Leomon.webp",
     "rank": "Mega",
@@ -8852,7 +8852,7 @@
     "speed": 139,
     "bitFarmingRate": 29,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"],
+    "degenerateSeedList": ["64eecdac-3722-4999-941c-eb21a60fd301"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -8862,7 +8862,7 @@
     "checked": true
   },
   {
-    "seed": "5b3c2e1f-8a7d-9d2e-1f0c-7b8a9e6a4d1c",
+    "seed": "cd02d04b-219d-4bc9-a92a-7580da263ac0",
     "name": "Apocalymon",
     "img": "/assets/digimons/Apocalymon.webp",
     "rank": "Mega",
@@ -8875,7 +8875,7 @@
     "speed": 120,
     "bitFarmingRate": 30,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["f4a5b6c7-8d9e-0f1a-2b3c-4d5e6f7a8b9c"],
+    "degenerateSeedList": ["01cf1fc3-911e-4a79-a14a-c2de553edecb"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -8885,7 +8885,7 @@
     "checked": true
   },
   {
-    "seed": "9d2e8a7d-5b3c-1f0c-7b8a-2e1f4d1c9e6a",
+    "seed": "259b5023-6f5c-4543-879d-c5e73f09680d",
     "name": "Ebemon",
     "img": "/assets/digimons/Ebemon.webp",
     "rank": "Mega",
@@ -8898,7 +8898,7 @@
     "speed": 114,
     "bitFarmingRate": 26,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["2c7b4f3d-1b0e-6e5f-a9d2-8c3e9a1b5f3c"],
+    "degenerateSeedList": ["b651ef8e-ee49-40e6-8854-434a5e6217db"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -8908,7 +8908,7 @@
     "checked": true
   },
   {
-    "seed": "7b8a4d1c-2e1f-9e6a-8a7d-5b3c1f0c9d2e",
+    "seed": "186679a0-9fd2-4f85-af92-78085cf216bf",
     "name": "Gulfmon",
     "img": "/assets/digimons/Gulfmon.webp",
     "rank": "Mega",
@@ -8921,7 +8921,7 @@
     "speed": 130,
     "bitFarmingRate": 29,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["f9a5d7b2-4e3c-5f6a-8b9d-0c1e2f3a4b5d"],
+    "degenerateSeedList": ["4aa02e4b-b20a-4faf-9269-0ba18a1e7d08"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -8931,7 +8931,7 @@
     "checked": true
   },
   {
-    "seed": "8a7d4d1c-9e6a-2e1f-5b3c-1f0c7b8a9d2e",
+    "seed": "48756847-94ea-46e6-aae4-ed75c0dd8e1f",
     "name": "Goldramon",
     "img": "/assets/digimons/Goldramon.webp",
     "rank": "Mega",
@@ -8944,7 +8944,7 @@
     "speed": 138,
     "bitFarmingRate": 29,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["b6c7d8e9-0f1a-2b3c-4d5e-6f7a8b9c0d1e"],
+    "degenerateSeedList": ["a43b028d-860e-4b36-93f9-c3d3b52db64c"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -8967,7 +8967,7 @@
     "speed": 136,
     "bitFarmingRate": 29,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["2c7b9a1b-5f3c-8c3e-3c1b-1b0e4f3d6e5f"],
+    "degenerateSeedList": ["8c0f5a17-16a5-409a-bac1-1c63aeaa611a"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -8977,7 +8977,7 @@
     "checked": true
   },
   {
-    "seed": "2e1f7b8a-9d2e-8a7d-4d1c-1f0c5b3c9e6a",
+    "seed": "8f9dec20-c882-4aba-8689-c408e5422d95",
     "name": "Ghoulmon (Black)",
     "img": "/assets/digimons/Ghoulmon (Black).webp",
     "rank": "Mega",
@@ -8990,7 +8990,7 @@
     "speed": 140,
     "bitFarmingRate": 29,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["f4a5b6c7-8d9e-0f1a-2b3c-4d5e6f7a8b9c"],
+    "degenerateSeedList": ["01cf1fc3-911e-4a79-a14a-c2de553edecb"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -9000,7 +9000,7 @@
     "checked": true
   },
   {
-    "seed": "c1a7e8b3-5d2f-4e9a-8b1c-6f0a3e7d9b4",
+    "seed": "859bce6e-ced6-4864-8a32-b4690e499b37",
     "name": "Chaos Gallantmon",
     "img": "/assets/digimons/Chaos Gallantmon.webp",
     "rank": "Mega",
@@ -9013,7 +9013,7 @@
     "speed": 139,
     "bitFarmingRate": 29,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["2c7b4f3d-8c3e-9a1b-3c1b-1b0e6e5f5f3c"],
+    "degenerateSeedList": ["fcda1569-46f3-4ccd-8838-a55e447a005c"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -9023,7 +9023,7 @@
     "checked": true
   },
   {
-    "seed": "9b4c6f5d-8b2e-7d9b-e8c7-f0a3a1c5d2f",
+    "seed": "e30d7b71-6e51-45af-a30e-b53b4a04735a",
     "name": "Valkyrimon",
     "img": "/assets/digimons/Valkyrimon.webp",
     "rank": "Mega",
@@ -9037,7 +9037,7 @@
     "bitFarmingRate": 26,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": [
-      "5f3c3c1b-8c3e-9a1b-2c7b-1b0e6e5f4f3d",
+      "de7c5e6e-92fc-4f99-98b1-abe628acedd2",
       "75c6c6ce-68c9-4c32-a678-d9f59406d3a0"
     ],
     "evolutionRequirements": [
@@ -9049,7 +9049,7 @@
     "checked": true
   },
   {
-    "seed": "a6f7d99b-2a6f-8b1c-5d2f-e8c7f0a3b4e",
+    "seed": "03598e86-91f9-4afa-ad89-6e4bc8511eac",
     "name": "Justimon",
     "img": "/assets/digimons/Justimon.webp",
     "rank": "Mega",
@@ -9072,7 +9072,7 @@
     "checked": true
   },
   {
-    "seed": "f0a3b4e8-c7f0-d9b4-b1c5-d2f8a6f7e99",
+    "seed": "3fbcadc8-da96-4739-b2e9-f285952aa689",
     "name": "Skull Mammothmon",
     "img": "/assets/digimons/Skull Mammothmon.webp",
     "rank": "Mega",
@@ -9085,7 +9085,7 @@
     "speed": 119,
     "bitFarmingRate": 27,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["efabcd76-5432-10fe-dcba-9876543210fe"],
+    "degenerateSeedList": ["2b8a73da-3f0a-4fe3-b6c7-b8c1b06673ba"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -9095,7 +9095,7 @@
     "checked": true
   },
   {
-    "seed": "4d1c8b2f-9e6a-5b3c-8a7d-2e1f0b9a6c5",
+    "seed": "fe69ceaa-854f-450d-b494-386b263b24a5",
     "name": "Pharaohmon",
     "img": "/assets/digimons/Pharaohmon.webp",
     "rank": "Mega",
@@ -9108,7 +9108,7 @@
     "speed": 113,
     "bitFarmingRate": 27,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["f2a3b4c5-6d7e-8f9a-0b1c-2d3e4f5a6b7c"],
+    "degenerateSeedList": ["9288669d-6431-4bbf-9ffd-916280cd1c3f"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -9118,7 +9118,7 @@
     "checked": true
   },
   {
-    "seed": "9e6d1f0c-7b8a-2e1f-4a5b-8a7d9d2e6c5b",
+    "seed": "2b224086-a176-4d0e-8b71-d710a22cc26d",
     "name": "Susanoomon",
     "img": "/assets/digimons/Susanoomon.webp",
     "rank": "Mega",
@@ -9141,7 +9141,7 @@
     "checked": true
   },
   {
-    "seed": "9d2e6c5b-8a7d-2e1f-9e6d-1f0c4d1c7b8a",
+    "seed": "1c8626b0-da18-489f-83ee-83d27199fe02",
     "name": "Alphamon",
     "img": "/assets/digimons/Alphamon.webp",
     "rank": "Mega",
@@ -9155,7 +9155,7 @@
     "bitFarmingRate": 30,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": [
-      "d8e9f0a1-2b3c-4d5e-6f7a-8b9c0d1e2f3a",
+      "2dd48272-ac88-4367-a6d6-59b6dc3de237",
       "7f6e3b3b-5e12-4e29-9f57-4b9a6c34b1f8"
     ],
     "evolutionRequirements": [
@@ -9167,7 +9167,7 @@
     "checked": true
   },
   {
-    "seed": "2e1f9e6a-4d1c-7b8a-5b3c-1f0c8a7d9d2e",
+    "seed": "42528387-e8e5-4a69-adaa-7089aeb620a1",
     "name": "Millenniummon",
     "img": "/assets/digimons/Millenniummon.webp",
     "rank": "Mega",
@@ -9190,7 +9190,7 @@
     "checked": true
   },
   {
-    "seed": "8a7d9d2e-5b3c-1f0c-2e1f-7b8a4d1c9e6a",
+    "seed": "cb130bef-eec8-4f09-8b50-f5c66118fe5f",
     "name": "MoonMillenniummon",
     "img": "/assets/digimons/MoonMillenniummon.webp",
     "rank": "Mega",
@@ -9203,7 +9203,7 @@
     "speed": 140,
     "bitFarmingRate": 29,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["2c7b9a1b-5f3c-8c3e-3c1b-1b0e4f3d6e5f"],
+    "degenerateSeedList": ["8c0f5a17-16a5-409a-bac1-1c63aeaa611a"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -9213,7 +9213,7 @@
     "checked": true
   },
   {
-    "seed": "2e1f4d1c-7b8a-9d2e-5b3c-1f0c8a7d9e6a",
+    "seed": "02cb1173-7e3d-477a-b388-6e46acb9aa65",
     "name": "Sleipmon",
     "img": "/assets/digimons/Sleipmon.webp",
     "rank": "Mega",
@@ -9236,7 +9236,7 @@
     "checked": true
   },
   {
-    "seed": "2e1f5b3c-1f0c-9d2e-7b8a-4d1c8a7d9e6a",
+    "seed": "f0bc93ba-8d0f-478a-b731-671cefb2b5c9",
     "name": "MirageGaogamon",
     "img": "/assets/digimons/MirageGaogamon.webp",
     "rank": "Mega",
@@ -9272,7 +9272,7 @@
     "speed": 125,
     "bitFarmingRate": 29,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["b2c3d4e5-6f7a-8b9c-0d1e-2f3a4b5c6d7e"],
+    "degenerateSeedList": ["965f036a-e7a9-4a59-b192-db5b57636af8"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -9282,7 +9282,7 @@
     "checked": true
   },
   {
-    "seed": "8a7d1f0c-9d2e-5b3c-2e1f-7b8a4d1c9e6a",
+    "seed": "7a3a7560-bdec-405b-94bb-18f5b2d3ca58",
     "name": "QueenChessmon",
     "img": "/assets/digimons/QueenChessmon.webp",
     "rank": "Mega",
@@ -9305,7 +9305,7 @@
     "checked": true
   },
   {
-    "seed": "1f0c5b3c-9d2e-8a7d-2e1f-7b8a4d1c9e6a",
+    "seed": "6813bc53-5bea-424c-8dc1-ec0a1e7f381c",
     "name": "KingChessmon",
     "img": "/assets/digimons/KingChessmon.webp",
     "rank": "Mega",
@@ -9328,7 +9328,7 @@
     "checked": true
   },
   {
-    "seed": "4d1c7b8a-1f0c-9d2e-8a7d-5b3c2e1f9e6a",
+    "seed": "758a1f48-da44-47bc-8c0d-101759d6eef1",
     "name": "Chronomon (Holy Mode)",
     "img": "/assets/digimons/Chronomon (Holy Mode).webp",
     "rank": "Mega",
@@ -9373,7 +9373,7 @@
     "checked": true
   },
   {
-    "seed": "9d2e5b3c-2e1f-7b8a-4d1c-1f0c8a7d9e6a",
+    "seed": "d182efd5-f240-4aaf-bb6b-3ef0afa6bc43",
     "name": "Varodurumon",
     "img": "/assets/digimons/Varodurumon.webp",
     "rank": "Mega",
@@ -9386,7 +9386,7 @@
     "speed": 143,
     "bitFarmingRate": 29,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["c1d2e3f4-5a6b-7c8d-9e0f-1a2b3c4d5e6f"],
+    "degenerateSeedList": ["3806f254-dcf8-44b7-9384-edddef3c6bba"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -9396,7 +9396,7 @@
     "checked": true
   },
   {
-    "seed": "6f0a3e7d-9b4c-5d2f-b3a1-e8c7f0d9a2b",
+    "seed": "ff254538-4f21-4cb1-84d9-f60fbd757893",
     "name": "Apollomon",
     "img": "/assets/digimons/Apollomon.webp",
     "rank": "Mega",
@@ -9409,7 +9409,7 @@
     "speed": 137,
     "bitFarmingRate": 29,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["e5f6a7b8-9c0d-1e2f-3a4b-5c6d7e8f9a0b"],
+    "degenerateSeedList": ["622e72a1-7f0f-465e-b4f4-2ba9fb6a73a0"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -9419,7 +9419,7 @@
     "checked": true
   },
   {
-    "seed": "f0a3a1c5-d2f8-b3a1-c7f0-d9b4e8a6f7d",
+    "seed": "9d2afd12-c1fe-49e9-8691-f5060c2abc07",
     "name": "Dianamon",
     "img": "/assets/digimons/Dianamon.webp",
     "rank": "Mega",
@@ -9442,7 +9442,7 @@
     "checked": true
   },
   {
-    "seed": "d9b4e8a6-f7d9-a2b6-f0a3-e7b1c5d2f8b",
+    "seed": "247abd72-4ecd-4dfd-9df3-26176ae99e07",
     "name": "Shine Greymon (Burst Mode)",
     "img": "/assets/digimons/Shine Greymon (Burst Mode).webp",
     "rank": "Mega",
@@ -9464,7 +9464,7 @@
     ]
   },
   {
-    "seed": "b4e8a6f7-e99b-f0a3-d9b4-c7f0b1c5d2f",
+    "seed": "0705ba66-a64c-4fc6-9716-2c24a03e6eff",
     "name": "Shine Greymon (Ruin Mode)",
     "img": "/assets/digimons/Shine Greymon (Ruin Mode).webp",
     "rank": "Mega",
@@ -9486,7 +9486,7 @@
     ]
   },
   {
-    "seed": "4f3d8c3e-5f3c-2c7b-1b0e-6e5f9a1b3c1b",
+    "seed": "d57bf83d-9d9d-4ea0-8f8d-b9474a49098a",
     "name": "MirageGaogamon (Burst Mode)",
     "img": "/assets/digimons/MirageGaogamon (Burst Mode).webp",
     "rank": "Mega",
@@ -9508,7 +9508,7 @@
     ]
   },
   {
-    "seed": "5b3c8a7d-2e1f-9e6d-1f0c-7b8a4a5b9d2e",
+    "seed": "057388fa-c9be-4ec9-9907-0e261ec538e4",
     "name": "Ravemon (Burst Mode)",
     "img": "/assets/digimons/Ravemon (Burst Mode).webp",
     "rank": "Mega",
@@ -9530,7 +9530,7 @@
     ]
   },
   {
-    "seed": "2e1f0b9a-4a5b-1f0c-7b8a-9e6d8a7d9d2e",
+    "seed": "70dc0025-a6fd-4659-8a6d-77f8ce051054",
     "name": "Lotosmon",
     "img": "/assets/digimons/Lotosmon.webp",
     "rank": "Mega",
@@ -9543,7 +9543,7 @@
     "speed": 134,
     "bitFarmingRate": 26,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["7d5c4f3d-1b0e-8c3e-f8a7-a9d29e5f2c7b"],
+    "degenerateSeedList": ["978dfa7e-4c2e-4390-b40f-ac1cd8f0bbea"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -9553,7 +9553,7 @@
     "checked": true
   },
   {
-    "seed": "8a7d4d1c-1f0c-2e1f-7b8a-9d2e5b3c9e6a",
+    "seed": "f6cbf477-f888-4c55-9f5e-04c563e471fc",
     "name": "Beelzemon (Blast Mode)",
     "img": "/assets/digimons/Beelzemon (Blast Mode).webp",
     "rank": "Mega",
@@ -9575,7 +9575,7 @@
     ]
   },
   {
-    "seed": "9e6a5b3c-7b8a-8a7d-2e1f-1f0c9d2e4d1c",
+    "seed": "a2c3bfbc-0c7a-4a43-9671-066d2dcfd247",
     "name": "Rosemon (Burst Mode)",
     "img": "/assets/digimons/Rosemon (Burst Mode).webp",
     "rank": "Mega",
@@ -9597,7 +9597,7 @@
     ]
   },
   {
-    "seed": "4d1c9e6a-2e1f-8a7d-1f0c-7b8a5b3c9d2e",
+    "seed": "3f2bf06d-1081-4c12-ac9d-f0d04e27aecc",
     "name": "Argomon Mega",
     "img": "/assets/digimons/Argomon Mega.webp",
     "rank": "Mega",
@@ -9610,7 +9610,7 @@
     "speed": 136,
     "bitFarmingRate": 29,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["c9d0e1f2-3a4b-5c6d-7e8f-9a0b1c2d3e4f"],
+    "degenerateSeedList": ["d957cf56-107d-4523-96cb-2aeffadbc64a"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -9620,7 +9620,7 @@
     "checked": true
   },
   {
-    "seed": "8a7d9e6a-1f0c-5b3c-9d2e-7b8a4d1c2e1f",
+    "seed": "e3006fe9-b0b7-403c-85f6-109da77d4dd2",
     "name": "Minervamon",
     "img": "/assets/digimons/Minervamon.webp",
     "rank": "Mega",
@@ -9633,7 +9633,7 @@
     "speed": 147,
     "bitFarmingRate": 28,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["e1f2a3b4-5c6d-7e8f-9a0b-1c2d3e4f5a6b"],
+    "degenerateSeedList": ["952a2766-db94-4c37-9c25-efee8bfdc9a3"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -9643,7 +9643,7 @@
     "checked": true
   },
   {
-    "seed": "8a7d9d2e-4d1c-7b8a-5b3c-1f0c9e6a2e1f",
+    "seed": "e5205de4-2a24-4e30-b940-e6537def8e11",
     "name": "Duftmon",
     "img": "/assets/digimons/Duftmon.webp",
     "rank": "Mega",
@@ -9656,7 +9656,7 @@
     "speed": 150,
     "bitFarmingRate": 29,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["c9d0e1f2-3a4b-5c6d-7e8f-9a0b1c2d3e4f"],
+    "degenerateSeedList": ["d957cf56-107d-4523-96cb-2aeffadbc64a"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -9666,7 +9666,7 @@
     "checked": true
   },
   {
-    "seed": "1f0c9e6a-5b3c-2e1f-9d2e-7b8a4d1c8a7d",
+    "seed": "4e9ee336-86e1-43aa-bb62-93a10f82a0f6",
     "name": "Chaosmon",
     "img": "/assets/digimons/Chaosmon.webp",
     "rank": "Mega",

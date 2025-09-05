@@ -8,7 +8,7 @@ import { applyCaps, calculateGains, getDefaultPotential } from '@core/utils/digi
 })
 export class BattleService {
   private readonly MAX_LEVEL = 100;
-  private readonly PLAYER_MAX_LEVEL = 200;
+  private readonly PLAYER_MAX_LEVEL = 1000;
 
   private readonly ATTRIBUTE_ADVANTAGE_FACTOR = 1.3;
   private readonly ATTRIBUTE_DISADVANTAGE_FACTOR = 0.7;

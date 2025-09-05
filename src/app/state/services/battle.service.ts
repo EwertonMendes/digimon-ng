@@ -49,7 +49,7 @@ export class BattleService {
   private readonly VARIANCE_RANGE = 0.3;
 
   private readonly ATK_POWER_EXPONENT = 2;
-  private readonly DAMAGE_SCALE_FACTOR = 4;
+  private readonly DAMAGE_SCALE_FACTOR = 1.1;
   private readonly MIN_DAMAGE = 1;
   private readonly HP_CAP_DISADVANTAGE_DIVISOR = 2;
 

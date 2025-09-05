@@ -192,10 +192,6 @@ export class DigimonService {
     evolvingDigimon.exp = 0;
     evolvingDigimon.level = 1;
 
-    const currentPotential = evolvingDigimon.potential ?? getDefaultPotential(evolvingDigimon.rank);
-    const targetPotential = targetDigimon.potential ?? getDefaultPotential(targetDigimon.rank);
-    evolvingDigimon.potential = Math.max(currentPotential, targetPotential);
-
     if (!evolvingDigimon.currentEvolutionRoute) {
       evolvingDigimon.currentEvolutionRoute = [];
     }

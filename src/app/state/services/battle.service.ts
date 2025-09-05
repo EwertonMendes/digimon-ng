@@ -80,7 +80,7 @@ export class BattleService {
   }
 
   calculateExpGiven(defeatedDigimon: Digimon): number {
-    const potential = defeatedDigimon.potential ?? getDefaultPotential(defeatedDigimon.rank);
+    const potential = getDefaultPotential(defeatedDigimon.rank);
     return Math.floor(100 * potential * Math.pow(defeatedDigimon.level, 2.2) / 100);
   }
 
@@ -128,19 +128,42 @@ export class BattleService {
 
   private updatePlayerDigimonsExp(playerData: PlayerData, totalExp: number) {
     playerData.digimonList.forEach((playerDigimon) => {
-      if (!playerDigimon || playerDigimon.currentHp <= 0 || playerDigimon.exp === undefined) return;
+      if (!playerDigimon || playerDigimon.currentHp <= 0) return;
 
-      playerDigimon.exp = Math.floor((playerDigimon.exp || 0) + totalExp);
-      playerDigimon.totalExp = Math.floor(
-        (playerDigimon.totalExp || 0) + totalExp
-      );
+
+      playerDigimon.exp ??= 0;
+      playerDigimon.totalExp ??= 0;
+
+      const potential = getDefaultPotential(playerDigimon.rank);
+
+
+      if (playerDigimon.level > potential || playerDigimon.level > this.maxLevel) {
+        playerDigimon.level = Math.min(potential, this.maxLevel);
+      }
+
+
+      if (playerDigimon.level >= potential || playerDigimon.level >= this.maxLevel) {
+        playerDigimon.exp = 0;
+        const maxTotalExp = this.calculateTotalExpToLevel(playerDigimon.level);
+        playerDigimon.totalExp = Math.min(playerDigimon.totalExp, maxTotalExp);
+        return;
+      }
+
+      const expForNextLevel = this.calculateRequiredExpForLevel(playerDigimon.level);
+
+      if (playerDigimon.exp >= expForNextLevel) {
+        playerDigimon.exp = 0;
+      }
+
+      playerDigimon.exp += totalExp;
+      playerDigimon.totalExp += totalExp;
 
       this.levelUpDigimon(playerDigimon);
     });
   }
 
   levelUpDigimon(digimon: Digimon) {
-    const potential = digimon.potential ?? getDefaultPotential(digimon.rank);
+    const potential = getDefaultPotential(digimon.rank);
     if (digimon.level >= potential || digimon.level >= this.maxLevel) return;
     if (!digimon.exp) digimon.exp = 0;
 
@@ -209,7 +232,7 @@ export class BattleService {
   }
 
   levelUpDigimonToLevel(digimon: Digimon, level: number) {
-    const potential = digimon.potential ?? getDefaultPotential(digimon.rank);
+    const potential = getDefaultPotential(digimon.rank);
     if (level <= digimon.level || digimon.level >= potential) return digimon;
 
     while (digimon.level < level && digimon.level < potential) {
@@ -287,5 +310,11 @@ export class BattleService {
     if (ratio >= 0.75) return 0.35;
     if (ratio >= 0.5) return 0.2;
     return 0.1;
+  }
+
+  private calculateTotalExpToLevel(level: number): number {
+    if (level <= 1) return 0;
+    const n = level - 1;
+    return Math.floor(100 * (n * (n + 1) * (2 * n + 1) / 6));
   }
 }

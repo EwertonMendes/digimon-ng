@@ -323,7 +323,7 @@ export class GlobalStateDataSource {
   }
 
   levelUpDigimonToLevel(digimon: Digimon, level: number) {
-    const potential = digimon.potential ?? getDefaultPotential(digimon.rank);
+    const potential = getDefaultPotential(digimon.rank);
     if (level <= digimon.level || digimon.level >= potential) return digimon;
     while (digimon.level < level && digimon.level < potential) {
       const expForNextLevel = this.battleService.calculateRequiredExpForLevel(digimon.level);

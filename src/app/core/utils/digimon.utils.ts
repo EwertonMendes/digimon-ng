@@ -39,5 +39,5 @@ export function applyCaps(rank: string, stats: Partial<Digimon>): void {
 }
 
 export function getDefaultPotential(rank: string): number {
-  return RANK_DEFAULT_POTENTIAL[rank] ?? 99;
+  return RANK_DEFAULT_POTENTIAL[rank] ?? 100;
 }

@@ -4841,7 +4841,8 @@
     "bitFarmingRate": 4,
     "digiEvolutionSeedList": [
       "df67cc96-4a69-4f26-88d6-2c98ccaecfe6",
-      "1f8b2c41-6d7a-4f1d-8a79-1d3c2a96c1b7"
+      "1f8b2c41-6d7a-4f1d-8a79-1d3c2a96c1b7",
+      "cdefab32-10fe-0cba-a876-543210fedabc"
     ],
     "degenerateSeedList": ["70dbb38a-690e-45b3-bfc5-eccba64fbd9b"],
     "evolutionRequirements": [
@@ -5181,7 +5182,8 @@
     "bitFarmingRate": 4,
     "digiEvolutionSeedList": [
       "d9f9c182-731b-4f21-8e2f-167b2d663e34",
-      "e6a29e6f-9a3d-41a3-87c3-7c0c573b42de"
+      "e6a29e6f-9a3d-41a3-87c3-7c0c573b42de",
+      "cdefab32-10fe-0cba-a876-543210fedabc"
     ],
     "degenerateSeedList": ["80c6f1b9-648a-49b3-92c9-01d6e2f4bc8e"],
     "evolutionRequirements": [
@@ -5559,7 +5561,10 @@
     "def": 103,
     "speed": 108,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": ["c3d5e7f8-9a1b-4c2d-9e6f-7a8b9c1d2e3f"],
+    "digiEvolutionSeedList": [
+      "c3d5e7f8-9a1b-4c2d-9e6f-7a8b9c1d2e3f",
+      "b2dbcc35-8eeb-4f16-97aa-3f2e7a1a3df9"
+    ],
     "degenerateSeedList": ["e3c9f0b7-1a5d-4e6b-8c2d-9f0a3e5d7c6b"],
     "evolutionRequirements": [
       {
@@ -7524,7 +7529,8 @@
         "type": "level",
         "value": 50
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "f1b3b3b4-1b3b-4b3b-8b3b-3b3b3b3b3b3b",
@@ -7684,13 +7690,14 @@
     "speed": 142,
     "bitFarmingRate": 1,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["a49fd2ae-e98d-4c4b-9c53-708e6f019af2"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 50
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "uvw1234x-567y-zabc-defg-hijklmno890",
@@ -8054,13 +8061,17 @@
     "speed": 151,
     "bitFarmingRate": 29,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": [
+      "a5e0bfb7-8d2a-4ef1-9636-cbb9db1fe1d0",
+      "25fc7b61-17ae-453b-94f7-4fa4f9171633"
+    ],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 60
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "f9a2b8c3-4e5d-4f7b-9c1e-8d6f3a2b5c7e",

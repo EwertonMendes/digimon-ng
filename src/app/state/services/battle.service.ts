@@ -62,7 +62,9 @@ export class BattleService {
 
     let baseDamage = (attacker.atk - defender.def / 2) * 10 * attrFactor * crit * variance * rankDom.damageMultiplier;
     baseDamage = Math.max(1, baseDamage);
-    baseDamage = Math.min(baseDamage, defender.maxHp / 2);
+
+    const hpCap = rankDom.damageMultiplier > 1.0 ? defender.maxHp : defender.maxHp / 2;
+    baseDamage = Math.min(baseDamage, hpCap);
 
     return Math.floor(baseDamage);
   }

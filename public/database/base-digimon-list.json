@@ -19,7 +19,8 @@
         "type": "level",
         "value": 2
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "e7f074b5-2979-4a45-b6a3-3b07f6965f7d",
@@ -41,7 +42,8 @@
         "type": "level",
         "value": 2
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "9fb1302d-6916-4237-a80f-fa4e5e69decc",
@@ -63,7 +65,8 @@
         "type": "level",
         "value": 2
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "edc9812f-82a6-487f-9a4d-52b845643176",
@@ -79,8 +82,9 @@
     "speed": 28,
     "bitFarmingRate": 2,
     "digiEvolutionSeedList": [
-      "96c23ff9-d6b4-43da-91e6-f0c9799c65d7",
-      "lmn3456o-789p-qr01-stuv-wxyzabcd34"
+      "lmn3456o-789p-qr01-stuv-wxyzabcd34",
+      "b127c8d9-e0f1-4a2b-3c4d-6e7f8a9b0c1d",
+      "96c23ff9-d6b4-43da-91e6-f0c9799c65d7"
     ],
     "degenerateSeedList": ["b5ac222a-e653-4543-923e-77355dd24686"],
     "evolutionRequirements": [
@@ -88,7 +92,8 @@
         "type": "level",
         "value": 5
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "277edb81-7051-4a5e-8f5d-369e70cd18e5",
@@ -110,7 +115,8 @@
         "type": "level",
         "value": 5
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "25acac95-1107-484a-8dfc-f4f8139bc164",
@@ -125,14 +131,19 @@
     "def": 41,
     "speed": 37,
     "bitFarmingRate": 5,
-    "digiEvolutionSeedList": ["083241cc-fcf8-4101-a58d-09b0e6b375b6"],
+    "digiEvolutionSeedList": [
+      "083241cc-fcf8-4101-a58d-09b0e6b375b6",
+      "1e4a6cd2-b5f2-40c9-abc1-e2d4f5b6a789",
+      "78d3f4a5-b6c7-4d8e-0f1a-2b3c4d5e6f7a"
+    ],
     "degenerateSeedList": ["9fb1302d-6916-4237-a80f-fa4e5e69decc"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 5
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "4f2a5a34-f37e-4e2e-9429-5fa6a7b36c1b",
@@ -147,14 +158,19 @@
     "def": 28,
     "speed": 36,
     "bitFarmingRate": 3,
-    "digiEvolutionSeedList": ["986f4b59-c234-44fa-b5bc-456736578f67"],
+    "digiEvolutionSeedList": [
+      "986f4b59-c234-44fa-b5bc-456736578f67",
+      "6cd2791a-e1f2-4a3b-4c5d-7e8f9a0b1c2d",
+      "9f05ac4d-b4c5-4d6e-7f8a-0b1c2d3e4f5a"
+    ],
     "degenerateSeedList": [],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 5
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "abc1234f-5678-90de-bc12-3456789abcde",
@@ -176,7 +192,8 @@
         "type": "level",
         "value": 5
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "def5678g-9012-34hi-jk56-7890123lmnop",
@@ -194,7 +211,7 @@
     "digiEvolutionSeedList": [
       "ghi9012j-3456-kl78-mn90-1234567opqrs",
       "abc1234d-5678-efgh-9101-ijklmnopqrst",
-      "xyz1234a-5678-bc90-defg-1234567890ab"
+      "dfa3b4c5-e6f7-4a8b-0c1d-2e3f4a5b6c7d"
     ],
     "degenerateSeedList": [],
     "evolutionRequirements": [
@@ -202,7 +219,8 @@
         "type": "level",
         "value": 5
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "ijk9012l-3456-789m-nopq-rstuvwxyz23",
@@ -224,7 +242,8 @@
         "type": "level",
         "value": 5
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "5f42c392-4f8e-4fc2-9202-44225bc0936b",
@@ -239,14 +258,18 @@
     "def": 33,
     "speed": 37,
     "bitFarmingRate": 1,
-    "digiEvolutionSeedList": ["768e6d1a-5c3b-4ed2-991f-e4a1c16357a6"],
+    "digiEvolutionSeedList": [
+      "768e6d1a-5c3b-4ed2-991f-e4a1c16357a6",
+      "uvw1234a-567b-cdef-890g-hijklmn1234"
+    ],
     "degenerateSeedList": [],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 5
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "b9931f5c-fc66-4c4a-babd-7b38b994f5b5",
@@ -263,8 +286,7 @@
     "bitFarmingRate": 3,
     "digiEvolutionSeedList": [
       "45a0c1d2-e3f4-4a5b-7c8d-9e0f1a2b3c4d",
-      "c238d9e0-f1a2-4b3c-4d5e-7f8a9b0c1d2e",
-      "xyz5678a-123b-cdef-456g-hijklmn5678"
+      "c238d9e0-f1a2-4b3c-4d5e-7f8a9b0c1d2e"
     ],
     "degenerateSeedList": [],
     "evolutionRequirements": [
@@ -272,7 +294,8 @@
         "type": "level",
         "value": 5
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "c32edbfb-fd41-40dc-95c3-ded5a6b89e99",
@@ -298,7 +321,8 @@
         "type": "level",
         "value": 6
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "2c011b3c-727f-4f36-aeb7-18e94eb4801e",
@@ -313,14 +337,20 @@
     "def": 29,
     "speed": 38,
     "bitFarmingRate": 3,
-    "digiEvolutionSeedList": ["e5c3b6f1-ae43-4d5e-9f0a-1b2c3d4e5f67"],
+    "digiEvolutionSeedList": [
+      "e5c3b6f1-ae43-4d5e-9f0a-1b2c3d4e5f67",
+      "c238df70-e7f8-4a9b-0c1d-3e4f5a6b7c8d",
+      "xyz5678a-123b-cdef-456g-hijklmn5678",
+      "eab4c5d6-f7a8-4b9c-0d1e-2f3a4b5c6d7e"
+    ],
     "degenerateSeedList": [],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 5
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "ed20a627-e7f5-4ab1-bbfd-2a7c2df1d0b6",
@@ -338,9 +368,7 @@
     "digiEvolutionSeedList": [
       "6a7b8c9d-e0f1-4a2b-8c3d-4e5f6a7b8c9d",
       "178d24e5-f6a7-4b9c-9d0e-2f3a4b5c6d7e",
-      "e45af1b2-c3d4-4e6f-6a7b-9c0d1e2f3a4b",
-      "xyz5678a-123b-cdef-456g-hijklmn7890",
-      "abc1234d-5678-efgh-9101-ijklmnopqrst"
+      "e45af1b2-c3d4-4e6f-6a7b-9c0d1e2f3a4b"
     ],
     "degenerateSeedList": [],
     "evolutionRequirements": [
@@ -348,7 +376,8 @@
         "type": "level",
         "value": 6
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "ed622fc4-832a-4f67-a7e4-b08ad63f92cf",
@@ -365,9 +394,7 @@
     "bitFarmingRate": 4,
     "digiEvolutionSeedList": [
       "ad0e2f3b-c4d5-4e6f-7a8b-9c0d1e2f3a4b",
-      "uvw1234a-567b-cdef-890g-hijklmn1234",
-      "39af46e7-b8c9-4d0e-1f2a-4b5c6d7e8f9a",
-      "b127c8d9-e0f1-4a2b-3c4d-6e7f8a9b0c1d"
+      "23e8a9b0-c1d2-4e3f-5a6b-7c8d9e0f1a2b"
     ],
     "degenerateSeedList": [],
     "evolutionRequirements": [
@@ -375,7 +402,8 @@
         "type": "level",
         "value": 7
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "b18ad2e7-5a8b-43c3-990e-5f00ea8e3ae7",
@@ -393,10 +421,7 @@
     "digiEvolutionSeedList": [
       "cf2a3b4c-d5e6-4f7a-9b0c-1d2e3f4a5b6c",
       "4ab057f8-c9d0-4e1f-2a3b-5c6d7e8f9a0b",
-      "67c2e3f4-a5b6-4c7d-9e0f-1a2b3c4d5e6f",
-      "083241cc-fcf8-4101-a58d-09b0e6b375b6",
-      "7b8c9d0e-f1a2-4b3c-9d4e-5f6a7b8c9d0e",
-      "be1f2a3b-c4d5-4e6f-8a9b-0c1d2e3f4a5b"
+      "67c2e3f4-a5b6-4c7d-9e0f-1a2b3c4d5e6f"
     ],
     "degenerateSeedList": [],
     "evolutionRequirements": [
@@ -404,7 +429,8 @@
         "type": "level",
         "value": 6
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "658aaf6d-9296-4011-8989-cbfbc2970d35",
@@ -419,14 +445,15 @@
     "def": 28,
     "speed": 29,
     "bitFarmingRate": 3,
-    "digiEvolutionSeedList": [],
+    "digiEvolutionSeedList": ["39af46e7-b8c9-4d0e-1f2a-4b5c6d7e8f9a"],
     "degenerateSeedList": [],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 5
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "048cb7ff-ec92-47e3-bc1d-73f89d73b0cb",
@@ -451,7 +478,8 @@
         "type": "level",
         "value": 6
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "2768be8f-6bb1-4626-a2e5-2e76c8275e38",
@@ -468,7 +496,8 @@
     "bitFarmingRate": 300,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": [],
-    "evolutionRequirements": []
+    "evolutionRequirements": [],
+    "checked": true
   },
   {
     "seed": "df0ec13c-fc18-4a32-8536-0049016c9f10",
@@ -494,7 +523,8 @@
         "type": "level",
         "value": 5
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "1cc110d2-b626-49a5-918f-fda429e06760",
@@ -516,7 +546,8 @@
         "type": "level",
         "value": 5
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "2b418d80-1f34-4868-ace2-e62a38e9b9cd",
@@ -531,14 +562,18 @@
     "def": 40,
     "speed": 39,
     "bitFarmingRate": 5,
-    "digiEvolutionSeedList": ["34f9b0c1-d2e3-4f4a-6b7c-8d9e0f1a2b3c"],
+    "digiEvolutionSeedList": [
+      "34f9b0c1-d2e3-4f4a-6b7c-8d9e0f1a2b3c",
+      "8ef49b3c-a3b4-4c5d-6e7f-9a0b1c2d3e4f"
+    ],
     "degenerateSeedList": [],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 7
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "02d705e7-f87c-45e6-861c-ef9cd0df04f2",
@@ -555,8 +590,6 @@
     "bitFarmingRate": 4,
     "digiEvolutionSeedList": [
       "5bc16809-d0e1-4f2a-3b4c-6d7e8f9a0b1c",
-      "768e6d1a-5c3b-4ed2-991f-e4a1c16357a6",
-      "7de38a2b-f2a3-4b4c-5d6e-8f9a0b1c2d3e",
       "56b1d2e3-f4a5-4b6c-8d9e-0f1a2b3c4d5e"
     ],
     "degenerateSeedList": [],
@@ -565,7 +598,8 @@
         "type": "level",
         "value": 5
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "7dbd69e3-62f3-4433-a8de-12c8ae5c1ea6",
@@ -583,10 +617,7 @@
     "digiEvolutionSeedList": [
       "067c13d4-e5f6-4a8b-8c9d-1e2f3a4b5c6d",
       "a016bd5e-c5d6-4e7f-8a9b-1c2d3e4f5a6b",
-      "d349f081-f8a9-4b0c-1d2e-4f5a6b7c8d9e",
-      "e45af1b2-c3d4-4e6f-6a7b-9c0d1e2f3a4b",
-      "5f6e7d8c-9b0a-4c1d-8e2f-3a4b5c6d7e8f",
-      "ghi9012j-3456-kl78-mn90-1234567opqrs"
+      "d349f081-f8a9-4b0c-1d2e-4f5a6b7c8d9e"
     ],
     "degenerateSeedList": [],
     "evolutionRequirements": [
@@ -594,7 +625,8 @@
         "type": "level",
         "value": 6
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "f254a601-0c96-46b1-9514-f08f3f4d74f3",
@@ -616,7 +648,8 @@
         "type": "level",
         "value": 6
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "5bd6823a-72cb-408e-abe5-e0e91a1e6002",
@@ -638,7 +671,8 @@
         "type": "level",
         "value": 6
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "96c23ff9-d6b4-43da-91e6-f0c9799c65d7",
@@ -658,16 +692,14 @@
       "67cd2d63-4299-446e-a851-6f04e9b51bc5",
       "a351a4ab-a5bf-42df-8a27-bb2d8ce06d0b"
     ],
-    "degenerateSeedList": [
-      "edc9812f-82a6-487f-9a4d-52b845643176",
-      "ijk9012l-3456-789m-nopq-rstuvwxyz23"
-    ],
+    "degenerateSeedList": ["edc9812f-82a6-487f-9a4d-52b845643176"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "xyz5678a-123b-cdef-456g-hijklmn7890",
@@ -683,17 +715,18 @@
     "speed": 53,
     "bitFarmingRate": 2,
     "digiEvolutionSeedList": [
-      "a03b8672-59d7-4f2e-9b5d-b0e2a3e7f9b8",
-      "b1e4c7f8-6d5a-4e91-8c2f-30a9e7b0f3c2",
-      "d9e3c6b5-2f1a-4e7b-8c9d-0f5a3e7b2d6c"
+      "76c5f4e2-1a0b-42f7-9e4d-b3f0d8a1c2e6",
+      "03de2f94-6a3b-457a-a0f1-fb2c9e57c8a3",
+      "3fdea691-d2ae-44a4-bc02-59de09cf2049"
     ],
-    "degenerateSeedList": ["ed20a627-e7f5-4ab1-bbfd-2a7c2df1d0b6"],
+    "degenerateSeedList": [],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "uvw1234a-567b-cdef-890g-hijklmn1234",
@@ -710,16 +743,17 @@
     "bitFarmingRate": 1,
     "digiEvolutionSeedList": [
       "87a9e123-4f23-42b3-9d83-3c7e4382c3d5",
-      "f3c12345-6b7d-4e89-9ef7-89c4672c34ab",
-      "46c1f3e9-5a4d-4b7c-8e1f-cb7a0f9d2e3c"
+      "46c1f3e9-5a4d-4b7c-8e1f-cb7a0f9d2e3c",
+      "e3f9c4b1-8a2d-4d91-97c1-5378c5f78e0b"
     ],
-    "degenerateSeedList": ["ed622fc4-832a-4f67-a7e4-b08ad63f92cf"],
+    "degenerateSeedList": ["5f42c392-4f8e-4fc2-9202-44225bc0936b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "xyz5678a-123b-cdef-456g-hijklmn5678",
@@ -734,17 +768,15 @@
     "def": 63,
     "speed": 71,
     "bitFarmingRate": 5,
-    "digiEvolutionSeedList": [
-      "fa3e15c0-4a3f-45e1-b75e-1b2d1b16a377",
-      "12bfe8d3-7c6e-4e0f-9a2b-f1d3c87b20f5"
-    ],
-    "degenerateSeedList": ["b9931f5c-fc66-4c4a-babd-7b38b994f5b5"],
+    "digiEvolutionSeedList": ["fa3e15c0-4a3f-45e1-b75e-1b2d1b16a377"],
+    "degenerateSeedList": ["2c011b3c-727f-4f36-aeb7-18e94eb4801e"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "6ce78264-cbb0-4e10-8f55-89336f93d8dd",
@@ -759,11 +791,7 @@
     "def": 66,
     "speed": 56,
     "bitFarmingRate": 7,
-    "digiEvolutionSeedList": [
-      "b7f8c97d-1e9f-42a7-bbf1-d3e67a54f799",
-      "76c5f4e2-1a0b-42f7-9e4d-b3f0d8a1c2e6",
-      "c2d84f3e-0b97-402d-9ef1-b38f7051c4ad"
-    ],
+    "digiEvolutionSeedList": ["b7f8c97d-1e9f-42a7-bbf1-d3e67a54f799"],
     "degenerateSeedList": [
       "277edb81-7051-4a5e-8f5d-369e70cd18e5",
       "c32edbfb-fd41-40dc-95c3-ded5a6b89e99"
@@ -773,7 +801,8 @@
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "083241cc-fcf8-4101-a58d-09b0e6b375b6",
@@ -790,10 +819,7 @@
     "bitFarmingRate": 10,
     "digiEvolutionSeedList": [
       "d6e3a9c0-2f5b-4e7a-8c1d-9f0a3e5d7b2c",
-      "7d9e3f2c-5f9a-4c1d-8124-0a3d4e6f9b2c",
-      "35d9c2a4-9b1f-4e6c-82a3-f0e5c7d8b193",
-      "cd52bdf0-80a8-4b19-b738-ed6acf1f0b14",
-      "93c1a5e7-1f0d-48b9-aeb2-6f8c5d4e3b1a"
+      "35d9c2a4-9b1f-4e6c-82a3-f0e5c7d8b193"
     ],
     "degenerateSeedList": ["25acac95-1107-484a-8dfc-f4f8139bc164"],
     "evolutionRequirements": [
@@ -801,7 +827,8 @@
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "986f4b59-c234-44fa-b5bc-456736578f67",
@@ -816,17 +843,15 @@
     "def": 59,
     "speed": 61,
     "bitFarmingRate": 7,
-    "digiEvolutionSeedList": [
-      "f3d8e2e9-316a-412b-91f9-678d1e6e9a56",
-      "f0a5d7b9-2c1f-4e6a-8c3d-9f0e3a5d7b2c"
-    ],
+    "digiEvolutionSeedList": ["f3d8e2e9-316a-412b-91f9-678d1e6e9a56"],
     "degenerateSeedList": ["4f2a5a34-f37e-4e2e-9429-5fa6a7b36c1b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "ghi9012j-3456-kl78-mn90-1234567opqrs",
@@ -843,19 +868,19 @@
     "bitFarmingRate": 3,
     "digiEvolutionSeedList": [
       "jkl3456m-7890-no12-pq34-567890rstuvw",
-      "f0c7e9b3-1a5d-4e6b-8c2b-9d3a5e0f7c6b"
+      "f0e2b4d1-59c3-41a7-9d2e-85c7f31b06a4"
     ],
     "degenerateSeedList": [
       "abc1234f-5678-90de-bc12-3456789abcde",
-      "def5678g-9012-34hi-jk56-7890123lmnop",
-      "7dbd69e3-62f3-4433-a8de-12c8ae5c1ea6"
+      "def5678g-9012-34hi-jk56-7890123lmnop"
     ],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "abc1234d-5678-efgh-9101-ijklmnopqrst",
@@ -872,21 +897,17 @@
     "bitFarmingRate": 6,
     "digiEvolutionSeedList": [
       "9f207e7b-2e92-4cfc-8e44-94cf25e0fdb5",
-      "hij6789k-0123-456l-mnop-qrstuvwxyz01",
-      "def5678a-9012-345b-cdef-6789012345gh",
       "0a1d3e9f-b7c2-4f8a-84e1-d0c9f27b1356",
-      "14fa2d8e-a930-4eb1-bc27-ef19d3f0c475"
+      "c6e9a3b7-1f5d-4e8a-9c2b-0d3a5e7f9b6c"
     ],
-    "degenerateSeedList": [
-      "def5678g-9012-34hi-jk56-7890123lmnop",
-      "ed20a627-e7f5-4ab1-bbfd-2a7c2df1d0b6"
-    ],
+    "degenerateSeedList": ["def5678g-9012-34hi-jk56-7890123lmnop"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "xyz1234a-5678-bc90-defg-1234567890ab",
@@ -901,17 +922,15 @@
     "def": 57,
     "speed": 60,
     "bitFarmingRate": 3,
-    "digiEvolutionSeedList": [
-      "f4cbbd45-9e42-4b43-b9b0-4f8e1b9b9d21",
-      "28e7b03d-c49a-431b-81f2-d3a0f8c197e0"
-    ],
-    "degenerateSeedList": ["def5678g-9012-34hi-jk56-7890123lmnop"],
+    "digiEvolutionSeedList": ["28e7b03d-c49a-431b-81f2-d3a0f8c197e0"],
+    "degenerateSeedList": [],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "lmn3456o-789p-qr01-stuv-wxyzabcd34",
@@ -928,9 +947,7 @@
     "bitFarmingRate": 5,
     "digiEvolutionSeedList": [
       "opq6789r-012s-tuvw-xyza-bcdefg5678",
-      "d7e9f1a3-5b2c-4d8a-9c6e-1f0b3a5d7e2c",
-      "bd2c0a93-4d8f-4f6e-b3a9-761f40ed38b7",
-      "f604d614-12f3-4f68-8582-779e561fcd91"
+      "d7e9f1a3-5b2c-4d8a-9c6e-1f0b3a5d7e2c"
     ],
     "degenerateSeedList": [
       "ijk9012l-3456-789m-nopq-rstuvwxyz23",
@@ -941,7 +958,8 @@
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "768e6d1a-5c3b-4ed2-991f-e4a1c16357a6",
@@ -958,19 +976,16 @@
     "bitFarmingRate": 2,
     "digiEvolutionSeedList": [
       "80c6f1b9-648a-49b3-92c9-01d6e2f4bc8e",
-      "7d9e3f2c-5f9a-4c1d-8124-0a3d4e6f9b2c",
-      "c7e0f2d9-b5a3-4b18-91f2-8d9c0e7a6f13"
+      "41d20f3e-c798-4e3d-b0f2-718b49f305d7"
     ],
-    "degenerateSeedList": [
-      "5f42c392-4f8e-4fc2-9202-44225bc0936b",
-      "02d705e7-f87c-45e6-861c-ef9cd0df04f2"
-    ],
+    "degenerateSeedList": ["5f42c392-4f8e-4fc2-9202-44225bc0936b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "d9a452f3-71d0-4b1a-9bee-8e4c36b9e1a3",
@@ -987,8 +1002,7 @@
     "bitFarmingRate": 76,
     "digiEvolutionSeedList": [
       "def5678a-9012-345b-cdef-6789012345gh",
-      "56a2e212-2c89-46c4-b7b4-36bba1dbd7b7",
-      "d0c5e9b7-3f1a-4e6b-8c2d-9f0e3a5d7c6b"
+      "b9c0f3a7-2d5a-4e6b-8c1d-9f0e3a5d7b2c"
     ],
     "degenerateSeedList": ["048cb7ff-ec92-47e3-bc1d-73f89d73b0cb"],
     "evolutionRequirements": [
@@ -996,7 +1010,8 @@
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "3c827fbe-aa3d-4b2b-9cb3-5a6d4fc8e47f",
@@ -1021,7 +1036,8 @@
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "1e4a6cd2-b5f2-40c9-abc1-e2d4f5b6a789",
@@ -1036,14 +1052,19 @@
     "def": 68,
     "speed": 52,
     "bitFarmingRate": 48,
-    "digiEvolutionSeedList": ["e7b9c0f3-1a5d-4e6b-8c2d-9f0a3e5d7c6b"],
-    "degenerateSeedList": [],
+    "digiEvolutionSeedList": [
+      "e7b9c0f3-1a5d-4e6b-8c2d-9f0a3e5d7c6b",
+      "7d9e3f2c-5f9a-4c1d-8124-0a3d4e6f9b2c",
+      "f604d614-12f3-4f68-8582-779e561fcd91"
+    ],
+    "degenerateSeedList": ["25acac95-1107-484a-8dfc-f4f8139bc164"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "e5c3b6f1-ae43-4d5e-9f0a-1b2c3d4e5f67",
@@ -1058,17 +1079,15 @@
     "def": 56,
     "speed": 76,
     "bitFarmingRate": 40,
-    "digiEvolutionSeedList": [
-      "a5d8e0b7-3c1f-4e9a-8b2d-6f0c3a5e7d1b",
-      "17d0f8b3-4e1a-49c7-9cf2-e03d7a2b5f64"
-    ],
+    "digiEvolutionSeedList": ["a5d8e0b7-3c1f-4e9a-8b2d-6f0c3a5e7d1b"],
     "degenerateSeedList": ["2c011b3c-727f-4f36-aeb7-18e94eb4801e"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "5f6e7d8c-9b0a-4c1d-8e2f-3a4b5c6d7e8f",
@@ -1085,17 +1104,16 @@
     "bitFarmingRate": 36,
     "digiEvolutionSeedList": [
       "e3b9c6f0-2d5a-4e7b-8c1d-9f0a5e3d7b2c",
-      "d7b9c0e3-1a5f-4e6b-8c2d-9f0a3e5d7c6b",
-      "b5e9c2f0-3a1d-4e6b-8c7b-9f0d5a3e2d7c",
       "a3c9e71d-b581-4aef-bc7f-0e1db4956f32"
     ],
-    "degenerateSeedList": ["7dbd69e3-62f3-4433-a8de-12c8ae5c1ea6"],
+    "degenerateSeedList": [],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "6a7b8c9d-e0f1-4a2b-8c3d-4e5f6a7b8c9d",
@@ -1112,9 +1130,7 @@
     "bitFarmingRate": 40,
     "digiEvolutionSeedList": [
       "b2a5c9e0-3d1f-4e6a-8c7b-9f0d3a5e7c6b",
-      "934b0e2f-807c-4c3a-b1f9-60edc7f4a59e",
-      "e2c5a9b7-1d3f-4e6a-8c9b-0f5d3a7e2b6c",
-      "2d83fa14-b1ae-44fa-9a1c-046af2d2306c"
+      "09c174de-84df-4208-946b-9bc624871631"
     ],
     "degenerateSeedList": ["ed20a627-e7f5-4ab1-bbfd-2a7c2df1d0b6"],
     "evolutionRequirements": [
@@ -1122,7 +1138,8 @@
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "7b8c9d0e-f1a2-4b3c-9d4e-5f6a7b8c9d0e",
@@ -1138,19 +1155,18 @@
     "speed": 48,
     "bitFarmingRate": 44,
     "digiEvolutionSeedList": [
-      "e3f9c4b1-8a2d-4d91-97c1-5378c5f78e0b",
       "f5a7b9c0-2d5a-4e6b-8c1d-9f0e3a5d7b2c",
       "a3d5f4e1-92b0-4fc8-ae1c-6d7e9c203f5b",
-      "ecb85eb6-9dd6-4997-b4b0-2f5bfa778712",
-      "def5678a-9012-345b-cdef-6789012345gh"
+      "b3e9c0f7-1a5d-4e6b-8c2d-9f0a3e5d7c6b"
     ],
-    "degenerateSeedList": ["b18ad2e7-5a8b-43c3-990e-5f00ea8e3ae7"],
+    "degenerateSeedList": [],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "8c9d0e1f-a2b3-4c5d-0e6f-7a8b9c0d1e2f",
@@ -1167,10 +1183,8 @@
     "bitFarmingRate": 40,
     "digiEvolutionSeedList": [
       "d9e3c6b5-2f1a-4e7b-8c9d-0f5a3e7b2d6c",
-      "a03b8672-59d7-4f2e-9b5d-b0e2a3e7f9b8",
-      "b1e4c7f8-6d5a-4e91-8c2f-30a9e7b0f3c2",
-      "e3a5c9b7-3d1f-4e6a-8c2b-9f0d5a3e7b6c",
-      "3fdea691-d2ae-44a4-bc02-59de09cf2049"
+      "b3e6a9c5-2d1f-4e7a-8c9b-0f5d3a7e2b6c",
+      "cbf5e879-4074-40de-89fc-4317e4b59338"
     ],
     "degenerateSeedList": [],
     "evolutionRequirements": [
@@ -1178,7 +1192,8 @@
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "9d0e1f2a-b3c4-4d5e-1f6a-2b3c4d5e6f7a",
@@ -1195,7 +1210,6 @@
     "bitFarmingRate": 52,
     "digiEvolutionSeedList": [
       "17d0f8b3-4e1a-49c7-9cf2-e03d7a2b5f64",
-      "c6b9e0f3-2a5d-4e7b-8c1d-9f0a3e5d7b2c",
       "f0a5d7b9-2c1f-4e6a-8c3d-9f0e3a5d7b2c"
     ],
     "degenerateSeedList": ["df0ec13c-fc18-4a32-8536-0049016c9f10"],
@@ -1204,7 +1218,8 @@
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "ad0e2f3b-c4d5-4e6f-7a8b-9c0d1e2f3a4b",
@@ -1221,9 +1236,7 @@
     "bitFarmingRate": 44,
     "digiEvolutionSeedList": [
       "c4a7b9d2-1e5f-4c8a-9b3e-6d0f2a5e7c1b",
-      "8d2e5f3b-2a9c-47b0-91f3-e6c4d5b7a081",
-      "d9a3c6e0-2f5b-4e7a-8c1b-9f0d5a3e7b2c",
-      "a3c9e71d-b581-4aef-bc7f-0e1db4956f32"
+      "1449e5fc-0412-44f2-8b2d-b005419ea5c6"
     ],
     "degenerateSeedList": ["ed622fc4-832a-4f67-a7e4-b08ad63f92cf"],
     "evolutionRequirements": [
@@ -1231,7 +1244,8 @@
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "be1f2a3b-c4d5-4e6f-8a9b-0c1d2e3f4a5b",
@@ -1256,7 +1270,8 @@
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "cf2a3b4c-d5e6-4f7a-9b0c-1d2e3f4a5b6c",
@@ -1272,13 +1287,8 @@
     "speed": 52,
     "bitFarmingRate": 44,
     "digiEvolutionSeedList": [
-      "f4cbbd45-9e42-4b43-b9b0-4f8e1b9b9d21",
-      "f8d2c6e9-4b1a-4e9f-8c7d-3a5e9b2f1d0c",
-      "c3f0a7b9-2d5a-4e6b-8c1d-9f0e3a5d7b2c",
-      "3e04bb4b-6e1a-4c57-9f7d-bd9e21048c5d",
-      "c4a7b9d2-1e5f-4c8a-9b3e-6d0f2a5e7c1b",
-      "e3a5c9b7-3d1f-4e6a-8c2b-9f0d5a3e7b6c",
-      "5b7a39c4-812d-42c1-8e07-3c9a8e5f6f10"
+      "a5d7b9c0-3f1a-4e6b-8c2d-9f0e3a5d7b6c",
+      "f4cbbd45-9e42-4b43-b9b0-4f8e1b9b9d21"
     ],
     "degenerateSeedList": ["b18ad2e7-5a8b-43c3-990e-5f00ea8e3ae7"],
     "evolutionRequirements": [
@@ -1286,7 +1296,8 @@
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "dfa3b4c5-e6f7-4a8b-0c1d-2e3f4a5b6c7d",
@@ -1303,16 +1314,16 @@
     "bitFarmingRate": 50,
     "digiEvolutionSeedList": [
       "f0c7e9b3-1a5d-4e6b-8c2b-9d3a5e0f7c6b",
-      "f0b7e9c5-2a1d-4e6b-8c3b-9d5a3e0f7c2b",
       "f71c8e04-3b7d-4d20-86f1-efb9403a19d6"
     ],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["def5678g-9012-34hi-jk56-7890123lmnop"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "eab4c5d6-f7a8-4b9c-0d1e-2f3a4b5c6d7e",
@@ -1327,18 +1338,15 @@
     "def": 60,
     "speed": 64,
     "bitFarmingRate": 54,
-    "digiEvolutionSeedList": [
-      "d7b9c0e3-1a5f-4e6b-8c2d-9f0a3e5d7c6b",
-      "e3b9c6f0-2d5a-4e7b-8c1d-9f0a5e3d7b2c",
-      "fa3e15c0-4a3f-45e1-b75e-1b2d1b16a377"
-    ],
-    "degenerateSeedList": [],
+    "digiEvolutionSeedList": ["d7b9c0e3-1a5f-4e6b-8c2d-9f0a3e5d7c6b"],
+    "degenerateSeedList": ["2c011b3c-727f-4f36-aeb7-18e94eb4801e"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "feb5d6e7-a8b9-4c0d-1e2f-3a4b5c6d7e8f",
@@ -1353,17 +1361,15 @@
     "def": 70,
     "speed": 59,
     "bitFarmingRate": 50,
-    "digiEvolutionSeedList": [
-      "c9f0e3a7-1d5b-4e6a-8c2b-9f3a5e0d7b6c",
-      "f0a5d7b9-2c1f-4e6a-8c3d-9f0e3a5d7b2c"
-    ],
+    "digiEvolutionSeedList": ["c9f0e3a7-1d5b-4e6a-8c2b-9f3a5e0d7b6c"],
     "degenerateSeedList": ["df0ec13c-fc18-4a32-8536-0049016c9f10"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "01c6e7f8-b9a0-4c1d-2e3f-4a5b6c7d8e9f",
@@ -1380,7 +1386,7 @@
     "bitFarmingRate": 50,
     "digiEvolutionSeedList": [
       "e01c59b2-8f7a-49f2-914d-6ac9d3ef2b84",
-      "c6b9e0f3-2a5d-4e7b-8c1d-9f0a3e5d7b2c"
+      "c7e0f2d9-b5a3-4b18-91f2-8d9c0e7a6f13"
     ],
     "degenerateSeedList": ["1cc110d2-b626-49a5-918f-fda429e06760"],
     "evolutionRequirements": [
@@ -1388,7 +1394,8 @@
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "12d7f8a9-b0c1-4d2e-3f4a-5b6c7d8e9f0a",
@@ -1413,7 +1420,8 @@
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "23e8a9b0-c1d2-4e3f-5a6b-7c8d9e0f1a2b",
@@ -1429,19 +1437,17 @@
     "speed": 58,
     "bitFarmingRate": 54,
     "digiEvolutionSeedList": [
-      "8d2e5f3b-2a9c-47b0-91f3-e6c4d5b7a081",
       "c6b9e0f3-2a5d-4e7b-8c1d-9f0a3e5d7b2c",
-      "c4a7b9d2-1e5f-4c8a-9b3e-6d0f2a5e7c1b",
-      "72a04c6f-3b9c-4821-a7f1-c83d4d0f6e89",
-      "87a9e123-4f23-42b3-9d83-3c7e4382c3d5"
+      "e3c9f0b7-1a5d-4e6b-8c2d-9f0a3e5d7c6b"
     ],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["ed622fc4-832a-4f67-a7e4-b08ad63f92cf"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "34f9b0c1-d2e3-4f4a-6b7c-8d9e0f1a2b3c",
@@ -1456,19 +1462,15 @@
     "def": 72,
     "speed": 60,
     "bitFarmingRate": 60,
-    "digiEvolutionSeedList": [
-      "5d7b9c0-2f1a-4e6b-8c3d-9f0a5e3d7b2c",
-      "d9a3c6e0-2f5b-4e7a-8c1b-9f0d5a3e7b2c",
-      "b7e9c0f3-1a5d-4e6b-8c2d-9f0a3e5d7c6b",
-      "46c1f3e9-5a4d-4b7c-8e1f-cb7a0f9d2e3c"
-    ],
+    "digiEvolutionSeedList": ["a5d7b9c0-2f1a-4e6b-8c3d-9f0a5e3d7b2c"],
     "degenerateSeedList": ["2b418d80-1f34-4868-ace2-e62a38e9b9cd"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "45a0c1d2-e3f4-4a5b-7c8d-9e0f1a2b3c4d",
@@ -1484,9 +1486,7 @@
     "speed": 60,
     "bitFarmingRate": 44,
     "digiEvolutionSeedList": [
-      "d4b6f7c0-3f19-482a-a5e1-b0c2d7e3f849",
       "b5e9c2f0-3a1d-4e6b-8c7b-9f0d5a3e2d7c",
-      "76c5f4e2-1a0b-42f7-9e4d-b3f0d8a1c2e6",
       "a9d5e7b0-3f1a-4e6b-8c2d-9f0e3a5d7c6b"
     ],
     "degenerateSeedList": ["b9931f5c-fc66-4c4a-babd-7b38b994f5b5"],
@@ -1495,7 +1495,8 @@
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "56b1d2e3-f4a5-4b6c-8d9e-0f1a2b3c4d5e",
@@ -1512,7 +1513,6 @@
     "bitFarmingRate": 40,
     "digiEvolutionSeedList": [
       "f3a7b9c0-1d5a-4e6b-8c2d-9f0e3a5d7c6b",
-      "a7c0f3e9-1d5b-4e6a-8c2b-9f3a5e0d7b6c",
       "c2d84f3e-0b97-402d-9ef1-b38f7051c4ad"
     ],
     "degenerateSeedList": ["02d705e7-f87c-45e6-861c-ef9cd0df04f2"],
@@ -1521,7 +1521,8 @@
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "67c2e3f4-a5b6-4c7d-9e0f-1a2b3c4d5e6f",
@@ -1537,10 +1538,8 @@
     "speed": 58,
     "bitFarmingRate": 50,
     "digiEvolutionSeedList": [
-      "1449e5fc-0412-44f2-8b2d-b005419ea5c6",
-      "b9c0f3a7-2d5a-4e6b-8c1d-9f0e3a5d7b2c",
-      "a5d7b9c0-3f1a-4e6b-8c2d-9f0e3a5d7b6c",
-      "5a9c1a2a-79b5-4de4-bc0a-d0fcd149e9d6"
+      "8b7f0e3d-3c2a-4671-b9f1-e0d5a4c78b20",
+      "5b7a39c4-812d-42c1-8e07-3c9a8e5f6f10"
     ],
     "degenerateSeedList": ["b18ad2e7-5a8b-43c3-990e-5f00ea8e3ae7"],
     "evolutionRequirements": [
@@ -1548,7 +1547,8 @@
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "78d3f4a5-b6c7-4d8e-0f1a-2b3c4d5e6f7a",
@@ -1565,15 +1565,16 @@
     "bitFarmingRate": 50,
     "digiEvolutionSeedList": [
       "f3c12345-6b7d-4e89-9ef7-89c4672c34ab",
-      "87a9e123-4f23-42b3-9d83-3c7e4382c3d5"
+      "cd52bdf0-80a8-4b19-b738-ed6acf1f0b14"
     ],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["25acac95-1107-484a-8dfc-f4f8139bc164"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "89e4a5b6-c7d8-4e9f-0a1b-3c4d5e6f7a8b",
@@ -1598,7 +1599,8 @@
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "90f5a6b7-c8d9-4f0a-1b2c-4d5e6f7a8b9c",
@@ -1624,7 +1626,8 @@
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "a016b7c8-d9e0-4f1a-2b3c-5d6e7f8a9b0c",
@@ -1639,19 +1642,15 @@
     "def": 66,
     "speed": 54,
     "bitFarmingRate": 50,
-    "digiEvolutionSeedList": [
-      "a03b8672-59d7-4f2e-9b5d-b0e2a3e7f9b8",
-      "d4b6f7c0-3f19-482a-a5e1-b0c2d7e3f849",
-      "78c5f193-d4a0-42be-b0cd-3f7e91c608d4",
-      "f5a7b9c0-2d5a-4e6b-8c1d-9f0e3a5d7b2c"
-    ],
+    "digiEvolutionSeedList": ["a03b8672-59d7-4f2e-9b5d-b0e2a3e7f9b8"],
     "degenerateSeedList": [],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "b127c8d9-e0f1-4a2b-3c4d-6e7f8a9b0c1d",
@@ -1667,19 +1666,17 @@
     "speed": 52,
     "bitFarmingRate": 40,
     "digiEvolutionSeedList": [
-      "d0c5e9b7-3f1a-4e6b-8c2d-9f0e3a5d7c6b",
-      "a351a4ab-a5bf-42df-8a27-bb2d8ce06d0b",
       "ecb85eb6-9dd6-4997-b4b0-2f5bfa778712",
-      "a3c9e71d-b581-4aef-bc7f-0e1db4956f32",
-      "56a2e212-2c89-46c4-b7b4-36bba1dbd7b7"
+      "d0c5e9b7-3f1a-4e6b-8c2d-9f0e3a5d7c6b"
     ],
-    "degenerateSeedList": ["ed622fc4-832a-4f67-a7e4-b08ad63f92cf"],
+    "degenerateSeedList": ["edc9812f-82a6-487f-9a4d-52b845643176"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "c238d9e0-f1a2-4b3c-4d5e-7f8a9b0c1d2e",
@@ -1695,7 +1692,6 @@
     "speed": 71,
     "bitFarmingRate": 48,
     "digiEvolutionSeedList": [
-      "b5e9c2f0-3a1d-4e6b-8c7b-9f0d5a3e2d7c",
       "ae4c3d8f-0a9b-4950-8c3d-2b9f1f0871e5",
       "12bfe8d3-7c6e-4e0f-9a2b-f1d3c87b20f5"
     ],
@@ -1705,7 +1701,8 @@
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "d349e0f1-a2b3-4c5d-5e6f-8a9b0c1d2e3f",
@@ -1720,19 +1717,15 @@
     "def": 75,
     "speed": 53,
     "bitFarmingRate": 60,
-    "digiEvolutionSeedList": [
-      "de3f9b70-2c4a-45f1-83bd-ae170d8c9f1e",
-      "91a2e3f7-7f0b-446d-81e2-3d9c7f1a5e40",
-      "03de2f94-6a3b-457a-a0f1-fb2c9e57c8a3",
-      "09c174de-84df-4208-946b-9bc624871631"
-    ],
+    "digiEvolutionSeedList": ["91a2e3f7-7f0b-446d-81e2-3d9c7f1a5e40"],
     "degenerateSeedList": ["c32edbfb-fd41-40dc-95c3-ded5a6b89e99"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "e45af1b2-c3d4-4e6f-6a7b-9c0d1e2f3a4b",
@@ -1747,24 +1740,15 @@
     "def": 50,
     "speed": 67,
     "bitFarmingRate": 48,
-    "digiEvolutionSeedList": [
-      "a9d5e7b0-3f1a-4e6b-8c2d-9f0e3a5d7c6b",
-      "e2c5a9b7-1d3f-4e6a-8c9b-0f5d3a7e2b6c",
-      "934b0e2f-807c-4c3a-b1f9-60edc7f4a59e",
-      "b2a5c9e0-3d1f-4e6a-8c7b-9f0d3a5e7c6b",
-      "2d83fa14-b1ae-44fa-9a1c-046af2d2306c",
-      "7cd90fd2-0182-4973-aab7-1ff1162b83ec"
-    ],
-    "degenerateSeedList": [
-      "ed20a627-e7f5-4ab1-bbfd-2a7c2df1d0b6",
-      "7dbd69e3-62f3-4433-a8de-12c8ae5c1ea6"
-    ],
+    "digiEvolutionSeedList": ["e2c5a9b7-1d3f-4e6a-8c9b-0f5d3a7e2b6c"],
+    "degenerateSeedList": ["ed20a627-e7f5-4ab1-bbfd-2a7c2df1d0b6"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "f56b02c3-d4e5-4f7a-7b8c-0d1e2f3a4b5c",
@@ -1780,11 +1764,8 @@
     "speed": 55,
     "bitFarmingRate": 50,
     "digiEvolutionSeedList": [
-      "03de2f94-6a3b-457a-a0f1-fb2c9e57c8a3",
-      "56a2e212-2c89-46c4-b7b4-36bba1dbd7b7",
-      "b1e4c7f8-6d5a-4e91-8c2f-30a9e7b0f3c2",
       "e3a5c9b7-3d1f-4e6a-8c2b-9f0d5a3e7b6c",
-      "3fdea691-d2ae-44a4-bc02-59de09cf2049"
+      "8d2e5f3b-2a9c-47b0-91f3-e6c4d5b7a081"
     ],
     "degenerateSeedList": [],
     "evolutionRequirements": [
@@ -1792,7 +1773,8 @@
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "067c13d4-e5f6-4a8b-8c9d-1e2f3a4b5c6d",
@@ -1809,9 +1791,7 @@
     "bitFarmingRate": 40,
     "digiEvolutionSeedList": [
       "2d83fa14-b1ae-44fa-9a1c-046af2d2306c",
-      "b2a5c9e0-3d1f-4e6a-8c7b-9f0d3a5e7c6b",
-      "e2c5a9b7-1d3f-4e6a-8c9b-0f5d3a7e2b6c",
-      "934b0e2f-807c-4c3a-b1f9-60edc7f4a59e"
+      "7cd90fd2-0182-4973-aab7-1ff1162b83ec"
     ],
     "degenerateSeedList": ["7dbd69e3-62f3-4433-a8de-12c8ae5c1ea6"],
     "evolutionRequirements": [
@@ -1819,7 +1799,8 @@
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "178d24e5-f6a7-4b9c-9d0e-2f3a4b5c6d7e",
@@ -1836,7 +1817,7 @@
     "bitFarmingRate": 48,
     "digiEvolutionSeedList": [
       "934b0e2f-807c-4c3a-b1f9-60edc7f4a59e",
-      "7cd90fd2-0182-4973-aab7-1ff1162b83ec"
+      "14fa2d8e-a930-4eb1-bc27-ef19d3f0c475"
     ],
     "degenerateSeedList": ["ed20a627-e7f5-4ab1-bbfd-2a7c2df1d0b6"],
     "evolutionRequirements": [
@@ -1844,7 +1825,8 @@
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "289e35f6-a7b8-4c0d-0e1f-3a4b5c6d7e8f",
@@ -1859,19 +1841,15 @@
     "def": 68,
     "speed": 57,
     "bitFarmingRate": 56,
-    "digiEvolutionSeedList": [
-      "f8d2c6e9-4b1a-4e9f-8c7d-3a5e9b2f1d0c",
-      "d0c5e9b7-3f1a-4e6b-8c2d-9f0e3a5d7c6b",
-      "c4a7b9d2-1e5f-4c8a-9b3e-6d0f2a5e7c1b",
-      "f604d614-12f3-4f68-8582-779e561fcd91"
-    ],
+    "digiEvolutionSeedList": ["f8d2c6e9-4b1a-4e9f-8c7d-3a5e9b2f1d0c"],
     "degenerateSeedList": [],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "39af46e7-b8c9-4d0e-1f2a-4b5c6d7e8f9a",
@@ -1887,17 +1865,17 @@
     "speed": 75,
     "bitFarmingRate": 44,
     "digiEvolutionSeedList": [
-      "c4a7b9d2-1e5f-4c8a-9b3e-6d0f2a5e7c1b",
       "d9a3c6e0-2f5b-4e7a-8c1b-9f0d5a3e7b2c",
-      "a3c9e71d-b581-4aef-bc7f-0e1db4956f32"
+      "56a2e212-2c89-46c4-b7b4-36bba1dbd7b7"
     ],
-    "degenerateSeedList": ["ed622fc4-832a-4f67-a7e4-b08ad63f92cf"],
+    "degenerateSeedList": ["658aaf6d-9296-4011-8989-cbfbc2970d35"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "4ab057f8-c9d0-4e1f-2a3b-5c6d7e8f9a0b",
@@ -1912,17 +1890,15 @@
     "def": 75,
     "speed": 53,
     "bitFarmingRate": 42,
-    "digiEvolutionSeedList": [
-      "5a9c1a2a-79b5-4de4-bc0a-d0fcd149e9d6",
-      "a5d7b9c0-3f1a-4e6b-8c2d-9f0e3a5d7b6c"
-    ],
+    "digiEvolutionSeedList": ["5a9c1a2a-79b5-4de4-bc0a-d0fcd149e9d6"],
     "degenerateSeedList": ["b18ad2e7-5a8b-43c3-990e-5f00ea8e3ae7"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "5bc16809-d0e1-4f2a-3b4c-6d7e8f9a0b1c",
@@ -1939,10 +1915,7 @@
     "bitFarmingRate": 40,
     "digiEvolutionSeedList": [
       "19f74d0b-2eac-4398-b7d3-ecf25198a302",
-      "a7c0f3e9-1d5b-4e6a-8c2b-9f3a5e0d7b6c",
-      "80c6f1b9-648a-49b3-92c9-01d6e2f4bc8e",
-      "c7e0f2d9-b5a3-4b18-91f2-8d9c0e7a6f13",
-      "c9f0e3a7-1d5b-4e6a-8c2b-9f3a5e0d7b6c"
+      "a7c0f3e9-1d5b-4e6a-8c2b-9f3a5e0d7b6c"
     ],
     "degenerateSeedList": ["02d705e7-f87c-45e6-861c-ef9cd0df04f2"],
     "evolutionRequirements": [
@@ -1950,7 +1923,8 @@
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "6cd2791a-e1f2-4a3b-4c5d-7e8f9a0b1c2d",
@@ -1967,16 +1941,16 @@
     "bitFarmingRate": 60,
     "digiEvolutionSeedList": [
       "c2a7e1d0-1f93-48b0-bcd2-79e3a4f6d105",
-      "fa3e15c0-4a3f-45e1-b75e-1b2d1b16a377",
       "c3f0a7b9-2d5a-4e6b-8c1d-9f0e3a5d7b2c"
     ],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["4f2a5a34-f37e-4e2e-9429-5fa6a7b36c1b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "7de38a2b-f2a3-4b4c-5d6e-8f9a0b1c2d3e",
@@ -1993,19 +1967,16 @@
     "bitFarmingRate": 40,
     "digiEvolutionSeedList": [
       "c849a173-f2d4-4700-88e3-1bc4a9f7e5d2",
-      "93c1a5e7-1f0d-48b9-aeb2-6f8c5d4e3b1a",
-      "6a2e1c34-91f0-4bcd-9827-04d6f9b13a87"
+      "93c1a5e7-1f0d-48b9-aeb2-6f8c5d4e3b1a"
     ],
-    "degenerateSeedList": [
-      "c32edbfb-fd41-40dc-95c3-ded5a6b89e99",
-      "02d705e7-f87c-45e6-861c-ef9cd0df04f2"
-    ],
+    "degenerateSeedList": ["c32edbfb-fd41-40dc-95c3-ded5a6b89e99"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "8ef49b3c-a3b4-4c5d-6e7f-9a0b1c2d3e4f",
@@ -2020,18 +1991,15 @@
     "def": 62,
     "speed": 74,
     "bitFarmingRate": 40,
-    "digiEvolutionSeedList": [
-      "72a04c6f-3b9c-4821-a7f1-c83d4d0f6e89",
-      "c4a7b9d2-1e5f-4c8a-9b3e-6d0f2a5e7c1b",
-      "d9a3c6e0-2f5b-4e7a-8c1b-9f0d5a3e7b2c"
-    ],
-    "degenerateSeedList": [],
+    "digiEvolutionSeedList": ["72a04c6f-3b9c-4821-a7f1-c83d4d0f6e89"],
+    "degenerateSeedList": ["2b418d80-1f34-4868-ace2-e62a38e9b9cd"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "9f05ac4d-b4c5-4d6e-7f8a-0b1c2d3e4f5a",
@@ -2046,18 +2014,15 @@
     "def": 75,
     "speed": 53,
     "bitFarmingRate": 42,
-    "digiEvolutionSeedList": [
-      "a1b2c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
-      "a5d8e0b7-3c1f-4e9a-8b2d-6f0c3a5e7d1b",
-      "d6e3a9c0-2f5b-4e7a-8c1d-9f0a3e5d7b2c"
-    ],
-    "degenerateSeedList": [],
+    "digiEvolutionSeedList": ["a1b2c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d"],
+    "degenerateSeedList": ["4f2a5a34-f37e-4e2e-9429-5fa6a7b36c1b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "a016bd5e-c5d6-4e7f-8a9b-1c2d3e4f5a6b",
@@ -2074,10 +2039,7 @@
     "bitFarmingRate": 44,
     "digiEvolutionSeedList": [
       "f7b0c8e1-96a2-4e0f-b3c9-524d8f7a03e1",
-      "0d4e78c1-2a3f-45f0-a7b9-9152ce0db654",
-      "87a9e123-4f23-42b3-9d83-3c7e4382c3d5",
-      "f0b7e9c5-2a1d-4e6b-8c3b-9d5a3e0f7c2b",
-      "b3e9c0f7-1a5d-4e6b-8c2d-9f0a3e5d7c6b"
+      "0d4e78c1-2a3f-45f0-a7b9-9152ce0db654"
     ],
     "degenerateSeedList": ["7dbd69e3-62f3-4433-a8de-12c8ae5c1ea6"],
     "evolutionRequirements": [
@@ -2085,7 +2047,8 @@
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "b127ce6f-d6e7-4f8a-9b0c-2d3e4f5a6b7c",
@@ -2102,8 +2065,6 @@
     "bitFarmingRate": 50,
     "digiEvolutionSeedList": [
       "3e04bb4b-6e1a-4c57-9f7d-bd9e21048c5d",
-      "cbf5e879-4074-40de-89fc-4317e4b59338",
-      "a3d5f4e1-92b0-4fc8-ae1c-6d7e9c203f5b",
       "b7e9c0f3-1a5d-4e6b-8c2d-9f0a3e5d7c6b"
     ],
     "degenerateSeedList": [],
@@ -2112,7 +2073,8 @@
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "c238df70-e7f8-4a9b-0c1d-3e4f5a6b7c8d",
@@ -2129,15 +2091,16 @@
     "bitFarmingRate": 40,
     "digiEvolutionSeedList": [
       "61b72dc8-3fe7-4ea9-9e4c-ff718ba1477a",
-      "c4a7b9d2-1e5f-4c8a-9b3e-6d0f2a5e7c1b"
+      "bd2c0a93-4d8f-4f6e-b3a9-761f40ed38b7"
     ],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["2c011b3c-727f-4f36-aeb7-18e94eb4801e"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "d349f081-f8a9-4b0c-1d2e-4f5a6b7c8d9e",
@@ -2155,10 +2118,7 @@
     "digiEvolutionSeedList": [
       "f0b7e9c5-2a1d-4e6b-8c3b-9d5a3e0f7c2b",
       "hij6789k-0123-456l-mnop-qrstuvwxyz01",
-      "f0c7e9b3-1a5d-4e6b-8c2b-9d3a5e0f7c6b",
-      "f0e2b4d1-59c3-41a7-9d2e-85c7f31b06a4",
-      "c0f3a7b9-2d5a-4e6b-8c1d-9f0e3a5d7b2c",
-      "f71c8e04-3b7d-4d20-86f1-efb9403a19d6"
+      "c0f3a7b9-2d5a-4e6b-8c1d-9f0e3a5d7b2c"
     ],
     "degenerateSeedList": ["7dbd69e3-62f3-4433-a8de-12c8ae5c1ea6"],
     "evolutionRequirements": [
@@ -2166,7 +2126,8 @@
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "e45a0912-0b1c-4d2e-3f4a-5b6c7d8e9f0a",
@@ -2188,7 +2149,8 @@
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "f56b1023-1c2d-4e3f-4a5b-6c7d8e9f0a1b",
@@ -2203,17 +2165,38 @@
     "def": 65,
     "speed": 75,
     "bitFarmingRate": 64,
-    "digiEvolutionSeedList": [
-      "3c0a1f29-0f53-41e6-a6fc-4d0b1d9811d6",
-      "f3d8e2e9-316a-412b-91f9-678d1e6e9a56"
-    ],
+    "digiEvolutionSeedList": ["3c0a1f29-0f53-41e6-a6fc-4d0b1d9811d6"],
     "degenerateSeedList": ["5bd6823a-72cb-408e-abe5-e0e91a1e6002"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 10
       }
-    ]
+    ],
+    "checked": true
+  },
+  {
+    "seed": "b87f2b55-1e7b-49d5-8b21-0ef4a4c645e2",
+    "name": "Flamon",
+    "img": "/assets/digimons/Flamon.webp",
+    "rank": "Rookie",
+    "species": "Beast",
+    "attribute": "Vaccine",
+    "hp": 120,
+    "mp": 115,
+    "atk": 95,
+    "def": 60,
+    "speed": 75,
+    "bitFarmingRate": 8,
+    "digiEvolutionSeedList": ["8f1d1fbb-3c4d-4b95-9437-889af207f7a0"],
+    "degenerateSeedList": [],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 10
+      }
+    ],
+    "checked": true
   },
   {
     "seed": "70dbb38a-690e-45b3-bfc5-eccba64fbd9b",
@@ -2238,7 +2221,8 @@
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "a351a4ab-a5bf-42df-8a27-bb2d8ce06d0b",
@@ -2254,16 +2238,14 @@
     "speed": 81,
     "bitFarmingRate": 2,
     "digiEvolutionSeedList": ["34af8b92-9237-4f39-b45d-0d6c073d98c1"],
-    "degenerateSeedList": [
-      "96c23ff9-d6b4-43da-91e6-f0c9799c65d7",
-      "b127c8d9-e0f1-4a2b-3c4d-6e7f8a9b0c1d"
-    ],
+    "degenerateSeedList": ["96c23ff9-d6b4-43da-91e6-f0c9799c65d7"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "fa3e15c0-4a3f-45e1-b75e-1b2d1b16a377",
@@ -2279,17 +2261,14 @@
     "speed": 88,
     "bitFarmingRate": 10,
     "digiEvolutionSeedList": ["e5a57e68-7e23-4314-bd93-ea8c7d5fca85"],
-    "degenerateSeedList": [
-      "xyz5678a-123b-cdef-456g-hijklmn5678",
-      "eab4c5d6-f7a8-4b9c-0d1e-2f3a4b5c6d7e",
-      "6cd2791a-e1f2-4a3b-4c5d-7e8f9a0b1c2d"
-    ],
+    "degenerateSeedList": ["xyz5678a-123b-cdef-456g-hijklmn5678"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 25
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "b7f8c97d-1e9f-42a7-bbf1-d3e67a54f799",
@@ -2311,7 +2290,8 @@
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "cd52bdf0-80a8-4b19-b738-ed6acf1f0b14",
@@ -2327,13 +2307,14 @@
     "speed": 91,
     "bitFarmingRate": 15,
     "digiEvolutionSeedList": ["c67f1a0b-f889-438b-9cc0-885f9f711a26"],
-    "degenerateSeedList": ["083241cc-fcf8-4101-a58d-09b0e6b375b6"],
+    "degenerateSeedList": ["78d3f4a5-b6c7-4d8e-0f1a-2b3c4d5e6f7a"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "f3d8e2e9-316a-412b-91f9-678d1e6e9a56",
@@ -2348,17 +2329,20 @@
     "def": 76,
     "speed": 85,
     "bitFarmingRate": 12,
-    "digiEvolutionSeedList": ["28228629-5abc-4fdb-b94d-360783b2ff2c"],
-    "degenerateSeedList": [
-      "986f4b59-c234-44fa-b5bc-456736578f67",
-      "f56b1023-1c2d-4e3f-4a5b-6c7d8e9f0a1b"
+    "digiEvolutionSeedList": [
+      "28228629-5abc-4fdb-b94d-360783b2ff2c",
+      "43cdb81a-3316-4e2b-8c6d-4bc9f8aa99f0",
+      "c4f8a2d6-9b3e-4e1f-8d7c-5a9f2b6e3d1c",
+      "4a6b9c3e-2c7b-7d5c-a9d2-1b0e8c3e5f3c"
     ],
+    "degenerateSeedList": ["986f4b59-c234-44fa-b5bc-456736578f67"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "67cd2d63-4299-446e-a851-6f04e9b51bc5",
@@ -2373,17 +2357,15 @@
     "def": 98,
     "speed": 80,
     "bitFarmingRate": 2,
-    "digiEvolutionSeedList": [
-      "529f424a-7efe-49bd-90dc-58286aaa9fb5",
-      "66e5a6ea-93a5-47f8-91d9-8601857496f6"
-    ],
+    "digiEvolutionSeedList": ["529f424a-7efe-49bd-90dc-58286aaa9fb5"],
     "degenerateSeedList": ["96c23ff9-d6b4-43da-91e6-f0c9799c65d7"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "jkl3456m-7890-no12-pq34-567890rstuvw",
@@ -2408,7 +2390,8 @@
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "9f207e7b-2e92-4cfc-8e44-94cf25e0fdb5",
@@ -2423,14 +2406,15 @@
     "def": 86,
     "speed": 81,
     "bitFarmingRate": 12,
-    "digiEvolutionSeedList": ["2f1a57b3-4fc2-4a7b-97a5-8b5f6886ec14"],
+    "digiEvolutionSeedList": ["5f3c9a1b-1b0e-6e5f-8c3e-4f3d2c7b3c1b"],
     "degenerateSeedList": ["abc1234d-5678-efgh-9101-ijklmnopqrst"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "f4cbbd45-9e42-4b43-b9b0-4f8e1b9b9d21",
@@ -2445,17 +2429,18 @@
     "def": 104,
     "speed": 73,
     "bitFarmingRate": 3,
-    "digiEvolutionSeedList": ["a7e2f3b1-03e4-40fc-b80b-8db60f4f616b"],
-    "degenerateSeedList": [
-      "xyz1234a-5678-bc90-defg-1234567890ab",
-      "cf2a3b4c-d5e6-4f7a-9b0c-1d2e3f4a5b6c"
+    "digiEvolutionSeedList": [
+      "a7e2f3b1-03e4-40fc-b80b-8db60f4f616b",
+      "a7b8c9d0-1e2f-3a4b-5c6d-7e8f9a0b1c2d"
     ],
+    "degenerateSeedList": ["cf2a3b4c-d5e6-4f7a-9b0c-1d2e3f4a5b6c"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 25
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "def5678a-9012-345b-cdef-6789012345gh",
@@ -2471,17 +2456,14 @@
     "speed": 94,
     "bitFarmingRate": 6,
     "digiEvolutionSeedList": ["40ed91a1-d2e3-47dc-8c18-64a55757e6b1"],
-    "degenerateSeedList": [
-      "abc1234d-5678-efgh-9101-ijklmnopqrst",
-      "d9a452f3-71d0-4b1a-9bee-8e4c36b9e1a3",
-      "7b8c9d0e-f1a2-4b3c-9d4e-5f6a7b8c9d0e"
-    ],
+    "degenerateSeedList": ["d9a452f3-71d0-4b1a-9bee-8e4c36b9e1a3"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "hij6789k-0123-456l-mnop-qrstuvwxyz01",
@@ -2497,16 +2479,14 @@
     "speed": 84,
     "bitFarmingRate": 5,
     "digiEvolutionSeedList": ["e49a85fa-77ea-4a06-9a65-bd3133e2c1e4"],
-    "degenerateSeedList": [
-      "abc1234d-5678-efgh-9101-ijklmnopqrst",
-      "d349f081-f8a9-4b0c-1d2e-4f5a6b7c8d9e"
-    ],
+    "degenerateSeedList": ["d349f081-f8a9-4b0c-1d2e-4f5a6b7c8d9e"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "opq6789r-012s-tuvw-xyza-bcdefg5678",
@@ -2521,14 +2501,18 @@
     "def": 94,
     "speed": 67,
     "bitFarmingRate": 4,
-    "digiEvolutionSeedList": ["rst9012u-345v-wxyz-abcd-efghij6789"],
+    "digiEvolutionSeedList": [
+      "rst9012u-345v-wxyz-abcd-efghij6789",
+      "2c7b4f3d-8c3e-9a1b-3c1b-1b0e6e5f5f3c"
+    ],
     "degenerateSeedList": ["ijk9012l-3456-789m-nopq-rstuvwxyz23"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "80c6f1b9-648a-49b3-92c9-01d6e2f4bc8e",
@@ -2544,16 +2528,14 @@
     "speed": 83,
     "bitFarmingRate": 3,
     "digiEvolutionSeedList": ["a5e0bfb7-8d2a-4ef1-9636-cbb9db1fe1d0"],
-    "degenerateSeedList": [
-      "768e6d1a-5c3b-4ed2-991f-e4a1c16357a6",
-      "5bc16809-d0e1-4f2a-3b4c-6d7e8f9a0b1c"
-    ],
+    "degenerateSeedList": ["768e6d1a-5c3b-4ed2-991f-e4a1c16357a6"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "a03b8672-59d7-4f2e-9b5d-b0e2a3e7f9b8",
@@ -2569,17 +2551,14 @@
     "speed": 73,
     "bitFarmingRate": 8,
     "digiEvolutionSeedList": ["a2fd5cd4-16dc-4422-8e94-7129b75478ce"],
-    "degenerateSeedList": [
-      "xyz5678a-123b-cdef-456g-hijklmn7890",
-      "8c9d0e1f-a2b3-4c5d-0e6f-7a8b9c0d1e2f",
-      "a016b7c8-d9e0-4f1a-2b3c-5d6e7f8a9b0c"
-    ],
+    "degenerateSeedList": ["a016b7c8-d9e0-4f1a-2b3c-5d6e7f8a9b0c"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "f3c12345-6b7d-4e89-9ef7-89c4672c34ab",
@@ -2594,21 +2573,15 @@
     "def": 86,
     "speed": 78,
     "bitFarmingRate": 2,
-    "digiEvolutionSeedList": [
-      "2c7b4f3d-1b0e-6e5f-a9d2-8c3e9a1b5f3c",
-      "8f14e45f-ceea-41d4-9a3d-3e8d2e9f6b2c",
-      "5f3c9a1b-3c1b-8c3e-6e5f-1b0e2c7b4f3d"
-    ],
-    "degenerateSeedList": [
-      "78d3f4a5-b6c7-4d8e-0f1a-2b3c4d5e6f7a",
-      "uvw1234a-567b-cdef-890g-hijklmn1234"
-    ],
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": ["78d3f4a5-b6c7-4d8e-0f1a-2b3c4d5e6f7a"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "87a9e123-4f23-42b3-9d83-3c7e4382c3d5",
@@ -2623,22 +2596,15 @@
     "def": 95,
     "speed": 70,
     "bitFarmingRate": 2,
-    "digiEvolutionSeedList": [
-      "9a1b8c3e-4f3d-5f3c-2c7b-1b0e6e5f3c1b",
-      "f9a5d7b2-4e3c-5f6a-8b9d-0c1e2f3a4b5d"
-    ],
-    "degenerateSeedList": [
-      "78d3f4a5-b6c7-4d8e-0f1a-2b3c4d5e6f7a",
-      "uvw1234a-567b-cdef-890g-hijklmn1234",
-      "23e8a9b0-c1d2-4e3f-5a6b-7c8d9e0f1a2b",
-      "a016bd5e-c5d6-4e7f-8a9b-1c2d3e4f5a6b"
-    ],
+    "digiEvolutionSeedList": ["f9a5d7b2-4e3c-5f6a-8b9d-0c1e2f3a4b5d"],
+    "degenerateSeedList": ["uvw1234a-567b-cdef-890g-hijklmn1234"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "f8d2c6e9-4b1a-4e9f-8c7d-3a5e9b2f1d0c",
@@ -2653,22 +2619,15 @@
     "def": 96,
     "speed": 74,
     "bitFarmingRate": 15,
-    "digiEvolutionSeedList": [
-      "a7e2f3b1-03e4-40fc-b80b-8db60f4f616b",
-      "5f3c9a1b-3c1b-8c3e-6e5f-1b0e2c7b4f3d",
-      "f6a7b8c9-0d1e-2f3a-4b5c-6d7e8f9a0b1c",
-      "f697c01b-7394-41b3-a374-34a6a1ff27f6"
-    ],
-    "degenerateSeedList": [
-      "cf2a3b4c-d5e6-4f7a-9b0c-1d2e3f4a5b6c",
-      "289e35f6-a7b8-4c0d-0e1f-3a4b5c6d7e8f"
-    ],
+    "digiEvolutionSeedList": ["5f3c9a1b-6e5f-1b0e-4f3d-8c3e2c7b3c1b"],
+    "degenerateSeedList": ["289e35f6-a7b8-4c0d-0e1f-3a4b5c6d7e8f"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "d7e9f1a3-5b2c-4d8a-9c6e-1f0b3a5d7e2c",
@@ -2693,7 +2652,8 @@
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "c4a7b9d2-1e5f-4c8a-9b3e-6d0f2a5e7c1b",
@@ -2708,25 +2668,15 @@
     "def": 82,
     "speed": 79,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": [
-      "fef29128-0270-4e25-befc-bc9f2c4dd853",
-      "a49fd2ae-e98d-4c4b-9c53-708e6f019af2"
-    ],
-    "degenerateSeedList": [
-      "ad0e2f3b-c4d5-4e6f-7a8b-9c0d1e2f3a4b",
-      "cf2a3b4c-d5e6-4f7a-9b0c-1d2e3f4a5b6c",
-      "23e8a9b0-c1d2-4e3f-5a6b-7c8d9e0f1a2b",
-      "289e35f6-a7b8-4c0d-0e1f-3a4b5c6d7e8f",
-      "39af46e7-b8c9-4d0e-1f2a-4b5c6d7e8f9a",
-      "8ef49b3c-a3b4-4c5d-6e7f-9a0b1c2d3e4f",
-      "c238df70-e7f8-4a9b-0c1d-3e4f5a6b7c8d"
-    ],
+    "digiEvolutionSeedList": ["fef29128-0270-4e25-befc-bc9f2c4dd853"],
+    "degenerateSeedList": ["ad0e2f3b-c4d5-4e6f-7a8b-9c0d1e2f3a4b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "b3e6a9c5-2d1f-4e7a-8c9b-0f5d3a7e2b6c",
@@ -2741,18 +2691,15 @@
     "def": 97,
     "speed": 69,
     "bitFarmingRate": 12,
-    "digiEvolutionSeedList": [
-      "bcdefa01-2345-4678-9abc-def012345678",
-      "8f14e45f-ceea-41d4-9a3d-3e8d2e9f6b2c",
-      "9a1b7d5c-6e5f-5f3c-8c3e-a9d21b0e4f3d"
-    ],
-    "degenerateSeedList": [],
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": ["8c9d0e1f-a2b3-4c5d-0e6f-7a8b9c0d1e2f"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "a5d8e0b7-3c1f-4e9a-8b2d-6f0c3a5e7d1b",
@@ -2767,20 +2714,15 @@
     "def": 77,
     "speed": 88,
     "bitFarmingRate": 22,
-    "digiEvolutionSeedList": [
-      "f6d38895-6836-4e09-90fd-e6a63b2e4a27",
-      "8c3e2c7b-4f3d-3c1b-6e5f-1b0e9a1b5f3c"
-    ],
-    "degenerateSeedList": [
-      "e5c3b6f1-ae43-4d5e-9f0a-1b2c3d4e5f67",
-      "9f05ac4d-b4c5-4d6e-7f8a-0b1c2d3e4f5a"
-    ],
+    "digiEvolutionSeedList": ["f6d38895-6836-4e09-90fd-e6a63b2e4a27"],
+    "degenerateSeedList": ["e5c3b6f1-ae43-4d5e-9f0a-1b2c3d4e5f67"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "e2c5a9b7-1d3f-4e6a-8c9b-0f5d3a7e2b6c",
@@ -2795,22 +2737,15 @@
     "def": 93,
     "speed": 73,
     "bitFarmingRate": 14,
-    "digiEvolutionSeedList": [
-      "2b8020e1-2f70-4e7e-92e5-d89d54e131a5",
-      "5f3c8e2a-a9d2-1b0e-6e5f-3c1b7d5c9a1b",
-      "2c7b4f3d-1b0e-6e5f-a9d2-8c3e9a1b5f3c"
-    ],
-    "degenerateSeedList": [
-      "6a7b8c9d-e0f1-4a2b-8c3d-4e5f6a7b8c9d",
-      "e45af1b2-c3d4-4e6f-6a7b-9c0d1e2f3a4b",
-      "067c13d4-e5f6-4a8b-8c9d-1e2f3a4b5c6d"
-    ],
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": ["e45af1b2-c3d4-4e6f-6a7b-9c0d1e2f3a4b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "d9a3c6e0-2f5b-4e7a-8c1b-9f0d5a3e7b2c",
@@ -2825,23 +2760,15 @@
     "def": 93,
     "speed": 84,
     "bitFarmingRate": 16,
-    "digiEvolutionSeedList": [
-      "f4a5b6c7-8d9e-0f1a-2b3c-4d5e6f7a8b9c",
-      "f2a3b4c5-6d7e-8f9a-0b1c-2d3e4f5a6b7c",
-      "d6e7f8a9-0b1c-2d3e-4f5a-6b7c8d9e0f1a"
-    ],
-    "degenerateSeedList": [
-      "ad0e2f3b-c4d5-4e6f-7a8b-9c0d1e2f3a4b",
-      "34f9b0c1-d2e3-4f4a-6b7c-8d9e0f1a2b3c",
-      "39af46e7-b8c9-4d0e-1f2a-4b5c6d7e8f9a",
-      "8ef49b3c-a3b4-4c5d-6e7f-9a0b1c2d3e4f"
-    ],
+    "digiEvolutionSeedList": ["f4a5b6c7-8d9e-0f1a-2b3c-4d5e6f7a8b9c"],
+    "degenerateSeedList": ["39af46e7-b8c9-4d0e-1f2a-4b5c6d7e8f9a"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "c6e9a3b7-1f5d-4e8a-9c2b-0d3a5e7f9b6c",
@@ -2856,14 +2783,18 @@
     "def": 88,
     "speed": 77,
     "bitFarmingRate": 13,
-    "digiEvolutionSeedList": ["9a1b7d5c-6e5f-5f3c-8c3e-a9d21b0e4f3d"],
-    "degenerateSeedList": [],
+    "digiEvolutionSeedList": [
+      "9a1b7d5c-6e5f-5f3c-8c3e-a9d21b0e4f3d",
+      "d2e3f4a5-6b7c-8d9e-0f1a-2b3c4d5e6f7a"
+    ],
+    "degenerateSeedList": ["abc1234d-5678-efgh-9101-ijklmnopqrst"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "b5e9c2f0-3a1d-4e6b-8c7b-9f0d5a3e2d7c",
@@ -2878,22 +2809,15 @@
     "def": 76,
     "speed": 80,
     "bitFarmingRate": 17,
-    "digiEvolutionSeedList": [
-      "9a1b2c7b-8c3e-6e5f-4f3d-1b0e3c1b5f3c",
-      "c1d2e3f4-5a6b-7c8d-9e0f-1a2b3c4d5e6f",
-      "defabc87-6543-210f-edcb-a9876543210f"
-    ],
-    "degenerateSeedList": [
-      "5f6e7d8c-9b0a-4c1d-8e2f-3a4b5c6d7e8f",
-      "45a0c1d2-e3f4-4a5b-7c8d-9e0f1a2b3c4d",
-      "c238d9e0-f1a2-4b3c-4d5e-7f8a9b0c1d2e"
-    ],
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": ["45a0c1d2-e3f4-4a5b-7c8d-9e0f1a2b3c4d"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "a7c0f3e9-1d5b-4e6a-8c2b-9f3a5e0d7b6c",
@@ -2908,21 +2832,15 @@
     "def": 78,
     "speed": 75,
     "bitFarmingRate": 19,
-    "digiEvolutionSeedList": [
-      "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
-      "f8a9b0c1-2d3e-4f5a-6b7c-8d9e0f1a2b3c",
-      "c67f1a0b-f889-438b-9cc0-885f9f711a26"
-    ],
-    "degenerateSeedList": [
-      "56b1d2e3-f4a5-4b6c-8d9e-0f1a2b3c4d5e",
-      "5bc16809-d0e1-4f2a-3b4c-6d7e8f9a0b1c"
-    ],
+    "digiEvolutionSeedList": ["c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"],
+    "degenerateSeedList": ["5bc16809-d0e1-4f2a-3b4c-6d7e8f9a0b1c"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "f0b7e9c5-2a1d-4e6b-8c3b-9d5a3e0f7c2b",
@@ -2937,22 +2855,15 @@
     "def": 72,
     "speed": 82,
     "bitFarmingRate": 18,
-    "digiEvolutionSeedList": [
-      "2f1a57b3-4fc2-4a7b-97a5-8b5f6886ec14",
-      "e49a85fa-77ea-4a06-9a65-bd3133e2c1e4",
-      "a6f79b4c-0a3e-d2f8-b1c5-e8b3c7f07d9"
-    ],
-    "degenerateSeedList": [
-      "dfa3b4c5-e6f7-4a8b-0c1d-2e3f4a5b6c7d",
-      "a016bd5e-c5d6-4e7f-8a9b-1c2d3e4f5a6b",
-      "d349f081-f8a9-4b0c-1d2e-4f5a6b7c8d9e"
-    ],
+    "digiEvolutionSeedList": ["2f1a57b3-4fc2-4a7b-97a5-8b5f6886ec14"],
+    "degenerateSeedList": ["d349f081-f8a9-4b0c-1d2e-4f5a6b7c8d9e"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "e3a5c9b7-3d1f-4e6a-8c2b-9f0d5a3e7b6c",
@@ -2967,22 +2878,15 @@
     "def": 117,
     "speed": 62,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": [
-      "2c7b4f3d-1b0e-6e5f-a9d2-8c3e9a1b5f3c",
-      "9a1b7d5c-6e5f-5f3c-8c3e-a9d21b0e4f3d",
-      "f6a7b8c9-0d1e-2f3a-4b5c-6d7e8f9a0b1c"
-    ],
-    "degenerateSeedList": [
-      "8c9d0e1f-a2b3-4c5d-0e6f-7a8b9c0d1e2f",
-      "cf2a3b4c-d5e6-4f7a-9b0c-1d2e3f4a5b6c",
-      "f56b02c3-d4e5-4f7a-7b8c-0d1e2f3a4b5c"
-    ],
+    "digiEvolutionSeedList": ["f6a7b8c9-0d1e-2f3a-4b5c-6d7e8f9a0b1c"],
+    "degenerateSeedList": ["f56b02c3-d4e5-4f7a-7b8c-0d1e2f3a4b5c"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "d9e3c6b5-2f1a-4e7b-8c9d-0f5a3e7b2d6c",
@@ -2998,16 +2902,14 @@
     "speed": 80,
     "bitFarmingRate": 14,
     "digiEvolutionSeedList": ["b7e2c9d4-1f6a-4d3b-8e5c-9a2f7d6b3c1e"],
-    "degenerateSeedList": [
-      "8c9d0e1f-a2b3-4c5d-0e6f-7a8b9c0d1e2f",
-      "xyz5678a-123b-cdef-456g-hijklmn7890"
-    ],
+    "degenerateSeedList": ["8c9d0e1f-a2b3-4c5d-0e6f-7a8b9c0d1e2f"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "c6b9e0f3-2a5d-4e7b-8c1d-9f0a3e5d7b2c",
@@ -3022,21 +2924,15 @@
     "def": 81,
     "speed": 84,
     "bitFarmingRate": 17,
-    "digiEvolutionSeedList": [
-      "f2a3b4c5-6d7e-8f9a-0b1c-2d3e4f5a6b7c",
-      "f4a5b6c7-8d9e-0f1a-2b3c-4d5e6f7a8b9c"
-    ],
-    "degenerateSeedList": [
-      "9d0e1f2a-b3c4-4d5e-1f6a-2b3c4d5e6f7a",
-      "01c6e7f8-b9a0-4c1d-2e3f-4a5b6c7d8e9f",
-      "23e8a9b0-c1d2-4e3f-5a6b-7c8d9e0f1a2b"
-    ],
+    "digiEvolutionSeedList": ["f2a3b4c5-6d7e-8f9a-0b1c-2d3e4f5a6b7c"],
+    "degenerateSeedList": ["23e8a9b0-c1d2-4e3f-5a6b-7c8d9e0f1a2b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "b2a5c9e0-3d1f-4e6a-8c7b-9f0d3a5e7c6b",
@@ -3053,20 +2949,16 @@
     "bitFarmingRate": 16,
     "digiEvolutionSeedList": [
       "1d47f42d-b6b5-4896-b205-cd648f25c444",
-      "2b8020e1-2f70-4e7e-92e5-d89d54e131a5",
-      "5f3c8e2a-a9d2-1b0e-6e5f-3c1b7d5c9a1b"
+      "b8c9d0e1-2f3a-4b5c-6d7e-8f9a0b1c2d3e"
     ],
-    "degenerateSeedList": [
-      "6a7b8c9d-e0f1-4a2b-8c3d-4e5f6a7b8c9d",
-      "e45af1b2-c3d4-4e6f-6a7b-9c0d1e2f3a4b",
-      "067c13d4-e5f6-4a8b-8c9d-1e2f3a4b5c6d"
-    ],
+    "degenerateSeedList": ["6a7b8c9d-e0f1-4a2b-8c3d-4e5f6a7b8c9d"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "a7d0f3e9-1c5b-4e6a-8c2b-9f3a5e0d7b6c",
@@ -3082,9 +2974,8 @@
     "speed": 72,
     "bitFarmingRate": 19,
     "digiEvolutionSeedList": [
-      "5f3c8e2a-6e5f-9a1b-2c8e-1b0e7d5c4f3d",
-      "b6c7d8e9-0f1a-2b3c-4d5e-6f7a8b9c0d1e",
-      "038b0f79-2341-4c3b-8c77-7984c3341ab1"
+      "038b0f79-2341-4c3b-8c77-7984c3341ab1",
+      "49d6dd17-71b4-41ae-844c-2f18410a8d31"
     ],
     "degenerateSeedList": ["3c827fbe-aa3d-4b2b-9cb3-5a6d4fc8e47f"],
     "evolutionRequirements": [
@@ -3092,7 +2983,8 @@
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "f0c7e9b3-1a5d-4e6b-8c2b-9d3a5e0f7c6b",
@@ -3107,22 +2999,15 @@
     "def": 79,
     "speed": 86,
     "bitFarmingRate": 18,
-    "digiEvolutionSeedList": [
-      "5f3c9a1b-1b0e-6e5f-8c3e-4f3d2c7b3c1b",
-      "2f1a57b3-4fc2-4a7b-97a5-8b5f6886ec14",
-      "e49a85fa-77ea-4a06-9a65-bd3133e2c1e4"
-    ],
-    "degenerateSeedList": [
-      "dfa3b4c5-e6f7-4a8b-0c1d-2e3f4a5b6c7d",
-      "d349f081-f8a9-4b0c-1d2e-4f5a6b7c8d9e",
-      "ghi9012j-3456-kl78-mn90-1234567opqrs"
-    ],
+    "digiEvolutionSeedList": ["a6f79b4c-0a3e-d2f8-b1c5-e8b3c7f07d9"],
+    "degenerateSeedList": ["dfa3b4c5-e6f7-4a8b-0c1d-2e3f4a5b6c7d"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "e3b9c6f0-2d5a-4e7b-8c1d-9f0a5e3d7b2c",
@@ -3139,19 +3024,16 @@
     "bitFarmingRate": 16,
     "digiEvolutionSeedList": [
       "c3d4e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
-      "c5d6e7f8-9a0b-1c2d-3e4f-5a6b7c8d9e0f",
-      "5f3c3c1b-8c3e-9a1b-2c7b-1b0e6e5f4f3d"
+      "75c6c6ce-68c9-4c32-a678-d9f59406d3a0"
     ],
-    "degenerateSeedList": [
-      "5f6e7d8c-9b0a-4c1d-8e2f-3a4b5c6d7e8f",
-      "eab4c5d6-f7a8-4b9c-0d1e-2f3a4b5c6d7e"
-    ],
+    "degenerateSeedList": ["5f6e7d8c-9b0a-4c1d-8e2f-3a4b5c6d7e8f"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "d6e3a9c0-2f5b-4e7a-8c1d-9f0a3e5d7b2c",
@@ -3166,21 +3048,15 @@
     "def": 109,
     "speed": 68,
     "bitFarmingRate": 21,
-    "digiEvolutionSeedList": [
-      "8c3e2c7b-4f3d-3c1b-6e5f-1b0e9a1b5f3c",
-      "f697c01b-7394-41b3-a374-34a6a1ff27f6",
-      "e9f0a1b2-3c4d-5e6f-7a8b-9c0d1e2f3a4b"
-    ],
-    "degenerateSeedList": [
-      "083241cc-fcf8-4101-a58d-09b0e6b375b6",
-      "9f05ac4d-b4c5-4d6e-7f8a-0b1c2d3e4f5a"
-    ],
+    "digiEvolutionSeedList": ["8c3e2c7b-4f3d-3c1b-6e5f-1b0e9a1b5f3c"],
+    "degenerateSeedList": ["083241cc-fcf8-4101-a58d-09b0e6b375b6"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "c9f0e3a7-1d5b-4e6a-8c2b-9f3a5e0d7b6c",
@@ -3197,19 +3073,16 @@
     "bitFarmingRate": 19,
     "digiEvolutionSeedList": [
       "a3b4c5d6-7e8f-9a0b-1c2d-3e4f5a6b7c8d",
-      "e7f8a9b0-1c2d-3e4f-5a6b-7c8d9e0f1a2b",
       "c4cfed7d-2b3b-4fa4-8a4f-09ef2b709c7e"
     ],
-    "degenerateSeedList": [
-      "feb5d6e7-a8b9-4c0d-1e2f-3a4b5c6d7e8f",
-      "5bc16809-d0e1-4f2a-3b4c-6d7e8f9a0b1c"
-    ],
+    "degenerateSeedList": ["feb5d6e7-a8b9-4c0d-1e2f-3a4b5c6d7e8f"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "b3c9f0e7-1a5d-4e6b-8c2b-9f0d5a3e7c6b",
@@ -3226,7 +3099,6 @@
     "bitFarmingRate": 17,
     "digiEvolutionSeedList": [
       "b4c5d6e7-8f9a-0b1c-2d3e-4f5a6b7c8d9e",
-      "c67f1a0b-f889-438b-9cc0-885f9f711a26",
       "1dc4e899-b0db-435f-a9e3-6fa7c94836aa"
     ],
     "degenerateSeedList": ["12d7f8a9-b0c1-4d2e-3f4a-5b6c7d8e9f0a"],
@@ -3235,7 +3107,8 @@
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "a5d7b9c0-2f1a-4e6b-8c3d-9f0a5e3d7b2c",
@@ -3260,7 +3133,8 @@
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "f0a5d7b9-2c1f-4e6a-8c3d-9f0e3a5d7b2c",
@@ -3275,22 +3149,15 @@
     "def": 95,
     "speed": 79,
     "bitFarmingRate": 15,
-    "digiEvolutionSeedList": [
-      "1dc4e899-b0db-435f-a9e3-6fa7c94836aa",
-      "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
-      "a3b4c5d6-7e8f-9a0b-1c2d-3e4f5a6b7c8d"
-    ],
-    "degenerateSeedList": [
-      "9d0e1f2a-b3c4-4d5e-1f6a-2b3c4d5e6f7a",
-      "feb5d6e7-a8b9-4c0d-1e2f-3a4b5c6d7e8f",
-      "986f4b59-c234-44fa-b5bc-456736578f67"
-    ],
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": ["9d0e1f2a-b3c4-4d5e-1f6a-2b3c4d5e6f7a"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "e3c9f0b7-1a5d-4e6b-8c2d-9f0a3e5d7c6b",
@@ -3305,18 +3172,15 @@
     "def": 73,
     "speed": 82,
     "bitFarmingRate": 15,
-    "digiEvolutionSeedList": [
-      "a49fd2ae-e98d-4c4b-9c53-708e6f019af2",
-      "e49a85fa-77ea-4a06-9a65-bd3133e2c1e4",
-      "d6e7f8a9-0b1c-2d3e-4f5a-6b7c8d9e0f1a"
-    ],
-    "degenerateSeedList": [],
+    "digiEvolutionSeedList": ["a49fd2ae-e98d-4c4b-9c53-708e6f019af2"],
+    "degenerateSeedList": ["23e8a9b0-c1d2-4e3f-5a6b-7c8d9e0f1a2b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "d7b9c0e3-1a5f-4e6b-8c2d-9f0a3e5d7c6b",
@@ -3333,19 +3197,18 @@
     "bitFarmingRate": 18,
     "digiEvolutionSeedList": [
       "5f3c3c1b-8c3e-9a1b-2c7b-1b0e6e5f4f3d",
-      "c3d4e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
-      "b0c1d2e3-4f5a-6b7c-8d9e-0f1a2b3c4d5e"
+      "24772f7f-d86c-4e77-bc3b-c9f4b0ef7f9c",
+      "1fc3d08b-7a62-4c3e-bf9d-3a179f5a3642",
+      "f0a1b2c3-4d5e-6f7a-8b9c-0d1e2f3a4b5c"
     ],
-    "degenerateSeedList": [
-      "5f6e7d8c-9b0a-4c1d-8e2f-3a4b5c6d7e8f",
-      "eab4c5d6-f7a8-4b9c-0d1e-2f3a4b5c6d7e"
-    ],
+    "degenerateSeedList": ["eab4c5d6-f7a8-4b9c-0d1e-2f3a4b5c6d7e"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "c0f3a7b9-2d5a-4e6b-8c1d-9f0e3a5d7b2c",
@@ -3360,14 +3223,15 @@
     "def": 80,
     "speed": 99,
     "bitFarmingRate": 17,
-    "digiEvolutionSeedList": ["a6f79b4c-0a3e-d2f8-b1c5-e8b3c7f07d9"],
+    "digiEvolutionSeedList": [],
     "degenerateSeedList": ["d349f081-f8a9-4b0c-1d2e-4f5a6b7c8d9e"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "b9c0f3a7-2d5a-4e6b-8c1d-9f0e3a5d7b2c",
@@ -3384,16 +3248,16 @@
     "bitFarmingRate": 16,
     "digiEvolutionSeedList": [
       "0fc5bcd7-7cbe-4aa7-8c60-1225d2b297d9",
-      "d8e9f0a1-2b3c-4d5e-6f7a-8b9c0d1e2f3a",
-      "1b0e4f3d-5f3c-2c7b-9a1b-8c3e6e5f3c1b"
+      "5f3c8e2a-6e5f-9a1b-2c8e-1b0e7d5c4f3d"
     ],
-    "degenerateSeedList": ["67c2e3f4-a5b6-4c7d-9e0f-1a2b3c4d5e6f"],
+    "degenerateSeedList": ["d9a452f3-71d0-4b1a-9bee-8e4c36b9e1a3"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "a5d7b9c0-3f1a-4e6b-8c2d-9f0e3a5d7b6c",
@@ -3408,21 +3272,15 @@
     "def": 93,
     "speed": 72,
     "bitFarmingRate": 17,
-    "digiEvolutionSeedList": [
-      "8c3e6e5f-3c1b-1b0e-5f3c-9a1b4f3d2c7b",
-      "b2c3d4e5-6f7a-8b9c-0d1e-2f3a4b5c6d7e",
-      "4f3d1b0e-3c1b-9a1b-6e5f-8c3e2c7b5f3c"
-    ],
-    "degenerateSeedList": [
-      "67c2e3f4-a5b6-4c7d-9e0f-1a2b3c4d5e6f",
-      "4ab057f8-c9d0-4e1f-2a3b-5c6d7e8f9a0b"
-    ],
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": ["cf2a3b4c-d5e6-4f7a-9b0c-1d2e3f4a5b6c"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "f3a7b9c0-1d5a-4e6b-8c2d-9f0e3a5d7c6b",
@@ -3447,7 +3305,8 @@
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "e7b9c0f3-1a5d-4e6b-8c2d-9f0a3e5d7c6b",
@@ -3469,7 +3328,8 @@
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "f604d614-12f3-4f68-8582-779e561fcd91",
@@ -3484,17 +3344,15 @@
     "def": 99,
     "speed": 83,
     "bitFarmingRate": 19,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "289e35f6-a7b8-4c0d-0e1f-3a4b5c6d7e8f",
-      "lmn3456o-789p-qr01-stuv-wxyzabcd34"
-    ],
+    "digiEvolutionSeedList": ["7f6e3b3b-5e12-4e29-9f57-4b9a6c34b1f8"],
+    "degenerateSeedList": ["1e4a6cd2-b5f2-40c9-abc1-e2d4f5b6a789"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "c3f0a7b9-2d5a-4e6b-8c1d-9f0e3a5d7b2c",
@@ -3509,17 +3367,15 @@
     "def": 91,
     "speed": 80,
     "bitFarmingRate": 16,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "cf2a3b4c-d5e6-4f7a-9b0c-1d2e3f4a5b6c",
-      "6cd2791a-e1f2-4a3b-4c5d-7e8f9a0b1c2d"
-    ],
+    "digiEvolutionSeedList": ["4f3d6e5f-1b0e-2c7b-5f3c-8c3e9a1b3c1b"],
+    "degenerateSeedList": ["6cd2791a-e1f2-4a3b-4c5d-7e8f9a0b1c2d"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "b7e9c0f3-1a5d-4e6b-8c2d-9f0a3e5d7c6b",
@@ -3534,17 +3390,15 @@
     "def": 87,
     "speed": 79,
     "bitFarmingRate": 17,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "34f9b0c1-d2e3-4f4a-6b7c-8d9e0f1a2b3c",
-      "b127ce6f-d6e7-4f8a-9b0c-2d3e4f5a6b7c"
-    ],
+    "digiEvolutionSeedList": ["5f3c9a1b-3c1b-8c3e-6e5f-1b0e2c7b4f3d"],
+    "degenerateSeedList": ["b127ce6f-d6e7-4f8a-9b0c-2d3e4f5a6b7c"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "a9d5e7b0-3f1a-4e6b-8c2d-9f0e3a5d7c6b",
@@ -3559,17 +3413,15 @@
     "def": 90,
     "speed": 88,
     "bitFarmingRate": 15,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "45a0c1d2-e3f4-4a5b-7c8d-9e0f1a2b3c4d",
-      "e45af1b2-c3d4-4e6f-6a7b-9c0d1e2f3a4b"
-    ],
+    "digiEvolutionSeedList": ["9a1b2c7b-8c3e-6e5f-4f3d-1b0e3c1b5f3c"],
+    "degenerateSeedList": ["45a0c1d2-e3f4-4a5b-7c8d-9e0f1a2b3c4d"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "17d0f8b3-4e1a-49c7-9cf2-e03d7a2b5f64",
@@ -3584,17 +3436,15 @@
     "def": 75,
     "speed": 87,
     "bitFarmingRate": 16,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "9d0e1f2a-b3c4-4d5e-1f6a-2b3c4d5e6f7a",
-      "e5c3b6f1-ae43-4d5e-9f0a-1b2c3d4e5f67"
-    ],
+    "digiEvolutionSeedList": ["defabc87-6543-210f-edcb-a9876543210f"],
+    "degenerateSeedList": ["9d0e1f2a-b3c4-4d5e-1f6a-2b3c4d5e6f7a"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "f2d0c814-95f4-4eb2-9491-519b62a3c9de",
@@ -3616,7 +3466,8 @@
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "d0c5e9b7-3f1a-4e6b-8c2d-9f0e3a5d7c6b",
@@ -3631,18 +3482,18 @@
     "def": 94,
     "speed": 78,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "d9a452f3-71d0-4b1a-9bee-8e4c36b9e1a3",
-      "b127c8d9-e0f1-4a2b-3c4d-6e7f8a9b0c1d",
-      "289e35f6-a7b8-4c0d-0e1f-3a4b5c6d7e8f"
+    "digiEvolutionSeedList": [
+      "66e5a6ea-93a5-47f8-91d9-8601857496f6",
+      "9a1b5f3c-8c3e-2c7b-3c1b-1b0e6e5f4f3d"
     ],
+    "degenerateSeedList": ["b127c8d9-e0f1-4a2b-3c4d-6e7f8a9b0c1d"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "ae4c3d8f-0a9b-4950-8c3d-2b9f1f0871e5",
@@ -3657,14 +3508,15 @@
     "def": 93,
     "speed": 80,
     "bitFarmingRate": 15,
-    "digiEvolutionSeedList": [],
+    "digiEvolutionSeedList": ["c5d6e7f8-9a0b-1c2d-3e4f-5a6b7c8d9e0f"],
     "degenerateSeedList": ["c238d9e0-f1a2-4b3c-4d5e-7f8a9b0c1d2e"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "5b7a39c4-812d-42c1-8e07-3c9a8e5f6f10",
@@ -3680,13 +3532,14 @@
     "speed": 68,
     "bitFarmingRate": 18,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["cf2a3b4c-d5e6-4f7a-9b0c-1d2e3f4a5b6c"],
+    "degenerateSeedList": ["67c2e3f4-a5b6-4c7d-9e0f-1a2b3c4d5e6f"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "e3f9c4b1-8a2d-4d91-97c1-5378c5f78e0b",
@@ -3701,14 +3554,15 @@
     "def": 94,
     "speed": 76,
     "bitFarmingRate": 17,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["7b8c9d0e-f1a2-4b3c-9d4e-5f6a7b8c9d0e"],
+    "digiEvolutionSeedList": ["8f14e45f-ceea-41d4-9a3d-3e8d2e9f6b2c"],
+    "degenerateSeedList": ["uvw1234a-567b-cdef-890g-hijklmn1234"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "f5a7b9c0-2d5a-4e6b-8c1d-9f0e3a5d7b2c",
@@ -3723,17 +3577,15 @@
     "def": 103,
     "speed": 74,
     "bitFarmingRate": 15,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "7b8c9d0e-f1a2-4b3c-9d4e-5f6a7b8c9d0e",
-      "a016b7c8-d9e0-4f1a-2b3c-5d6e7f8a9b0c"
-    ],
+    "digiEvolutionSeedList": ["61eb3964-e387-42d0-83aa-2e2b60f38008"],
+    "degenerateSeedList": ["7b8c9d0e-f1a2-4b3c-9d4e-5f6a7b8c9d0e"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "61b72dc8-3fe7-4ea9-9e4c-ff718ba1477a",
@@ -3748,14 +3600,15 @@
     "def": 93,
     "speed": 78,
     "bitFarmingRate": 19,
-    "digiEvolutionSeedList": [],
+    "digiEvolutionSeedList": ["a1b2c3d4-e5f6-4789-9012-34567890abcd"],
     "degenerateSeedList": ["c238df70-e7f8-4a9b-0c1d-3e4f5a6b7c8d"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "bd2c0a93-4d8f-4f6e-b3a9-761f40ed38b7",
@@ -3771,13 +3624,14 @@
     "speed": 80,
     "bitFarmingRate": 18,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["lmn3456o-789p-qr01-stuv-wxyzabcd34"],
+    "degenerateSeedList": ["c238df70-e7f8-4a9b-0c1d-3e4f5a6b7c8d"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "19f74d0b-2eac-4398-b7d3-ecf25198a302",
@@ -3792,14 +3646,15 @@
     "def": 81,
     "speed": 86,
     "bitFarmingRate": 17,
-    "digiEvolutionSeedList": [],
+    "digiEvolutionSeedList": ["43bfe4a9-f09e-4016-b26c-7a0d6948f58d"],
     "degenerateSeedList": ["5bc16809-d0e1-4f2a-3b4c-6d7e8f9a0b1c"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "12bfe8d3-7c6e-4e0f-9a2b-f1d3c87b20f5",
@@ -3814,17 +3669,15 @@
     "def": 95,
     "speed": 76,
     "bitFarmingRate": 18,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "c238d9e0-f1a2-4b3c-4d5e-7f8a9b0c1d2e",
-      "xyz5678a-123b-cdef-456g-hijklmn5678"
-    ],
+    "digiEvolutionSeedList": ["c1d2e3f4-5a6b-7c8d-9e0f-1a2b3c4d5e6f"],
+    "degenerateSeedList": ["c238d9e0-f1a2-4b3c-4d5e-7f8a9b0c1d2e"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "c2a7e1d0-1f93-48b0-bcd2-79e3a4f6d105",
@@ -3839,14 +3692,15 @@
     "def": 78,
     "speed": 89,
     "bitFarmingRate": 21,
-    "digiEvolutionSeedList": [],
+    "digiEvolutionSeedList": ["1dc4e899-b0db-435f-a9e3-6fa7c94836aa"],
     "degenerateSeedList": ["6cd2791a-e1f2-4a3b-4c5d-7e8f9a0b1c2d"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "2d83fa14-b1ae-44fa-9a1c-046af2d2306c",
@@ -3861,18 +3715,15 @@
     "def": 89,
     "speed": 71,
     "bitFarmingRate": 16,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "6a7b8c9d-e0f1-4a2b-8c3d-4e5f6a7b8c9d",
-      "e45af1b2-c3d4-4e6f-6a7b-9c0d1e2f3a4b",
-      "067c13d4-e5f6-4a8b-8c9d-1e2f3a4b5c6d"
-    ],
+    "digiEvolutionSeedList": ["7d5c4f3d-1b0e-8c3e-f8a7-a9d29e5f2c7b"],
+    "degenerateSeedList": ["067c13d4-e5f6-4a8b-8c9d-1e2f3a4b5c6d"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "c849a173-f2d4-4700-88e3-1bc4a9f7e5d2",
@@ -3887,14 +3738,15 @@
     "def": 89,
     "speed": 79,
     "bitFarmingRate": 16,
-    "digiEvolutionSeedList": [],
+    "digiEvolutionSeedList": ["b2c3d4e5-6f7a-8b9c-0d1e-2f3a4b5c6d7e"],
     "degenerateSeedList": ["7de38a2b-f2a3-4b4c-5d6e-8f9a0b1c2d3e"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "72a04c6f-3b9c-4821-a7f1-c83d4d0f6e89",
@@ -3909,17 +3761,18 @@
     "def": 73,
     "speed": 86,
     "bitFarmingRate": 18,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "23e8a9b0-c1d2-4e3f-5a6b-7c8d9e0f1a2b",
-      "8ef49b3c-a3b4-4c5d-6e7f-9a0b1c2d3e4f"
+    "digiEvolutionSeedList": [
+      "9e5f2c7b-8c3e-5f3c-3c1b-6e5f1a0b4a6b",
+      "1b0e4f3d-a9d2-9a1b-2c7b-8c3e6e5f5f3c"
     ],
+    "degenerateSeedList": ["8ef49b3c-a3b4-4c5d-6e7f-9a0b1c2d3e4f"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "7d9e3f2c-5f9a-4c1d-8124-0a3d4e6f9b2c",
@@ -3935,16 +3788,14 @@
     "speed": 73,
     "bitFarmingRate": 17,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "083241cc-fcf8-4101-a58d-09b0e6b375b6",
-      "768e6d1a-5c3b-4ed2-991f-e4a1c16357a6"
-    ],
+    "degenerateSeedList": ["1e4a6cd2-b5f2-40c9-abc1-e2d4f5b6a789"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "35d9c2a4-9b1f-4e6c-82a3-f0e5c7d8b193",
@@ -3966,7 +3817,8 @@
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "09c174de-84df-4208-946b-9bc624871631",
@@ -3982,13 +3834,14 @@
     "speed": 68,
     "bitFarmingRate": 17,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["d349e0f1-a2b3-4c5d-5e6f-8a9b0c1d2e3f"],
+    "degenerateSeedList": ["6a7b8c9d-e0f1-4a2b-8c3d-4e5f6a7b8c9d"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "e01c59b2-8f7a-49f2-914d-6ac9d3ef2b84",
@@ -4003,14 +3856,15 @@
     "def": 74,
     "speed": 87,
     "bitFarmingRate": 19,
-    "digiEvolutionSeedList": [],
+    "digiEvolutionSeedList": ["e1f2a3b4-5c6d-7e8f-9a0b-1c2d3e4f5a6b"],
     "degenerateSeedList": ["01c6e7f8-b9a0-4c1d-2e3f-4a5b6c7d8e9f"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "b3e9c0f7-1a5d-4e6b-8c2d-9f0a3e5d7c6b",
@@ -4026,13 +3880,14 @@
     "speed": 66,
     "bitFarmingRate": 15,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["a016bd5e-c5d6-4e7f-8a9b-1c2d3e4f5a6b"],
+    "degenerateSeedList": ["7b8c9d0e-f1a2-4b3c-9d4e-5f6a7b8c9d0e"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "93c1a5e7-1f0d-48b9-aeb2-6f8c5d4e3b1a",
@@ -4047,17 +3902,15 @@
     "def": 111,
     "speed": 67,
     "bitFarmingRate": 19,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "7de38a2b-f2a3-4b4c-5d6e-8f9a0b1c2d3e",
-      "083241cc-fcf8-4101-a58d-09b0e6b375b6"
-    ],
+    "digiEvolutionSeedList": ["e9f0a1b2-3c4d-5e6f-7a8b-9c0d1e2f3a4b"],
+    "degenerateSeedList": ["7de38a2b-f2a3-4b4c-5d6e-8f9a0b1c2d3e"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "91a2e3f7-7f0b-446d-81e2-3d9c7f1a5e40",
@@ -4079,7 +3932,8 @@
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "3fdea691-d2ae-44a4-bc02-59de09cf2049",
@@ -4094,17 +3948,15 @@
     "def": 99,
     "speed": 79,
     "bitFarmingRate": 18,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "8c9d0e1f-a2b3-4c5d-0e6f-7a8b9c0d1e2f",
-      "f56b02c3-d4e5-4f7a-7b8c-0d1e2f3a4b5c"
-    ],
+    "digiEvolutionSeedList": ["e9371c75-61b2-4645-938b-41b87588ae83"],
+    "degenerateSeedList": ["xyz5678a-123b-cdef-456g-hijklmn7890"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "03de2f94-6a3b-457a-a0f1-fb2c9e57c8a3",
@@ -4119,17 +3971,15 @@
     "def": 92,
     "speed": 83,
     "bitFarmingRate": 16,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "d349e0f1-a2b3-4c5d-5e6f-8a9b0c1d2e3f",
-      "f56b02c3-d4e5-4f7a-7b8c-0d1e2f3a4b5c"
-    ],
+    "digiEvolutionSeedList": ["e8f4c6a1-3d2b-4e5f-9a8c-7b6d5e4f3a2c"],
+    "degenerateSeedList": ["xyz5678a-123b-cdef-456g-hijklmn7890"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "de3f9b70-2c4a-45f1-83bd-ae170d8c9f1e",
@@ -4144,17 +3994,15 @@
     "def": 87,
     "speed": 81,
     "bitFarmingRate": 15,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "90f5a6b7-c8d9-4f0a-1b2c-4d5e6f7a8b9c",
-      "d349e0f1-a2b3-4c5d-5e6f-8a9b0c1d2e3f"
-    ],
+    "digiEvolutionSeedList": ["d9e3b7f2-5c1a-4f6d-8e9b-2a7c6d3f1e4b"],
+    "degenerateSeedList": ["90f5a6b7-c8d9-4f0a-1b2c-4d5e6f7a8b9c"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "b1e4c7f8-6d5a-4e91-8c2f-30a9e7b0f3c2",
@@ -4170,18 +4018,14 @@
     "speed": 63,
     "bitFarmingRate": 18,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "8c9d0e1f-a2b3-4c5d-0e6f-7a8b9c0d1e2f",
-      "xyz5678a-123b-cdef-456g-hijklmn7890",
-      "90f5a6b7-c8d9-4f0a-1b2c-4d5e6f7a8b9c",
-      "f56b02c3-d4e5-4f7a-7b8c-0d1e2f3a4b5c"
-    ],
+    "degenerateSeedList": ["90f5a6b7-c8d9-4f0a-1b2c-4d5e6f7a8b9c"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "d4b6f7c0-3f19-482a-a5e1-b0c2d7e3f849",
@@ -4197,17 +4041,14 @@
     "speed": 67,
     "bitFarmingRate": 16,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "45a0c1d2-e3f4-4a5b-7c8d-9e0f1a2b3c4d",
-      "89e4a5b6-c7d8-4e9f-0a1b-3c4d5e6f7a8b",
-      "a016b7c8-d9e0-4f1a-2b3c-5d6e7f8a9b0c"
-    ],
+    "degenerateSeedList": ["89e4a5b6-c7d8-4e9f-0a1b-3c4d5e6f7a8b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "cbf5e879-4074-40de-89fc-4317e4b59338",
@@ -4223,13 +4064,14 @@
     "speed": 72,
     "bitFarmingRate": 14,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["b127ce6f-d6e7-4f8a-9b0c-2d3e4f5a6b7c"],
+    "degenerateSeedList": ["8c9d0e1f-a2b3-4c5d-0e6f-7a8b9c0d1e2f"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "78c5f193-d4a0-42be-b0cd-3f7e91c608d4",
@@ -4245,16 +4087,14 @@
     "speed": 72,
     "bitFarmingRate": 18,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "89e4a5b6-c7d8-4e9f-0a1b-3c4d5e6f7a8b",
-      "a016b7c8-d9e0-4f1a-2b3c-5d6e7f8a9b0c"
-    ],
+    "degenerateSeedList": ["89e4a5b6-c7d8-4e9f-0a1b-3c4d5e6f7a8b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "6a2e1c34-91f0-4bcd-9827-04d6f9b13a87",
@@ -4269,17 +4109,15 @@
     "def": 105,
     "speed": 68,
     "bitFarmingRate": 17,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "90f5a6b7-c8d9-4f0a-1b2c-4d5e6f7a8b9c",
-      "7de38a2b-f2a3-4b4c-5d6e-8f9a0b1c2d3e"
-    ],
+    "digiEvolutionSeedList": ["9a1b8c3e-4f3d-5f3c-2c7b-1b0e6e5f3c1b"],
+    "degenerateSeedList": ["90f5a6b7-c8d9-4f0a-1b2c-4d5e6f7a8b9c"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "8d2e5f3b-2a9c-47b0-91f3-e6c4d5b7a081",
@@ -4294,17 +4132,15 @@
     "def": 90,
     "speed": 75,
     "bitFarmingRate": 16,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "ad0e2f3b-c4d5-4e6f-7a8b-9c0d1e2f3a4b",
-      "23e8a9b0-c1d2-4e3f-5a6b-7c8d9e0f1a2b"
-    ],
+    "digiEvolutionSeedList": ["a9b0c1d2-3e4f-5a6b-7c8d-9e0f1a2b3c4d"],
+    "degenerateSeedList": ["f56b02c3-d4e5-4f7a-7b8c-0d1e2f3a4b5c"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "76c5f4e2-1a0b-42f7-9e4d-b3f0d8a1c2e6",
@@ -4319,17 +4155,18 @@
     "def": 86,
     "speed": 86,
     "bitFarmingRate": 15,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "45a0c1d2-e3f4-4a5b-7c8d-9e0f1a2b3c4d",
-      "6ce78264-cbb0-4e10-8f55-89336f93d8dd"
+    "digiEvolutionSeedList": [
+      "8c3e6e5f-3c1b-1b0e-5f3c-9a1b4f3d2c7b",
+      "bdc9e5c4-49b1-4ee5-9b86-9b52c76b3b6f"
     ],
+    "degenerateSeedList": ["xyz5678a-123b-cdef-456g-hijklmn7890"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "a3c9e71d-b581-4aef-bc7f-0e1db4956f32",
@@ -4344,19 +4181,15 @@
     "def": 72,
     "speed": 90,
     "bitFarmingRate": 16,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "5f6e7d8c-9b0a-4c1d-8e2f-3a4b5c6d7e8f",
-      "ad0e2f3b-c4d5-4e6f-7a8b-9c0d1e2f3a4b",
-      "b127c8d9-e0f1-4a2b-3c4d-6e7f8a9b0c1d",
-      "39af46e7-b8c9-4d0e-1f2a-4b5c6d7e8f9a"
-    ],
+    "digiEvolutionSeedList": ["b0c1d2e3-4f5a-6b7c-8d9e-0f1a2b3c4d5e"],
+    "degenerateSeedList": ["5f6e7d8c-9b0a-4c1d-8e2f-3a4b5c6d7e8f"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "934b0e2f-807c-4c3a-b1f9-60edc7f4a59e",
@@ -4371,19 +4204,15 @@
     "def": 109,
     "speed": 65,
     "bitFarmingRate": 18,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "6a7b8c9d-e0f1-4a2b-8c3d-4e5f6a7b8c9d",
-      "e45af1b2-c3d4-4e6f-6a7b-9c0d1e2f3a4b",
-      "067c13d4-e5f6-4a8b-8c9d-1e2f3a4b5c6d",
-      "178d24e5-f6a7-4b9c-9d0e-2f3a4b5c6d7e"
-    ],
+    "digiEvolutionSeedList": ["5f3c8e2a-a9d2-1b0e-6e5f-3c1b7d5c9a1b"],
+    "degenerateSeedList": ["178d24e5-f6a7-4b9c-9d0e-2f3a4b5c6d7e"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "f71c8e04-3b7d-4d20-86f1-efb9403a19d6",
@@ -4398,17 +4227,15 @@
     "def": 79,
     "speed": 86,
     "bitFarmingRate": 19,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "dfa3b4c5-e6f7-4a8b-0c1d-2e3f4a5b6c7d",
-      "d349f081-f8a9-4b0c-1d2e-4f5a6b7c8d9e"
-    ],
+    "digiEvolutionSeedList": ["d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a"],
+    "degenerateSeedList": ["dfa3b4c5-e6f7-4a8b-0c1d-2e3f4a5b6c7d"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "0a1d3e9f-b7c2-4f8a-84e1-d0c9f27b1356",
@@ -4430,7 +4257,8 @@
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "f0e2b4d1-59c3-41a7-9d2e-85c7f31b06a4",
@@ -4446,13 +4274,14 @@
     "speed": 76,
     "bitFarmingRate": 16,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["d349f081-f8a9-4b0c-1d2e-4f5a6b7c8d9e"],
+    "degenerateSeedList": ["ghi9012j-3456-kl78-mn90-1234567opqrs"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "7cd90fd2-0182-4973-aab7-1ff1162b83ec",
@@ -4468,16 +4297,14 @@
     "speed": 76,
     "bitFarmingRate": 17,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "e45af1b2-c3d4-4e6f-6a7b-9c0d1e2f3a4b",
-      "178d24e5-f6a7-4b9c-9d0e-2f3a4b5c6d7e"
-    ],
+    "degenerateSeedList": ["067c13d4-e5f6-4a8b-8c9d-1e2f3a4b5c6d"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "14fa2d8e-a930-4eb1-bc27-ef19d3f0c475",
@@ -4492,14 +4319,15 @@
     "def": 82,
     "speed": 70,
     "bitFarmingRate": 15,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["abc1234d-5678-efgh-9101-ijklmnopqrst"],
+    "digiEvolutionSeedList": ["2b8020e1-2f70-4e7e-92e5-d89d54e131a5"],
+    "degenerateSeedList": ["178d24e5-f6a7-4b9c-9d0e-2f3a4b5c6d7e"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "0d4e78c1-2a3f-45f0-a7b9-9152ce0db654",
@@ -4521,7 +4349,8 @@
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "f7b0c8e1-96a2-4e0f-b3c9-524d8f7a03e1",
@@ -4543,7 +4372,8 @@
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "8b7f0e3d-3c2a-4671-b9f1-e0d5a4c78b20",
@@ -4558,14 +4388,15 @@
     "def": 98,
     "speed": 75,
     "bitFarmingRate": 17,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "digiEvolutionSeedList": ["4f3d1b0e-3c1b-9a1b-6e5f-8c3e2c7b5f3c"],
+    "degenerateSeedList": ["67c2e3f4-a5b6-4c7d-9e0f-1a2b3c4d5e6f"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "3e04bb4b-6e1a-4c57-9f7d-bd9e21048c5d",
@@ -4580,17 +4411,15 @@
     "def": 91,
     "speed": 72,
     "bitFarmingRate": 18,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "cf2a3b4c-d5e6-4f7a-9b0c-1d2e3f4a5b6c",
-      "b127ce6f-d6e7-4f8a-9b0c-2d3e4f5a6b7c"
-    ],
+    "digiEvolutionSeedList": ["d8e9f0a1-2b3c-4d5e-6f7a-8b9c0d1e2f3a"],
+    "degenerateSeedList": ["b127ce6f-d6e7-4f8a-9b0c-2d3e4f5a6b7c"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "28e7b03d-c49a-431b-81f2-d3a0f8c197e0",
@@ -4605,14 +4434,15 @@
     "def": 86,
     "speed": 89,
     "bitFarmingRate": 19,
-    "digiEvolutionSeedList": [],
+    "digiEvolutionSeedList": ["2f601348-8b9f-456e-98e5-b2133a734203"],
     "degenerateSeedList": ["xyz1234a-5678-bc90-defg-1234567890ab"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "bc8f1703-4769-4c3b-b8a2-e4f1d7ce9a02",
@@ -4627,14 +4457,15 @@
     "def": 101,
     "speed": 75,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": [],
+    "digiEvolutionSeedList": ["f697c01b-7394-41b3-a374-34a6a1ff27f6"],
     "degenerateSeedList": ["be1f2a3b-c4d5-4e6f-8a9b-0c1d2e3f4a5b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "46c1f3e9-5a4d-4b7c-8e1f-cb7a0f9d2e3c",
@@ -4650,16 +4481,14 @@
     "speed": 70,
     "bitFarmingRate": 15,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "34f9b0c1-d2e3-4f4a-6b7c-8d9e0f1a2b3c",
-      "uvw1234a-567b-cdef-890g-hijklmn1234"
-    ],
+    "degenerateSeedList": ["uvw1234a-567b-cdef-890g-hijklmn1234"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "a3d5f4e1-92b0-4fc8-ae1c-6d7e9c203f5b",
@@ -4675,16 +4504,14 @@
     "speed": 71,
     "bitFarmingRate": 21,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "7b8c9d0e-f1a2-4b3c-9d4e-5f6a7b8c9d0e",
-      "b127ce6f-d6e7-4f8a-9b0c-2d3e4f5a6b7c"
-    ],
+    "degenerateSeedList": ["7b8c9d0e-f1a2-4b3c-9d4e-5f6a7b8c9d0e"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "ecb85eb6-9dd6-4997-b4b0-2f5bfa778712",
@@ -4699,17 +4526,15 @@
     "def": 99,
     "speed": 73,
     "bitFarmingRate": 19,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "7b8c9d0e-f1a2-4b3c-9d4e-5f6a7b8c9d0e",
-      "b127c8d9-e0f1-4a2b-3c4d-6e7f8a9b0c1d"
-    ],
+    "digiEvolutionSeedList": ["e3f4a5b6-7c8d-9e0f-1a2b-3c4d5e6f7a8b"],
+    "degenerateSeedList": ["b127c8d9-e0f1-4a2b-3c4d-6e7f8a9b0c1d"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "c2d84f3e-0b97-402d-9ef1-b38f7051c4ad",
@@ -4724,17 +4549,15 @@
     "def": 102,
     "speed": 67,
     "bitFarmingRate": 16,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "56b1d2e3-f4a5-4b6c-8d9e-0f1a2b3c4d5e",
-      "6ce78264-cbb0-4e10-8f55-89336f93d8dd"
-    ],
+    "digiEvolutionSeedList": ["efabcd76-5432-10fe-dcba-9876543210fe"],
+    "degenerateSeedList": ["56b1d2e3-f4a5-4b6c-8d9e-0f1a2b3c4d5e"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "41d20f3e-c798-4e3d-b0f2-718b49f305d7",
@@ -4750,13 +4573,14 @@
     "speed": 83,
     "bitFarmingRate": 17,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["768e6d1a-5c3b-4ed2-991f-e4a1c16357a6"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "a5d4e9f7-c830-4f2d-b6a1-1e0f4c3b9d58",
@@ -4771,14 +4595,15 @@
     "def": 77,
     "speed": 79,
     "bitFarmingRate": 16,
-    "digiEvolutionSeedList": [],
+    "digiEvolutionSeedList": ["8c3e6e5f-2c7b-1b0e-3c1b-a9d25f3c9a1b"],
     "degenerateSeedList": ["be1f2a3b-c4d5-4e6f-8a9b-0c1d2e3f4a5b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "c7e0f2d9-b5a3-4b18-91f2-8d9c0e7a6f13",
@@ -4793,17 +4618,15 @@
     "def": 97,
     "speed": 88,
     "bitFarmingRate": 17,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "5bc16809-d0e1-4f2a-3b4c-6d7e8f9a0b1c",
-      "768e6d1a-5c3b-4ed2-991f-e4a1c16357a6"
-    ],
+    "digiEvolutionSeedList": ["e7f8a9b0-1c2d-3e4f-5a6b-7c8d9e0f1a2b"],
+    "degenerateSeedList": ["01c6e7f8-b9a0-4c1d-2e3f-4a5b6c7d8e9f"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "56a2e212-2c89-46c4-b7b4-36bba1dbd7b7",
@@ -4818,18 +4641,18 @@
     "def": 94,
     "speed": 82,
     "bitFarmingRate": 19,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "d9a452f3-71d0-4b1a-9bee-8e4c36b9e1a3",
-      "b127c8d9-e0f1-4a2b-3c4d-6e7f8a9b0c1d",
-      "f56b02c3-d4e5-4f7a-7b8c-0d1e2f3a4b5c"
+    "digiEvolutionSeedList": [
+      "e11a28bb-64a3-49bc-8770-065728c1d8fa",
+      "2c7b9a1b-5f3c-8c3e-3c1b-1b0e4f3d6e5f"
     ],
+    "degenerateSeedList": ["39af46e7-b8c9-4d0e-1f2a-4b5c6d7e8f9a"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "c7b9e0f3-2d5a-4e6b-8c1d-9f0e3a5d7b2c",
@@ -4844,14 +4667,15 @@
     "def": 103,
     "speed": 82,
     "bitFarmingRate": 21,
-    "digiEvolutionSeedList": [],
+    "digiEvolutionSeedList": ["b6c7d8e9-0f1a-2b3c-4d5e-6f7a8b9c0d1e"],
     "degenerateSeedList": ["3c827fbe-aa3d-4b2b-9cb3-5a6d4fc8e47f"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "1449e5fc-0412-44f2-8b2d-b005419ea5c6",
@@ -4867,14 +4691,15 @@
     "spirit": 82,
     "speed": 70,
     "bitFarmingRate": 38,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["67c2e3f4-a5b6-4c7d-9e0f-1a2b3c4d5e6f"],
+    "digiEvolutionSeedList": ["a5b6c7d8-9e0f-1a2b-3c4d-5e6f7a8b9c0d"],
+    "degenerateSeedList": ["ad0e2f3b-c4d5-4e6f-7a8b-9c0d1e2f3a4b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "a1b2c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
@@ -4890,14 +4715,15 @@
     "spirit": 83,
     "speed": 79,
     "bitFarmingRate": 34,
-    "digiEvolutionSeedList": [],
+    "digiEvolutionSeedList": ["d8bbebbb-b512-4ae6-a499-cfe208cce34b"],
     "degenerateSeedList": ["9f05ac4d-b4c5-4d6e-7f8a-0b1c2d3e4f5a"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "5a9c1a2a-79b5-4de4-bc0a-d0fcd149e9d6",
@@ -4913,17 +4739,15 @@
     "spirit": 68,
     "speed": 81,
     "bitFarmingRate": 34,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "4ab057f8-c9d0-4e1f-2a3b-5c6d7e8f9a0b",
-      "67c2e3f4-a5b6-4c7d-9e0f-1a2b3c4d5e6f"
-    ],
+    "digiEvolutionSeedList": ["6c121f02-4c0e-46a2-b2c7-f0b602267107"],
+    "degenerateSeedList": ["4ab057f8-c9d0-4e1f-2a3b-5c6d7e8f9a0b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "f1d36141-5f0e-40e3-9ad4-ccdbbffb65fd",
@@ -4939,14 +4763,15 @@
     "spirit": 68,
     "speed": 82,
     "bitFarmingRate": 45,
-    "digiEvolutionSeedList": [],
+    "digiEvolutionSeedList": ["e5f6a7b8-9c0d-1e2f-3a4b-5c6d7e8f9a0b"],
     "degenerateSeedList": ["e45a0912-0b1c-4d2e-3f4a-5b6c7d8e9f0a"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "3c0a1f29-0f53-41e6-a6fc-4d0b1d9811d6",
@@ -4962,14 +4787,41 @@
     "spirit": 94,
     "speed": 89,
     "bitFarmingRate": 45,
-    "digiEvolutionSeedList": [],
+    "digiEvolutionSeedList": ["c77b7715-f25c-4b3a-b77f-199188d1e7f7"],
     "degenerateSeedList": ["f56b1023-1c2d-4e3f-4a5b-6c7d8e9f0a1b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 20
       }
-    ]
+    ],
+    "checked": true
+  },
+  {
+    "seed": "8f1d1fbb-3c4d-4b95-9437-889af207f7a0",
+    "name": "Agnimon",
+    "img": "/assets/digimons/Agnimon.webp",
+    "rank": "Champion",
+    "species": "Beast",
+    "attribute": "Vaccine",
+    "hp": 175,
+    "mp": 160,
+    "atk": 125,
+    "def": 95,
+    "speed": 105,
+    "bitFarmingRate": 19,
+    "digiEvolutionSeedList": [
+      "6d7a3c5b-f3f8-4ab8-a55a-0a9e3cda3c62",
+      "3e4dca61-915d-4cf9-91b5-36a9462c4b9d"
+    ],
+    "degenerateSeedList": ["b87f2b55-1e7b-49d5-8b21-0ef4a4c645e2"],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 20
+      }
+    ],
+    "checked": true
   },
   {
     "seed": "25fc7b61-17ae-453b-94f7-4fa4f9171633",
@@ -4984,14 +4836,18 @@
     "def": 117,
     "speed": 100,
     "bitFarmingRate": 4,
-    "digiEvolutionSeedList": ["df67cc96-4a69-4f26-88d6-2c98ccaecfe6"],
+    "digiEvolutionSeedList": [
+      "df67cc96-4a69-4f26-88d6-2c98ccaecfe6",
+      "1f8b2c41-6d7a-4f1d-8a79-1d3c2a96c1b7"
+    ],
     "degenerateSeedList": ["70dbb38a-690e-45b3-bfc5-eccba64fbd9b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 35
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "66e5a6ea-93a5-47f8-91d9-8601857496f6",
@@ -5006,17 +4862,18 @@
     "def": 71,
     "speed": 55,
     "bitFarmingRate": 4,
-    "digiEvolutionSeedList": [
-      "f1b3b3b4-1b3b-4b3b-8b3b-3b3b3b3b3b3b",
-      "1a2b3c4d-5e6f-4a8b-9c1d-2e3f4a5b6c7d"
+    "digiEvolutionSeedList": ["f1b3b3b4-1b3b-4b3b-8b3b-3b3b3b3b3b3b"],
+    "degenerateSeedList": [
+      "70dbb38a-690e-45b3-bfc5-eccba64fbd9b",
+      "d0c5e9b7-3f1a-4e6b-8c2d-9f0e3a5d7c6b"
     ],
-    "degenerateSeedList": ["70dbb38a-690e-45b3-bfc5-eccba64fbd9b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 35
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "e5a57e68-7e23-4314-bd93-ea8c7d5fca85",
@@ -5038,7 +4895,8 @@
         "type": "level",
         "value": 45
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "fd9a8a5e-7e23-4c1b-b6b8-f2ec5f0c82e1",
@@ -5060,7 +4918,8 @@
         "type": "level",
         "value": 35
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "c67f1a0b-f889-438b-9cc0-885f9f711a26",
@@ -5076,17 +4935,14 @@
     "speed": 118,
     "bitFarmingRate": 22,
     "digiEvolutionSeedList": ["8f89a3d4-7b14-45dc-88ae-c5f0d44637d3"],
-    "degenerateSeedList": [
-      "cd52bdf0-80a8-4b19-b738-ed6acf1f0b14",
-      "a7c0f3e9-1d5b-4e6a-8c2b-9f3a5e0d7b6c",
-      "b3c9f0e7-1a5d-4e6b-8c2b-9f0d5a3e7c6b"
-    ],
+    "degenerateSeedList": ["cd52bdf0-80a8-4b19-b738-ed6acf1f0b14"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 35
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "28228629-5abc-4fdb-b94d-360783b2ff2c",
@@ -5111,7 +4967,8 @@
         "type": "level",
         "value": 35
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "529f424a-7efe-49bd-90dc-58286aaa9fb5",
@@ -5133,7 +4990,8 @@
         "type": "level",
         "value": 35
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "mno7890p-1234-qr56-st78-901234uvwxzy",
@@ -5155,7 +5013,8 @@
         "type": "level",
         "value": 35
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "pqr1234s-5678-tu90-vw12-345678xyzabc",
@@ -5177,7 +5036,8 @@
         "type": "level",
         "value": 35
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "2f1a57b3-4fc2-4a7b-97a5-8b5f6886ec14",
@@ -5193,17 +5053,14 @@
     "speed": 107,
     "bitFarmingRate": 19,
     "digiEvolutionSeedList": ["cd380816-9fcf-42a0-8260-17a962fd536f"],
-    "degenerateSeedList": [
-      "f0b7e9c5-2a1d-4e6b-8c3b-9d5a3e0f7c2b",
-      "9f207e7b-2e92-4cfc-8e44-94cf25e0fdb5",
-      "f0c7e9b3-1a5d-4e6b-8c2b-9d3a5e0f7c6b"
-    ],
+    "degenerateSeedList": ["f0b7e9c5-2a1d-4e6b-8c3b-9d5a3e0f7c2b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 35
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "a7e2f3b1-03e4-40fc-b80b-8db60f4f616b",
@@ -5218,17 +5075,15 @@
     "def": 123,
     "speed": 99,
     "bitFarmingRate": 3,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "f4cbbd45-9e42-4b43-b9b0-4f8e1b9b9d21",
-      "f8d2c6e9-4b1a-4e9f-8c7d-3a5e9b2f1d0c"
-    ],
+    "digiEvolutionSeedList": ["e5f7a9b1-2c3d-4e6f-8a7b-9c1d2e3f4a5b"],
+    "degenerateSeedList": ["f4cbbd45-9e42-4b43-b9b0-4f8e1b9b9d21"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 45
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "40ed91a1-d2e3-47dc-8c18-64a55757e6b1",
@@ -5250,7 +5105,8 @@
         "type": "level",
         "value": 35
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "e49a85fa-77ea-4a06-9a65-bd3133e2c1e4",
@@ -5265,18 +5121,15 @@
     "def": 118,
     "speed": 112,
     "bitFarmingRate": 2,
-    "digiEvolutionSeedList": ["b2dbcc35-8eeb-4f16-97aa-3f2e7a1a3df9"],
-    "degenerateSeedList": [
-      "hij6789k-0123-456l-mnop-qrstuvwxyz01",
-      "f0b7e9c5-2a1d-4e6b-8c3b-9d5a3e0f7c2b",
-      "e3c9f0b7-1a5d-4e6b-8c2d-9f0a3e5d7c6b"
-    ],
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": ["hij6789k-0123-456l-mnop-qrstuvwxyz01"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 35
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "rst9012u-345v-wxyz-abcd-efghij6789",
@@ -5291,14 +5144,18 @@
     "def": 124,
     "speed": 92,
     "bitFarmingRate": 5,
-    "digiEvolutionSeedList": ["uvw1234x-567y-zabc-defg-hijklmno890"],
+    "digiEvolutionSeedList": [
+      "uvw1234x-567y-zabc-defg-hijklmno890",
+      "7b3a9d1e-2c8f-4a5b-9e6d-1f0c7b8a9d2e"
+    ],
     "degenerateSeedList": ["opq6789r-012s-tuvw-xyza-bcdefg5678"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 35
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "a5e0bfb7-8d2a-4ef1-9636-cbb9db1fe1d0",
@@ -5313,14 +5170,18 @@
     "def": 102,
     "speed": 115,
     "bitFarmingRate": 4,
-    "digiEvolutionSeedList": ["d9f9c182-731b-4f21-8e2f-167b2d663e34"],
+    "digiEvolutionSeedList": [
+      "d9f9c182-731b-4f21-8e2f-167b2d663e34",
+      "e6a29e6f-9a3d-41a3-87c3-7c0c573b42de"
+    ],
     "degenerateSeedList": ["80c6f1b9-648a-49b3-92c9-01d6e2f4bc8e"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 35
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "34af8b92-9237-4f39-b45d-0d6c073d98c1",
@@ -5342,7 +5203,8 @@
         "type": "level",
         "value": 35
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "a2fd5cd4-16dc-4422-8e94-7129b75478ce",
@@ -5367,7 +5229,8 @@
         "type": "level",
         "value": 45
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "a1b2c3d4-e5f6-4789-9012-34567890abcd",
@@ -5383,13 +5246,14 @@
     "speed": 91,
     "bitFarmingRate": 20,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["61b72dc8-3fe7-4ea9-9e4c-ff718ba1477a"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 35
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "bcdefa01-2345-4678-9abc-def012345678",
@@ -5405,16 +5269,14 @@
     "speed": 90,
     "bitFarmingRate": 20,
     "digiEvolutionSeedList": ["c7f0b1c5-d2f8-a6f7-e8b3-5d2f9b4c0a3"],
-    "degenerateSeedList": [
-      "b3e6a9c5-2d1f-4e7a-8c9b-0f5d3a7e2b6c",
-      "f3a7b9c0-1d5a-4e6b-8c2d-9f0e3a5d7c6b"
-    ],
+    "degenerateSeedList": ["f3a7b9c0-1d5a-4e6b-8c2d-9f0e3a5d7c6b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 36
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "f697c01b-7394-41b3-a374-34a6a1ff27f6",
@@ -5429,17 +5291,15 @@
     "def": 119,
     "speed": 106,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "f8d2c6e9-4b1a-4e9f-8c7d-3a5e9b2f1d0c",
-      "d6e3a9c0-2f5b-4e7a-8c1d-9f0a3e5d7b2c"
-    ],
+    "digiEvolutionSeedList": ["5b3c8a7d-4d1c-1f0c-9e6a-2e1f7b8a9d2e"],
+    "degenerateSeedList": ["bc8f1703-4769-4c3b-b8a2-e4f1d7ce9a02"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 37
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "8f14e45f-ceea-41d4-9a3d-3e8d2e9f6b2c",
@@ -5454,17 +5314,15 @@
     "def": 125,
     "speed": 92,
     "bitFarmingRate": 19,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "f3c12345-6b7d-4e89-9ef7-89c4672c34ab",
-      "b3e6a9c5-2d1f-4e7a-8c9b-0f5d3a7e2b6c"
-    ],
+    "digiEvolutionSeedList": ["f47ac10b-58cc-4372-a567-0e02b2c3d479"],
+    "degenerateSeedList": ["e3f9c4b1-8a2d-4d91-97c1-5378c5f78e0b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 38
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "defabc87-6543-210f-edcb-a9876543210f",
@@ -5479,14 +5337,15 @@
     "def": 108,
     "speed": 112,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["b5e9c2f0-3a1d-4e6b-8c7b-9f0d5a3e2d7c"],
+    "digiEvolutionSeedList": ["e7b1c5d2-f8b3-c7f0-b4e8-a6f7d99b2a"],
+    "degenerateSeedList": ["17d0f8b3-4e1a-49c7-9cf2-e03d7a2b5f64"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 39
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "9a1b8c3e-4f3d-5f3c-2c7b-1b0e6e5f3c1b",
@@ -5501,14 +5360,18 @@
     "def": 130,
     "speed": 86,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["87a9e123-4f23-42b3-9d83-3c7e4382c3d5"],
+    "digiEvolutionSeedList": [
+      "550e8400-e29b-41d4-a716-446655440000",
+      "f6a8b1c2-3d4e-4f7a-9b8c-1d2e3f4a5b6c"
+    ],
+    "degenerateSeedList": ["6a2e1c34-91f0-4bcd-9827-04d6f9b13a87"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 40
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "efabcd76-5432-10fe-dcba-9876543210fe",
@@ -5523,14 +5386,15 @@
     "def": 122,
     "speed": 90,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "digiEvolutionSeedList": ["f0a3b4e8-c7f0-d9b4-b1c5-d2f8a6f7e99"],
+    "degenerateSeedList": ["c2d84f3e-0b97-402d-9ef1-b38f7051c4ad"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 41
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "b7e2c9d4-1f6a-4d3b-8e5c-9a2f7d6b3c1e",
@@ -5552,7 +5416,8 @@
         "type": "level",
         "value": 42
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "c4f8a2d6-9b3e-4e1f-8d7c-5a9f2b6e3d1c",
@@ -5568,13 +5433,14 @@
     "speed": 108,
     "bitFarmingRate": 19,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["f3d8e2e9-316a-412b-91f9-678d1e6e9a56"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 43
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "d9e3b7f2-5c1a-4f6d-8e9b-2a7c6d3f1e4b",
@@ -5589,14 +5455,15 @@
     "def": 123,
     "speed": 92,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "digiEvolutionSeedList": ["1f0c2e1f-7b8a-9e6a-4d1c-5b3c8a7d9d2e"],
+    "degenerateSeedList": ["de3f9b70-2c4a-45f1-83bd-ae170d8c9f1e"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 44
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "e8f4c6a1-3d2b-4e5f-9a8c-7b6d5e4f3a2c",
@@ -5611,14 +5478,15 @@
     "def": 114,
     "speed": 89,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "digiEvolutionSeedList": ["9d2e7b8a-1f0c-4d1c-5b3c-2e1f8a7d9e6a"],
+    "degenerateSeedList": ["03de2f94-6a3b-457a-a0f1-fb2c9e57c8a3"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 45
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "f9a5d7b2-4e3c-5f6a-8b9d-0c1e2f3a4b5d",
@@ -5633,14 +5501,15 @@
     "def": 115,
     "speed": 113,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": [],
+    "digiEvolutionSeedList": ["7b8a4d1c-2e1f-9e6a-8a7d-5b3c1f0c9d2e"],
     "degenerateSeedList": ["87a9e123-4f23-42b3-9d83-3c7e4382c3d5"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 35
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "fef29128-0270-4e25-befc-bc9f2c4dd853",
@@ -5655,14 +5524,15 @@
     "def": 121,
     "speed": 95,
     "bitFarmingRate": 21,
-    "digiEvolutionSeedList": [],
+    "digiEvolutionSeedList": ["bcdefa43-210f-0ecb-9a87-6543210fedab"],
     "degenerateSeedList": ["c4a7b9d2-1e5f-4c8a-9b3e-6d0f2a5e7c1b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 36
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "a49fd2ae-e98d-4c4b-9c53-708e6f019af2",
@@ -5677,17 +5547,15 @@
     "def": 103,
     "speed": 108,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "c4a7b9d2-1e5f-4c8a-9b3e-6d0f2a5e7c1b",
-      "e3c9f0b7-1a5d-4e6b-8c2d-9f0a3e5d7c6b"
-    ],
+    "digiEvolutionSeedList": ["c3d5e7f8-9a1b-4c2d-9e6f-7a8b9c1d2e3f"],
+    "degenerateSeedList": ["e3c9f0b7-1a5d-4e6b-8c2d-9f0a3e5d7c6b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 37
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "c3d4e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
@@ -5702,17 +5570,15 @@
     "def": 99,
     "speed": 115,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "e3b9c6f0-2d5a-4e7b-8c1d-9f0a5e3d7b2c",
-      "d7b9c0e3-1a5f-4e6b-8c2d-9f0a3e5d7c6b"
-    ],
+    "digiEvolutionSeedList": ["9d2e8a7d-5b3c-1f0c-2e1f-7b8a4d1c9e6a"],
+    "degenerateSeedList": ["e3b9c6f0-2d5a-4e7b-8c1d-9f0a5e3d7b2c"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 38
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "2b8020e1-2f70-4e7e-92e5-d89d54e131a5",
@@ -5728,16 +5594,14 @@
     "speed": 93,
     "bitFarmingRate": 20,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "e2c5a9b7-1d3f-4e6a-8c9b-0f5d3a7e2b6c",
-      "b2a5c9e0-3d1f-4e6a-8c7b-9f0d3a5e7c6b"
-    ],
+    "degenerateSeedList": ["14fa2d8e-a930-4eb1-bc27-ef19d3f0c475"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 39
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "1d47f42d-b6b5-4896-b205-cd648f25c444",
@@ -5759,7 +5623,8 @@
         "type": "level",
         "value": 40
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "f6a7b8c9-0d1e-2f3a-4b5c-6d7e8f9a0b1c",
@@ -5774,17 +5639,15 @@
     "def": 116,
     "speed": 109,
     "bitFarmingRate": 19,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "f8d2c6e9-4b1a-4e9f-8c7d-3a5e9b2f1d0c",
-      "e3a5c9b7-3d1f-4e6a-8c2b-9f0d5a3e7b6c"
-    ],
+    "digiEvolutionSeedList": ["8a7d9d2e-1f0c-4d1c-5b3c-9e6a2e1f0b9a"],
+    "degenerateSeedList": ["e3a5c9b7-3d1f-4e6a-8c2b-9f0d5a3e7b6c"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 41
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "0fc5bcd7-7cbe-4aa7-8c60-1225d2b297d9",
@@ -5799,14 +5662,15 @@
     "def": 124,
     "speed": 110,
     "bitFarmingRate": 21,
-    "digiEvolutionSeedList": [],
+    "digiEvolutionSeedList": ["a6f7d99b-2a6f-8b1c-5d2f-e8c7f0a3b4e"],
     "degenerateSeedList": ["b9c0f3a7-2d5a-4e6b-8c1d-9f0e3a5d7b2c"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 42
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "f6d38895-6836-4e09-90fd-e6a63b2e4a27",
@@ -5821,14 +5685,18 @@
     "def": 103,
     "speed": 114,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": [],
+    "digiEvolutionSeedList": [
+      "d4e6f8a1-9b2c-4d3e-8f7a-6b1c2d3e4f5a",
+      "5b3c2e1f-7b8a-4d1c-9e6a-2e1f0b9a8a7d"
+    ],
     "degenerateSeedList": ["a5d8e0b7-3c1f-4e9a-8b2d-6f0c3a5e7d1b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 43
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "5f3c8e2a-6e5f-9a1b-2c8e-1b0e7d5c4f3d",
@@ -5843,14 +5711,18 @@
     "def": 123,
     "speed": 108,
     "bitFarmingRate": 21,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["a7d0f3e9-1c5b-4e6a-8c2b-9f3a5e0d7b6c"],
+    "digiEvolutionSeedList": [
+      "f9a2b8c3-4e5d-4f7b-9c1e-8d6f3a2b5c7e",
+      "a1b3c5d7-6e8f-4a2b-9c4d-5e7f8a9b1c2d"
+    ],
+    "degenerateSeedList": ["b9c0f3a7-2d5a-4e6b-8c1d-9f0e3a5d7b2c"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 44
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "5f3c9a1b-1b0e-6e5f-8c3e-4f3d2c7b3c1b",
@@ -5865,14 +5737,15 @@
     "def": 101,
     "speed": 119,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["f0c7e9b3-1a5d-4e6b-8c2b-9d3a5e0f7c6b"],
+    "digiEvolutionSeedList": ["5b3c8a7d-2e1f-9d2e-4d1c-7b8a1f0c9e6a"],
+    "degenerateSeedList": ["9f207e7b-2e92-4cfc-8e44-94cf25e0fdb5"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 45
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "e1f2a3b4-5c6d-7e8f-9a0b-1c2d3e4f5a6b",
@@ -5887,14 +5760,41 @@
     "def": 126,
     "speed": 113,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "digiEvolutionSeedList": [
+      "a7b9c2d3-4e5f-4a8b-9c1d-2e3f4a5b6c7d",
+      "b8c1d3e4-5f6a-4b9c-8d2e-3f4a5b6c7d8e"
+    ],
+    "degenerateSeedList": ["e01c59b2-8f7a-49f2-914d-6ac9d3ef2b84"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 35
       }
-    ]
+    ],
+    "checked": true
+  },
+  {
+    "seed": "7f6e3b3b-5e12-4e29-9f57-4b9a6c34b1f8",
+    "name": "Grademon",
+    "img": "/assets/digimons/Grademon.webp",
+    "rank": "Ultimate",
+    "species": "Dragon",
+    "attribute": "Vaccine",
+    "hp": 210,
+    "mp": 225,
+    "atk": 170,
+    "def": 115,
+    "speed": 140,
+    "bitFarmingRate": 35,
+    "digiEvolutionSeedList": ["9d2e6c5b-8a7d-2e1f-9e6d-1f0c4d1c7b8a"],
+    "degenerateSeedList": ["f604d614-12f3-4f68-8582-779e561fcd91"],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 33
+      }
+    ],
+    "checked": true
   },
   {
     "seed": "f2a3b4c5-6d7e-8f9a-0b1c-2d3e4f5a6b7c",
@@ -5909,17 +5809,15 @@
     "def": 116,
     "speed": 97,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "d9a3c6e0-2f5b-4e7a-8c1b-9f0d5a3e7b2c",
-      "c6b9e0f3-2a5d-4e7b-8c1d-9f0a3e5d7b2c"
-    ],
+    "digiEvolutionSeedList": ["4d1c8b2f-9e6a-5b3c-8a7d-2e1f0b9a6c5"],
+    "degenerateSeedList": ["c6b9e0f3-2a5d-4e7b-8c1d-9f0a3e5d7b2c"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 36
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "a3b4c5d6-7e8f-9a0b-1c2d-3e4f5a6b7c8d",
@@ -5934,17 +5832,15 @@
     "def": 106,
     "speed": 109,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "f0a5d7b9-2c1f-4e6a-8c3d-9f0e3a5d7b2c",
-      "c9f0e3a7-1d5b-4e6a-8c2b-9f3a5e0d7b6c"
-    ],
+    "digiEvolutionSeedList": ["7b8a9d2e-5b3c-9e6d-2e1f-1f0c8a7d4d1c"],
+    "degenerateSeedList": ["c9f0e3a7-1d5b-4e6a-8c2b-9f3a5e0d7b6c"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 37
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "b4c5d6e7-8f9a-0b1c-2d3e-4f5a6b7c8d9e",
@@ -5959,14 +5855,15 @@
     "def": 109,
     "speed": 116,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": [],
+    "digiEvolutionSeedList": ["4d1c8b2f-1f0c-7b8a-9d2e-5b3c2e1f9e6a"],
     "degenerateSeedList": ["b3c9f0e7-1a5d-4e6b-8c2b-9f0d5a3e7c6b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 38
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "c5d6e7f8-9a0b-1c2d-3e4f-5a6b7c8d9e0f",
@@ -5981,14 +5878,15 @@
     "def": 104,
     "speed": 108,
     "bitFarmingRate": 19,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["e3b9c6f0-2d5a-4e7b-8c1d-9f0a5e3d7b2c"],
+    "digiEvolutionSeedList": ["7b8a5b3c-8a7d-1f0c-9d2e-2e1f9e6a4d1c"],
+    "degenerateSeedList": ["ae4c3d8f-0a9b-4950-8c3d-2b9f1f0871e5"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 39
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "d6e7f8a9-0b1c-2d3e-4f5a-6b7c8d9e0f1a",
@@ -6003,18 +5901,15 @@
     "def": 122,
     "speed": 102,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "d9a3c6e0-2f5b-4e7a-8c1b-9f0d5a3e7b2c",
-      "a5d7b9c0-2f1a-4e6b-8c3d-9f0a5e3d7b2c",
-      "e3c9f0b7-1a5d-4e6b-8c2d-9f0a3e5d7c6b"
-    ],
+    "digiEvolutionSeedList": ["1f0c9d2e-2e1f-9e6a-4d1c-7b8a5b3c8a7d"],
+    "degenerateSeedList": ["a5d7b9c0-2f1a-4e6b-8c3d-9f0a5e3d7b2c"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 40
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "e7f8a9b0-1c2d-3e4f-5a6b-7c8d9e0f1a2b",
@@ -6029,14 +5924,15 @@
     "def": 109,
     "speed": 108,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["c9f0e3a7-1d5b-4e6a-8c2b-9f3a5e0d7b6c"],
+    "digiEvolutionSeedList": ["7d9b4c5d-2f8b-1e3a-0a3e-9b4c6f5d8b2"],
+    "degenerateSeedList": ["c7e0f2d9-b5a3-4b18-91f2-8d9c0e7a6f13"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 41
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "f8a9b0c1-2d3e-4f5a-6b7c-8d9e0f1a2b3c",
@@ -6052,16 +5948,14 @@
     "speed": 107,
     "bitFarmingRate": 20,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "a7c0f3e9-1d5b-4e6a-8c2b-9f3a5e0d7b6c",
-      "f3a7b9c0-1d5a-4e6b-8c2d-9f0e3a5d7c6b"
-    ],
+    "degenerateSeedList": ["f3a7b9c0-1d5a-4e6b-8c2d-9f0e3a5d7c6b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 42
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "a9b0c1d2-3e4f-5a6b-7c8d-9e0f1a2b3c4d",
@@ -6077,13 +5971,14 @@
     "speed": 107,
     "bitFarmingRate": 20,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["8d2e5f3b-2a9c-47b0-91f3-e6c4d5b7a081"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 43
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "b0c1d2e3-4f5a-6b7c-8d9e-0f1a2b3c4d5e",
@@ -6099,13 +5994,14 @@
     "speed": 115,
     "bitFarmingRate": 20,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["b0c1d2e3-4f5a-6b7c-8d9e-0f1a2b3c4d5e"],
+    "degenerateSeedList": ["a3c9e71d-b581-4aef-bc7f-0e1db4956f32"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 44
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "c1d2e3f4-5a6b-7c8d-9e0f-1a2b3c4d5e6f",
@@ -6121,13 +6017,14 @@
     "speed": 107,
     "bitFarmingRate": 20,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["b5e9c2f0-3a1d-4e6b-8c7b-9f0d5a3e2d7c"],
+    "degenerateSeedList": ["12bfe8d3-7c6e-4e0f-9a2b-f1d3c87b20f5"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 45
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "d2e3f4a5-6b7c-8d9e-0f1a-2b3c4d5e6f7a",
@@ -6142,14 +6039,15 @@
     "def": 95,
     "speed": 112,
     "bitFarmingRate": 19,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "digiEvolutionSeedList": ["bcdefa43-210f-0ecb-9a87-6543210fedab"],
+    "degenerateSeedList": ["c6e9a3b7-1f5d-4e8a-9c2b-0d3a5e7f9b6c"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 35
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "1b0e4f3d-5f3c-2c7b-9a1b-8c3e6e5f3c1b",
@@ -6164,17 +6062,15 @@
     "def": 122,
     "speed": 104,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "e7b9c0f3-1a5d-4e6b-8c2d-9f0a3e5d7c6b",
-      "b9c0f3a7-2d5a-4e6b-8c1d-9f0e3a5d7b2c"
-    ],
+    "digiEvolutionSeedList": ["5b3c8a7d-9e6a-2e1f-1f0c-7b8a4d1c9d2e"],
+    "degenerateSeedList": ["e7b9c0f3-1a5d-4e6b-8c2d-9f0a3e5d7c6b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 36
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "8c3e6e5f-3c1b-1b0e-5f3c-9a1b4f3d2c7b",
@@ -6190,13 +6086,14 @@
     "speed": 110,
     "bitFarmingRate": 20,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["a5d7b9c0-3f1a-4e6b-8c2d-9f0e3a5d7b6c"],
+    "degenerateSeedList": ["76c5f4e2-1a0b-42f7-9e4d-b3f0d8a1c2e6"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 37
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "2c7b9a1b-5f3c-8c3e-3c1b-1b0e4f3d6e5f",
@@ -6211,14 +6108,15 @@
     "def": 129,
     "speed": 111,
     "bitFarmingRate": 22,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "digiEvolutionSeedList": ["8a7d9d2e-5b3c-1f0c-2e1f-7b8a4d1c9e6a"],
+    "degenerateSeedList": ["56a2e212-2c89-46c4-b7b4-36bba1dbd7b7"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 38
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "6e5f4f3d-1b0e-3c1b-8c3e-5f3c9a1b2c7b",
@@ -6233,14 +6131,15 @@
     "def": 127,
     "speed": 96,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": [],
+    "digiEvolutionSeedList": ["1f0c7b8a-9d2e-9e6a-8a7d-4d1c5b3c2e1f"],
     "degenerateSeedList": ["d7e9f1a3-5b2c-4d8a-9c6e-1f0b3a5d7e2c"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 39
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "9a1b2c7b-8c3e-6e5f-4f3d-1b0e3c1b5f3c",
@@ -6255,14 +6154,15 @@
     "def": 116,
     "speed": 97,
     "bitFarmingRate": 19,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["b5e9c2f0-3a1d-4e6b-8c7b-9f0d5a3e2d7c"],
+    "digiEvolutionSeedList": ["a3d9f7c2-5e8b-4f1d-9c3a-7b2e6d4f8a1c"],
+    "degenerateSeedList": ["a9d5e7b0-3f1a-4e6b-8c2d-9f0e3a5d7c6b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 40
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "5f3c3c1b-8c3e-9a1b-2c7b-1b0e6e5f4f3d",
@@ -6277,17 +6177,15 @@
     "def": 101,
     "speed": 117,
     "bitFarmingRate": 21,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "e3b9c6f0-2d5a-4e7b-8c1d-9f0a5e3d7b2c",
-      "d7b9c0e3-1a5f-4e6b-8c2d-9f0a3e5d7c6b"
-    ],
+    "digiEvolutionSeedList": ["9b4c6f5d-8b2e-7d9b-e8c7-f0a3a1c5d2f"],
+    "degenerateSeedList": ["d7b9c0e3-1a5f-4e6b-8c2d-9f0a3e5d7c6b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 41
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "4f3d6e5f-1b0e-2c7b-5f3c-8c3e9a1b3c1b",
@@ -6303,13 +6201,14 @@
     "speed": 92,
     "bitFarmingRate": 20,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["c3f0a7b9-2d5a-4e6b-8c1d-9f0e3a5d7b2c"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 42
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "2c7b4f3d-8c3e-9a1b-3c1b-1b0e6e5f5f3c",
@@ -6325,13 +6224,14 @@
     "speed": 91,
     "bitFarmingRate": 20,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["opq6789r-012s-tuvw-xyza-bcdefg5678"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 43
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "bdc9e5c4-49b1-4ee5-9b86-9b52c76b3b6f",
@@ -6346,14 +6246,15 @@
     "def": 122,
     "speed": 90,
     "bitFarmingRate": 21,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "digiEvolutionSeedList": ["5f3c2c7b-1b0e-6e5f-4f3d-8c3e9a1b3c1b"],
+    "degenerateSeedList": ["76c5f4e2-1a0b-42f7-9e4d-b3f0d8a1c2e6"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 44
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "2f601348-8b9f-456e-98e5-b2133a734203",
@@ -6369,13 +6270,14 @@
     "speed": 102,
     "bitFarmingRate": 20,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["28e7b03d-c49a-431b-81f2-d3a0f8c197e0"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 45
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "1fc3d08b-7a62-4c3e-bf9d-3a179f5a3642",
@@ -6390,14 +6292,18 @@
     "def": 124,
     "speed": 94,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "digiEvolutionSeedList": [
+      "9d2e8a7d-5b3c-1f0c-2e1f-7b8a4d1c9e6a",
+      "f6a8b1c2-3d4e-4f7a-9b8c-1d2e3f4a5b6c"
+    ],
+    "degenerateSeedList": ["d7b9c0e3-1a5f-4e6b-8c2d-9f0a3e5d7c6b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 35
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "75c6c6ce-68c9-4c32-a678-d9f59406d3a0",
@@ -6412,14 +6318,15 @@
     "def": 96,
     "speed": 110,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "digiEvolutionSeedList": ["9b4c6f5d-8b2e-7d9b-e8c7-f0a3a1c5d2f"],
+    "degenerateSeedList": ["e3b9c6f0-2d5a-4e7b-8c1d-9f0a5e3d7b2c"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 36
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "61eb3964-e387-42d0-83aa-2e2b60f38008",
@@ -6435,13 +6342,14 @@
     "speed": 108,
     "bitFarmingRate": 21,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["f5a7b9c0-2d5a-4e6b-8c1d-9f0e3a5d7b2c"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 37
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "e11a28bb-64a3-49bc-8770-065728c1d8fa",
@@ -6457,13 +6365,14 @@
     "speed": 105,
     "bitFarmingRate": 21,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["56a2e212-2c89-46c4-b7b4-36bba1dbd7b7"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 38
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "43bfe4a9-f09e-4016-b26c-7a0d6948f58d",
@@ -6478,14 +6387,15 @@
     "def": 99,
     "speed": 118,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "digiEvolutionSeedList": ["2e1f5b3c-1f0c-9d2e-7b8a-4d1c8a7d9e6a"],
+    "degenerateSeedList": ["19f74d0b-2eac-4398-b7d3-ecf25198a302"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 39
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "1dc4e899-b0db-435f-a9e3-6fa7c94836aa",
@@ -6500,17 +6410,18 @@
     "def": 100,
     "speed": 118,
     "bitFarmingRate": 21,
-    "digiEvolutionSeedList": [],
+    "digiEvolutionSeedList": ["2e1f4d1c-7b8a-9d2e-5b3c-1f0c8a7d9e6a"],
     "degenerateSeedList": [
-      "f0a5d7b9-2c1f-4e6a-8c3d-9f0e3a5d7b2c",
-      "b3c9f0e7-1a5d-4e6b-8c2b-9f0d5a3e7c6b"
+      "b3c9f0e7-1a5d-4e6b-8c2b-9f0d5a3e7c6b",
+      "c2a7e1d0-1f93-48b0-bcd2-79e3a4f6d105"
     ],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 40
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "7d5c4f3d-1b0e-8c3e-f8a7-a9d29e5f2c7b",
@@ -6525,14 +6436,18 @@
     "def": 109,
     "speed": 117,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "digiEvolutionSeedList": [
+      "abcdef54-3210-0fec-b9a8-76543210feda",
+      "2e1f0b9a-4a5b-1f0c-7b8a-9e6d8a7d9d2e"
+    ],
+    "degenerateSeedList": ["2d83fa14-b1ae-44fa-9a1c-046af2d2306c"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 41
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "a6f79b4c-0a3e-d2f8-b1c5-e8b3c7f07d9",
@@ -6548,16 +6463,14 @@
     "speed": 115,
     "bitFarmingRate": 20,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "f0b7e9c5-2a1d-4e6b-8c3b-9d5a3e0f7c2b",
-      "c0f3a7b9-2d5a-4e6b-8c1d-9f0e3a5d7b2c"
-    ],
+    "degenerateSeedList": ["f0c7e9b3-1a5d-4e6b-8c2b-9d3a5e0f7c6b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 42
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "9e5f2c7b-8c3e-5f3c-3c1b-6e5f1a0b4a6b",
@@ -6572,14 +6485,15 @@
     "def": 104,
     "speed": 119,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "digiEvolutionSeedList": ["d1c5f6b8-2f3e-4e9b-8c2d-7a9e5f6d3b1a"],
+    "degenerateSeedList": ["72a04c6f-3b9c-4821-a7f1-c83d4d0f6e89"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 43
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "4a6b9c3e-2c7b-7d5c-a9d2-1b0e8c3e5f3c",
@@ -6595,13 +6509,14 @@
     "speed": 111,
     "bitFarmingRate": 20,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["f3d8e2e9-316a-412b-91f9-678d1e6e9a56"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 44
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "5f3c8e2a-a9d2-1b0e-6e5f-3c1b7d5c9a1b",
@@ -6617,16 +6532,14 @@
     "speed": 87,
     "bitFarmingRate": 21,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "e2c5a9b7-1d3f-4e6a-8c9b-0f5d3a7e2b6c",
-      "b2a5c9e0-3d1f-4e6a-8c7b-9f0d3a5e7c6b"
-    ],
+    "degenerateSeedList": ["934b0e2f-807c-4c3a-b1f9-60edc7f4a59e"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 45
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "9a1b7d5c-6e5f-5f3c-8c3e-a9d21b0e4f3d",
@@ -6642,17 +6555,14 @@
     "speed": 108,
     "bitFarmingRate": 20,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "b3e6a9c5-2d1f-4e7a-8c9b-0f5d3a7e2b6c",
-      "c6e9a3b7-1f5d-4e8a-9c2b-0d3a5e7f9b6c",
-      "e3a5c9b7-3d1f-4e6a-8c2b-9f0d5a3e7b6c"
-    ],
+    "degenerateSeedList": ["c6e9a3b7-1f5d-4e8a-9c2b-0d3a5e7f9b6c"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 35
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "1b0e4f3d-a9d2-9a1b-2c7b-8c3e6e5f5f3c",
@@ -6667,14 +6577,15 @@
     "def": 113,
     "speed": 118,
     "bitFarmingRate": 22,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "digiEvolutionSeedList": ["e6b9d4f2-8c7a-4d3e-9f2b-5c1d8e3a6f9b"],
+    "degenerateSeedList": ["72a04c6f-3b9c-4821-a7f1-c83d4d0f6e89"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 36
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "8c3e6e5f-2c7b-1b0e-3c1b-a9d25f3c9a1b",
@@ -6690,13 +6601,14 @@
     "speed": 99,
     "bitFarmingRate": 20,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["a5d4e9f7-c830-4f2d-b6a1-1e0f4c3b9d58"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 37
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "5f3c9a1b-3c1b-8c3e-6e5f-1b0e2c7b4f3d",
@@ -6712,16 +6624,14 @@
     "speed": 97,
     "bitFarmingRate": 20,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "f8d2c6e9-4b1a-4e9f-8c7d-3a5e9b2f1d0c",
-      "f3c12345-6b7d-4e89-9ef7-89c4672c34ab"
-    ],
+    "degenerateSeedList": ["b7e9c0f3-1a5d-4e6b-8c2d-9f0a3e5d7c6b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 38
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "2c7b4f3d-1b0e-6e5f-a9d2-8c3e9a1b5f3c",
@@ -6736,18 +6646,15 @@
     "def": 119,
     "speed": 92,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "f3c12345-6b7d-4e89-9ef7-89c4672c34ab",
-      "e2c5a9b7-1d3f-4e6a-8c9b-0f5d3a7e2b6c",
-      "e3a5c9b7-3d1f-4e6a-8c2b-9f0d5a3e7b6c"
-    ],
+    "digiEvolutionSeedList": ["9d2e8a7d-5b3c-1f0c-7b8a-2e1f4d1c9e6a"],
+    "degenerateSeedList": [],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 39
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "9a1b5f3c-8c3e-2c7b-3c1b-1b0e6e5f4f3d",
@@ -6762,14 +6669,18 @@
     "def": 124,
     "speed": 101,
     "bitFarmingRate": 21,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["d7e9f1a3-5b2c-4d8a-9c6e-1f0b3a5d7e2c"],
+    "digiEvolutionSeedList": ["5c59bdf1-0288-4a39-bfbc-3d513a6dfe4c"],
+    "degenerateSeedList": [
+      "d7e9f1a3-5b2c-4d8a-9c6e-1f0b3a5d7e2c",
+      "d0c5e9b7-3f1a-4e6b-8c2d-9f0e3a5d7c6b"
+    ],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 40
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "4f3d1b0e-3c1b-9a1b-6e5f-8c3e2c7b5f3c",
@@ -6784,14 +6695,15 @@
     "def": 115,
     "speed": 104,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["a5d7b9c0-3f1a-4e6b-8c2d-9f0e3a5d7b6c"],
+    "digiEvolutionSeedList": ["fabcde65-4321-0fed-cba9-876543210fed"],
+    "degenerateSeedList": ["8b7f0e3d-3c2a-4671-b9f1-e0d5a4c78b20"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 41
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "5f3c2c7b-8c3e-4f3d-1b0e-9a1b6e5f3c1b",
@@ -6828,14 +6740,15 @@
     "def": 122,
     "speed": 105,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "digiEvolutionSeedList": ["c3d5e7f9-8a1b-4c2d-9e6f-7a9b1c2d3e4f"],
+    "degenerateSeedList": ["f8d2c6e9-4b1a-4e9f-8c7d-3a5e9b2f1d0c"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 43
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "e3f4a5b6-7c8d-9e0f-1a2b-3c4d5e6f7a8b",
@@ -6850,14 +6763,15 @@
     "def": 126,
     "speed": 98,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "digiEvolutionSeedList": ["1a2b3c4d-5e6f-4a8b-9c1d-2e3f4a5b6c7d"],
+    "degenerateSeedList": ["ecb85eb6-9dd6-4997-b4b0-2f5bfa778712"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 44
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "f4a5b6c7-8d9e-0f1a-2b3c-4d5e6f7a8b9c",
@@ -6872,17 +6786,18 @@
     "def": 115,
     "speed": 115,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "d9a3c6e0-2f5b-4e7a-8c1b-9f0d5a3e7b2c",
-      "c6b9e0f3-2a5d-4e7b-8c1d-9f0a3e5d7b2c"
+    "digiEvolutionSeedList": [
+      "5b3c2e1f-8a7d-9d2e-1f0c-7b8a9e6a4d1c",
+      "2e1f7b8a-9d2e-8a7d-4d1c-1f0c5b3c9e6a"
     ],
+    "degenerateSeedList": ["d9a3c6e0-2f5b-4e7a-8c1b-9f0d5a3e7b2c"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 45
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "a5b6c7d8-9e0f-1a2b-3c4d-5e6f7a8b9c0d",
@@ -6897,14 +6812,18 @@
     "def": 128,
     "speed": 93,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "digiEvolutionSeedList": [
+      "e8c7f0d9-a2b6-f0a3-7d9b-4c5d2f8b1e3",
+      "6c3b5d02-1a9b-4b1d-a8ee-84a6eebc3e1a"
+    ],
+    "degenerateSeedList": ["1449e5fc-0412-44f2-8b2d-b005419ea5c6"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 35
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "b6c7d8e9-0f1a-2b3c-4d5e-6f7a8b9c0d1e",
@@ -6919,14 +6838,15 @@
     "def": 126,
     "speed": 109,
     "bitFarmingRate": 21,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["a7d0f3e9-1c5b-4e6a-8c2b-9f3a5e0d7b6c"],
+    "digiEvolutionSeedList": ["8a7d4d1c-9e6a-2e1f-5b3c-1f0c7b8a9d2e"],
+    "degenerateSeedList": ["c7b9e0f3-2d5a-4e6b-8c1d-9f0e3a5d7b2c"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 36
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
@@ -6941,17 +6861,15 @@
     "def": 105,
     "speed": 107,
     "bitFarmingRate": 21,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "f0a5d7b9-2c1f-4e6a-8c3d-9f0e3a5d7b2c",
-      "a7c0f3e9-1d5b-4e6a-8c2b-9f3a5e0d7b6c"
-    ],
+    "digiEvolutionSeedList": ["6ba7b810-9dad-11d1-80b4-00c04fd430c8"],
+    "degenerateSeedList": ["a7c0f3e9-1d5b-4e6a-8c2b-9f3a5e0d7b6c"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 37
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "d8e9f0a1-2b3c-4d5e-6f7a-8b9c0d1e2f3a",
@@ -6966,14 +6884,15 @@
     "def": 124,
     "speed": 90,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["b9c0f3a7-2d5a-4e6b-8c1d-9f0e3a5d7b2c"],
+    "digiEvolutionSeedList": ["9d2e6c5b-8a7d-2e1f-9e6d-1f0c4d1c7b8a"],
+    "degenerateSeedList": ["3e04bb4b-6e1a-4c57-9f7d-bd9e21048c5d"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 38
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "e9f0a1b2-3c4d-5e6f-7a8b-9c0d1e2f3a4b",
@@ -6988,14 +6907,15 @@
     "def": 120,
     "speed": 87,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["d6e3a9c0-2f5b-4e7a-8c1d-9f0a3e5d7b2c"],
+    "digiEvolutionSeedList": ["9e6a4d1c-7b8a-1f0c-8a7d-5b3c2e1f9d2e"],
+    "degenerateSeedList": ["93c1a5e7-1f0d-48b9-aeb2-6f8c5d4e3b1a"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 39
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "f0a1b2c3-4d5e-6f7a-8b9c-0d1e2f3a4b5c",
@@ -7010,14 +6930,15 @@
     "def": 119,
     "speed": 108,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "digiEvolutionSeedList": ["b2c4d6e8-7f9a-4b3c-8d5e-6f8a9b1c2d3e"],
+    "degenerateSeedList": ["d7b9c0e3-1a5f-4e6b-8c2d-9f0a3e5d7c6b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 40
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "43cdb81a-3316-4e2b-8c6d-4bc9f8aa99f0",
@@ -7033,13 +6954,14 @@
     "speed": 114,
     "bitFarmingRate": 20,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["f3d8e2e9-316a-412b-91f9-678d1e6e9a56"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 41
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "b2c3d4e5-6f7a-8b9c-0d1e-2f3a4b5c6d7e",
@@ -7054,14 +6976,15 @@
     "def": 116,
     "speed": 113,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["a5d7b9c0-3f1a-4e6b-8c2d-9f0e3a5d7b6c"],
+    "digiEvolutionSeedList": ["2e1f9e6a-7b8a-4d1c-9d2e-8a7d1f0c5b3c"],
+    "degenerateSeedList": ["c849a173-f2d4-4700-88e3-1bc4a9f7e5d2"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 42
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "d8bbebbb-b512-4ae6-a499-cfe208cce34b",
@@ -7076,14 +6999,15 @@
     "def": 102,
     "speed": 109,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "digiEvolutionSeedList": ["1f0c5b3c-9d2e-8a7d-2e1f-7b8a4d1c9e6a"],
+    "degenerateSeedList": ["a1b2c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 43
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "6c121f02-4c0e-46a2-b2c7-f0b602267107",
@@ -7098,14 +7022,15 @@
     "def": 131,
     "speed": 96,
     "bitFarmingRate": 21,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "digiEvolutionSeedList": ["8a7d1f0c-9d2e-5b3c-2e1f-7b8a4d1c9e6a"],
+    "degenerateSeedList": ["5a9c1a2a-79b5-4de4-bc0a-d0fcd149e9d6"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 44
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "e5f6a7b8-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
@@ -7120,14 +7045,15 @@
     "def": 120,
     "speed": 105,
     "bitFarmingRate": 21,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "digiEvolutionSeedList": ["6f0a3e7d-9b4c-5d2f-b3a1-e8c7f0d9a2b"],
+    "degenerateSeedList": ["f1d36141-5f0e-40e3-9ad4-ccdbbffb65fd"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 45
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "c77b7715-f25c-4b3a-b77f-199188d1e7f7",
@@ -7142,14 +7068,15 @@
     "def": 108,
     "speed": 118,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "digiEvolutionSeedList": ["f0a3a1c5-d2f8-b3a1-c7f0-d9b4e8a6f7d"],
+    "degenerateSeedList": ["3c0a1f29-0f53-41e6-a6fc-4d0b1d9811d6"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 35
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "49d6dd17-71b4-41ae-844c-2f18410a8d31",
@@ -7165,13 +7092,14 @@
     "speed": 110,
     "bitFarmingRate": 20,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["a7d0f3e9-1c5b-4e6a-8c2b-9f3a5e0d7b6c"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 35
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "038b0f79-2341-4c3b-8c77-7984c3341ab1",
@@ -7193,7 +7121,8 @@
         "type": "level",
         "value": 36
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "c4cfed7d-2b3b-4fa4-8a4f-09ef2b709c7e",
@@ -7208,14 +7137,15 @@
     "def": 116,
     "speed": 115,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": [],
+    "digiEvolutionSeedList": ["a7b9c2d3-4e5f-4a8b-9c1d-2e3f4a5b6c7d"],
     "degenerateSeedList": ["c9f0e3a7-1d5b-4e6a-8c2b-9f3a5e0d7b6c"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 37
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
@@ -7231,13 +7161,14 @@
     "speed": 97,
     "bitFarmingRate": 21,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["f71c8e04-3b7d-4d20-86f1-efb9403a19d6"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 38
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "e9371c75-61b2-4645-938b-41b87588ae83",
@@ -7253,13 +7184,14 @@
     "speed": 94,
     "bitFarmingRate": 21,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["3fdea691-d2ae-44a4-bc02-59de09cf2049"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 39
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "24772f7f-d86c-4e77-bc3b-c9f4b0ef7f9c",
@@ -7274,14 +7206,15 @@
     "def": 98,
     "speed": 116,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "digiEvolutionSeedList": ["c2b04d58-6c74-49ea-902f-b7fc16a1e342"],
+    "degenerateSeedList": ["d7b9c0e3-1a5f-4e6b-8c2d-9f0a3e5d7c6b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 40
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "a7b8c9d0-1e2f-3a4b-5c6d-7e8f9a0b1c2d",
@@ -7297,13 +7230,14 @@
     "speed": 95,
     "bitFarmingRate": 20,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["f4cbbd45-9e42-4b43-b9b0-4f8e1b9b9d21"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 41
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "b8c9d0e1-2f3a-4b5c-6d7e-8f9a0b1c2d3e",
@@ -7318,14 +7252,15 @@
     "def": 100,
     "speed": 106,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "digiEvolutionSeedList": ["c3d5e7f9-8a1b-4c2d-9e6f-7a9b1c2d3e4f"],
+    "degenerateSeedList": ["b2a5c9e0-3d1f-4e6a-8c7b-9f0d3a5e7c6b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 42
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "c9d0e1f2-3a4b-5c6d-7e8f-9a0b1c2d3e4f",
@@ -7340,14 +7275,15 @@
     "def": 99,
     "speed": 110,
     "bitFarmingRate": 20,
-    "digiEvolutionSeedList": [],
+    "digiEvolutionSeedList": ["4d1c9e6a-2e1f-8a7d-1f0c-7b8a5b3c9d2e"],
     "degenerateSeedList": ["a5d7b9c0-2f1a-4e6b-8c3d-9f0a5e3d7b2c"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 43
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "8c3e2c7b-4f3d-3c1b-6e5f-1b0e9a1b5f3c",
@@ -7363,16 +7299,63 @@
     "speed": 88,
     "bitFarmingRate": 21,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "a5d8e0b7-3c1f-4e9a-8b2d-6f0c3a5e7d1b",
-      "d6e3a9c0-2f5b-4e7a-8c1d-9f0a3e5d7b2c"
-    ],
+    "degenerateSeedList": ["d6e3a9c0-2f5b-4e7a-8c1d-9f0a3e5d7b2c"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 44
       }
-    ]
+    ],
+    "checked": true
+  },
+  {
+    "seed": "6d7a3c5b-f3f8-4ab8-a55a-0a9e3cda3c62",
+    "name": "BurningGreymon",
+    "img": "/assets/digimons/BurningGreymon.webp",
+    "rank": "Ultimate",
+    "species": "Dragon",
+    "attribute": "Vaccine",
+    "hp": 245,
+    "mp": 225,
+    "atk": 160,
+    "def": 120,
+    "speed": 100,
+    "bitFarmingRate": 34,
+    "digiEvolutionSeedList": [
+      "1f8b2c41-6d7a-4f1d-8a79-1d3c2a96c1b7",
+      "9e6d1f0c-7b8a-2e1f-4a5b-8a7d9d2e6c5b"
+    ],
+    "degenerateSeedList": ["8f1d1fbb-3c4d-4b95-9437-889af207f7a0"],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 35
+      }
+    ],
+    "checked": true
+  },
+  {
+    "seed": "3e4dca61-915d-4cf9-91b5-36a9462c4b9d",
+    "name": "Aldamon",
+    "img": "/assets/digimons/Aldamon.webp",
+    "rank": "Ultimate",
+    "species": "Beast",
+    "attribute": "Vaccine",
+    "hp": 255,
+    "mp": 240,
+    "atk": 170,
+    "def": 125,
+    "speed": 115,
+    "bitFarmingRate": 34,
+    "digiEvolutionSeedList": ["f7c2e60f-0a0d-4f87-95fc-1de3929b0b8a"],
+    "degenerateSeedList": ["8f1d1fbb-3c4d-4b95-9437-889af207f7a0"],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 38
+      }
+    ],
+    "checked": true
   },
   {
     "seed": "df67cc96-4a69-4f26-88d6-2c98ccaecfe6",
@@ -7394,7 +7377,8 @@
         "type": "level",
         "value": 50
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "c2b04d58-6c74-49ea-902f-b7fc16a1e342",
@@ -7410,13 +7394,17 @@
     "speed": 136,
     "bitFarmingRate": 30,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["e5a57e68-7e23-4314-bd93-ea8c7d5fca85"],
+    "degenerateSeedList": [
+      "e5a57e68-7e23-4314-bd93-ea8c7d5fca85",
+      "24772f7f-d86c-4e77-bc3b-c9f4b0ef7f9c"
+    ],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 60
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "8e58f41d-2d7f-4f3a-b94d-21a37f4ec691",
@@ -7438,7 +7426,8 @@
         "type": "level",
         "value": 50
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "8f89a3d4-7b14-45dc-88ae-c5f0d44637d3",
@@ -7460,7 +7449,8 @@
         "type": "level",
         "value": 50
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "3452a6f7-80f7-4c3e-9a78-0ba44f8c56a2",
@@ -7482,7 +7472,8 @@
         "type": "level",
         "value": 50
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "198db8dd-fe31-40a7-8d52-b25fc617fd47",
@@ -7526,7 +7517,8 @@
         "type": "level",
         "value": 50
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "1a2b3c4d-5e6f-4a8b-9c1d-2e3f4a5b6c7d",
@@ -7542,13 +7534,14 @@
     "speed": 127,
     "bitFarmingRate": 5,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["66e5a6ea-93a5-47f8-91d9-8601857496f6"],
+    "degenerateSeedList": ["e3f4a5b6-7c8d-9e0f-1a2b-3c4d5e6f7a8b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 50
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "e3f58de4-75f0-4e38-81a0-ad1c32367f97",
@@ -7570,7 +7563,8 @@
         "type": "level",
         "value": 50
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "stu9012v-3456-wx78-yz90-123456abcdef",
@@ -7595,7 +7589,8 @@
         "type": "level",
         "value": 50
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "cd380816-9fcf-42a0-8260-17a962fd536f",
@@ -7617,7 +7612,8 @@
         "type": "level",
         "value": 50
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "5c59bdf1-0288-4a39-bfbc-3d513a6dfe4c",
@@ -7633,13 +7629,17 @@
     "speed": 122,
     "bitFarmingRate": 1,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["40ed91a1-d2e3-47dc-8c18-64a55757e6b1"],
+    "degenerateSeedList": [
+      "40ed91a1-d2e3-47dc-8c18-64a55757e6b1",
+      "9a1b5f3c-8c3e-2c7b-3c1b-1b0e6e5f4f3d"
+    ],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 50
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "b2dbcc35-8eeb-4f16-97aa-3f2e7a1a3df9",
@@ -7655,7 +7655,7 @@
     "speed": 142,
     "bitFarmingRate": 1,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": ["e49a85fa-77ea-4a06-9a65-bd3133e2c1e4"],
+    "degenerateSeedList": [],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -7683,7 +7683,8 @@
         "type": "level",
         "value": 50
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "d9f9c182-731b-4f21-8e2f-167b2d663e34",
@@ -7705,7 +7706,8 @@
         "type": "level",
         "value": 50
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "48b7a3e5-3e43-4819-96b8-673bfe67d5c1",
@@ -7727,7 +7729,8 @@
         "type": "level",
         "value": 50
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "ec5a734e-fb3d-4aeb-9f6d-487d5db59ed9",
@@ -7749,7 +7752,8 @@
         "type": "level",
         "value": 60
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "2a9a5124-3a0a-4d1f-92cb-f1b7b99cf4e0",
@@ -7771,7 +7775,8 @@
         "type": "level",
         "value": 60
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "550e8400-e29b-41d4-a716-446655440000",
@@ -7787,13 +7792,14 @@
     "speed": 126,
     "bitFarmingRate": 26,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["9a1b8c3e-4f3d-5f3c-2c7b-1b0e6e5f3c1b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 50
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
@@ -7809,13 +7815,14 @@
     "speed": 132,
     "bitFarmingRate": 26,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 51
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
@@ -7831,13 +7838,14 @@
     "speed": 118,
     "bitFarmingRate": 26,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["8f14e45f-ceea-41d4-9a3d-3e8d2e9f6b2c"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 52
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "5f3c2c7b-1b0e-6e5f-4f3d-8c3e9a1b3c1b",
@@ -7853,13 +7861,14 @@
     "speed": 128,
     "bitFarmingRate": 25,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["bdc9e5c4-49b1-4ee5-9b86-9b52c76b3b6f"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 53
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "d1c5f6b8-2f3e-4e9b-8c2d-7a9e5f6d3b1a",
@@ -7875,13 +7884,14 @@
     "speed": 133,
     "bitFarmingRate": 27,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["9e5f2c7b-8c3e-5f3c-3c1b-6e5f1a0b4a6b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 54
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "e6b9d4f2-8c7a-4d3e-9f2b-5c1d8e3a6f9b",
@@ -7897,13 +7907,14 @@
     "speed": 131,
     "bitFarmingRate": 29,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["1b0e4f3d-a9d2-9a1b-2c7b-8c3e6e5f5f3c"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 55
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "a3d9f7c2-5e8b-4f1d-9c3a-7b2e6d4f8a1c",
@@ -7919,13 +7930,14 @@
     "speed": 141,
     "bitFarmingRate": 28,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["9a1b2c7b-8c3e-6e5f-4f3d-1b0e3c1b5f3c"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 56
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "fabcde65-4321-0fed-cba9-876543210fed",
@@ -7941,13 +7953,14 @@
     "speed": 130,
     "bitFarmingRate": 26,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["4f3d1b0e-3c1b-9a1b-6e5f-8c3e2c7b5f3c"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 57
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "abcdef54-3210-0fec-b9a8-76543210feda",
@@ -7963,13 +7976,14 @@
     "speed": 129,
     "bitFarmingRate": 26,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["7d5c4f3d-1b0e-8c3e-f8a7-a9d29e5f2c7b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 58
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "bcdefa43-210f-0ecb-9a87-6543210fedab",
@@ -7985,13 +7999,17 @@
     "speed": 120,
     "bitFarmingRate": 28,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": [
+      "fef29128-0270-4e25-befc-bc9f2c4dd853",
+      "d2e3f4a5-6b7c-8d9e-0f1a-2b3c4d5e6f7a"
+    ],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 59
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "cdefab32-10fe-0cba-a876-543210fedabc",
@@ -8029,13 +8047,14 @@
     "speed": 126,
     "bitFarmingRate": 26,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["5f3c8e2a-6e5f-9a1b-2c8e-1b0e7d5c4f3d"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 50
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "a1b3c5d7-6e8f-4a2b-9c4d-5e7f8a9b1c2d",
@@ -8051,13 +8070,14 @@
     "speed": 128,
     "bitFarmingRate": 27,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["5f3c8e2a-6e5f-9a1b-2c8e-1b0e7d5c4f3d"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 51
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "b2c4d6e8-7f9a-4b3c-8d5e-6f8a9b1c2d3e",
@@ -8073,13 +8093,14 @@
     "speed": 145,
     "bitFarmingRate": 30,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["f0a1b2c3-4d5e-6f7a-8b9c-0d1e2f3a4b5c"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 52
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "c3d5e7f9-8a1b-4c2d-9e6f-7a9b1c2d3e4f",
@@ -8095,13 +8116,17 @@
     "speed": 140,
     "bitFarmingRate": 28,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": [
+      "5f3c9a1b-6e5f-1b0e-4f3d-8c3e2c7b3c1b",
+      "b8c9d0e1-2f3a-4b5c-6d7e-8f9a0b1c2d3e"
+    ],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 53
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "d4e6f8a1-9b2c-4d3e-8f7a-6b1c2d3e4f5a",
@@ -8117,13 +8142,14 @@
     "speed": 140,
     "bitFarmingRate": 28,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["f6d38895-6836-4e09-90fd-e6a63b2e4a27"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 54
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "e5f7a9b1-2c3d-4e6f-8a7b-9c1d2e3f4a5b",
@@ -8139,13 +8165,14 @@
     "speed": 127,
     "bitFarmingRate": 26,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["a7e2f3b1-03e4-40fc-b80b-8db60f4f616b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 55
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "f6a8b1c2-3d4e-4f7a-9b8c-1d2e3f4a5b6c",
@@ -8161,13 +8188,17 @@
     "speed": 130,
     "bitFarmingRate": 27,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": [
+      "1fc3d08b-7a62-4c3e-bf9d-3a179f5a3642",
+      "9a1b8c3e-4f3d-5f3c-2c7b-1b0e6e5f3c1b"
+    ],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 56
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "a7b9c2d3-4e5f-4a8b-9c1d-2e3f4a5b6c7d",
@@ -8183,13 +8214,17 @@
     "speed": 129,
     "bitFarmingRate": 28,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": [
+      "e1f2a3b4-5c6d-7e8f-9a0b-1c2d3e4f5a6b",
+      "c4cfed7d-2b3b-4fa4-8a4f-09ef2b709c7e"
+    ],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 57
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "b8c1d3e4-5f6a-4b9c-8d2e-3f4a5b6c7d8e",
@@ -8205,13 +8240,14 @@
     "speed": 134,
     "bitFarmingRate": 28,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["e1f2a3b4-5c6d-7e8f-9a0b-1c2d3e4f5a6b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 58
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "7b3a9d1e-2c8f-4a5b-9e6d-1f0c7b8a9d2e",
@@ -8227,13 +8263,14 @@
     "speed": 137,
     "bitFarmingRate": 28,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["rst9012u-345v-wxyz-abcd-efghij6789"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 59
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "2e1f0b9a-6c5b-8a7d-9d2e-1f0c7b8a4a5b",
@@ -8271,13 +8308,14 @@
     "speed": 114,
     "bitFarmingRate": 27,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["a3b4c5d6-7e8f-9a0b-1c2d-3e4f5a6b7c8d"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 50
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "4d1c8b2f-1f0c-7b8a-9d2e-5b3c2e1f9e6a",
@@ -8293,13 +8331,14 @@
     "speed": 133,
     "bitFarmingRate": 26,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["b4c5d6e7-8f9a-0b1c-2d3e-4f5a6b7c8d9e"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 51
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "1f0c9d2e-2e1f-9e6a-4d1c-7b8a5b3c8a7d",
@@ -8315,13 +8354,14 @@
     "speed": 131,
     "bitFarmingRate": 26,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["d6e7f8a9-0b1c-2d3e-4f5a-6b7c8d9e0f1a"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 52
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "9d2e7b8a-1f0c-4d1c-5b3c-2e1f8a7d9e6a",
@@ -8337,13 +8377,14 @@
     "speed": 128,
     "bitFarmingRate": 29,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["e8f4c6a1-3d2b-4e5f-9a8c-7b6d5e4f3a2c"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 53
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "1f0c2e1f-7b8a-9e6a-4d1c-5b3c8a7d9d2e",
@@ -8359,13 +8400,14 @@
     "speed": 119,
     "bitFarmingRate": 26,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["d9e3b7f2-5c1a-4f6d-8e9b-2a7c6d3f1e4b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 54
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "9d2e8a7d-5b3c-1f0c-2e1f-7b8a4d1c9e6a",
@@ -8381,13 +8423,17 @@
     "speed": 134,
     "bitFarmingRate": 26,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": [
+      "c3d4e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
+      "1fc3d08b-7a62-4c3e-bf9d-3a179f5a3642"
+    ],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 55
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "9e6a4d1c-7b8a-1f0c-8a7d-5b3c2e1f9d2e",
@@ -8403,13 +8449,14 @@
     "speed": 116,
     "bitFarmingRate": 26,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["e9f0a1b2-3c4d-5e6f-7a8b-9c0d1e2f3a4b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 56
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "4d1c9e6a-2e1f-7b8a-1f0c-5b3c8a7d9d2e",
@@ -8469,13 +8516,14 @@
     "speed": 127,
     "bitFarmingRate": 27,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["5f3c9a1b-1b0e-6e5f-8c3e-4f3d2c7b3c1b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 59
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "6c3b5d02-1a9b-4b1d-a8ee-84a6eebc3e1a",
@@ -8491,13 +8539,14 @@
     "speed": 125,
     "bitFarmingRate": 27,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["a5b6c7d8-9e0f-1a2b-3c4d-5e6f7a8b9c0d"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 60
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "5b3c8a7d-4d1c-1f0c-9e6a-2e1f7b8a9d2e",
@@ -8513,13 +8562,14 @@
     "speed": 119,
     "bitFarmingRate": 26,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["f697c01b-7394-41b3-a374-34a6a1ff27f6"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 50
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "e8c7f0d9-a2b6-f0a3-7d9b-4c5d2f8b1e3",
@@ -8535,13 +8585,14 @@
     "speed": 130,
     "bitFarmingRate": 26,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["a5b6c7d8-9e0f-1a2b-3c4d-5e6f7a8b9c0d"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 51
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "7d9b4c5d-2f8b-1e3a-0a3e-9b4c6f5d8b2",
@@ -8557,13 +8608,14 @@
     "speed": 111,
     "bitFarmingRate": 27,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["e7f8a9b0-1c2d-3e4f-5a6b-7c8d9e0f1a2b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 52
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "e7b1c5d2-f8b3-c7f0-b4e8-a6f7d99b2a",
@@ -8579,13 +8631,14 @@
     "speed": 126,
     "bitFarmingRate": 26,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["defabc87-6543-210f-edcb-a9876543210f"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 53
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "c7f0b1c5-d2f8-a6f7-e8b3-5d2f9b4c0a3",
@@ -8607,7 +8660,8 @@
         "type": "level",
         "value": 54
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "f7d9e8b3-1c5f-a6f5-d2f8-7d9b0a3ec4b",
@@ -8645,13 +8699,14 @@
     "speed": 131,
     "bitFarmingRate": 26,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["f6a7b8c9-0d1e-2f3a-4b5c-6d7e8f9a0b1c"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 56
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "1f0c7b8a-9d2e-9e6a-8a7d-4d1c5b3c2e1f",
@@ -8667,13 +8722,14 @@
     "speed": 119,
     "bitFarmingRate": 27,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["6e5f4f3d-1b0e-3c1b-8c3e-5f3c9a1b2c7b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 57
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "5b3c2e1f-7b8a-4d1c-9e6a-2e1f0b9a8a7d",
@@ -8689,13 +8745,14 @@
     "speed": 129,
     "bitFarmingRate": 26,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["f6d38895-6836-4e09-90fd-e6a63b2e4a27"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 58
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "7b8a5b3c-8a7d-1f0c-9d2e-2e1f9e6a4d1c",
@@ -8711,13 +8768,14 @@
     "speed": 114,
     "bitFarmingRate": 27,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["c5d6e7f8-9a0b-1c2d-3e4f-5a6b7c8d9e0f"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 59
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "5b3c8a7d-9e6a-2e1f-1f0c-7b8a4d1c9d2e",
@@ -8733,13 +8791,14 @@
     "speed": 123,
     "bitFarmingRate": 28,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["1b0e4f3d-5f3c-2c7b-9a1b-8c3e6e5f3c1b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 60
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "7b8a4d1c-9e6a-2e1f-8a7d-1f0c5b3c9d2e",
@@ -8777,13 +8836,14 @@
     "speed": 120,
     "bitFarmingRate": 30,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["f4a5b6c7-8d9e-0f1a-2b3c-4d5e6f7a8b9c"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 52
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "9d2e8a7d-5b3c-1f0c-7b8a-2e1f4d1c9e6a",
@@ -8799,13 +8859,14 @@
     "speed": 114,
     "bitFarmingRate": 26,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["2c7b4f3d-1b0e-6e5f-a9d2-8c3e9a1b5f3c"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 53
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "7b8a4d1c-2e1f-9e6a-8a7d-5b3c1f0c9d2e",
@@ -8821,13 +8882,14 @@
     "speed": 130,
     "bitFarmingRate": 29,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["f9a5d7b2-4e3c-5f6a-8b9d-0c1e2f3a4b5d"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 54
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "8a7d4d1c-9e6a-2e1f-5b3c-1f0c7b8a9d2e",
@@ -8843,13 +8905,14 @@
     "speed": 138,
     "bitFarmingRate": 29,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["b6c7d8e9-0f1a-2b3c-4d5e-6f7a8b9c0d1e"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 55
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "37d122c0-59c8-4638-a8f6-75972a7a9cd6",
@@ -8887,13 +8950,14 @@
     "speed": 140,
     "bitFarmingRate": 29,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["f4a5b6c7-8d9e-0f1a-2b3c-4d5e6f7a8b9c"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 57
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "c1a7e8b3-5d2f-4e9a-8b1c-6f0a3e7d9b4",
@@ -8931,13 +8995,17 @@
     "speed": 132,
     "bitFarmingRate": 26,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": [
+      "5f3c3c1b-8c3e-9a1b-2c7b-1b0e6e5f4f3d",
+      "75c6c6ce-68c9-4c32-a678-d9f59406d3a0"
+    ],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 59
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "a6f7d99b-2a6f-8b1c-5d2f-e8c7f0a3b4e",
@@ -8953,13 +9021,14 @@
     "speed": 129,
     "bitFarmingRate": 27,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["0fc5bcd7-7cbe-4aa7-8c60-1225d2b297d9"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 60
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "f0a3b4e8-c7f0-d9b4-b1c5-d2f8a6f7e99",
@@ -8975,13 +9044,14 @@
     "speed": 119,
     "bitFarmingRate": 27,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["efabcd76-5432-10fe-dcba-9876543210fe"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 50
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "4d1c8b2f-9e6a-5b3c-8a7d-2e1f0b9a6c5",
@@ -8997,13 +9067,14 @@
     "speed": 113,
     "bitFarmingRate": 27,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["f2a3b4c5-6d7e-8f9a-0b1c-2d3e4f5a6b7c"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 51
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "9e6d1f0c-7b8a-2e1f-4a5b-8a7d9d2e6c5b",
@@ -9019,13 +9090,14 @@
     "speed": 122,
     "bitFarmingRate": 30,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["6d7a3c5b-f3f8-4ab8-a55a-0a9e3cda3c62"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 52
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "9d2e6c5b-8a7d-2e1f-9e6d-1f0c4d1c7b8a",
@@ -9041,35 +9113,17 @@
     "speed": 143,
     "bitFarmingRate": 30,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": [
+      "d8e9f0a1-2b3c-4d5e-6f7a-8b9c0d1e2f3a",
+      "7f6e3b3b-5e12-4e29-9f57-4b9a6c34b1f8"
+    ],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 53
       }
-    ]
-  },
-  {
-    "seed": "2e1f9e6a-9d2e-5b3c-8a7d-1f0c7b8a4d1c",
-    "name": "Magna Dramon",
-    "img": "/assets/digimons/Magna Dramon.webp",
-    "rank": "Mega",
-    "species": "Holy",
-    "attribute": "Vaccine",
-    "hp": 325,
-    "mp": 358,
-    "atk": 175,
-    "def": 150,
-    "speed": 140,
-    "bitFarmingRate": 29,
-    "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
-    "evolutionRequirements": [
-      {
-        "type": "level",
-        "value": 54
-      }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "2e1f9e6a-4d1c-7b8a-5b3c-1f0c8a7d9d2e",
@@ -9107,13 +9161,14 @@
     "speed": 140,
     "bitFarmingRate": 29,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["2c7b9a1b-5f3c-8c3e-3c1b-1b0e4f3d6e5f"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 56
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "2e1f4d1c-7b8a-9d2e-5b3c-1f0c8a7d9e6a",
@@ -9129,13 +9184,14 @@
     "speed": 148,
     "bitFarmingRate": 30,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["1dc4e899-b0db-435f-a9e3-6fa7c94836aa"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 57
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "2e1f5b3c-1f0c-9d2e-7b8a-4d1c8a7d9e6a",
@@ -9151,13 +9207,14 @@
     "speed": 135,
     "bitFarmingRate": 27,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["43bfe4a9-f09e-4016-b26c-7a0d6948f58d"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 58
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "2e1f9e6a-7b8a-4d1c-9d2e-8a7d1f0c5b3c",
@@ -9173,13 +9230,14 @@
     "speed": 125,
     "bitFarmingRate": 29,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["b2c3d4e5-6f7a-8b9c-0d1e-2f3a4b5c6d7e"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 59
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "8a7d1f0c-9d2e-5b3c-2e1f-7b8a4d1c9e6a",
@@ -9195,13 +9253,14 @@
     "speed": 128,
     "bitFarmingRate": 27,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["6c121f02-4c0e-46a2-b2c7-f0b602267107"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 60
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "1f0c5b3c-9d2e-8a7d-2e1f-7b8a4d1c9e6a",
@@ -9217,13 +9276,14 @@
     "speed": 135,
     "bitFarmingRate": 26,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["d8bbebbb-b512-4ae6-a499-cfe208cce34b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 50
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "4d1c7b8a-1f0c-9d2e-8a7d-5b3c2e1f9e6a",
@@ -9261,13 +9321,14 @@
     "speed": 138,
     "bitFarmingRate": 29,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["a49fd2ae-e98d-4c4b-9c53-708e6f019af2"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 52
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "9d2e5b3c-2e1f-7b8a-4d1c-1f0c8a7d9e6a",
@@ -9305,13 +9366,14 @@
     "speed": 137,
     "bitFarmingRate": 29,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["e5f6a7b8-9c0d-1e2f-3a4b-5c6d7e8f9a0b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 54
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "f0a3a1c5-d2f8-b3a1-c7f0-d9b4e8a6f7d",
@@ -9327,13 +9389,14 @@
     "speed": 147,
     "bitFarmingRate": 28,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["c77b7715-f25c-4b3a-b77f-199188d1e7f7"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 55
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "d9b4e8a6-f7d9-a2b6-f0a3-e7b1c5d2f8b",
@@ -9437,13 +9500,14 @@
     "speed": 134,
     "bitFarmingRate": 26,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["7d5c4f3d-1b0e-8c3e-f8a7-a9d29e5f2c7b"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 60
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "8a7d4d1c-1f0c-2e1f-7b8a-9d2e5b3c9e6a",
@@ -9503,13 +9567,14 @@
     "speed": 136,
     "bitFarmingRate": 29,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [],
+    "degenerateSeedList": ["c9d0e1f2-3a4b-5c6d-7e8f-9a0b1c2d3e4f"],
     "evolutionRequirements": [
       {
         "type": "level",
         "value": 52
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "8a7d9e6a-1f0c-5b3c-9d2e-7b8a4d1c2e1f",
@@ -9576,5 +9641,77 @@
         "value": 55
       }
     ]
+  },
+  {
+    "seed": "1f8b2c41-6d7a-4f1d-8a79-1d3c2a96c1b7",
+    "name": "AncientGreymon",
+    "img": "/assets/digimons/AncientGreymon.webp",
+    "rank": "Mega",
+    "species": "Dragon",
+    "attribute": "Vaccine",
+    "hp": 288,
+    "mp": 244,
+    "atk": 255,
+    "def": 162,
+    "speed": 120,
+    "bitFarmingRate": 44,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": [
+      "25fc7b61-17ae-453b-94f7-4fa4f9171633",
+      "6d7a3c5b-f3f8-4ab8-a55a-0a9e3cda3c62"
+    ],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 48
+      }
+    ],
+    "checked": true
+  },
+  {
+    "seed": "e6a29e6f-9a3d-41a3-87c3-7c0c573b42de",
+    "name": "AncientGarurumon",
+    "img": "/assets/digimons/AncientGarurumon.webp",
+    "rank": "Mega",
+    "species": "Beast",
+    "attribute": "Vaccine",
+    "hp": 240,
+    "mp": 250,
+    "atk": 185,
+    "def": 140,
+    "speed": 210,
+    "bitFarmingRate": 42,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": ["a5e0bfb7-8d2a-4ef1-9636-cbb9db1fe1d0"],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 48
+      }
+    ],
+    "checked": true
+  },
+  {
+    "seed": "f7c2e60f-0a0d-4f87-95fc-1de3929b0b8a",
+    "name": "KaiserGreymon",
+    "img": "/assets/digimons/KaiserGreymon.webp",
+    "rank": "Mega",
+    "species": "Dragon",
+    "attribute": "Vaccine",
+    "hp": 310,
+    "mp": 280,
+    "atk": 195,
+    "def": 150,
+    "speed": 125,
+    "bitFarmingRate": 45,
+    "digiEvolutionSeedList": [],
+    "degenerateSeedList": ["3e4dca61-915d-4cf9-91b5-36a9462c4b9d"],
+    "evolutionRequirements": [
+      {
+        "type": "level",
+        "value": 50
+      }
+    ],
+    "checked": true
   }
 ]

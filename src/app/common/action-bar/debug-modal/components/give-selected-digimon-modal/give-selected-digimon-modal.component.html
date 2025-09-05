@@ -38,9 +38,15 @@
         (onClick)="refreshDigimonList()"
       />
     </div>
+    <div class="search-container">
+      <app-input
+        [formControl]="searchControl"
+        [placeholder]="'SHARED.COMPONENTS.DEBUG_MODAL.SEARCH' | transloco"
+      ></app-input>
+    </div>
     <div>
       {{ "SHARED.COMPONENTS.DEBUG_MODAL.SHOWING" | transloco }}:
-       {{ filteredDigimonList().length }} / {{ selectableDigimonList().length }}
+      {{ filteredDigimonList().length }} / {{ selectableDigimonList().length }}
     </div>
     <div class="filters-container">
       <app-checkbox label="Fresh" [(ngModel)]="showFreshDigimons" />

@@ -10,8 +10,9 @@ import {
   model,
 } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { FormsModule } from '@angular/forms';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
+import { InputComponent } from '@shared/components/input/input.component';
 import { BaseDigimon } from 'app/core/interfaces/digimon.interface';
 import { DigimonService } from 'app/services/digimon.service';
 import { ButtonComponent } from 'app/shared/components/button/button.component';
@@ -20,6 +21,7 @@ import { DigimonSelectionModalComponent } from 'app/shared/components/digimon-se
 import { ModalService } from 'app/shared/components/modal/modal.service';
 import { ToastService } from 'app/shared/components/toast/toast.service';
 import { GlobalStateDataSource } from 'app/state/global-state.datasource';
+import { debounceTime, distinctUntilChanged } from 'rxjs';
 
 @Component({
   selector: 'app-give-selected-digimon-modal',
@@ -29,6 +31,8 @@ import { GlobalStateDataSource } from 'app/state/global-state.datasource';
     FormsModule,
     CheckboxComponent,
     ButtonComponent,
+    ReactiveFormsModule,
+    InputComponent
   ],
   templateUrl: './give-selected-digimon-modal.component.html',
   styleUrl: './give-selected-digimon-modal.component.scss',
@@ -36,10 +40,10 @@ import { GlobalStateDataSource } from 'app/state/global-state.datasource';
 export class GiveSelectedDigimonModalComponent implements OnInit {
   id = input.required<string>();
 
-  selectableDigimonList = signal<BaseDigimon[]>([]);
+  protected selectableDigimonList = signal<BaseDigimon[]>([]);
 
-  generateEvolutionLine = false;
-  selectedLevel = 1;
+  protected generateEvolutionLine = false;
+  protected selectedLevel = 1;
 
   protected showFreshDigimons = model<boolean>(true);
   protected showInTrainingDigimons = model<boolean>(true);
@@ -57,13 +61,18 @@ export class GiveSelectedDigimonModalComponent implements OnInit {
     Mega: () => this.showMegaDigimons(),
   };
 
+  protected searchControl = new FormControl('');
+  protected searchTerm = signal<string>('');
+
   protected filteredDigimonList = computed(() => {
     const all = this.selectableDigimonList();
     if (!all?.length) return [];
 
+    const lowerSearch = this.searchTerm().toLowerCase();
+
     return all.filter((d) => {
       const rank = d.rank.toString();
-      return this.rankSignalMap[rank]();
+      return this.rankSignalMap[rank]() && (!lowerSearch || d.name.toLowerCase().includes(lowerSearch));
     });
   });
 
@@ -79,9 +88,17 @@ export class GiveSelectedDigimonModalComponent implements OnInit {
     this.modalService.onOpen$.pipe(takeUntilDestroyed(this.destroyRef)).subscribe(() => {
       this.onOpen();
     });
+
+    this.searchControl.valueChanges.pipe(
+      debounceTime(300),
+      distinctUntilChanged(),
+      takeUntilDestroyed(this.destroyRef)
+    ).subscribe(value => {
+      this.searchTerm.set(value || '');
+    });
   }
 
-   onOpen(): void {
+  onOpen(): void {
     if (this.selectableDigimonList().length !== 0) return;
 
     this.digimonService.baseDigimonData$

@@ -9,7 +9,10 @@
     color="primary"
     (onClick)="refreshDigimonList()"
   />
-
+  <app-input
+    [formControl]="searchControl"
+    [placeholder]="'SHARED.COMPONENTS.DEBUG_MODAL.SEARCH' | transloco"
+  ></app-input>
   <div>
     {{ "SHARED.COMPONENTS.DEBUG_MODAL.SHOWING" | transloco }}:
     {{ filteredDigimonList().length }} / {{ selectableDigimonList().length }}

@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component, computed, DestroyRef, inject, input, model, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, FormControl } from '@angular/forms';
 import { TranslocoModule } from '@jsverse/transloco';
 import { CheckboxComponent } from '@shared/components/checkbox/checkbox.component';
 import { BaseDigimon } from 'app/core/interfaces/digimon.interface';
@@ -9,21 +9,23 @@ import { ButtonComponent } from 'app/shared/components/button/button.component';
 import { DigimonSelectionModalComponent } from 'app/shared/components/digimon-selection-modal/digimon-selection-modal.component';
 import { EvolutionTreeModalComponent } from 'app/shared/components/evolution-tree-modal/evolution-tree-modal.component';
 import { ModalService } from 'app/shared/components/modal/modal.service';
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { InputComponent } from 'app/shared/components/input/input.component';
 
 @Component({
   selector: 'app-see-evolution-tree-modal',
-  imports: [DigimonSelectionModalComponent, ButtonComponent, TranslocoModule, CheckboxComponent, FormsModule],
+  imports: [DigimonSelectionModalComponent, ButtonComponent, TranslocoModule, CheckboxComponent, FormsModule, ReactiveFormsModule, InputComponent],
   templateUrl: './see-evolution-tree-modal.component.html',
   styleUrl: './see-evolution-tree-modal.component.scss'
 })
 export class SeeEvolutionTreeModalComponent {
   id = input.required<string>();
 
-  evolutionTreeModalId = 'evolution-tree-modal-debug';
+  private evolutionTreeModalId = 'evolution-tree-modal-debug';
 
-  selectedEvolutionLineDigimon = signal<BaseDigimon>({} as BaseDigimon);
-  selectableDigimonList = signal<BaseDigimon[]>([]);
-  totalDigimonAmount = signal<number>(0);
+  protected selectedEvolutionLineDigimon = signal<BaseDigimon>({} as BaseDigimon);
+  protected selectableDigimonList = signal<BaseDigimon[]>([]);
+  protected totalDigimonAmount = signal<number>(0);
 
   protected showFreshDigimons = model<boolean>(true);
   protected showInTrainingDigimons = model<boolean>(true);
@@ -41,13 +43,18 @@ export class SeeEvolutionTreeModalComponent {
     Mega: () => this.showMegaDigimons(),
   };
 
+  protected searchControl = new FormControl('');
+  protected searchTerm = signal<string>('');
+
   protected filteredDigimonList = computed(() => {
     const all = this.selectableDigimonList();
     if (!all?.length) return [];
 
+    const lowerSearch = this.searchTerm().toLowerCase();
+
     return all.filter((d) => {
       const rank = d.rank.toString();
-      return this.rankSignalMap[rank]();
+      return this.rankSignalMap[rank]() && (!lowerSearch || d.name.toLowerCase().includes(lowerSearch));
     });
   });
 
@@ -62,7 +69,15 @@ export class SeeEvolutionTreeModalComponent {
       takeUntilDestroyed(this.destroyRef)
     ).subscribe(() => {
       this.onOpen();
-    })
+    });
+
+    this.searchControl.valueChanges.pipe(
+      debounceTime(300),
+      distinctUntilChanged(),
+      takeUntilDestroyed(this.destroyRef)
+    ).subscribe(value => {
+      this.searchTerm.set(value || '');
+    });
   }
 
   onOpen() {

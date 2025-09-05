@@ -75,4 +75,16 @@
       border-radius: 10px;
     }
   }
+
+  .search-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+
+    app-input {
+      width: 100%;
+      max-width: 400px;
+    }
+  }
 }

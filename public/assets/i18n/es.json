@@ -236,6 +236,7 @@
         "SELECT_LEVEL": "Seleccionar nivel:",
         "GENERATE_EVOLUTION_LINE": "Generar línea de evolución",
         "REFRESH_DIGIMON_LIST": "Actualizar lista de digimon",
+        "SEARCH": "Buscar Digimon",
         "SHOWING": "Mostrando",
         "ADDED_TO_STORAGE": "¡{{name}} fue añadido al almacenamiento!",
         "ADDED_TO_STORAGE_LEVEL": "{{name}} (Nv. {{level}}) fue añadido al almacenamiento!",

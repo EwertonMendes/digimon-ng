@@ -13,9 +13,9 @@ export const RANK_DEFAULT_POTENTIAL: Record<string, number> = {
   Fresh: 10,
   'In-Training': 15,
   Rookie: 25,
-  Champion: 40,
-  Ultimate: 60,
-  Mega: 99,
+  Champion: 45,
+  Ultimate: 65,
+  Mega: 100,
 };
 
 export function calculateGains(): { hp: number; mp: number; atk: number; def: number; speed: number } {

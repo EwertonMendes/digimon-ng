@@ -7,7 +7,7 @@ import { applyCaps, calculateGains, getDefaultPotential } from '@core/utils/digi
   providedIn: 'root',
 })
 export class BattleService {
-  private maxLevel = 99;
+  private maxLevel = 100;
 
   private attributeAdvantages: Record<string, Record<string, number>> = {
     Vaccine: { Virus: 1.3, Data: 0.7, Vaccine: 1.0 },
@@ -84,7 +84,7 @@ export class BattleService {
     return Math.floor(100 * potential * Math.pow(defeatedDigimon.level, 2.2) / 100);
   }
 
-  calculateRequiredExpForLevel(level: number, baseExp: number = 100): number {
+  calculateRequiredExpForLevel(level: number): number {
     return Math.floor(100 * Math.pow(level, 2));
   }
 
@@ -128,7 +128,7 @@ export class BattleService {
 
   private updatePlayerDigimonsExp(playerData: PlayerData, totalExp: number) {
     playerData.digimonList.forEach((playerDigimon) => {
-      if (!playerDigimon || playerDigimon.currentHp <= 0) return;
+      if (!playerDigimon || playerDigimon.currentHp <= 0 || playerDigimon.exp === undefined) return;
 
       playerDigimon.exp = Math.floor((playerDigimon.exp || 0) + totalExp);
       playerDigimon.totalExp = Math.floor(

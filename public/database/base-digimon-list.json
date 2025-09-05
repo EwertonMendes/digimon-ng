@@ -11,7 +11,7 @@
     "atk": 37,
     "def": 25,
     "speed": 18,
-    "bitFarmingRate": 2,
+    "bitFarmingRate": 5,
     "digiEvolutionSeedList": ["edc9812f-82a6-487f-9a4d-52b845643176"],
     "degenerateSeedList": [],
     "evolutionRequirements": [
@@ -34,7 +34,7 @@
     "atk": 32,
     "def": 35,
     "speed": 14,
-    "bitFarmingRate": 2,
+    "bitFarmingRate": 5,
     "digiEvolutionSeedList": ["277edb81-7051-4a5e-8f5d-369e70cd18e5"],
     "degenerateSeedList": [],
     "evolutionRequirements": [
@@ -57,7 +57,7 @@
     "atk": 30,
     "def": 20,
     "speed": 15,
-    "bitFarmingRate": 2,
+    "bitFarmingRate": 5,
     "digiEvolutionSeedList": ["25acac95-1107-484a-8dfc-f4f8139bc164"],
     "degenerateSeedList": [],
     "evolutionRequirements": [

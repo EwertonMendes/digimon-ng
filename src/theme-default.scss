@@ -46,6 +46,7 @@
   --info-hover: #{color.adjust(#2980B9, $lightness: 5%)};
   --info-glow: rgba(41, 128, 185, 0.5);
   --info-dark: #{color.adjust(#2980B9, $lightness: -5%)};
+  --info-light: #{color.adjust(#2980B9, $lightness: 5%)};
   --text-on-info: #FFFFFF;
 
   --warning: #F7D56C;

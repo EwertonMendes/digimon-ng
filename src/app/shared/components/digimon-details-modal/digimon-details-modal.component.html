@@ -102,7 +102,7 @@
               <span class="label">{{
                 "SHARED.COMPONENTS.DIGIMON_DETAILS_MODAL.LEVEL" | transloco
               }}</span>
-              <span class="value"
+              <span class="value" [ngStyle]="{ color: globalState.selectedDigimonOnDetails()!.level >= maxLevelForCurrentRank() ? 'var(--info-light)' : '' }"
                 >{{ globalState.selectedDigimonOnDetails()?.level }} /
                 {{ maxLevelForCurrentRank() }}</span
               >

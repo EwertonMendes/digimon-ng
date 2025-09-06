@@ -1,22 +1,30 @@
-<div class="explore-section">
-  <h4 class="explore-section-title">{{ 'MODULES.ADVENTURE.EXPLORE_SECTION.LOCATIONS_TITLE' | transloco }}</h4>
-  <div class="explore-section-container">
-    <div class="location-list">
-      <div class="location-list-container">
-        @for(location of locations; track location){
-        <div tabindex="0" class="location-list-item" (click)="exploreLocation(location)">
-          <div class="location-list-item-image">
-            <img [src]="location.img" alt="location-image" />
-          </div>
-          <h5>{{ location.name | transloco}}</h5>
-          <div class="location-list-item-level-range">
-            <span>{{ 'MODULES.ADVENTURE.EXPLORE_SECTION.LEVEL' | transloco }} {{ location.levelRange.min }} - {{ location.levelRange.max }}</span>
-          </div>
+<h2 class="explore-section-title">
+  {{ "MODULES.ADVENTURE.EXPLORE_SECTION.LOCATIONS_TITLE" | transloco }}
+</h2>
+
+<div class="explore-section-container">
+  <div class="location-list">
+    <div class="location-list-container">
+      @for(location of locations; track location){
+
+      <div
+        class="location-list-item"
+        [class.disabled-location]="!canExplore(location)"
+        (click)="exploreLocation(location)"
+        tabindex="0"
+      >
+        <div class="location-list-item-image">
+          <img [src]="location.img" alt="{{ location.name | transloco }}" />
         </div>
-        }
+
+        <h5>{{ location.name | transloco }}</h5>
+
+        <div class="location-list-item-level-range">
+          {{ "MODULES.ADVENTURE.EXPLORE_SECTION.LEVEL" | transloco }}
+          {{ location.levelRange.min }} - {{ location.levelRange.max }}
+        </div>
       </div>
+      }
     </div>
   </div>
 </div>
-
-<app-battle-modal [imageBackground]="this.currentLocation()?.img || null" />

@@ -102,6 +102,7 @@
         "LOCATION_WIZARD_TEMPLE": "Templo del Mago",
         "LOG_EXPLORING_LOCATION": "Explorando ubicación {{location}}",
         "NO_DIGIMON_TO_EXPLORE": "No hay Digimon para explorar.",
+        "MIN_LEVEL_REQUIRED": "Necesitas un digimon de nivel {{minLevel}} para explorar esta ubicación.",
         "ENEMY_FOUND": "¡Se encontró al enemigo {{name}}!"
       },
       "ARENA_SECTION": {

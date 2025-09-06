@@ -19,7 +19,7 @@ interface Location {
 @Component({
   selector: 'app-explore-section',
   standalone: true,
-  imports: [BattleModalComponent, TranslocoModule],
+  imports: [TranslocoModule],
   templateUrl: './explore-section.component.html',
   styleUrl: './explore-section.component.scss',
 })
@@ -37,14 +37,24 @@ export class ExploreSectionComponent {
   actualTurnOrder: Digimon[] = [];
   showPlayerAttackButton = false;
 
+  canExplore(location: Location): boolean {
+    const playerDigimons = this.globalState.playerDataAcessor.digimonList;
+    return playerDigimons.some(d => d.level >= location.levelRange.min);
+  }
+
   exploreLocation(location: Location) {
+    if (!this.canExplore(location)) {
+      const minLevelMsg = this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.MIN_LEVEL_REQUIRED', { minLevel: location.levelRange.min });
+      this.toastService.showToast(minLevelMsg, 'error');
+      return;
+    }
+
     this.currentLocation.set(location);
     this.audioService.playAudio(AudioEffects.CLICK);
     this.log(this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.LOG_EXPLORING_LOCATION', { location: this.translocoService.translate(location.name) }));
 
     if (this.isPlayerTeamEmpty()) {
       const noDigimonMsg = this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.NO_DIGIMON_TO_EXPLORE');
-      this.log(noDigimonMsg);
       this.toastService.showToast(noDigimonMsg, 'error');
       return;
     }

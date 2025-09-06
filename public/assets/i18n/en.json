@@ -101,6 +101,7 @@
         "LOCATION_WIZARD_TEMPLE": "Wizard Temple",
         "LOG_EXPLORING_LOCATION": "Exploring location {{location}}",
         "NO_DIGIMON_TO_EXPLORE": "No Digimon to explore with.",
+        "MIN_LEVEL_REQUIRED": "You need a digimon at level {{minLevel}} to explore this location.",
         "ENEMY_FOUND": "(Enemy) {{name}} was found!"
       },
       "ARENA_SECTION": {

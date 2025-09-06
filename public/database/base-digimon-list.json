@@ -5164,8 +5164,8 @@
   },
   {
     "seed": "a5e0bfb7-8d2a-4ef1-9636-cbb9db1fe1d0",
-    "name": "War Garurumon",
-    "img": "/assets/digimons/WarGarurumon.webp",
+    "name": "Were Garurumon",
+    "img": "/assets/digimons/Were Garurumon.webp",
     "rank": "Ultimate",
     "species": "Beast",
     "attribute": "Data",
@@ -5496,8 +5496,8 @@
   },
   {
     "seed": "4aa02e4b-b20a-4faf-9269-0ba18a1e7d08",
-    "name": "WarGarurumon (Black)",
-    "img": "/assets/digimons/WarGarurumon (Black).webp",
+    "name": "Black Were Garurumon",
+    "img": "/assets/digimons/Black Were Garurumon.webp",
     "rank": "Ultimate",
     "species": "Beast",
     "attribute": "Virus",

@@ -102,9 +102,10 @@
               <span class="label">{{
                 "SHARED.COMPONENTS.DIGIMON_DETAILS_MODAL.LEVEL" | transloco
               }}</span>
-              <span class="value">{{
-                globalState.selectedDigimonOnDetails()?.level
-              }}</span>
+              <span class="value"
+                >{{ globalState.selectedDigimonOnDetails()?.level }} /
+                {{ maxLevelForCurrentRank() }}</span
+              >
             </div>
             <div class="digimon-details-content-info-item">
               <span class="label">{{

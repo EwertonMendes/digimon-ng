@@ -22,6 +22,7 @@ import { InputComponent } from '../input/input.component';
 import { FormsModule } from '@angular/forms';
 import { IconComponent } from "../icon/icon.component";
 import { TooltipDirective } from "app/directives/tooltip.directive";
+import { getDefaultPotential } from '@core/utils/digimon.utils';
 
 @Component({
   standalone: true,
@@ -64,6 +65,8 @@ export class DigimonDetailsModalComponent {
   protected neededExpForNextLevel = computed(() =>
     this.globalState.getDigimonNeededExpForNextLevel()
   );
+
+  protected maxLevelForCurrentRank = computed(() => getDefaultPotential(this.globalState.selectedDigimonOnDetails()!.rank));
 
   protected evolutionRoute = signal<BaseDigimon[]>([]);
 

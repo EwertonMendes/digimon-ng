@@ -12,7 +12,7 @@ import { LOCATIONS } from '@core/consts/locations';
 interface Location {
   name: string;
   img: string;
-  possibleEcounterDigimonSeeds: { seed: string; levelRange: { min: number; max: number } }[];
+  possibleEcounterDigimonSeeds: { seed: string; levelRange: { min: number; max: number }; rarity: number }[];
   levelRange: { min: number; max: number };
 }
 
@@ -70,7 +70,10 @@ export class ExploreSectionComponent {
       location.possibleEcounterDigimonSeeds.length === 0
     ) {
       for (let i = 0; i < randomNumber; i++) {
-        const randomLevel = Math.floor(Math.random() * (10 - 1) + 1);
+        const randomLevel = Math.floor(
+          Math.random() * (location.levelRange.max - location.levelRange.min + 1) +
+          location.levelRange.min
+        );
         const opponentDigimon = this.globalState.generateRandomDigimon(randomLevel);
         this.globalState.enemyTeamAccessor.push(opponentDigimon);
         this.log(this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.ENEMY_FOUND', { name: opponentDigimon.name }));
@@ -78,20 +81,36 @@ export class ExploreSectionComponent {
       return;
     }
 
+    const seeds = location.possibleEcounterDigimonSeeds;
+    const weights = seeds.map(seed => 1 - seed.rarity);
+    const totalWeight = weights.reduce((sum, weight) => sum + weight, 0);
+
     for (let i = 0; i < randomNumber; i++) {
-      const randomPossibleSeedIndex = Math.floor(
-        Math.random() * location.possibleEcounterDigimonSeeds.length
-      );
-      const selectedDigimon = location.possibleEcounterDigimonSeeds[randomPossibleSeedIndex];
+      let randomValue = Math.random() * totalWeight;
+      let selectedIndex = -1;
+
+      for (let j = 0; j < weights.length; j++) {
+        randomValue -= weights[j];
+        if (randomValue <= 0) {
+          selectedIndex = j;
+          break;
+        }
+      }
+
+      if (selectedIndex === -1) {
+        selectedIndex = Math.floor(Math.random() * seeds.length);
+      }
+
+      const selectedDigimon = seeds[selectedIndex];
       const randomLevel = Math.floor(
-        Math.random() * (selectedDigimon.levelRange.max - selectedDigimon.levelRange.min) +
+        Math.random() * (selectedDigimon.levelRange.max - selectedDigimon.levelRange.min + 1) +
         selectedDigimon.levelRange.min
       );
       const opponentDigimon = this.globalState.generateDigimonBySeed(
         selectedDigimon.seed,
         randomLevel
       );
-      if (!opponentDigimon) return;
+      if (!opponentDigimon) continue;
       this.globalState.enemyTeamAccessor.push(opponentDigimon);
       this.log(this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.ENEMY_FOUND', { name: opponentDigimon.name }));
     }

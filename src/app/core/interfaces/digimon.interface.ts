@@ -15,8 +15,8 @@ export interface Digimon {
   atk: number;
   def: number;
   speed: number;
-  exp?: number;
-  totalExp?: number;
+  exp: number;
+  totalExp: number;
   level: number;
   bitFarmingRate?: number;
   digiEvolutionSeedList: string[];

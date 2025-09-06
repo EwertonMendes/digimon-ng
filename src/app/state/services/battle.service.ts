@@ -240,28 +240,39 @@ export class BattleService {
       playerDigimon.totalExp ??= 0;
 
       const potential = getDefaultPotential(playerDigimon.rank);
+      const maxLevel = Math.min(potential, this.MAX_LEVEL);
 
-      if (playerDigimon.level > potential || playerDigimon.level > this.MAX_LEVEL) {
-        playerDigimon.level = Math.min(potential, this.MAX_LEVEL);
-      }
+      if (playerDigimon.level >= maxLevel) {
+        const maxTotalExp = this.calculateTotalExpToLevel(maxLevel);
+        const expForNextLevel = this.calculateRequiredExpForLevel(maxLevel);
 
-      if (playerDigimon.level >= potential || playerDigimon.level >= this.MAX_LEVEL) {
-        playerDigimon.exp = 0;
-        const maxTotalExp = this.calculateTotalExpToLevel(playerDigimon.level);
-        playerDigimon.totalExp = Math.min(playerDigimon.totalExp, maxTotalExp);
+        playerDigimon.level = maxLevel;
+        playerDigimon.exp = expForNextLevel;
+        playerDigimon.totalExp = maxTotalExp;
         return;
       }
 
       const expForNextLevel = this.calculateRequiredExpForLevel(playerDigimon.level);
 
-      if (playerDigimon.exp >= expForNextLevel) {
-        playerDigimon.exp = 0;
-      }
-
       playerDigimon.exp += totalExp;
       playerDigimon.totalExp += totalExp;
 
-      this.levelUpDigimon(playerDigimon);
+      while (playerDigimon.exp >= expForNextLevel && playerDigimon.level < maxLevel) {
+        playerDigimon.exp -= expForNextLevel;
+        playerDigimon.level++;
+
+        if (playerDigimon.level < maxLevel) {
+          this.levelUpDigimon(playerDigimon);
+        }
+      }
+
+      if (playerDigimon.level >= maxLevel) {
+        const maxTotalExp = this.calculateTotalExpToLevel(maxLevel);
+        const lastLevelExp = this.calculateRequiredExpForLevel(maxLevel);
+
+        playerDigimon.exp = lastLevelExp;
+        playerDigimon.totalExp = maxTotalExp;
+      }
     });
   }
 

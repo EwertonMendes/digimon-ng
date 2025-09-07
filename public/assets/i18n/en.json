@@ -111,6 +111,9 @@
     },
     "LAB": {
       "CONVERT": "Convert",
+      "FOUND_DIGIMONS": "Found Digimons",
+      "OBTAINED_DIGIMONS": "Obtained Digimons",
+      "OBTAINED": "Obtained",
       "TOAST": {
         "CONVERSION_SUCCESS": "You successfully converted Digi-Data into {{digimon}}"
       }

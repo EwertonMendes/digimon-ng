@@ -41,11 +41,17 @@ export class DebugModalComponent {
     { name: 'SHARED.COMPONENTS.DEBUG_MODAL.SUCCESS_TOAST_TEST', action: this.toastService.showToast.bind(this.toastService, 'Success!', 'success') },
     { name: 'SHARED.COMPONENTS.DEBUG_MODAL.ERROR_TOAST_TEST', action: this.toastService.showToast.bind(this.toastService, 'Error!', 'error') },
     { name: 'SHARED.COMPONENTS.DEBUG_MODAL.KILL_ALL_DIGIMON', action: () => this.globalState.killAllDigimon() },
-    { name: 'SHARED.COMPONENTS.DEBUG_MODAL.GIVE_1_MILLION_BITS', action: () => this.globalState.playerDataAcessor.bits += 1000000 },
+    {
+      name: 'SHARED.COMPONENTS.DEBUG_MODAL.GIVE_1_MILLION_BITS', action: () => this.globalState.addBits(1000000)
+    },
   ];
 
   giveRandomDigimon() {
     const digimon = this.globalState.generateRandomDigimon();
+    this.globalState.playerDataAcessor.digiData[digimon.seed] = {
+      amount: this.globalState.playerDataAcessor.digiData[digimon.seed]?.amount ?? 0,
+      obtained: true
+    };
     this.globalState.addDigimonToStorage(digimon);
     this.toastService.showToast(
       this.translocoService.translate('SHARED.COMPONENTS.DEBUG_MODAL.ADDED_TO_STORAGE', { name: digimon.name }),

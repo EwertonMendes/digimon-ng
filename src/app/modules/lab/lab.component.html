@@ -1,16 +1,23 @@
 <div class="lab">
   <div class="lab__title">
+    <div class="lab__title-progress">
+      <span
+        >{{ "MODULES.LAB.FOUND_DIGIMONS" | transloco }}:
+        {{ labDigimons().length }}</span
+      >
+      <span>
+        {{ "MODULES.LAB.OBTAINED_DIGIMONS" | transloco }}:
+        {{ obtainedDigimonsAmount() }}</span
+      >
+    </div>
     <h1>DIGILAB</h1>
     <div class="lab__title-bits">
       <span class="lab__title-bits-text">
-        <app-icon
-          [name]="'bits'"
-          scale="4"
-        />
+        <app-icon [name]="'bits'" scale="4" />
         Bits:
       </span>
       <span class="lab__title-bits-amount">{{
-        globalState.playerDataAcessor.bits
+        globalState.playerDataAcessor.bits | number : "1.0-0"
       }}</span>
     </div>
   </div>
@@ -18,8 +25,21 @@
     @for (digimon of labDigimons(); track $index) {
     <div class="lab__content-card">
       <div class="lab__content-card-body">
+        @if (digimon.obtained) {
+        <div class="lab__content-card-body-obtained-container">
+          <div
+            class="lab__content-card-body-obtained-check"
+            [appTooltip]="'MODULES.LAB.OBTAINED' | transloco"
+            [tooltipDirection]="'bottom'"
+          ></div>
+        </div>
+        }
         <div class="lab__content-card-body-image">
-          <img [src]="digimon.img" [alt]="digimon.name" />
+          <img
+            [src]="digimon.img"
+            [alt]="digimon.name"
+            [ngStyle]="{ opacity: digimon.obtained ? 1 : 0.5 }"
+          />
         </div>
         <div class="lab__content-card-body-text">
           <span class="lab__content-card-body-text-name">{{

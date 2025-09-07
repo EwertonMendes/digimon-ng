@@ -221,9 +221,18 @@ export class GlobalStateDataSource {
       digimonTrainingCapacity: 10,
       bits: 0,
       digiData: {
-        [selectedDigimons[0].seed!]: 10,
-        [selectedDigimons[1].seed!]: 10,
-        [selectedDigimons[2].seed!]: 10,
+        [selectedDigimons[0].seed!]: {
+          amount: 10,
+          obtained: true
+        },
+        [selectedDigimons[1].seed!]: {
+          amount: 10,
+          obtained: true
+        },
+        [selectedDigimons[2].seed!]: {
+          amount: 10,
+          obtained: true
+        },
       },
     };
     this.playerDataService.savePlayerData(newPlayerData);
@@ -232,7 +241,7 @@ export class GlobalStateDataSource {
   }
 
   async saveCurrentPlayerData() {
-    if(this.isBattleActive) return;
+    if (this.isBattleActive) return;
     this.audioService.playAudio(AudioEffects.CLICK);
     try {
       this.toastService.showToast(this.translocoService.translate('COMMON.ACTION_BAR.TOAST.GAME_SAVED_SUCCESSFULLY'), 'success');
@@ -241,6 +250,7 @@ export class GlobalStateDataSource {
       this.toastService.showToast(this.translocoService.translate('COMMON.ACTION_BAR.TOAST.GAME_SAVE_FAILED'), 'error');
     }
   }
+
   addBits(bits: number) {
     const updatedPlayerData = {
       ...this.playerData(),
@@ -252,7 +262,7 @@ export class GlobalStateDataSource {
   addGainedDigiData(gainedDigiData: { seed: string; name: string; amount: number }[]) {
     const digiData = { ...this.playerData().digiData };
     gainedDigiData.forEach(({ seed, amount }) => {
-      digiData[seed] = (digiData[seed] || 0) + amount;
+      digiData[seed].amount = (digiData[seed].amount || 0) + amount;
     });
     const updatedPlayerData = {
       ...this.playerData(),
@@ -485,14 +495,17 @@ export class GlobalStateDataSource {
 
   convertDigiData(digimon: Digimon) {
     this.addDigimonToStorage(digimon);
-    const currentAmount = this.playerData().digiData?.[digimon.seed] || 0;
+    const currentAmount: number = this.playerData().digiData?.[digimon.seed].amount || 0;
     const bitCost = this.getBitCost(digimon.rank);
     const updatedPlayerData = {
       ...this.playerData(),
       bits: this.playerData().bits - bitCost,
       digiData: {
         ...this.playerData().digiData,
-        [digimon.seed]: currentAmount - 100,
+        [digimon.seed]: {
+          amount: currentAmount - 100,
+          obtained: true,
+        },
       },
     };
     this.updatePlayerData(updatedPlayerData);
@@ -724,7 +737,10 @@ export class GlobalStateDataSource {
     const updatedDigiData = { ...(playerData.digiData || {}) };
     for (const gain of digiDataGains) {
       const { seed, amount } = gain;
-      updatedDigiData[seed] = Math.min((updatedDigiData[seed] || 0) + amount, 999);
+      updatedDigiData[seed] = {
+        amount: Math.min((updatedDigiData[seed]?.amount || 0) + amount, 999),
+        obtained: updatedDigiData[seed]?.obtained ?? false
+      }
     }
     this.updatePlayerData({
       ...playerData,

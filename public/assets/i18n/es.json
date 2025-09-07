@@ -112,6 +112,9 @@
     },
     "LAB": {
       "CONVERT": "Convertir",
+      "FOUND_DIGIMONS": "Digimons Encontrados",
+      "OBTAINED_DIGIMONS": "Digimons Obtidos",
+      "OBTAINED": "Obtido",
       "TOAST": {
         "CONVERSION_SUCCESS": "Has convertido con éxito los Digi-Datos en {{digimon}}"
       }

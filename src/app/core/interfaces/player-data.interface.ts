@@ -13,6 +13,11 @@ export interface PlayerData {
   digimonStorageList: Digimon[];
   digimonStorageCapacity: number;
   bits: number;
-  digiData: Record<string, number>;
+  digiData: Record<string, DigiData>;
   [key: string]: any;
+}
+
+interface DigiData {
+  amount: number;
+  obtained: boolean;
 }

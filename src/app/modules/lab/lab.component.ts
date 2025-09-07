@@ -1,36 +1,38 @@
-import { Component, effect, inject, signal } from '@angular/core';
+import { Component, computed, effect, inject, signal } from '@angular/core';
 import { ButtonComponent } from "@shared/components/button/button.component";
 import { GlobalStateDataSource } from '@state/global-state.datasource';
 import { BaseDigimon } from '@core/interfaces/digimon.interface';
 import { DigimonService } from '@services/digimon.service';
-import { ToastService } from '@shared/components/toast/toast.service';
 import { CommonModule } from '@angular/common';
 import { TranslocoModule } from '@jsverse/transloco';
 import { IconComponent } from "@shared/components/icon/icon.component";
+import { TooltipDirective } from 'app/directives/tooltip.directive';
 
-type LabDigimon = BaseDigimon & { amount: number; cost: number };
+type LabDigimon = BaseDigimon & { amount: number; cost: number, obtained: boolean };
 
 @Component({
   selector: 'app-lab',
   standalone: true,
-  imports: [CommonModule, ButtonComponent, TranslocoModule, IconComponent],
+  imports: [CommonModule, ButtonComponent, TranslocoModule, IconComponent, TooltipDirective],
   templateUrl: './lab.component.html',
-  styleUrl: './lab.component.scss'
+  styleUrl: './lab.component.scss',
 })
 export class LabComponent {
+  protected labDigimons = signal<LabDigimon[]>([]);
+  protected obtainedDigimonsAmount = computed(() => this.labDigimons().filter(d => d.obtained).length);
 
-  labDigimons = signal<LabDigimon[]>([]);
-  globalState = inject(GlobalStateDataSource);
-  digimonService = inject(DigimonService);
-  toastService = inject(ToastService);
+  protected globalState = inject(GlobalStateDataSource);
+  private digimonService = inject(DigimonService);
 
   constructor() {
     effect(() => {
       let digimons: LabDigimon[] = [];
-      Object.entries(this.globalState.playerDataAcessor.digiData).forEach(([seed, amount]) => {
+
+      Object.entries(this.globalState.playerDataAcessor.digiData).forEach(([seed, digiData]) => {
         const digimon = this.digimonService.getBaseDigimonDataBySeed(seed) as LabDigimon;
-        digimon.amount = amount;
+        digimon.amount = digiData.amount;
         digimon.cost = this.globalState.getBitCost(digimon.rank);
+        digimon.obtained = digiData.obtained;
         if (digimon) {
           digimons.push(digimon);
         }

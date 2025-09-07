@@ -1,7 +1,7 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
-  "productName": "digimon-ng",
-  "version": "0.1.0",
+  "productName": "Digimon NG",
+  "version": "0.2.0",
   "identifier": "digimon-ng",
   "build": {
     "frontendDist": "../dist/digimon-ng/browser",

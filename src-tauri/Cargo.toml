@@ -1,10 +1,10 @@
 [package]
-name = "app"
-version = "0.1.0"
-description = "A Tauri App"
-authors = ["you"]
+name = "digimon-ng"
+version = "0.2.0"
+description = "A Digimon game built with Angular and Tauri."
+authors = ["Ewerton Mendes"]
 license = ""
-repository = ""
+repository = "https://github.com/EwertonMendes/digimon-ng"
 edition = "2021"
 rust-version = "1.77.2"
 

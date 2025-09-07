@@ -1,3 +1,7 @@
+## Download and Play
+
+Get the latest installer from [Releases](https://github.com/EwertonMendes/digimon-ng/releases/latest).
+
 # Digimon NG: Player's Manual
 
 Welcome to **Digimon NG**, an exciting Angular-based game where you become a Digimon Tamer! Collect, train, battle, and evolve your Digimon in a digital world full of adventure. While there's no overarching story yet, the core fun lies in building the ultimate collection of Digimon—aim to catch 'em all by exploring, battling, and converting data into new partners. This manual will guide you through starting out, navigating the game, mastering mechanics, and using handy controls. Let's dive in!

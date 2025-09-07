@@ -1,107 +1,164 @@
-# Digimon NG
+# Digimon NG: Player's Manual
 
-Welcome to Digimon NG! This project is an Angular application designed to manage and display information about Digimon. It showcases advanced Angular features, state management, animations, and more.
+Welcome to **Digimon NG**, an exciting Angular-based game where you become a Digimon Tamer! Collect, train, battle, and evolve your Digimon in a digital world full of adventure. While there's no overarching story yet, the core fun lies in building the ultimate collection of Digimon—aim to catch 'em all by exploring, battling, and converting data into new partners. This manual will guide you through starting out, navigating the game, mastering mechanics, and using handy controls. Let's dive in!
 
 ## Table of Contents
 
-- [Project Overview](#project-overview)
-- [Features](#features)
-- [Architecture and Best Practices](#architecture-and-best-practices)
-- [Libraries and Tools](#libraries-and-tools)
-- [Animations](#animations)
-- [State Management](#state-management)
-- [Conclusion](#conclusion)
+- [Getting Started](#getting-started)
+- [Main Navigation and Action Bar](#main-navigation-and-action-bar)
+- [Desktop Area: Home and Farm](#desktop-area-home-and-farm)
+- [Adventure Area: Exploring and Battling](#adventure-area-exploring-and-battling)
+- [Lab (Digilab): Collecting and Converting Digimon](#lab-digilab-collecting-and-converting-digimon)
+- [Digimon Management: Storage, Details, and Evolution](#digimon-management-storage-details-and-evolution)
+- [Player Progression: Bits, EXP, and Levels](#player-progression-bits-exp-and-levels)
+- [Battles: How to Fight and Win](#battles-how-to-fight-and-win)
+- [Configurations and Settings](#configurations-and-settings)
+- [Controls and Shortcuts](#controls-and-shortcuts)
+- [Tips and Strategies](#tips-and-strategies)
+- [FAQ and Troubleshooting](#faq-and-troubleshooting)
 
-## Project Overview
+## Getting Started
 
-Digimon NG is an Angular application that allows users to manage and view Digimon data. The application includes features such as displaying Digimon status cards, handling attribute changes with animations, and managing state effectively.
+When you launch Digimon NG, you'll begin your journey as a new Tamer:
 
-![image](https://github.com/user-attachments/assets/0e7fab44-9d94-4839-94fa-f0649f2435f1)
+1. **Choose Your Tamer Name**: Enter a nickname for yourself—this is how you'll be known in the digital world.
+2. **Select Your Starting Team**: Pick from 6 different starter sets. Each includes:
+   - 1 In-Training Digimon (beginner level).
+   - 1 Rookie Digimon (basic fighter).
+   - 1 Champion Digimon (stronger ally).
+   
+   These form your initial Battle Team, ready for action!
 
-![image](https://github.com/user-attachments/assets/9794f84c-ff6c-4fc4-84c7-29e9ee315661)
+The main goal? Collect as many Digimon as possible! Expand your roster through battles, exploration, and data conversion. There's no "endgame" yet, so focus on growing your collection, leveling up, and dominating battles.
 
+The game saves your progress automatically in some cases, but you can manually save anytime via the Action Bar or shortcuts.
 
-## Features
+## Main Navigation and Action Bar
 
-- **Digimon Status Cards**: Display detailed information about each Digimon, including HP, MP, and other attributes.
-- **Moving Digimon Cards**: The player can drag and drop the digimon cards moving along between the allowed areas like, Upfront Team, Hospital, Training, and Bit farm areas.
-- **Attribute Change Animations**: Visual feedback for attribute changes, such as HP and MP, with smooth animations.
-- **Evolution Tree**: Displays the evolution tree of a specific digimon, showing its current evolution line and possible evolutions and degenerations.
-- **Battle**: Allows the player to battle with its team against other digimons, displaying a battle log and the current turn order.
-- **Digimon Storage**: Allows the player to store multiple digimons that are not beeing used at the moment.
-- **Player Status Modal**: Shows player info, such as Bits, Level, Exp, and digimon count.
-- **Debug**: Used just to test some features, allowing the user to obtain a radom digimon, to choose a certain digimon, or clear its digimon storage.
+The Action Bar at the top (or side, depending on your view) is your hub for everything:
 
-## Architecture and Best Practices
+- **Routes to Navigate**:
+  - **Desktop**: Your home base for managing Digimon (Home and Farm areas).
+  - **Adventure**: Where you explore locations and start battles.
+  - **Lab (Digilab)**: View your collection and convert data into new Digimon.
 
-Digimon NG follows a modular architecture, promoting separation of concerns and reusability. Key architectural practices include:
+- **Modals (Pop-ups) from Action Bar**:
+  - **Digimon Storage**: Access your stored Digimon.
+  - **Player Info**: Check your status (Bits, Level, EXP, Digimon count).
+  - **Configurations**: Customize settings (more below).
+  - **Save Game**: Manually save your progress.
 
-- **Component-Based Architecture**: Each feature is encapsulated within its own component, making the application scalable and maintainable.
-- **Service-Oriented Architecture**: Business logic and data management are handled by services, ensuring a clear separation between the UI and the underlying logic.
-- **Reactive Programming**: Utilizes RxJS for handling asynchronous data streams and angular signals, making the application more responsive and easier to manage.
+You can switch between routes seamlessly, and modals overlay without leaving your current screen.
 
+## Desktop Area: Home and Farm
 
-## Libraries and Tools
+This is your Digimon management hub, split into Home and Farm sections. Drag and drop Digimon cards between areas for easy organization!
 
-Digimon NG leverages several libraries and tools to enhance development and functionality:
+- **Home**:
+  - **Battle Team**: Place up to 4 Digimon here—these are your active fighters for battles in Adventure. Keep them healthy!
+  - **Hospital**: Drag injured Digimon (low HP or 0 HP) here to heal over time. Perfect for recovery after tough fights.
 
-- **Angular**: The core framework for building the application.
-- **Angular Animations**: For creating smooth and responsive animations.
-- **Sigma**: For creating interactive and modular digi-evolution graphs
-- **SCSS**: For styling the application with a modular and maintainable approach.
+- **Farm**:
+  - **Training**: Assign Digimon to train periodically, boosting their stats like attack, defense, and speed. Great for powering up your team!
+  - **Bit Farm**: Put Digimon to work generating Bits (the game's currency) every minute.
 
-## Animations
+Pro Tip: Balance your assignments—don't leave your Battle Team empty!
 
-The application includes several animations to enhance the user experience:
+## Adventure Area: Exploring and Battling
 
-- **Damage Animation**: Provides visual feedback when a Digimon takes damage, including a shake effect.
-- **FadeUp Animation**: Smoothly fades up elements when they enter the view.
-- **Highlight Animation**: Temporarily changes the color and size of text to indicate attribute changes.
+Head here for action! The **Explore** section lets you choose locations to battle wild Digimon.
 
-## State Management
+- **Choosing Locations**: Unlocked based on your Battle Team's levels. For example, if your strongest Digimon is Level 30, you'll only see spots with a minimum level of 30 or lower. Each location has unique Digimon that can appear.
+- **Starting a Battle**: Click a location to jump straight into combat (more on battles below).
+- **Rewards**: Win fights to gain EXP for your Digimon and Player, plus Digi-Data percentages from defeated foes (used in the Lab).
 
-State management is handled using Angular's reactive features and services:
+Exploration is key to discovering new Digimon and grinding levels.
 
-- **GlobalStateDataSource**: Acts as a central store for the application's state, providing a single source of truth.
+## Lab (Digilab): Collecting and Converting Digimon
 
-## Conclusion
+This is your encyclopedia and recruitment center!
 
-Digimon NG is a robust and feature-rich Angular application that demonstrates advanced techniques and best practices. It showcases the power of Angular for building uncommon applications, with a focus on state management, animations, and interactive interfaces.
+- **Digimon List**: See every Digimon you've encountered. Highlighted ones are those you've already obtained.
+- **Converting Digi-Data**: Battles reward Digi-Data % for enemy Digimon. Reach 100% total for a species? Pay Bits to convert it into a new Digimon for your collection!
+  - Button unlocks at 100%—click to add it to your roster (it goes to Storage initially).
 
-Thank you for exploring Digimon NG!
+Track your progress and expand your team here.
 
-## Other Screenshots:
+## Digimon Management: Storage, Details, and Evolution
 
-### Start Game Screen:
+- **Digimon Storage Modal**: Lists all unused Digimon. Drag them to Desktop areas or keep them safe. No limits mentioned, so hoard away!
+- **Releasing Digimon**: Click the "X" in the top-right corner of a Digimon card (in Desktop or Storage) to discard it and free up space/data.
+- **Digimon Details Modal**: Click a Digimon card (outside of battle) to view:
+  - Name, Nickname (edit here to personalize!).
+  - Stats: Rank, HP, MP, Attack, Defense, Speed, etc.
+  - **Evolution Tree Button**: Opens a graph showing evolution paths for that digimon and base stats.
+    - If your Digimon meets level requirements, an "Evolve" button appears.
+    - Click to open a confirmation modal showing stat improvements.
+    - Confirm "Yes" to evolve—your Digimon transforms with boosted power!
 
-![image](https://github.com/user-attachments/assets/3dc5f4a8-9f42-44be-9c16-477f6a79ea52)
+Evolution is a game-changer for tough battles.
 
-### Aventure route:
+## Player Progression: Bits, EXP, and Levels
 
-![image](https://github.com/user-attachments/assets/160b432a-73b5-400e-9a55-c975e22555ca)
+- **Bits**: Currency earned from Bit Farm, battles, or other activities. Use for converting Digi-Data in the Lab.
+- **EXP and Levels**: Gained from battles. Digimon level up individually (unlocking evolutions and locations). Your Player Level increases as well.
+- **Player Info Modal**: Quick view of Tamer Name, Bits, Level, EXP, and total Digimon count.
 
-### Battle:
+Farm Bits wisely and battle often to progress!
 
-![image](https://github.com/user-attachments/assets/64f93007-7812-4a68-a22e-171e09a76262)
+## Battles: How to Fight and Win
 
-![image](https://github.com/user-attachments/assets/6f11bb03-706c-47f6-8ff3-714c52ac0816)
+Battles are turn-based and exciting, with animations for damage, highlights, and more.
 
-### Digimon Details:
-![image](https://github.com/user-attachments/assets/7bfc2eaa-188c-4c7a-b91d-a5adfb6a67cc)
+- **Setup**: Your Battle Team (up to 4) vs. wild Digimon from the location.
+- **Turn Order**: Based on Speed stats—faster acts first.
+- **Actions**: Each turn, choose an enemy to attack. Enemies auto-attack.
+- **Battle Log**: Tracks every move, damage, and status changes.
+- **Win/Lose**: Defeat all enemies to win (gain EXP, Bits, Digi-Data). If your team wipes, retreat and heal in Hospital.
+- **Visuals**: Shake effects for damage, fades for entries—makes fights dynamic!
 
-### Evolution Tree Explorer:
+Strategy: Match types (e.g., attributes like Virus, Data) and evolve for advantages.
 
-![image](https://github.com/user-attachments/assets/4b4e0773-ca45-4634-99c3-b2ac47e18aed)
+## Configurations and Settings
 
-### Digimon Storage:
+Customize your experience via the Configurations modal:
 
-![image](https://github.com/user-attachments/assets/4612afb7-a8ed-4700-a66d-76f03bfaf0b5)
+- **Fullscreen**: Toggle full-screen mode.
+- **Enable Audio**: Turn on/off sound effects and music.
+- **Language**: Switch between English, Spanish, or Brazilian Portuguese.
+- **Theme**: Choose from various color schemes for a fresh look.
 
-### Digilab:
+## Controls and Shortcuts
 
-![image](https://github.com/user-attachments/assets/4955f4e4-b2ad-4104-80d6-d288bfecd609)
+- **Drag and Drop**: Move Digimon cards between areas.
+- **Click**: Select locations, cards, or buttons.
+- **ESC**: Close the topmost modal.
+- **CTRL + S**: Quick-save your game.
+- **ALT + F4**: Exit the game immediately.
 
-### Player Data:
+## Tips and Strategies
 
-![image](https://github.com/user-attachments/assets/4a6207b2-537b-403c-ba3a-c19a01c231d2)
+- Start by building a balanced Battle Team: Mix levels and types.
+- Use Farm areas passively—train for stats, farm for Bits.
+- Grind low-level locations first to build Digi-Data and unlock conversions.
+- Evolve early and often for stat boosts.
+- Save frequently, especially before risky battles.
+- Personalize with nicknames for that true Tamer feel!
 
+## FAQ and Troubleshooting
+
+- **How do I get more Digimon?** Battle to collect Digi-Data, then convert in Lab.
+- **What if my Digimon dies?** HP 0? Hospital heals them—don't release unless you want to.
+- **No sound?** Check Enable Audio in Configurations.
+- **Stuck?** Save, reload, or use shortcuts to navigate.
+- **Where's the mobile version?** There's no mobile version yet, but desktop is recommended for best experience.
+
+Thank you for playing Digimon NG! Build your dream team and conquer the digital world. If you have feedback, share it—more features coming soon!
+
+## Screenshots
+
+- Desktop Home and Farm
+- Adventure Explore
+- Lab Digimon List
+- Digimon Details Modal
+- Battle Screen

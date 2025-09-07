@@ -119,7 +119,7 @@
       }
     },
     "INITIAL_SETUP": {
-      "TITLE": "Welcome to Digi-Angular!",
+      "TITLE": "Welcome to Digimon NG!",
       "DESCRIPTION": "Let's get started by setting up your tamer name and initial team.",
       "TAMER_NAME_LABEL": "Tamer Name:",
       "TAMER_NAME_PLACEHOLDER": "Enter your tamer name",

@@ -1,6 +1,6 @@
-# DigiAngular
+# Digimon NG
 
-Welcome to DigiAngular! This project is an Angular application designed to manage and display information about Digimon. It showcases advanced Angular features, state management, animations, and more.
+Welcome to Digimon NG! This project is an Angular application designed to manage and display information about Digimon. It showcases advanced Angular features, state management, animations, and more.
 
 ## Table of Contents
 
@@ -14,7 +14,7 @@ Welcome to DigiAngular! This project is an Angular application designed to manag
 
 ## Project Overview
 
-DigiAngular is an Angular application that allows users to manage and view Digimon data. The application includes features such as displaying Digimon status cards, handling attribute changes with animations, and managing state effectively.
+Digimon NG is an Angular application that allows users to manage and view Digimon data. The application includes features such as displaying Digimon status cards, handling attribute changes with animations, and managing state effectively.
 
 ![image](https://github.com/user-attachments/assets/0e7fab44-9d94-4839-94fa-f0649f2435f1)
 
@@ -34,7 +34,7 @@ DigiAngular is an Angular application that allows users to manage and view Digim
 
 ## Architecture and Best Practices
 
-DigiAngular follows a modular architecture, promoting separation of concerns and reusability. Key architectural practices include:
+Digimon NG follows a modular architecture, promoting separation of concerns and reusability. Key architectural practices include:
 
 - **Component-Based Architecture**: Each feature is encapsulated within its own component, making the application scalable and maintainable.
 - **Service-Oriented Architecture**: Business logic and data management are handled by services, ensuring a clear separation between the UI and the underlying logic.
@@ -43,7 +43,7 @@ DigiAngular follows a modular architecture, promoting separation of concerns and
 
 ## Libraries and Tools
 
-DigiAngular leverages several libraries and tools to enhance development and functionality:
+Digimon NG leverages several libraries and tools to enhance development and functionality:
 
 - **Angular**: The core framework for building the application.
 - **Angular Animations**: For creating smooth and responsive animations.
@@ -66,9 +66,9 @@ State management is handled using Angular's reactive features and services:
 
 ## Conclusion
 
-DigiAngular is a robust and feature-rich Angular application that demonstrates advanced techniques and best practices. It showcases the power of Angular for building uncommon applications, with a focus on state management, animations, and interactive interfaces.
+Digimon NG is a robust and feature-rich Angular application that demonstrates advanced techniques and best practices. It showcases the power of Angular for building uncommon applications, with a focus on state management, animations, and interactive interfaces.
 
-Thank you for exploring DigiAngular!
+Thank you for exploring Digimon NG!
 
 ## Other Screenshots:
 

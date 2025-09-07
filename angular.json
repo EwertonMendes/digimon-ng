@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "digi-angular": {
+    "digimon-ng": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -18,7 +18,7 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "outputPath": "dist/digi-angular",
+            "outputPath": "dist/digimon-ng",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [],
@@ -73,10 +73,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "digi-angular:build:production"
+              "buildTarget": "digimon-ng:build:production"
             },
             "development": {
-              "buildTarget": "digi-angular:build:development"
+              "buildTarget": "digimon-ng:build:development"
             }
           },
           "defaultConfiguration": "development"

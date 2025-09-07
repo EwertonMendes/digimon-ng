@@ -19,7 +19,7 @@ import { ShortcutService } from '@services/shortcut.service';
 })
 export class AppComponent implements OnInit, OnDestroy {
 
-  title = 'digi-angular';
+  title = 'Digimon NG';
 
   globalState = inject(GlobalStateDataSource);
   playerDataService = inject(PlayerDataService);

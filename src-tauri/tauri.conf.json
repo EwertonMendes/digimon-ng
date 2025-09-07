@@ -1,10 +1,10 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
-  "productName": "digi-angular",
+  "productName": "digimon-ng",
   "version": "0.1.0",
-  "identifier": "digi-angular",
+  "identifier": "digimon-ng",
   "build": {
-    "frontendDist": "../dist/digi-angular/browser",
+    "frontendDist": "../dist/digimon-ng/browser",
     "devUrl": "http://localhost:4200",
     "beforeDevCommand": "npm run web",
     "beforeBuildCommand": "npm run build:angular"
@@ -13,7 +13,7 @@
     "withGlobalTauri": true,
     "windows": [
       {
-        "title": "Digi Angular",
+        "title": "Digimon NG",
         "label": "splashscreen",
         "width": 1920,
         "height": 1080,
@@ -23,7 +23,7 @@
         "url": "/splashscreen"
       },
       {
-        "title": "Digi Angular",
+        "title": "Digimon NG",
         "width": 1920,
         "height": 1080,
         "resizable": true,

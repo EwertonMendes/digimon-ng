@@ -116,18 +116,14 @@ export class GiveSelectedDigimonModalComponent implements OnInit {
       this.generateEvolutionLine
     );
 
-    this.globalState.playerDataAcessor.digiData[digimon.seed] = {
-      amount: this.globalState.playerDataAcessor.digiData[digimon.seed]?.amount ?? 0,
-      obtained: true
-    };
-    this.globalState.playerDataAcessor.digiData[digimon.seed].amount += 10;
+    this.globalState.addDigiData(digimon.seed, 10, true);
 
     this.globalState.addDigimonToStorage(newDigimon);
 
     this.toastService.showToast(
       this.translocoService.translate('SHARED.COMPONENTS.DEBUG_MODAL.ADDED_TO_STORAGE_LEVEL', {
         name: digimon.name,
-        level: this.selectedLevel,
+        level: newDigimon.level,
       }),
       'success'
     );

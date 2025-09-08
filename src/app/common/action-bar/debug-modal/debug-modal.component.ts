@@ -48,10 +48,7 @@ export class DebugModalComponent {
 
   giveRandomDigimon() {
     const digimon = this.globalState.generateRandomDigimon();
-    this.globalState.playerDataAcessor.digiData[digimon.seed] = {
-      amount: this.globalState.playerDataAcessor.digiData[digimon.seed]?.amount ?? 0,
-      obtained: true
-    };
+    this.globalState.addDigiData(digimon.seed, 10, true);
     this.globalState.addDigimonToStorage(digimon);
     this.toastService.showToast(
       this.translocoService.translate('SHARED.COMPONENTS.DEBUG_MODAL.ADDED_TO_STORAGE', { name: digimon.name }),

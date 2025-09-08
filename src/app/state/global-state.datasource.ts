@@ -259,11 +259,13 @@ export class GlobalStateDataSource {
     this.updatePlayerData(updatedPlayerData);
   }
 
-  addGainedDigiData(gainedDigiData: { seed: string; name: string; amount: number }[]) {
+  addDigiData(seed: string, amount: number, obtained: boolean = false) {
     const digiData = { ...this.playerData().digiData };
-    gainedDigiData.forEach(({ seed, amount }) => {
-      digiData[seed].amount = (digiData[seed].amount || 0) + amount;
-    });
+    digiData[seed] = {
+      amount: Math.min((digiData[seed]?.amount || 0) + amount, 999),
+      obtained: obtained
+    }
+
     const updatedPlayerData = {
       ...this.playerData(),
       digiData,
@@ -286,6 +288,7 @@ export class GlobalStateDataSource {
       }),
       'success'
     );
+    this.addDigiData(evolvedDigimon.seed, 10, true);
     const playerData = this.playerData();
     const lists = this.getAllDigimonLists(playerData);
     this.updateDigimonInLists(lists, digimon, evolvedDigimon);

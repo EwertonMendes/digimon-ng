@@ -28,7 +28,7 @@ export class LabComponent {
     effect(() => {
       let digimons: LabDigimon[] = [];
 
-      Object.entries(this.globalState.playerDataAcessor.digiData).forEach(([seed, digiData]) => {
+      Object.entries(this.globalState.playerDataView().digiData).forEach(([seed, digiData]) => {
         const digimon = this.digimonService.getBaseDigimonDataBySeed(seed) as LabDigimon;
         digimon.amount = digiData.amount;
         digimon.cost = this.globalState.getBitCost(digimon.rank);

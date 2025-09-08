@@ -3,7 +3,7 @@
     <div class="player-info-container">
       <div class="player-info-header">
         <img src="assets/Tai.webp" alt="player avatar" class="avatar" />
-        <h2 class="player-name">{{ globalState.playerDataAcessor.name }}</h2>
+        <h2 class="player-name">{{ globalState.playerDataView().name }}</h2>
       </div>
       <div class="player-info-content">
         <div class="info-item">
@@ -11,7 +11,7 @@
             >{{ "SHARED.COMPONENTS.PLAYER_INFO_MODAL.BITS" | transloco }}:</span
           >
           <span class="value">{{
-            globalState.playerDataAcessor.bits | number : "1.0-0"
+            globalState.playerDataView().bits | number : "1.0-0"
           }}</span>
         </div>
         <div class="info-item">
@@ -20,7 +20,7 @@
               "SHARED.COMPONENTS.PLAYER_INFO_MODAL.LEVEL" | transloco
             }}:</span
           >
-          <span class="value">{{ globalState.playerDataAcessor.level }}</span>
+          <span class="value">{{ globalState.playerDataView().level }}</span>
         </div>
         <div class="info-item">
           <span class="label"
@@ -29,7 +29,7 @@
             }}:</span
           >
           <span class="value">
-            {{ globalState.playerDataAcessor.exp | number : "1.0-0" }} /
+            {{ globalState.playerDataView().exp | number : "1.0-0" }} /
             {{ neededExpForNextLevel() | number : "1.0-0" }}
           </span>
         </div>
@@ -40,7 +40,7 @@
             }}:</span
           >
           <span class="value">{{
-            globalState.playerDataAcessor.totalExp | number : "1.0-0"
+            globalState.playerDataView().totalExp | number : "1.0-0"
           }}</span>
         </div>
         <div class="info-item">

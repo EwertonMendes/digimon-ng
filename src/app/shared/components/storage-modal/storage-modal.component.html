@@ -4,16 +4,16 @@
       {{ "SHARED.COMPONENTS.STORAGE_MODAL.TITLE" | transloco }}
     </h3>
     <span class="digimon-storage-container-count">
-      {{ globalState.playerDataAcessor.digimonStorageList.length }} Digimons
+      {{ globalState.playerDataView().digimonStorageList.length }} Digimons
     </span>
     <div class="digimon-storage-content">
-      @if(globalState.playerDataAcessor.digimonStorageList.length === 0){
+      @if(globalState.playerDataView().digimonStorageList.length === 0){
       <div class="digimon-storage-content-no-data-container">
         <h4>{{ "SHARED.COMPONENTS.STORAGE_MODAL.NO_DIGIMON" | transloco }}</h4>
       </div>
       } @else {
       <div class="digimon-storage-content-list-container">
-        @for(digimon of globalState.playerDataAcessor.digimonStorageList; track
+        @for(digimon of globalState.playerDataView().digimonStorageList; track
         digimon){
         <div class="digimon-storage-content-list-item">
           <app-digi-status-card

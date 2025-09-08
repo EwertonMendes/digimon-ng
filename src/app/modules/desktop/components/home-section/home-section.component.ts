@@ -28,6 +28,7 @@ import { ModalService } from 'app/shared/components/modal/modal.service';
 import { DigimonDetailsModalComponent } from 'app/shared/components/digimon-details-modal/digimon-details-modal.component';
 import { FormsModule } from "@angular/forms";
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { takeLast } from 'rxjs';
 
 @Component({
   selector: 'app-home-section',
@@ -65,26 +66,26 @@ export class HomeSectionComponent {
 
   constructor() {
     effect(() => {
-      const hospital = this.globalState.playerDataAcessor.hospitalDigimonList;
+      const hospital = this.globalState.playerDataView().hospitalDigimonList;
       const price = this.calculateFullHealPrice(hospital);
       this.fullHealPrice.set(price);
       const hasToHeal = hospital.length > 0 && hospital.some(d => d.currentHp < d.maxHp);
       this.hasDigimonsToHeal.set(hasToHeal);
-      const bits = this.globalState.playerDataAcessor.bits;
+      const bits = this.globalState.playerDataView().bits;
       const enough = bits >= price;
       this.hasEnoughBits.set(enough);
       this.isHealAllEnabled.set(hasToHeal && enough);
     });
 
     this.globalState.digimonHpChanges$
-      .pipe(takeUntilDestroyed(this.destroyRef))
+      .pipe(takeUntilDestroyed(this.destroyRef), takeLast(1))
       .subscribe(() => {
-        const hospital = this.globalState.playerDataAcessor.hospitalDigimonList;
+        const hospital = this.globalState.playerDataView().hospitalDigimonList;
         const price = this.calculateFullHealPrice(hospital);
         this.fullHealPrice.set(price);
         const hasToHeal = hospital.length > 0 && hospital.some(d => d.currentHp < d.maxHp);
         this.hasDigimonsToHeal.set(hasToHeal);
-        const bits = this.globalState.playerDataAcessor.bits;
+        const bits = this.globalState.playerDataView().bits;
         const enough = bits >= price;
         this.hasEnoughBits.set(enough);
         this.isHealAllEnabled.set(hasToHeal && enough);
@@ -103,8 +104,8 @@ export class HomeSectionComponent {
   healAll() {
     if (!this.isHealAllEnabled()) return;
     this.audioService.playAudio(AudioEffects.CLICK);
-    this.hospitalService.fullHealHospitalDigimons(this.globalState.playerDataAcessor);
-    this.globalState.playerDataAcessor.bits -= this.fullHealPrice();
+    this.hospitalService.fullHealHospitalDigimons(this.globalState.playerDataView());
+    this.globalState.spendBits(this.fullHealPrice());
     this.isHealAllEnabled.set(this.canHealAll());
     this.changeDetectorRef.detectChanges();
   }
@@ -147,11 +148,11 @@ export class HomeSectionComponent {
   }
 
   canSendInjuredDigimonToHospital(): boolean {
-    return this.globalState.playerDataAcessor.digimonList.some(d => d.currentHp === 0 || d.currentHp <= 0.2 * d.maxHp);
+    return this.globalState.playerDataView().digimonList.some(d => d.currentHp === 0 || d.currentHp <= 0.2 * d.maxHp);
   }
 
   sendInjuredDigimonToHospital(): void {
-    const lowHpDigimons = this.globalState.playerDataAcessor.digimonList.filter(d => d.currentHp === 0 || d.currentHp <= 0.2 * d.maxHp);
+    const lowHpDigimons = this.globalState.playerDataView().digimonList.filter(d => d.currentHp === 0 || d.currentHp <= 0.2 * d.maxHp);
     lowHpDigimons.forEach(digimon => {
       this.globalState.addDigimonToHospital(digimon, DigimonListLocation.TEAM);
     });
@@ -166,13 +167,13 @@ export class HomeSectionComponent {
     const handlers = {
       [this.teamListId]: () =>
         moveItemInArray(
-          this.globalState.playerDataAcessor.digimonList,
+          this.globalState.playerDataView().digimonList,
           previousIndex,
           currentIndex
         ),
       [this.hospitalListId]: () =>
         moveItemInArray(
-          this.globalState.playerDataAcessor.hospitalDigimonList,
+          this.globalState.playerDataView().hospitalDigimonList,
           previousIndex,
           currentIndex
         ),
@@ -201,16 +202,16 @@ export class HomeSectionComponent {
       [this.teamListId]: () => {
         this.globalState.addDigimonToList(digimon, action);
         moveItemInArray(
-          this.globalState.playerDataAcessor.digimonList,
-          this.globalState.playerDataAcessor.digimonList.length - 1,
+          this.globalState.playerDataView().digimonList,
+          this.globalState.playerDataView().digimonList.length - 1,
           currentIndex
         );
       },
       [this.hospitalListId]: () => {
         this.globalState.addDigimonToHospital(digimon, action),
           moveItemInArray(
-            this.globalState.playerDataAcessor.hospitalDigimonList,
-            this.globalState.playerDataAcessor.hospitalDigimonList.length - 1,
+            this.globalState.playerDataView().hospitalDigimonList,
+            this.globalState.playerDataView().hospitalDigimonList.length - 1,
             currentIndex
           );
       },
@@ -228,12 +229,12 @@ export class HomeSectionComponent {
   ): Digimon {
     const lists = {
       [this.inTrainingListId]:
-        this.globalState.playerDataAcessor.inTrainingDigimonList,
+        this.globalState.playerDataView().inTrainingDigimonList,
       [this.bitFarmingListId]:
-        this.globalState.playerDataAcessor.bitFarmDigimonList,
-      [this.teamListId]: this.globalState.playerDataAcessor.digimonList,
+        this.globalState.playerDataView().bitFarmDigimonList,
+      [this.teamListId]: this.globalState.playerDataView().digimonList,
       [this.hospitalListId]:
-        this.globalState.playerDataAcessor.hospitalDigimonList,
+        this.globalState.playerDataView().hospitalDigimonList,
     };
 
     const list = lists[containerId];

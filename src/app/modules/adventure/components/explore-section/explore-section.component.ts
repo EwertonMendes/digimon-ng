@@ -38,7 +38,7 @@ export class ExploreSectionComponent {
   showPlayerAttackButton = false;
 
   canExplore(location: Location): boolean {
-    const playerDigimons = this.globalState.playerDataAcessor.digimonList;
+    const playerDigimons = this.globalState.playerDataView().digimonList;
     return playerDigimons.some(d => d.level >= location.levelRange.min);
   }
 
@@ -68,7 +68,7 @@ export class ExploreSectionComponent {
   }
 
   private isPlayerTeamEmpty(): boolean {
-    const playerTeam = this.globalState.playerDataAcessor.digimonList;
+    const playerTeam = this.globalState.playerDataView().digimonList;
     return playerTeam.length === 0 || playerTeam.every((d) => d.currentHp <= 0);
   }
 

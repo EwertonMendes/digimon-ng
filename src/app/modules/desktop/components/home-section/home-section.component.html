@@ -4,7 +4,7 @@
       <span class="label">{{
         "MODULES.DESKTOP.COMPONENTS.HOME_SECTION.BITS" | transloco
       }}</span>
-      {{ globalState.playerDataAcessor.bits }}
+      {{ globalState.playerDataView().bits }}
     </span>
     <span class="section-title home-title">{{
       "MODULES.DESKTOP.COMPONENTS.HOME_SECTION.TITLE" | transloco
@@ -29,7 +29,7 @@
       <div class="battle-team-area-sub-title-container">
         <h4 class="battle-team-area-sub-title">
           {{ "MODULES.DESKTOP.COMPONENTS.HOME_SECTION.SUBTITLE" | transloco }}:
-          {{ globalState.playerDataAcessor.digimonList.length }}/{{
+          {{ globalState.playerDataView().digimonList.length }}/{{
             this.globalState.listsLimits.team
           }}
         </h4>
@@ -51,7 +51,7 @@
         #teamList="cdkDropList"
         cdkDropList
         [cdkDropListOrientation]="selectedLayout()"
-        [cdkDropListData]="globalState.playerDataAcessor"
+        [cdkDropListData]="globalState.playerDataView()"
         [cdkDropListConnectedTo]="[
           hospitalListId,
           inTrainingListId,
@@ -60,7 +60,7 @@
         (cdkDropListDropped)="drop($event)"
       >
         <div class="home-section-battle-team-container">
-          @for(digimon of globalState.playerDataAcessor.digimonList; track
+          @for(digimon of globalState.playerDataView().digimonList; track
           digimon.id){
           <app-digi-status-card
             cdkDrag
@@ -89,7 +89,7 @@
               "MODULES.DESKTOP.COMPONENTS.HOME_SECTION.HOSPITAL_TITLE"
                 | transloco
             }}
-            {{ globalState.playerDataAcessor.hospitalDigimonList.length }}/{{
+            {{ globalState.playerDataView().hospitalDigimonList.length }}/{{
               globalState.listsLimits.hospital
             }}
           </h4>
@@ -126,7 +126,7 @@
         #inTrainingList="cdkDropList"
         cdkDropList
         cdkDropListOrientation="horizontal"
-        [cdkDropListData]="globalState.playerDataAcessor"
+        [cdkDropListData]="globalState.playerDataView()"
         [cdkDropListConnectedTo]="[
           teamListId,
           bitFarmingListId,
@@ -135,7 +135,7 @@
         (cdkDropListDropped)="drop($event)"
       >
         <div class="hospital-digimon-list-container">
-          @for(digimon of globalState.playerDataAcessor.hospitalDigimonList;
+          @for(digimon of globalState.playerDataView().hospitalDigimonList;
           track digimon.id){
           <app-digi-status-card
             cdkDrag

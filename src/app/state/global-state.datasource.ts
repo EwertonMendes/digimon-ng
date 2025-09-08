@@ -97,17 +97,17 @@ export class GlobalStateDataSource {
     isPositive: boolean;
   }>();
 
-  get playerDataAcessor() {
-    return this.playerData();
+  get playerDataView() {
+    return this.playerData.asReadonly();
   }
 
   get totalDigimonCount() {
     return (
-      this.playerDataAcessor.digimonList.length +
-      this.playerDataAcessor.inTrainingDigimonList.length +
-      this.playerDataAcessor.bitFarmDigimonList.length +
-      this.playerDataAcessor.hospitalDigimonList.length +
-      this.playerDataAcessor.digimonStorageList.length
+      this.playerDataView().digimonList.length +
+      this.playerDataView().inTrainingDigimonList.length +
+      this.playerDataView().bitFarmDigimonList.length +
+      this.playerDataView().hospitalDigimonList.length +
+      this.playerDataView().digimonStorageList.length
     );
   }
 
@@ -121,11 +121,11 @@ export class GlobalStateDataSource {
 
   allPlayerDigimonList = computed(() =>
     [
-      this.playerDataAcessor.digimonList,
-      this.playerDataAcessor.inTrainingDigimonList,
-      this.playerDataAcessor.bitFarmDigimonList,
-      this.playerDataAcessor.hospitalDigimonList,
-      this.playerDataAcessor.digimonStorageList,
+      this.playerDataView().digimonList,
+      this.playerDataView().inTrainingDigimonList,
+      this.playerDataView().bitFarmDigimonList,
+      this.playerDataView().hospitalDigimonList,
+      this.playerDataView().digimonStorageList,
     ].flat()
   );
 
@@ -149,7 +149,7 @@ export class GlobalStateDataSource {
 
   getPlayerNeededExpForNextLevel() {
     return this.battleService.calculateRequiredExpForPlayerLevel(
-      this.playerDataAcessor.level
+      this.playerDataView().level
     );
   }
 
@@ -259,6 +259,14 @@ export class GlobalStateDataSource {
     this.updatePlayerData(updatedPlayerData);
   }
 
+  spendBits(bits: number) {
+    const updatedPlayerData = {
+      ...this.playerData(),
+      bits: this.playerData().bits - bits,
+    };
+    this.updatePlayerData(updatedPlayerData);
+  }
+
   addDigiData(seed: string, amount: number, obtained: boolean = false) {
     const digiData = { ...this.playerData().digiData };
     digiData[seed] = {
@@ -314,11 +322,11 @@ export class GlobalStateDataSource {
   }
 
   killAllDigimon() {
-    this.playerDataAcessor.digimonList.forEach(digimon => digimon.currentHp = 0);
-    this.playerDataAcessor.inTrainingDigimonList.forEach(digimon => digimon.currentHp = 0);
-    this.playerDataAcessor.bitFarmDigimonList.forEach(digimon => digimon.currentHp = 0);
-    this.playerDataAcessor.hospitalDigimonList.forEach(digimon => digimon.currentHp = 0);
-    this.playerDataAcessor.digimonStorageList.forEach(digimon => digimon.currentHp = 0);
+    this.playerDataView().digimonList.forEach(digimon => digimon.currentHp = 0);
+    this.playerDataView().inTrainingDigimonList.forEach(digimon => digimon.currentHp = 0);
+    this.playerDataView().bitFarmDigimonList.forEach(digimon => digimon.currentHp = 0);
+    this.playerDataView().hospitalDigimonList.forEach(digimon => digimon.currentHp = 0);
+    this.playerDataView().digimonStorageList.forEach(digimon => digimon.currentHp = 0);
   }
 
   deleteDigimon(digimonId: string): void {
@@ -575,7 +583,7 @@ export class GlobalStateDataSource {
       this.endBattle('victory');
       return;
     }
-    if (this.playerDataAcessor.digimonList.every((d) => d.currentHp <= 0)) {
+    if (this.playerDataView().digimonList.every((d) => d.currentHp <= 0)) {
       this.isBattleActive = false;
       this.showPlayerAttackButton.set(false);
       this.endBattle('defeat');
@@ -678,7 +686,7 @@ export class GlobalStateDataSource {
   }
 
   private getTargetBasedOnStrategy(): Digimon | null {
-    const playerTeam = this.playerDataAcessor.digimonList.filter(
+    const playerTeam = this.playerDataView().digimonList.filter(
       (d) => d.currentHp > 0
     );
     if (playerTeam.length === 0) return null;
@@ -703,7 +711,7 @@ export class GlobalStateDataSource {
   }
 
   private getTurnOrder() {
-    const playerTeam = this.playerDataAcessor.digimonList
+    const playerTeam = this.playerDataView().digimonList
       .filter((playerDigimon) => playerDigimon.currentHp > 0)
       .map((playerDigimon) => ({ ...playerDigimon, owner: 'player' }));
     const enemyTeam = this.enemyTeamAccessor

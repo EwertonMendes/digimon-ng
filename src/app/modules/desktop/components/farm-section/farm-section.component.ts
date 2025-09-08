@@ -1,19 +1,19 @@
 import {
-  ChangeDetectionStrategy,
-  Component,
-  effect,
-  inject,
-  signal,
+    ChangeDetectionStrategy,
+    Component,
+    effect,
+    inject,
+    signal,
 } from '@angular/core';
 import { DigiStatusCardComponent } from '@shared/components/digi-status-card/digi-status-card.component';
 import { GlobalStateDataSource } from '@state/global-state.datasource';
 import { Digimon } from '@core/interfaces/digimon.interface';
 import { DigimonFarmCardComponent } from './components/digimon-farm-card/digimon-farm-card.component';
 import {
-  CdkDragDrop,
-  DragDropModule,
-  DropListOrientation,
-  moveItemInArray,
+    CdkDragDrop,
+    DragDropModule,
+    DropListOrientation,
+    moveItemInArray,
 } from '@angular/cdk/drag-drop';
 import { DigimonListLocation } from '@core/enums/digimon-list-location.enum';
 import { PlayerData } from '@core/interfaces/player-data.interface';
@@ -124,13 +124,13 @@ export class FarmSectionComponent {
     const handlers = {
       [this.inTrainingListId]: () =>
         moveItemInArray(
-          this.globalState.playerDataAcessor.inTrainingDigimonList,
+          this.globalState.playerDataView().inTrainingDigimonList,
           previousIndex,
           currentIndex
         ),
       [this.bitFarmingListId]: () =>
         moveItemInArray(
-          this.globalState.playerDataAcessor.bitFarmDigimonList,
+          this.globalState.playerDataView().bitFarmDigimonList,
           previousIndex,
           currentIndex
         ),
@@ -158,16 +158,16 @@ export class FarmSectionComponent {
       [this.inTrainingListId]: () => {
         this.globalState.addDigimonToTraining(digimon, action),
           moveItemInArray(
-            this.globalState.playerDataAcessor.inTrainingDigimonList,
-            this.globalState.playerDataAcessor.inTrainingDigimonList.length - 1,
+            this.globalState.playerDataView().inTrainingDigimonList,
+            this.globalState.playerDataView().inTrainingDigimonList.length - 1,
             currentIndex
           );
       },
       [this.bitFarmingListId]: () => {
         this.globalState.addDigimonToFarm(digimon, action),
           moveItemInArray(
-            this.globalState.playerDataAcessor.bitFarmDigimonList,
-            this.globalState.playerDataAcessor.bitFarmDigimonList.length - 1,
+            this.globalState.playerDataView().bitFarmDigimonList,
+            this.globalState.playerDataView().bitFarmDigimonList.length - 1,
             currentIndex
           );
       },
@@ -185,12 +185,12 @@ export class FarmSectionComponent {
   ): Digimon {
     const lists = {
       [this.inTrainingListId]:
-        this.globalState.playerDataAcessor.inTrainingDigimonList,
+        this.globalState.playerDataView().inTrainingDigimonList,
       [this.bitFarmingListId]:
-        this.globalState.playerDataAcessor.bitFarmDigimonList,
-      [this.teamListId]: this.globalState.playerDataAcessor.digimonList,
+        this.globalState.playerDataView().bitFarmDigimonList,
+      [this.teamListId]: this.globalState.playerDataView().digimonList,
       [this.hospitalListId]:
-        this.globalState.playerDataAcessor.hospitalDigimonList,
+        this.globalState.playerDataView().hospitalDigimonList,
     };
 
     const list = lists[containerId];

@@ -56,7 +56,7 @@
               }}
             </h4>
             <div class="player-team">
-              @for(digimon of globalState.playerDataAcessor.digimonList; track
+              @for(digimon of globalState.playerDataView().digimonList; track
               digimon.id){
               <div class="digimon-container">
                 <span
@@ -87,7 +87,7 @@
                   ? ("SHARED.COMPONENTS.BATTLE_MODAL.PLAYER_TURN"
                     | transloco
                       : {
-                          playerName: globalState.playerDataAcessor.name
+                          playerName: globalState.playerDataView().name
                         })
                   : ("SHARED.COMPONENTS.BATTLE_MODAL.ENEMY_TURN" | transloco)
               }}</span

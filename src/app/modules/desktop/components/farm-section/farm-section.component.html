@@ -37,7 +37,7 @@
             "MODULES.DESKTOP.COMPONENTS.FARM_SECTION.IN_TRAINING_HEADER"
               | transloco
           }}:
-          {{ globalState.playerDataAcessor.inTrainingDigimonList.length }}/{{
+          {{ globalState.playerDataView().inTrainingDigimonList.length }}/{{
             this.globalState.listsLimits.inTraining
           }}
         </h4>
@@ -54,12 +54,12 @@
         #inTrainingList="cdkDropList"
         cdkDropList
         [cdkDropListOrientation]="selectedLayout()"
-        [cdkDropListData]="globalState.playerDataAcessor"
+        [cdkDropListData]="globalState.playerDataView()"
         [cdkDropListConnectedTo]="[bitFarmingList, teamListId, hospitalListId]"
         (cdkDropListDropped)="drop($event)"
       >
         <div class="in-training-digimon-list-container">
-          @for(digimon of globalState.playerDataAcessor.inTrainingDigimonList;
+          @for(digimon of globalState.playerDataView().inTrainingDigimonList;
           track digimon.id){
           <app-digi-status-card
             cdkDrag
@@ -86,7 +86,7 @@
           {{
             "MODULES.DESKTOP.COMPONENTS.FARM_SECTION.BIT_FARM_HEADER"
               | transloco
-          }}: {{ globalState.playerDataAcessor.bitFarmDigimonList.length }}/{{
+          }}: {{ globalState.playerDataView().bitFarmDigimonList.length }}/{{
             this.globalState.listsLimits.bitFarm
           }}
         </h4>
@@ -104,12 +104,12 @@
         #bitFarmingList="cdkDropList"
         cdkDropList
         [cdkDropListOrientation]="selectedLayout()"
-        [cdkDropListData]="globalState.playerDataAcessor"
+        [cdkDropListData]="globalState.playerDataView()"
         [cdkDropListConnectedTo]="[inTrainingList, teamListId, hospitalListId]"
         (cdkDropListDropped)="drop($event)"
       >
         <div class="bit-farming-digimon-list-container">
-          @for(digimon of globalState.playerDataAcessor.bitFarmDigimonList;
+          @for(digimon of globalState.playerDataView().bitFarmDigimonList;
           track digimon.id){
           <app-digimon-farm-card
             cdkDrag

@@ -17,7 +17,7 @@
         Bits:
       </span>
       <span class="lab__title-bits-amount">{{
-        globalState.playerDataAcessor.bits | number : "1.0-0"
+        globalState.playerDataView().bits | number : "1.0-0"
       }}</span>
     </div>
   </div>
@@ -77,7 +77,7 @@
             color="secondary"
             [disabled]="
               digimon.amount < 100 ||
-              globalState.playerDataAcessor.bits < digimon.cost
+              globalState.playerDataView().bits < digimon.cost
             "
             (onClick)="convertDigiData(digimon)"
           />

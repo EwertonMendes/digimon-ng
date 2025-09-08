@@ -6,6 +6,9 @@ Get the latest installer from [Releases](https://github.com/EwertonMendes/digimo
 
 Welcome to **Digimon NG**, an exciting Angular-based game where you become a Digimon Tamer! Collect, train, battle, and evolve your Digimon in a digital world full of adventure. While there's no overarching story yet, the core fun lies in building the ultimate collection of Digimon—aim to catch 'em all by exploring, battling, and converting data into new partners. This manual will guide you through starting out, navigating the game, mastering mechanics, and using handy controls. Let's dive in!
 
+<img width="1920" height="1080" alt="splashscreen" src="https://github.com/user-attachments/assets/14e04117-6388-41b3-b2f2-f9432c9ba341" />
+
+
 ## Table of Contents
 
 - [Getting Started](#getting-started)

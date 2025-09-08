@@ -114,6 +114,13 @@
       "FOUND_DIGIMONS": "Digimons Encontrados",
       "OBTAINED_DIGIMONS": "Digimons Obtidos",
       "OBTAINED": "Obtido",
+      "SORT_BY": "Ordenar por",
+      "SORT_ALPHA": "Ordem Alfabética",
+      "SORT_RANK": "Rank",
+      "SORT_AMOUNT": "Quantidade de Digi-Dados",
+      "CHANGE_ORDER": "Alterar ordem",
+      "FILTER_RANK": "Filtrar por Rank",
+      "RESET_FILTERS": "Resetar Filtros",
       "TOAST": {
         "CONVERSION_SUCCESS": "Você converteu com sucesso os Digi-Dados em {{digimon}}"
       }

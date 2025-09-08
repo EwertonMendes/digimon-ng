@@ -21,8 +21,41 @@
       }}</span>
     </div>
   </div>
+  <div class="lab__filters">
+    <div class="lab__filters-group lab__filters-sort">
+      <label>{{ "MODULES.LAB.SORT_BY" | transloco }}</label>
+      <app-select
+        [options]="sortOptions()"
+        [(ngModel)]="sortByValue"
+      ></app-select>
+      <app-button
+        [text]="'MODULES.LAB.CHANGE_ORDER' | transloco"
+        (click)="sortDirection.set(sortDirection() === 'asc' ? 'desc' : 'asc')"
+      >
+      </app-button>
+    </div>
+
+    <div class="lab__filters-group lab__filters-ranks">
+      <label>{{ "MODULES.LAB.FILTER_RANK" | transloco }}</label>
+      <div class="lab__filters-ranks-list">
+        <form [formGroup]="rankForm()">
+          @for (rank of uniqueRanks(); track rank) {
+          <app-checkbox [label]="rank" formControlName="{{ rank }}">
+          </app-checkbox>
+          }
+        </form>
+      </div>
+    </div>
+
+    <app-button
+      [text]="'MODULES.LAB.RESET_FILTERS' | transloco"
+      class="lab__filters-reset"
+      (click)="resetFilters()"
+    >
+    </app-button>
+  </div>
   <div class="lab__content">
-    @for (digimon of labDigimons(); track $index) {
+    @for (digimon of filteredDigimons(); track $index) {
     <div class="lab__content-card">
       <div class="lab__content-card-body">
         @if (digimon.obtained) {

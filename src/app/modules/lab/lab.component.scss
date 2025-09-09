@@ -123,9 +123,10 @@
       backdrop-filter: blur(3px);
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
       border: 1px solid var(--gray-100-transparent);
-      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background 0.2s ease-in-out;
 
       &:hover {
+        background: var(--primary-dark-transparent);
         transform: translateY(-4px) scale(1.03);
         box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
       }

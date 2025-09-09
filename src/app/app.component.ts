@@ -26,6 +26,11 @@ export class AppComponent implements OnInit, OnDestroy {
   private shortcutService = inject(ShortcutService);
 
   async ngOnInit() {
+
+    document.addEventListener('contextmenu', (event) => {
+      event.preventDefault();
+    });
+
     if (window.location.pathname === '/splashscreen') {
       this.globalState.showInitialSetupScreen.set(false);
       return;

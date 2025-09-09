@@ -1,5 +1,4 @@
 import {
-  ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
   computed,
@@ -32,7 +31,6 @@ import { DeletionConfirmationModalComponent } from '@shared/deletion-confirmatio
   imports: [CommonModule],
   templateUrl: './digi-status-card.component.html',
   styleUrls: ['./digi-status-card.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('damage', [
       state('normal', style({ transform: 'translateX(0)' })),

@@ -905,6 +905,7 @@ export class GlobalStateDataSource {
       handler(digimonId);
     }
   }
+
   intervalConfigurations: Record<string, any> = {
     digimonTraining: {
       intervalDurationInSeconds:

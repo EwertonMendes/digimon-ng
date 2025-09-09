@@ -121,6 +121,7 @@
       "SORT_AMOUNT": "Cantidad de Digi-Datos",
       "CHANGE_ORDER": "Cambiar orden",
       "FILTER_RANK": "Filtrar por Rango",
+      "FILTER_OBTAINED": "Filtrar por Obtenidos",
       "RESET_FILTERS": "Restablecer Filtros",
       "TOAST": {
         "CONVERSION_SUCCESS": "Has convertido con éxito los Digi-Datos en {{digimon}}"

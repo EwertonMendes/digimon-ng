@@ -26,7 +26,7 @@
       <label>{{ "MODULES.LAB.SORT_BY" | transloco }}</label>
       <app-select
         [options]="sortOptions()"
-        [(ngModel)]="sortByValue"
+        [(ngModel)]="sortBy"
       ></app-select>
       <app-button
         [text]="'MODULES.LAB.CHANGE_ORDER' | transloco"
@@ -47,12 +47,20 @@
       </div>
     </div>
 
-    <app-button
-      [text]="'MODULES.LAB.RESET_FILTERS' | transloco"
-      class="lab__filters-reset"
-      (click)="resetFilters()"
-    >
-    </app-button>
+    <div class="lab__filters-group lab__filters-others">
+      <app-checkbox
+        [label]="'MODULES.LAB.FILTER_OBTAINED' | transloco"
+        [(ngModel)]="filterObtained"
+      >
+      </app-checkbox>
+
+      <app-button
+        [text]="'MODULES.LAB.RESET_FILTERS' | transloco"
+        class="lab__filters-reset"
+        (click)="resetFilters()"
+      >
+      </app-button>
+    </div>
   </div>
   <div class="lab__content">
     @for (digimon of filteredDigimons(); track $index) {

@@ -290,12 +290,17 @@
       }
     }
 
-    &-reset {
+    &-others {
       grid-area: reset;
-      align-self: end;
+      height: -webkit-fill-available;
+      justify-content: end;
+      gap: 0.5rem;
 
-      @media (max-width: 768px) {
-        align-self: center;
+      app-checkbox {
+        padding: 10px;
+        background: var(--secondary-dark-transparent);
+        border-radius: 10px;
+        width: fit-content;
       }
     }
   }

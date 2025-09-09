@@ -1,4 +1,4 @@
-import { Component, computed, effect, inject, signal } from '@angular/core';
+import { Component, computed, effect, inject, model, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -29,7 +29,8 @@ export class LabComponent {
   protected labDigimons = signal<LabDigimon[]>([]);
   protected obtainedDigimonsAmount = computed(() => this.labDigimons().filter(d => d.obtained).length);
 
-  protected sortBy = signal<SortKey>('name');
+  protected sortBy = model<SortKey>('name');
+  protected filterObtained = model<boolean>(false);
   protected sortDirection = signal<SortDirection>('asc');
   protected selectedRanks = signal<string[]>([]);
   protected uniqueRanks = computed(() => {
@@ -40,14 +41,6 @@ export class LabComponent {
   protected rankForm = signal<FormGroup>(new FormGroup({}));
   protected sortOptions = signal<{ label: string; value: SortKey }[]>([]);
 
-  get sortByValue(): SortKey {
-    return this.sortBy();
-  }
-
-  set sortByValue(value: SortKey) {
-    this.sortBy.set(value);
-  }
-
   protected filteredDigimons = computed(() => {
     let digimons = [...this.labDigimons()];
 
@@ -55,7 +48,12 @@ export class LabComponent {
       digimons = digimons.filter(d => this.selectedRanks().includes(d.rank));
     }
 
+    if (this.filterObtained()) {
+      digimons = digimons.filter(d => d.obtained);
+    }
+
     const directionMultiplier = this.sortDirection() === 'asc' ? 1 : -1;
+
     digimons.sort((a, b) => {
       let compareA: string | number;
       let compareB: string | number;
@@ -164,6 +162,7 @@ export class LabComponent {
 
   resetFilters(): void {
     this.sortBy.set('name');
+    this.filterObtained.set(false);
     this.sortDirection.set('asc');
     this.selectedRanks.set([]);
 

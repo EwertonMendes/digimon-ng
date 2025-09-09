@@ -294,6 +294,10 @@
     &-reset {
       grid-area: reset;
       align-self: end;
+
+      @media (max-width: 768px) {
+        align-self: center;
+      }
     }
   }
 }

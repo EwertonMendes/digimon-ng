@@ -1,4 +1,4 @@
-import { Component, inject, OnDestroy, OnInit } from '@angular/core';
+import { Component, inject, isDevMode, OnDestroy, OnInit } from '@angular/core';
 import { GlobalStateDataSource } from './state/global-state.datasource';
 import { ToastComponent } from './shared/components/toast/toast.component';
 import { InitialSetupComponent } from './modules/initial-setup/initial-setup.component';
@@ -27,9 +27,11 @@ export class AppComponent implements OnInit, OnDestroy {
 
   async ngOnInit() {
 
-    document.addEventListener('contextmenu', (event) => {
-      event.preventDefault();
-    });
+    if (!isDevMode()) {
+      document.addEventListener('contextmenu', (event) => {
+        event.preventDefault();
+      });
+    }
 
     if (window.location.pathname === '/splashscreen') {
       this.globalState.showInitialSetupScreen.set(false);

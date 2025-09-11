@@ -19,6 +19,7 @@ export interface Digimon {
   totalExp: number;
   level: number;
   bitFarmingRate?: number;
+  fatigue?: number;
   digiEvolutionSeedList: string[];
   degenerateSeedList: string[];
   currentEvolutionRoute?: Array<{ seed: string; rank: string }>;

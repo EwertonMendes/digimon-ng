@@ -40,7 +40,7 @@ import { getDefaultPotential } from '@core/utils/digimon.utils';
     FormsModule,
     IconComponent,
     TooltipDirective
-],
+  ],
 })
 export class DigimonDetailsModalComponent {
   protected digimonDetailsModalId = signal('digimon-details-modal');
@@ -77,7 +77,6 @@ export class DigimonDetailsModalComponent {
   constructor() {
     effect(
       () => {
-        this.globalState.selectedDigimonOnDetails();
         const evolutionList = this.globalState.getDigimonCurrentEvolutionRoute(
           this.globalState.selectedDigimonOnDetails()!
         );
@@ -174,5 +173,9 @@ export class DigimonDetailsModalComponent {
     this.globalState.getDigimonById(this.globalState.selectedDigimonOnDetails()!.id!)!.nickName = this.digimonNickname().trim();
 
     this.globalState.selectedDigimonOnDetails.update(d => ({ ...d, nickname: this.digimonNickname().trim() } as Digimon));
+  }
+
+  onCloseModal() {
+    this.globalState.selectedDigimonOnDetails.set(undefined);
   }
 }

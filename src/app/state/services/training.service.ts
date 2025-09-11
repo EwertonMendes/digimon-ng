@@ -9,7 +9,7 @@ import { applyCaps } from '@core/utils/digimon.utils';
   providedIn: 'root',
 })
 export class TrainingService {
-  modifiableAttributes = ['maxHp', 'maxMp', 'atk', 'def'];
+  modifiableAttributes = ['maxHp', 'maxMp', 'atk', 'def', 'speed'];
   oneMinuteInterval = 60000;
   toastService = inject(ToastService);
   translocoService = inject(TranslocoService);
@@ -17,14 +17,17 @@ export class TrainingService {
   trainDigimons(playerData: PlayerData) {
     playerData.inTrainingDigimonList.forEach((digimon: Digimon) => {
       if (digimon.currentHp <= 0) return;
-      const randomAttributeIndex = Math.floor(Math.random() * this.modifiableAttributes.length);
-      const attr = this.modifiableAttributes[randomAttributeIndex];
-      let gain = Math.floor(Math.random() * 3);
-      if (attr === 'maxHp' || attr === 'maxMp') gain += 2;
 
-      (digimon as any)[attr] += gain;
+      let gain = Math.floor(Math.random() * 3) + 1;
 
-      applyCaps(digimon.rank, digimon);
+      this.modifiableAttributes.forEach((attr) => {
+
+        if (attr === 'maxHp' || attr === 'maxMp') gain += 2;
+
+        (digimon as any)[attr] += gain;
+
+        applyCaps(digimon.rank, digimon);
+      });
     });
 
     return playerData;

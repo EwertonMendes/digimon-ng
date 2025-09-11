@@ -888,7 +888,7 @@ export class GlobalStateDataSource {
   }
 
   private updateSelectedDigimonDetails(evolvedDigimon: Digimon): void {
-    this.selectedDigimonOnDetails.set({ ...evolvedDigimon });
+    this.selectedDigimonOnDetails.set(evolvedDigimon);
   }
 
   private updatePlayerData(playerData?: PlayerData) {
@@ -918,6 +918,11 @@ export class GlobalStateDataSource {
           this.playerData()
         );
         this.updatePlayerData(updatedPlayerData);
+
+        if(!this.selectedDigimonOnDetails()) return;
+
+        const trainingDigimonSelectedOnDetails = updatedPlayerData.inTrainingDigimonList.find(d => d.id === this.selectedDigimonOnDetails()?.id);
+        if (trainingDigimonSelectedOnDetails) this.selectedDigimonOnDetails.set({ ...trainingDigimonSelectedOnDetails });
       },
     },
     bitFarmingGeneration: {
@@ -945,6 +950,11 @@ export class GlobalStateDataSource {
           this.playerData()
         );
         this.updatePlayerData(updatedPlayerData);
+
+        if(!this.selectedDigimonOnDetails()) return;
+
+        const hospitalDigimonSelectedOnDetails = updatedPlayerData.hospitalDigimonList.find(d => d.id === this.selectedDigimonOnDetails()?.id);
+        if (hospitalDigimonSelectedOnDetails) this.selectedDigimonOnDetails.set({ ...hospitalDigimonSelectedOnDetails });
       },
     },
   };

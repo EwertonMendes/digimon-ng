@@ -1,4 +1,4 @@
-<app-modal [id]="digimonDetailsModalId()">
+<app-modal [id]="digimonDetailsModalId()" (closeEvent)="onCloseModal()">
   <div class="digimon-details-container">
     <h3 class="section-title">
       {{ "SHARED.COMPONENTS.DIGIMON_DETAILS_MODAL.TITLE" | transloco }}

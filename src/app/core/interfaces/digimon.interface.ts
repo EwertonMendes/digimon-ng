@@ -42,6 +42,5 @@ export interface BaseDigimon {
   digiEvolutionSeedList: string[];
   degenerateSeedList: string[];
   evolutionRequirements?: Array<{ type: string; value: any }>;
-  potential?: number;
   [key: string]: any;
 }

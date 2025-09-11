@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { BaseDigimon, Digimon } from '@core/interfaces/digimon.interface';
 import { v4 as uuidv4 } from 'uuid';
-import { applyCaps, calculateGains, getDefaultPotential } from '@core/utils/digimon.utils';
+import { applyCaps, calculateGains } from '@core/utils/digimon.utils';
 
 @Injectable({
   providedIn: 'root',
@@ -117,10 +117,10 @@ export class DigimonService {
       totalExp: 0,
       level,
       bitFarmingRate: stats.bitFarmingRate,
+      fatigue: 0,
       digiEvolutionSeedList: baseDigimon.digiEvolutionSeedList,
       degenerateSeedList: baseDigimon.degenerateSeedList,
       currentEvolutionRoute: [],
-      potential: baseDigimon.potential ?? getDefaultPotential(baseDigimon.rank),
     };
   }
 

@@ -41,6 +41,10 @@ export class HospitalService {
         const mpHealAmount = this.calculateHealAmount(mpHealRate, healVariance, minHeal);
         digimon.currentMp = Math.min(digimon.currentMp + mpHealAmount, digimon.maxMp);
       }
+
+      if (digimon.fatigue && digimon.fatigue > 0) {
+        digimon.fatigue = Math.max(0, digimon.fatigue - 10);
+      }
     });
 
     return playerData;
@@ -50,6 +54,7 @@ export class HospitalService {
     playerData.hospitalDigimonList.forEach((digimon: Digimon) => {
       digimon.currentHp = digimon.maxHp;
       digimon.currentMp = digimon.maxMp;
+      digimon.fatigue = 0;
     });
 
     return playerData;

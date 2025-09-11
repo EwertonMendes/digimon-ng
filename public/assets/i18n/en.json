@@ -213,6 +213,7 @@
         "ATK": "ATK:",
         "DEF": "DEF:",
         "SPD": "SPD:",
+        "FATIGUE": "Fatigue:",
         "BIT_GENERATION": "Bit Generation:",
         "CURRENT_EVOLUTION_ROUTE": "Current Evolution Route:",
         "EVOLUTION_TREE_BUTTON": "Evolution Tree",

@@ -50,6 +50,7 @@ export class DebugModalComponent {
     const digimon = this.globalState.generateRandomDigimon();
     this.globalState.addDigiData(digimon.seed, 10, true);
     this.globalState.addDigimonToStorage(digimon);
+    this.globalState.trackDigimonForList(digimon);
     this.toastService.showToast(
       this.translocoService.translate('SHARED.COMPONENTS.DEBUG_MODAL.ADDED_TO_STORAGE', { name: digimon.name }),
       'success'

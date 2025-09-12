@@ -37,6 +37,7 @@
   --text-on-danger: #FFFFFF;
 
   --success: #27AE60;
+  --success-light: #{color.adjust(#27AE60, $lightness: 5%)};
   --success-hover: #{color.adjust(#27AE60, $lightness: 5%)};
   --success-glow: rgba(39, 174, 96, 0.5);
   --success-dark: #{color.adjust(#27AE60, $lightness: -5%)};

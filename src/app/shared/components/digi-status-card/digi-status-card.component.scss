@@ -90,21 +90,39 @@
 }
 
 .modifications {
-  position: relative;
+  position: absolute;
+  right: -20px;
+  pointer-events: none;
   color: white;
   overflow: visible;
 
   &-item {
     position: absolute;
-    right: 1px;
+    top: 0;
+    right: 0;
+    display: inline-block;
+    pointer-events: none;
+    contain: none;
+    isolation: isolate;
+    white-space: nowrap;
+    min-width: fit-content;
+    transform: translateZ(0);
   }
 
   .damage {
-    color: var(--danger);
+    background-color: var(--danger-light);
+    color: var(--text-on-danger);
+    border-radius: 5px;
+    padding: 5px;
+    white-space: nowrap;
   }
 
   .healing {
-    color: var(--success);
+    background-color: var(--success-light);
+    color: var(--text-on-success);
+    border-radius: 5px;
+    padding: 5px;
+    white-space: nowrap;
   }
 }
 
@@ -144,6 +162,10 @@
       flex-direction: row;
       justify-content: space-between;
       font-size: 10px;
+    }
+
+    .modifications {
+      right: -5px;
     }
   }
 }

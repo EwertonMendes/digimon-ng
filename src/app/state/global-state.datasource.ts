@@ -202,7 +202,7 @@ export class GlobalStateDataSource {
     this.playerDataService.currentPlayerId = playerData.id;
     this.loadConfigs(newGame);
     this.allPlayerDigimonList().forEach((digimon) => {
-      this.trackDigimon(digimon);
+      this.trackDigimonForList(digimon);
     });
     this.initDigimonTraining();
     this.initBitFarmingGeneration();
@@ -334,6 +334,7 @@ export class GlobalStateDataSource {
   }
 
   deleteDigimon(digimonId: string): void {
+    this.untrackDigimonForList(digimonId);
     this.playerData.update((currentData) => {
       const updatedData = { ...currentData };
 
@@ -573,6 +574,7 @@ export class GlobalStateDataSource {
       );
     }
     this.log(this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.BATTLE_ENDED_LOG'));
+    this.enemyTeam().forEach(digimon => this.untrackDigimonForList(digimon.id!, false));
   }
 
   nextTurn() {
@@ -828,13 +830,22 @@ export class GlobalStateDataSource {
   }
 
   private handleHpChange(digimon: Digimon, newHp: number) {
-    const previousHp = digimon.currentHp;
+    let previousHp = digimon.currentHp;
+    let clampedNewHp = Math.max(0, newHp);
+    let difference = clampedNewHp - previousHp;
+    let isPositive = difference > 0;
+
+    if (clampedNewHp <= 0) {
+      isPositive = false;
+      difference = -(previousHp - clampedNewHp);
+    }
+
     this.digimonHpChanges$.next({
       digimonId: digimon.id!,
       previousHp,
-      currentHp: newHp,
-      difference: Math.abs(previousHp - newHp),
-      isPositive: previousHp < newHp,
+      currentHp: clampedNewHp,
+      difference: Math.abs(difference),
+      isPositive,
     });
   }
 
@@ -862,11 +873,42 @@ export class GlobalStateDataSource {
     }
   }
 
-  private trackDigimon(digimon: Digimon) {
+  trackDigimonForList(digimon: Digimon, isPlayerDigimon: boolean = true): Digimon {
     const proxy = this.createDigimonProxy(digimon);
+
+    if (!isPlayerDigimon) {
+      const enemyIndex = this.enemyTeamAccessor.findIndex(d => d.id === digimon.id);
+      if (enemyIndex !== -1) {
+        this.enemyTeamAccessor[enemyIndex] = proxy;
+        return proxy;
+      }
+      this.enemyTeamAccessor.push(proxy);
+      return proxy;
+    }
+
     const found = this.findDigimonInLists(digimon.id!);
     if (found) {
       this.updatePlayerDataList(found.listName, proxy);
+    }
+
+    return proxy;
+  }
+
+  untrackDigimonForList(digimonId: string, isPlayerDigimon: boolean = true): void {
+    if (!isPlayerDigimon) {
+      const enemyIndex = this.enemyTeamAccessor.findIndex(d => d.id === digimonId);
+      if (enemyIndex !== -1) {
+        const original = { ...this.enemyTeamAccessor[enemyIndex] };
+        this.enemyTeamAccessor[enemyIndex] = original;
+        return;
+      }
+      return;
+    }
+
+    const found = this.findDigimonInLists(digimonId);
+    if (found) {
+      const original = { ...found.digimon };
+      this.updatePlayerDataList(found.listName, original);
     }
   }
 

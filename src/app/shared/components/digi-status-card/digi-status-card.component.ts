@@ -20,7 +20,6 @@ import {
   keyframes,
 } from '@angular/animations';
 import { GlobalStateDataSource } from '@state/global-state.datasource';
-import { pairwise, startWith } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ModalService } from '../modal/modal.service';
 import { DeletionConfirmationModalComponent } from '@shared/deletion-confirmation-modal/deletion-confirmation-modal.component';
@@ -44,10 +43,10 @@ import { IconComponent } from "../icon/icon.component";
     trigger('fadeUp', [
       transition(':enter', [
         animate(
-          '3s',
+          '4s ease-out',
           keyframes([
             style({ opacity: 1, transform: 'translateY(0)', offset: 0 }),
-            style({ opacity: 0, transform: 'translateY(-50px)', offset: 1 }),
+            style({ opacity: 0, transform: 'translateY(-60px)', offset: 1 }),
           ])
         ),
       ]),
@@ -109,21 +108,23 @@ export class DigiStatusCardComponent {
       }
     });
 
+
     this.globalState.digimonHpChanges$
-      .pipe(takeUntilDestroyed(this.destroyRef), startWith(null), pairwise())
-      .subscribe(([prev, current]) => {
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe((current) => {
         this.change.markForCheck();
-        if (current?.digimonId !== this.digimon().id || !prev || !current)
-          return;
+        if (current?.digimonId !== this.digimon().id) return;
+
         if (this.showHpChange()) {
           this.showHpChange.set(false);
         }
+
         setTimeout(() => {
           this.showHpChange.set(true);
+          const changeType = current.isPositive ? 'healing' : 'damage';
           this.hpChange.set({
-            hpChangeValue: current?.difference ?? 0,
-            changeType:
-              current.currentHp >= prev.currentHp ? 'healing' : 'damage',
+            hpChangeValue: current.difference,
+            changeType,
           });
         }, 100);
       });

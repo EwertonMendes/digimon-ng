@@ -85,7 +85,7 @@ export class ExploreSectionComponent {
           location.levelRange.min
         );
         const opponentDigimon = this.globalState.generateRandomDigimon(randomLevel);
-        this.globalState.enemyTeamAccessor.push(opponentDigimon);
+        this.globalState.trackDigimonForList(opponentDigimon, false);
         this.log(this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.ENEMY_FOUND', { name: opponentDigimon.name }));
       }
       return;
@@ -121,7 +121,7 @@ export class ExploreSectionComponent {
         randomLevel
       );
       if (!opponentDigimon) continue;
-      this.globalState.enemyTeamAccessor.push(opponentDigimon);
+      this.globalState.trackDigimonForList(opponentDigimon, false);
       this.log(this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.ENEMY_FOUND', { name: opponentDigimon.name }));
     }
   }

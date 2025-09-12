@@ -18,23 +18,23 @@
     align-items: center;
   }
 
-    .home-section-header> :first-child {
-      grid-column: 1;
-      justify-self: start;
-    }
+  .home-section-header> :first-child {
+    grid-column: 1;
+    justify-self: start;
+  }
 
-    .home-section-header> :nth-child(2) {
-      grid-column: 2;
-      justify-self: center;
-      align-self: center;
-      padding-right: 5px;
-    }
+  .home-section-header> :nth-child(2) {
+    grid-column: 2;
+    justify-self: center;
+    align-self: center;
+    padding-right: 5px;
+  }
 
-    .home-section-header> :last-child {
-      grid-column: 3;
-      align-self: center;
-      justify-self: end;
-    }
+  .home-section-header> :last-child {
+    grid-column: 3;
+    align-self: center;
+    justify-self: end;
+  }
 }
 
 .home-section-horizontal {
@@ -52,7 +52,7 @@
   height: -webkit-fill-available;
   justify-content: center;
   gap: 15px;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .section-title {
@@ -73,15 +73,18 @@
   height: 315px;
   width: -webkit-fill-available;
   height: -webkit-fill-available;
+  overflow: visible;
 
   .my-digimon-list {
     display: flex;
-    overflow: auto;
+    overflow-x: auto;
+    overflow-y: visible;
     gap: 10px;
     padding: 10px;
     flex-direction: row-reverse;
     height: -webkit-fill-available;
     box-sizing: border-box;
+    align-items: flex-start;
 
     &.cdk-drop-list-dragging {
       .my-digimon-list-no-data-container {
@@ -96,6 +99,8 @@
       width: -webkit-fill-available;
       height: -webkit-fill-available;
       overflow-x: auto;
+      overflow-y: visible;
+      align-items: flex-start;
     }
 
     .my-digimon-list-no-data-container {
@@ -117,6 +122,7 @@
     width: 100%;
     padding: 10px;
     height: -webkit-fill-available;
+    overflow: visible;
   }
 
   .hospital-area-header {
@@ -134,12 +140,14 @@
 
   .hospital-digimon-list {
     display: flex;
-    overflow: auto;
+    overflow-x: auto;
+    overflow-y: visible;
     gap: 10px;
     padding: 10px;
     flex-direction: row-reverse;
     height: -webkit-fill-available;
     box-sizing: border-box;
+    align-items: flex-start;
 
     &.cdk-drop-list-dragging {
       .hospital-digimon-list-no-data-container {
@@ -154,6 +162,8 @@
       width: -webkit-fill-available;
       height: -webkit-fill-available;
       overflow-x: auto;
+      overflow-y: visible;
+      align-items: flex-start;
     }
 
     .hospital-digimon-list-no-data-container {
@@ -178,7 +188,7 @@
 
   .my-digimon-list {
     display: flex;
-    overflow: auto;
+    overflow: visible;
     justify-content: center;
     padding: 10px;
     height: -webkit-fill-available;
@@ -194,6 +204,7 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
+      overflow: visible;
     }
 
     .my-digimon-list-no-data-container {
@@ -233,7 +244,8 @@
 
   .hospital-digimon-list {
     display: flex;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: visible;
     gap: 10px;
     padding: 10px;
     flex-direction: row-reverse;
@@ -253,7 +265,7 @@
       gap: 10px;
       width: -webkit-fill-available;
       height: -webkit-fill-available;
-      overflow-x: auto;
+      overflow: visible;
     }
 
     .hospital-digimon-list-no-data-container {

@@ -119,7 +119,7 @@ export class GiveSelectedDigimonModalComponent implements OnInit {
     this.globalState.addDigiData(digimon.seed, 10, true);
 
     this.globalState.addDigimonToStorage(newDigimon);
-
+    this.globalState.trackDigimonForList(newDigimon);
     this.toastService.showToast(
       this.translocoService.translate('SHARED.COMPONENTS.DEBUG_MODAL.ADDED_TO_STORAGE_LEVEL', {
         name: digimon.name,

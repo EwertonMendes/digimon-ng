@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
 import { EvolutionRouteComponent } from '../evolution-route/evolution-route.component';
 import { ButtonComponent } from '../button/button.component';
 import { EvolutionTreeModalComponent } from '../evolution-tree-modal/evolution-tree-modal.component';
-import { BaseDigimon, Digimon } from '@core/interfaces/digimon.interface';
+import { BaseDigimon } from '@core/interfaces/digimon.interface';
 import { AudioEffects } from '@core/enums/audio-tracks.enum';
 import { AudioService } from '@services/audio.service';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
@@ -170,9 +170,7 @@ export class DigimonDetailsModalComponent {
 
     if (!this.digimonNickname() || !this.globalState.selectedDigimonOnDetails() || this.digimonNickname() === this.globalState.selectedDigimonOnDetails()?.nickName) return;
 
-    this.globalState.getDigimonById(this.globalState.selectedDigimonOnDetails()!.id!)!.nickName = this.digimonNickname().trim();
-
-    this.globalState.selectedDigimonOnDetails.update(d => ({ ...d, nickname: this.digimonNickname().trim() } as Digimon));
+    this.globalState.changeDigimonName(this.digimonNickname());
   }
 
   onCloseModal() {

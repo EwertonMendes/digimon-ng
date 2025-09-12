@@ -168,6 +168,10 @@ export class GlobalStateDataSource {
     return undefined;
   }
 
+  changeDigimonName(newName: string) {
+    this.getDigimonById(this.selectedDigimonOnDetails()?.id!)!.nickName = newName.trim();
+  }
+
   getBitCost(rank: string): number {
     const costMap: Record<string, number> = {
       "Fresh": 100,
@@ -919,7 +923,7 @@ export class GlobalStateDataSource {
         );
         this.updatePlayerData(updatedPlayerData);
 
-        if(!this.selectedDigimonOnDetails()) return;
+        if (!this.selectedDigimonOnDetails()) return;
 
         const trainingDigimonSelectedOnDetails = updatedPlayerData.inTrainingDigimonList.find(d => d.id === this.selectedDigimonOnDetails()?.id);
         if (trainingDigimonSelectedOnDetails) this.selectedDigimonOnDetails.set({ ...trainingDigimonSelectedOnDetails });
@@ -951,7 +955,7 @@ export class GlobalStateDataSource {
         );
         this.updatePlayerData(updatedPlayerData);
 
-        if(!this.selectedDigimonOnDetails()) return;
+        if (!this.selectedDigimonOnDetails()) return;
 
         const hospitalDigimonSelectedOnDetails = updatedPlayerData.hospitalDigimonList.find(d => d.id === this.selectedDigimonOnDetails()?.id);
         if (hospitalDigimonSelectedOnDetails) this.selectedDigimonOnDetails.set({ ...hospitalDigimonSelectedOnDetails });

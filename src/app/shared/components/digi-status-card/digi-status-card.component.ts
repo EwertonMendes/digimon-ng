@@ -24,11 +24,12 @@ import { pairwise, startWith } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ModalService } from '../modal/modal.service';
 import { DeletionConfirmationModalComponent } from '@shared/deletion-confirmation-modal/deletion-confirmation-modal.component';
+import { IconComponent } from "../icon/icon.component";
 
 @Component({
   selector: 'app-digi-status-card',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, IconComponent],
   templateUrl: './digi-status-card.component.html',
   styleUrls: ['./digi-status-card.component.scss'],
   animations: [

@@ -5,11 +5,12 @@ import { CommonModule } from '@angular/common';
 import { ModalService } from '@shared/components/modal/modal.service';
 import { DeletionConfirmationModalComponent } from '@shared/deletion-confirmation-modal/deletion-confirmation-modal.component';
 import { GlobalStateDataSource } from '@state/global-state.datasource';
+import { IconComponent } from "@shared/components/icon/icon.component";
 
 @Component({
   selector: 'app-digimon-farm-card',
   standalone: true,
-  imports: [TranslocoModule, CommonModule],
+  imports: [TranslocoModule, CommonModule, IconComponent],
   templateUrl: './digimon-farm-card.component.html',
   styleUrl: './digimon-farm-card.component.scss'
 })

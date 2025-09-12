@@ -5,6 +5,10 @@
   [@damage]="damageState()"
   (@damage.done)="resetDamageState()"
 >
+  <div class="digimon-attribute">
+    <app-icon [name]="'attribute-' + digimon().attribute.toLowerCase()"/>
+  </div>
+
   @if(isHovered() && isDeletable()) {
   <div
     class="delete-button"

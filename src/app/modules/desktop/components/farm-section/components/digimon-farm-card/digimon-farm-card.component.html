@@ -3,6 +3,10 @@
   class="digimon-farm-card"
   [ngStyle]="{ filter: digimon().currentHp <= 0 ? 'brightness(0.6)' : '' }"
 >
+  <div class="digimon-attribute">
+    <app-icon [name]="'attribute-' + digimon().attribute.toLowerCase()" />
+  </div>
+
   @if(isHovered() && isDeletable()) {
   <div
     class="delete-button"

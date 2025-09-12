@@ -94,9 +94,20 @@
               <span class="label">{{
                 "SHARED.COMPONENTS.DIGIMON_DETAILS_MODAL.ATTRIBUTE" | transloco
               }}</span>
-              <span class="value">{{
-                globalState.selectedDigimonOnDetails()?.attribute
-              }}</span>
+              <span class="value">
+                <app-icon
+                  [name]="
+                    'attribute-' +
+                    globalState
+                      .selectedDigimonOnDetails()!
+                      .attribute.toLowerCase()
+                  "
+                  [appTooltip]="
+                    globalState.selectedDigimonOnDetails()!.attribute
+                  "
+                  size="40px"
+                />
+              </span>
             </div>
             <div class="digimon-details-content-info-item">
               <span class="label">{{

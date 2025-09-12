@@ -21,6 +21,20 @@
     }
   }
 
+  .digimon-attribute {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    padding: 2px;
+    width: fit-content;
+    height: fit-content;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .my-digimon-card-image {
     display: flex;
     flex-direction: row;

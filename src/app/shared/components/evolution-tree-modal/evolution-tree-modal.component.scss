@@ -187,6 +187,11 @@
 
 @media screen and (max-width: 1366px) {
 
+  .evolution-tree-container .evolution-tree-content .selected-digimon-container .selected-digimon-image .placeholder,
+  .evolution-tree-container .evolution-tree-content .selected-digimon-container .selected-digimon-image img.placeholder {
+    font-size: 1rem;
+  }
+
   .evolution-tree-container .evolution-tree-content .selected-digimon-container .selected-digimon-image {
     height: auto;
     min-height: 0;

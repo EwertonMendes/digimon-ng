@@ -91,7 +91,7 @@
 
 .modifications {
   position: absolute;
-  right: -20px;
+  right: -5px;
   pointer-events: none;
   color: white;
   overflow: visible;
@@ -162,10 +162,6 @@
       flex-direction: row;
       justify-content: space-between;
       font-size: 10px;
-    }
-
-    .modifications {
-      right: -5px;
     }
   }
 }

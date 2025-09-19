@@ -11,12 +11,7 @@ import {
 import { DigiStatusCardComponent } from '@shared/components/digi-status-card/digi-status-card.component';
 import { GlobalStateDataSource } from '@state/global-state.datasource';
 import { Digimon } from '@core/interfaces/digimon.interface';
-import {
-  CdkDragDrop,
-  DragDropModule,
-  DropListOrientation,
-  moveItemInArray,
-} from '@angular/cdk/drag-drop';
+import { CdkDragDrop, DragDropModule, DropListOrientation, moveItemInArray } from '@angular/cdk/drag-drop';
 import { DigimonListLocation } from '@core/enums/digimon-list-location.enum';
 import { PlayerData } from '@core/interfaces/player-data.interface';
 import { AudioService } from '@services/audio.service';
@@ -36,7 +31,16 @@ import { InputComponent } from "@shared/components/input/input.component";
 @Component({
   selector: 'app-home-section',
   standalone: true,
-  imports: [DigiStatusCardComponent, ButtonComponent, DragDropModule, TranslocoModule, TooltipDirective, FormsModule, SelectComponent, InputComponent],
+  imports: [
+    DigiStatusCardComponent,
+    ButtonComponent,
+    DragDropModule,
+    TranslocoModule,
+    TooltipDirective,
+    FormsModule,
+    SelectComponent,
+    InputComponent
+  ],
   templateUrl: './home-section.component.html',
   styleUrl: './home-section.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -311,7 +315,7 @@ export class HomeSectionComponent {
   protected processTeamCreation() {
     this.isCreatingTeam.set(false);
 
-    if(!this.newTeamName()) return;
+    if (!this.newTeamName()) return;
 
     this.globalState.createBattleTeam(this.newTeamName());
 

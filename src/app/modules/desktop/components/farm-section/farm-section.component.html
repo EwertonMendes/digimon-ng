@@ -36,8 +36,7 @@
           {{
             "MODULES.DESKTOP.COMPONENTS.FARM_SECTION.IN_TRAINING_HEADER"
               | transloco
-          }}:
-          {{ globalState.playerDataView().inTrainingDigimonList.length }}/{{
+          }}: {{ globalState.playerDataView().inTrainingDigimonList.length }}/{{
             this.globalState.listsLimits.inTraining
           }}
         </h4>
@@ -48,17 +47,21 @@
         }}
         {{ globalState.trainingDigimonCountdown() }}
       </span>
-      <div
-        [id]="inTrainingListId"
-        class="in-training-digimon-list"
-        #inTrainingList="cdkDropList"
-        cdkDropList
-        [cdkDropListOrientation]="selectedLayout()"
-        [cdkDropListData]="globalState.playerDataView()"
-        [cdkDropListConnectedTo]="[bitFarmingList, teamListId, hospitalListId]"
-        (cdkDropListDropped)="drop($event)"
-      >
-        <div class="in-training-digimon-list-container">
+      <div class="in-training-digimon-list">
+        <div
+          [id]="inTrainingListId"
+          class="in-training-digimon-list-container"
+          #inTrainingList="cdkDropList"
+          cdkDropList
+          [cdkDropListOrientation]="selectedLayout()"
+          [cdkDropListData]="globalState.playerDataView()"
+          [cdkDropListConnectedTo]="[
+            bitFarmingList,
+            teamListId,
+            hospitalListId
+          ]"
+          (cdkDropListDropped)="drop($event)"
+        >
           @for(digimon of globalState.playerDataView().inTrainingDigimonList;
           track digimon.id){
           <app-digi-status-card
@@ -98,19 +101,23 @@
         }}
         {{ globalState.bitFarmingCountdown() }}
       </span>
-      <div
-        [id]="bitFarmingListId"
-        class="bit-farming-digimon-list"
-        #bitFarmingList="cdkDropList"
-        cdkDropList
-        [cdkDropListOrientation]="selectedLayout()"
-        [cdkDropListData]="globalState.playerDataView()"
-        [cdkDropListConnectedTo]="[inTrainingList, teamListId, hospitalListId]"
-        (cdkDropListDropped)="drop($event)"
-      >
-        <div class="bit-farming-digimon-list-container">
-          @for(digimon of globalState.playerDataView().bitFarmDigimonList;
-          track digimon.id){
+      <div class="bit-farming-digimon-list">
+        <div
+          [id]="bitFarmingListId"
+          class="bit-farming-digimon-list-container"
+          #bitFarmingList="cdkDropList"
+          cdkDropList
+          [cdkDropListOrientation]="selectedLayout()"
+          [cdkDropListData]="globalState.playerDataView()"
+          [cdkDropListConnectedTo]="[
+            inTrainingList,
+            teamListId,
+            hospitalListId
+          ]"
+          (cdkDropListDropped)="drop($event)"
+        >
+          @for(digimon of globalState.playerDataView().bitFarmDigimonList; track
+          digimon.id){
           <app-digimon-farm-card
             cdkDrag
             [digimon]="digimon"

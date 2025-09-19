@@ -1,19 +1,19 @@
 import {
-    ChangeDetectionStrategy,
-    Component,
-    effect,
-    inject,
-    signal,
+  ChangeDetectionStrategy,
+  Component,
+  effect,
+  inject,
+  signal,
 } from '@angular/core';
 import { DigiStatusCardComponent } from '@shared/components/digi-status-card/digi-status-card.component';
 import { GlobalStateDataSource } from '@state/global-state.datasource';
 import { Digimon } from '@core/interfaces/digimon.interface';
 import { DigimonFarmCardComponent } from './components/digimon-farm-card/digimon-farm-card.component';
 import {
-    CdkDragDrop,
-    DragDropModule,
-    DropListOrientation,
-    moveItemInArray,
+  CdkDragDrop,
+  DragDropModule,
+  DropListOrientation,
+  moveItemInArray,
 } from '@angular/cdk/drag-drop';
 import { DigimonListLocation } from '@core/enums/digimon-list-location.enum';
 import { PlayerData } from '@core/interfaces/player-data.interface';

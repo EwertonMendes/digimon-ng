@@ -37,7 +37,8 @@
     />
     <app-button
       [appTooltip]="
-        'MODULES.DESKTOP.COMPONENTS.HOME_SECTION.CONFIRM_TEAM_CREATION' | transloco
+        'MODULES.DESKTOP.COMPONENTS.HOME_SECTION.CONFIRM_TEAM_CREATION'
+          | transloco
       "
       icon="check-fat"
       color="success"
@@ -106,21 +107,21 @@
         />
       </div>
 
-      <div
-        [id]="teamListId"
-        class="my-digimon-list"
-        #teamList="cdkDropList"
-        cdkDropList
-        [cdkDropListOrientation]="selectedLayout()"
-        [cdkDropListData]="globalState.playerDataView()"
-        [cdkDropListConnectedTo]="[
-          hospitalListId,
-          inTrainingListId,
-          bitFarmingListId
-        ]"
-        (cdkDropListDropped)="drop($event)"
-      >
-        <div class="home-section-battle-team-container">
+      <div class="my-digimon-list">
+        <div
+          [id]="teamListId"
+          #teamList="cdkDropList"
+          class="home-section-battle-team-container"
+          cdkDropList
+          [cdkDropListOrientation]="selectedLayout()"
+          [cdkDropListData]="globalState.playerDataView()"
+          [cdkDropListConnectedTo]="[
+            hospitalListId,
+            inTrainingListId,
+            bitFarmingListId
+          ]"
+          (cdkDropListDropped)="drop($event)"
+        >
           @for(digimon of globalState.playerDataView().digimonList; track
           digimon.id){
           <app-digi-status-card
@@ -154,7 +155,8 @@
         />
         <app-button
           [appTooltip]="
-            'MODULES.DESKTOP.COMPONENTS.HOME_SECTION.CONFIRM_TEAM_CREATION' | transloco
+            'MODULES.DESKTOP.COMPONENTS.HOME_SECTION.CONFIRM_TEAM_CREATION'
+              | transloco
           "
           icon="check-fat"
           color="success"
@@ -241,21 +243,21 @@
           />
         </div>
       </div>
-      <div
-        [id]="hospitalListId"
-        class="hospital-digimon-list"
-        #inTrainingList="cdkDropList"
-        cdkDropList
-        [cdkDropListOrientation]="selectedLayout()"
-        [cdkDropListData]="globalState.playerDataView()"
-        [cdkDropListConnectedTo]="[
-          teamListId,
-          bitFarmingListId,
-          inTrainingListId
-        ]"
-        (cdkDropListDropped)="drop($event)"
-      >
-        <div class="hospital-digimon-list-container">
+      <div class="hospital-digimon-list">
+        <div
+          [id]="hospitalListId"
+          class="hospital-digimon-list-container"
+          #inTrainingList="cdkDropList"
+          cdkDropList
+          [cdkDropListOrientation]="selectedLayout()"
+          [cdkDropListData]="globalState.playerDataView()"
+          [cdkDropListConnectedTo]="[
+            teamListId,
+            bitFarmingListId,
+            inTrainingListId
+          ]"
+          (cdkDropListDropped)="drop($event)"
+        >
           @for(digimon of globalState.playerDataView().hospitalDigimonList;
           track digimon.id){
           <app-digi-status-card

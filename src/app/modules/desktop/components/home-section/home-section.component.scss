@@ -232,6 +232,8 @@
       flex-direction: column;
       gap: 10px;
       overflow-y: visible;
+      width: -webkit-fill-available;
+      align-items: center;
     }
 
     .my-digimon-list-no-data-container {

@@ -57,11 +57,22 @@
           "NOT_ENOUGH_BITS_TOOLTIP": "Você precisa de {{price}} bits para curar todos",
           "HEAL_ALL_DISABLED_TOOLTIP": "Nenhum digimon para curar",
           "NO_DIGIMON_HOSPITAL": "Nenhum Digimon",
+          "GIVE_TEAM_A_NAME": "Dê um nome ao seu novo time",
+          "TEAM_SELECT_PLACEHOLDER": "Selecione um time",
+          "CREATE_TEAM": "Criar um novo time",
+          "CONFIRM_TEAM_CREATION": "Confirmar",
+          "UPDATE_TEAM": "Atualizar o time selecionado",
+          "REMOVE_TEAM": "Remover o time selecionado",
           "TOAST": {
             "TEAM_LIMIT_REACHED": "Limite de digimons na equipe alcançado!",
             "TRAINING_LIMIT_REACHED": "Limite de digimons em treinamento alcançado!",
             "HOSPITAL_LIMIT_REACHED": "Limite de digimons no hospital alcançado!",
-            "FARM_LIMIT_REACHED": "Limite de digimons na fazenda alcançado!"
+            "FARM_LIMIT_REACHED": "Limite de digimons na fazenda alcançado!",
+            "TEAM_ALREADY_EXISTS": "O time {{teamName}} já existe!",
+            "TEAM_NOT_FOUND": "O time {{teamName}} não foi encontrado!",
+            "TEAM_CREATED": "O time {{teamName}} foi criado!",
+            "TEAM_UPDATED": "O time {{teamName}} foi atualizado!",
+            "TEAM_REMOVED": "O time {{teamName}} foi removido!"
           }
         },
         "FARM_SECTION": {

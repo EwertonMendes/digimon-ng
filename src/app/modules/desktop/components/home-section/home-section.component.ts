@@ -5,6 +5,7 @@ import {
   DestroyRef,
   effect,
   inject,
+  model,
   signal,
 } from '@angular/core';
 import { DigiStatusCardComponent } from '@shared/components/digi-status-card/digi-status-card.component';
@@ -29,11 +30,13 @@ import { DigimonDetailsModalComponent } from 'app/shared/components/digimon-deta
 import { FormsModule } from "@angular/forms";
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { takeLast } from 'rxjs';
+import { SelectComponent } from "@shared/components/select/select.component";
+import { InputComponent } from "@shared/components/input/input.component";
 
 @Component({
   selector: 'app-home-section',
   standalone: true,
-  imports: [DigiStatusCardComponent, ButtonComponent, DragDropModule, TranslocoModule, TooltipDirective, FormsModule],
+  imports: [DigiStatusCardComponent, ButtonComponent, DragDropModule, TranslocoModule, TooltipDirective, FormsModule, SelectComponent, InputComponent],
   templateUrl: './home-section.component.html',
   styleUrl: './home-section.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -56,6 +59,11 @@ export class HomeSectionComponent {
   protected fullHealPrice = signal(0);
   protected hasDigimonsToHeal = signal(false);
   protected hasEnoughBits = signal(false);
+  protected isCreatingTeam = signal(false);
+
+  protected newTeamName = model<string>('');
+  protected playerTeams = signal<Array<{ label: string; value: string }>>([]);
+  protected selectedTeam = signal('');
 
   private listLocations: Record<string, string> = {
     'in-training-digimon-list': DigimonListLocation.IN_TRAINING,
@@ -65,6 +73,18 @@ export class HomeSectionComponent {
   };
 
   constructor() {
+
+    effect(() => {
+      const mappeedPlayerTeams = this.globalState.playerDataView().teams?.map(team => {
+        return {
+          label: team.name,
+          value: team.name,
+        }
+      });
+
+      this.playerTeams.set(mappeedPlayerTeams || []);
+    });
+
     effect(() => {
       const hospital = this.globalState.playerDataView().hospitalDigimonList;
       const price = this.calculateFullHealPrice(hospital);
@@ -281,5 +301,31 @@ export class HomeSectionComponent {
     });
 
     return totalCost;
+  }
+
+  protected setSelectedTeam($event: string) {
+    this.selectedTeam.set($event);
+    this.globalState.loadBattleTeam(this.selectedTeam());
+  }
+
+  protected processTeamCreation() {
+    this.isCreatingTeam.set(false);
+
+    if(!this.newTeamName()) return;
+
+    this.globalState.createBattleTeam(this.newTeamName());
+
+    this.setSelectedTeam(this.newTeamName());
+    this.newTeamName.set('');
+  }
+
+  protected updateTeam() {
+    this.globalState.updateBattleTeam(this.selectedTeam());
+    this.setSelectedTeam(this.selectedTeam());
+  }
+
+  protected removeTeam() {
+    this.globalState.removeBattleTeam(this.selectedTeam());
+    this.selectedTeam.set('');
   }
 }

@@ -4,7 +4,7 @@ import { FarmingService } from './services/farming.service';
 import { BattleService } from './services/battle.service';
 import { StorageService } from './services/storage.service';
 import { BaseDigimon, Digimon } from '@core/interfaces/digimon.interface';
-import { PlayerData } from '@core/interfaces/player-data.interface';
+import { PlayerData, Team } from '@core/interfaces/player-data.interface';
 import { DigimonService } from '@services/digimon.service';
 import { PlayerDataService } from '@services/player-data.service';
 import { interval, Subject } from 'rxjs';
@@ -64,6 +64,7 @@ export class GlobalStateDataSource {
     digimonStorageCapacity: 0,
     bits: 0,
     digiData: {},
+    teams: [],
   });
   showInitialSetupScreen = signal<boolean>(false);
   selectedDigimonOnDetails = signal<Digimon | undefined>(undefined);
@@ -238,6 +239,7 @@ export class GlobalStateDataSource {
           obtained: true
         },
       },
+      teams: [],
     };
     this.playerDataService.savePlayerData(newPlayerData);
     this.initializeGame(newPlayerData, true);
@@ -910,6 +912,133 @@ export class GlobalStateDataSource {
       const original = { ...found.digimon };
       this.updatePlayerDataList(found.listName, original);
     }
+  }
+
+  private getCurrentTeamDigimons(): Digimon[] {
+    const currentTeam = [...this.playerData().digimonList];
+    return currentTeam;
+  }
+
+  private getCurrentTeamMemberIds(): string[] {
+    const currentTeam = this.getCurrentTeamDigimons();
+    return currentTeam
+      .map(digimon => digimon.id!)
+      .filter((id): id is string => id !== undefined);
+  }
+
+  private getTeamByName(teamName: string): Team | undefined {
+    return this.playerData().teams?.find(t => t.name.toLowerCase() === teamName.toLowerCase());
+  }
+
+  private getTeamIndex(teamName: string): number {
+    return (this.playerData().teams || []).findIndex(t => t.name.toLowerCase() === teamName.toLowerCase());
+  }
+
+  private updateTeams(newTeams: Team[]): void {
+    this.playerData.set({
+      ...this.playerData(),
+      teams: newTeams,
+    });
+  }
+
+  private moveCurrentTeamToStorage(): void {
+    const currentTeam = this.getCurrentTeamDigimons();
+    currentTeam.forEach(digimon => {
+      this.addDigimonToStorage(digimon, DigimonListLocation.TEAM);
+    });
+  }
+
+  private loadTeamMembersToActive(memberIds: string[]): void {
+    memberIds.forEach(memberId => {
+      const foundDigimonInfo = this.findDigimonInAnyList(memberId);
+      if (foundDigimonInfo) {
+        this.addDigimonToList(foundDigimonInfo.digimon, foundDigimonInfo.listName);
+      }
+    });
+  }
+
+  private updateTeamMembersAtIndex(index: number, memberIds: string[]): void {
+    const teams = [...(this.playerData().teams || [])];
+    teams[index].members = memberIds;
+    this.updateTeams(teams);
+  }
+
+  private removeTeamAtIndex(index: number): void {
+    const teams = [...(this.playerData().teams || [])];
+    teams.splice(index, 1);
+    this.updateTeams(teams);
+  }
+
+  loadBattleTeam(teamName: string): void {
+    const team = this.getTeamByName(teamName);
+    if (!team) {
+      return;
+    }
+
+    this.moveCurrentTeamToStorage();
+    this.loadTeamMembersToActive(team.members);
+  }
+
+  createBattleTeam(teamName: string): void {
+    const existingTeamIndex = this.getTeamIndex(teamName);
+    if (existingTeamIndex !== -1) {
+      this.toastService.showToast(this.translocoService.translate('MODULES.DESKTOP.COMPONENTS.HOME_SECTION.TOAST.TEAM_ALREADY_EXISTS', { teamName }), 'error');
+      return;
+    }
+
+    const memberIds = this.getCurrentTeamMemberIds();
+    const newTeam: Team = {
+      name: teamName,
+      members: memberIds,
+    };
+
+    this.updateTeams([...(this.playerData().teams || []), newTeam]);
+    this.toastService.showToast(this.translocoService.translate('MODULES.DESKTOP.COMPONENTS.HOME_SECTION.TOAST.TEAM_CREATED', { teamName }), 'success');
+  }
+
+  updateBattleTeam(teamName: string): void {
+    const teamIndex = this.getTeamIndex(teamName);
+    if (teamIndex === -1) {
+      this.toastService.showToast(this.translocoService.translate('MODULES.DESKTOP.COMPONENTS.HOME_SECTION.TOAST.TEAM_NOT_FOUND', { teamName }), 'error');
+      return;
+    }
+
+    const memberIds = this.getCurrentTeamMemberIds();
+    this.updateTeamMembersAtIndex(teamIndex, memberIds);
+    this.toastService.showToast(this.translocoService.translate('MODULES.DESKTOP.COMPONENTS.HOME_SECTION.TOAST.TEAM_UPDATED', { teamName }), 'success');
+  }
+
+  removeBattleTeam(teamName: string): void {
+    const teamIndex = this.getTeamIndex(teamName);
+    if (teamIndex === -1) {
+      this.toastService.showToast(this.translocoService.translate('MODULES.DESKTOP.COMPONENTS.HOME_SECTION.TOAST.TEAM_NOT_FOUND', { teamName }), 'error');
+      return;
+    }
+
+    this.removeTeamAtIndex(teamIndex);
+    this.toastService.showToast(this.translocoService.translate('MODULES.DESKTOP.COMPONENTS.HOME_SECTION.TOAST.TEAM_REMOVED', { teamName }), 'success');
+  }
+
+  private findDigimonInAnyList(digimonId: string): { digimon: Digimon; listName: string } | undefined {
+    const digimonLists = [
+      { name: DigimonListLocation.TEAM, list: this.playerData().digimonList },
+      { name: DigimonListLocation.BIT_FARM, list: this.playerData().bitFarmDigimonList },
+      { name: DigimonListLocation.IN_TRAINING, list: this.playerData().inTrainingDigimonList },
+      { name: DigimonListLocation.HOSPITAL, list: this.playerData().hospitalDigimonList },
+      { name: DigimonListLocation.STORAGE, list: this.playerData().digimonStorageList },
+    ];
+
+    for (const { name: listName, list } of digimonLists) {
+      const foundDigimon = list.find(digimon => digimon.id === digimonId);
+      if (foundDigimon) {
+        return {
+          digimon: foundDigimon,
+          listName,
+        };
+      }
+    }
+
+    return undefined;
   }
 
   private getAllDigimonLists(playerData: PlayerData): Digimon[][] {

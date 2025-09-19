@@ -14,10 +14,16 @@ export interface PlayerData {
   digimonStorageCapacity: number;
   bits: number;
   digiData: Record<string, DigiData>;
+  teams?: Team[];
   [key: string]: any;
 }
 
-interface DigiData {
+export interface DigiData {
   amount: number;
   obtained: boolean;
+}
+
+export interface Team {
+  name: string;
+  members: string[];
 }

@@ -24,6 +24,66 @@
     />
   </div>
 
+  @if(selectedLayout() === 'vertical') {
+  <div class="preset-teams-container">
+    @if(isCreatingTeam()) {
+    <app-input
+      [placeholder]="
+        'MODULES.DESKTOP.COMPONENTS.HOME_SECTION.GIVE_TEAM_A_NAME' | transloco
+      "
+      [(ngModel)]="newTeamName"
+      [maxlength]="20"
+      (onEnter)="processTeamCreation()"
+    />
+    <app-button
+      [appTooltip]="
+        'MODULES.DESKTOP.COMPONENTS.HOME_SECTION.CONFIRM_TEAM_CREATION' | transloco
+      "
+      icon="check-fat"
+      color="success"
+      (onClick)="processTeamCreation()"
+    />
+    } @else {
+    <app-select
+      [placeholder]="
+        'MODULES.DESKTOP.COMPONENTS.HOME_SECTION.TEAM_SELECT_PLACEHOLDER'
+          | transloco
+      "
+      [(ngModel)]="selectedTeam"
+      [options]="playerTeams()"
+      (valueChange)="setSelectedTeam($event)"
+    />
+    <app-button
+      [appTooltip]="
+        'MODULES.DESKTOP.COMPONENTS.HOME_SECTION.CREATE_TEAM' | transloco
+      "
+      icon="plus-circle"
+      color="success"
+      (onClick)="isCreatingTeam.set(true)"
+    />
+    }
+
+    <app-button
+      [appTooltip]="
+        'MODULES.DESKTOP.COMPONENTS.HOME_SECTION.UPDATE_TEAM' | transloco
+      "
+      icon="floppy-disk"
+      color="info"
+      [disabled]="isCreatingTeam() || !selectedTeam()"
+      (onClick)="updateTeam()"
+    />
+    <app-button
+      [appTooltip]="
+        'MODULES.DESKTOP.COMPONENTS.HOME_SECTION.REMOVE_TEAM' | transloco
+      "
+      icon="trash"
+      color="danger"
+      [disabled]="isCreatingTeam() || !selectedTeam()"
+      (onClick)="removeTeam()"
+    />
+  </div>
+  }
+
   <div [class]="'home-section-' + selectedLayout()">
     <div [class]="'panel-' + selectedLayout()">
       <div class="battle-team-area-sub-title-container">
@@ -45,6 +105,7 @@
           (onClick)="sendInjuredDigimonToHospital()"
         />
       </div>
+
       <div
         [id]="teamListId"
         class="my-digimon-list"
@@ -79,6 +140,66 @@
           }
         </div>
       </div>
+      @if(selectedLayout() === 'horizontal') {
+      <div class="preset-teams-container">
+        @if(isCreatingTeam()) {
+        <app-input
+          [placeholder]="
+            'MODULES.DESKTOP.COMPONENTS.HOME_SECTION.GIVE_TEAM_A_NAME'
+              | transloco
+          "
+          [(ngModel)]="newTeamName"
+          [maxlength]="20"
+          (onEnter)="processTeamCreation()"
+        />
+        <app-button
+          [appTooltip]="
+            'MODULES.DESKTOP.COMPONENTS.HOME_SECTION.CONFIRM_TEAM_CREATION' | transloco
+          "
+          icon="check-fat"
+          color="success"
+          (onClick)="processTeamCreation()"
+        />
+        } @else {
+        <app-select
+          [placeholder]="
+            'MODULES.DESKTOP.COMPONENTS.HOME_SECTION.TEAM_SELECT_PLACEHOLDER'
+              | transloco
+          "
+          [(ngModel)]="selectedTeam"
+          [options]="playerTeams()"
+          (valueChange)="setSelectedTeam($event)"
+        />
+        <app-button
+          [appTooltip]="
+            'MODULES.DESKTOP.COMPONENTS.HOME_SECTION.CREATE_TEAM' | transloco
+          "
+          icon="plus-circle"
+          color="success"
+          (onClick)="isCreatingTeam.set(true)"
+        />
+        }
+
+        <app-button
+          [appTooltip]="
+            'MODULES.DESKTOP.COMPONENTS.HOME_SECTION.UPDATE_TEAM' | transloco
+          "
+          icon="floppy-disk"
+          color="info"
+          [disabled]="isCreatingTeam() || !selectedTeam()"
+          (onClick)="updateTeam()"
+        />
+        <app-button
+          [appTooltip]="
+            'MODULES.DESKTOP.COMPONENTS.HOME_SECTION.REMOVE_TEAM' | transloco
+          "
+          icon="trash"
+          color="danger"
+          [disabled]="isCreatingTeam() || !selectedTeam()"
+          (onClick)="removeTeam()"
+        />
+      </div>
+      }
     </div>
 
     <div [class]="'panel-' + selectedLayout()">

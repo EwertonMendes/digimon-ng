@@ -1,4 +1,4 @@
-import { Component, ElementRef, forwardRef, input, signal, effect } from '@angular/core';
+import { Component, ElementRef, forwardRef, input, signal, effect, output } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
@@ -26,6 +26,8 @@ export class InputComponent implements ControlValueAccessor {
   protected disabled = signal(false);
 
   private inputEl?: HTMLInputElement;
+
+  onEnter = output<Event>();
 
   constructor(private host: ElementRef) {
     effect(() => {
@@ -59,5 +61,10 @@ export class InputComponent implements ControlValueAccessor {
     const input = event.target as HTMLInputElement;
     this.value.set(input.value);
     this.onChange(this.value());
+  }
+
+  onEnterHandler(event: Event) {
+    this.onChange(this.value());
+    this.onEnter.emit(event);
   }
 }

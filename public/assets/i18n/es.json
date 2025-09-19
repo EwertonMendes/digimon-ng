@@ -58,11 +58,22 @@
           "NOT_ENOUGH_BITS_TOOLTIP": "Necesitas {{price}} bits para curar todo",
           "HEAL_ALL_DISABLED_TOOLTIP": "No hay digimon para curar",
           "NO_DIGIMON_HOSPITAL": "Sin Digimon",
+          "GIVE_TEAM_A_NAME": "Dale un nombre a tu equipo",
+          "TEAM_SELECT_PLACEHOLDER": "Selecciona tu equipo",
+          "CREATE_TEAM": "Crear un nuevo equipo",
+          "CONFIRM_TEAM_CREATION": "Confirmar",
+          "UPDATE_TEAM": "Actualizar el equipo seleccionado",
+          "REMOVE_TEAM": "Eliminar el equipo seleccionado",
           "TOAST": {
             "TEAM_LIMIT_REACHED": "¡Límite de digimons en el equipo alcanzado!",
             "TRAINING_LIMIT_REACHED": "¡Límite de digimons en entrenamiento alcanzado!",
             "HOSPITAL_LIMIT_REACHED": "¡Límite de digimons en el hospital alcanzado!",
-            "FARM_LIMIT_REACHED": "¡Límite de digimons en la granja alcanzado!"
+            "FARM_LIMIT_REACHED": "¡Límite de digimons en la granja alcanzado!",
+            "TEAM_ALREADY_EXISTS": "El equipo {{teamName}} ya existe!",
+            "TEAM_NOT_FOUND": "El equipo {{teamName}} no fue encontrado!",
+            "TEAM_CREATED": "El equipo {{teamName}} fue creado!",
+            "TEAM_UPDATED": "El equipo {{teamName}} fue actualizado!",
+            "TEAM_REMOVED": "El equipo {{teamName}} fue eliminado!"
           }
         },
         "FARM_SECTION": {

@@ -13,5 +13,6 @@
     (input)="handleInput($event)"
     (blur)="onTouched()"
     [size]="placeholder().length"
+    (keydown.enter)="onEnterHandler($event)"
   />
 </div>

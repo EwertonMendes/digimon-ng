@@ -1,28 +1,28 @@
 import {
-  ChangeDetectorRef,
-  Component,
-  computed,
-  DestroyRef,
-  effect,
-  HostListener,
-  inject,
-  input,
-  signal,
+    ChangeDetectorRef,
+    Component,
+    computed,
+    DestroyRef,
+    effect,
+    HostListener,
+    inject,
+    input,
+    signal,
 } from '@angular/core';
 import { Digimon } from '@core/interfaces/digimon.interface';
 import { CommonModule } from '@angular/common';
 import {
-  animate,
-  state,
-  style,
-  transition,
-  trigger,
-  keyframes,
+    animate,
+    state,
+    style,
+    transition,
+    trigger,
+    keyframes,
 } from '@angular/animations';
 import { GlobalStateDataSource } from '@state/global-state.datasource';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ModalService } from '../modal/modal.service';
-import { DeletionConfirmationModalComponent } from '@shared/deletion-confirmation-modal/deletion-confirmation-modal.component';
+import { DeletionConfirmationModalComponent } from '@shared/components/deletion-confirmation-modal/deletion-confirmation-modal.component';
 import { IconComponent } from "../icon/icon.component";
 
 @Component({

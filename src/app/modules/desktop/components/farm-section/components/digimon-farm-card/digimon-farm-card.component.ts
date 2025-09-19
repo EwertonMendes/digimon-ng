@@ -3,7 +3,7 @@ import { TranslocoModule } from '@jsverse/transloco';
 import { Digimon } from '@core/interfaces/digimon.interface';
 import { CommonModule } from '@angular/common';
 import { ModalService } from '@shared/components/modal/modal.service';
-import { DeletionConfirmationModalComponent } from '@shared/deletion-confirmation-modal/deletion-confirmation-modal.component';
+import { DeletionConfirmationModalComponent } from '@shared/components/deletion-confirmation-modal/deletion-confirmation-modal.component';
 import { GlobalStateDataSource } from '@state/global-state.datasource';
 import { IconComponent } from "@shared/components/icon/icon.component";
 

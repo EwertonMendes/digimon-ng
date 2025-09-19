@@ -33,6 +33,7 @@
       "
       [(ngModel)]="newTeamName"
       [maxlength]="20"
+      [focused]="isCreatingTeam()"
       (onEnter)="processTeamCreation()"
     />
     <app-button
@@ -151,6 +152,7 @@
           "
           [(ngModel)]="newTeamName"
           [maxlength]="20"
+          [focused]="isCreatingTeam()"
           (onEnter)="processTeamCreation()"
         />
         <app-button

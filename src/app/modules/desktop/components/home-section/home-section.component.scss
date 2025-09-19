@@ -53,7 +53,7 @@
   height: -webkit-fill-available;
   justify-content: center;
   gap: 15px;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .section-title {
@@ -94,8 +94,8 @@
 
   .my-digimon-list {
     display: flex;
-    overflow-x: auto;
-    overflow-y: visible;
+    overflow-y: auto;
+    overflow-x: visible;
     gap: 10px;
     padding: 10px;
     flex-direction: row-reverse;
@@ -117,7 +117,6 @@
       height: -webkit-fill-available;
       overflow-x: auto;
       overflow-y: visible;
-      align-items: flex-start;
     }
 
     .my-digimon-list-no-data-container {
@@ -183,7 +182,6 @@
       height: -webkit-fill-available;
       overflow-x: auto;
       overflow-y: visible;
-      align-items: flex-start;
     }
 
     .hospital-digimon-list-no-data-container {
@@ -209,7 +207,8 @@
 
   .my-digimon-list {
     display: flex;
-    overflow: visible;
+    overflow-y: auto;
+    overflow-x: visible;
     justify-content: center;
     padding: 10px;
     height: -webkit-fill-available;

@@ -246,7 +246,7 @@
         class="hospital-digimon-list"
         #inTrainingList="cdkDropList"
         cdkDropList
-        cdkDropListOrientation="horizontal"
+        [cdkDropListOrientation]="selectedLayout()"
         [cdkDropListData]="globalState.playerDataView()"
         [cdkDropListConnectedTo]="[
           teamListId,

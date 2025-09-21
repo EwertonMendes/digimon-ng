@@ -123,6 +123,7 @@
     },
     "LAB": {
       "CONVERT": "Convertir",
+      "SHOW_EVOLUTIONS": "Mostrar Evoluciones",
       "FOUND_DIGIMONS": "Digimons Encontrados",
       "OBTAINED_DIGIMONS": "Digimons Obtidos",
       "OBTAINED": "Obtido",

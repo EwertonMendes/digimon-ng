@@ -13,6 +13,8 @@ import { TooltipDirective } from 'app/directives/tooltip.directive';
 import { BaseDigimon } from '@core/interfaces/digimon.interface';
 import { DigimonService } from '@services/digimon.service';
 import { GlobalStateDataSource } from '@state/global-state.datasource';
+import { ModalService } from '@shared/components/modal/modal.service';
+import { EvolutionTreeModalComponent } from '@shared/components/evolution-tree-modal/evolution-tree-modal.component';
 
 type LabDigimon = BaseDigimon & { amount: number; cost: number; obtained: boolean };
 type SortKey = 'name' | 'rank' | 'amount';
@@ -83,6 +85,7 @@ export class LabComponent {
   private digimonService = inject(DigimonService);
   private fb = inject(FormBuilder);
   private transloco = inject(TranslocoService);
+  private modalService = inject(ModalService);
 
   constructor() {
     this.transloco.selectTranslation().pipe(takeUntilDestroyed()).subscribe(() => {
@@ -158,6 +161,12 @@ export class LabComponent {
     if (newDigimon) {
       this.globalState.convertDigiData(newDigimon);
     }
+  }
+
+  showEvolutionsForDigimon(digimon: LabDigimon): void {
+    this.modalService.open('evolution-tree-lab', EvolutionTreeModalComponent, {
+      mainDigimon: digimon
+    });
   }
 
   resetFilters(): void {

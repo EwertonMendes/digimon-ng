@@ -24,10 +24,7 @@
   <div class="lab__filters">
     <div class="lab__filters-group lab__filters-sort">
       <label>{{ "MODULES.LAB.SORT_BY" | transloco }}</label>
-      <app-select
-        [options]="sortOptions()"
-        [(ngModel)]="sortBy"
-      ></app-select>
+      <app-select [options]="sortOptions()" [(ngModel)]="sortBy"></app-select>
       <app-button
         [text]="'MODULES.LAB.CHANGE_ORDER' | transloco"
         (click)="sortDirection.set(sortDirection() === 'asc' ? 'desc' : 'asc')"
@@ -110,19 +107,30 @@
               ></div>
             </div>
           </div>
-          <app-button
-            [text]="'MODULES.LAB.CONVERT' | transloco"
-            weight="bold"
-            icon="convert"
-            iconScale="2"
-            color="secondary"
-            [disabled]="
-              digimon.amount < 100 ||
-              globalState.playerDataView().bits < digimon.cost
-            "
-            (onClick)="convertDigiData(digimon)"
-          />
         </div>
+      </div>
+      <div class="lab__content-card-buttons">
+        <app-button
+          [appTooltip]="'MODULES.LAB.SHOW_EVOLUTIONS' | transloco"
+          weight="bold"
+          icon="graph"
+          iconScale="2"
+          color="secondary"
+          (onClick)="showEvolutionsForDigimon(digimon)"
+        >
+        </app-button>
+        <app-button
+          [appTooltip]="'MODULES.LAB.CONVERT' | transloco"
+          weight="bold"
+          icon="convert"
+          iconScale="2"
+          color="secondary"
+          [disabled]="
+            digimon.amount < 100 ||
+            globalState.playerDataView().bits < digimon.cost
+          "
+          (onClick)="convertDigiData(digimon)"
+        />
       </div>
     </div>
     }

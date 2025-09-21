@@ -122,6 +122,7 @@
     },
     "LAB": {
       "CONVERT": "Convert",
+      "SHOW_EVOLUTIONS": "Show Evolutions",
       "FOUND_DIGIMONS": "Found Digimons",
       "OBTAINED_DIGIMONS": "Obtained Digimons",
       "OBTAINED": "Obtained",

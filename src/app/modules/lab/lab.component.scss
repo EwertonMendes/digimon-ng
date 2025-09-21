@@ -114,6 +114,7 @@
     &-card {
       display: flex;
       flex-direction: column;
+      gap: 1rem;
       align-items: center;
       flex: 1 1 calc(25% - 1rem);
       min-width: 250px;
@@ -236,6 +237,14 @@
             }
           }
         }
+      }
+
+      &-buttons {
+        display: flex;
+        width: -webkit-fill-available;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 1rem;
       }
     }
   }

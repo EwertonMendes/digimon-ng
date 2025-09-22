@@ -1,7 +1,7 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
   "productName": "Digimon NG",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "identifier": "digimon-ng",
   "build": {
     "frontendDist": "../dist/digimon-ng/browser",
@@ -38,6 +38,9 @@
   "bundle": {
     "active": true,
     "targets": "all",
-    "icon": ["icons/icon.icns", "icons/icon.ico"]
+    "icon": [
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
   }
 }

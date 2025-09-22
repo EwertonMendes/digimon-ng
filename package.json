@@ -8,7 +8,8 @@
     "build:angular": "ng build",
     "build": "npx tauri build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "bump-version": "node scripts/bump-version.js"
   },
   "private": true,
   "dependencies": {

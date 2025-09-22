@@ -63,6 +63,10 @@
           "CONFIRM_TEAM_CREATION": "Confirm",
           "UPDATE_TEAM": "Update the selected team",
           "REMOVE_TEAM": "Remove the selected team",
+          "LEVEL": "Level",
+          "HEALING_RATE": "Healing",
+          "LEVEL_UP_TOOLTIP": "Level up hospital for {{price}} bits",
+          "LEVEL_UP_MAX_TOOLTIP": "Hospital is already at max level!",
           "TOAST": {
             "TEAM_LIMIT_REACHED": "Team digimon limit reached!",
             "TRAINING_LIMIT_REACHED": "Training digimon limit reached!",
@@ -72,7 +76,8 @@
             "TEAM_NOT_FOUND": "Team {{teamName}} not found!",
             "TEAM_CREATED": "Team {{teamName}} created!",
             "TEAM_UPDATED": "Team {{teamName}} updated!",
-            "TEAM_REMOVED": "Team {{teamName}} removed!"
+            "TEAM_REMOVED": "Team {{teamName}} removed!",
+            "LEVEL_UP_HOSPITAL_SUCCESS_TOAST": "Hospital level increased to {{level}}!"
           }
         },
         "FARM_SECTION": {

@@ -64,6 +64,10 @@
           "CONFIRM_TEAM_CREATION": "Confirmar",
           "UPDATE_TEAM": "Actualizar el equipo seleccionado",
           "REMOVE_TEAM": "Eliminar el equipo seleccionado",
+          "LEVEL": "Nivel",
+          "HEALING_RATE": "Curando",
+          "LEVEL_UP_TOOLTIP": "Sube el nivel del hospital por {{price}} bits",
+          "LEVEL_UP_MAX_TOOLTIP": "¡El hospital ya está en el nivel máximo!",
           "TOAST": {
             "TEAM_LIMIT_REACHED": "¡Límite de digimons en el equipo alcanzado!",
             "TRAINING_LIMIT_REACHED": "¡Límite de digimons en entrenamiento alcanzado!",
@@ -73,7 +77,8 @@
             "TEAM_NOT_FOUND": "El equipo {{teamName}} no fue encontrado!",
             "TEAM_CREATED": "El equipo {{teamName}} fue creado!",
             "TEAM_UPDATED": "El equipo {{teamName}} fue actualizado!",
-            "TEAM_REMOVED": "El equipo {{teamName}} fue eliminado!"
+            "TEAM_REMOVED": "El equipo {{teamName}} fue eliminado!",
+            "LEVEL_UP_HOSPITAL_SUCCESS_TOAST": "Nivel del hospital aumentado a {{level}}!"
           }
         },
         "FARM_SECTION": {

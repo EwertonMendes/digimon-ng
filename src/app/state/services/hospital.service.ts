@@ -4,42 +4,28 @@ import { PlayerData } from '@core/interfaces/player-data.interface';
 import { ToastService } from '@shared/components/toast/toast.service';
 import { TranslocoService } from '@jsverse/transloco';
 
-interface HealingConfig {
-  hpHealRate: number;
-  mpHealRate: number;
-  healVariance: number;
-  minHeal: number;
-}
-
 @Injectable({
   providedIn: 'root',
 })
 export class HospitalService {
+
+  private readonly MAX_HOSPITAL_LEVEL = 5;
+
   toastService = inject(ToastService);
   translocoService = inject(TranslocoService);
 
-  healDigimons(playerData: PlayerData, config: HealingConfig = {
-    hpHealRate: 10,
-    mpHealRate: 8,
-    healVariance: 0.3,
-    minHeal: 1
-  }): PlayerData {
-    const {
-      hpHealRate,
-      mpHealRate,
-      healVariance,
-      minHeal
-    } = config;
+  healDigimons(playerData: PlayerData): PlayerData {
+
+    const hospitalLevel = playerData.hospitalLevel ?? 1;
 
     playerData.hospitalDigimonList.forEach((digimon: Digimon) => {
+      const healAmount = this.calculateHealAmount(digimon.maxHp, digimon.maxMp, hospitalLevel);
       if (digimon.currentHp < digimon.maxHp) {
-        const hpHealAmount = this.calculateHealAmount(hpHealRate, healVariance, minHeal);
-        digimon.currentHp = Math.min(digimon.currentHp + hpHealAmount, digimon.maxHp);
+        digimon.currentHp = Math.min(digimon.currentHp + healAmount.hpHealAmount, digimon.maxHp);
       }
 
       if (digimon.currentMp < digimon.maxMp) {
-        const mpHealAmount = this.calculateHealAmount(mpHealRate, healVariance, minHeal);
-        digimon.currentMp = Math.min(digimon.currentMp + mpHealAmount, digimon.maxMp);
+        digimon.currentMp = Math.min(digimon.currentMp + healAmount.mpHealAmount, digimon.maxMp);
       }
 
       if (digimon.fatigue && digimon.fatigue > 0) {
@@ -93,9 +79,34 @@ export class HospitalService {
     return playerData;
   }
 
-  private calculateHealAmount(baseAmount: number, variance: number, minHeal: number): number {
-    const varianceAmount = baseAmount * variance;
-    const randomVariance = Math.random() * varianceAmount - (varianceAmount / 2);
-    return Math.max(minHeal, Math.floor(baseAmount + randomVariance));
+  isHospitalMaxLevel(playerData: PlayerData) {
+    return playerData.hospitalLevel === this.MAX_HOSPITAL_LEVEL;
+  }
+
+  levelUpHospital(playerData: PlayerData) {
+    const hospitalLevel = playerData.hospitalLevel ?? 1;
+
+    if (!this.isHospitalMaxLevel(playerData)) {
+      playerData.hospitalLevel = hospitalLevel + 1;
+    }
+
+    return playerData;
+  }
+
+  getHospitalHealingRateForLevel(level: number) {
+    return Math.min(level, this.MAX_HOSPITAL_LEVEL) * 0.1;
+  }
+
+  private calculateHealAmount(digimonHp: number, digimonMp: number, hospitalLevel: number): { hpHealAmount: number, mpHealAmount: number } {
+
+    const healPercentage = this.getHospitalHealingRateForLevel(hospitalLevel);
+
+    const hpHealAmount = Math.floor(digimonHp * healPercentage);
+    const mpHealAmount = Math.floor(digimonMp * healPercentage);
+
+    return {
+      hpHealAmount,
+      mpHealAmount
+    }
   }
 }

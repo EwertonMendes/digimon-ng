@@ -2,6 +2,7 @@ import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
+  computed,
   DestroyRef,
   effect,
   inject,
@@ -18,7 +19,7 @@ import { AudioService } from '@services/audio.service';
 import { AudioEffects } from '@core/enums/audio-tracks.enum';
 import { ButtonComponent } from '@shared/components/button/button.component';
 import { HospitalService } from '@state/services/hospital.service';
-import { TranslocoModule } from '@jsverse/transloco';
+import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 import { TooltipDirective } from 'app/directives/tooltip.directive';
 import { ModalService } from 'app/shared/components/modal/modal.service';
 import { DigimonDetailsModalComponent } from 'app/shared/components/digimon-details-modal/digimon-details-modal.component';
@@ -27,6 +28,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { takeLast } from 'rxjs';
 import { SelectComponent } from "@shared/components/select/select.component";
 import { InputComponent } from "@shared/components/input/input.component";
+import { ToastService } from '@shared/components/toast/toast.service';
 
 @Component({
   selector: 'app-home-section',
@@ -51,6 +53,8 @@ export class HomeSectionComponent {
   private hospitalService = inject(HospitalService);
   private modalService = inject(ModalService);
   private audioService = inject(AudioService);
+  private toastService = inject(ToastService);
+  private translocoService = inject(TranslocoService);
   private changeDetectorRef = inject(ChangeDetectorRef);
   private destroyRef = inject(DestroyRef);
 
@@ -61,9 +65,15 @@ export class HomeSectionComponent {
   protected bitFarmingListId = 'bit-farming-digimon-list';
   protected hospitalListId = 'hospital-digimon-list';
   protected fullHealPrice = signal(0);
+  protected levelUpHospitalPrice = signal(0);
+  protected healingRate = signal(0);
   protected hasDigimonsToHeal = signal(false);
-  protected hasEnoughBits = signal(false);
+  protected hasEnoughBitsForHealingAll = signal(false);
+  protected hasEnoughBitsForLevelUpHopistal = signal(false);
   protected isCreatingTeam = signal(false);
+  protected isHealAllEnabled = signal(this.canHealAll());
+  protected isLevelUpHospitalEnabled = signal(this.canLevelUpHospital());
+  protected isHospitalMaxLevel = computed(() => this.hospitalService.isHospitalMaxLevel(this.globalState.playerDataView()));
 
   protected newTeamName = model<string>('');
   protected playerTeams = signal<Array<{ label: string; value: string }>>([]);
@@ -97,8 +107,26 @@ export class HomeSectionComponent {
       this.hasDigimonsToHeal.set(hasToHeal);
       const bits = this.globalState.playerDataView().bits;
       const enough = bits >= price;
-      this.hasEnoughBits.set(enough);
+      this.hasEnoughBitsForHealingAll.set(enough);
       this.isHealAllEnabled.set(hasToHeal && enough);
+    });
+
+    effect(() => {
+      const hospitalLevel = this.globalState.playerDataView().hospitalLevel;
+      const healingRate = this.hospitalService.getHospitalHealingRateForLevel(hospitalLevel);
+      this.healingRate.set(Math.floor(healingRate * 100));
+
+      const hospitalLevelUpPrice = this.calculateLevelUpHospitalPrice();
+      this.levelUpHospitalPrice.set(hospitalLevelUpPrice);
+
+      const bits = this.globalState.playerDataView().bits;
+      const enough = bits >= hospitalLevelUpPrice;
+
+      this.hasEnoughBitsForLevelUpHopistal.set(enough);
+
+      const isHospitalMaxLevel = this.hospitalService.isHospitalMaxLevel(this.globalState.playerDataView());
+
+      this.isLevelUpHospitalEnabled.set(enough && !isHospitalMaxLevel);
     });
 
     this.globalState.digimonHpChanges$
@@ -111,7 +139,7 @@ export class HomeSectionComponent {
         this.hasDigimonsToHeal.set(hasToHeal);
         const bits = this.globalState.playerDataView().bits;
         const enough = bits >= price;
-        this.hasEnoughBits.set(enough);
+        this.hasEnoughBitsForHealingAll.set(enough);
         this.isHealAllEnabled.set(hasToHeal && enough);
         this.changeDetectorRef.detectChanges();
       });
@@ -123,8 +151,6 @@ export class HomeSectionComponent {
     this.selectedLayout.set(next);
   }
 
-  isHealAllEnabled = signal(this.canHealAll());
-
   healAll() {
     if (!this.isHealAllEnabled()) return;
     this.audioService.playAudio(AudioEffects.CLICK);
@@ -135,7 +161,11 @@ export class HomeSectionComponent {
   }
 
   canHealAll() {
-    return this.hasDigimonsToHeal() && this.hasEnoughBits();
+    return this.hasDigimonsToHeal() && this.hasEnoughBitsForHealingAll();
+  }
+
+  canLevelUpHospital() {
+    return this.hasEnoughBitsForLevelUpHopistal();
   }
 
   removeDigimonFromLocation(
@@ -307,6 +337,20 @@ export class HomeSectionComponent {
     return totalCost;
   }
 
+  protected calculateLevelUpHospitalPrice() {
+    const hospitalLevel = this.globalState.playerDataView().hospitalLevel;
+
+    const priceTableForEachLevel: Record<string, number> = {
+      '1': 0,
+      '2': 9000,
+      '3': 40000,
+      '4': 120000,
+      '5': 500000
+    };
+
+    return priceTableForEachLevel[hospitalLevel.toString()] || 0;
+  }
+
   protected setSelectedTeam($event: string) {
     this.selectedTeam.set($event);
     this.globalState.loadBattleTeam(this.selectedTeam());
@@ -331,5 +375,11 @@ export class HomeSectionComponent {
   protected removeTeam() {
     this.globalState.removeBattleTeam(this.selectedTeam());
     this.selectedTeam.set('');
+  }
+
+  protected levelUpHospital() {
+    this.hospitalService.levelUpHospital(this.globalState.playerDataView());
+    this.globalState.spendBits(this.levelUpHospitalPrice());
+    this.toastService.showToast(this.translocoService.translate('MODULES.DESKTOP.COMPONENTS.HOME_SECTION.TOAST.LEVEL_UP_HOSPITAL_SUCCESS_TOAST', { level: this.globalState.playerDataView().hospitalLevel }), 'success');
   }
 }

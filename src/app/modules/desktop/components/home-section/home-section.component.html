@@ -142,6 +142,7 @@
           }
         </div>
       </div>
+
       @if(selectedLayout() === 'horizontal') {
       <div class="preset-teams-container">
         @if(isCreatingTeam()) {
@@ -226,12 +227,13 @@
           </span>
         </div>
         <div class="hospital-area-header-column">
+          <!-- <app-button [appTooltip]="'MODULES.DESKTOP.COMPONENTS.HOME_SECTION.HEAL_ALL_TOOLTIP' | transloco : {price: fullHealPrice()}" (onClick)="healAll()" icon="heal" color="success" [disabled]="!isHealAllEnabled()"></app-button> -->
           <app-button
             [appTooltip]="
               !hasDigimonsToHeal()
                 ? ('MODULES.DESKTOP.COMPONENTS.HOME_SECTION.HEAL_ALL_DISABLED_TOOLTIP'
                   | transloco)
-                : !hasEnoughBits()
+                : !hasEnoughBitsForHealingAll()
                 ? ('MODULES.DESKTOP.COMPONENTS.HOME_SECTION.NOT_ENOUGH_BITS_TOOLTIP'
                   | transloco : { price: fullHealPrice() })
                 : ('MODULES.DESKTOP.COMPONENTS.HOME_SECTION.HEAL_ALL_TOOLTIP'
@@ -281,6 +283,35 @@
           </div>
           }
         </div>
+      </div>
+
+      <div class="footer">
+        <div class="footer-content">
+          <span
+            >{{
+              "MODULES.DESKTOP.COMPONENTS.HOME_SECTION.LEVEL" | transloco
+            }}
+            Level: {{ globalState.playerDataView().hospitalLevel }}</span
+          >
+          <span
+            >{{
+              "MODULES.DESKTOP.COMPONENTS.HOME_SECTION.HEALING_RATE"
+                | transloco
+            }}: {{ healingRate() }}%</span
+          >
+        </div>
+        <app-button
+          [appTooltip]="
+            isHospitalMaxLevel()
+              ? ('MODULES.DESKTOP.COMPONENTS.HOME_SECTION.LEVEL_UP_MAX_TOOLTIP'
+                | transloco)
+              : ('MODULES.DESKTOP.COMPONENTS.HOME_SECTION.LEVEL_UP_TOOLTIP'
+                | transloco : { price: levelUpHospitalPrice() })
+          "
+          [disabled]="!isLevelUpHospitalEnabled()"
+          icon="arrow-fat-line-up"
+          (onClick)="levelUpHospital()"
+        />
       </div>
     </div>
   </div>

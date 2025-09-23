@@ -8,13 +8,7 @@ import { AudioService } from '@services/audio.service';
 import { AudioEffects } from '@core/enums/audio-tracks.enum';
 import { ModalService } from 'app/shared/components/modal/modal.service';
 import { LOCATIONS } from '@core/consts/locations';
-
-interface Location {
-  name: string;
-  img: string;
-  possibleEcounterDigimonSeeds: { seed: string; levelRange: { min: number; max: number }; rarity: number }[];
-  levelRange: { min: number; max: number };
-}
+import { Location } from '@core/consts/locations';
 
 @Component({
   selector: 'app-explore-section',
@@ -59,7 +53,7 @@ export class ExploreSectionComponent {
       return;
     }
 
-    this.generateOpponentsOnExploreLocation(location);
+    this.globalState.generateOpponentsForStageOnLocation(location, 1);
     this.modalService.open('battle-modal', BattleModalComponent, {
       imageBackground: location.img
     });
@@ -70,60 +64,6 @@ export class ExploreSectionComponent {
   private isPlayerTeamEmpty(): boolean {
     const playerTeam = this.globalState.playerDataView().digimonList;
     return playerTeam.length === 0 || playerTeam.every((d) => d.currentHp <= 0);
-  }
-
-  private generateOpponentsOnExploreLocation(location: Location) {
-    const randomNumber = Math.round(Math.random() * 3) + 1;
-
-    if (
-      !location.possibleEcounterDigimonSeeds ||
-      location.possibleEcounterDigimonSeeds.length === 0
-    ) {
-      for (let i = 0; i < randomNumber; i++) {
-        const randomLevel = Math.floor(
-          Math.random() * (location.levelRange.max - location.levelRange.min + 1) +
-          location.levelRange.min
-        );
-        const opponentDigimon = this.globalState.generateRandomDigimon(randomLevel);
-        this.globalState.trackDigimonForList(opponentDigimon, false);
-        this.log(this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.ENEMY_FOUND', { name: opponentDigimon.name }));
-      }
-      return;
-    }
-
-    const seeds = location.possibleEcounterDigimonSeeds;
-    const weights = seeds.map(seed => 1 - seed.rarity);
-    const totalWeight = weights.reduce((sum, weight) => sum + weight, 0);
-
-    for (let i = 0; i < randomNumber; i++) {
-      let randomValue = Math.random() * totalWeight;
-      let selectedIndex = -1;
-
-      for (let j = 0; j < weights.length; j++) {
-        randomValue -= weights[j];
-        if (randomValue <= 0) {
-          selectedIndex = j;
-          break;
-        }
-      }
-
-      if (selectedIndex === -1) {
-        selectedIndex = Math.floor(Math.random() * seeds.length);
-      }
-
-      const selectedDigimon = seeds[selectedIndex];
-      const randomLevel = Math.floor(
-        Math.random() * (selectedDigimon.levelRange.max - selectedDigimon.levelRange.min + 1) +
-        selectedDigimon.levelRange.min
-      );
-      const opponentDigimon = this.globalState.generateDigimonBySeed(
-        selectedDigimon.seed,
-        randomLevel
-      );
-      if (!opponentDigimon) continue;
-      this.globalState.trackDigimonForList(opponentDigimon, false);
-      this.log(this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.ENEMY_FOUND', { name: opponentDigimon.name }));
-    }
   }
 
   private startBattle() {

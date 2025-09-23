@@ -20,6 +20,7 @@ import { ThemeService } from 'app/services/theme.service';
 import { PlayerConfig } from 'app/core/interfaces/player-config.interface';
 import { getDefaultPotential } from '@core/utils/digimon.utils';
 import { WindowService } from '@services/window.service';
+import { Location } from '@core/consts/locations';
 
 type EndBattleState = 'victory' | 'defeat' | 'draw';
 type DigimonWithOwner = Digimon & { owner: string };
@@ -74,8 +75,10 @@ export class GlobalStateDataSource {
   turnOrder: Array<DigimonWithOwner> = [];
   currentAttackingDigimon = signal<DigimonWithOwner | null>(null);
   currentDefendingDigimon = signal<DigimonWithOwner | null>(null);
-  isBattleActive = false;
+  isBattleActive = signal<boolean>(false);
   showPlayerAttackButton = signal<boolean>(false);
+  private currentExploredLocation = signal<Location | null>(null);
+  private battleStage = signal<number>(1);
   private trainingDigimonIntervalDurationInSeconds = signal<number>(30);
   trainingDigimonCountdown = signal<number>(0);
   private bitFarmingIntervalDurationInSeconds = signal<number>(60);
@@ -101,6 +104,10 @@ export class GlobalStateDataSource {
 
   get playerDataView() {
     return this.playerData.asReadonly();
+  }
+
+  get currentBattleStage() {
+    return this.battleStage.asReadonly();
   }
 
   get totalDigimonCount() {
@@ -249,7 +256,7 @@ export class GlobalStateDataSource {
   }
 
   async saveCurrentPlayerData() {
-    if (this.isBattleActive) return;
+    if (this.isBattleActive()) return;
     this.audioService.playAudio(AudioEffects.CLICK);
     try {
       this.toastService.showToast(this.translocoService.translate('COMMON.ACTION_BAR.TOAST.GAME_SAVED_SUCCESSFULLY'), 'success');
@@ -538,12 +545,12 @@ export class GlobalStateDataSource {
   }
   startBattle() {
     this.repopulateTurnOrder();
-    this.isBattleActive = true;
+    this.isBattleActive.set(true);
     this.nextTurn();
   }
 
   endBattle(endState?: EndBattleState) {
-    this.isBattleActive = false;
+    this.isBattleActive.set(false);
     this.currentAttackingDigimon.set(null);
     this.currentDefendingDigimon.set(null);
     if (endState === 'victory') {
@@ -581,20 +588,50 @@ export class GlobalStateDataSource {
     this.enemyTeam().forEach(digimon => this.untrackDigimonForList(digimon.id!, false));
   }
 
+  isBossStage(stage: number): boolean {
+    const location = this.currentExploredLocation();
+    if (!location) return false;
+    return stage === location.stages.length;
+  }
+
+  canGoToNextStage(): boolean {
+    const arePlayerDigimonsAlive = this.playerDataView().digimonList.some((d) => d.currentHp > 0);
+    return !this.isBattleActive() && (this.currentExploredLocation() ?? false) && !this.isBossStage(this.battleStage()) && arePlayerDigimonsAlive;
+  }
+
+  goToBattleNextStage() {
+    this.enemyTeam.set([]);
+    this.battleLog.set([]);
+    this.resetTurnOrder();
+    this.battleStage.set(this.battleStage() + 1);
+
+    if (!this.currentExploredLocation()) return;
+
+    if (!this.isBossStage(this.battleStage())) {
+      this.generateOpponentsForStageOnLocation(this.currentExploredLocation()!, this.battleStage());
+    }
+
+    if (this.isBossStage(this.battleStage())) {
+      this.generateBossesOnExploreLocation(this.currentExploredLocation()!, this.battleStage());
+    }
+
+    this.startBattle();
+  }
+
   nextTurn() {
-    if (!this.isBattleActive) {
+    if (!this.isBattleActive()) {
       this.showPlayerAttackButton.set(false);
       this.endBattle();
       return;
     }
     if (this.enemyTeamAccessor.every((d) => d.currentHp <= 0)) {
-      this.isBattleActive = false;
+      this.isBattleActive.set(false);
       this.showPlayerAttackButton.set(false);
       this.endBattle('victory');
       return;
     }
     if (this.playerDataView().digimonList.every((d) => d.currentHp <= 0)) {
-      this.isBattleActive = false;
+      this.isBattleActive.set(false);
       this.showPlayerAttackButton.set(false);
       this.endBattle('defeat');
       return;
@@ -619,7 +656,7 @@ export class GlobalStateDataSource {
     }
   }
 
-  attemptRunAway() {
+  attemptRunAway(): boolean {
     const playerScore = this.battleService.calculateTeamScore(this.playerData().digimonList);
     const enemyScore = this.battleService.calculateTeamScore(this.enemyTeam());
     const escapeChance = this.battleService.calculateEscapeChance(playerScore, enemyScore);
@@ -633,7 +670,7 @@ export class GlobalStateDataSource {
       this.audioService.playAudio(AudioEffects.MISS);
       this.log(this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.ESCAPE_SUCCESS_LOG'));
       this.endBattle();
-      return;
+      return true;
     }
     this.toastService.showToast(
       this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.ESCAPE_FAIL_TOAST'),
@@ -644,9 +681,16 @@ export class GlobalStateDataSource {
     const enemy = this.turnOrder[0];
     if (!enemy || enemy.owner !== 'enemy') {
       this.enemyAttack(enemy);
-      return;
     }
     this.nextTurn();
+    return false;
+  }
+
+  repeatStage() {
+    this.enemyTeam.set([]);
+    this.battleLog.set([]);
+    this.generateOpponentsForStageOnLocation(this.currentExploredLocation()!, this.battleStage());
+    this.startBattle();
   }
 
   attack(attacker: Digimon, defender: Digimon) {
@@ -656,6 +700,8 @@ export class GlobalStateDataSource {
   resetBattleState() {
     this.enemyTeam.set([]);
     this.battleLog.set([]);
+    this.currentExploredLocation.set(null);
+    this.battleStage.set(1);
   }
   private enemyAttack(digimon: Digimon) {
     if (!this.isBattleActive) return;
@@ -774,12 +820,102 @@ export class GlobalStateDataSource {
   log(message: string) {
     this.battleLog().push(message);
   }
+
   generateRandomDigimon(level?: number) {
     let digimon = this.digimonService.generateRandomDigimon();
     if (level) {
       digimon = this.battleService.levelUpDigimonToLevel(digimon, level)!;
     }
     return digimon;
+  }
+
+  generateOpponentsForStageOnLocation(location: Location, stage: number) {
+    const nonBossStages = location.stages.filter(s => !!s.possibleEncounters);
+    const numNonBossStages = nonBossStages.length;
+
+    if (stage < 1 || stage > numNonBossStages) {
+      return;
+    }
+
+    const currentStage = nonBossStages[stage - 1];
+
+    const randomNumber = Math.round(Math.random() * 3) + 1;
+
+    const encounters = currentStage.possibleEncounters || [];
+
+    if (encounters.length === 0) {
+      for (let i = 0; i < randomNumber; i++) {
+        const randomLevel = Math.floor(
+          Math.random() * (location.levelRange.max - location.levelRange.min + 1) +
+          location.levelRange.min
+        );
+        const opponentDigimon = this.generateRandomDigimon(randomLevel);
+        this.trackDigimonForList(opponentDigimon, false);
+        this.log(this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.ENEMY_FOUND', { name: opponentDigimon.name }));
+      }
+      return;
+    }
+
+    this.currentExploredLocation.set(location);
+    this.battleStage.set(stage);
+
+    const weights = encounters.map(encounter => 1 - encounter.rarity);
+    const totalWeight = weights.reduce((sum, weight) => sum + weight, 0);
+
+    for (let i = 0; i < randomNumber; i++) {
+      let randomValue = Math.random() * totalWeight;
+      let selectedIndex = -1;
+
+      for (let j = 0; j < weights.length; j++) {
+        randomValue -= weights[j];
+        if (randomValue <= 0) {
+          selectedIndex = j;
+          break;
+        }
+      }
+
+      if (selectedIndex === -1) {
+        selectedIndex = Math.floor(Math.random() * encounters.length);
+      }
+
+      const selectedEncounter = encounters[selectedIndex];
+      const randomLevel = Math.floor(
+        Math.random() * (selectedEncounter.levelRange.max - selectedEncounter.levelRange.min + 1) +
+        selectedEncounter.levelRange.min
+      );
+      const opponentDigimon = this.generateDigimonBySeed(
+        selectedEncounter.seed,
+        randomLevel
+      );
+      if (!opponentDigimon) continue;
+      this.trackDigimonForList(opponentDigimon, false);
+      this.log(this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.ENEMY_FOUND', { name: opponentDigimon.name }));
+    }
+  }
+
+  private generateBossesOnExploreLocation(location: Location, stage: number) {
+    const allStages = location.stages;
+    const numStages = allStages.length;
+
+    if (stage < 1 || stage > numStages) {
+      return;
+    }
+
+    const currentStage = allStages[stage - 1];
+
+    if (!currentStage.boss || currentStage.boss.length === 0) {
+      return;
+    }
+
+    currentStage.boss.forEach(boss => {
+      const opponentDigimon = this.generateDigimonBySeed(
+        boss.seed,
+        boss.level
+      );
+      if (!opponentDigimon) return;
+      this.trackDigimonForList(opponentDigimon, false);
+      this.log(this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.ENEMY_FOUND', { name: opponentDigimon.name }));
+    });
   }
 
   generateDigimonBySeed(seed: string, level = 1, withEvolutionRoute = false) {

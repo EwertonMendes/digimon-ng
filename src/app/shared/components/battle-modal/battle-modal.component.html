@@ -1,6 +1,6 @@
 <app-modal
   [id]="battleModalId"
-  [closable]="!globalState.isBattleActive"
+  [closable]="!globalState.isBattleActive()"
   (closeEvent)="onBattleModalClose()"
 >
   <div class="digimon-battle-container">
@@ -80,22 +80,30 @@
             </div>
           </div>
           <span class="middle-panel">
-            @if(globalState.isBattleActive) {
-            <span style="text-align: center"
-              >{{
-                globalState.currentAttackingDigimon()?.owner === "player"
-                  ? ("SHARED.COMPONENTS.BATTLE_MODAL.PLAYER_TURN"
-                    | transloco
-                      : {
-                          playerName: globalState.playerDataView().name
-                        })
-                  : ("SHARED.COMPONENTS.BATTLE_MODAL.ENEMY_TURN" | transloco)
-              }}</span
-            >
-            }
-            <span>VS</span>
-            @if(globalState.showPlayerAttackButton() &&
-            !isChoosingDigimonToAttack() && globalState.isBattleActive) {
+            <span style="text-align: center">
+              @if(isBossStage()) {
+              {{ "SHARED.COMPONENTS.BATTLE_MODAL.BOSS" | transloco }} } @else {
+              {{
+                "SHARED.COMPONENTS.BATTLE_MODAL.STAGE"
+                  | transloco
+                    : {
+                        stage: globalState.currentBattleStage()
+                      }
+              }}
+              }
+            </span>
+            @if(globalState.isBattleActive()) {
+            <span style="text-align: center">{{
+              globalState.currentAttackingDigimon()?.owner === "player"
+                ? ("SHARED.COMPONENTS.BATTLE_MODAL.PLAYER_TURN"
+                  | transloco
+                    : {
+                        playerName: globalState.playerDataView().name
+                      })
+                : ("SHARED.COMPONENTS.BATTLE_MODAL.ENEMY_TURN" | transloco)
+            }}</span>
+            } @if(globalState.showPlayerAttackButton() &&
+            !isChoosingDigimonToAttack() && globalState.isBattleActive()) {
             <div class="player-actions-container">
               <app-button
                 [text]="
@@ -114,11 +122,11 @@
                 iconScale="1.5"
                 color="danger"
                 iconPosition="right"
-                [disabled]="!globalState.isBattleActive"
+                [disabled]="!globalState.isBattleActive()"
                 (onClick)="attemptRunAway()"
               />
             </div>
-            } @if(isChoosingDigimonToAttack() && globalState.isBattleActive) {
+            } @if(isChoosingDigimonToAttack() && globalState.isBattleActive()) {
             <div class="player-actions-container">
               <app-button
                 [text]="
@@ -130,6 +138,36 @@
                 color="secondary"
                 iconPosition="right"
                 (onClick)="cancelAttack()"
+              />
+            </div>
+            } @if(!globalState.isBattleActive()) {
+            <div class="player-actions-container">
+              @if(canGoToNextStage() && !ranAway()) {
+              <app-button
+                [text]="
+                  'SHARED.COMPONENTS.BATTLE_MODAL.GO_TO_NEXT_STAGE_BUTTON'
+                    | transloco
+                "
+                color="secondary"
+                (onClick)="goToNextStage()"
+              />
+              } @if(canRepeatStage() && !ranAway()) {
+              <app-button
+                [text]="
+                  'SHARED.COMPONENTS.BATTLE_MODAL.REPEAT_STAGE_BUTTON'
+                    | transloco
+                "
+                color="info"
+                (onClick)="repeatStage()"
+              />
+              }
+              <app-button
+                [text]="
+                  'SHARED.COMPONENTS.BATTLE_MODAL.EXIT_LOCATION_BUTTON'
+                    | transloco
+                "
+                color="danger"
+                (onClick)="exitLocation()"
               />
             </div>
             }

@@ -98,7 +98,7 @@
     "ADVENTURE": {
       "EXPLORE_SECTION": {
         "TITLE": "Explorar",
-        "LOCATIONS_TITLE": "Ubicaciones",
+        "LOCATIONS_TITLE": "Lugares",
         "LEVEL": "Nivel:",
         "LOCATION_LOGIN_MOUNTAIN": "Montaña del Inicio de Sesión",
         "LOCATION_PIXEL_DESERT": "Desierto del Píxel",
@@ -116,9 +116,9 @@
         "LOCATION_RISK_FACTORY": "Fábrica del Riesgo",
         "LOCATION_SHADOW_ABYSS": "Abismo Sombrío",
         "LOCATION_WIZARD_TEMPLE": "Templo del Mago",
-        "LOG_EXPLORING_LOCATION": "Explorando ubicación {{location}}",
+        "LOG_EXPLORING_LOCATION": "Explorando lugar {{location}}",
         "NO_DIGIMON_TO_EXPLORE": "No hay Digimon para explorar.",
-        "MIN_LEVEL_REQUIRED": "Necesitas un digimon de nivel {{minLevel}} para explorar esta ubicación.",
+        "LOCKED_LOCATION": "Lugar bloqueado.",
         "ENEMY_FOUND": "¡Se encontró al enemigo {{name}}!"
       },
       "ARENA_SECTION": {
@@ -267,6 +267,8 @@
         "SUCCESS_TOAST_TEST": "Teste de toast success",
         "KILL_ALL_DIGIMON": "Matar todos los Digimons",
         "GIVE_1_MILLION_BITS": "Dar 1 millón de bits",
+        "UNLOCK_ALL_LOCATIONS": "Desbloquear todos los lugares",
+        "LOCK_ALL_LOCATIONS": "Bloquear todos los lugares",
         "ERROR_TOAST_TEST": "Teste de toast error",
         "SELECT_LEVEL": "Seleccionar nivel:",
         "GENERATE_EVOLUTION_LINE": "Generar línea de evolución",

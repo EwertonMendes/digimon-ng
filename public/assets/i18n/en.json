@@ -117,7 +117,7 @@
         "LOCATION_WIZARD_TEMPLE": "Wizard Temple",
         "LOG_EXPLORING_LOCATION": "Exploring location {{location}}",
         "NO_DIGIMON_TO_EXPLORE": "No Digimon to explore with.",
-        "MIN_LEVEL_REQUIRED": "You need a digimon at level {{minLevel}} to explore this location.",
+        "LOCKED_LOCATION": "Locked location.",
         "ENEMY_FOUND": "(Enemy) {{name}} was found!"
       },
       "ARENA_SECTION": {
@@ -267,6 +267,8 @@
         "ERROR_TOAST_TEST": "Error toast test",
         "KILL_ALL_DIGIMON": "Kill all Digimon",
         "GIVE_1_MILLION_BITS": "Give 1 million bits",
+        "UNLOCK_ALL_LOCATIONS": "Unlock all locations",
+        "LOCK_ALL_LOCATIONS": "Lock all locations",
         "SELECT_LEVEL": "Select level:",
         "GENERATE_EVOLUTION_LINE": "Generate evolution line",
         "REFRESH_DIGIMON_LIST": "Refresh digimon list",

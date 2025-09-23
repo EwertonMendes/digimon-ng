@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 import { GlobalStateDataSource } from '@state/global-state.datasource';
 import { BattleModalComponent } from '@shared/components/battle-modal/battle-modal.component';
@@ -25,25 +25,26 @@ export class ExploreSectionComponent {
   private audioService = inject(AudioService);
 
   locations: Location[] = [...LOCATIONS];
-  currentLocation = signal<Location | null>(null)
 
   baseTurnOrder: Digimon[] = [];
   actualTurnOrder: Digimon[] = [];
   showPlayerAttackButton = false;
 
   canExplore(location: Location): boolean {
-    const playerDigimons = this.globalState.playerDataView().digimonList;
-    return playerDigimons.some(d => d.level >= location.levelRange.min);
+    if(location.id === 'login-mountain') {
+      return true;
+    }
+    const isLocationUnlocked = this.globalState.isLocationUnlocked(location);
+    return isLocationUnlocked;
   }
 
   exploreLocation(location: Location) {
     if (!this.canExplore(location)) {
-      const minLevelMsg = this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.MIN_LEVEL_REQUIRED', { minLevel: location.levelRange.min });
+      const minLevelMsg = this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.LOCKED_LOCATION');
       this.toastService.showToast(minLevelMsg, 'error');
       return;
     }
 
-    this.currentLocation.set(location);
     this.audioService.playAudio(AudioEffects.CLICK);
     this.log(this.translocoService.translate('MODULES.ADVENTURE.EXPLORE_SECTION.LOG_EXPLORING_LOCATION', { location: this.translocoService.translate(location.name) }));
 

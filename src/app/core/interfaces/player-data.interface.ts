@@ -16,6 +16,7 @@ export interface PlayerData {
   bits: number;
   digiData: Record<string, DigiData>;
   teams?: Team[];
+  unlockedLocations: string[];
   [key: string]: any;
 }
 

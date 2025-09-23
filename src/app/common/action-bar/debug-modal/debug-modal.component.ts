@@ -7,6 +7,7 @@ import { ModalService } from 'app/shared/components/modal/modal.service';
 import { ModalComponent } from 'app/shared/components/modal/modal.component';
 import { GiveSelectedDigimonModalComponent } from './components/give-selected-digimon-modal/give-selected-digimon-modal.component';
 import { SeeEvolutionTreeModalComponent } from './components/see-evolution-tree-modal/see-evolution-tree-modal.component';
+import { LOCATIONS } from '@core/consts/locations';
 
 @Component({
   selector: 'app-debug-modal',
@@ -44,6 +45,14 @@ export class DebugModalComponent {
     {
       name: 'SHARED.COMPONENTS.DEBUG_MODAL.GIVE_1_MILLION_BITS', action: () => this.globalState.addBits(1000000)
     },
+    {
+      name: 'SHARED.COMPONENTS.DEBUG_MODAL.UNLOCK_ALL_LOCATIONS',
+      action: this.unlockAllLocations.bind(this),
+    },
+    {
+      name: 'SHARED.COMPONENTS.DEBUG_MODAL.LOCK_ALL_LOCATIONS',
+      action: this.lockAllLocations.bind(this),
+    }
   ];
 
   giveRandomDigimon() {
@@ -68,5 +77,17 @@ export class DebugModalComponent {
 
   openSeeEvolutionLinesDigimonModal() {
     this.modalService.open(this.seeEvolutionTreeModalId, SeeEvolutionTreeModalComponent);
+  }
+
+  unlockAllLocations() {
+    LOCATIONS.forEach(location => {
+      this.globalState.unlockSpecificLocation(location);
+    });
+  }
+
+  lockAllLocations() {
+    LOCATIONS.forEach(location => {
+      this.globalState.lockSpecificLocation(location);
+    });
   }
 }

@@ -17,6 +17,7 @@ export interface Stage {
 }
 
 export interface Location {
+  id: string;
   name: string;
   img: string;
   stages: Stage[];
@@ -25,6 +26,7 @@ export interface Location {
 
 export const LOCATIONS = [
   {
+    id: 'login-mountain',
     name: 'MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_LOGIN_MOUNTAIN',
     img: 'assets/environments/loginmountain.png',
     stages: [
@@ -74,6 +76,7 @@ export const LOCATIONS = [
     levelRange: { min: 1, max: 10 },
   },
   {
+    id: 'pixel-desert',
     name: 'MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_PIXEL_DESERT',
     img: 'assets/environments/pixeldesert.png',
     stages: [
@@ -124,6 +127,7 @@ export const LOCATIONS = [
     levelRange: { min: 5, max: 15 },
   },
   {
+    id: 'label-forest',
     name: 'MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_LABEL_FOREST',
     img: 'assets/environments/labelforest.png',
     stages: [
@@ -180,6 +184,7 @@ export const LOCATIONS = [
     levelRange: { min: 10, max: 20 },
   },
   {
+    id: 'register-jungle',
     name: 'MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_REGISTER_JUNGLE',
     img: 'assets/environments/registerjungle.png',
     stages: [
@@ -225,6 +230,7 @@ export const LOCATIONS = [
     levelRange: { min: 15, max: 25 },
   },
   {
+    id: 'proxy-island',
     name: 'MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_PROXY_ISLAND',
     img: 'assets/environments/proxyisland.png',
     stages: [
@@ -270,6 +276,7 @@ export const LOCATIONS = [
     levelRange: { min: 20, max: 30 },
   },
   {
+    id: 'limit-valley',
     name: 'MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_LIMIT_VALLEY',
     img: 'assets/environments/limitvalley.png',
     stages: [
@@ -322,6 +329,7 @@ export const LOCATIONS = [
     levelRange: { min: 25, max: 35 },
   },
   {
+    id: 'loop-swamp',
     name: 'MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_LOOP_SWAMP',
     img: 'assets/environments/loopswamp.png',
     stages: [
@@ -377,6 +385,7 @@ export const LOCATIONS = [
     levelRange: { min: 30, max: 40 },
   },
   {
+    id: 'access-glacier',
     name: 'MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_ACCESS_GLACIER',
     img: 'assets/environments/accessglacier.png',
     stages: [
@@ -421,6 +430,7 @@ export const LOCATIONS = [
     levelRange: { min: 35, max: 45 },
   },
   {
+    id: 'sunken-tunnel',
     name: 'MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_SUNKEN_TUNNEL',
     img: 'assets/environments/anglertunnel.png',
     stages: [
@@ -460,6 +470,7 @@ export const LOCATIONS = [
     levelRange: { min: 40, max: 50 },
   },
   {
+    id: 'magnet-mine',
     name: 'MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_MAGNET_MINE',
     img: 'assets/environments/magnetmine.png',
     stages: [
@@ -504,6 +515,7 @@ export const LOCATIONS = [
     levelRange: { min: 45, max: 55 },
   },
   {
+    id: 'packet-coast',
     name: 'MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_PACKET_COAST',
     img: 'assets/environments/packetcoast.png',
     stages: [
@@ -546,6 +558,7 @@ export const LOCATIONS = [
     levelRange: { min: 50, max: 60 },
   },
   {
+    id: 'pallete-amazon',
     name: 'MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_PALLETE_AMAZON',
     img: 'assets/environments/paletteamazon.png',
     stages: [
@@ -590,6 +603,7 @@ export const LOCATIONS = [
     levelRange: { min: 55, max: 65 },
   },
   {
+    id: 'thriller-ruins',
     name: 'MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_THRILLER_RUINS',
     img: 'assets/environments/thrillerruins.png',
     stages: [
@@ -638,6 +652,7 @@ export const LOCATIONS = [
     levelRange: { min: 60, max: 70 },
   },
   {
+    id: 'risk-factory',
     name: 'MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_RISK_FACTORY',
     img: 'assets/environments/riskfactory.png',
     stages: [
@@ -681,6 +696,7 @@ export const LOCATIONS = [
     levelRange: { min: 65, max: 75 },
   },
   {
+    id: 'shadow-abyss',
     name: 'MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_SHADOW_ABYSS',
     img: 'assets/environments/shadowabyss.png',
     stages: [
@@ -721,6 +737,7 @@ export const LOCATIONS = [
     levelRange: { min: 70, max: 85 },
   },
   {
+    id: 'wizard-temple',
     name: 'MODULES.ADVENTURE.EXPLORE_SECTION.LOCATION_WIZARD_TEMPLE',
     img: 'assets/environments/wizardtemple.png',
     stages: [

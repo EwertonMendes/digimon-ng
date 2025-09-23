@@ -21,6 +21,7 @@ import { PlayerConfig } from 'app/core/interfaces/player-config.interface';
 import { getDefaultPotential } from '@core/utils/digimon.utils';
 import { WindowService } from '@services/window.service';
 import { Location } from '@core/consts/locations';
+import { LOCATIONS } from '@core/consts/locations';
 
 type EndBattleState = 'victory' | 'defeat' | 'draw';
 type DigimonWithOwner = Digimon & { owner: string };
@@ -67,6 +68,7 @@ export class GlobalStateDataSource {
     bits: 0,
     digiData: {},
     teams: [],
+    unlockedLocations: [],
   });
   showInitialSetupScreen = signal<boolean>(false);
   selectedDigimonOnDetails = signal<Digimon | undefined>(undefined);
@@ -249,6 +251,7 @@ export class GlobalStateDataSource {
         },
       },
       teams: [],
+      unlockedLocations: [],
     };
     this.playerDataService.savePlayerData(newPlayerData);
     this.initializeGame(newPlayerData, true);
@@ -574,6 +577,10 @@ export class GlobalStateDataSource {
         this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.VICTORY_LOG'),
         'success'
       );
+
+      if (this.isBossStage(this.battleStage())) {
+        this.unlockNextLocation();
+      }
     }
     if (endState === 'defeat') {
       this.audioService.playAudio(AudioTracks.DEFEAT);
@@ -691,6 +698,43 @@ export class GlobalStateDataSource {
     this.battleLog.set([]);
     this.generateOpponentsForStageOnLocation(this.currentExploredLocation()!, this.battleStage());
     this.startBattle();
+  }
+
+  unlockNextLocation() {
+    const currentLocation = this.currentExploredLocation();
+    if (!currentLocation) return;
+
+    const nextLocation = LOCATIONS[LOCATIONS.findIndex(l => l.id === currentLocation.id) + 1];
+    if (!nextLocation) return;
+
+    this.playerData.update((currentData) => {
+      const updatedData = { ...currentData };
+      if (!updatedData.unlockedLocations) updatedData.unlockedLocations = [];
+      updatedData.unlockedLocations = [...updatedData.unlockedLocations, nextLocation.id];
+      return updatedData;
+    });
+  }
+
+  unlockSpecificLocation(location: Location) {
+    this.playerData.update((currentData) => {
+      const updatedData = { ...currentData };
+      if (!updatedData.unlockedLocations) updatedData.unlockedLocations = [];
+      updatedData.unlockedLocations = [...updatedData.unlockedLocations, location.id];
+      return updatedData;
+    });
+  }
+
+  lockSpecificLocation(location: Location) {
+    this.playerData.update((currentData) => {
+      const updatedData = { ...currentData };
+      if (!updatedData.unlockedLocations) updatedData.unlockedLocations = [];
+      updatedData.unlockedLocations = updatedData.unlockedLocations.filter(l => l !== location.id);
+      return updatedData;
+    });
+  }
+
+  isLocationUnlocked(location: Location): boolean {
+    return this.playerDataView().unlockedLocations?.includes(location.id);
   }
 
   attack(attacker: Digimon, defender: Digimon) {

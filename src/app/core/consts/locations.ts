@@ -970,7 +970,7 @@ export const LOCATIONS = [
           { seed: DigimonSeeds.SALAMON, levelRange: { min: 15, max: 25 }, rarity: 0.3 },
           { seed: DigimonSeeds.KUDAMON, levelRange: { min: 15, max: 25 }, rarity: 0.3 },
           { seed: DigimonSeeds.LUNAMON, levelRange: { min: 15, max: 25 }, rarity: 0.2 },
-          { seed: DigimonSeeds.LUCEMON_CHAOS_MODE, levelRange: { min: 15, max: 25 }, rarity: 0.2 },
+          { seed: DigimonSeeds.HOLYDRAMON, levelRange: { min: 1, max: 10 }, rarity: 0.1 },
         ],
       },
       {
@@ -993,9 +993,6 @@ export const LOCATIONS = [
       },
       {
         possibleEncounters: [
-          { seed: DigimonSeeds.OPHANIMON, levelRange: { min: 45, max: 55 }, rarity: 0.4 },
-          { seed: DigimonSeeds.CHERUBIMON_GOOD, levelRange: { min: 45, max: 55 }, rarity: 0.4 },
-          { seed: DigimonSeeds.SERAPHIMON, levelRange: { min: 45, max: 55 }, rarity: 0.3 },
           { seed: DigimonSeeds.DIANAMON, levelRange: { min: 45, max: 55 }, rarity: 0.2 },
           { seed: DigimonSeeds.KUZUHAMON, levelRange: { min: 45, max: 55 }, rarity: 0.1 },
         ],
@@ -1020,7 +1017,6 @@ export const LOCATIONS = [
       },
       {
         possibleEncounters: [
-          { seed: DigimonSeeds.SUSANOOMON, levelRange: { min: 75, max: 85 }, rarity: 0.3 },
           { seed: DigimonSeeds.CHAOSMON, levelRange: { min: 75, max: 85 }, rarity: 0.3 },
           { seed: DigimonSeeds.LUCEMON_CHAOS_MODE, levelRange: { min: 75, max: 85 }, rarity: 0.2 },
           { seed: DigimonSeeds.MACHINEDRAMON, levelRange: { min: 65, max: 75 }, rarity: 0.1 },
@@ -1039,7 +1035,6 @@ export const LOCATIONS = [
           { seed: DigimonSeeds.ALPHAMON, levelRange: { min: 85, max: 95 }, rarity: 0.3 },
           { seed: DigimonSeeds.OMNIMON, levelRange: { min: 85, max: 95 }, rarity: 0.3 },
           { seed: DigimonSeeds.IMPERIALDRAMON_PALADIN_MODE, levelRange: { min: 85, max: 95 }, rarity: 0.2 },
-          { seed: DigimonSeeds.SUSANOOMON, levelRange: { min: 85, max: 95 }, rarity: 0.1 },
         ],
       },
       {
@@ -1053,9 +1048,9 @@ export const LOCATIONS = [
       {
         boss: [
           { seed: DigimonSeeds.OPHANIMON, level: 100 },
-          { seed: DigimonSeeds.OMNIMON, level: 100 },
           { seed: DigimonSeeds.SERAPHIMON, level: 100 },
           { seed: DigimonSeeds.CHERUBIMON_GOOD, level: 100 },
+          { seed: DigimonSeeds.SUSANOOMON, level: 10 },
         ],
       },
     ],

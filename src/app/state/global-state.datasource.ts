@@ -76,7 +76,7 @@ export class GlobalStateDataSource {
   selectedDigimonOnDetails = signal<Digimon | undefined>(undefined);
   private enemyTeam = signal<Digimon[]>([]);
   private battleLog = signal<string[]>([]);
-  turnOrder: Array<DigimonWithOwner> = [];
+  turnOrder = signal<Array<DigimonWithOwner>>([]);
   currentAttackingDigimon = signal<DigimonWithOwner | null>(null);
   currentDefendingDigimon = signal<DigimonWithOwner | null>(null);
   isBattleActive = signal<boolean>(false);
@@ -657,7 +657,7 @@ export class GlobalStateDataSource {
     if (this.turnOrder.length <= 5) {
       this.repopulateTurnOrder();
     }
-    const digimon = this.turnOrder[0];
+    const digimon = this.turnOrder()[0];
     if (!digimon) {
       this.showPlayerAttackButton.set(false);
       this.endBattle();
@@ -696,7 +696,7 @@ export class GlobalStateDataSource {
     );
     this.audioService.playAudio(AudioEffects.HIT);
     this.log(this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.ESCAPE_FAIL_LOG'));
-    const enemy = this.turnOrder[0];
+    const enemy = this.turnOrder()[0];
     if (!enemy || enemy.owner !== 'enemy') {
       this.enemyAttack(enemy);
     }
@@ -707,6 +707,7 @@ export class GlobalStateDataSource {
   repeatStage() {
     this.enemyTeam.set([]);
     this.battleLog.set([]);
+    this.resetTurnOrder();
     this.generateOpponentsForStageOnLocation(this.currentExploredLocation()!, this.battleStage());
     this.startBattle();
   }
@@ -780,7 +781,7 @@ export class GlobalStateDataSource {
       if (dealtDamage > 0) {
         this.audioService.playAudio(AudioEffects.HIT);
       }
-      this.turnOrder.shift();
+      this.turnOrder().shift();
       if (target.currentHp <= 0) {
         this.log(
           this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.PLAYER_DEFEATED_LOG', {
@@ -788,9 +789,9 @@ export class GlobalStateDataSource {
             digimon: target.nickName ? target.nickName : target.name,
           })
         );
-        this.turnOrder = this.turnOrder.filter(
+        this.turnOrder.set(this.turnOrder().filter(
           (digimon) => digimon.id !== target.id
-        );
+        ));
       }
       this.nextTurn();
     }, 1000);
@@ -825,16 +826,22 @@ export class GlobalStateDataSource {
     const playerTeam = this.playerDataView().digimonList
       .filter((playerDigimon) => playerDigimon.currentHp > 0)
       .map((playerDigimon) => ({ ...playerDigimon, owner: 'player' }));
+
     const enemyTeam = this.enemyTeamAccessor
       .filter((enemyDigimon) => enemyDigimon.currentHp > 0)
       .map((enemyDigimon) => ({ ...enemyDigimon, owner: 'enemy' }));
     const allDigimons = [...playerTeam, ...enemyTeam];
+
     allDigimons.sort((a, b) => b.speed - a.speed);
-    const turnOrder: Array<DigimonWithOwner> = [];
+
+    const totalSpeed = allDigimons.reduce((acc, d) => acc + d.speed, 0);
+    const averageSpeed = allDigimons.length > 0 ? totalSpeed / allDigimons.length : 0;
+    const speedThreshold = averageSpeed * 1.5;
+
+    const turnOrder = [];
     for (const digimon of allDigimons) {
       turnOrder.push(digimon);
-      const averageSpeed = allDigimons.reduce((acc, d) => acc + d.speed, 0) / allDigimons.length;
-      if (digimon.speed > averageSpeed * 1.5) {
+      if (digimon.speed > speedThreshold) {
         turnOrder.push(digimon);
       }
     }
@@ -842,11 +849,12 @@ export class GlobalStateDataSource {
   }
 
   resetTurnOrder() {
-    this.turnOrder = [];
+    this.turnOrder.set([]);
   }
 
   repopulateTurnOrder() {
-    this.turnOrder = [...this.turnOrder, ...this.getTurnOrder(), ...this.getTurnOrder()];
+    const newOrder = this.getTurnOrder();
+    this.turnOrder.set([...this.turnOrder(), ...newOrder, ...newOrder]);
   }
 
   calculateRewards(defeatedDigimons: Digimon[]) {

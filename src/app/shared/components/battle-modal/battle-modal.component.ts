@@ -71,7 +71,7 @@ export class BattleModalComponent {
   protected playerAttack(opponentDigimon: Digimon) {
     if (!this.globalState.isBattleActive || !this.isChoosingDigimonToAttack() || opponentDigimon.currentHp <= 0) return;
     this.isChoosingDigimonToAttack.set(false);
-    const digimon = this.globalState.turnOrder.shift();
+    const digimon = this.globalState.turnOrder().shift();
 
     if (!digimon) return;
 
@@ -105,10 +105,10 @@ export class BattleModalComponent {
           enemy: opponentDigimon.name
         })
       );
-      this.globalState.turnOrder =
-        this.globalState.turnOrder.filter(
+      this.globalState.turnOrder.set(
+        this.globalState.turnOrder().filter(
           (d) => d.id !== opponentDigimon.id
-        );
+        ));
     }
 
     this.globalState.nextTurn();

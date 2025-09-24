@@ -27,7 +27,7 @@
           <h4 class="turn-order-title">
             {{ "SHARED.COMPONENTS.BATTLE_MODAL.TURN_ORDER_TITLE" | transloco }}
           </h4>
-          @for(digimon of globalState.turnOrder; track digimon.seed + $index){
+          @for(digimon of globalState.turnOrder(); track digimon.seed + $index){
           <div
             class="turn-order-digimon"
             [ngClass]="{

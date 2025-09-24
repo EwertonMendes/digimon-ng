@@ -1,23 +1,23 @@
 import {
-    ChangeDetectorRef,
-    Component,
-    computed,
-    DestroyRef,
-    effect,
-    HostListener,
-    inject,
-    input,
-    signal,
+  ChangeDetectorRef,
+  Component,
+  computed,
+  DestroyRef,
+  effect,
+  HostListener,
+  inject,
+  input,
+  signal,
 } from '@angular/core';
 import { Digimon } from '@core/interfaces/digimon.interface';
 import { CommonModule } from '@angular/common';
 import {
-    animate,
-    state,
-    style,
-    transition,
-    trigger,
-    keyframes,
+  animate,
+  state,
+  style,
+  transition,
+  trigger,
+  keyframes,
 } from '@angular/animations';
 import { GlobalStateDataSource } from '@state/global-state.datasource';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
@@ -88,7 +88,7 @@ export class DigiStatusCardComponent {
     const allPlayerDigimons = this.globalState.allPlayerDigimonList();
     const isPlayerDigimon = allPlayerDigimons.some(digimon => digimon.id === this.digimon().id);
     const hasMultipleDigimons = allPlayerDigimons.length > 1;
-    this.isDeletable.set(isPlayerDigimon && hasMultipleDigimons && !this.globalState.isBattleActive);
+    this.isDeletable.set(isPlayerDigimon && hasMultipleDigimons && !this.globalState.isBattleActive());
   }
 
   @HostListener('mouseleave')

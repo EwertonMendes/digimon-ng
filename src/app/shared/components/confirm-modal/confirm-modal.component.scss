@@ -1,0 +1,81 @@
+.confirm-modal-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 16px;
+  padding: 1rem;
+  width: fit-content;
+  border-radius: 16px;
+  align-self: center;
+  position: absolute;
+  min-width: 400px;
+  min-height: 300px;
+  top: 40%;
+
+  .section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .confirm-modal-content {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    padding: 10px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .confirm-modal-buttons {
+    display: flex;
+    gap: 10px;
+    width: -webkit-fill-available;
+
+    app-button {
+      width: 100%;
+      height: auto;
+      min-height: unset;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @media screen and (max-width: 768px) {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 6px;
+    }
+
+    @media screen and (max-width: 480px) {
+      grid-template-columns: 1fr;
+      gap: 6px;
+    }
+  }
+}
+
+.dark {
+  background-color: var(--dark);
+  color: var(--text-on-dark);
+}
+
+.warning {
+  background-color: var(--warning);
+  color: var(--text-on-warning);
+}
+
+.danger {
+  background-color: var(--danger);
+  color: var(--text-on-danger);
+}
+
+.success {
+  background-color: var(--success);
+  color: var(--text-on-success);
+}
+
+.info {
+  background-color: var(--info);
+  color: var(--text-on-info);
+}

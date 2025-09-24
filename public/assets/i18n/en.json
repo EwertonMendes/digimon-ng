@@ -23,6 +23,14 @@
           "DIGITAL-HAZARD": "Digital Hazard",
           "CREST-OF-HOPE": "Crest of Hope",
           "NATURE-SPIRITS": "Nature Spirits"
+        },
+        "DELETE_DATA_MODAL": {
+          "DELETE_SAVED_DATA": "Delete saved data",
+          "TITLE": "WARNING!!!",
+          "TEXT": "Are you sure you want to delete all saved data? ALL DATA will be lost and the game will be restarted.",
+          "CONFIRM": "Delete data",
+          "CANCEL": "Cancel",
+          "DELETED_SAVED_DATA_TOAST": "Saved data deleted successfully!"
         }
       },
       "BUTTONS": {

@@ -338,7 +338,7 @@ export class HomeSectionComponent {
   }
 
   protected calculateLevelUpHospitalPrice() {
-    const hospitalLevel = this.globalState.playerDataView().hospitalLevel;
+    const hospitalLevel = this.globalState.playerDataView().hospitalLevel + 1;
 
     const priceTableForEachLevel: Record<string, number> = {
       '1': 0,

@@ -51,6 +51,9 @@
   --text-on-info: #FFFFFF;
 
   --warning: #F7D56C;
+  --warning-light: #{color.adjust(#F7D56C, $lightness: 5%)};
+  --warning-dark: #{color.adjust(#F7D56C, $lightness: -5%)};
+  --warning-glow: rgba(247, 213, 108, 0.5);
   --text-on-warning: #000000;
 
   --background: #141414;

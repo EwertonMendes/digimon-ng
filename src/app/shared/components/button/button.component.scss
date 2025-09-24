@@ -133,6 +133,20 @@
     }
   }
 
+  &--warning {
+    background-color: var(--warning);
+    color: var(--text-on-warning, #fff);
+
+    &:not(.app-button--disabled):hover {
+      background-color: var(--warning-light);
+      box-shadow: 0 0 12px var(--warning-glow);
+    }
+
+    &:not(.app-button--disabled):active {
+      background-color: var(--warning-dark);
+    }
+  }
+
   &--success {
     background-color: var(--success);
     color: var(--text-on-success, #fff);

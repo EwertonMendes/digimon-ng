@@ -23,6 +23,9 @@
   --tertiary-dark-transparent: rgba(179, 144, 33, 0.5);
 
   --warning: #B8862B;
+  --warning-light: #{color.adjust(#B8862B, $lightness: 5%)};
+  --warning-dark: #{color.adjust(#B8862B, $lightness: -5%)};
+  --warning-glow: rgba(184, 134, 43, 0.5);
   --text-on-warning: #FFFFFF;
 
   --danger: #E57373;

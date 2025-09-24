@@ -1,5 +1,5 @@
 import { inject, Injectable } from "@angular/core";
-import { exists, writeTextFile, mkdir, readTextFile } from "@tauri-apps/plugin-fs";
+import { exists, writeTextFile, mkdir, readTextFile, remove } from "@tauri-apps/plugin-fs";
 import { appDataDir, BaseDirectory, join } from "@tauri-apps/api/path";
 import { PlayerConfig } from "app/core/interfaces/player-config.interface";
 import { PlayerDataService } from "./player-data.service";
@@ -73,5 +73,10 @@ export class ConfigService {
     const config = await this.loadConfig();
     const newConfig: PlayerConfig = { ...config, [key]: value };
     await this.saveConfig(this.playerDataService.currentPlayerId, newConfig);
+  }
+
+  async deleteConfigFile(): Promise<void> {
+    const filePath = await this.getFilePath(this.playerDataService.currentPlayerId);
+    await remove(filePath, { baseDir: this.baseDir });
   }
 }

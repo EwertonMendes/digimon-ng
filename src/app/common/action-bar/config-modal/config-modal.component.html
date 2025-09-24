@@ -54,6 +54,11 @@
         >
         </app-select>
       </div>
+
+      <div class="delete-data-container">
+        <span class="config-item-label"> {{ "COMMON.ACTION_BAR.CONFIG_MODAL.DELETE_DATA_MODAL.DELETE_SAVED_DATA" | transloco }} </span>
+        <app-button icon="trash" color="warning" (click)="openDeleteDataConfirmationModal()" />
+      </div>
     </div>
   </form>
 </app-modal>

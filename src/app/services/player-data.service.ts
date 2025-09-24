@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { PlayerData } from "@core/interfaces/player-data.interface";
-import { exists, writeTextFile, mkdir, readTextFile } from '@tauri-apps/plugin-fs';
+import { exists, writeTextFile, mkdir, readTextFile, remove } from '@tauri-apps/plugin-fs';
 import { appDataDir, BaseDirectory, join } from '@tauri-apps/api/path';
 
 @Injectable({
@@ -62,6 +62,14 @@ export class PlayerDataService {
       await writeTextFile(filePath, JSON.stringify(playerData), { baseDir: this.baseDir });
     } catch (err) {
       console.error('Error saving player data:', err);
+    }
+  }
+
+  async deletePlayerData(): Promise<void> {
+    try {
+      await remove(await this.getFilePath(), { baseDir: this.baseDir });
+    } catch (err) {
+      console.error('Error deleting player data:', err);
     }
   }
 }

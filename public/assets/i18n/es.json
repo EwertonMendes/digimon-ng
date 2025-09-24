@@ -23,6 +23,14 @@
           "DIGITAL-HAZARD": "Peligro Digital",
           "CREST-OF-HOPE": "Emblema de la Esperanza",
           "NATURE-SPIRITS": "Espíritus de la Naturaleza"
+        },
+        "DELETE_DATA_MODAL": {
+          "DELETE_SAVED_DATA": "Eliminar datos guardados",
+          "TITLE": "¡ADVERTENCIA!!!",
+          "TEXT": "¿Estás seguro de que quieres eliminar todos los datos guardados? TODOS los datos se perderán y el juego se reiniciará.",
+          "CONFIRM": "Eliminar datos",
+          "CANCEL": "Cancelar",
+          "DELETED_SAVED_DATA_TOAST": "¡Datos guardados eliminados con éxito!"
         }
       },
       "BUTTONS": {

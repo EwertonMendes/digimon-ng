@@ -27,13 +27,17 @@ export class ThemeService {
     return this.currentThemeSubject.value;
   }
 
-  setTheme(themeName: string): void {
+  setTheme(themeName: string, saveThemeOnConfigFile = true): void {
     const newTheme = this.themes.find(t => t.name === themeName);
     if (!newTheme) return;
 
     this.currentThemeSubject.next(newTheme);
+
     this.applyTheme(newTheme.name);
-    this.configService.updateConfig("theme", newTheme.name);
+
+    if (saveThemeOnConfigFile) {
+      this.configService.updateConfig("theme", newTheme.name);
+    }
   }
 
   private applyTheme(themeName: string): void {

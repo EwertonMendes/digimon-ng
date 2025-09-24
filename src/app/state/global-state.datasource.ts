@@ -7,7 +7,7 @@ import { BaseDigimon, Digimon } from '@core/interfaces/digimon.interface';
 import { PlayerData, Team } from '@core/interfaces/player-data.interface';
 import { DigimonService } from '@services/digimon.service';
 import { PlayerDataService } from '@services/player-data.service';
-import { interval, Subject } from 'rxjs';
+import { interval, Subject, takeUntil } from 'rxjs';
 import { DigimonListLocation } from '@core/enums/digimon-list-location.enum';
 import { HospitalService } from './services/hospital.service';
 import { ToastService } from '@shared/components/toast/toast.service';
@@ -52,7 +52,7 @@ export class GlobalStateDataSource {
   private storageService = inject(StorageService);
   private hospitalService = inject(HospitalService);
 
-  private playerData = signal<PlayerData>({
+  private initialSetupPlayerData: PlayerData = {
     id: '',
     name: '',
     level: 0,
@@ -69,7 +69,9 @@ export class GlobalStateDataSource {
     digiData: {},
     teams: [],
     unlockedLocations: [],
-  });
+  };
+
+  private playerData = signal<PlayerData>(this.initialSetupPlayerData);
   showInitialSetupScreen = signal<boolean>(false);
   selectedDigimonOnDetails = signal<Digimon | undefined>(undefined);
   private enemyTeam = signal<Digimon[]>([]);
@@ -88,7 +90,9 @@ export class GlobalStateDataSource {
   private hospitalHealingIntervalDurationInSeconds = signal<number>(20);
   hospitalHealingCountdown = signal<number>(0);
 
-  digimonHpChanges$ = new Subject<{
+  private stopIntervals: Subject<void> = new Subject();
+
+  public digimonHpChanges$ = new Subject<{
     digimonId: string;
     previousHp: number;
     currentHp: number;
@@ -96,7 +100,7 @@ export class GlobalStateDataSource {
     isPositive: boolean;
   }>();
 
-  digimonMpChanges$ = new Subject<{
+  public digimonMpChanges$ = new Subject<{
     digimonId: string;
     previousMp: number;
     currentMp: number;
@@ -220,6 +224,13 @@ export class GlobalStateDataSource {
     this.initHospitalHealing();
   }
 
+  resetGameToInitialSetup() {
+    this.playerData.set(this.initialSetupPlayerData);
+    this.stopIntervals.next();
+    this.themeService.setTheme('default', false);
+    this.showInitialSetupScreen.set(true);
+  }
+
   confirmInitialSetup(playerName: string, selectedDigimons: Digimon[]) {
     const newPlayerData: PlayerData = {
       id: uuidv4(),
@@ -259,7 +270,7 @@ export class GlobalStateDataSource {
   }
 
   async saveCurrentPlayerData() {
-    if (this.isBattleActive()) return;
+    if (this.isBattleActive() || this.showInitialSetupScreen()) return;
     this.audioService.playAudio(AudioEffects.CLICK);
     try {
       this.toastService.showToast(this.translocoService.translate('COMMON.ACTION_BAR.TOAST.GAME_SAVED_SUCCESSFULLY'), 'success');
@@ -1333,7 +1344,7 @@ export class GlobalStateDataSource {
   ) {
     const config = this.intervalConfigurations[configKey];
     let isFirstRun = true;
-    interval(1000).subscribe((secondsPassed) => {
+    interval(1000).pipe(takeUntil(this.stopIntervals)).subscribe((secondsPassed) => {
       const remainingTime =
         config.intervalDurationInSeconds() -
         (secondsPassed % config.intervalDurationInSeconds());

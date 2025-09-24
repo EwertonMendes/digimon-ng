@@ -1,0 +1,22 @@
+<app-modal [id]="id()">
+  <div class="confirm-modal-container" [ngClass]="backgroundColor()">
+    @if(title()){
+    <h3 class="section-title">
+      {{ title() | transloco }}
+    </h3>
+    } @if(text()){
+    <p class="confirm-modal-content">
+      {{ text() | transloco }}
+    </p>
+    }
+
+    <div class="confirm-modal-buttons">
+      <app-button [text]="cancelText() | transloco" [color]="cancelButtonColor()" (click)="cancel()">
+        {{ cancelText() | transloco }}
+      </app-button>
+      <app-button [text]="confirmText() | transloco" [color]="confirmButtonColor()" (click)="confirm()">
+        {{ confirmText() | transloco }}
+      </app-button>
+    </div>
+  </div>
+</app-modal>

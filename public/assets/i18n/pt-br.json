@@ -23,6 +23,14 @@
           "DIGITAL-HAZARD": "Perigo Digital",
           "CREST-OF-HOPE": "Brasão da Esperança",
           "NATURE-SPIRITS": "Espíritos da Natureza"
+        },
+        "DELETE_DATA_MODAL": {
+          "DELETE_SAVED_DATA": "Excluir dados salvos",
+          "TITLE": "ATENÇÃO!!!",
+          "TEXT": "Tem certeza que deseja excluir os dados salvos? TODOS os dados serão perdidos e o jogo será reiniciado.",
+          "CONFIRM": "Excluir dados",
+          "CANCEL": "Cancelar",
+          "DELETED_SAVED_DATA_TOAST": "Dados salvos excluídos completamente!"
         }
       },
       "BUTTONS": {

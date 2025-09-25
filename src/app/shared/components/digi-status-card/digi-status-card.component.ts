@@ -89,6 +89,7 @@ export class DigiStatusCardComponent {
     const isPlayerDigimon = allPlayerDigimons.some(digimon => digimon.id === this.digimon().id);
     const hasMultipleDigimons = allPlayerDigimons.length > 1;
     this.isDeletable.set(isPlayerDigimon && hasMultipleDigimons && !this.globalState.isBattleActive());
+    this.onHpChangeAnimationDone();
   }
 
   @HostListener('mouseleave')

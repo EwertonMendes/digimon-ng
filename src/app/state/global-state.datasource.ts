@@ -697,13 +697,13 @@ export class GlobalStateDataSource {
       this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.ESCAPE_FAIL_TOAST'),
       'error'
     );
-    this.audioService.playAudio(AudioEffects.HIT);
     this.log(this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.ESCAPE_FAIL_LOG'));
-    const enemy = this.turnOrder()[0];
-    if (!enemy || enemy.owner !== 'enemy') {
+    const enemy = this.turnOrder().find(d => d.owner === 'enemy');
+    this.turnOrder().shift();
+    if (enemy) {
+      this.currentAttackingDigimon.set(enemy);
       this.enemyAttack(enemy);
     }
-    this.nextTurn();
     return false;
   }
 

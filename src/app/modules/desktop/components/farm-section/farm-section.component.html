@@ -20,7 +20,7 @@
       "
       tooltipDirection="left"
       [icon]="
-        selectedLayout() === 'horizontal'
+        desktopDatasource.farmSectionLayout() === 'horizontal'
           ? 'vertical-layout'
           : 'horizontal-layout'
       "
@@ -29,8 +29,8 @@
     />
   </div>
 
-  <div [class]="'farm-section-' + selectedLayout()">
-    <div [class]="'panel-' + selectedLayout()">
+  <div [class]="'farm-section-' + desktopDatasource.farmSectionLayout()">
+    <div [class]="'panel-' + desktopDatasource.farmSectionLayout()">
       <div class="in-training-list-header">
         <h4>
           {{
@@ -53,7 +53,7 @@
           class="in-training-digimon-list-container"
           #inTrainingList="cdkDropList"
           cdkDropList
-          [cdkDropListOrientation]="selectedLayout()"
+          [cdkDropListOrientation]="desktopDatasource.farmSectionLayout()"
           [cdkDropListData]="globalState.playerDataView()"
           [cdkDropListConnectedTo]="[
             bitFarmingList,
@@ -83,7 +83,7 @@
       </div>
     </div>
 
-    <div [class]="'panel-' + selectedLayout()">
+    <div [class]="'panel-' + desktopDatasource.farmSectionLayout()">
       <div class="bit-farming-list-header">
         <h4>
           {{
@@ -107,7 +107,7 @@
           class="bit-farming-digimon-list-container"
           #bitFarmingList="cdkDropList"
           cdkDropList
-          [cdkDropListOrientation]="selectedLayout()"
+          [cdkDropListOrientation]="desktopDatasource.farmSectionLayout()"
           [cdkDropListData]="globalState.playerDataView()"
           [cdkDropListConnectedTo]="[
             inTrainingList,

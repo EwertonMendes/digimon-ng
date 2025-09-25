@@ -12,7 +12,7 @@ import {
 import { DigiStatusCardComponent } from '@shared/components/digi-status-card/digi-status-card.component';
 import { GlobalStateDataSource } from '@state/global-state.datasource';
 import { Digimon } from '@core/interfaces/digimon.interface';
-import { CdkDragDrop, DragDropModule, DropListOrientation, moveItemInArray } from '@angular/cdk/drag-drop';
+import { CdkDragDrop, DragDropModule, moveItemInArray } from '@angular/cdk/drag-drop';
 import { DigimonListLocation } from '@core/enums/digimon-list-location.enum';
 import { PlayerData } from '@core/interfaces/player-data.interface';
 import { AudioService } from '@services/audio.service';
@@ -29,6 +29,7 @@ import { takeLast } from 'rxjs';
 import { SelectComponent } from "@shared/components/select/select.component";
 import { InputComponent } from "@shared/components/input/input.component";
 import { ToastService } from '@shared/components/toast/toast.service';
+import { DesktopDataSource } from '@modules/desktop/desktop.datasource';
 
 @Component({
   selector: 'app-home-section',
@@ -57,8 +58,7 @@ export class HomeSectionComponent {
   private translocoService = inject(TranslocoService);
   private changeDetectorRef = inject(ChangeDetectorRef);
   private destroyRef = inject(DestroyRef);
-
-  protected selectedLayout = signal<DropListOrientation>('horizontal')
+  protected desktopDatasource = inject(DesktopDataSource);
 
   protected teamListId = 'team-list';
   protected inTrainingListId = 'in-training-digimon-list';
@@ -87,7 +87,6 @@ export class HomeSectionComponent {
   };
 
   constructor() {
-
     effect(() => {
       const mappeedPlayerTeams = this.globalState.playerDataView().teams?.map(team => {
         return {
@@ -146,9 +145,9 @@ export class HomeSectionComponent {
   }
 
   setLayout() {
-    const current = this.selectedLayout();
+    const current = this.desktopDatasource.homeSectionLayout();
     const next = current === 'horizontal' ? 'vertical' : 'horizontal';
-    this.selectedLayout.set(next);
+    this.desktopDatasource.homeSectionLayout.set(next);
   }
 
   healAll() {

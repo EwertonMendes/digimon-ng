@@ -9,12 +9,7 @@ import { DigiStatusCardComponent } from '@shared/components/digi-status-card/dig
 import { GlobalStateDataSource } from '@state/global-state.datasource';
 import { Digimon } from '@core/interfaces/digimon.interface';
 import { DigimonFarmCardComponent } from './components/digimon-farm-card/digimon-farm-card.component';
-import {
-  CdkDragDrop,
-  DragDropModule,
-  DropListOrientation,
-  moveItemInArray,
-} from '@angular/cdk/drag-drop';
+import { CdkDragDrop, DragDropModule, moveItemInArray } from '@angular/cdk/drag-drop';
 import { DigimonListLocation } from '@core/enums/digimon-list-location.enum';
 import { PlayerData } from '@core/interfaces/player-data.interface';
 import { AudioEffects } from '@core/enums/audio-tracks.enum';
@@ -24,6 +19,7 @@ import { ModalService } from 'app/shared/components/modal/modal.service';
 import { DigimonDetailsModalComponent } from 'app/shared/components/digimon-details-modal/digimon-details-modal.component';
 import { ButtonComponent } from 'app/shared/components/button/button.component';
 import { TooltipDirective } from "app/directives/tooltip.directive";
+import { DesktopDataSource } from '@modules/desktop/desktop.datasource';
 
 @Component({
   selector: 'app-farm-section',
@@ -46,8 +42,7 @@ export class FarmSectionComponent {
   protected globalState = inject(GlobalStateDataSource);
   private modalService = inject(ModalService);
   private audioService = inject(AudioService);
-
-  protected selectedLayout = signal<DropListOrientation>('horizontal');
+  protected desktopDatasource = inject(DesktopDataSource);
 
   bitGenerationTotalRate = signal<number>(0);
 
@@ -74,9 +69,9 @@ export class FarmSectionComponent {
   }
 
   setLayout() {
-    const current = this.selectedLayout();
+    const current = this.desktopDatasource.farmSectionLayout();
     const next = current === 'horizontal' ? 'vertical' : 'horizontal';
-    this.selectedLayout.set(next);
+    this.desktopDatasource.farmSectionLayout.set(next);
   }
 
   removeDigimonFromTraining(event: MouseEvent, digimon: Digimon): void {

@@ -22,6 +22,7 @@ import { getDefaultPotential } from '@core/utils/digimon.utils';
 import { WindowService } from '@services/window.service';
 import { Location } from '@core/consts/locations';
 import { LOCATIONS } from '@core/consts/locations';
+import { DesktopDataSource } from '@modules/desktop/desktop.datasource';
 
 type EndBattleState = 'victory' | 'defeat' | 'draw';
 type DigimonWithOwner = Digimon & { owner: string };
@@ -51,6 +52,7 @@ export class GlobalStateDataSource {
   private battleService = inject(BattleService);
   private storageService = inject(StorageService);
   private hospitalService = inject(HospitalService);
+  private desktopDatasource = inject(DesktopDataSource);
 
   private initialSetupPlayerData: PlayerData = {
     id: '',
@@ -228,6 +230,7 @@ export class GlobalStateDataSource {
     this.playerData.set(this.initialSetupPlayerData);
     this.stopIntervals.next();
     this.themeService.setTheme('default', false);
+    this.desktopDatasource.resetLayouts();
     this.showInitialSetupScreen.set(true);
   }
 

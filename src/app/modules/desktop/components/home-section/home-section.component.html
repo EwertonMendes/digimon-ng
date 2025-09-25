@@ -15,7 +15,7 @@
       "
       tooltipDirection="left"
       [icon]="
-        selectedLayout() === 'horizontal'
+        desktopDatasource.homeSectionLayout() === 'horizontal'
           ? 'vertical-layout'
           : 'horizontal-layout'
       "
@@ -24,7 +24,7 @@
     />
   </div>
 
-  @if(selectedLayout() === 'vertical') {
+  @if(desktopDatasource.homeSectionLayout() === 'vertical') {
   <div class="preset-teams-container">
     @if(isCreatingTeam()) {
     <app-input
@@ -86,8 +86,8 @@
   </div>
   }
 
-  <div [class]="'home-section-' + selectedLayout()">
-    <div [class]="'panel-' + selectedLayout()">
+  <div [class]="'home-section-' + desktopDatasource.homeSectionLayout()">
+    <div [class]="'panel-' + desktopDatasource.homeSectionLayout()">
       <div class="battle-team-area-sub-title-container">
         <h4 class="battle-team-area-sub-title">
           {{ "MODULES.DESKTOP.COMPONENTS.HOME_SECTION.SUBTITLE" | transloco }}:
@@ -114,7 +114,7 @@
           #teamList="cdkDropList"
           class="home-section-battle-team-container"
           cdkDropList
-          [cdkDropListOrientation]="selectedLayout()"
+          [cdkDropListOrientation]="desktopDatasource.homeSectionLayout()"
           [cdkDropListData]="globalState.playerDataView()"
           [cdkDropListConnectedTo]="[
             hospitalListId,
@@ -143,7 +143,7 @@
         </div>
       </div>
 
-      @if(selectedLayout() === 'horizontal') {
+      @if(desktopDatasource.homeSectionLayout() === 'horizontal') {
       <div class="preset-teams-container">
         @if(isCreatingTeam()) {
         <app-input
@@ -207,9 +207,9 @@
       }
     </div>
 
-    <div [class]="'panel-' + selectedLayout()">
+    <div [class]="'panel-' + desktopDatasource.homeSectionLayout()">
       <div class="hospital-area-header">
-        <div [class]="'hospital-area-header-' + selectedLayout()">
+        <div [class]="'hospital-area-header-' + desktopDatasource.homeSectionLayout()">
           <h4>
             {{
               "MODULES.DESKTOP.COMPONENTS.HOME_SECTION.HOSPITAL_TITLE"
@@ -253,7 +253,7 @@
           class="hospital-digimon-list-container"
           #inTrainingList="cdkDropList"
           cdkDropList
-          [cdkDropListOrientation]="selectedLayout()"
+          [cdkDropListOrientation]="desktopDatasource.homeSectionLayout()"
           [cdkDropListData]="globalState.playerDataView()"
           [cdkDropListConnectedTo]="[
             teamListId,

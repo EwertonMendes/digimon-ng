@@ -11,6 +11,7 @@
   }
 
   .farm-section-header {
+    font-size: large;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     background: var(--secondary-dark-transparent);
@@ -60,9 +61,8 @@
 }
 
 .section-title {
-  font-family: 'Roboto', sans-serif;
+  font-size: xx-large;
   font-weight: 700;
-  font-size: 1.5rem;
 }
 
 .panel-horizontal {
@@ -81,9 +81,14 @@
 
 
   .in-training-list-header {
+    font-size: large;
     display: flex;
     align-items: center;
     padding: 0 10px;
+  }
+
+  .countdown {
+    font-size: large;
   }
 
   .in-training-digimon-list {
@@ -116,6 +121,7 @@
     }
 
     .in-training-list-no-data-container {
+      font-size: large;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -125,6 +131,7 @@
   }
 
   .bit-farming-list-header {
+    font-size: large;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -161,6 +168,7 @@
     }
 
     .bit-farming-list-no-data-container {
+      font-size: large;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -175,6 +183,7 @@
 }
 
 .panel-vertical {
+  font-size: larger;
   display: flex;
   flex-direction: column;
   background: var(--primary-dark-transparent);
@@ -219,6 +228,7 @@
     }
 
     .in-training-list-no-data-container {
+      font-size: large;
       display: flex;
       flex-direction: column;
       gap: 10px;
@@ -265,6 +275,7 @@
     }
 
     .bit-farming-list-no-data-container {
+      font-size: large;
       display: flex;
       flex-direction: column;
       gap: 10px;

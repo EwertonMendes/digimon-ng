@@ -12,14 +12,16 @@
   min-width: 400px;
   min-height: 300px;
   top: 40%;
+  margin: 10px;
 
   .section-title {
-    font-size: 2rem;
+    font-size: xxx-large;
     font-weight: bold;
     text-align: center;
   }
 
   .confirm-modal-content {
+    font-size: medium;
     display: flex;
     flex-direction: column;
     overflow: auto;

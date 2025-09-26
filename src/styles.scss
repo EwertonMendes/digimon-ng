@@ -138,8 +138,9 @@ img {
 
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: "Silkscreen", sans-serif;
 
+  font-size: 10px;
   .cdk-drag-placeholder .modifications,
   .cdk-drag-preview .modifications {
     display: none;

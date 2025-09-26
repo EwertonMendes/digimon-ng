@@ -7,6 +7,7 @@
   gap: 10px;
 
   .home-section-header {
+    font-size: large;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     background: var(--secondary-dark-transparent);
@@ -20,6 +21,7 @@
   }
 
   .home-section-header> :first-child {
+
     grid-column: 1;
     justify-self: start;
   }
@@ -57,9 +59,8 @@
 }
 
 .section-title {
-  font-family: 'Roboto', sans-serif;
+  font-size: xx-large;
   font-weight: 700;
-  font-size: 1.5rem;
 }
 
 .preset-teams-container {
@@ -120,6 +121,7 @@
     }
 
     .my-digimon-list-no-data-container {
+      font-size: large;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -128,7 +130,15 @@
     }
   }
 
-
+  .battle-team-area-sub-title-container {
+    font-size: large;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 0 10px 0 10px;
+  }
 
   .hospital-area-container {
     display: flex;
@@ -150,6 +160,14 @@
     gap: 10px;
     padding: 0 10px 0 10px;
 
+    &-horizontal {
+      font-size: medium;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      justify-content: center;
+    }
+
     &-column {
       display: flex;
       flex-direction: column;
@@ -167,6 +185,7 @@
     flex-direction: row-reverse;
     box-sizing: border-box;
     align-items: flex-start;
+    font-size: medium;
 
     .hospital-digimon-list-container {
       &.cdk-drop-list-dragging {
@@ -187,6 +206,7 @@
     }
 
     .hospital-digimon-list-no-data-container {
+      font-size: large;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -235,6 +255,7 @@
     }
 
     .my-digimon-list-no-data-container {
+      font-size: large;
       display: flex;
       flex-direction: column;
       gap: 10px;
@@ -263,6 +284,14 @@
     gap: 10px;
     padding: 0 10px 0 10px;
 
+    &-vertical {
+      font-size: medium;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      justify-content: center;
+    }
+
     &-column {
       display: flex;
       flex-direction: column;
@@ -279,6 +308,7 @@
     padding: 10px;
     flex-direction: row-reverse;
     box-sizing: border-box;
+    font-size: medium;
 
     .hospital-digimon-list-container {
       &.cdk-drop-list-dragging {
@@ -299,6 +329,7 @@
     }
 
     .hospital-digimon-list-no-data-container {
+      font-size: large;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -306,16 +337,19 @@
       width: 100%;
     }
   }
+
+  .battle-team-area-sub-title-container {
+    font-size: medium;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 0 10px 0 10px;
+  }
 }
 
-.battle-team-area-sub-title-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-  padding: 0 10px 0 10px;
-}
+
 
 .battle-team-area-sub-title {
   margin: 10px;
@@ -351,6 +385,7 @@ app-digi-status-card {
 }
 
 .footer {
+  font-size: medium;
   display: flex;
   flex-direction: row;
   align-items: center;

@@ -27,13 +27,14 @@
 .deletion-confirmation-header {
   display: flex;
   flex-direction: column;
-  gap: 0.5em;
+  gap: 16px;
   text-align: center;
   align-items: center;
+  font-size: medium;
 
   h2 {
     margin: 0;
-    font-size: 24px;
+    font-size: xxx-large;
     font-weight: bold;
   }
 
@@ -46,7 +47,6 @@
     }
 
   .disclaimer {
-    font-size: 1.5em;
     color: var(--text-on-danger);
     padding: 10px;
     border-radius: 10px;

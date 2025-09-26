@@ -80,7 +80,7 @@
             </div>
           </div>
           <span class="middle-panel">
-            <span style="text-align: center">
+            <span>
               @if(isBossStage()) {
               {{ "SHARED.COMPONENTS.BATTLE_MODAL.BOSS" | transloco }} } @else {
               {{
@@ -93,7 +93,7 @@
               }
             </span>
             @if(globalState.isBattleActive()) {
-            <span style="text-align: center">{{
+            <span>{{
               globalState.currentAttackingDigimon()?.owner === "player"
                 ? ("SHARED.COMPONENTS.BATTLE_MODAL.PLAYER_TURN"
                   | transloco

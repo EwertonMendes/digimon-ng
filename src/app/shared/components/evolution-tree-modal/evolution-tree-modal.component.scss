@@ -5,6 +5,7 @@
   gap: 10px;
 
   .evolution-tree-header {
+    font-size: large;
     display: flex;
     justify-content: center;
   }
@@ -55,6 +56,7 @@
       margin-left: 20px;
       background: var(--background);
       border-radius: 10px;
+      padding: 10px;
 
       max-height: 100%;
       min-height: 0;
@@ -125,6 +127,7 @@
       }
 
       .selected-digimon-content {
+        font-size: medium;
         display: flex;
         flex-direction: column;
         padding: 16px;
@@ -186,6 +189,10 @@
 }
 
 @media screen and (max-width: 1366px) {
+
+  .evolution-tree-container .evolution-tree-content .selected-digimon-container .selected-digimon-content {
+    font-size: small;
+  }
 
   .evolution-tree-container .evolution-tree-content .selected-digimon-container .selected-digimon-image .placeholder,
   .evolution-tree-container .evolution-tree-content .selected-digimon-container .selected-digimon-image img.placeholder {

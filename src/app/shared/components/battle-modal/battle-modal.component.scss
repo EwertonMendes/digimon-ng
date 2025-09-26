@@ -92,10 +92,12 @@
       justify-content: center;
 
       .teams-container {
+        font-size: medium;
         display: flex;
         flex-direction: row;
         gap: 20px;
         justify-content: center;
+        padding: 10px;
 
         .player-team-container {
           display: flex;
@@ -164,6 +166,11 @@
             width: -webkit-fill-available;
             margin-top: 20px;
           }
+
+          span {
+            text-align: center;
+            word-break: break-all;
+          }
         }
 
         .enemy-team-container {
@@ -220,8 +227,7 @@
         padding: 1rem;
         height: 100%;
         overflow-y: auto;
-        font-family: monospace;
-        font-size: 0.9rem;
+        font-size: medium;
         color: var(--text);
 
         .battle-log-title {

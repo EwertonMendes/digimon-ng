@@ -46,6 +46,7 @@ export class GraphService {
       },
       minCameraRatio: 0.5,
       maxCameraRatio: 2,
+      labelFont: 'Silkscreen',
       defaultDrawNodeLabel: this.drawLabel,
     });
   }

@@ -41,7 +41,7 @@ export class SelectComponent implements ControlValueAccessor {
   }
 
   closeDropdown() {
-    this.dropdownOpen = false;
+    // this.dropdownOpen = false;
     this.onTouchedFn();
   }
 

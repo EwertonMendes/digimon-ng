@@ -36,15 +36,6 @@
       [focused]="isCreatingTeam()"
       (onEnter)="processTeamCreation()"
     />
-    <app-button
-      [appTooltip]="
-        'MODULES.DESKTOP.COMPONENTS.HOME_SECTION.CONFIRM_TEAM_CREATION'
-          | transloco
-      "
-      icon="check-fat"
-      color="success"
-      (onClick)="processTeamCreation()"
-    />
     } @else {
     <app-select
       [placeholder]="
@@ -55,34 +46,48 @@
       [options]="playerTeams()"
       (valueChange)="setSelectedTeam($event)"
     />
-    <app-button
-      [appTooltip]="
-        'MODULES.DESKTOP.COMPONENTS.HOME_SECTION.CREATE_TEAM' | transloco
-      "
-      icon="plus-circle"
-      color="success"
-      (onClick)="isCreatingTeam.set(true)"
-    />
     }
 
-    <app-button
-      [appTooltip]="
-        'MODULES.DESKTOP.COMPONENTS.HOME_SECTION.UPDATE_TEAM' | transloco
-      "
-      icon="floppy-disk"
-      color="info"
-      [disabled]="isCreatingTeam() || !selectedTeam()"
-      (onClick)="updateTeam()"
-    />
-    <app-button
-      [appTooltip]="
-        'MODULES.DESKTOP.COMPONENTS.HOME_SECTION.REMOVE_TEAM' | transloco
-      "
-      icon="trash"
-      color="danger"
-      [disabled]="isCreatingTeam() || !selectedTeam()"
-      (onClick)="removeTeam()"
-    />
+    <div class="buttons-row">
+      @if(isCreatingTeam()) {
+      <app-button
+        [appTooltip]="
+          'MODULES.DESKTOP.COMPONENTS.HOME_SECTION.CONFIRM_TEAM_CREATION'
+            | transloco
+        "
+        icon="check-fat"
+        color="success"
+        (onClick)="processTeamCreation()"
+      />
+      } @else {
+      <app-button
+        [appTooltip]="
+          'MODULES.DESKTOP.COMPONENTS.HOME_SECTION.CREATE_TEAM' | transloco
+        "
+        icon="plus-circle"
+        color="success"
+        (onClick)="isCreatingTeam.set(true)"
+      />
+      }
+      <app-button
+        [appTooltip]="
+          'MODULES.DESKTOP.COMPONENTS.HOME_SECTION.UPDATE_TEAM' | transloco
+        "
+        icon="floppy-disk"
+        color="info"
+        [disabled]="isCreatingTeam() || !selectedTeam()"
+        (onClick)="updateTeam()"
+      />
+      <app-button
+        [appTooltip]="
+          'MODULES.DESKTOP.COMPONENTS.HOME_SECTION.REMOVE_TEAM' | transloco
+        "
+        icon="trash"
+        color="danger"
+        [disabled]="isCreatingTeam() || !selectedTeam()"
+        (onClick)="removeTeam()"
+      />
+    </div>
   </div>
   }
 
@@ -156,15 +161,6 @@
           [focused]="isCreatingTeam()"
           (onEnter)="processTeamCreation()"
         />
-        <app-button
-          [appTooltip]="
-            'MODULES.DESKTOP.COMPONENTS.HOME_SECTION.CONFIRM_TEAM_CREATION'
-              | transloco
-          "
-          icon="check-fat"
-          color="success"
-          (onClick)="processTeamCreation()"
-        />
         } @else {
         <app-select
           [placeholder]="
@@ -175,41 +171,59 @@
           [options]="playerTeams()"
           (valueChange)="setSelectedTeam($event)"
         />
-        <app-button
-          [appTooltip]="
-            'MODULES.DESKTOP.COMPONENTS.HOME_SECTION.CREATE_TEAM' | transloco
-          "
-          icon="plus-circle"
-          color="success"
-          (onClick)="isCreatingTeam.set(true)"
-        />
         }
 
-        <app-button
-          [appTooltip]="
-            'MODULES.DESKTOP.COMPONENTS.HOME_SECTION.UPDATE_TEAM' | transloco
-          "
-          icon="floppy-disk"
-          color="info"
-          [disabled]="isCreatingTeam() || !selectedTeam()"
-          (onClick)="updateTeam()"
-        />
-        <app-button
-          [appTooltip]="
-            'MODULES.DESKTOP.COMPONENTS.HOME_SECTION.REMOVE_TEAM' | transloco
-          "
-          icon="trash"
-          color="danger"
-          [disabled]="isCreatingTeam() || !selectedTeam()"
-          (onClick)="removeTeam()"
-        />
+        <div class="buttons-row">
+          @if(isCreatingTeam()) {
+          <app-button
+            [appTooltip]="
+              'MODULES.DESKTOP.COMPONENTS.HOME_SECTION.CONFIRM_TEAM_CREATION'
+                | transloco
+            "
+            icon="check-fat"
+            color="success"
+            (onClick)="processTeamCreation()"
+          />
+          } @else {
+          <app-button
+            [appTooltip]="
+              'MODULES.DESKTOP.COMPONENTS.HOME_SECTION.CREATE_TEAM' | transloco
+            "
+            icon="plus-circle"
+            color="success"
+            (onClick)="isCreatingTeam.set(true)"
+          />
+          }
+          <app-button
+            [appTooltip]="
+              'MODULES.DESKTOP.COMPONENTS.HOME_SECTION.UPDATE_TEAM' | transloco
+            "
+            icon="floppy-disk"
+            color="info"
+            [disabled]="isCreatingTeam() || !selectedTeam()"
+            (onClick)="updateTeam()"
+          />
+          <app-button
+            [appTooltip]="
+              'MODULES.DESKTOP.COMPONENTS.HOME_SECTION.REMOVE_TEAM' | transloco
+            "
+            icon="trash"
+            color="danger"
+            [disabled]="isCreatingTeam() || !selectedTeam()"
+            (onClick)="removeTeam()"
+          />
+        </div>
       </div>
       }
     </div>
 
     <div [class]="'panel-' + desktopDatasource.homeSectionLayout()">
       <div class="hospital-area-header">
-        <div [class]="'hospital-area-header-' + desktopDatasource.homeSectionLayout()">
+        <div
+          [class]="
+            'hospital-area-header-' + desktopDatasource.homeSectionLayout()
+          "
+        >
           <h4>
             {{
               "MODULES.DESKTOP.COMPONENTS.HOME_SECTION.HOSPITAL_TITLE"
@@ -287,9 +301,8 @@
       <div class="footer">
         <div class="footer-content">
           <span
-            >{{
-              "MODULES.DESKTOP.COMPONENTS.HOME_SECTION.LEVEL" | transloco
-            }}: {{ globalState.playerDataView().hospitalLevel }}</span
+            >{{ "MODULES.DESKTOP.COMPONENTS.HOME_SECTION.LEVEL" | transloco }}:
+            {{ globalState.playerDataView().hospitalLevel }}</span
           >
           <span
             >{{

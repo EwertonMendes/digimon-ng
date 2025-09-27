@@ -64,17 +64,42 @@
 }
 
 .preset-teams-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto auto auto;
   gap: 10px;
-  width: -webkit-fill-available;
   align-items: center;
-  justify-content: center;
+  min-height: fit-content;
+  width: -webkit-fill-available;
   position: relative;
   z-index: 5;
 
   app-select,
   app-input {
+    width: 100%;
+  }
+
+  .buttons-row {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
     width: -webkit-fill-available;
+  }
+
+  @media (max-width: 1450px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+
+    app-select,
+    app-input {
+      grid-column: 1 / -1;
+    }
+
+    .buttons-row {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      grid-column: 1 / -1;
+    }
   }
 }
 

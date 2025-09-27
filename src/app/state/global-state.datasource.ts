@@ -755,8 +755,51 @@ export class GlobalStateDataSource {
     return this.playerDataView().unlockedLocations?.includes(location.id);
   }
 
-  attack(attacker: Digimon, defender: Digimon) {
-    return this.battleService.attack(attacker, defender);
+  attack(attacker: Digimon, defender: Digimon, owner: string) {
+    const dealtDamage = this.battleService.attack(attacker, defender);
+
+
+
+    if (dealtDamage === 0) {
+      this.audioService.playAudio(AudioEffects.MISS);
+
+      this.log(this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.MISS_LOG', {
+        attacker: attacker.nickName ?? attacker.name,
+        defender: defender.nickName ?? defender.name
+      }));
+
+      return 0;
+    }
+
+    if (dealtDamage > 0) {
+      this.audioService.playAudio(AudioEffects.HIT);
+
+      if (owner === 'enemy') {
+        this.log(
+          this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.ENEMY_ATTACKS_LOG', {
+            name: attacker.nickName ?? attacker.name,
+            damage: dealtDamage,
+            player: this.playerData().name,
+            digimon: defender.nickName ? defender.nickName : defender.name,
+            hp: defender.currentHp
+          })
+        );
+      }
+
+      if (owner === 'player') {
+        this.log(
+          this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.PLAYER_ATTACKS_LOG', {
+            player: this.playerDataView().name,
+            digimon: attacker.nickName ?? attacker.name,
+            damage: dealtDamage,
+            enemy: defender.name,
+            hp: defender.currentHp
+          })
+        );
+      }
+    }
+
+    return dealtDamage;
   }
 
   resetBattleState() {
@@ -771,22 +814,8 @@ export class GlobalStateDataSource {
     if (!target) return;
     this.currentDefendingDigimon.set({ ...target, owner: 'player' });
     setTimeout(() => {
-      const dealtDamage = this.attack(digimon, target);
-      this.log(
-        this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.ENEMY_ATTACKS_LOG', {
-          name: digimon.name,
-          damage: dealtDamage,
-          player: this.playerData().name,
-          digimon: target.nickName ? target.nickName : target.name,
-          hp: target.currentHp
-        })
-      );
-      if (dealtDamage === 0) {
-        this.audioService.playAudio(AudioEffects.MISS);
-      }
-      if (dealtDamage > 0) {
-        this.audioService.playAudio(AudioEffects.HIT);
-      }
+      this.attack(digimon, target, 'enemy');
+
       this.turnOrder().shift();
       if (target.currentHp <= 0) {
         this.log(

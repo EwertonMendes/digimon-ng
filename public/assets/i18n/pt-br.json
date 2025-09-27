@@ -194,6 +194,7 @@
         "DEFEAT_LOG": "Derrota! Seus Digimons foram derrotados.",
         "BATTLE_ENDED_VICTORY_LOG": "Batalha encerrada. Você venceu!",
         "BATTLE_ENDED_DEFEAT_LOG": "Batalha encerrada. Você perdeu!",
+        "MISS_LOG": "{{attacker}} errou o ataque contra {{defender}}.",
         "ENEMY_ATTACKS_LOG": "Inimigo {{name}} ataca! Dano: {{damage}}. {{digimon}} de {{player}} tem {{hp}} de vida restante.",
         "PLAYER_DEFEATED_LOG": "{{digimon}} de {{player}} foi derrotado.",
         "ESCAPE_SUCCESS_TOAST": "Fuga bem-sucedida!",

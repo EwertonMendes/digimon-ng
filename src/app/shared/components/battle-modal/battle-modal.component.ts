@@ -3,7 +3,6 @@ import { GlobalStateDataSource } from '@state/global-state.datasource';
 import { DigiStatusCardComponent } from '../digi-status-card/digi-status-card.component';
 import { ButtonComponent } from '../button/button.component';
 import { AudioService } from '@services/audio.service';
-import { AudioEffects } from '@core/enums/audio-tracks.enum';
 import { CommonModule } from '@angular/common';
 import { Digimon } from 'app/core/interfaces/digimon.interface';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
@@ -80,24 +79,7 @@ export class BattleModalComponent {
       owner: 'enemy',
     });
 
-    const dealtDamage = this.globalState.attack(digimon, opponentDigimon);
-    this.log(
-      this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.PLAYER_ATTACKS_LOG', {
-        player: this.globalState.playerDataView().name,
-        digimon: digimon.nickName ? digimon.nickName : digimon.name,
-        damage: dealtDamage,
-        enemy: opponentDigimon.name,
-        hp: opponentDigimon.currentHp
-      })
-    );
-
-    if (dealtDamage === 0) {
-      this.audioService.playAudio(AudioEffects.MISS);
-    }
-
-    if (dealtDamage > 0) {
-      this.audioService.playAudio(AudioEffects.HIT);
-    }
+    this.globalState.attack(digimon, opponentDigimon, 'player');
 
     if (opponentDigimon.currentHp <= 0) {
       this.log(

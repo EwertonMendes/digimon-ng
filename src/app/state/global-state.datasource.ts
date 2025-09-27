@@ -592,9 +592,12 @@ export class GlobalStateDataSource {
         'success'
       );
 
+      this.log(this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.BATTLE_ENDED_VICTORY_LOG'));
+
       if (this.isBossStage(this.battleStage())) {
         this.unlockNextLocation();
       }
+
     }
     if (endState === 'defeat') {
       this.audioService.playAudio(AudioTracks.DEFEAT);
@@ -604,8 +607,8 @@ export class GlobalStateDataSource {
         'error',
         'skull'
       );
+      this.log(this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.BATTLE_ENDED_DEFEAT_LOG'));
     }
-    this.log(this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.BATTLE_ENDED_LOG'));
     this.enemyTeam().forEach(digimon => this.untrackDigimonForList(digimon.id!, false));
   }
 

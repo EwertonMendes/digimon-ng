@@ -127,6 +127,14 @@
       background: var(--secondary-light-transparent);
       color: var(--text);
     }
+
+    &__empty {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0px 10px;
+      color: var(--gray-500);
+    }
   }
 
   &__icon {

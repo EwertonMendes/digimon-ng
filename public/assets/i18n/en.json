@@ -302,6 +302,9 @@
             "DIGIMON_REMOVED_TOAST": "{{name}} data removed!"
           }
         }
+      },
+      "SELECT": {
+        "EMPTY": "Empty"
       }
     }
   }

@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, Output, EventEmitter, forwardRef, HostListener, ElementRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor, FormsModule } from '@angular/forms';
+import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-select',
   templateUrl: './select.component.html',
   styleUrls: ['./select.component.scss'],
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, TranslocoModule],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
@@ -41,7 +42,7 @@ export class SelectComponent implements ControlValueAccessor {
   }
 
   closeDropdown() {
-    // this.dropdownOpen = false;
+    this.dropdownOpen = false;
     this.onTouchedFn();
   }
 

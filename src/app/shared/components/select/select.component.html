@@ -1,34 +1,47 @@
-<div class="app-select" [class.app-select--open]="dropdownOpen" tabindex="0" (blur)="closeDropdown()">
+<div
+  class="app-select"
+  [class.app-select--open]="dropdownOpen"
+  tabindex="0"
+  (blur)="closeDropdown()"
+>
   @if (label) {
-    <span class="app-select__label">{{ label }}</span>
+  <span class="app-select__label">{{ label }}</span>
   }
-  <div class="app-select__wrapper" (click)="toggleDropdown()" [class.app-select__wrapper--disabled]="disabled">
+  <div
+    class="app-select__wrapper"
+    (click)="toggleDropdown()"
+    [class.app-select__wrapper--disabled]="disabled"
+  >
     <span class="app-select__selected">
       @if (selectedOption?.icon) {
-        <span class="app-select__icon">
-          <img [src]="selectedOption?.icon" alt="icon" width="18" height="18" />
-        </span>
+      <span class="app-select__icon">
+        <img [src]="selectedOption?.icon" alt="icon" width="18" height="18" />
+      </span>
       }
       {{ selectedOption?.label || placeholder }}
     </span>
     <span class="app-select__arrow">&#9662;</span>
   </div>
   @if (dropdownOpen && !disabled) {
-    <ul class="app-select__dropdown">
-      @for (option of options; track option.value) {
-        <li
-          class="app-select__dropdown-option"
-          [class.app-select__dropdown-option--selected]="option.value === value"
-          (click)="selectOption(option)"
-        >
-          @if (option.icon) {
-            <span class="app-select__icon">
-              <img [src]="option.icon" alt="icon" width="18" height="18" />
-            </span>
-          }
-          {{ option.label }}
-        </li>
+  <ul class="app-select__dropdown">
+    @for (option of options; track option.value) {
+    <li
+      class="app-select__dropdown-option"
+      [class.app-select__dropdown-option--selected]="option.value === value"
+      (click)="selectOption(option)"
+    >
+      @if (option.icon) {
+      <span class="app-select__icon">
+        <img [src]="option.icon" alt="icon" width="18" height="18" />
+      </span>
       }
-    </ul>
+      {{ option.label }}
+    </li>
+    } @empty {
+    <div class="app-select__dropdown-option__empty">
+      {{ 'SHARED.COMPONENTS.SELECT.EMPTY' | transloco }}
+    </div>
+    }
+  </ul>
   }
 </div>

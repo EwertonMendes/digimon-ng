@@ -33,7 +33,7 @@
 
     &:hover {
       background-color: var(--dark-hover);
-      cursor: pointer;
+      cursor: var(--cursor-pointer);
     }
 
     .config-description {
@@ -54,7 +54,7 @@
 
     &:hover {
       background-color: var(--danger-hover);
-      cursor: pointer;
+      cursor: var(--cursor-pointer);
     }
 
     .config-item-label {

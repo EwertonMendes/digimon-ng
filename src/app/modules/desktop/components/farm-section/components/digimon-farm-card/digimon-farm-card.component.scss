@@ -17,7 +17,7 @@
 
   &:hover {
     background-color: var(--primary-dark-transparent);
-    cursor: pointer;
+    cursor: var(--cursor-pointer);
 
     .digimon-farm-card-name {
       background-color: var(--secondary-light-transparent);
@@ -107,7 +107,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+  cursor: var(--cursor-pointer);
   font-weight: bold;
   z-index: 10;
 }

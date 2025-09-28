@@ -46,7 +46,7 @@
 
           &:hover,
           &:focus {
-            cursor: pointer;
+            cursor: var(--cursor-pointer);
             background: var(--primary);
             transform: translateY(-4px);
             outline: none;
@@ -54,7 +54,7 @@
 
           &.disabled-location {
             opacity: 0.5;
-            cursor: not-allowed;
+            cursor: var(--cursor-not-allowed);
 
             &:hover,
             &:focus {

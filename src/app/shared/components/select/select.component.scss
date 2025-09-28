@@ -20,7 +20,7 @@
     border: 2px solid var(--secondary);
     border-radius: 12px;
     padding: 0.75rem 2.5rem 0.75rem 0.75rem;
-    cursor: pointer;
+    cursor: var(--cursor-pointer);
     min-height: 40px;
     position: relative;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -57,7 +57,7 @@
       background: color-mix(in srgb, rgba(255, 255, 255, 0.08) 80%, transparent 20%);
       border-color: var(--gray-600);
       color: var(--gray-500);
-      cursor: not-allowed;
+      cursor: var(--cursor-not-allowed);
       opacity: 0.7;
       transform: none;
 
@@ -118,7 +118,7 @@
     color: var(--text);
     background: transparent;
     border-radius: 8px;
-    cursor: pointer;
+    cursor: var(--cursor-pointer);
     transition: all 0.2s ease-in-out;
     overflow: hidden;
 

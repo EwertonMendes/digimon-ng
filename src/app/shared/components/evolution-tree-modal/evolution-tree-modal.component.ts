@@ -84,10 +84,10 @@ export class EvolutionTreeModalComponent{
 
   private setupGraphEventHandlers(container: HTMLElement) {
     this.sigma.on('enterNode', () => {
-      container.style.cursor = 'pointer';
+      container.style.cursor = 'var(--cursor-pointer)';
     });
     this.sigma.on('leaveNode', () => {
-      container.style.cursor = 'default';
+      container.style.cursor = 'var(--cursor-default)';
     });
     this.sigma.on('clickNode', (data) => this.handleNodeClick(data));
   }

@@ -20,7 +20,7 @@ app-modal {
       z-index: 1001;
 
       .close-button {
-        cursor: pointer;
+        cursor: var(--cursor-pointer);
         font-size: 28px;
         font-weight: bold;
         width: 45px;

@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  cursor: pointer;
+  cursor: var(--cursor-pointer);
   user-select: none;
 
   input[type='checkbox'] {
@@ -15,7 +15,7 @@
     background-color: var(--gray-100);
     position: relative;
     transition: all 0.2s;
-    cursor: pointer;
+    cursor: var(--cursor-pointer);
 
     &:checked {
       background-color: var(--primary);
@@ -37,7 +37,7 @@
     &:disabled {
       background-color: #eee;
       border-color: #ccc;
-      cursor: not-allowed;
+      cursor: var(--cursor-not-allowed);
     }
   }
 

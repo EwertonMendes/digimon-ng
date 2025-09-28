@@ -17,6 +17,7 @@
   max-width: 1366px;
   margin: 0 auto;
   gap: 1.5rem;
+  cursor: var(--cursor-default);
 
   @media (max-width: 768px) {
     padding: 1rem;
@@ -149,7 +150,7 @@
     border: 2px solid var(--gray-700);
     border-radius: 16px;
     padding: 0.75rem;
-    cursor: pointer;
+    cursor: var(--cursor-pointer);
     transition: transform 0.3s ease, border-color 0.3s ease;
     backdrop-filter: blur(12px);
 

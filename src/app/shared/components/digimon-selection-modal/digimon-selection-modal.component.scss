@@ -64,7 +64,7 @@
 
       &:hover {
         background: var(--secondary-dark);
-        cursor: pointer;
+        cursor: var(--cursor-pointer);
       }
     }
   }

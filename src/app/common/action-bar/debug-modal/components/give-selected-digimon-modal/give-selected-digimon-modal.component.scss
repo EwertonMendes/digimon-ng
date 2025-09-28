@@ -35,7 +35,7 @@
       width: 20px;
       height: 20px;
       padding: 5px;
-      cursor: pointer;
+      cursor: var(--cursor-pointer);
     }
 
     .level-select-input:active {
@@ -54,12 +54,12 @@
       font-size: 16px;
 
       &:hover {
-        cursor: pointer;
+        cursor: var(--cursor-pointer);
       }
     }
 
     input:hover {
-      cursor: pointer;
+      cursor: var(--cursor-pointer);
     }
   }
 

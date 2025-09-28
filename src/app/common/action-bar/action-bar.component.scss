@@ -14,6 +14,10 @@
       flex-direction: column;
       gap: 10px;
 
+      svg {
+        cursor: var(--cursor-pointer);
+      }
+
       .action-bar-button {
         padding: 10px 10px;
         margin: 0px;
@@ -26,7 +30,7 @@
         }
 
         &:hover {
-          cursor: pointer;
+          cursor: var(--cursor-pointer);
           background-color: var(--primary-light);
           transition: transform 0.3s ease-in-out;
 

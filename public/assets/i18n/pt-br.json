@@ -275,6 +275,7 @@
         "INFO_TOAST_TEST": "Teste de toast info",
         "SUCCESS_TOAST_TEST": "Teste de toast success",
         "KILL_ALL_DIGIMON": "Matar todos os Digimons",
+        "HEAL_ALL_DIGIMON": "Curar todos os Digimons",
         "GIVE_1_MILLION_BITS": "Dar 1 milhão de bits",
         "UNLOCK_ALL_LOCATIONS": "Desbloquear todos os locais",
         "LOCK_ALL_LOCATIONS": "Bloquear todos os locais",

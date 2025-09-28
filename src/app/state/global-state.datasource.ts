@@ -354,11 +354,35 @@ export class GlobalStateDataSource {
   }
 
   killAllDigimon() {
-    this.playerDataView().digimonList.forEach(digimon => digimon.currentHp = 0);
-    this.playerDataView().inTrainingDigimonList.forEach(digimon => digimon.currentHp = 0);
-    this.playerDataView().bitFarmDigimonList.forEach(digimon => digimon.currentHp = 0);
-    this.playerDataView().hospitalDigimonList.forEach(digimon => digimon.currentHp = 0);
-    this.playerDataView().digimonStorageList.forEach(digimon => digimon.currentHp = 0);
+    this.playerData().digimonList.forEach(digimon => digimon.currentHp = 0);
+    this.playerData().inTrainingDigimonList.forEach(digimon => digimon.currentHp = 0);
+    this.playerData().bitFarmDigimonList.forEach(digimon => digimon.currentHp = 0);
+    this.playerData().hospitalDigimonList.forEach(digimon => digimon.currentHp = 0);
+    this.playerData().digimonStorageList.forEach(digimon => digimon.currentHp = 0);
+
+    this.playerData.set({
+      ...this.playerData(),
+      digimonList: this.playerData().digimonList,
+      inTrainingDigimonList: this.playerData().inTrainingDigimonList,
+      hospitalDigimonList: this.playerData().hospitalDigimonList,
+      digimonStorageList: this.playerData().digimonStorageList
+    })
+  }
+
+  healAllDigimon() {
+    this.playerData().digimonList.forEach(digimon => digimon.currentHp = digimon.maxHp);
+    this.playerData().inTrainingDigimonList.forEach(digimon => digimon.currentHp = digimon.maxHp);
+    this.playerData().bitFarmDigimonList.forEach(digimon => digimon.currentHp = digimon.maxHp);
+    this.playerData().hospitalDigimonList.forEach(digimon => digimon.currentHp = digimon.maxHp);
+    this.playerData().digimonStorageList.forEach(digimon => digimon.currentHp = digimon.maxHp);
+
+    this.playerData.set({
+      ...this.playerData(),
+      digimonList: this.playerData().digimonList,
+      inTrainingDigimonList: this.playerData().inTrainingDigimonList,
+      hospitalDigimonList: this.playerData().hospitalDigimonList,
+      digimonStorageList: this.playerData().digimonStorageList
+    })
   }
 
   deleteDigimon(digimonId: string): void {

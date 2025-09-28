@@ -8,7 +8,7 @@
         @for (tool of tools; track $index) {
         <app-button
           [text]="tool.name | transloco"
-          color="primary"
+          [color]="tool.color ?? 'primary'"
           (onClick)="tool.action()"
         />
         }

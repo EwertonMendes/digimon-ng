@@ -38,10 +38,15 @@ export class DebugModalComponent {
     },
     { name: 'SHARED.COMPONENTS.DEBUG_MODAL.RESET_STORAGE', action: this.resetStorage.bind(this) },
     { name: 'SHARED.COMPONENTS.DEBUG_MODAL.SEE_EVOLUTION_LINES', action: this.openSeeEvolutionLinesDigimonModal.bind(this) },
-    { name: 'SHARED.COMPONENTS.DEBUG_MODAL.INFO_TOAST_TEST', action: this.toastService.showToast.bind(this.toastService, 'Info!', 'info') },
-    { name: 'SHARED.COMPONENTS.DEBUG_MODAL.SUCCESS_TOAST_TEST', action: this.toastService.showToast.bind(this.toastService, 'Success!', 'success') },
-    { name: 'SHARED.COMPONENTS.DEBUG_MODAL.ERROR_TOAST_TEST', action: this.toastService.showToast.bind(this.toastService, 'Error!', 'error') },
-    { name: 'SHARED.COMPONENTS.DEBUG_MODAL.KILL_ALL_DIGIMON', action: () => this.globalState.killAllDigimon() },
+    { name: 'SHARED.COMPONENTS.DEBUG_MODAL.INFO_TOAST_TEST', action: this.toastService.showToast.bind(this.toastService, 'Info!', 'info'), color: 'info' },
+    { name: 'SHARED.COMPONENTS.DEBUG_MODAL.SUCCESS_TOAST_TEST', action: this.toastService.showToast.bind(this.toastService, 'Success!', 'success'), color: 'success' },
+    { name: 'SHARED.COMPONENTS.DEBUG_MODAL.ERROR_TOAST_TEST', action: this.toastService.showToast.bind(this.toastService, 'Error!', 'error'), color: 'danger' },
+    {
+      name: 'SHARED.COMPONENTS.DEBUG_MODAL.KILL_ALL_DIGIMON', action: () => this.globalState.killAllDigimon()
+    },
+    {
+      name: 'SHARED.COMPONENTS.DEBUG_MODAL.HEAL_ALL_DIGIMON', action: () => this.globalState.healAllDigimon()
+    },
     {
       name: 'SHARED.COMPONENTS.DEBUG_MODAL.GIVE_1_MILLION_BITS', action: () => this.globalState.addBits(1000000)
     },

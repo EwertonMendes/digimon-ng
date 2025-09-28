@@ -48,6 +48,7 @@
                 [maxlength]="20"
                 [(ngModel)]="digimonNickname"
                 [focused]="isEditingName()"
+                (onEnter)="saveNewDigimonName()"
               ></app-input>
             </div>
             <div class="change-name-button-container">

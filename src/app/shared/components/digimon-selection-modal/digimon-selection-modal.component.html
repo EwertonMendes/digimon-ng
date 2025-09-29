@@ -9,25 +9,33 @@
     </h3>
     <ng-content></ng-content>
     <div class="digimon-selection-modal-content">
-      @defer { @for (group of groupedDigimonList; track group.letter) {
-      <div class="digimon-group-header">{{ group.letter }}</div>
-      <div class="digimon-selection-modal-content-items-container">
-        @for (digimon of group.digimons; track digimon.seed + $index) {
-        <div
-          class="digimon-selection-item"
-          (click)="onSelectDigimon.emit(digimon)"
-        >
-          <img
-            [src]="digimon.img"
-            alt="digimon"
-            class="digimon-selection-item-image"
-          />
-          <div class="digimon-selection-item-name">{{ digimon.name }}</div>
-          <div class="digimon-selection-item-rank">{{ digimon.rank }}</div>
-        </div>
+      @defer (on viewport) {
+        @for (group of groupedDigimonList; track group.letter) {
+          <div class="digimon-group-header">{{ group.letter }}</div>
+          <div class="digimon-selection-modal-content-items-container">
+            @for (digimon of group.digimons; track digimon.seed + $index) {
+              <div
+                class="digimon-selection-item"
+                (click)="onSelectDigimon.emit(digimon)"
+              >
+                <img
+                  [src]="digimon.img"
+                  alt="digimon"
+                  class="digimon-selection-item-image"
+                />
+                <div class="digimon-selection-item-name">
+                  {{ digimon.name }}
+                </div>
+                <div class="digimon-selection-item-rank">
+                  {{ digimon.rank }}
+                </div>
+              </div>
+            }
+          </div>
         }
-      </div>
-      } }
+      } @placeholder {
+        <div>-</div>
+      }
     </div>
   </div>
 </app-modal>

@@ -29,7 +29,8 @@ export class DigimonFarmCardComponent {
     const allPlayerDigimons = this.globalState.allPlayerDigimonList();
     const isPlayerDigimon = allPlayerDigimons.some(digimon => digimon.id === this.digimon().id);
     const hasMultipleDigimons = allPlayerDigimons.length > 1;
-    this.isDeletable.set(isPlayerDigimon && hasMultipleDigimons && !this.globalState.isBattleActive);
+
+    this.isDeletable.set(isPlayerDigimon && hasMultipleDigimons && !this.globalState.isBattleActive());
   }
 
   @HostListener('mouseleave')

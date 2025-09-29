@@ -34,7 +34,7 @@
     "atk": 32,
     "def": 35,
     "speed": 14,
-    "bitFarmingRate": 5,
+    "bitFarmingRate": 6,
     "digiEvolutionSeedList": ["277edb81-7051-4a5e-8f5d-369e70cd18e5"],
     "degenerateSeedList": [],
     "evolutionRequirements": [
@@ -57,7 +57,7 @@
     "atk": 30,
     "def": 20,
     "speed": 15,
-    "bitFarmingRate": 5,
+    "bitFarmingRate": 8,
     "digiEvolutionSeedList": ["25acac95-1107-484a-8dfc-f4f8139bc164"],
     "degenerateSeedList": [],
     "evolutionRequirements": [
@@ -80,7 +80,7 @@
     "atk": 47,
     "def": 35,
     "speed": 28,
-    "bitFarmingRate": 2,
+    "bitFarmingRate": 12,
     "digiEvolutionSeedList": [
       "42e8ce3c-0f51-4238-866e-a195628b165c",
       "605568d6-840c-4cd0-bdf4-b7d04819f149",
@@ -107,7 +107,7 @@
     "atk": 40,
     "def": 52,
     "speed": 33,
-    "bitFarmingRate": 3,
+    "bitFarmingRate": 14,
     "digiEvolutionSeedList": ["6ce78264-cbb0-4e10-8f55-89336f93d8dd"],
     "degenerateSeedList": ["e7f074b5-2979-4a45-b6a3-3b07f6965f7d"],
     "evolutionRequirements": [
@@ -130,7 +130,7 @@
     "atk": 52,
     "def": 41,
     "speed": 37,
-    "bitFarmingRate": 5,
+    "bitFarmingRate": 14,
     "digiEvolutionSeedList": [
       "083241cc-fcf8-4101-a58d-09b0e6b375b6",
       "1e4a6cd2-b5f2-40c9-abc1-e2d4f5b6a789",
@@ -157,7 +157,7 @@
     "atk": 45,
     "def": 28,
     "speed": 36,
-    "bitFarmingRate": 3,
+    "bitFarmingRate": 11,
     "digiEvolutionSeedList": [
       "986f4b59-c234-44fa-b5bc-456736578f67",
       "f4bf9c27-147a-46ed-b069-c13e8d934be2",
@@ -184,7 +184,7 @@
     "atk": 40,
     "def": 30,
     "speed": 25,
-    "bitFarmingRate": 3,
+    "bitFarmingRate": 14,
     "digiEvolutionSeedList": ["935f8d3f-e4b9-47d6-b168-a80eb4dae568"],
     "degenerateSeedList": [],
     "evolutionRequirements": [
@@ -207,7 +207,7 @@
     "atk": 41,
     "def": 42,
     "speed": 26,
-    "bitFarmingRate": 2,
+    "bitFarmingRate": 22,
     "digiEvolutionSeedList": [
       "935f8d3f-e4b9-47d6-b168-a80eb4dae568",
       "4e6904cc-d3c0-4363-b8a8-bebc1da167ab",
@@ -234,7 +234,7 @@
     "atk": 50,
     "def": 39,
     "speed": 29,
-    "bitFarmingRate": 12,
+    "bitFarmingRate": 11,
     "digiEvolutionSeedList": ["42e8ce3c-0f51-4238-866e-a195628b165c"],
     "degenerateSeedList": [],
     "evolutionRequirements": [
@@ -257,7 +257,7 @@
     "atk": 51,
     "def": 33,
     "speed": 37,
-    "bitFarmingRate": 1,
+    "bitFarmingRate": 23,
     "digiEvolutionSeedList": [
       "768e6d1a-5c3b-4ed2-991f-e4a1c16357a6",
       "55121c1b-5f45-4f28-ad8f-d1a5573c3101"
@@ -283,7 +283,7 @@
     "atk": 60,
     "def": 50,
     "speed": 40,
-    "bitFarmingRate": 3,
+    "bitFarmingRate": 12,
     "digiEvolutionSeedList": [
       "2f06b76f-a29b-415c-86be-05cc8dbaef17",
       "9c64088a-5693-4583-ba0d-47b117d2ab79"
@@ -309,7 +309,7 @@
     "atk": 37,
     "def": 38,
     "speed": 26,
-    "bitFarmingRate": 3,
+    "bitFarmingRate": 19,
     "digiEvolutionSeedList": [
       "6ce78264-cbb0-4e10-8f55-89336f93d8dd",
       "9c7bdff5-ad50-4cc5-ac80-805e59e2da57",
@@ -336,7 +336,7 @@
     "atk": 36,
     "def": 29,
     "speed": 38,
-    "bitFarmingRate": 3,
+    "bitFarmingRate": 15,
     "digiEvolutionSeedList": [
       "e5c3b6f1-ae43-4d5e-9f0a-1b2c3d4e5f67",
       "82a4f7b8-e302-4771-8d58-927c2d34e717",
@@ -364,7 +364,7 @@
     "atk": 38,
     "def": 31,
     "speed": 30,
-    "bitFarmingRate": 4,
+    "bitFarmingRate": 21,
     "digiEvolutionSeedList": [
       "6a7b8c9d-e0f1-4a2b-8c3d-4e5f6a7b8c9d",
       "178d24e5-f6a7-4b9c-9d0e-2f3a4b5c6d7e",
@@ -391,7 +391,7 @@
     "atk": 43,
     "def": 30,
     "speed": 35,
-    "bitFarmingRate": 4,
+    "bitFarmingRate": 17,
     "digiEvolutionSeedList": [
       "7db14a16-d501-421f-a403-f00ef6bdbeda",
       "30478c8e-4673-4526-a502-5160536d0ac5"
@@ -417,7 +417,7 @@
     "atk": 46,
     "def": 42,
     "speed": 28,
-    "bitFarmingRate": 5,
+    "bitFarmingRate": 22,
     "digiEvolutionSeedList": [
       "cf2a3b4c-d5e6-4f7a-9b0c-1d2e3f4a5b6c",
       "a05f17f2-7f47-44dd-ae69-b46896e08043",
@@ -444,7 +444,7 @@
     "atk": 34,
     "def": 28,
     "speed": 29,
-    "bitFarmingRate": 3,
+    "bitFarmingRate": 19,
     "digiEvolutionSeedList": ["05be89f5-5da3-4026-afcf-443ee072e0eb"],
     "degenerateSeedList": [],
     "evolutionRequirements": [
@@ -467,7 +467,7 @@
     "atk": 55,
     "def": 33,
     "speed": 31,
-    "bitFarmingRate": 4,
+    "bitFarmingRate": 15,
     "digiEvolutionSeedList": [
       "3c827fbe-aa3d-4b2b-9cb3-5a6d4fc8e47f",
       "d9a452f3-71d0-4b1a-9bee-8e4c36b9e1a3"
@@ -511,7 +511,7 @@
     "atk": 35,
     "def": 33,
     "speed": 35,
-    "bitFarmingRate": 3,
+    "bitFarmingRate": 14,
     "digiEvolutionSeedList": [
       "ab31784f-d09b-473a-ad58-27c40b50ae53",
       "0ba4bbe8-1f8f-4252-a7c5-6380981d6567",
@@ -538,7 +538,7 @@
     "atk": 35,
     "def": 33,
     "speed": 35,
-    "bitFarmingRate": 3,
+    "bitFarmingRate": 23,
     "digiEvolutionSeedList": ["b1905950-9981-4544-a642-69f106e4889d"],
     "degenerateSeedList": [],
     "evolutionRequirements": [
@@ -561,7 +561,7 @@
     "atk": 56,
     "def": 40,
     "speed": 39,
-    "bitFarmingRate": 5,
+    "bitFarmingRate": 24,
     "digiEvolutionSeedList": [
       "116e09ec-921e-42e3-9de6-05681965d7af",
       "08f6ce0c-91ad-409a-aa7e-31c35623c37d"
@@ -587,7 +587,7 @@
     "atk": 48,
     "def": 24,
     "speed": 38,
-    "bitFarmingRate": 4,
+    "bitFarmingRate": 23,
     "digiEvolutionSeedList": [
       "8f1df616-ba64-456a-8ebd-2f18e17c07f3",
       "56b1d2e3-f4a5-4b6c-8d9e-0f1a2b3c4d5e"
@@ -613,7 +613,7 @@
     "atk": 42,
     "def": 31,
     "speed": 32,
-    "bitFarmingRate": 3,
+    "bitFarmingRate": 16,
     "digiEvolutionSeedList": [
       "067c13d4-e5f6-4a8b-8c9d-1e2f3a4b5c6d",
       "a016bd5e-c5d6-4e7f-8a9b-1c2d3e4f5a6b",
@@ -640,7 +640,7 @@
     "atk": 51,
     "def": 39,
     "speed": 33,
-    "bitFarmingRate": 4,
+    "bitFarmingRate": 22,
     "digiEvolutionSeedList": ["d8b07898-1585-41b6-bcde-2f571243f424"],
     "degenerateSeedList": [],
     "evolutionRequirements": [
@@ -663,7 +663,7 @@
     "atk": 40,
     "def": 30,
     "speed": 39,
-    "bitFarmingRate": 4,
+    "bitFarmingRate": 15,
     "digiEvolutionSeedList": ["489e2e68-fb20-4aa9-bb97-dbfbcf03b2ba"],
     "degenerateSeedList": [],
     "evolutionRequirements": [
@@ -686,7 +686,7 @@
     "atk": 83,
     "def": 62,
     "speed": 57,
-    "bitFarmingRate": 2,
+    "bitFarmingRate": 26,
     "digiEvolutionSeedList": [
       "70dbb38a-690e-45b3-bfc5-eccba64fbd9b",
       "67cd2d63-4299-446e-a851-6f04e9b51bc5",
@@ -713,7 +713,7 @@
     "atk": 76,
     "def": 66,
     "speed": 53,
-    "bitFarmingRate": 19,
+    "bitFarmingRate": 29,
     "digiEvolutionSeedList": [
       "76c5f4e2-1a0b-42f7-9e4d-b3f0d8a1c2e6",
       "03de2f94-6a3b-457a-a0f1-fb2c9e57c8a3",
@@ -740,7 +740,7 @@
     "atk": 82,
     "def": 72,
     "speed": 50,
-    "bitFarmingRate": 14,
+    "bitFarmingRate": 26,
     "digiEvolutionSeedList": [
       "87a9e123-4f23-42b3-9d83-3c7e4382c3d5",
       "46c1f3e9-5a4d-4b7c-8e1f-cb7a0f9d2e3c",
@@ -767,7 +767,7 @@
     "atk": 72,
     "def": 63,
     "speed": 71,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 28,
     "digiEvolutionSeedList": ["fa3e15c0-4a3f-45e1-b75e-1b2d1b16a377"],
     "degenerateSeedList": ["2c011b3c-727f-4f36-aeb7-18e94eb4801e"],
     "evolutionRequirements": [
@@ -790,7 +790,7 @@
     "atk": 74,
     "def": 66,
     "speed": 56,
-    "bitFarmingRate": 7,
+    "bitFarmingRate": 28,
     "digiEvolutionSeedList": ["b7f8c97d-1e9f-42a7-bbf1-d3e67a54f799"],
     "degenerateSeedList": [
       "277edb81-7051-4a5e-8f5d-369e70cd18e5",
@@ -816,7 +816,7 @@
     "atk": 81,
     "def": 70,
     "speed": 53,
-    "bitFarmingRate": 10,
+    "bitFarmingRate": 32,
     "digiEvolutionSeedList": [
       "d6e3a9c0-2f5b-4e7a-8c1d-9f0a3e5d7b2c",
       "35d9c2a4-9b1f-4e6c-82a3-f0e5c7d8b193"
@@ -842,7 +842,7 @@
     "atk": 76,
     "def": 59,
     "speed": 61,
-    "bitFarmingRate": 7,
+    "bitFarmingRate": 26,
     "digiEvolutionSeedList": ["f3d8e2e9-316a-412b-91f9-678d1e6e9a56"],
     "degenerateSeedList": ["4f2a5a34-f37e-4e2e-9429-5fa6a7b36c1b"],
     "evolutionRequirements": [
@@ -865,7 +865,7 @@
     "atk": 75,
     "def": 71,
     "speed": 63,
-    "bitFarmingRate": 22,
+    "bitFarmingRate": 31,
     "digiEvolutionSeedList": [
       "fdb6bc88-8ab6-4d27-af65-8c26b7df9c86",
       "f0e2b4d1-59c3-41a7-9d2e-85c7f31b06a4"
@@ -894,7 +894,7 @@
     "atk": 75,
     "def": 68,
     "speed": 52,
-    "bitFarmingRate": 25,
+    "bitFarmingRate": 29,
     "digiEvolutionSeedList": [
       "9f207e7b-2e92-4cfc-8e44-94cf25e0fdb5",
       "0a1d3e9f-b7c2-4f8a-84e1-d0c9f27b1356",
@@ -921,7 +921,7 @@
     "atk": 79,
     "def": 57,
     "speed": 60,
-    "bitFarmingRate": 30,
+    "bitFarmingRate": 26,
     "digiEvolutionSeedList": ["28e7b03d-c49a-431b-81f2-d3a0f8c197e0"],
     "degenerateSeedList": [],
     "evolutionRequirements": [
@@ -944,7 +944,7 @@
     "atk": 87,
     "def": 67,
     "speed": 50,
-    "bitFarmingRate": 12,
+    "bitFarmingRate": 28,
     "digiEvolutionSeedList": [
       "124e3f9c-0f48-402c-9f29-b92ff742a965",
       "d7e9f1a3-5b2c-4d8a-9c6e-1f0b3a5d7e2c"
@@ -973,7 +973,7 @@
     "atk": 86,
     "def": 59,
     "speed": 63,
-    "bitFarmingRate": 2,
+    "bitFarmingRate": 27,
     "digiEvolutionSeedList": [
       "80c6f1b9-648a-49b3-92c9-01d6e2f4bc8e",
       "41d20f3e-c798-4e3d-b0f2-718b49f305d7"
@@ -999,7 +999,7 @@
     "atk": 72,
     "def": 57,
     "speed": 69,
-    "bitFarmingRate": 76,
+    "bitFarmingRate": 35,
     "digiEvolutionSeedList": [
       "b7569307-7fd2-4ebb-a05f-6b1b30410921",
       "b9c0f3a7-2d5a-4e6b-8c1d-9f0e3a5d7b2c"
@@ -1025,7 +1025,7 @@
     "atk": 81,
     "def": 63,
     "speed": 60,
-    "bitFarmingRate": 46,
+    "bitFarmingRate": 30,
     "digiEvolutionSeedList": [
       "a7d0f3e9-1c5b-4e6a-8c2b-9f3a5e0d7b6c",
       "c7b9e0f3-2d5a-4e6b-8c1d-9f0e3a5d7b2c"
@@ -1051,7 +1051,7 @@
     "atk": 79,
     "def": 68,
     "speed": 52,
-    "bitFarmingRate": 48,
+    "bitFarmingRate": 35,
     "digiEvolutionSeedList": [
       "e7b9c0f3-1a5d-4e6b-8c2d-9f0a3e5d7c6b",
       "7d9e3f2c-5f9a-4c1d-8124-0a3d4e6f9b2c",
@@ -1078,7 +1078,7 @@
     "atk": 69,
     "def": 56,
     "speed": 76,
-    "bitFarmingRate": 40,
+    "bitFarmingRate": 35,
     "digiEvolutionSeedList": ["a5d8e0b7-3c1f-4e9a-8b2d-6f0c3a5e7d1b"],
     "degenerateSeedList": ["2c011b3c-727f-4f36-aeb7-18e94eb4801e"],
     "evolutionRequirements": [
@@ -1101,7 +1101,7 @@
     "atk": 71,
     "def": 53,
     "speed": 73,
-    "bitFarmingRate": 36,
+    "bitFarmingRate": 28,
     "digiEvolutionSeedList": [
       "e3b9c6f0-2d5a-4e7b-8c1d-9f0a5e3d7b2c",
       "a3c9e71d-b581-4aef-bc7f-0e1db4956f32"
@@ -1127,7 +1127,7 @@
     "atk": 74,
     "def": 57,
     "speed": 61,
-    "bitFarmingRate": 40,
+    "bitFarmingRate": 32,
     "digiEvolutionSeedList": [
       "b2a5c9e0-3d1f-4e6a-8c7b-9f0d3a5e7c6b",
       "09c174de-84df-4208-946b-9bc624871631"
@@ -1153,7 +1153,7 @@
     "atk": 81,
     "def": 80,
     "speed": 48,
-    "bitFarmingRate": 44,
+    "bitFarmingRate": 32,
     "digiEvolutionSeedList": [
       "f5a7b9c0-2d5a-4e6b-8c1d-9f0e3a5d7b2c",
       "a3d5f4e1-92b0-4fc8-ae1c-6d7e9c203f5b",
@@ -1180,7 +1180,7 @@
     "atk": 75,
     "def": 63,
     "speed": 53,
-    "bitFarmingRate": 16,
+    "bitFarmingRate": 30,
     "digiEvolutionSeedList": [
       "d9e3c6b5-2f1a-4e7b-8c9d-0f5a3e7b2d6c",
       "b3e6a9c5-2d1f-4e7a-8c9b-0f5d3a7e2b6c",
@@ -1207,7 +1207,7 @@
     "atk": 78,
     "def": 75,
     "speed": 58,
-    "bitFarmingRate": 52,
+    "bitFarmingRate": 25,
     "digiEvolutionSeedList": [
       "17d0f8b3-4e1a-49c7-9cf2-e03d7a2b5f64",
       "f0a5d7b9-2c1f-4e6a-8c3d-9f0e3a5d7b2c"
@@ -1233,7 +1233,7 @@
     "atk": 75,
     "def": 67,
     "speed": 64,
-    "bitFarmingRate": 44,
+    "bitFarmingRate": 27,
     "digiEvolutionSeedList": [
       "c4a7b9d2-1e5f-4c8a-9b3e-6d0f2a5e7c1b",
       "1449e5fc-0412-44f2-8b2d-b005419ea5c6"
@@ -1259,7 +1259,7 @@
     "atk": 73,
     "def": 71,
     "speed": 55,
-    "bitFarmingRate": 44,
+    "bitFarmingRate": 30,
     "digiEvolutionSeedList": [
       "bc8f1703-4769-4c3b-b8a2-e4f1d7ce9a02",
       "a5d4e9f7-c830-4f2d-b6a1-1e0f4c3b9d58"
@@ -1285,7 +1285,7 @@
     "atk": 80,
     "def": 70,
     "speed": 52,
-    "bitFarmingRate": 44,
+    "bitFarmingRate": 31,
     "digiEvolutionSeedList": [
       "a5d7b9c0-3f1a-4e6b-8c2d-9f0e3a5d7b6c",
       "f4cbbd45-9e42-4b43-b9b0-4f8e1b9b9d21"
@@ -1311,7 +1311,7 @@
     "atk": 72,
     "def": 73,
     "speed": 51,
-    "bitFarmingRate": 50,
+    "bitFarmingRate": 34,
     "digiEvolutionSeedList": [
       "f0c7e9b3-1a5d-4e6b-8c2b-9d3a5e0f7c6b",
       "f71c8e04-3b7d-4d20-86f1-efb9403a19d6"
@@ -1337,7 +1337,7 @@
     "atk": 77,
     "def": 60,
     "speed": 64,
-    "bitFarmingRate": 54,
+    "bitFarmingRate": 30,
     "digiEvolutionSeedList": ["d7b9c0e3-1a5f-4e6b-8c2d-9f0a3e5d7c6b"],
     "degenerateSeedList": ["2c011b3c-727f-4f36-aeb7-18e94eb4801e"],
     "evolutionRequirements": [
@@ -1360,7 +1360,7 @@
     "atk": 81,
     "def": 70,
     "speed": 59,
-    "bitFarmingRate": 50,
+    "bitFarmingRate": 33,
     "digiEvolutionSeedList": ["c9f0e3a7-1d5b-4e6a-8c2b-9f3a5e0d7b6c"],
     "degenerateSeedList": ["df0ec13c-fc18-4a32-8536-0049016c9f10"],
     "evolutionRequirements": [
@@ -1383,7 +1383,7 @@
     "atk": 79,
     "def": 66,
     "speed": 61,
-    "bitFarmingRate": 50,
+    "bitFarmingRate": 32,
     "digiEvolutionSeedList": [
       "e01c59b2-8f7a-49f2-914d-6ac9d3ef2b84",
       "c7e0f2d9-b5a3-4b18-91f2-8d9c0e7a6f13"
@@ -1409,7 +1409,7 @@
     "atk": 71,
     "def": 62,
     "speed": 68,
-    "bitFarmingRate": 48,
+    "bitFarmingRate": 32,
     "digiEvolutionSeedList": [
       "b3c9f0e7-1a5d-4e6b-8c2b-9f0d5a3e7c6b",
       "f2d0c814-95f4-4eb2-9491-519b62a3c9de"
@@ -1435,7 +1435,7 @@
     "atk": 83,
     "def": 63,
     "speed": 58,
-    "bitFarmingRate": 54,
+    "bitFarmingRate": 33,
     "digiEvolutionSeedList": [
       "c6b9e0f3-2a5d-4e7b-8c1d-9f0a3e5d7b2c",
       "e3c9f0b7-1a5d-4e6b-8c2d-9f0a3e5d7c6b"
@@ -1461,7 +1461,7 @@
     "atk": 78,
     "def": 72,
     "speed": 60,
-    "bitFarmingRate": 60,
+    "bitFarmingRate": 34,
     "digiEvolutionSeedList": ["a5d7b9c0-2f1a-4e6b-8c3d-9f0a5e3d7b2c"],
     "degenerateSeedList": ["2b418d80-1f34-4868-ace2-e62a38e9b9cd"],
     "evolutionRequirements": [
@@ -1484,7 +1484,7 @@
     "atk": 74,
     "def": 64,
     "speed": 60,
-    "bitFarmingRate": 44,
+    "bitFarmingRate": 32,
     "digiEvolutionSeedList": [
       "b5e9c2f0-3a1d-4e6b-8c7b-9f0d5a3e2d7c",
       "a9d5e7b0-3f1a-4e6b-8c2d-9f0e3a5d7c6b"
@@ -1510,7 +1510,7 @@
     "atk": 76,
     "def": 68,
     "speed": 70,
-    "bitFarmingRate": 40,
+    "bitFarmingRate": 32,
     "digiEvolutionSeedList": [
       "f3a7b9c0-1d5a-4e6b-8c2d-9f0e3a5d7c6b",
       "c2d84f3e-0b97-402d-9ef1-b38f7051c4ad"
@@ -1536,7 +1536,7 @@
     "atk": 84,
     "def": 69,
     "speed": 58,
-    "bitFarmingRate": 50,
+    "bitFarmingRate": 30,
     "digiEvolutionSeedList": [
       "8b7f0e3d-3c2a-4671-b9f1-e0d5a4c78b20",
       "5b7a39c4-812d-42c1-8e07-3c9a8e5f6f10"
@@ -1588,7 +1588,7 @@
     "atk": 79,
     "def": 62,
     "speed": 61,
-    "bitFarmingRate": 46,
+    "bitFarmingRate": 32,
     "digiEvolutionSeedList": [
       "78c5f193-d4a0-42be-b0cd-3f7e91c608d4",
       "d4b6f7c0-3f19-482a-a5e1-b0c2d7e3f849"
@@ -1641,7 +1641,7 @@
     "atk": 76,
     "def": 66,
     "speed": 54,
-    "bitFarmingRate": 50,
+    "bitFarmingRate": 29,
     "digiEvolutionSeedList": ["a03b8672-59d7-4f2e-9b5d-b0e2a3e7f9b8"],
     "degenerateSeedList": [],
     "evolutionRequirements": [
@@ -1664,7 +1664,7 @@
     "atk": 84,
     "def": 60,
     "speed": 52,
-    "bitFarmingRate": 40,
+    "bitFarmingRate": 35,
     "digiEvolutionSeedList": [
       "ecb85eb6-9dd6-4997-b4b0-2f5bfa778712",
       "d0c5e9b7-3f1a-4e6b-8c2d-9f0e3a5d7c6b"
@@ -1690,7 +1690,7 @@
     "atk": 70,
     "def": 54,
     "speed": 71,
-    "bitFarmingRate": 48,
+    "bitFarmingRate": 35,
     "digiEvolutionSeedList": [
       "ae4c3d8f-0a9b-4950-8c3d-2b9f1f0871e5",
       "12bfe8d3-7c6e-4e0f-9a2b-f1d3c87b20f5"
@@ -1716,7 +1716,7 @@
     "atk": 82,
     "def": 75,
     "speed": 53,
-    "bitFarmingRate": 60,
+    "bitFarmingRate": 32,
     "digiEvolutionSeedList": ["91a2e3f7-7f0b-446d-81e2-3d9c7f1a5e40"],
     "degenerateSeedList": ["c32edbfb-fd41-40dc-95c3-ded5a6b89e99"],
     "evolutionRequirements": [
@@ -1739,7 +1739,7 @@
     "atk": 64,
     "def": 50,
     "speed": 67,
-    "bitFarmingRate": 48,
+    "bitFarmingRate": 33,
     "digiEvolutionSeedList": ["e2c5a9b7-1d3f-4e6a-8c9b-0f5d3a7e2b6c"],
     "degenerateSeedList": ["ed20a627-e7f5-4ab1-bbfd-2a7c2df1d0b6"],
     "evolutionRequirements": [
@@ -1762,7 +1762,7 @@
     "atk": 80,
     "def": 70,
     "speed": 55,
-    "bitFarmingRate": 50,
+    "bitFarmingRate": 33,
     "digiEvolutionSeedList": [
       "e3a5c9b7-3d1f-4e6a-8c2b-9f0d5a3e7b6c",
       "8d2e5f3b-2a9c-47b0-91f3-e6c4d5b7a081"
@@ -1788,7 +1788,7 @@
     "atk": 60,
     "def": 55,
     "speed": 68,
-    "bitFarmingRate": 40,
+    "bitFarmingRate": 28,
     "digiEvolutionSeedList": [
       "2d83fa14-b1ae-44fa-9a1c-046af2d2306c",
       "7cd90fd2-0182-4973-aab7-1ff1162b83ec"
@@ -1814,7 +1814,7 @@
     "atk": 73,
     "def": 63,
     "speed": 61,
-    "bitFarmingRate": 48,
+    "bitFarmingRate": 27,
     "digiEvolutionSeedList": [
       "934b0e2f-807c-4c3a-b1f9-60edc7f4a59e",
       "14fa2d8e-a930-4eb1-bc27-ef19d3f0c475"
@@ -1840,7 +1840,7 @@
     "atk": 71,
     "def": 68,
     "speed": 57,
-    "bitFarmingRate": 56,
+    "bitFarmingRate": 28,
     "digiEvolutionSeedList": ["f8d2c6e9-4b1a-4e9f-8c7d-3a5e9b2f1d0c"],
     "degenerateSeedList": [],
     "evolutionRequirements": [
@@ -1863,7 +1863,7 @@
     "atk": 71,
     "def": 58,
     "speed": 75,
-    "bitFarmingRate": 44,
+    "bitFarmingRate": 29,
     "digiEvolutionSeedList": [
       "d9a3c6e0-2f5b-4e7a-8c1b-9f0d5a3e7b2c",
       "56a2e212-2c89-46c4-b7b4-36bba1dbd7b7"
@@ -1889,7 +1889,7 @@
     "atk": 81,
     "def": 75,
     "speed": 53,
-    "bitFarmingRate": 42,
+    "bitFarmingRate": 33,
     "digiEvolutionSeedList": ["5a9c1a2a-79b5-4de4-bc0a-d0fcd149e9d6"],
     "degenerateSeedList": ["b18ad2e7-5a8b-43c3-990e-5f00ea8e3ae7"],
     "evolutionRequirements": [
@@ -1912,7 +1912,7 @@
     "atk": 83,
     "def": 59,
     "speed": 70,
-    "bitFarmingRate": 40,
+    "bitFarmingRate": 31,
     "digiEvolutionSeedList": [
       "19f74d0b-2eac-4398-b7d3-ecf25198a302",
       "a7c0f3e9-1d5b-4e6a-8c2b-9f3a5e0d7b6c"
@@ -1938,7 +1938,7 @@
     "atk": 79,
     "def": 69,
     "speed": 72,
-    "bitFarmingRate": 60,
+    "bitFarmingRate": 33,
     "digiEvolutionSeedList": [
       "c2a7e1d0-1f93-48b0-bcd2-79e3a4f6d105",
       "c3f0a7b9-2d5a-4e6b-8c1d-9f0e3a5d7b2c"
@@ -1964,7 +1964,7 @@
     "atk": 74,
     "def": 75,
     "speed": 58,
-    "bitFarmingRate": 40,
+    "bitFarmingRate": 26,
     "digiEvolutionSeedList": [
       "c849a173-f2d4-4700-88e3-1bc4a9f7e5d2",
       "93c1a5e7-1f0d-48b9-aeb2-6f8c5d4e3b1a"
@@ -1990,7 +1990,7 @@
     "atk": 79,
     "def": 62,
     "speed": 74,
-    "bitFarmingRate": 40,
+    "bitFarmingRate": 28,
     "digiEvolutionSeedList": ["72a04c6f-3b9c-4821-a7f1-c83d4d0f6e89"],
     "degenerateSeedList": ["2b418d80-1f34-4868-ace2-e62a38e9b9cd"],
     "evolutionRequirements": [
@@ -2013,7 +2013,7 @@
     "atk": 80,
     "def": 75,
     "speed": 53,
-    "bitFarmingRate": 42,
+    "bitFarmingRate": 29,
     "digiEvolutionSeedList": ["09f69899-b91d-4ec5-9a4e-74641b692291"],
     "degenerateSeedList": ["4f2a5a34-f37e-4e2e-9429-5fa6a7b36c1b"],
     "evolutionRequirements": [
@@ -2036,7 +2036,7 @@
     "atk": 77,
     "def": 66,
     "speed": 62,
-    "bitFarmingRate": 44,
+    "bitFarmingRate": 26,
     "digiEvolutionSeedList": [
       "f7b0c8e1-96a2-4e0f-b3c9-524d8f7a03e1",
       "0d4e78c1-2a3f-45f0-a7b9-9152ce0db654"
@@ -2062,7 +2062,7 @@
     "atk": 78,
     "def": 72,
     "speed": 57,
-    "bitFarmingRate": 50,
+    "bitFarmingRate": 31,
     "digiEvolutionSeedList": [
       "3e04bb4b-6e1a-4c57-9f7d-bd9e21048c5d",
       "b7e9c0f3-1a5d-4e6b-8c2d-9f0a3e5d7c6b"
@@ -2088,7 +2088,7 @@
     "atk": 79,
     "def": 57,
     "speed": 60,
-    "bitFarmingRate": 40,
+    "bitFarmingRate": 33,
     "digiEvolutionSeedList": [
       "61b72dc8-3fe7-4ea9-9e4c-ff718ba1477a",
       "bd2c0a93-4d8f-4f6e-b3a9-761f40ed38b7"
@@ -2114,7 +2114,7 @@
     "atk": 80,
     "def": 65,
     "speed": 55,
-    "bitFarmingRate": 40,
+    "bitFarmingRate": 32,
     "digiEvolutionSeedList": [
       "f0b7e9c5-2a1d-4e6b-8c3b-9d5a3e0f7c2b",
       "6f43524a-b8fd-4514-b5f9-03dbc7710b85",
@@ -2141,7 +2141,7 @@
     "atk": 82,
     "def": 68,
     "speed": 68,
-    "bitFarmingRate": 64,
+    "bitFarmingRate": 33,
     "digiEvolutionSeedList": ["f1d36141-5f0e-40e3-9ad4-ccdbbffb65fd"],
     "degenerateSeedList": ["f254a601-0c96-46b1-9514-f08f3f4d74f3"],
     "evolutionRequirements": [
@@ -2164,7 +2164,7 @@
     "atk": 74,
     "def": 65,
     "speed": 75,
-    "bitFarmingRate": 64,
+    "bitFarmingRate": 33,
     "digiEvolutionSeedList": ["3c0a1f29-0f53-41e6-a6fc-4d0b1d9811d6"],
     "degenerateSeedList": ["5bd6823a-72cb-408e-abe5-e0e91a1e6002"],
     "evolutionRequirements": [
@@ -2187,7 +2187,7 @@
     "atk": 95,
     "def": 60,
     "speed": 75,
-    "bitFarmingRate": 8,
+    "bitFarmingRate": 34,
     "digiEvolutionSeedList": ["8f1d1fbb-3c4d-4b95-9437-889af207f7a0"],
     "degenerateSeedList": [],
     "evolutionRequirements": [
@@ -2210,7 +2210,7 @@
     "atk": 115,
     "def": 92,
     "speed": 80,
-    "bitFarmingRate": 2,
+    "bitFarmingRate": 36,
     "digiEvolutionSeedList": [
       "25fc7b61-17ae-453b-94f7-4fa4f9171633",
       "66e5a6ea-93a5-47f8-91d9-8601857496f6"
@@ -2236,7 +2236,7 @@
     "atk": 118,
     "def": 90,
     "speed": 81,
-    "bitFarmingRate": 2,
+    "bitFarmingRate": 38,
     "digiEvolutionSeedList": ["34af8b92-9237-4f39-b45d-0d6c073d98c1"],
     "degenerateSeedList": ["96c23ff9-d6b4-43da-91e6-f0c9799c65d7"],
     "evolutionRequirements": [
@@ -2259,7 +2259,7 @@
     "atk": 97,
     "def": 82,
     "speed": 88,
-    "bitFarmingRate": 10,
+    "bitFarmingRate": 48,
     "digiEvolutionSeedList": ["e5a57e68-7e23-4314-bd93-ea8c7d5fca85"],
     "degenerateSeedList": ["dfeeb1ca-a077-4e90-84ae-8a8a6490a992"],
     "evolutionRequirements": [
@@ -2282,7 +2282,7 @@
     "atk": 110,
     "def": 96,
     "speed": 68,
-    "bitFarmingRate": 13,
+    "bitFarmingRate": 45,
     "digiEvolutionSeedList": ["fd9a8a5e-7e23-4c1b-b6b8-f2ec5f0c82e1"],
     "degenerateSeedList": ["6ce78264-cbb0-4e10-8f55-89336f93d8dd"],
     "evolutionRequirements": [
@@ -2305,7 +2305,7 @@
     "atk": 97,
     "def": 77,
     "speed": 91,
-    "bitFarmingRate": 15,
+    "bitFarmingRate": 54,
     "digiEvolutionSeedList": ["c67f1a0b-f889-438b-9cc0-885f9f711a26"],
     "degenerateSeedList": ["58278402-c731-40ae-aea6-40ad6263465c"],
     "evolutionRequirements": [
@@ -2328,7 +2328,7 @@
     "atk": 97,
     "def": 76,
     "speed": 85,
-    "bitFarmingRate": 12,
+    "bitFarmingRate": 38,
     "digiEvolutionSeedList": [
       "28228629-5abc-4fdb-b94d-360783b2ff2c",
       "43cdb81a-3316-4e2b-8c6d-4bc9f8aa99f0",
@@ -2356,7 +2356,7 @@
     "atk": 116,
     "def": 98,
     "speed": 80,
-    "bitFarmingRate": 2,
+    "bitFarmingRate": 37,
     "digiEvolutionSeedList": ["529f424a-7efe-49bd-90dc-58286aaa9fb5"],
     "degenerateSeedList": ["96c23ff9-d6b4-43da-91e6-f0c9799c65d7"],
     "evolutionRequirements": [
@@ -2379,7 +2379,7 @@
     "atk": 106,
     "def": 102,
     "speed": 81,
-    "bitFarmingRate": 4,
+    "bitFarmingRate": 44,
     "digiEvolutionSeedList": [
       "5f18edb4-a732-41e4-93e6-e65164091ea6",
       "77399b55-9e54-4ed3-8fc5-e20ee7d7dc9a"
@@ -2405,7 +2405,7 @@
     "atk": 105,
     "def": 86,
     "speed": 81,
-    "bitFarmingRate": 12,
+    "bitFarmingRate": 38,
     "digiEvolutionSeedList": ["9799592e-7012-4855-b1a8-2f5d1e27e196"],
     "degenerateSeedList": ["4e6904cc-d3c0-4363-b8a8-bebc1da167ab"],
     "evolutionRequirements": [
@@ -2428,7 +2428,7 @@
     "atk": 106,
     "def": 104,
     "speed": 73,
-    "bitFarmingRate": 3,
+    "bitFarmingRate": 43,
     "digiEvolutionSeedList": [
       "a7e2f3b1-03e4-40fc-b80b-8db60f4f616b",
       "7a27b835-293f-46db-9606-7a2aab66b0be"
@@ -2454,7 +2454,7 @@
     "atk": 85,
     "def": 93,
     "speed": 94,
-    "bitFarmingRate": 6,
+    "bitFarmingRate": 43,
     "digiEvolutionSeedList": ["40ed91a1-d2e3-47dc-8c18-64a55757e6b1"],
     "degenerateSeedList": ["d9a452f3-71d0-4b1a-9bee-8e4c36b9e1a3"],
     "evolutionRequirements": [
@@ -2477,7 +2477,7 @@
     "atk": 107,
     "def": 87,
     "speed": 84,
-    "bitFarmingRate": 5,
+    "bitFarmingRate": 55,
     "digiEvolutionSeedList": ["e49a85fa-77ea-4a06-9a65-bd3133e2c1e4"],
     "degenerateSeedList": ["8bbb294e-b9dd-4ab9-8629-f46872e9cbd4"],
     "evolutionRequirements": [
@@ -2500,7 +2500,7 @@
     "atk": 117,
     "def": 94,
     "speed": 67,
-    "bitFarmingRate": 4,
+    "bitFarmingRate": 44,
     "digiEvolutionSeedList": [
       "070340f1-64a6-4b2a-a068-47d00e4de3a1",
       "fcda1569-46f3-4ccd-8838-a55e447a005c"
@@ -2526,7 +2526,7 @@
     "atk": 101,
     "def": 80,
     "speed": 83,
-    "bitFarmingRate": 3,
+    "bitFarmingRate": 45,
     "digiEvolutionSeedList": ["a5e0bfb7-8d2a-4ef1-9636-cbb9db1fe1d0"],
     "degenerateSeedList": ["768e6d1a-5c3b-4ed2-991f-e4a1c16357a6"],
     "evolutionRequirements": [
@@ -2549,7 +2549,7 @@
     "atk": 105,
     "def": 94,
     "speed": 73,
-    "bitFarmingRate": 8,
+    "bitFarmingRate": 36,
     "digiEvolutionSeedList": ["a2fd5cd4-16dc-4422-8e94-7129b75478ce"],
     "degenerateSeedList": ["02e00ed9-be0c-4e24-9e6a-1bce6407ba67"],
     "evolutionRequirements": [
@@ -2572,7 +2572,7 @@
     "atk": 115,
     "def": 86,
     "speed": 78,
-    "bitFarmingRate": 2,
+    "bitFarmingRate": 43,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["58278402-c731-40ae-aea6-40ad6263465c"],
     "evolutionRequirements": [
@@ -2595,7 +2595,7 @@
     "atk": 116,
     "def": 95,
     "speed": 70,
-    "bitFarmingRate": 2,
+    "bitFarmingRate": 36,
     "digiEvolutionSeedList": ["4aa02e4b-b20a-4faf-9269-0ba18a1e7d08"],
     "degenerateSeedList": ["55121c1b-5f45-4f28-ad8f-d1a5573c3101"],
     "evolutionRequirements": [
@@ -2618,7 +2618,7 @@
     "atk": 103,
     "def": 96,
     "speed": 74,
-    "bitFarmingRate": 15,
+    "bitFarmingRate": 52,
     "digiEvolutionSeedList": ["1b765eb3-b253-4266-a449-f48cc1713dac"],
     "degenerateSeedList": ["264ecbe7-d857-48dc-94d5-418f1dd5ac4b"],
     "evolutionRequirements": [
@@ -2641,7 +2641,7 @@
     "atk": 112,
     "def": 78,
     "speed": 75,
-    "bitFarmingRate": 18,
+    "bitFarmingRate": 55,
     "digiEvolutionSeedList": [
       "86661f39-b878-4321-9533-0b95d434ef43",
       "60205c40-0925-406f-93aa-511df01826bf"
@@ -2667,7 +2667,7 @@
     "atk": 108,
     "def": 82,
     "speed": 79,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 52,
     "digiEvolutionSeedList": ["fef29128-0270-4e25-befc-bc9f2c4dd853"],
     "degenerateSeedList": ["7db14a16-d501-421f-a403-f00ef6bdbeda"],
     "evolutionRequirements": [
@@ -2690,7 +2690,7 @@
     "atk": 82,
     "def": 97,
     "speed": 69,
-    "bitFarmingRate": 12,
+    "bitFarmingRate": 49,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["b61f8053-a7e7-4a30-80ab-64d494ba6c24"],
     "evolutionRequirements": [
@@ -2713,7 +2713,7 @@
     "atk": 95,
     "def": 77,
     "speed": 88,
-    "bitFarmingRate": 22,
+    "bitFarmingRate": 53,
     "digiEvolutionSeedList": ["f6d38895-6836-4e09-90fd-e6a63b2e4a27"],
     "degenerateSeedList": ["e5c3b6f1-ae43-4d5e-9f0a-1b2c3d4e5f67"],
     "evolutionRequirements": [
@@ -2736,7 +2736,7 @@
     "atk": 82,
     "def": 93,
     "speed": 73,
-    "bitFarmingRate": 14,
+    "bitFarmingRate": 54,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["354d34aa-d686-434c-b2ef-fdc7ce403c25"],
     "evolutionRequirements": [
@@ -2759,7 +2759,7 @@
     "atk": 86,
     "def": 93,
     "speed": 84,
-    "bitFarmingRate": 16,
+    "bitFarmingRate": 42,
     "digiEvolutionSeedList": ["01cf1fc3-911e-4a79-a14a-c2de553edecb"],
     "degenerateSeedList": ["05be89f5-5da3-4026-afcf-443ee072e0eb"],
     "evolutionRequirements": [
@@ -2782,7 +2782,7 @@
     "atk": 84,
     "def": 88,
     "speed": 77,
-    "bitFarmingRate": 13,
+    "bitFarmingRate": 52,
     "digiEvolutionSeedList": [
       "8f22778f-d315-42f9-8eb9-83c63c8603ba",
       "11431f1e-5428-4cd4-a0de-559e4e7e0f64"
@@ -2808,7 +2808,7 @@
     "atk": 101,
     "def": 76,
     "speed": 80,
-    "bitFarmingRate": 17,
+    "bitFarmingRate": 55,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["2f06b76f-a29b-415c-86be-05cc8dbaef17"],
     "evolutionRequirements": [
@@ -2831,7 +2831,7 @@
     "atk": 118,
     "def": 78,
     "speed": 75,
-    "bitFarmingRate": 19,
+    "bitFarmingRate": 49,
     "digiEvolutionSeedList": ["64eecdac-3722-4999-941c-eb21a60fd301"],
     "degenerateSeedList": ["8f1df616-ba64-456a-8ebd-2f18e17c07f3"],
     "evolutionRequirements": [
@@ -2854,7 +2854,7 @@
     "atk": 110,
     "def": 72,
     "speed": 82,
-    "bitFarmingRate": 18,
+    "bitFarmingRate": 52,
     "digiEvolutionSeedList": ["2f1a57b3-4fc2-4a7b-97a5-8b5f6886ec14"],
     "degenerateSeedList": ["8bbb294e-b9dd-4ab9-8629-f46872e9cbd4"],
     "evolutionRequirements": [
@@ -2877,7 +2877,7 @@
     "atk": 114,
     "def": 117,
     "speed": 62,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 48,
     "digiEvolutionSeedList": ["707cf9e9-48a1-4087-87d9-f3c53447e100"],
     "degenerateSeedList": ["a5d75ad2-b8ce-487d-9a15-f26d8b78fce9"],
     "evolutionRequirements": [
@@ -2900,7 +2900,7 @@
     "atk": 83,
     "def": 84,
     "speed": 80,
-    "bitFarmingRate": 14,
+    "bitFarmingRate": 40,
     "digiEvolutionSeedList": ["b7e2c9d4-1f6a-4d3b-8e5c-9a2f7d6b3c1e"],
     "degenerateSeedList": ["b61f8053-a7e7-4a30-80ab-64d494ba6c24"],
     "evolutionRequirements": [
@@ -2923,7 +2923,7 @@
     "atk": 95,
     "def": 81,
     "speed": 84,
-    "bitFarmingRate": 17,
+    "bitFarmingRate": 51,
     "digiEvolutionSeedList": [
       "9288669d-6431-4bbf-9ffd-916280cd1c3f",
       "b7d29106-ee09-4b38-913f-cdb1ef06b347"
@@ -2949,7 +2949,7 @@
     "atk": 108,
     "def": 96,
     "speed": 71,
-    "bitFarmingRate": 16,
+    "bitFarmingRate": 43,
     "digiEvolutionSeedList": [
       "1d47f42d-b6b5-4896-b205-cd648f25c444",
       "cbc465d6-5f37-466c-a5d0-2cb2c48878e6"
@@ -2975,7 +2975,7 @@
     "atk": 114,
     "def": 97,
     "speed": 72,
-    "bitFarmingRate": 19,
+    "bitFarmingRate": 54,
     "digiEvolutionSeedList": [
       "038b0f79-2341-4c3b-8c77-7984c3341ab1",
       "49d6dd17-71b4-41ae-844c-2f18410a8d31"
@@ -3001,7 +3001,7 @@
     "atk": 100,
     "def": 79,
     "speed": 86,
-    "bitFarmingRate": 18,
+    "bitFarmingRate": 42,
     "digiEvolutionSeedList": ["e7db2137-9d39-40f4-9fef-8ef42bcff938"],
     "degenerateSeedList": ["0bb2202b-a2a0-45db-b9a9-f1a80b74d682"],
     "evolutionRequirements": [
@@ -3024,7 +3024,7 @@
     "atk": 92,
     "def": 75,
     "speed": 90,
-    "bitFarmingRate": 16,
+    "bitFarmingRate": 48,
     "digiEvolutionSeedList": [
       "5d236da1-b31c-445d-b819-fa8154273dd6",
       "75c6c6ce-68c9-4c32-a678-d9f59406d3a0"
@@ -3050,7 +3050,7 @@
     "atk": 109,
     "def": 109,
     "speed": 68,
-    "bitFarmingRate": 21,
+    "bitFarmingRate": 52,
     "digiEvolutionSeedList": ["528427d9-196e-4b85-9680-ccf401515ff7"],
     "degenerateSeedList": ["083241cc-fcf8-4101-a58d-09b0e6b375b6"],
     "evolutionRequirements": [
@@ -3073,7 +3073,7 @@
     "atk": 113,
     "def": 98,
     "speed": 81,
-    "bitFarmingRate": 19,
+    "bitFarmingRate": 47,
     "digiEvolutionSeedList": [
       "1df7c621-07e1-4db9-9922-b7664b6306a0",
       "c4cfed7d-2b3b-4fa4-8a4f-09ef2b709c7e"
@@ -3099,7 +3099,7 @@
     "atk": 87,
     "def": 84,
     "speed": 86,
-    "bitFarmingRate": 17,
+    "bitFarmingRate": 37,
     "digiEvolutionSeedList": [
       "aa2232d5-12ee-4538-b7d3-63d95977137a",
       "1dc4e899-b0db-435f-a9e3-6fa7c94836aa"
@@ -3125,7 +3125,7 @@
     "atk": 104,
     "def": 113,
     "speed": 60,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 53,
     "digiEvolutionSeedList": [
       "6c695951-a9dc-4fea-aab4-792814356e9f",
       "d957cf56-107d-4523-96cb-2aeffadbc64a"
@@ -3151,7 +3151,7 @@
     "atk": 92,
     "def": 95,
     "speed": 79,
-    "bitFarmingRate": 15,
+    "bitFarmingRate": 52,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["0ba4bbe8-1f8f-4252-a7c5-6380981d6567"],
     "evolutionRequirements": [
@@ -3174,7 +3174,7 @@
     "atk": 96,
     "def": 73,
     "speed": 82,
-    "bitFarmingRate": 15,
+    "bitFarmingRate": 44,
     "digiEvolutionSeedList": ["a49fd2ae-e98d-4c4b-9c53-708e6f019af2"],
     "degenerateSeedList": ["30478c8e-4673-4526-a502-5160536d0ac5"],
     "evolutionRequirements": [
@@ -3197,7 +3197,7 @@
     "atk": 105,
     "def": 96,
     "speed": 81,
-    "bitFarmingRate": 18,
+    "bitFarmingRate": 53,
     "digiEvolutionSeedList": [
       "de7c5e6e-92fc-4f99-98b1-abe628acedd2",
       "24772f7f-d86c-4e77-bc3b-c9f4b0ef7f9c",
@@ -3225,7 +3225,7 @@
     "atk": 84,
     "def": 80,
     "speed": 99,
-    "bitFarmingRate": 17,
+    "bitFarmingRate": 55,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["8bbb294e-b9dd-4ab9-8629-f46872e9cbd4"],
     "evolutionRequirements": [
@@ -3248,7 +3248,7 @@
     "atk": 109,
     "def": 92,
     "speed": 69,
-    "bitFarmingRate": 16,
+    "bitFarmingRate": 53,
     "digiEvolutionSeedList": [
       "0fc5bcd7-7cbe-4aa7-8c60-1225d2b297d9",
       "36fad7a1-ec3c-4781-bc2b-db41f0d79e01"
@@ -3274,7 +3274,7 @@
     "atk": 107,
     "def": 93,
     "speed": 72,
-    "bitFarmingRate": 17,
+    "bitFarmingRate": 42,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["cf2a3b4c-d5e6-4f7a-9b0c-1d2e3f4a5b6c"],
     "evolutionRequirements": [
@@ -3297,7 +3297,7 @@
     "atk": 113,
     "def": 98,
     "speed": 82,
-    "bitFarmingRate": 19,
+    "bitFarmingRate": 50,
     "digiEvolutionSeedList": [
       "bcdefa01-2345-4678-9abc-def012345678",
       "f525814d-b2a1-4988-b767-ccb7cdb61454"
@@ -3323,7 +3323,7 @@
     "atk": 112,
     "def": 102,
     "speed": 80,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 55,
     "digiEvolutionSeedList": ["0cd5fdf6-ff56-4196-92f7-79f0c32bcc31"],
     "degenerateSeedList": ["1e4a6cd2-b5f2-40c9-abc1-e2d4f5b6a789"],
     "evolutionRequirements": [
@@ -3346,7 +3346,7 @@
     "atk": 114,
     "def": 99,
     "speed": 83,
-    "bitFarmingRate": 19,
+    "bitFarmingRate": 45,
     "digiEvolutionSeedList": ["7f6e3b3b-5e12-4e29-9f57-4b9a6c34b1f8"],
     "degenerateSeedList": ["1e4a6cd2-b5f2-40c9-abc1-e2d4f5b6a789"],
     "evolutionRequirements": [
@@ -3369,7 +3369,7 @@
     "atk": 91,
     "def": 91,
     "speed": 80,
-    "bitFarmingRate": 16,
+    "bitFarmingRate": 52,
     "digiEvolutionSeedList": ["4b81a3d1-02d9-433b-8591-eeef611f6a02"],
     "degenerateSeedList": ["f4bf9c27-147a-46ed-b069-c13e8d934be2"],
     "evolutionRequirements": [
@@ -3392,7 +3392,7 @@
     "atk": 112,
     "def": 87,
     "speed": 79,
-    "bitFarmingRate": 17,
+    "bitFarmingRate": 43,
     "digiEvolutionSeedList": ["e88b06f2-180d-4cb7-926a-8c215d717e5b"],
     "degenerateSeedList": ["b127ce6f-d6e7-4f8a-9b0c-2d3e4f5a6b7c"],
     "evolutionRequirements": [
@@ -3415,7 +3415,7 @@
     "atk": 88,
     "def": 90,
     "speed": 88,
-    "bitFarmingRate": 15,
+    "bitFarmingRate": 52,
     "digiEvolutionSeedList": ["b5a7b775-04b8-436a-b17a-29f7307c682e"],
     "degenerateSeedList": ["2f06b76f-a29b-415c-86be-05cc8dbaef17"],
     "evolutionRequirements": [
@@ -3438,7 +3438,7 @@
     "atk": 96,
     "def": 75,
     "speed": 87,
-    "bitFarmingRate": 16,
+    "bitFarmingRate": 55,
     "digiEvolutionSeedList": ["2645815a-a9a0-4e53-b0a9-28cbfc7d5e61"],
     "degenerateSeedList": ["0ba4bbe8-1f8f-4252-a7c5-6380981d6567"],
     "evolutionRequirements": [
@@ -3461,7 +3461,7 @@
     "atk": 93,
     "def": 86,
     "speed": 83,
-    "bitFarmingRate": 17,
+    "bitFarmingRate": 48,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["d948e2f9-e282-4c59-8a0b-0d761f649922"],
     "evolutionRequirements": [
@@ -3484,7 +3484,7 @@
     "atk": 112,
     "def": 94,
     "speed": 78,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 43,
     "digiEvolutionSeedList": [
       "66e5a6ea-93a5-47f8-91d9-8601857496f6",
       "86661f39-b878-4321-9533-0b95d434ef43"
@@ -3510,7 +3510,7 @@
     "atk": 96,
     "def": 93,
     "speed": 80,
-    "bitFarmingRate": 15,
+    "bitFarmingRate": 53,
     "digiEvolutionSeedList": ["1ec3c641-3763-4c9e-8834-26f7aaf3fd09"],
     "degenerateSeedList": ["9c64088a-5693-4583-ba0d-47b117d2ab79"],
     "evolutionRequirements": [
@@ -3533,7 +3533,7 @@
     "atk": 105,
     "def": 98,
     "speed": 68,
-    "bitFarmingRate": 18,
+    "bitFarmingRate": 55,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["67c2e3f4-a5b6-4c7d-9e0f-1a2b3c4d5e6f"],
     "evolutionRequirements": [
@@ -3556,7 +3556,7 @@
     "atk": 108,
     "def": 94,
     "speed": 76,
-    "bitFarmingRate": 17,
+    "bitFarmingRate": 41,
     "digiEvolutionSeedList": ["8f14e45f-ceea-41d4-9a3d-3e8d2e9f6b2c"],
     "degenerateSeedList": ["55121c1b-5f45-4f28-ad8f-d1a5573c3101"],
     "evolutionRequirements": [
@@ -3579,7 +3579,7 @@
     "atk": 82,
     "def": 103,
     "speed": 74,
-    "bitFarmingRate": 15,
+    "bitFarmingRate": 41,
     "digiEvolutionSeedList": ["61eb3964-e387-42d0-83aa-2e2b60f38008"],
     "degenerateSeedList": ["7b8c9d0e-f1a2-4b3c-9d4e-5f6a7b8c9d0e"],
     "evolutionRequirements": [
@@ -3602,7 +3602,7 @@
     "atk": 113,
     "def": 93,
     "speed": 78,
-    "bitFarmingRate": 19,
+    "bitFarmingRate": 53,
     "digiEvolutionSeedList": ["a1b2c3d4-e5f6-4789-9012-34567890abcd"],
     "degenerateSeedList": ["82a4f7b8-e302-4771-8d58-927c2d34e717"],
     "evolutionRequirements": [
@@ -3625,7 +3625,7 @@
     "atk": 111,
     "def": 89,
     "speed": 80,
-    "bitFarmingRate": 18,
+    "bitFarmingRate": 55,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["82a4f7b8-e302-4771-8d58-927c2d34e717"],
     "evolutionRequirements": [
@@ -3648,7 +3648,7 @@
     "atk": 107,
     "def": 81,
     "speed": 86,
-    "bitFarmingRate": 17,
+    "bitFarmingRate": 49,
     "digiEvolutionSeedList": ["43bfe4a9-f09e-4016-b26c-7a0d6948f58d"],
     "degenerateSeedList": ["8f1df616-ba64-456a-8ebd-2f18e17c07f3"],
     "evolutionRequirements": [
@@ -3671,7 +3671,7 @@
     "atk": 109,
     "def": 95,
     "speed": 76,
-    "bitFarmingRate": 18,
+    "bitFarmingRate": 139,
     "digiEvolutionSeedList": ["3806f254-dcf8-44b7-9384-edddef3c6bba"],
     "degenerateSeedList": ["9c64088a-5693-4583-ba0d-47b117d2ab79"],
     "evolutionRequirements": [
@@ -3694,7 +3694,7 @@
     "atk": 111,
     "def": 78,
     "speed": 89,
-    "bitFarmingRate": 21,
+    "bitFarmingRate": 54,
     "digiEvolutionSeedList": ["1dc4e899-b0db-435f-a9e3-6fa7c94836aa"],
     "degenerateSeedList": ["f4bf9c27-147a-46ed-b069-c13e8d934be2"],
     "evolutionRequirements": [
@@ -3717,7 +3717,7 @@
     "atk": 103,
     "def": 89,
     "speed": 71,
-    "bitFarmingRate": 16,
+    "bitFarmingRate": 43,
     "digiEvolutionSeedList": ["978dfa7e-4c2e-4390-b40f-ac1cd8f0bbea"],
     "degenerateSeedList": ["067c13d4-e5f6-4a8b-8c9d-1e2f3a4b5c6d"],
     "evolutionRequirements": [
@@ -3740,7 +3740,7 @@
     "atk": 102,
     "def": 89,
     "speed": 79,
-    "bitFarmingRate": 16,
+    "bitFarmingRate": 54,
     "digiEvolutionSeedList": ["965f036a-e7a9-4a59-b192-db5b57636af8"],
     "degenerateSeedList": ["59051cd2-4842-49ff-b95f-8f529f5070b0"],
     "evolutionRequirements": [
@@ -3763,7 +3763,7 @@
     "atk": 107,
     "def": 73,
     "speed": 86,
-    "bitFarmingRate": 18,
+    "bitFarmingRate": 38,
     "digiEvolutionSeedList": [
       "68de0bbe-a11d-4452-bdb6-f6b4478d06ad",
       "9450b4b1-b3e2-4b66-9055-b2923d2e6236"
@@ -3789,7 +3789,7 @@
     "atk": 109,
     "def": 95,
     "speed": 73,
-    "bitFarmingRate": 17,
+    "bitFarmingRate": 52,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["1e4a6cd2-b5f2-40c9-abc1-e2d4f5b6a789"],
     "evolutionRequirements": [
@@ -3812,7 +3812,7 @@
     "atk": 93,
     "def": 92,
     "speed": 76,
-    "bitFarmingRate": 16,
+    "bitFarmingRate": 55,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["083241cc-fcf8-4101-a58d-09b0e6b375b6"],
     "evolutionRequirements": [
@@ -3835,7 +3835,7 @@
     "atk": 102,
     "def": 100,
     "speed": 68,
-    "bitFarmingRate": 17,
+    "bitFarmingRate": 44,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["6a7b8c9d-e0f1-4a2b-8c3d-4e5f6a7b8c9d"],
     "evolutionRequirements": [
@@ -3858,7 +3858,7 @@
     "atk": 113,
     "def": 74,
     "speed": 87,
-    "bitFarmingRate": 19,
+    "bitFarmingRate": 55,
     "digiEvolutionSeedList": ["952a2766-db94-4c37-9c25-efee8bfdc9a3"],
     "degenerateSeedList": ["b1905950-9981-4544-a642-69f106e4889d"],
     "evolutionRequirements": [
@@ -3881,7 +3881,7 @@
     "atk": 95,
     "def": 99,
     "speed": 66,
-    "bitFarmingRate": 15,
+    "bitFarmingRate": 55,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["7b8c9d0e-f1a2-4b3c-9d4e-5f6a7b8c9d0e"],
     "evolutionRequirements": [
@@ -3904,7 +3904,7 @@
     "atk": 104,
     "def": 111,
     "speed": 67,
-    "bitFarmingRate": 19,
+    "bitFarmingRate": 46,
     "digiEvolutionSeedList": ["db096107-34c6-4f22-b8a1-8b5c7265edb2"],
     "degenerateSeedList": ["59051cd2-4842-49ff-b95f-8f529f5070b0"],
     "evolutionRequirements": [
@@ -3927,7 +3927,7 @@
     "atk": 114,
     "def": 100,
     "speed": 76,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 55,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["9c7bdff5-ad50-4cc5-ac80-805e59e2da57"],
     "evolutionRequirements": [
@@ -3950,7 +3950,7 @@
     "atk": 107,
     "def": 99,
     "speed": 79,
-    "bitFarmingRate": 18,
+    "bitFarmingRate": 36,
     "digiEvolutionSeedList": ["e9371c75-61b2-4645-938b-41b87588ae83"],
     "degenerateSeedList": ["67307a7e-681f-4b3b-a71e-16baae4ea11f"],
     "evolutionRequirements": [
@@ -3973,7 +3973,7 @@
     "atk": 97,
     "def": 92,
     "speed": 83,
-    "bitFarmingRate": 16,
+    "bitFarmingRate": 52,
     "digiEvolutionSeedList": ["e8f4c6a1-3d2b-4e5f-9a8c-7b6d5e4f3a2c"],
     "degenerateSeedList": ["67307a7e-681f-4b3b-a71e-16baae4ea11f"],
     "evolutionRequirements": [
@@ -3996,7 +3996,7 @@
     "atk": 89,
     "def": 87,
     "speed": 81,
-    "bitFarmingRate": 15,
+    "bitFarmingRate": 32,
     "digiEvolutionSeedList": ["d9e3b7f2-5c1a-4f6d-8e9b-2a7c6d3f1e4b"],
     "degenerateSeedList": ["ff9c95dd-3f18-418a-8a69-5ae3d038dec8"],
     "evolutionRequirements": [
@@ -4019,7 +4019,7 @@
     "atk": 103,
     "def": 102,
     "speed": 63,
-    "bitFarmingRate": 18,
+    "bitFarmingRate": 48,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["ff9c95dd-3f18-418a-8a69-5ae3d038dec8"],
     "evolutionRequirements": [
@@ -4042,7 +4042,7 @@
     "atk": 88,
     "def": 102,
     "speed": 67,
-    "bitFarmingRate": 16,
+    "bitFarmingRate": 55,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["866066a0-da28-4baa-ba13-f5259d24e39c"],
     "evolutionRequirements": [
@@ -4065,7 +4065,7 @@
     "atk": 93,
     "def": 98,
     "speed": 72,
-    "bitFarmingRate": 14,
+    "bitFarmingRate": 51,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["b61f8053-a7e7-4a30-80ab-64d494ba6c24"],
     "evolutionRequirements": [
@@ -4088,7 +4088,7 @@
     "atk": 113,
     "def": 92,
     "speed": 72,
-    "bitFarmingRate": 18,
+    "bitFarmingRate": 43,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["866066a0-da28-4baa-ba13-f5259d24e39c"],
     "evolutionRequirements": [
@@ -4111,7 +4111,7 @@
     "atk": 90,
     "def": 105,
     "speed": 68,
-    "bitFarmingRate": 17,
+    "bitFarmingRate": 53,
     "digiEvolutionSeedList": ["d991c296-78da-46e4-82a7-a4ae997f5a98"],
     "degenerateSeedList": ["ff9c95dd-3f18-418a-8a69-5ae3d038dec8"],
     "evolutionRequirements": [
@@ -4134,7 +4134,7 @@
     "atk": 104,
     "def": 90,
     "speed": 75,
-    "bitFarmingRate": 16,
+    "bitFarmingRate": 54,
     "digiEvolutionSeedList": ["b4cf1769-9b50-4aeb-be2b-f0aaaad4d5e0"],
     "degenerateSeedList": ["a5d75ad2-b8ce-487d-9a15-f26d8b78fce9"],
     "evolutionRequirements": [
@@ -4157,7 +4157,7 @@
     "atk": 83,
     "def": 86,
     "speed": 86,
-    "bitFarmingRate": 15,
+    "bitFarmingRate": 47,
     "digiEvolutionSeedList": [
       "49896ce6-92dd-46ff-af5f-699bc73a9507",
       "bdc9e5c4-49b1-4ee5-9b86-9b52c76b3b6f"
@@ -4183,7 +4183,7 @@
     "atk": 94,
     "def": 72,
     "speed": 90,
-    "bitFarmingRate": 16,
+    "bitFarmingRate": 44,
     "digiEvolutionSeedList": ["ea1c73e6-dca5-405c-a89d-983e495a89b3"],
     "degenerateSeedList": ["5f6e7d8c-9b0a-4c1d-8e2f-3a4b5c6d7e8f"],
     "evolutionRequirements": [
@@ -4206,7 +4206,7 @@
     "atk": 96,
     "def": 109,
     "speed": 65,
-    "bitFarmingRate": 18,
+    "bitFarmingRate": 54,
     "digiEvolutionSeedList": ["52112c31-2f69-435d-bc56-69f4be1e508d"],
     "degenerateSeedList": ["178d24e5-f6a7-4b9c-9d0e-2f3a4b5c6d7e"],
     "evolutionRequirements": [
@@ -4229,7 +4229,7 @@
     "atk": 115,
     "def": 79,
     "speed": 86,
-    "bitFarmingRate": 19,
+    "bitFarmingRate": 53,
     "digiEvolutionSeedList": ["846e2f00-60d3-4d9a-bb62-792154622ea6"],
     "degenerateSeedList": ["0bb2202b-a2a0-45db-b9a9-f1a80b74d682"],
     "evolutionRequirements": [
@@ -4252,7 +4252,7 @@
     "atk": 104,
     "def": 81,
     "speed": 79,
-    "bitFarmingRate": 16,
+    "bitFarmingRate": 43,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["4e6904cc-d3c0-4363-b8a8-bebc1da167ab"],
     "evolutionRequirements": [
@@ -4275,7 +4275,7 @@
     "atk": 92,
     "def": 104,
     "speed": 76,
-    "bitFarmingRate": 16,
+    "bitFarmingRate": 53,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["935f8d3f-e4b9-47d6-b168-a80eb4dae568"],
     "evolutionRequirements": [
@@ -4298,7 +4298,7 @@
     "atk": 105,
     "def": 81,
     "speed": 76,
-    "bitFarmingRate": 17,
+    "bitFarmingRate": 44,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["067c13d4-e5f6-4a8b-8c9d-1e2f3a4b5c6d"],
     "evolutionRequirements": [
@@ -4321,7 +4321,7 @@
     "atk": 103,
     "def": 82,
     "speed": 70,
-    "bitFarmingRate": 15,
+    "bitFarmingRate": 53,
     "digiEvolutionSeedList": ["2b8020e1-2f70-4e7e-92e5-d89d54e131a5"],
     "degenerateSeedList": ["178d24e5-f6a7-4b9c-9d0e-2f3a4b5c6d7e"],
     "evolutionRequirements": [
@@ -4344,7 +4344,7 @@
     "atk": 107,
     "def": 78,
     "speed": 90,
-    "bitFarmingRate": 19,
+    "bitFarmingRate": 51,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["a016bd5e-c5d6-4e7f-8a9b-1c2d3e4f5a6b"],
     "evolutionRequirements": [
@@ -4367,7 +4367,7 @@
     "atk": 92,
     "def": 98,
     "speed": 88,
-    "bitFarmingRate": 18,
+    "bitFarmingRate": 50,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["a016bd5e-c5d6-4e7f-8a9b-1c2d3e4f5a6b"],
     "evolutionRequirements": [
@@ -4390,7 +4390,7 @@
     "atk": 101,
     "def": 98,
     "speed": 75,
-    "bitFarmingRate": 17,
+    "bitFarmingRate": 37,
     "digiEvolutionSeedList": ["823fd608-feb2-415c-99be-f144a51fbd91"],
     "degenerateSeedList": ["67c2e3f4-a5b6-4c7d-9e0f-1a2b3c4d5e6f"],
     "evolutionRequirements": [
@@ -4413,7 +4413,7 @@
     "atk": 110,
     "def": 91,
     "speed": 72,
-    "bitFarmingRate": 18,
+    "bitFarmingRate": 45,
     "digiEvolutionSeedList": ["2dd48272-ac88-4367-a6d6-59b6dc3de237"],
     "degenerateSeedList": ["b127ce6f-d6e7-4f8a-9b0c-2d3e4f5a6b7c"],
     "evolutionRequirements": [
@@ -4436,7 +4436,7 @@
     "atk": 111,
     "def": 86,
     "speed": 89,
-    "bitFarmingRate": 19,
+    "bitFarmingRate": 50,
     "digiEvolutionSeedList": ["2f601348-8b9f-456e-98e5-b2133a734203"],
     "degenerateSeedList": ["ac35cc98-95f2-46d4-bcfb-a1633de6161e"],
     "evolutionRequirements": [
@@ -4459,7 +4459,7 @@
     "atk": 112,
     "def": 101,
     "speed": 75,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 46,
     "digiEvolutionSeedList": ["f697c01b-7394-41b3-a374-34a6a1ff27f6"],
     "degenerateSeedList": ["be1f2a3b-c4d5-4e6f-8a9b-0c1d2e3f4a5b"],
     "evolutionRequirements": [
@@ -4482,7 +4482,7 @@
     "atk": 106,
     "def": 85,
     "speed": 70,
-    "bitFarmingRate": 15,
+    "bitFarmingRate": 51,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["55121c1b-5f45-4f28-ad8f-d1a5573c3101"],
     "evolutionRequirements": [
@@ -4505,7 +4505,7 @@
     "atk": 116,
     "def": 107,
     "speed": 71,
-    "bitFarmingRate": 21,
+    "bitFarmingRate": 43,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["7b8c9d0e-f1a2-4b3c-9d4e-5f6a7b8c9d0e"],
     "evolutionRequirements": [
@@ -4528,7 +4528,7 @@
     "atk": 113,
     "def": 99,
     "speed": 73,
-    "bitFarmingRate": 19,
+    "bitFarmingRate": 44,
     "digiEvolutionSeedList": ["88a7bd2c-77fb-469e-abc8-bd67c4ea5924"],
     "degenerateSeedList": ["605568d6-840c-4cd0-bdf4-b7d04819f149"],
     "evolutionRequirements": [
@@ -4551,7 +4551,7 @@
     "atk": 94,
     "def": 102,
     "speed": 67,
-    "bitFarmingRate": 16,
+    "bitFarmingRate": 47,
     "digiEvolutionSeedList": ["2b8a73da-3f0a-4fe3-b6c7-b8c1b06673ba"],
     "degenerateSeedList": ["56b1d2e3-f4a5-4b6c-8d9e-0f1a2b3c4d5e"],
     "evolutionRequirements": [
@@ -4574,7 +4574,7 @@
     "atk": 105,
     "def": 93,
     "speed": 83,
-    "bitFarmingRate": 17,
+    "bitFarmingRate": 41,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["768e6d1a-5c3b-4ed2-991f-e4a1c16357a6"],
     "evolutionRequirements": [
@@ -4597,7 +4597,7 @@
     "atk": 103,
     "def": 77,
     "speed": 79,
-    "bitFarmingRate": 16,
+    "bitFarmingRate": 52,
     "digiEvolutionSeedList": ["3481f925-3014-43ed-8f3a-715232b923f3"],
     "degenerateSeedList": ["be1f2a3b-c4d5-4e6f-8a9b-0c1d2e3f4a5b"],
     "evolutionRequirements": [
@@ -4620,7 +4620,7 @@
     "atk": 96,
     "def": 97,
     "speed": 88,
-    "bitFarmingRate": 17,
+    "bitFarmingRate": 49,
     "digiEvolutionSeedList": ["afaf7d25-99b6-498b-80bb-70cd4a278189"],
     "degenerateSeedList": ["b1905950-9981-4544-a642-69f106e4889d"],
     "evolutionRequirements": [
@@ -4643,7 +4643,7 @@
     "atk": 114,
     "def": 94,
     "speed": 82,
-    "bitFarmingRate": 19,
+    "bitFarmingRate": 54,
     "digiEvolutionSeedList": [
       "e11a28bb-64a3-49bc-8770-065728c1d8fa",
       "8c0f5a17-16a5-409a-bac1-1c63aeaa611a"
@@ -4669,7 +4669,7 @@
     "atk": 116,
     "def": 103,
     "speed": 82,
-    "bitFarmingRate": 21,
+    "bitFarmingRate": 47,
     "digiEvolutionSeedList": ["a43b028d-860e-4b36-93f9-c3d3b52db64c"],
     "degenerateSeedList": ["3c827fbe-aa3d-4b2b-9cb3-5a6d4fc8e47f"],
     "evolutionRequirements": [
@@ -4692,7 +4692,7 @@
     "atk": 115,
     "def": 99,
     "speed": 70,
-    "bitFarmingRate": 38,
+    "bitFarmingRate": 44,
     "digiEvolutionSeedList": ["a5598598-d29a-4858-8f30-ec5f2acf107b"],
     "degenerateSeedList": ["7db14a16-d501-421f-a403-f00ef6bdbeda"],
     "evolutionRequirements": [
@@ -4715,7 +4715,7 @@
     "atk": 90,
     "def": 91,
     "speed": 79,
-    "bitFarmingRate": 34,
+    "bitFarmingRate": 42,
     "digiEvolutionSeedList": ["d8bbebbb-b512-4ae6-a499-cfe208cce34b"],
     "degenerateSeedList": ["8d68e936-fcc3-478b-bcc7-0160ef26c4df"],
     "evolutionRequirements": [
@@ -4738,7 +4738,7 @@
     "atk": 102,
     "def": 92,
     "speed": 81,
-    "bitFarmingRate": 34,
+    "bitFarmingRate": 54,
     "digiEvolutionSeedList": ["6c121f02-4c0e-46a2-b2c7-f0b602267107"],
     "degenerateSeedList": ["a05f17f2-7f47-44dd-ae69-b46896e08043"],
     "evolutionRequirements": [
@@ -4761,7 +4761,7 @@
     "atk": 115,
     "def": 97,
     "speed": 82,
-    "bitFarmingRate": 45,
+    "bitFarmingRate": 48,
     "digiEvolutionSeedList": ["622e72a1-7f0f-465e-b4f4-2ba9fb6a73a0"],
     "degenerateSeedList": ["d8b07898-1585-41b6-bcde-2f571243f424"],
     "evolutionRequirements": [
@@ -4784,7 +4784,7 @@
     "atk": 93,
     "def": 84,
     "speed": 89,
-    "bitFarmingRate": 45,
+    "bitFarmingRate": 72,
     "digiEvolutionSeedList": ["c77b7715-f25c-4b3a-b77f-199188d1e7f7"],
     "degenerateSeedList": ["489e2e68-fb20-4aa9-bb97-dbfbcf03b2ba"],
     "evolutionRequirements": [
@@ -4807,7 +4807,7 @@
     "atk": 125,
     "def": 95,
     "speed": 105,
-    "bitFarmingRate": 19,
+    "bitFarmingRate": 53,
     "digiEvolutionSeedList": [
       "6d7a3c5b-f3f8-4ab8-a55a-0a9e3cda3c62",
       "3e4dca61-915d-4cf9-91b5-36a9462c4b9d"
@@ -4833,7 +4833,7 @@
     "atk": 136,
     "def": 117,
     "speed": 100,
-    "bitFarmingRate": 4,
+    "bitFarmingRate": 56,
     "digiEvolutionSeedList": [
       "df67cc96-4a69-4f26-88d6-2c98ccaecfe6",
       "1f8b2c41-6d7a-4f1d-8a79-1d3c2a96c1b7",
@@ -4860,7 +4860,7 @@
     "atk": 146,
     "def": 71,
     "speed": 55,
-    "bitFarmingRate": 4,
+    "bitFarmingRate": 70,
     "digiEvolutionSeedList": [
       "f1b3b3b4-1b3b-4b3b-8b3b-3b3b3b3b3b3b",
       "42528387-e8e5-4a69-adaa-7089aeb620a1"
@@ -4889,7 +4889,7 @@
     "atk": 130,
     "def": 98,
     "speed": 117,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 79,
     "digiEvolutionSeedList": [
       "c2b04d58-6c74-49ea-902f-b7fc16a1e342",
       "03277ace-25c2-404f-b975-f71ac309c8b0"
@@ -4915,7 +4915,7 @@
     "atk": 138,
     "def": 123,
     "speed": 88,
-    "bitFarmingRate": 18,
+    "bitFarmingRate": 66,
     "digiEvolutionSeedList": ["8e58f41d-2d7f-4f3a-b94d-21a37f4ec691"],
     "degenerateSeedList": ["b7f8c97d-1e9f-42a7-bbf1-d3e67a54f799"],
     "evolutionRequirements": [
@@ -4938,7 +4938,7 @@
     "atk": 132,
     "def": 113,
     "speed": 118,
-    "bitFarmingRate": 22,
+    "bitFarmingRate": 99,
     "digiEvolutionSeedList": ["8f89a3d4-7b14-45dc-88ae-c5f0d44637d3"],
     "degenerateSeedList": ["cd52bdf0-80a8-4b19-b738-ed6acf1f0b14"],
     "evolutionRequirements": [
@@ -4961,7 +4961,7 @@
     "atk": 130,
     "def": 98,
     "speed": 113,
-    "bitFarmingRate": 17,
+    "bitFarmingRate": 59,
     "digiEvolutionSeedList": [
       "3452a6f7-80f7-4c3e-9a78-0ba44f8c56a2",
       "198db8dd-fe31-40a7-8d52-b25fc617fd47"
@@ -4987,7 +4987,7 @@
     "atk": 138,
     "def": 108,
     "speed": 110,
-    "bitFarmingRate": 4,
+    "bitFarmingRate": 62,
     "digiEvolutionSeedList": ["e3f58de4-75f0-4e38-81a0-ad1c32367f97"],
     "degenerateSeedList": ["67cd2d63-4299-446e-a851-6f04e9b51bc5"],
     "evolutionRequirements": [
@@ -5010,7 +5010,7 @@
     "atk": 132,
     "def": 127,
     "speed": 92,
-    "bitFarmingRate": 7,
+    "bitFarmingRate": 88,
     "digiEvolutionSeedList": ["63a998c8-6ffd-4727-b324-7bac55f75275"],
     "degenerateSeedList": ["fdb6bc88-8ab6-4d27-af65-8c26b7df9c86"],
     "evolutionRequirements": [
@@ -5033,7 +5033,7 @@
     "atk": 135,
     "def": 121,
     "speed": 94,
-    "bitFarmingRate": 7,
+    "bitFarmingRate": 79,
     "digiEvolutionSeedList": ["63a998c8-6ffd-4727-b324-7bac55f75275"],
     "degenerateSeedList": ["fdb6bc88-8ab6-4d27-af65-8c26b7df9c86"],
     "evolutionRequirements": [
@@ -5056,7 +5056,7 @@
     "atk": 136,
     "def": 100,
     "speed": 107,
-    "bitFarmingRate": 19,
+    "bitFarmingRate": 93,
     "digiEvolutionSeedList": ["cd380816-9fcf-42a0-8260-17a962fd536f"],
     "degenerateSeedList": ["f0b7e9c5-2a1d-4e6b-8c3b-9d5a3e0f7c2b"],
     "evolutionRequirements": [
@@ -5079,7 +5079,7 @@
     "atk": 131,
     "def": 123,
     "speed": 99,
-    "bitFarmingRate": 3,
+    "bitFarmingRate": 99,
     "digiEvolutionSeedList": ["e5f7a9b1-2c3d-4e6f-8a7b-9c1d2e3f4a5b"],
     "degenerateSeedList": ["f4cbbd45-9e42-4b43-b9b0-4f8e1b9b9d21"],
     "evolutionRequirements": [
@@ -5102,7 +5102,7 @@
     "atk": 135,
     "def": 117,
     "speed": 96,
-    "bitFarmingRate": 1,
+    "bitFarmingRate": 88,
     "digiEvolutionSeedList": ["5c59bdf1-0288-4a39-bfbc-3d513a6dfe4c"],
     "degenerateSeedList": ["b7569307-7fd2-4ebb-a05f-6b1b30410921"],
     "evolutionRequirements": [
@@ -5125,7 +5125,7 @@
     "atk": 113,
     "def": 118,
     "speed": 112,
-    "bitFarmingRate": 2,
+    "bitFarmingRate": 78,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["6f43524a-b8fd-4514-b5f9-03dbc7710b85"],
     "evolutionRequirements": [
@@ -5148,7 +5148,7 @@
     "atk": 144,
     "def": 124,
     "speed": 92,
-    "bitFarmingRate": 5,
+    "bitFarmingRate": 61,
     "digiEvolutionSeedList": [
       "0d320f41-5176-4d9d-88ea-59b037d5bc6b",
       "7b3a9d1e-2c8f-4a5b-9e6d-1f0c7b8a9d2e"
@@ -5174,7 +5174,7 @@
     "atk": 127,
     "def": 102,
     "speed": 115,
-    "bitFarmingRate": 4,
+    "bitFarmingRate": 61,
     "digiEvolutionSeedList": [
       "d9f9c182-731b-4f21-8e2f-167b2d663e34",
       "e6a29e6f-9a3d-41a3-87c3-7c0c573b42de",
@@ -5201,7 +5201,7 @@
     "atk": 142,
     "def": 122,
     "speed": 105,
-    "bitFarmingRate": 5,
+    "bitFarmingRate": 66,
     "digiEvolutionSeedList": ["48b7a3e5-3e43-4819-96b8-673bfe67d5c1"],
     "degenerateSeedList": ["a351a4ab-a5bf-42df-8a27-bb2d8ce06d0b"],
     "evolutionRequirements": [
@@ -5224,7 +5224,7 @@
     "atk": 129,
     "def": 105,
     "speed": 104,
-    "bitFarmingRate": 2,
+    "bitFarmingRate": 59,
     "digiEvolutionSeedList": [
       "ec5a734e-fb3d-4aeb-9f6d-487d5db59ed9",
       "2a9a5124-3a0a-4d1f-92cb-f1b7b99cf4e0"
@@ -5250,7 +5250,7 @@
     "atk": 131,
     "def": 124,
     "speed": 91,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 81,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["61b72dc8-3fe7-4ea9-9e4c-ff718ba1477a"],
     "evolutionRequirements": [
@@ -5273,7 +5273,7 @@
     "atk": 123,
     "def": 122,
     "speed": 90,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 69,
     "digiEvolutionSeedList": ["2cb8232c-c35f-4a7b-b3a5-fa7ed495e33b"],
     "degenerateSeedList": ["f3a7b9c0-1d5a-4e6b-8c2d-9f0e3a5d7c6b"],
     "evolutionRequirements": [
@@ -5296,7 +5296,7 @@
     "atk": 130,
     "def": 119,
     "speed": 106,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 98,
     "digiEvolutionSeedList": ["5ae9417e-592a-446b-874e-cf46575efd9b"],
     "degenerateSeedList": ["bc8f1703-4769-4c3b-b8a2-e4f1d7ce9a02"],
     "evolutionRequirements": [
@@ -5319,7 +5319,7 @@
     "atk": 116,
     "def": 125,
     "speed": 92,
-    "bitFarmingRate": 19,
+    "bitFarmingRate": 77,
     "digiEvolutionSeedList": ["f47ac10b-58cc-4372-a567-0e02b2c3d479"],
     "degenerateSeedList": ["e3f9c4b1-8a2d-4d91-97c1-5378c5f78e0b"],
     "evolutionRequirements": [
@@ -5342,7 +5342,7 @@
     "atk": 112,
     "def": 108,
     "speed": 112,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 100,
     "digiEvolutionSeedList": ["2d8e7094-e209-49af-ac57-b24ca1a26415"],
     "degenerateSeedList": ["17d0f8b3-4e1a-49c7-9cf2-e03d7a2b5f64"],
     "evolutionRequirements": [
@@ -5365,7 +5365,7 @@
     "atk": 119,
     "def": 130,
     "speed": 86,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 83,
     "digiEvolutionSeedList": [
       "550e8400-e29b-41d4-a716-446655440000",
       "f6a8b1c2-3d4e-4f7a-9b8c-1d2e3f4a5b6c"
@@ -5391,7 +5391,7 @@
     "atk": 133,
     "def": 122,
     "speed": 90,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 82,
     "digiEvolutionSeedList": ["3fbcadc8-da96-4739-b2e9-f285952aa689"],
     "degenerateSeedList": ["c2d84f3e-0b97-402d-9ef1-b38f7051c4ad"],
     "evolutionRequirements": [
@@ -5414,7 +5414,7 @@
     "atk": 127,
     "def": 126,
     "speed": 88,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 70,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["d9e3c6b5-2f1a-4e7b-8c9d-0f5a3e7b2d6c"],
     "evolutionRequirements": [
@@ -5437,7 +5437,7 @@
     "atk": 111,
     "def": 118,
     "speed": 108,
-    "bitFarmingRate": 19,
+    "bitFarmingRate": 64,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["f3d8e2e9-316a-412b-91f9-678d1e6e9a56"],
     "evolutionRequirements": [
@@ -5460,7 +5460,7 @@
     "atk": 128,
     "def": 123,
     "speed": 92,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 56,
     "digiEvolutionSeedList": ["70a0a853-63c1-4f47-855d-e8fb27625ce3"],
     "degenerateSeedList": ["de3f9b70-2c4a-45f1-83bd-ae170d8c9f1e"],
     "evolutionRequirements": [
@@ -5483,7 +5483,7 @@
     "atk": 130,
     "def": 114,
     "speed": 89,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 79,
     "digiEvolutionSeedList": ["610af57b-d922-4d43-bb51-9c884875709e"],
     "degenerateSeedList": ["03de2f94-6a3b-457a-a0f1-fb2c9e57c8a3"],
     "evolutionRequirements": [
@@ -5506,7 +5506,7 @@
     "atk": 130,
     "def": 115,
     "speed": 113,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 56,
     "digiEvolutionSeedList": ["186679a0-9fd2-4f85-af92-78085cf216bf"],
     "degenerateSeedList": ["87a9e123-4f23-42b3-9d83-3c7e4382c3d5"],
     "evolutionRequirements": [
@@ -5529,7 +5529,7 @@
     "atk": 132,
     "def": 121,
     "speed": 95,
-    "bitFarmingRate": 21,
+    "bitFarmingRate": 56,
     "digiEvolutionSeedList": [
       "854269a7-33fa-47ca-94b7-a07e8c4da1bf",
       "53885aa6-dd9b-4667-b582-422d76781132"
@@ -5555,7 +5555,7 @@
     "atk": 134,
     "def": 103,
     "speed": 108,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 65,
     "digiEvolutionSeedList": [
       "c3d5e7f8-9a1b-4c2d-9e6f-7a8b9c1d2e3f",
       "b2dbcc35-8eeb-4f16-97aa-3f2e7a1a3df9"
@@ -5581,7 +5581,7 @@
     "atk": 128,
     "def": 99,
     "speed": 115,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 66,
     "digiEvolutionSeedList": ["388ffee3-92ff-453b-bc5d-fae5d69801d0"],
     "degenerateSeedList": ["e3b9c6f0-2d5a-4e7b-8c1d-9f0a5e3d7b2c"],
     "evolutionRequirements": [
@@ -5604,7 +5604,7 @@
     "atk": 129,
     "def": 113,
     "speed": 93,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 100,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["14fa2d8e-a930-4eb1-bc27-ef19d3f0c475"],
     "evolutionRequirements": [
@@ -5627,7 +5627,7 @@
     "atk": 112,
     "def": 108,
     "speed": 114,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 96,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["b2a5c9e0-3d1f-4e6a-8c7b-9f0d3a5e7c6b"],
     "evolutionRequirements": [
@@ -5650,7 +5650,7 @@
     "atk": 109,
     "def": 116,
     "speed": 109,
-    "bitFarmingRate": 19,
+    "bitFarmingRate": 89,
     "digiEvolutionSeedList": ["d31306f8-a586-461e-ac6a-03774baa9f40"],
     "degenerateSeedList": ["e3a5c9b7-3d1f-4e6a-8c2b-9f0d5a3e7b6c"],
     "evolutionRequirements": [
@@ -5673,7 +5673,7 @@
     "atk": 141,
     "def": 124,
     "speed": 110,
-    "bitFarmingRate": 21,
+    "bitFarmingRate": 73,
     "digiEvolutionSeedList": ["03598e86-91f9-4afa-ad89-6e4bc8511eac"],
     "degenerateSeedList": ["b9c0f3a7-2d5a-4e6b-8c1d-9f0e3a5d7b2c"],
     "evolutionRequirements": [
@@ -5696,7 +5696,7 @@
     "atk": 133,
     "def": 103,
     "speed": 114,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 67,
     "digiEvolutionSeedList": [
       "d4e6f8a1-9b2c-4d3e-8f7a-6b1c2d3e4f5a",
       "5b3c2e1f-7b8a-4d1c-9e6a-2e1f0b9a8a7d"
@@ -5722,7 +5722,7 @@
     "atk": 142,
     "def": 123,
     "speed": 108,
-    "bitFarmingRate": 21,
+    "bitFarmingRate": 90,
     "digiEvolutionSeedList": [
       "f9a2b8c3-4e5d-4f7b-9c1e-8d6f3a2b5c7e",
       "a1b3c5d7-6e8f-4a2b-9c4d-5e7f8a9b1c2d"
@@ -5748,7 +5748,7 @@
     "atk": 134,
     "def": 101,
     "speed": 119,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 72,
     "digiEvolutionSeedList": ["e40a8d93-221c-4bd5-8bec-e574d0c1b087"],
     "degenerateSeedList": ["9f207e7b-2e92-4cfc-8e44-94cf25e0fdb5"],
     "evolutionRequirements": [
@@ -5771,7 +5771,7 @@
     "atk": 110,
     "def": 126,
     "speed": 113,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 100,
     "digiEvolutionSeedList": [
       "a7b9c2d3-4e5f-4a8b-9c1d-2e3f4a5b6c7d",
       "b8c1d3e4-5f6a-4b9c-8d2e-3f4a5b6c7d8e",
@@ -5798,7 +5798,7 @@
     "atk": 170,
     "def": 115,
     "speed": 140,
-    "bitFarmingRate": 35,
+    "bitFarmingRate": 70,
     "digiEvolutionSeedList": ["1c8626b0-da18-489f-83ee-83d27199fe02"],
     "degenerateSeedList": ["f604d614-12f3-4f68-8582-779e561fcd91"],
     "evolutionRequirements": [
@@ -5821,7 +5821,7 @@
     "atk": 132,
     "def": 116,
     "speed": 97,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 65,
     "digiEvolutionSeedList": ["fe69ceaa-854f-450d-b494-386b263b24a5"],
     "degenerateSeedList": ["c6b9e0f3-2a5d-4e7b-8c1d-9f0a3e5d7b2c"],
     "evolutionRequirements": [
@@ -5844,7 +5844,7 @@
     "atk": 132,
     "def": 106,
     "speed": 109,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 91,
     "digiEvolutionSeedList": ["601ab91e-bae5-4177-bc6e-3974fd13ca2c"],
     "degenerateSeedList": ["c9f0e3a7-1d5b-4e6a-8c2b-9f3a5e0d7b6c"],
     "evolutionRequirements": [
@@ -5867,7 +5867,7 @@
     "atk": 113,
     "def": 109,
     "speed": 116,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 59,
     "digiEvolutionSeedList": ["70534944-b963-476c-92e0-8cd37e6cf32d"],
     "degenerateSeedList": ["b3c9f0e7-1a5d-4e6b-8c2b-9f0d5a3e7c6b"],
     "evolutionRequirements": [
@@ -5890,7 +5890,7 @@
     "atk": 119,
     "def": 104,
     "speed": 108,
-    "bitFarmingRate": 19,
+    "bitFarmingRate": 77,
     "digiEvolutionSeedList": ["a6d2f9a9-f8e8-4bc4-b137-0db50a8fa500"],
     "degenerateSeedList": ["ae4c3d8f-0a9b-4950-8c3d-2b9f1f0871e5"],
     "evolutionRequirements": [
@@ -5913,7 +5913,7 @@
     "atk": 126,
     "def": 122,
     "speed": 102,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 95,
     "digiEvolutionSeedList": [
       "fb4c9abd-426d-44aa-b06f-6a3dfa21196a",
       "86d24d95-9244-48cd-94e0-be4e74f9ddf1"
@@ -5939,7 +5939,7 @@
     "atk": 136,
     "def": 109,
     "speed": 108,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 79,
     "digiEvolutionSeedList": ["f5eee0ae-a180-46a7-a6bb-70d72f0e78a5"],
     "degenerateSeedList": ["c7e0f2d9-b5a3-4b18-91f2-8d9c0e7a6f13"],
     "evolutionRequirements": [
@@ -5962,7 +5962,7 @@
     "atk": 131,
     "def": 100,
     "speed": 107,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 100,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["f3a7b9c0-1d5a-4e6b-8c2d-9f0e3a5d7c6b"],
     "evolutionRequirements": [
@@ -5985,7 +5985,7 @@
     "atk": 130,
     "def": 102,
     "speed": 107,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 99,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["8d2e5f3b-2a9c-47b0-91f3-e6c4d5b7a081"],
     "evolutionRequirements": [
@@ -6008,7 +6008,7 @@
     "atk": 127,
     "def": 97,
     "speed": 115,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 78,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["a3c9e71d-b581-4aef-bc7f-0e1db4956f32"],
     "evolutionRequirements": [
@@ -6031,7 +6031,7 @@
     "atk": 125,
     "def": 125,
     "speed": 107,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 99,
     "digiEvolutionSeedList": ["d182efd5-f240-4aaf-bb6b-3ef0afa6bc43"],
     "degenerateSeedList": ["12bfe8d3-7c6e-4e0f-9a2b-f1d3c87b20f5"],
     "evolutionRequirements": [
@@ -6054,7 +6054,7 @@
     "atk": 124,
     "def": 95,
     "speed": 112,
-    "bitFarmingRate": 19,
+    "bitFarmingRate": 73,
     "digiEvolutionSeedList": ["854269a7-33fa-47ca-94b7-a07e8c4da1bf"],
     "degenerateSeedList": ["c6e9a3b7-1f5d-4e8a-9c2b-0d3a5e7f9b6c"],
     "evolutionRequirements": [
@@ -6077,7 +6077,7 @@
     "atk": 136,
     "def": 122,
     "speed": 104,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 100,
     "digiEvolutionSeedList": ["bd9ff932-4112-4307-bbbd-36aa78bc130d"],
     "degenerateSeedList": ["e7b9c0f3-1a5d-4e6b-8c2d-9f0a3e5d7c6b"],
     "evolutionRequirements": [
@@ -6100,7 +6100,7 @@
     "atk": 128,
     "def": 126,
     "speed": 110,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 88,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["76c5f4e2-1a0b-42f7-9e4d-b3f0d8a1c2e6"],
     "evolutionRequirements": [
@@ -6123,7 +6123,7 @@
     "atk": 148,
     "def": 129,
     "speed": 111,
-    "bitFarmingRate": 22,
+    "bitFarmingRate": 98,
     "digiEvolutionSeedList": [
       "cb130bef-eec8-4f09-8b50-f5c66118fe5f",
       "37d122c0-59c8-4638-a8f6-75972a7a9cd6"
@@ -6149,7 +6149,7 @@
     "atk": 132,
     "def": 127,
     "speed": 96,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 99,
     "digiEvolutionSeedList": ["8e081427-8054-4a05-bfa0-200d5f471a8b"],
     "degenerateSeedList": ["d7e9f1a3-5b2c-4d8a-9c6e-1f0b3a5d7e2c"],
     "evolutionRequirements": [
@@ -6172,7 +6172,7 @@
     "atk": 113,
     "def": 116,
     "speed": 97,
-    "bitFarmingRate": 19,
+    "bitFarmingRate": 79,
     "digiEvolutionSeedList": ["a3d9f7c2-5e8b-4f1d-9c3a-7b2e6d4f8a1c"],
     "degenerateSeedList": ["a9d5e7b0-3f1a-4e6b-8c2d-9f0e3a5d7c6b"],
     "evolutionRequirements": [
@@ -6195,7 +6195,7 @@
     "atk": 129,
     "def": 101,
     "speed": 117,
-    "bitFarmingRate": 21,
+    "bitFarmingRate": 77,
     "digiEvolutionSeedList": ["e30d7b71-6e51-45af-a30e-b53b4a04735a"],
     "degenerateSeedList": ["d7b9c0e3-1a5f-4e6b-8c2d-9f0a3e5d7c6b"],
     "evolutionRequirements": [
@@ -6218,7 +6218,7 @@
     "atk": 130,
     "def": 120,
     "speed": 92,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 98,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["c3f0a7b9-2d5a-4e6b-8c1d-9f0e3a5d7b2c"],
     "evolutionRequirements": [
@@ -6241,7 +6241,7 @@
     "atk": 145,
     "def": 110,
     "speed": 91,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 60,
     "digiEvolutionSeedList": ["859bce6e-ced6-4864-8a32-b4690e499b37"],
     "degenerateSeedList": ["124e3f9c-0f48-402c-9f29-b92ff742a965"],
     "evolutionRequirements": [
@@ -6264,7 +6264,7 @@
     "atk": 128,
     "def": 122,
     "speed": 90,
-    "bitFarmingRate": 21,
+    "bitFarmingRate": 69,
     "digiEvolutionSeedList": ["b39a9a43-d7b6-4c24-91f2-0ebb53dd8258"],
     "degenerateSeedList": ["76c5f4e2-1a0b-42f7-9e4d-b3f0d8a1c2e6"],
     "evolutionRequirements": [
@@ -6287,7 +6287,7 @@
     "atk": 128,
     "def": 117,
     "speed": 102,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 72,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["28e7b03d-c49a-431b-81f2-d3a0f8c197e0"],
     "evolutionRequirements": [
@@ -6310,7 +6310,7 @@
     "atk": 132,
     "def": 124,
     "speed": 94,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 71,
     "digiEvolutionSeedList": [
       "388ffee3-92ff-453b-bc5d-fae5d69801d0",
       "f6a8b1c2-3d4e-4f7a-9b8c-1d2e3f4a5b6c"
@@ -6336,7 +6336,7 @@
     "atk": 120,
     "def": 96,
     "speed": 110,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 99,
     "digiEvolutionSeedList": ["e30d7b71-6e51-45af-a30e-b53b4a04735a"],
     "degenerateSeedList": ["e3b9c6f0-2d5a-4e7b-8c1d-9f0a5e3d7b2c"],
     "evolutionRequirements": [
@@ -6359,7 +6359,7 @@
     "atk": 121,
     "def": 129,
     "speed": 108,
-    "bitFarmingRate": 21,
+    "bitFarmingRate": 101,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["f5a7b9c0-2d5a-4e6b-8c1d-9f0e3a5d7b2c"],
     "evolutionRequirements": [
@@ -6382,7 +6382,7 @@
     "atk": 139,
     "def": 125,
     "speed": 105,
-    "bitFarmingRate": 21,
+    "bitFarmingRate": 99,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["56a2e212-2c89-46c4-b7b4-36bba1dbd7b7"],
     "evolutionRequirements": [
@@ -6405,7 +6405,7 @@
     "atk": 126,
     "def": 99,
     "speed": 118,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 92,
     "digiEvolutionSeedList": ["f0bc93ba-8d0f-478a-b731-671cefb2b5c9"],
     "degenerateSeedList": ["19f74d0b-2eac-4398-b7d3-ecf25198a302"],
     "evolutionRequirements": [
@@ -6428,7 +6428,7 @@
     "atk": 143,
     "def": 100,
     "speed": 118,
-    "bitFarmingRate": 21,
+    "bitFarmingRate": 88,
     "digiEvolutionSeedList": [
       "02cb1173-7e3d-477a-b388-6e46acb9aa65",
       "4e9ee336-86e1-43aa-bb62-93a10f82a0f6"
@@ -6457,7 +6457,7 @@
     "atk": 114,
     "def": 109,
     "speed": 117,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 58,
     "digiEvolutionSeedList": [
       "b54f3c5a-6af7-46de-abcb-92e4521d2a0c",
       "70dc0025-a6fd-4659-8a6d-77f8ce051054"
@@ -6483,7 +6483,7 @@
     "atk": 139,
     "def": 93,
     "speed": 115,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 71,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["f0c7e9b3-1a5d-4e6b-8c2b-9d3a5e0f7c6b"],
     "evolutionRequirements": [
@@ -6506,7 +6506,7 @@
     "atk": 122,
     "def": 104,
     "speed": 119,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 91,
     "digiEvolutionSeedList": ["d1c5f6b8-2f3e-4e9b-8c2d-7a9e5f6d3b1a"],
     "degenerateSeedList": ["72a04c6f-3b9c-4821-a7f1-c83d4d0f6e89"],
     "evolutionRequirements": [
@@ -6529,7 +6529,7 @@
     "atk": 115,
     "def": 113,
     "speed": 111,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 100,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["f3d8e2e9-316a-412b-91f9-678d1e6e9a56"],
     "evolutionRequirements": [
@@ -6552,7 +6552,7 @@
     "atk": 131,
     "def": 130,
     "speed": 87,
-    "bitFarmingRate": 21,
+    "bitFarmingRate": 97,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["934b0e2f-807c-4c3a-b1f9-60edc7f4a59e"],
     "evolutionRequirements": [
@@ -6575,7 +6575,7 @@
     "atk": 116,
     "def": 122,
     "speed": 108,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 76,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["c6e9a3b7-1f5d-4e8a-9c2b-0d3a5e7f9b6c"],
     "evolutionRequirements": [
@@ -6598,7 +6598,7 @@
     "atk": 142,
     "def": 113,
     "speed": 118,
-    "bitFarmingRate": 22,
+    "bitFarmingRate": 100,
     "digiEvolutionSeedList": ["e6b9d4f2-8c7a-4d3e-9f2b-5c1d8e3a6f9b"],
     "degenerateSeedList": ["72a04c6f-3b9c-4821-a7f1-c83d4d0f6e89"],
     "evolutionRequirements": [
@@ -6621,7 +6621,7 @@
     "atk": 130,
     "def": 117,
     "speed": 99,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 67,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["a5d4e9f7-c830-4f2d-b6a1-1e0f4c3b9d58"],
     "evolutionRequirements": [
@@ -6644,7 +6644,7 @@
     "atk": 139,
     "def": 103,
     "speed": 97,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 88,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["b7e9c0f3-1a5d-4e6b-8c2d-9f0a3e5d7c6b"],
     "evolutionRequirements": [
@@ -6667,7 +6667,7 @@
     "atk": 134,
     "def": 119,
     "speed": 92,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 79,
     "digiEvolutionSeedList": ["259b5023-6f5c-4543-879d-c5e73f09680d"],
     "degenerateSeedList": [],
     "evolutionRequirements": [
@@ -6690,7 +6690,7 @@
     "atk": 138,
     "def": 124,
     "speed": 101,
-    "bitFarmingRate": 21,
+    "bitFarmingRate": 88,
     "digiEvolutionSeedList": ["5c59bdf1-0288-4a39-bfbc-3d513a6dfe4c"],
     "degenerateSeedList": [
       "d7e9f1a3-5b2c-4d8a-9c6e-1f0b3a5d7e2c",
@@ -6716,7 +6716,7 @@
     "atk": 121,
     "def": 115,
     "speed": 104,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 88,
     "digiEvolutionSeedList": ["30a2feb7-e2c9-4094-aa4e-b3b307a44581"],
     "degenerateSeedList": ["8b7f0e3d-3c2a-4671-b9f1-e0d5a4c78b20"],
     "evolutionRequirements": [
@@ -6739,7 +6739,7 @@
     "atk": 131,
     "def": 128,
     "speed": 92,
-    "bitFarmingRate": 22,
+    "bitFarmingRate": 99,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["c6b9e0f3-2a5d-4e7b-8c1d-9f0a3e5d7b2c"],
     "evolutionRequirements": [
@@ -6762,7 +6762,7 @@
     "atk": 111,
     "def": 122,
     "speed": 105,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 91,
     "digiEvolutionSeedList": ["c3d5e7f9-8a1b-4c2d-9e6f-7a9b1c2d3e4f"],
     "degenerateSeedList": ["f8d2c6e9-4b1a-4e9f-8c7d-3a5e9b2f1d0c"],
     "evolutionRequirements": [
@@ -6785,7 +6785,7 @@
     "atk": 134,
     "def": 126,
     "speed": 98,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 77,
     "digiEvolutionSeedList": ["1a2b3c4d-5e6f-4a8b-9c1d-2e3f4a5b6c7d"],
     "degenerateSeedList": ["ecb85eb6-9dd6-4997-b4b0-2f5bfa778712"],
     "evolutionRequirements": [
@@ -6808,7 +6808,7 @@
     "atk": 109,
     "def": 115,
     "speed": 115,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 74,
     "digiEvolutionSeedList": [
       "cd02d04b-219d-4bc9-a92a-7580da263ac0",
       "8f9dec20-c882-4aba-8689-c408e5422d95"
@@ -6834,7 +6834,7 @@
     "atk": 132,
     "def": 128,
     "speed": 93,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 76,
     "digiEvolutionSeedList": [
       "c461ea05-0599-49d9-81cc-e2f27373b763",
       "6c3b5d02-1a9b-4b1d-a8ee-84a6eebc3e1a"
@@ -6860,7 +6860,7 @@
     "atk": 138,
     "def": 126,
     "speed": 109,
-    "bitFarmingRate": 21,
+    "bitFarmingRate": 75,
     "digiEvolutionSeedList": ["48756847-94ea-46e6-aae4-ed75c0dd8e1f"],
     "degenerateSeedList": ["c7b9e0f3-2d5a-4e6b-8c1d-9f0e3a5d7b2c"],
     "evolutionRequirements": [
@@ -6883,7 +6883,7 @@
     "atk": 138,
     "def": 105,
     "speed": 107,
-    "bitFarmingRate": 21,
+    "bitFarmingRate": 91,
     "digiEvolutionSeedList": [
       "89a74286-d589-4f93-ae34-d456bf9e693f",
       "600cfcc7-2b9e-4be1-b0f7-81cf1ef9a70c"
@@ -6909,7 +6909,7 @@
     "atk": 137,
     "def": 124,
     "speed": 90,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 92,
     "digiEvolutionSeedList": ["1c8626b0-da18-489f-83ee-83d27199fe02"],
     "degenerateSeedList": ["3e04bb4b-6e1a-4c57-9f7d-bd9e21048c5d"],
     "evolutionRequirements": [
@@ -6932,7 +6932,7 @@
     "atk": 126,
     "def": 120,
     "speed": 87,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 90,
     "digiEvolutionSeedList": ["f6c16216-77a5-4b56-ae37-1f9e33b3abfd"],
     "degenerateSeedList": ["93c1a5e7-1f0d-48b9-aeb2-6f8c5d4e3b1a"],
     "evolutionRequirements": [
@@ -6955,7 +6955,7 @@
     "atk": 136,
     "def": 119,
     "speed": 108,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 77,
     "digiEvolutionSeedList": ["b2c4d6e8-7f9a-4b3c-8d5e-6f8a9b1c2d3e"],
     "degenerateSeedList": ["d7b9c0e3-1a5f-4e6b-8c2d-9f0a3e5d7c6b"],
     "evolutionRequirements": [
@@ -6978,7 +6978,7 @@
     "atk": 133,
     "def": 103,
     "speed": 114,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 96,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["f3d8e2e9-316a-412b-91f9-678d1e6e9a56"],
     "evolutionRequirements": [
@@ -7001,7 +7001,7 @@
     "atk": 114,
     "def": 116,
     "speed": 113,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 76,
     "digiEvolutionSeedList": ["2e1f9e6a-7b8a-4d1c-9d2e-8a7d1f0c5b3c"],
     "degenerateSeedList": ["c849a173-f2d4-4700-88e3-1bc4a9f7e5d2"],
     "evolutionRequirements": [
@@ -7024,7 +7024,7 @@
     "atk": 129,
     "def": 102,
     "speed": 109,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 84,
     "digiEvolutionSeedList": ["6813bc53-5bea-424c-8dc1-ec0a1e7f381c"],
     "degenerateSeedList": ["09f69899-b91d-4ec5-9a4e-74641b692291"],
     "evolutionRequirements": [
@@ -7047,7 +7047,7 @@
     "atk": 136,
     "def": 131,
     "speed": 96,
-    "bitFarmingRate": 21,
+    "bitFarmingRate": 91,
     "digiEvolutionSeedList": ["7a3a7560-bdec-405b-94bb-18f5b2d3ca58"],
     "degenerateSeedList": ["5a9c1a2a-79b5-4de4-bc0a-d0fcd149e9d6"],
     "evolutionRequirements": [
@@ -7070,7 +7070,7 @@
     "atk": 140,
     "def": 120,
     "speed": 105,
-    "bitFarmingRate": 21,
+    "bitFarmingRate": 79,
     "digiEvolutionSeedList": ["ff254538-4f21-4cb1-84d9-f60fbd757893"],
     "degenerateSeedList": ["f1d36141-5f0e-40e3-9ad4-ccdbbffb65fd"],
     "evolutionRequirements": [
@@ -7093,7 +7093,7 @@
     "atk": 114,
     "def": 108,
     "speed": 118,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 99,
     "digiEvolutionSeedList": ["9d2afd12-c1fe-49e9-8691-f5060c2abc07"],
     "degenerateSeedList": ["3c0a1f29-0f53-41e6-a6fc-4d0b1d9811d6"],
     "evolutionRequirements": [
@@ -7116,7 +7116,7 @@
     "atk": 132,
     "def": 104,
     "speed": 110,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 90,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["a7d0f3e9-1c5b-4e6a-8c2b-9f3a5e0d7b6c"],
     "evolutionRequirements": [
@@ -7139,7 +7139,7 @@
     "atk": 140,
     "def": 133,
     "speed": 105,
-    "bitFarmingRate": 22,
+    "bitFarmingRate": 89,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["a7d0f3e9-1c5b-4e6a-8c2b-9f3a5e0d7b6c"],
     "evolutionRequirements": [
@@ -7162,8 +7162,8 @@
     "atk": 125,
     "def": 116,
     "speed": 115,
-    "bitFarmingRate": 20,
-    "digiEvolutionSeedList": ["a7b9c2d3-4e5f-4a8b-9c1d-2e3f4a5b6c7d"],
+    "bitFarmingRate": 77,
+    "digiEvolutionSeedList": [],
     "degenerateSeedList": ["c9f0e3a7-1d5b-4e6a-8c2b-9f3a5e0d7b6c"],
     "evolutionRequirements": [
       {
@@ -7185,7 +7185,7 @@
     "atk": 134,
     "def": 127,
     "speed": 97,
-    "bitFarmingRate": 21,
+    "bitFarmingRate": 59,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["f71c8e04-3b7d-4d20-86f1-efb9403a19d6"],
     "evolutionRequirements": [
@@ -7208,7 +7208,7 @@
     "atk": 127,
     "def": 117,
     "speed": 94,
-    "bitFarmingRate": 21,
+    "bitFarmingRate": 78,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["3fdea691-d2ae-44a4-bc02-59de09cf2049"],
     "evolutionRequirements": [
@@ -7231,7 +7231,7 @@
     "atk": 129,
     "def": 98,
     "speed": 116,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 100,
     "digiEvolutionSeedList": ["c2b04d58-6c74-49ea-902f-b7fc16a1e342"],
     "degenerateSeedList": ["d7b9c0e3-1a5f-4e6b-8c2d-9f0a3e5d7c6b"],
     "evolutionRequirements": [
@@ -7254,7 +7254,7 @@
     "atk": 132,
     "def": 128,
     "speed": 95,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 100,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["f4cbbd45-9e42-4b43-b9b0-4f8e1b9b9d21"],
     "evolutionRequirements": [
@@ -7277,7 +7277,7 @@
     "atk": 133,
     "def": 100,
     "speed": 106,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 76,
     "digiEvolutionSeedList": ["c3d5e7f9-8a1b-4c2d-9e6f-7a9b1c2d3e4f"],
     "degenerateSeedList": ["b2a5c9e0-3d1f-4e6a-8c7b-9f0d3a5e7c6b"],
     "evolutionRequirements": [
@@ -7300,7 +7300,7 @@
     "atk": 120,
     "def": 99,
     "speed": 110,
-    "bitFarmingRate": 20,
+    "bitFarmingRate": 79,
     "digiEvolutionSeedList": [
       "3f2bf06d-1081-4c12-ac9d-f0d04e27aecc",
       "e5205de4-2a24-4e30-b940-e6537def8e11"
@@ -7326,7 +7326,7 @@
     "atk": 135,
     "def": 130,
     "speed": 88,
-    "bitFarmingRate": 21,
+    "bitFarmingRate": 79,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["d6e3a9c0-2f5b-4e7a-8c1d-9f0a3e5d7b2c"],
     "evolutionRequirements": [
@@ -7349,7 +7349,7 @@
     "atk": 160,
     "def": 120,
     "speed": 100,
-    "bitFarmingRate": 34,
+    "bitFarmingRate": 89,
     "digiEvolutionSeedList": [
       "1f8b2c41-6d7a-4f1d-8a79-1d3c2a96c1b7",
       "2b224086-a176-4d0e-8b71-d710a22cc26d"
@@ -7375,7 +7375,7 @@
     "atk": 170,
     "def": 125,
     "speed": 115,
-    "bitFarmingRate": 34,
+    "bitFarmingRate": 88,
     "digiEvolutionSeedList": ["f7c2e60f-0a0d-4f87-95fc-1de3929b0b8a"],
     "degenerateSeedList": ["8f1d1fbb-3c4d-4b95-9437-889af207f7a0"],
     "evolutionRequirements": [
@@ -7398,7 +7398,7 @@
     "atk": 171,
     "def": 146,
     "speed": 122,
-    "bitFarmingRate": 5,
+    "bitFarmingRate": 105,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["25fc7b61-17ae-453b-94f7-4fa4f9171633"],
     "evolutionRequirements": [
@@ -7421,7 +7421,7 @@
     "atk": 162,
     "def": 118,
     "speed": 136,
-    "bitFarmingRate": 30,
+    "bitFarmingRate": 166,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": [
       "e5a57e68-7e23-4314-bd93-ea8c7d5fca85",
@@ -7447,7 +7447,7 @@
     "atk": 171,
     "def": 146,
     "speed": 116,
-    "bitFarmingRate": 13,
+    "bitFarmingRate": 108,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["fd9a8a5e-7e23-4c1b-b6b8-f2ec5f0c82e1"],
     "evolutionRequirements": [
@@ -7470,7 +7470,7 @@
     "atk": 144,
     "def": 128,
     "speed": 134,
-    "bitFarmingRate": 30,
+    "bitFarmingRate": 195,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["c67f1a0b-f889-438b-9cc0-885f9f711a26"],
     "evolutionRequirements": [
@@ -7493,7 +7493,7 @@
     "atk": 178,
     "def": 148,
     "speed": 137,
-    "bitFarmingRate": 22,
+    "bitFarmingRate": 110,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["28228629-5abc-4fdb-b94d-360783b2ff2c"],
     "evolutionRequirements": [
@@ -7516,7 +7516,7 @@
     "atk": 209,
     "def": 130,
     "speed": 140,
-    "bitFarmingRate": 19,
+    "bitFarmingRate": 115,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["28228629-5abc-4fdb-b94d-360783b2ff2c"],
     "evolutionRequirements": [
@@ -7539,7 +7539,7 @@
     "atk": 174,
     "def": 148,
     "speed": 124,
-    "bitFarmingRate": 5,
+    "bitFarmingRate": 140,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["66e5a6ea-93a5-47f8-91d9-8601857496f6"],
     "evolutionRequirements": [
@@ -7562,7 +7562,7 @@
     "atk": 173,
     "def": 139,
     "speed": 127,
-    "bitFarmingRate": 5,
+    "bitFarmingRate": 191,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["88a7bd2c-77fb-469e-abc8-bd67c4ea5924"],
     "evolutionRequirements": [
@@ -7585,7 +7585,7 @@
     "atk": 173,
     "def": 140,
     "speed": 127,
-    "bitFarmingRate": 5,
+    "bitFarmingRate": 106,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["529f424a-7efe-49bd-90dc-58286aaa9fb5"],
     "evolutionRequirements": [
@@ -7608,7 +7608,7 @@
     "atk": 178,
     "def": 156,
     "speed": 138,
-    "bitFarmingRate": 12,
+    "bitFarmingRate": 177,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": [
       "77399b55-9e54-4ed3-8fc5-e20ee7d7dc9a",
@@ -7634,7 +7634,7 @@
     "atk": 170,
     "def": 124,
     "speed": 129,
-    "bitFarmingRate": 1,
+    "bitFarmingRate": 183,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["2f1a57b3-4fc2-4a7b-97a5-8b5f6886ec14"],
     "evolutionRequirements": [
@@ -7657,7 +7657,7 @@
     "atk": 172,
     "def": 144,
     "speed": 122,
-    "bitFarmingRate": 1,
+    "bitFarmingRate": 154,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": [
       "40ed91a1-d2e3-47dc-8c18-64a55757e6b1",
@@ -7683,7 +7683,7 @@
     "atk": 180,
     "def": 164,
     "speed": 142,
-    "bitFarmingRate": 1,
+    "bitFarmingRate": 135,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["a49fd2ae-e98d-4c4b-9c53-708e6f019af2"],
     "evolutionRequirements": [
@@ -7706,7 +7706,7 @@
     "atk": 176,
     "def": 148,
     "speed": 112,
-    "bitFarmingRate": 13,
+    "bitFarmingRate": 150,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["070340f1-64a6-4b2a-a068-47d00e4de3a1"],
     "evolutionRequirements": [
@@ -7729,7 +7729,7 @@
     "atk": 167,
     "def": 121,
     "speed": 131,
-    "bitFarmingRate": 8,
+    "bitFarmingRate": 110,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["a5e0bfb7-8d2a-4ef1-9636-cbb9db1fe1d0"],
     "evolutionRequirements": [
@@ -7752,7 +7752,7 @@
     "atk": 178,
     "def": 152,
     "speed": 128,
-    "bitFarmingRate": 6,
+    "bitFarmingRate": 109,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["34af8b92-9237-4f39-b45d-0d6c073d98c1"],
     "evolutionRequirements": [
@@ -7775,7 +7775,7 @@
     "atk": 161,
     "def": 141,
     "speed": 120,
-    "bitFarmingRate": 1,
+    "bitFarmingRate": 156,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["a2fd5cd4-16dc-4422-8e94-7129b75478ce"],
     "evolutionRequirements": [
@@ -7798,7 +7798,7 @@
     "atk": 188,
     "def": 170,
     "speed": 120,
-    "bitFarmingRate": 1,
+    "bitFarmingRate": 180,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["a2fd5cd4-16dc-4422-8e94-7129b75478ce"],
     "evolutionRequirements": [
@@ -7821,7 +7821,7 @@
     "atk": 159,
     "def": 139,
     "speed": 126,
-    "bitFarmingRate": 26,
+    "bitFarmingRate": 200,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["d991c296-78da-46e4-82a7-a4ae997f5a98"],
     "evolutionRequirements": [
@@ -7844,7 +7844,7 @@
     "atk": 168,
     "def": 120,
     "speed": 132,
-    "bitFarmingRate": 26,
+    "bitFarmingRate": 162,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["64eecdac-3722-4999-941c-eb21a60fd301"],
     "evolutionRequirements": [
@@ -7867,7 +7867,7 @@
     "atk": 145,
     "def": 144,
     "speed": 118,
-    "bitFarmingRate": 26,
+    "bitFarmingRate": 143,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["8f14e45f-ceea-41d4-9a3d-3e8d2e9f6b2c"],
     "evolutionRequirements": [
@@ -7890,7 +7890,7 @@
     "atk": 141,
     "def": 124,
     "speed": 128,
-    "bitFarmingRate": 25,
+    "bitFarmingRate": 200,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["bdc9e5c4-49b1-4ee5-9b86-9b52c76b3b6f"],
     "evolutionRequirements": [
@@ -7913,7 +7913,7 @@
     "atk": 163,
     "def": 117,
     "speed": 133,
-    "bitFarmingRate": 27,
+    "bitFarmingRate": 170,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["68de0bbe-a11d-4452-bdb6-f6b4478d06ad"],
     "evolutionRequirements": [
@@ -7936,7 +7936,7 @@
     "atk": 187,
     "def": 160,
     "speed": 131,
-    "bitFarmingRate": 29,
+    "bitFarmingRate": 157,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["9450b4b1-b3e2-4b66-9055-b2923d2e6236"],
     "evolutionRequirements": [
@@ -7959,7 +7959,7 @@
     "atk": 171,
     "def": 141,
     "speed": 141,
-    "bitFarmingRate": 28,
+    "bitFarmingRate": 155,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["b5a7b775-04b8-436a-b17a-29f7307c682e"],
     "evolutionRequirements": [
@@ -7982,7 +7982,7 @@
     "atk": 139,
     "def": 136,
     "speed": 130,
-    "bitFarmingRate": 26,
+    "bitFarmingRate": 114,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["823fd608-feb2-415c-99be-f144a51fbd91"],
     "evolutionRequirements": [
@@ -8005,7 +8005,7 @@
     "atk": 153,
     "def": 119,
     "speed": 129,
-    "bitFarmingRate": 26,
+    "bitFarmingRate": 104,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["978dfa7e-4c2e-4390-b40f-ac1cd8f0bbea"],
     "evolutionRequirements": [
@@ -8028,7 +8028,7 @@
     "atk": 180,
     "def": 157,
     "speed": 120,
-    "bitFarmingRate": 28,
+    "bitFarmingRate": 108,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": [
       "fef29128-0270-4e25-befc-bc9f2c4dd853",
@@ -8054,7 +8054,7 @@
     "atk": 185,
     "def": 143,
     "speed": 151,
-    "bitFarmingRate": 29,
+    "bitFarmingRate": 158,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": [
       "a5e0bfb7-8d2a-4ef1-9636-cbb9db1fe1d0",
@@ -8080,7 +8080,7 @@
     "atk": 170,
     "def": 138,
     "speed": 126,
-    "bitFarmingRate": 26,
+    "bitFarmingRate": 199,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["36fad7a1-ec3c-4781-bc2b-db41f0d79e01"],
     "evolutionRequirements": [
@@ -8103,7 +8103,7 @@
     "atk": 174,
     "def": 142,
     "speed": 128,
-    "bitFarmingRate": 27,
+    "bitFarmingRate": 101,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["36fad7a1-ec3c-4781-bc2b-db41f0d79e01"],
     "evolutionRequirements": [
@@ -8126,7 +8126,7 @@
     "atk": 188,
     "def": 150,
     "speed": 145,
-    "bitFarmingRate": 30,
+    "bitFarmingRate": 189,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["2b4b8b25-e810-45a2-a7f1-3e6642b50352"],
     "evolutionRequirements": [
@@ -8149,7 +8149,7 @@
     "atk": 168,
     "def": 159,
     "speed": 140,
-    "bitFarmingRate": 28,
+    "bitFarmingRate": 110,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": [
       "1b765eb3-b253-4266-a449-f48cc1713dac",
@@ -8175,7 +8175,7 @@
     "atk": 183,
     "def": 139,
     "speed": 140,
-    "bitFarmingRate": 28,
+    "bitFarmingRate": 162,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["f6d38895-6836-4e09-90fd-e6a63b2e4a27"],
     "evolutionRequirements": [
@@ -8198,7 +8198,7 @@
     "atk": 166,
     "def": 141,
     "speed": 127,
-    "bitFarmingRate": 26,
+    "bitFarmingRate": 188,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["a7e2f3b1-03e4-40fc-b80b-8db60f4f616b"],
     "evolutionRequirements": [
@@ -8221,7 +8221,7 @@
     "atk": 170,
     "def": 150,
     "speed": 130,
-    "bitFarmingRate": 27,
+    "bitFarmingRate": 122,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": [
       "1fc3d08b-7a62-4c3e-bf9d-3a179f5a3642",
@@ -8247,12 +8247,9 @@
     "atk": 175,
     "def": 157,
     "speed": 129,
-    "bitFarmingRate": 28,
+    "bitFarmingRate": 190,
     "digiEvolutionSeedList": [],
-    "degenerateSeedList": [
-      "952a2766-db94-4c37-9c25-efee8bfdc9a3",
-      "c4cfed7d-2b3b-4fa4-8a4f-09ef2b709c7e"
-    ],
+    "degenerateSeedList": ["952a2766-db94-4c37-9c25-efee8bfdc9a3"],
     "evolutionRequirements": [
       {
         "type": "level",
@@ -8273,7 +8270,7 @@
     "atk": 181,
     "def": 147,
     "speed": 134,
-    "bitFarmingRate": 28,
+    "bitFarmingRate": 187,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["952a2766-db94-4c37-9c25-efee8bfdc9a3"],
     "evolutionRequirements": [
@@ -8296,7 +8293,7 @@
     "atk": 182,
     "def": 165,
     "speed": 137,
-    "bitFarmingRate": 28,
+    "bitFarmingRate": 161,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["070340f1-64a6-4b2a-a068-47d00e4de3a1"],
     "evolutionRequirements": [
@@ -8319,7 +8316,7 @@
     "atk": 190,
     "def": 170,
     "speed": 143,
-    "bitFarmingRate": 30,
+    "bitFarmingRate": 200,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": [],
     "evolutionRequirements": [
@@ -8327,7 +8324,8 @@
         "type": "level",
         "value": 60
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "601ab91e-bae5-4177-bc6e-3974fd13ca2c",
@@ -8341,7 +8339,7 @@
     "atk": 172,
     "def": 145,
     "speed": 114,
-    "bitFarmingRate": 27,
+    "bitFarmingRate": 122,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["1df7c621-07e1-4db9-9922-b7664b6306a0"],
     "evolutionRequirements": [
@@ -8364,7 +8362,7 @@
     "atk": 146,
     "def": 130,
     "speed": 133,
-    "bitFarmingRate": 26,
+    "bitFarmingRate": 102,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["aa2232d5-12ee-4538-b7d3-63d95977137a"],
     "evolutionRequirements": [
@@ -8387,7 +8385,7 @@
     "atk": 169,
     "def": 124,
     "speed": 131,
-    "bitFarmingRate": 26,
+    "bitFarmingRate": 190,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["6c695951-a9dc-4fea-aab4-792814356e9f"],
     "evolutionRequirements": [
@@ -8410,7 +8408,7 @@
     "atk": 186,
     "def": 166,
     "speed": 128,
-    "bitFarmingRate": 29,
+    "bitFarmingRate": 109,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["e8f4c6a1-3d2b-4e5f-9a8c-7b6d5e4f3a2c"],
     "evolutionRequirements": [
@@ -8433,7 +8431,7 @@
     "atk": 164,
     "def": 141,
     "speed": 119,
-    "bitFarmingRate": 26,
+    "bitFarmingRate": 109,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["d9e3b7f2-5c1a-4f6d-8e9b-2a7c6d3f1e4b"],
     "evolutionRequirements": [
@@ -8456,7 +8454,7 @@
     "atk": 158,
     "def": 140,
     "speed": 134,
-    "bitFarmingRate": 26,
+    "bitFarmingRate": 157,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": [
       "5d236da1-b31c-445d-b819-fa8154273dd6",
@@ -8482,7 +8480,7 @@
     "atk": 143,
     "def": 147,
     "speed": 116,
-    "bitFarmingRate": 26,
+    "bitFarmingRate": 200,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["db096107-34c6-4f22-b8a1-8b5c7265edb2"],
     "evolutionRequirements": [
@@ -8505,7 +8503,7 @@
     "atk": 183,
     "def": 175,
     "speed": 126,
-    "bitFarmingRate": 29,
+    "bitFarmingRate": 193,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["6c695951-a9dc-4fea-aab4-792814356e9f"],
     "evolutionRequirements": [
@@ -8528,7 +8526,7 @@
     "atk": 179,
     "def": 160,
     "speed": 144,
-    "bitFarmingRate": 29,
+    "bitFarmingRate": 194,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["fef29128-0270-4e25-befc-bc9f2c4dd853"],
     "evolutionRequirements": [
@@ -8551,7 +8549,7 @@
     "atk": 173,
     "def": 141,
     "speed": 127,
-    "bitFarmingRate": 27,
+    "bitFarmingRate": 109,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["9799592e-7012-4855-b1a8-2f5d1e27e196"],
     "evolutionRequirements": [
@@ -8574,7 +8572,7 @@
     "atk": 172,
     "def": 144,
     "speed": 125,
-    "bitFarmingRate": 27,
+    "bitFarmingRate": 151,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["a5598598-d29a-4858-8f30-ec5f2acf107b"],
     "evolutionRequirements": [
@@ -8597,7 +8595,7 @@
     "atk": 142,
     "def": 150,
     "speed": 119,
-    "bitFarmingRate": 26,
+    "bitFarmingRate": 177,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["f697c01b-7394-41b3-a374-34a6a1ff27f6"],
     "evolutionRequirements": [
@@ -8620,7 +8618,7 @@
     "atk": 169,
     "def": 124,
     "speed": 130,
-    "bitFarmingRate": 26,
+    "bitFarmingRate": 150,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["a5598598-d29a-4858-8f30-ec5f2acf107b"],
     "evolutionRequirements": [
@@ -8643,7 +8641,7 @@
     "atk": 173,
     "def": 146,
     "speed": 111,
-    "bitFarmingRate": 27,
+    "bitFarmingRate": 179,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["afaf7d25-99b6-498b-80bb-70cd4a278189"],
     "evolutionRequirements": [
@@ -8666,7 +8664,7 @@
     "atk": 158,
     "def": 123,
     "speed": 126,
-    "bitFarmingRate": 26,
+    "bitFarmingRate": 200,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["2645815a-a9a0-4e53-b0a9-28cbfc7d5e61"],
     "evolutionRequirements": [
@@ -8689,7 +8687,7 @@
     "atk": 146,
     "def": 137,
     "speed": 119,
-    "bitFarmingRate": 26,
+    "bitFarmingRate": 172,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["bcdefa01-2345-4678-9abc-def012345678"],
     "evolutionRequirements": [
@@ -8712,7 +8710,7 @@
     "atk": 173,
     "def": 158,
     "speed": 141,
-    "bitFarmingRate": 29,
+    "bitFarmingRate": 188,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["e5a57e68-7e23-4314-bd93-ea8c7d5fca85"],
     "evolutionRequirements": [
@@ -8735,7 +8733,7 @@
     "atk": 142,
     "def": 136,
     "speed": 131,
-    "bitFarmingRate": 26,
+    "bitFarmingRate": 166,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["707cf9e9-48a1-4087-87d9-f3c53447e100"],
     "evolutionRequirements": [
@@ -8758,7 +8756,7 @@
     "atk": 170,
     "def": 148,
     "speed": 119,
-    "bitFarmingRate": 27,
+    "bitFarmingRate": 110,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["60205c40-0925-406f-93aa-511df01826bf"],
     "evolutionRequirements": [
@@ -8781,7 +8779,7 @@
     "atk": 168,
     "def": 120,
     "speed": 129,
-    "bitFarmingRate": 26,
+    "bitFarmingRate": 170,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["f6d38895-6836-4e09-90fd-e6a63b2e4a27"],
     "evolutionRequirements": [
@@ -8804,7 +8802,7 @@
     "atk": 162,
     "def": 151,
     "speed": 114,
-    "bitFarmingRate": 27,
+    "bitFarmingRate": 134,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["1ec3c641-3763-4c9e-8834-26f7aaf3fd09"],
     "evolutionRequirements": [
@@ -8827,7 +8825,7 @@
     "atk": 173,
     "def": 143,
     "speed": 123,
-    "bitFarmingRate": 28,
+    "bitFarmingRate": 200,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["0cd5fdf6-ff56-4196-92f7-79f0c32bcc31"],
     "evolutionRequirements": [
@@ -8850,7 +8848,7 @@
     "atk": 181,
     "def": 157,
     "speed": 139,
-    "bitFarmingRate": 29,
+    "bitFarmingRate": 154,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["64eecdac-3722-4999-941c-eb21a60fd301"],
     "evolutionRequirements": [
@@ -8873,7 +8871,7 @@
     "atk": 180,
     "def": 188,
     "speed": 120,
-    "bitFarmingRate": 30,
+    "bitFarmingRate": 186,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["01cf1fc3-911e-4a79-a14a-c2de553edecb"],
     "evolutionRequirements": [
@@ -8896,7 +8894,7 @@
     "atk": 168,
     "def": 135,
     "speed": 114,
-    "bitFarmingRate": 26,
+    "bitFarmingRate": 200,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["b651ef8e-ee49-40e6-8854-434a5e6217db"],
     "evolutionRequirements": [
@@ -8919,7 +8917,7 @@
     "atk": 179,
     "def": 167,
     "speed": 130,
-    "bitFarmingRate": 29,
+    "bitFarmingRate": 101,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["4aa02e4b-b20a-4faf-9269-0ba18a1e7d08"],
     "evolutionRequirements": [
@@ -8942,7 +8940,7 @@
     "atk": 182,
     "def": 151,
     "speed": 138,
-    "bitFarmingRate": 29,
+    "bitFarmingRate": 160,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["a43b028d-860e-4b36-93f9-c3d3b52db64c"],
     "evolutionRequirements": [
@@ -8965,7 +8963,7 @@
     "atk": 188,
     "def": 139,
     "speed": 136,
-    "bitFarmingRate": 29,
+    "bitFarmingRate": 199,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["8c0f5a17-16a5-409a-bac1-1c63aeaa611a"],
     "evolutionRequirements": [
@@ -8988,7 +8986,7 @@
     "atk": 182,
     "def": 141,
     "speed": 140,
-    "bitFarmingRate": 29,
+    "bitFarmingRate": 105,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["01cf1fc3-911e-4a79-a14a-c2de553edecb"],
     "evolutionRequirements": [
@@ -9011,7 +9009,7 @@
     "atk": 184,
     "def": 152,
     "speed": 139,
-    "bitFarmingRate": 29,
+    "bitFarmingRate": 158,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["fcda1569-46f3-4ccd-8838-a55e447a005c"],
     "evolutionRequirements": [
@@ -9034,7 +9032,7 @@
     "atk": 157,
     "def": 120,
     "speed": 132,
-    "bitFarmingRate": 26,
+    "bitFarmingRate": 101,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": [
       "de7c5e6e-92fc-4f99-98b1-abe628acedd2",
@@ -9060,7 +9058,7 @@
     "atk": 167,
     "def": 136,
     "speed": 129,
-    "bitFarmingRate": 27,
+    "bitFarmingRate": 102,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["0fc5bcd7-7cbe-4aa7-8c60-1225d2b297d9"],
     "evolutionRequirements": [
@@ -9083,7 +9081,7 @@
     "atk": 175,
     "def": 149,
     "speed": 119,
-    "bitFarmingRate": 27,
+    "bitFarmingRate": 176,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["2b8a73da-3f0a-4fe3-b6c7-b8c1b06673ba"],
     "evolutionRequirements": [
@@ -9106,7 +9104,7 @@
     "atk": 164,
     "def": 140,
     "speed": 113,
-    "bitFarmingRate": 27,
+    "bitFarmingRate": 132,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["9288669d-6431-4bbf-9ffd-916280cd1c3f"],
     "evolutionRequirements": [
@@ -9129,7 +9127,7 @@
     "atk": 188,
     "def": 177,
     "speed": 122,
-    "bitFarmingRate": 30,
+    "bitFarmingRate": 200,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["6d7a3c5b-f3f8-4ab8-a55a-0a9e3cda3c62"],
     "evolutionRequirements": [
@@ -9152,7 +9150,7 @@
     "atk": 186,
     "def": 176,
     "speed": 143,
-    "bitFarmingRate": 30,
+    "bitFarmingRate": 178,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": [
       "2dd48272-ac88-4367-a6d6-59b6dc3de237",
@@ -9178,7 +9176,7 @@
     "atk": 175,
     "def": 138,
     "speed": 134,
-    "bitFarmingRate": 27,
+    "bitFarmingRate": 180,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["66e5a6ea-93a5-47f8-91d9-8601857496f6"],
     "evolutionRequirements": [
@@ -9201,7 +9199,7 @@
     "atk": 176,
     "def": 172,
     "speed": 140,
-    "bitFarmingRate": 29,
+    "bitFarmingRate": 198,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["8c0f5a17-16a5-409a-bac1-1c63aeaa611a"],
     "evolutionRequirements": [
@@ -9224,7 +9222,7 @@
     "atk": 179,
     "def": 183,
     "speed": 148,
-    "bitFarmingRate": 30,
+    "bitFarmingRate": 132,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["1dc4e899-b0db-435f-a9e3-6fa7c94836aa"],
     "evolutionRequirements": [
@@ -9247,7 +9245,7 @@
     "atk": 164,
     "def": 142,
     "speed": 135,
-    "bitFarmingRate": 27,
+    "bitFarmingRate": 180,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["43bfe4a9-f09e-4016-b26c-7a0d6948f58d"],
     "evolutionRequirements": [
@@ -9270,7 +9268,7 @@
     "atk": 186,
     "def": 157,
     "speed": 125,
-    "bitFarmingRate": 29,
+    "bitFarmingRate": 113,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["965f036a-e7a9-4a59-b192-db5b57636af8"],
     "evolutionRequirements": [
@@ -9293,7 +9291,7 @@
     "atk": 168,
     "def": 121,
     "speed": 128,
-    "bitFarmingRate": 27,
+    "bitFarmingRate": 197,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["6c121f02-4c0e-46a2-b2c7-f0b602267107"],
     "evolutionRequirements": [
@@ -9316,7 +9314,7 @@
     "atk": 142,
     "def": 136,
     "speed": 135,
-    "bitFarmingRate": 26,
+    "bitFarmingRate": 192,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["d8bbebbb-b512-4ae6-a499-cfe208cce34b"],
     "evolutionRequirements": [
@@ -9339,7 +9337,7 @@
     "atk": 190,
     "def": 167,
     "speed": 145,
-    "bitFarmingRate": 31,
+    "bitFarmingRate": 200,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": [],
     "evolutionRequirements": [
@@ -9347,7 +9345,8 @@
         "type": "level",
         "value": 51
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "c3d5e7f8-9a1b-4c2d-9e6f-7a8b9c1d2e3f",
@@ -9361,7 +9360,7 @@
     "atk": 178,
     "def": 152,
     "speed": 138,
-    "bitFarmingRate": 29,
+    "bitFarmingRate": 107,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["a49fd2ae-e98d-4c4b-9c53-708e6f019af2"],
     "evolutionRequirements": [
@@ -9384,7 +9383,7 @@
     "atk": 178,
     "def": 146,
     "speed": 143,
-    "bitFarmingRate": 29,
+    "bitFarmingRate": 198,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["3806f254-dcf8-44b7-9384-edddef3c6bba"],
     "evolutionRequirements": [
@@ -9407,7 +9406,7 @@
     "atk": 187,
     "def": 174,
     "speed": 137,
-    "bitFarmingRate": 29,
+    "bitFarmingRate": 180,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["622e72a1-7f0f-465e-b4f4-2ba9fb6a73a0"],
     "evolutionRequirements": [
@@ -9430,7 +9429,7 @@
     "atk": 172,
     "def": 144,
     "speed": 147,
-    "bitFarmingRate": 28,
+    "bitFarmingRate": 140,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["c77b7715-f25c-4b3a-b77f-199188d1e7f7"],
     "evolutionRequirements": [
@@ -9453,7 +9452,7 @@
     "atk": 187,
     "def": 160,
     "speed": 142,
-    "bitFarmingRate": 29,
+    "bitFarmingRate": 188,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": [],
     "evolutionRequirements": [
@@ -9461,7 +9460,8 @@
         "type": "level",
         "value": 56
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "0705ba66-a64c-4fc6-9716-2c24a03e6eff",
@@ -9475,7 +9475,7 @@
     "atk": 188,
     "def": 157,
     "speed": 136,
-    "bitFarmingRate": 29,
+    "bitFarmingRate": 189,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": [],
     "evolutionRequirements": [
@@ -9483,7 +9483,8 @@
         "type": "level",
         "value": 57
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "d57bf83d-9d9d-4ea0-8f8d-b9474a49098a",
@@ -9497,7 +9498,7 @@
     "atk": 184,
     "def": 162,
     "speed": 150,
-    "bitFarmingRate": 30,
+    "bitFarmingRate": 199,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": [],
     "evolutionRequirements": [
@@ -9505,7 +9506,8 @@
         "type": "level",
         "value": 58
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "057388fa-c9be-4ec9-9907-0e261ec538e4",
@@ -9519,7 +9521,7 @@
     "atk": 179,
     "def": 149,
     "speed": 149,
-    "bitFarmingRate": 29,
+    "bitFarmingRate": 186,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": [],
     "evolutionRequirements": [
@@ -9527,7 +9529,8 @@
         "type": "level",
         "value": 59
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "70dc0025-a6fd-4659-8a6d-77f8ce051054",
@@ -9541,7 +9544,7 @@
     "atk": 161,
     "def": 113,
     "speed": 134,
-    "bitFarmingRate": 26,
+    "bitFarmingRate": 112,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["978dfa7e-4c2e-4390-b40f-ac1cd8f0bbea"],
     "evolutionRequirements": [
@@ -9564,7 +9567,7 @@
     "atk": 187,
     "def": 167,
     "speed": 146,
-    "bitFarmingRate": 30,
+    "bitFarmingRate": 189,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": [],
     "evolutionRequirements": [
@@ -9572,7 +9575,8 @@
         "type": "level",
         "value": 50
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "a2c3bfbc-0c7a-4a43-9671-066d2dcfd247",
@@ -9586,7 +9590,7 @@
     "atk": 175,
     "def": 143,
     "speed": 138,
-    "bitFarmingRate": 28,
+    "bitFarmingRate": 200,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": [],
     "evolutionRequirements": [
@@ -9594,7 +9598,8 @@
         "type": "level",
         "value": 51
       }
-    ]
+    ],
+    "checked": true
   },
   {
     "seed": "3f2bf06d-1081-4c12-ac9d-f0d04e27aecc",
@@ -9608,7 +9613,7 @@
     "atk": 181,
     "def": 170,
     "speed": 136,
-    "bitFarmingRate": 29,
+    "bitFarmingRate": 110,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["d957cf56-107d-4523-96cb-2aeffadbc64a"],
     "evolutionRequirements": [
@@ -9631,7 +9636,7 @@
     "atk": 173,
     "def": 148,
     "speed": 147,
-    "bitFarmingRate": 28,
+    "bitFarmingRate": 199,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["952a2766-db94-4c37-9c25-efee8bfdc9a3"],
     "evolutionRequirements": [
@@ -9654,7 +9659,7 @@
     "atk": 175,
     "def": 141,
     "speed": 150,
-    "bitFarmingRate": 29,
+    "bitFarmingRate": 156,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["d957cf56-107d-4523-96cb-2aeffadbc64a"],
     "evolutionRequirements": [
@@ -9677,7 +9682,7 @@
     "atk": 188,
     "def": 133,
     "speed": 144,
-    "bitFarmingRate": 28,
+    "bitFarmingRate": 179,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["1dc4e899-b0db-435f-a9e3-6fa7c94836aa"],
     "evolutionRequirements": [
@@ -9700,7 +9705,7 @@
     "atk": 255,
     "def": 162,
     "speed": 120,
-    "bitFarmingRate": 44,
+    "bitFarmingRate": 199,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": [
       "25fc7b61-17ae-453b-94f7-4fa4f9171633",
@@ -9726,7 +9731,7 @@
     "atk": 185,
     "def": 140,
     "speed": 210,
-    "bitFarmingRate": 42,
+    "bitFarmingRate": 115,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["a5e0bfb7-8d2a-4ef1-9636-cbb9db1fe1d0"],
     "evolutionRequirements": [
@@ -9749,7 +9754,7 @@
     "atk": 195,
     "def": 150,
     "speed": 125,
-    "bitFarmingRate": 45,
+    "bitFarmingRate": 194,
     "digiEvolutionSeedList": [],
     "degenerateSeedList": ["3e4dca61-915d-4cf9-91b5-36a9462c4b9d"],
     "evolutionRequirements": [

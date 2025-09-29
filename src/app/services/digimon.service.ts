@@ -83,7 +83,6 @@ export class DigimonService {
       atk: baseDigimon.atk,
       def: baseDigimon.def,
       speed: baseDigimon.speed,
-      bitFarmingRate: baseDigimon.bitFarmingRate,
     };
 
     for (let i = 2; i <= level; i++) {
@@ -93,7 +92,6 @@ export class DigimonService {
       stats.atk! += gains.atk;
       stats.def! += gains.def;
       stats.speed! += gains.speed;
-      stats.bitFarmingRate! += Math.floor(Math.random() * 2);
       applyCaps(baseDigimon.rank, stats);
     }
 
@@ -116,7 +114,7 @@ export class DigimonService {
       exp: 0,
       totalExp: 0,
       level,
-      bitFarmingRate: stats.bitFarmingRate,
+      bitFarmingRate: baseDigimon.bitFarmingRate,
       fatigue: 0,
       digiEvolutionSeedList: baseDigimon.digiEvolutionSeedList,
       degenerateSeedList: baseDigimon.degenerateSeedList,
@@ -162,7 +160,7 @@ export class DigimonService {
       atk: evolvingDigimon.atk + Math.round(targetDigimon.atk * factor),
       def: evolvingDigimon.def + Math.round(targetDigimon.def * factor),
       speed: evolvingDigimon.speed + Math.round(targetDigimon.speed * factor),
-      bitFarmingRate: Math.round((evolvingDigimon.bitFarmingRate || 0) + targetDigimon.bitFarmingRate * factor),
+      bitFarmingRate: evolvingDigimon.bitFarmingRate + targetDigimon.bitFarmingRate,
     };
   }
 

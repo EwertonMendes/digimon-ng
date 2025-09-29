@@ -23,7 +23,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
   templateUrl: './evolution-tree-modal.component.html',
   styleUrls: ['./evolution-tree-modal.component.scss'],
 })
-export class EvolutionTreeModalComponent{
+export class EvolutionTreeModalComponent {
   id = input<string>('evolution-tree-modal');
   mainDigimon = input<Digimon | BaseDigimon>();
   sigma!: Sigma;
@@ -72,12 +72,19 @@ export class EvolutionTreeModalComponent{
 
     this.evolutionRouteDigimons = this.getEvolutionRouteDigimons();
 
+    const digimon = this.digimonService.getBaseDigimonDataBySeed(
+      this.mainDigimon()?.seed!
+    );
+    this.selectedDigimon.set(digimon);
+
     setTimeout(() => {
+
       this.sigma = this.graphService.createGraph(
         container,
         this.mainDigimon()!,
         this.evolutionRouteDigimons
       );
+
       this.setupGraphEventHandlers(container);
     }, 0)
   }

@@ -36,9 +36,13 @@
       <label>{{ "MODULES.LAB.FILTER_RANK" | transloco }}</label>
       <div class="lab__filters-ranks-list">
         <form [formGroup]="rankForm()">
-          @for (rank of uniqueRanks(); track rank) {
-          <app-checkbox [label]="rank" formControlName="{{ rank }}">
-          </app-checkbox>
+          @defer (on viewport) {
+            @for (rank of uniqueRanks(); track rank) {
+              <app-checkbox [label]="rank" formControlName="{{ rank }}">
+              </app-checkbox>
+            }
+          } @placeholder {
+            <div>-</div>
           }
         </form>
       </div>
@@ -61,78 +65,78 @@
   </div>
   <div class="lab__content">
     @for (digimon of filteredDigimons(); track $index) {
-    <div class="lab__content-card">
-      <div class="lab__content-card-body">
-        @if (digimon.obtained) {
-        <div class="lab__content-card-body-obtained-container">
-          <div
-            class="lab__content-card-body-obtained-check"
-            [appTooltip]="'MODULES.LAB.OBTAINED' | transloco"
-            [tooltipDirection]="'bottom'"
-          ></div>
-        </div>
-        }
-        <div class="lab__content-card-body-image">
-          <img
-            [src]="digimon.img"
-            [alt]="digimon.name"
-            [ngStyle]="{ opacity: digimon.obtained ? 1 : 0.5 }"
-          />
-        </div>
-        <div class="lab__content-card-body-text">
-          <span class="lab__content-card-body-text-name">{{
-            digimon.name
-          }}</span>
-          <span class="lab__content-card-body-text-rank"
-            >Rank: {{ digimon.rank }}</span
-          >
-          <span class="lab__content-card-body-text-cost"
-            >Cost: {{ digimon.cost }} bits</span
-          >
-          <div class="lab__content-card-body-text-convert-bar">
-            <span
-              [ngClass]="{
-                'lab__content-card-body-text-convert-bar__percent--complete':
-                  digimon.amount >= 100,
-                'lab__content-card-body-text-convert-bar__percent--incomplete':
-                  digimon.amount < 100
-              }"
-            >
-              {{ digimon.amount }}%
-            </span>
-            <div class="lab__content-card-body-text-convert-bar-progress">
+      <div class="lab__content-card">
+        <div class="lab__content-card-body">
+          @if (digimon.obtained) {
+            <div class="lab__content-card-body-obtained-container">
               <div
-                class="lab__content-card-body-text-convert-bar-progress-fill"
-                [ngStyle]="{ width: digimon.amount + '%' }"
+                class="lab__content-card-body-obtained-check"
+                [appTooltip]="'MODULES.LAB.OBTAINED' | transloco"
+                [tooltipDirection]="'bottom'"
               ></div>
+            </div>
+          }
+          <div class="lab__content-card-body-image">
+            <img
+              [src]="digimon.img"
+              [alt]="digimon.name"
+              [ngStyle]="{ opacity: digimon.obtained ? 1 : 0.5 }"
+            />
+          </div>
+          <div class="lab__content-card-body-text">
+            <span class="lab__content-card-body-text-name">{{
+              digimon.name
+            }}</span>
+            <span class="lab__content-card-body-text-rank"
+              >Rank: {{ digimon.rank }}</span
+            >
+            <span class="lab__content-card-body-text-cost"
+              >Cost: {{ digimon.cost }} bits</span
+            >
+            <div class="lab__content-card-body-text-convert-bar">
+              <span
+                [ngClass]="{
+                  'lab__content-card-body-text-convert-bar__percent--complete':
+                    digimon.amount >= 100,
+                  'lab__content-card-body-text-convert-bar__percent--incomplete':
+                    digimon.amount < 100,
+                }"
+              >
+                {{ digimon.amount }}%
+              </span>
+              <div class="lab__content-card-body-text-convert-bar-progress">
+                <div
+                  class="lab__content-card-body-text-convert-bar-progress-fill"
+                  [ngStyle]="{ width: digimon.amount + '%' }"
+                ></div>
+              </div>
             </div>
           </div>
         </div>
+        <div class="lab__content-card-buttons">
+          <app-button
+            [appTooltip]="'MODULES.LAB.SHOW_EVOLUTIONS' | transloco"
+            weight="bold"
+            icon="graph"
+            iconScale="2"
+            color="secondary"
+            (onClick)="showEvolutionsForDigimon(digimon)"
+          >
+          </app-button>
+          <app-button
+            [appTooltip]="'MODULES.LAB.CONVERT' | transloco"
+            weight="bold"
+            icon="convert"
+            iconScale="2"
+            color="secondary"
+            [disabled]="
+              digimon.amount < 100 ||
+              globalState.playerDataView().bits < digimon.cost
+            "
+            (onClick)="convertDigiData(digimon)"
+          />
+        </div>
       </div>
-      <div class="lab__content-card-buttons">
-        <app-button
-          [appTooltip]="'MODULES.LAB.SHOW_EVOLUTIONS' | transloco"
-          weight="bold"
-          icon="graph"
-          iconScale="2"
-          color="secondary"
-          (onClick)="showEvolutionsForDigimon(digimon)"
-        >
-        </app-button>
-        <app-button
-          [appTooltip]="'MODULES.LAB.CONVERT' | transloco"
-          weight="bold"
-          icon="convert"
-          iconScale="2"
-          color="secondary"
-          [disabled]="
-            digimon.amount < 100 ||
-            globalState.playerDataView().bits < digimon.cost
-          "
-          (onClick)="convertDigiData(digimon)"
-        />
-      </div>
-    </div>
     }
   </div>
 </div>

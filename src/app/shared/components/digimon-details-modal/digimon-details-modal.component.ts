@@ -23,6 +23,7 @@ import { FormsModule } from '@angular/forms';
 import { IconComponent } from "../icon/icon.component";
 import { TooltipDirective } from "app/directives/tooltip.directive";
 import { getDefaultPotential } from '@core/utils/digimon.utils';
+import { LocalizedNumberPipe } from 'app/pipes/localized-number.pipe';
 
 @Component({
   standalone: true,
@@ -39,7 +40,8 @@ import { getDefaultPotential } from '@core/utils/digimon.utils';
     InputComponent,
     FormsModule,
     IconComponent,
-    TooltipDirective
+    TooltipDirective,
+    LocalizedNumberPipe
   ],
 })
 export class DigimonDetailsModalComponent {

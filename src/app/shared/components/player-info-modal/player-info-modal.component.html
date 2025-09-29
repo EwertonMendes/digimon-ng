@@ -11,7 +11,7 @@
             >{{ "SHARED.COMPONENTS.PLAYER_INFO_MODAL.BITS" | transloco }}:</span
           >
           <span class="value">{{
-            globalState.playerDataView().bits | number : "1.0-0"
+            globalState.playerDataView().bits | localizedNumber
           }}</span>
         </div>
         <div class="info-item">
@@ -29,8 +29,8 @@
             }}:</span
           >
           <span class="value">
-            {{ globalState.playerDataView().exp | number : "1.0-0" }} /
-            {{ neededExpForNextLevel() | number : "1.0-0" }}
+            {{ globalState.playerDataView().exp | localizedNumber }} /
+            {{ neededExpForNextLevel() | localizedNumber }}
           </span>
         </div>
         <div class="info-item">
@@ -40,7 +40,7 @@
             }}:</span
           >
           <span class="value">{{
-            globalState.playerDataView().totalExp | number : "1.0-0"
+            globalState.playerDataView().totalExp | localizedNumber
           }}</span>
         </div>
         <div class="info-item">
@@ -50,7 +50,7 @@
             }}:</span
           >
           <span class="value">{{
-            globalState.totalDigimonCount | number : "1.0-0"
+            globalState.totalDigimonCount | localizedNumber
           }}</span>
         </div>
       </div>

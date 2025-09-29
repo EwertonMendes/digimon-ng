@@ -15,6 +15,7 @@ import { DigimonService } from '@services/digimon.service';
 import { GlobalStateDataSource } from '@state/global-state.datasource';
 import { ModalService } from '@shared/components/modal/modal.service';
 import { EvolutionTreeModalComponent } from '@shared/components/evolution-tree-modal/evolution-tree-modal.component';
+import { LocalizedNumberPipe } from 'app/pipes/localized-number.pipe';
 
 type LabDigimon = BaseDigimon & { amount: number; cost: number; obtained: boolean };
 type SortKey = 'name' | 'rank' | 'amount';
@@ -23,7 +24,18 @@ type SortDirection = 'asc' | 'desc';
 @Component({
   selector: 'app-lab',
   standalone: true,
-  imports: [CommonModule, ButtonComponent, TranslocoModule, IconComponent, TooltipDirective, FormsModule, ReactiveFormsModule, CheckboxComponent, SelectComponent],
+  imports: [
+    CommonModule,
+    ButtonComponent,
+    TranslocoModule,
+    IconComponent,
+    TooltipDirective,
+    FormsModule,
+    ReactiveFormsModule,
+    CheckboxComponent,
+    SelectComponent,
+    LocalizedNumberPipe
+  ],
   templateUrl: './lab.component.html',
   styleUrl: './lab.component.scss',
 })

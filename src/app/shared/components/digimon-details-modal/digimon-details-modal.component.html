@@ -134,9 +134,9 @@
               }}</span>
               <span class="value"
                 >{{
-                  globalState.selectedDigimonOnDetails()?.exp | number : "1.0-0"
+                  globalState.selectedDigimonOnDetails()?.exp | localizedNumber
                 }}
-                / {{ neededExpForNextLevel() | number : "1.0-0" }}</span
+                / {{ neededExpForNextLevel() | localizedNumber }}</span
               >
             </div>
             <div class="digimon-details-content-info-item">
@@ -144,7 +144,7 @@
                 "SHARED.COMPONENTS.DIGIMON_DETAILS_MODAL.TOTAL_EXP" | transloco
               }}</span>
               <span class="value">{{
-                globalState.selectedDigimonOnDetails()?.totalExp
+                globalState.selectedDigimonOnDetails()?.totalExp | localizedNumber
               }}</span>
             </div>
             <div class="digimon-details-content-info-item">
@@ -177,13 +177,13 @@
                     }"
                     >{{
                       globalState.selectedDigimonOnDetails()?.currentHp
-                        | number : "1.0-0"
+                        | localizedNumber
                     }}</span
                   >
                   /
                   {{
                     globalState.selectedDigimonOnDetails()?.maxHp
-                      | number : "1.0-0"
+                      | localizedNumber
                   }}</span
                 >
               </div>
@@ -204,13 +204,13 @@
                     }"
                     >{{
                       globalState.selectedDigimonOnDetails()?.currentMp
-                        | number : "1.0-0"
+                        | localizedNumber
                     }}</span
                   >
                   /
                   {{
                     globalState.selectedDigimonOnDetails()?.maxMp
-                      | number : "1.0-0"
+                      | localizedNumber
                   }}</span
                 >
               </div>
@@ -219,7 +219,7 @@
                   "SHARED.COMPONENTS.DIGIMON_DETAILS_MODAL.ATK" | transloco
                 }}</span>
                 <span class="value">{{
-                  globalState.selectedDigimonOnDetails()?.atk | number : "1.0-0"
+                  globalState.selectedDigimonOnDetails()?.atk | localizedNumber
                 }}</span>
               </div>
               <div class="digimon-details-content-info-stats-item">
@@ -227,7 +227,7 @@
                   "SHARED.COMPONENTS.DIGIMON_DETAILS_MODAL.DEF" | transloco
                 }}</span>
                 <span class="value">{{
-                  globalState.selectedDigimonOnDetails()?.def | number : "1.0-0"
+                  globalState.selectedDigimonOnDetails()?.def | localizedNumber
                 }}</span>
               </div>
               <div class="digimon-details-content-info-stats-item">
@@ -236,7 +236,7 @@
                 }}</span>
                 <span class="value">{{
                   globalState.selectedDigimonOnDetails()?.speed
-                    | number : "1.0-0"
+                    | localizedNumber
                 }}</span>
               </div>
               <div class="digimon-details-content-info-stats-item">
@@ -247,7 +247,7 @@
                 <span class="value"
                   >{{
                     globalState.selectedDigimonOnDetails()?.bitFarmingRate
-                      | number : "1.0-0"
+                      | localizedNumber
                   }}
                   /m</span
                 >

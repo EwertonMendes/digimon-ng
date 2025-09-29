@@ -30,11 +30,15 @@ import { SelectComponent } from "@shared/components/select/select.component";
 import { InputComponent } from "@shared/components/input/input.component";
 import { ToastService } from '@shared/components/toast/toast.service';
 import { DesktopDataSource } from '@modules/desktop/desktop.datasource';
+import { CommonModule } from '@angular/common';
+import { LocalizedNumberPipe } from 'app/pipes/localized-number.pipe';
 
 @Component({
   selector: 'app-home-section',
   standalone: true,
   imports: [
+    CommonModule,
+    LocalizedNumberPipe,
     DigiStatusCardComponent,
     ButtonComponent,
     DragDropModule,

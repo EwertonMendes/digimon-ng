@@ -42,7 +42,7 @@
         'MODULES.DESKTOP.COMPONENTS.HOME_SECTION.TEAM_SELECT_PLACEHOLDER'
           | transloco
       "
-      [(ngModel)]="selectedTeam"
+      [(ngModel)]="desktopDatasource.selectedTeam"
       [options]="playerTeams()"
       (valueChange)="setSelectedTeam($event)"
     />
@@ -75,7 +75,7 @@
         "
         icon="floppy-disk"
         color="info"
-        [disabled]="isCreatingTeam() || !selectedTeam()"
+        [disabled]="isCreatingTeam() || !desktopDatasource.selectedTeam()"
         (onClick)="updateTeam()"
       />
       <app-button
@@ -84,7 +84,7 @@
         "
         icon="trash"
         color="danger"
-        [disabled]="isCreatingTeam() || !selectedTeam()"
+        [disabled]="isCreatingTeam() || !desktopDatasource.selectedTeam()"
         (onClick)="removeTeam()"
       />
     </div>
@@ -167,7 +167,7 @@
             'MODULES.DESKTOP.COMPONENTS.HOME_SECTION.TEAM_SELECT_PLACEHOLDER'
               | transloco
           "
-          [(ngModel)]="selectedTeam"
+          [(ngModel)]="desktopDatasource.selectedTeam"
           [options]="playerTeams()"
           (valueChange)="setSelectedTeam($event)"
         />
@@ -200,7 +200,7 @@
             "
             icon="floppy-disk"
             color="info"
-            [disabled]="isCreatingTeam() || !selectedTeam()"
+            [disabled]="isCreatingTeam() || !desktopDatasource.selectedTeam()"
             (onClick)="updateTeam()"
           />
           <app-button
@@ -209,7 +209,7 @@
             "
             icon="trash"
             color="danger"
-            [disabled]="isCreatingTeam() || !selectedTeam()"
+            [disabled]="isCreatingTeam() || !desktopDatasource.selectedTeam()"
             (onClick)="removeTeam()"
           />
         </div>

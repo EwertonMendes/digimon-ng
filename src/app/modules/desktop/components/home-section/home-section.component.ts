@@ -77,7 +77,6 @@ export class HomeSectionComponent {
 
   protected newTeamName = model<string>('');
   protected playerTeams = signal<Array<{ label: string; value: string }>>([]);
-  protected selectedTeam = signal('');
 
   private listLocations: Record<string, string> = {
     'in-training-digimon-list': DigimonListLocation.IN_TRAINING,
@@ -351,8 +350,8 @@ export class HomeSectionComponent {
   }
 
   protected setSelectedTeam($event: string) {
-    this.selectedTeam.set($event);
-    this.globalState.loadBattleTeam(this.selectedTeam());
+    this.desktopDatasource.selectedTeam.set($event);
+    this.globalState.loadBattleTeam(this.desktopDatasource.selectedTeam());
   }
 
   protected processTeamCreation() {
@@ -367,13 +366,13 @@ export class HomeSectionComponent {
   }
 
   protected updateTeam() {
-    this.globalState.updateBattleTeam(this.selectedTeam());
-    this.setSelectedTeam(this.selectedTeam());
+    this.globalState.updateBattleTeam(this.desktopDatasource.selectedTeam());
+    this.setSelectedTeam(this.desktopDatasource.selectedTeam());
   }
 
   protected removeTeam() {
-    this.globalState.removeBattleTeam(this.selectedTeam());
-    this.selectedTeam.set('');
+    this.globalState.removeBattleTeam(this.desktopDatasource.selectedTeam());
+    this.desktopDatasource.selectedTeam.set('');
   }
 
   protected levelUpHospital() {

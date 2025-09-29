@@ -8,6 +8,7 @@ export class DesktopDataSource {
   public homeSectionLayout = signal<DropListOrientation>('horizontal');
   public farmSectionLayout = signal<DropListOrientation>('horizontal');
 
+  public selectedTeam = signal('');
 
   public resetLayouts() {
     this.homeSectionLayout.set('horizontal');

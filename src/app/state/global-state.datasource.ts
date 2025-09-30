@@ -756,6 +756,7 @@ export class GlobalStateDataSource {
       return updatedData;
     });
 
+    this.log(this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.LOCATION_UNLOCKED', { location: this.translocoService.translate(nextLocation.name) }));
     this.toastService.showToast(this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.LOCATION_UNLOCKED', { location: this.translocoService.translate(nextLocation.name) }), 'success');
   }
 

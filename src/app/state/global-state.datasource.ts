@@ -23,6 +23,7 @@ import { WindowService } from '@services/window.service';
 import { Location } from '@core/consts/locations';
 import { LOCATIONS } from '@core/consts/locations';
 import { DesktopDataSource } from '@modules/desktop/desktop.datasource';
+import { AttackAnimationService } from '@services/attack-animation.service';
 
 type EndBattleState = 'victory' | 'defeat' | 'draw';
 type DigimonWithOwner = Digimon & { owner: string };
@@ -53,6 +54,7 @@ export class GlobalStateDataSource {
   private storageService = inject(StorageService);
   private hospitalService = inject(HospitalService);
   private desktopDatasource = inject(DesktopDataSource);
+  private attackAnimationService = inject(AttackAnimationService);
 
   private initialSetupPlayerData: PlayerData = {
     id: '',
@@ -839,8 +841,20 @@ export class GlobalStateDataSource {
     if (!this.isBattleActive) return;
     const target = this.getTargetBasedOnStrategy();
     if (!target) return;
+
     this.currentDefendingDigimon.set({ ...target, owner: 'player' });
-    setTimeout(() => {
+
+    setTimeout(async () => {
+      const attackingCard = document.querySelector(
+        `app-digi-status-card[data-id="${digimon.id}"] `
+      ) as HTMLElement;
+
+      const targetCard = document.querySelector(
+        `app-digi-status-card[data-id="${target.id}"]`
+      ) as HTMLElement;
+
+      await this.attackAnimationService.animateAttackUsingElement(attackingCard, targetCard, digimon.id);
+
       this.attack(digimon, target, 'enemy');
 
       this.turnOrder().shift();

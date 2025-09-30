@@ -2,12 +2,12 @@ import { Component, computed, effect, inject, input, signal } from '@angular/cor
 import { GlobalStateDataSource } from '@state/global-state.datasource';
 import { DigiStatusCardComponent } from '../digi-status-card/digi-status-card.component';
 import { ButtonComponent } from '../button/button.component';
-import { AudioService } from '@services/audio.service';
 import { CommonModule } from '@angular/common';
 import { Digimon } from 'app/core/interfaces/digimon.interface';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 import { ModalComponent } from '../modal/modal.component';
 import { ModalService } from '../modal/modal.service';
+import { AttackAnimationService } from '@services/attack-animation.service';
 
 @Component({
   selector: 'app-battle-modal',
@@ -34,9 +34,9 @@ export class BattleModalComponent {
   protected isBossStage = computed(() => this.globalState.isBossStage(this.globalState.currentBattleStage()));
 
   protected globalState = inject(GlobalStateDataSource);
-  private audioService = inject(AudioService);
   private translocoService = inject(TranslocoService);
   private modalService = inject(ModalService);
+  private attackAnimationService = inject(AttackAnimationService);
 
   constructor() {
     this.canGoToNextStage.set(this.globalState.canGoToNextStage());
@@ -67,7 +67,7 @@ export class BattleModalComponent {
     this.isChoosingDigimonToAttack.set(false);
   }
 
-  protected playerAttack(opponentDigimon: Digimon) {
+  protected async playerAttack(opponentDigimon: Digimon) {
     if (!this.globalState.isBattleActive || !this.isChoosingDigimonToAttack() || opponentDigimon.currentHp <= 0) return;
     this.isChoosingDigimonToAttack.set(false);
     const digimon = this.globalState.turnOrder().shift();
@@ -78,6 +78,16 @@ export class BattleModalComponent {
       ...opponentDigimon,
       owner: 'enemy',
     });
+
+    const attackingCard = document.querySelector(
+      `app-digi-status-card[data-id="${digimon.id}"] `
+    ) as HTMLElement;
+
+    const targetCard = document.querySelector(
+      `app-digi-status-card[data-id="${opponentDigimon.id}"]`
+    ) as HTMLElement;
+
+    await this.attackAnimationService.animateAttackUsingElement(attackingCard, targetCard, digimon.id);
 
     this.globalState.attack(digimon, opponentDigimon, 'player');
 

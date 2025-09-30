@@ -252,6 +252,11 @@
   }
 }
 
+.digimon-placeholder {
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
 @media screen and (max-width: 1366px) {
 
   .digimon-battle-container .digimon-battle-content .turn-order-container {

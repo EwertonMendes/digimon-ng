@@ -755,6 +755,8 @@ export class GlobalStateDataSource {
       updatedData.unlockedLocations = [...updatedData.unlockedLocations, nextLocation.id];
       return updatedData;
     });
+
+    this.toastService.showToast(this.translocoService.translate('SHARED.COMPONENTS.BATTLE_MODAL.LOCATION_UNLOCKED', { location: this.translocoService.translate(nextLocation.name) }), 'success');
   }
 
   unlockSpecificLocation(location: Location) {

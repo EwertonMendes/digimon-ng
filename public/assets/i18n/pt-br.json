@@ -200,7 +200,8 @@
         "ESCAPE_SUCCESS_TOAST": "Fuga bem-sucedida!",
         "ESCAPE_SUCCESS_LOG": "Você fugiu da batalha.",
         "ESCAPE_FAIL_TOAST": "Fuga falhou! Inimigo ataca!",
-        "ESCAPE_FAIL_LOG": "Tentativa de fuga falhou. Inimigo contra-ataca."
+        "ESCAPE_FAIL_LOG": "Tentativa de fuga falhou. Inimigo contra-ataca.",
+        "LOCATION_UNLOCKED": "Você desbloqueou o local {{location}}!"
       },
       "EVOLUTION_TREE_MODAL": {
         "SELECT_DIGIMON_PLACEHOLDER": "Selecione um digimon para ver seus status",

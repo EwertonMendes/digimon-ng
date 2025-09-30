@@ -201,7 +201,8 @@
         "ESCAPE_SUCCESS_TOAST": "¡Escape exitoso!",
         "ESCAPE_SUCCESS_LOG": "Escapaste de la batalla.",
         "ESCAPE_FAIL_TOAST": "¡Escape fallido! ¡El enemigo ataca!",
-        "ESCAPE_FAIL_LOG": "El intento de escape falló. El enemigo contraataca."
+        "ESCAPE_FAIL_LOG": "El intento de escape falló. El enemigo contraataca.",
+        "LOCATION_UNLOCKED": "¡Has desbloqueado el local {{location}}!"
       },
       "EVOLUTION_TREE_MODAL": {
         "SELECT_DIGIMON_PLACEHOLDER": "Selecciona un digimon para ver sus estadísticas",

@@ -45,6 +45,7 @@
       h2 {
         font-size: 2rem;
         color: var(--text);
+        text-align: center;
       }
     }
 
@@ -230,5 +231,16 @@
   .evolution-tree-container .evolution-tree-content .selected-digimon-container .selected-digimon-image img[style] {
     height: auto;
     max-height: 100%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .evolution-tree-container .evolution-tree-content .selected-digimon-container .selected-digimon-content .selected-digimon-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    padding: 10px;
+    color: var(--text);
   }
 }

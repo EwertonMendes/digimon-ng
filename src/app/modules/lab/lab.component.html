@@ -67,53 +67,55 @@
     @for (digimon of filteredDigimons(); track $index) {
       <div class="lab__content-card">
         <div class="lab__content-card-body">
-          @if (digimon.obtained) {
-            <div class="lab__content-card-body-obtained-container">
-              <div
-                class="lab__content-card-body-obtained-check"
-                [appTooltip]="'MODULES.LAB.OBTAINED' | transloco"
-                [tooltipDirection]="'bottom'"
-              ></div>
+          <span class="lab__content-card-body-text-name black-stroke">{{
+            digimon.name
+          }}</span>
+          <div class="lab__content-card-body-content">
+            <div class="lab__content-card-body-content-image">
+              <img
+                [src]="digimon.img"
+                [alt]="digimon.name"
+                [ngStyle]="{ opacity: digimon.obtained ? 1 : 0.5 }"
+              />
             </div>
-          }
-          <div class="lab__content-card-body-image">
-            <img
-              [src]="digimon.img"
-              [alt]="digimon.name"
-              [ngStyle]="{ opacity: digimon.obtained ? 1 : 0.5 }"
-            />
-          </div>
-          <div class="lab__content-card-body-text">
-            <span class="lab__content-card-body-text-name">{{
-              digimon.name
-            }}</span>
-            <span class="lab__content-card-body-text-rank"
-              >Rank: {{ digimon.rank }}</span
-            >
-            <span class="lab__content-card-body-text-cost"
-              >Cost: {{ digimon.cost }} bits</span
-            >
-            <div class="lab__content-card-body-text-convert-bar">
-              <span
-                [ngClass]="{
-                  'lab__content-card-body-text-convert-bar__percent--complete':
-                    digimon.amount >= 100,
-                  'lab__content-card-body-text-convert-bar__percent--incomplete':
-                    digimon.amount < 100,
-                }"
+            <div class="lab__content-card-body-text">
+              <span class="lab__content-card-body-text-rank"
+                >Rank: {{ digimon.rank }}</span
               >
-                {{ digimon.amount }}%
-              </span>
-              <div class="lab__content-card-body-text-convert-bar-progress">
-                <div
-                  class="lab__content-card-body-text-convert-bar-progress-fill"
-                  [ngStyle]="{ width: digimon.amount + '%' }"
-                ></div>
+              <span class="lab__content-card-body-text-cost"
+                >Cost: {{ digimon.cost }} bits</span
+              >
+              <div class="lab__content-card-body-text-convert-bar">
+                <span
+                  [ngClass]="{
+                    'lab__content-card-body-text-convert-bar__percent--complete':
+                      digimon.amount >= 100,
+                    'lab__content-card-body-text-convert-bar__percent--incomplete':
+                      digimon.amount < 100,
+                  }"
+                >
+                  {{ digimon.amount }}%
+                </span>
+                <div class="lab__content-card-body-text-convert-bar-progress">
+                  <div
+                    class="lab__content-card-body-text-convert-bar-progress-fill"
+                    [ngStyle]="{ width: digimon.amount + '%' }"
+                  ></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
         <div class="lab__content-card-buttons">
+          <div class="lab__content-card-buttons-obtained-container">
+            @if (digimon.obtained) {
+              <div
+                class="lab__content-card-buttons-obtained-check"
+                [appTooltip]="'MODULES.LAB.OBTAINED' | transloco"
+                [tooltipDirection]="'bottom'"
+              ></div>
+            }
+          </div>
           <app-button
             [appTooltip]="'MODULES.LAB.SHOW_EVOLUTIONS' | transloco"
             weight="bold"

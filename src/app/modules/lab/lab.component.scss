@@ -74,7 +74,7 @@
     }
 
     h1 {
-      font-size: xx-large;
+      font-size: xxx-large;
       grid-column: 2;
     }
 
@@ -118,8 +118,7 @@
       display: flex;
       flex-direction: column;
       gap: 1rem;
-      align-items: center;
-      flex: 1 1 calc(25% - 1rem);
+      justify-content: space-between;
       min-width: 250px;
       padding: 1rem;
       border-radius: 1rem;
@@ -137,51 +136,38 @@
 
       &-body {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         gap: 0.5rem;
         width: 100%;
         position: relative;
 
-        &-obtained-container {
-          position: absolute;
-          width: 40px;
-          height: 40px;
+        &-text-name {
+          font-size: 30px;
+          align-self: center;
+          font-weight: bold;
+          text-align: center;
+          color: var(--primary);
         }
 
-        &-obtained-check {
-          width: 100%;
-          height: 100%;
-          background-color: var(--info-light);
-          border-radius: 50%;
+        &-content {
           display: flex;
+          flex-direction: row;
           align-items: center;
-          justify-content: center;
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-          transition: transform 0.3s ease;
+          gap: 0.5rem;
+          width: 100%;
 
-          &::before {
-            content: '✓';
-            font-size: 24px;
-            font-weight: bold;
-            color: var(--text-on-info);
-          }
+          &-image {
+            display: flex;
+            justify-content: flex-end;
+            width: 50%;
+            border-radius: 10px;
 
-          &:hover {
-            transform: scale(1.1);
-          }
-        }
-
-        &-image {
-          display: flex;
-          justify-content: flex-end;
-          width: 50%;
-          border-radius: 10px;
-
-          img {
-            height: 150px;
-            width: 150px;
-            object-fit: contain;
-            animation: shake 3s ease-in-out infinite;
+            img {
+              height: 150px;
+              width: 150px;
+              object-fit: contain;
+              animation: shake 3s ease-in-out infinite;
+            }
           }
         }
 
@@ -190,12 +176,6 @@
           flex-direction: column;
           gap: 0.5rem;
           width: 50%;
-
-          &-name {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary);
-          }
 
           &-rank,
           &-cost {
@@ -248,6 +228,36 @@
         justify-content: flex-end;
         align-items: center;
         gap: 1rem;
+
+        &-obtained-container {
+          display: flex;
+          width: -webkit-fill-available;
+          gap: 10px;
+        }
+
+        &-obtained-check {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 40px;
+          min-width: 40px;
+          height: 40px;
+          background-color: var(--info-light);
+          border-radius: 50%;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+          transition: transform 0.3s ease;
+
+          &::before {
+            content: '✓';
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--text-on-info);
+          }
+
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
       }
     }
   }
@@ -318,6 +328,18 @@
       }
     }
   }
+}
+
+.black-stroke {
+  text-shadow:
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black,
+    0 -1px 0 black,
+    0 1px 0 black,
+    -1px 0 0 black,
+    1px 0 0 black;
 }
 
 @keyframes bubblesA {

@@ -1,13 +1,26 @@
-import { Component, computed, effect, inject, model, signal } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  computed,
+  DestroyRef,
+  effect,
+  ElementRef,
+  inject,
+  model,
+  QueryList,
+  signal,
+  ViewChild,
+  ViewChildren
+} from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 
-import { ButtonComponent } from "@shared/components/button/button.component";
+import { ButtonComponent } from '@shared/components/button/button.component';
 import { CheckboxComponent } from '@shared/components/checkbox/checkbox.component';
-import { IconComponent } from "@shared/components/icon/icon.component";
+import { IconComponent } from '@shared/components/icon/icon.component';
 import { SelectComponent } from '@shared/components/select/select.component';
 import { TooltipDirective } from 'app/directives/tooltip.directive';
 import { BaseDigimon } from '@core/interfaces/digimon.interface';
@@ -16,6 +29,10 @@ import { GlobalStateDataSource } from '@state/global-state.datasource';
 import { ModalService } from '@shared/components/modal/modal.service';
 import { EvolutionTreeModalComponent } from '@shared/components/evolution-tree-modal/evolution-tree-modal.component';
 import { LocalizedNumberPipe } from 'app/pipes/localized-number.pipe';
+
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
 type LabDigimon = BaseDigimon & { amount: number; cost: number; obtained: boolean };
 type SortKey = 'name' | 'rank' | 'amount';
@@ -39,7 +56,7 @@ type SortDirection = 'asc' | 'desc';
   templateUrl: './lab.component.html',
   styleUrl: './lab.component.scss',
 })
-export class LabComponent {
+export class LabComponent implements AfterViewInit {
   protected labDigimons = signal<LabDigimon[]>([]);
   protected obtainedDigimonsAmount = computed(() => this.labDigimons().filter(d => d.obtained).length);
 
@@ -98,6 +115,14 @@ export class LabComponent {
   private fb = inject(FormBuilder);
   private transloco = inject(TranslocoService);
   private modalService = inject(ModalService);
+  private destroyRef = inject(DestroyRef);
+
+  @ViewChild('labContent', { read: ElementRef }) labContent!: ElementRef<HTMLElement>;
+  @ViewChildren('labCard', { read: ElementRef }) labCards!: QueryList<ElementRef>;
+
+  private createdTriggers: ScrollTrigger[] = [];
+  private resizeObs?: ResizeObserver;
+  private refreshTimer: any;
 
   constructor() {
     this.transloco.selectTranslation().pipe(takeUntilDestroyed()).subscribe(() => {
@@ -114,6 +139,103 @@ export class LabComponent {
 
     effect(() => {
       this.initializeRankForm();
+    });
+  }
+
+  async ngAfterViewInit(): Promise<void> {
+    const scroller = this.labContent?.nativeElement;
+    const all = this.labCards.map(c => c.nativeElement as Element);
+
+    if (!scroller || !all.length) {
+      return;
+    }
+
+    gsap.set(all, { opacity: 0, y: 24 });
+
+    await this.waitImages(scroller);
+
+    this.createdTriggers.push(
+      ...this.createBatch(all, scroller)
+    );
+
+    this.refreshSoon();
+
+    this.labCards.changes.subscribe((q: QueryList<ElementRef>) => {
+      const els = q.map(c => c.nativeElement as Element);
+      if (!els.length) return;
+
+      gsap.set(els, { opacity: 0, y: 24 });
+
+      this.createdTriggers.push(
+        ...this.createBatch(els, scroller)
+      );
+
+      this.refreshSoon();
+    });
+
+    this.resizeObs = new ResizeObserver(() => this.refreshSoon());
+    this.resizeObs.observe(scroller);
+
+    this.destroyRef.onDestroy(() => {
+      this.resizeObs?.disconnect();
+      this.createdTriggers.forEach(t => t.kill());
+      this.createdTriggers = [];
+      ScrollTrigger.getAll().forEach(t => t.kill());
+      gsap.globalTimeline.clear();
+      if (this.refreshTimer) clearTimeout(this.refreshTimer);
+    });
+  }
+
+  private createBatch(targets: Element[], scroller: HTMLElement): ScrollTrigger[] {
+    const triggers = ScrollTrigger.batch(targets, {
+      start: 'top 85%',
+      scroller,
+      onEnter: (els: Element[]) => {
+        gsap.to(els, {
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+          ease: 'power2.out',
+          stagger: 0.08,
+          overwrite: 'auto'
+        });
+      },
+      onEnterBack: (els: Element[]) => {
+        gsap.to(els, {
+          opacity: 1,
+          y: 0,
+          duration: 0.3,
+          overwrite: 'auto'
+        });
+      }
+    });
+
+    return Array.isArray(triggers) ? triggers : [triggers];
+  }
+
+  private async waitImages(root: HTMLElement): Promise<void> {
+    const imgs = Array.from(root.querySelectorAll('img'));
+    if (!imgs.length) return;
+    await Promise.allSettled(
+      imgs.map(img => {
+        try {
+          if ('decode' in img && typeof (img as HTMLImageElement).decode === 'function') {
+            return (img as HTMLImageElement).decode();
+          }
+        } catch { }
+        return Promise.resolve();
+      })
+    );
+  }
+
+  private refreshSoon(): void {
+    if (this.refreshTimer) clearTimeout(this.refreshTimer);
+    requestAnimationFrame(() => {
+      this.refreshTimer = setTimeout(() => {
+        try {
+          ScrollTrigger.refresh();
+        } catch { }
+      }, 0);
     });
   }
 

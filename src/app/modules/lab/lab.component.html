@@ -5,8 +5,8 @@
         >{{ "MODULES.LAB.FOUND_DIGIMONS" | transloco }}:
         {{ labDigimons().length }}</span
       >
-      <span>
-        {{ "MODULES.LAB.OBTAINED_DIGIMONS" | transloco }}:
+      <span
+        >{{ "MODULES.LAB.OBTAINED_DIGIMONS" | transloco }}:
         {{ obtainedDigimonsAmount() }}</span
       >
     </div>
@@ -21,6 +21,7 @@
       }}</span>
     </div>
   </div>
+
   <div class="lab__filters">
     <div class="lab__filters-group lab__filters-sort">
       <label>{{ "MODULES.LAB.SORT_BY" | transloco }}</label>
@@ -38,8 +39,10 @@
         <form [formGroup]="rankForm()">
           @defer (on viewport) {
             @for (rank of uniqueRanks(); track rank) {
-              <app-checkbox [label]="rank" formControlName="{{ rank }}">
-              </app-checkbox>
+              <app-checkbox
+                [label]="rank"
+                formControlName="{{ rank }}"
+              ></app-checkbox>
             }
           } @placeholder {
             <div>-</div>
@@ -63,9 +66,10 @@
       </app-button>
     </div>
   </div>
-  <div class="lab__content">
+
+  <div #labContent class="lab__content">
     @for (digimon of filteredDigimons(); track $index) {
-      <div class="lab__content-card">
+      <div #labCard class="lab__content-card">
         <div class="lab__content-card-body">
           <span class="lab__content-card-body-text-name black-stroke">{{
             digimon.name

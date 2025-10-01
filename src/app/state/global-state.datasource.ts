@@ -749,7 +749,12 @@ export class GlobalStateDataSource {
     if (!currentLocation) return;
 
     const nextLocation = LOCATIONS[LOCATIONS.findIndex(l => l.id === currentLocation.id) + 1];
+
     if (!nextLocation) return;
+
+    const isNextLocationUnlocked = this.isLocationUnlocked(nextLocation);
+
+    if (isNextLocationUnlocked) return;
 
     this.playerData.update((currentData) => {
       const updatedData = { ...currentData };

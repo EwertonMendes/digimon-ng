@@ -19,9 +19,6 @@ import { ModalService } from '../modal/modal.service';
 import { DeletionConfirmationModalComponent } from '@shared/components/deletion-confirmation-modal/deletion-confirmation-modal.component';
 import { IconComponent } from '../icon/icon.component';
 import gsap from 'gsap';
-import { CSSPlugin } from 'gsap/CSSPlugin';
-
-gsap.registerPlugin(CSSPlugin);
 
 type BadgeType = 'healing' | 'damage' | 'miss' | 'none';
 
@@ -91,7 +88,7 @@ export class DigiStatusCardComponent implements AfterViewInit {
     this.elCard = this.hostRef.nativeElement;
     this.elSlash = this.elCard.querySelector<HTMLElement>('.hit-slash');
     this.elSpark = this.elCard.querySelector<HTMLElement>('.hit-spark');
-    gsap.defaults({ overwrite: 'auto', force3D: true });
+    gsap.defaults({ overwrite: 'auto' });
     this.buildHitTimeline();
   }
 
@@ -138,8 +135,8 @@ export class DigiStatusCardComponent implements AfterViewInit {
         gsap.set(el, { opacity: 0, y: 10, scale: 0.98, transformOrigin: '50% 50%' });
 
         this.tlBadge = gsap.timeline({ onComplete: () => this.onBadgeAnimationDone() })
-          .to(el, { opacity: 1, y: -8, scale: 1, duration: 0.35, ease: 'power2.out', force3D: true })
-          .to(el, { y: -96, opacity: 0, duration: 1.9, ease: 'power1.out', delay: 0.3, force3D: true });
+          .to(el, { opacity: 1, y: -8, scale: 1, duration: 0.35, ease: 'power2.out' })
+          .to(el, { y: -96, opacity: 0, duration: 1.9, ease: 'power1.out', delay: 0.3 });
       });
     }, 0);
   }
@@ -196,19 +193,19 @@ export class DigiStatusCardComponent implements AfterViewInit {
 
     if (spark) {
       this.tlHit
-        .to(spark, { opacity: 1, scale: 1.12, duration: 0.08, ease: 'back.out(4)', force3D: true }, 0.04)
-        .to(spark, { rotate: 45, duration: 0.1, ease: 'power2.out', force3D: true }, 0.06)
-        .to(spark, { opacity: 0, scale: 0.9, duration: 0.12, ease: 'power1.in', force3D: true }, 0.18)
+        .to(spark, { opacity: 1, scale: 1.12, duration: 0.08, ease: 'back.out(4)' }, 0.04)
+        .to(spark, { rotate: 45, duration: 0.1, ease: 'power2.out' }, 0.06)
+        .to(spark, { opacity: 0, scale: 0.9, duration: 0.12, ease: 'power1.in' }, 0.18)
         .add(() => { gsap.set(spark, { opacity: 0, scale: 0.6, rotate: 0 }); }, 0.32);
     }
 
     this.tlHit
-      .to(card, { x: () => this.ampX(12), y: () => this.ampY(-3), rotation: 1.2, duration: 0.05, ease: 'power2.in', force3D: true }, 0)
-      .to(card, { x: () => this.ampX(-14), y: () => this.ampY(3), rotation: -1.2, duration: 0.06, ease: 'power2.inOut', force3D: true })
-      .to(card, { x: () => this.ampX(10), y: () => this.ampY(-2), rotation: 0.8, duration: 0.05, ease: 'power2.inOut', force3D: true })
-      .to(card, { x: () => this.ampX(-8), y: () => this.ampY(2), rotation: -0.8, duration: 0.05, ease: 'power2.inOut', force3D: true })
-      .to(card, { x: () => this.ampX(4), y: () => this.ampY(-1), rotation: 0.4, duration: 0.04, ease: 'power2.inOut', force3D: true })
-      .to(card, { x: 0, y: 0, rotation: 0, duration: 0.06, ease: 'power2.out', force3D: true });
+      .to(card, { x: () => this.ampX(12), y: () => this.ampY(-3), rotation: 1.2, duration: 0.05, ease: 'power2.in' }, 0)
+      .to(card, { x: () => this.ampX(-14), y: () => this.ampY(3), rotation: -1.2, duration: 0.06, ease: 'power2.inOut' })
+      .to(card, { x: () => this.ampX(10), y: () => this.ampY(-2), rotation: 0.8, duration: 0.05, ease: 'power2.inOut' })
+      .to(card, { x: () => this.ampX(-8), y: () => this.ampY(2), rotation: -0.8, duration: 0.05, ease: 'power2.inOut' })
+      .to(card, { x: () => this.ampX(4), y: () => this.ampY(-1), rotation: 0.4, duration: 0.04, ease: 'power2.inOut' })
+      .to(card, { x: 0, y: 0, rotation: 0, duration: 0.06, ease: 'power2.out' });
 
     this.tlHit
       .to(card, { boxShadow: '0 0 0.7rem rgba(255, 64, 64, 0.38)', filter: 'brightness(1.1) contrast(1.03)', duration: 0.12 }, 0.02)

@@ -5,10 +5,6 @@ import { InitialSetupComponent } from './modules/initial-setup/initial-setup.com
 import { PlayerDataService } from './services/player-data.service';
 import { RouterOutlet } from '@angular/router';
 import { ShortcutService } from '@services/shortcut.service';
-import { gsap } from 'gsap';
-import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
-
-gsap.registerPlugin(MotionPathPlugin);
 
 @Component({
   selector: 'app-root',

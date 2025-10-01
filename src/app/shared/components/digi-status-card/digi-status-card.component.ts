@@ -229,6 +229,14 @@ export class DigiStatusCardComponent implements AfterViewInit {
 
   private playHitAnimation(): void {
     this.resetHitVisuals();
+
+    this.resetHitVisuals();
+    this.globalState.isBattleAnimationPlaying.set(true);
+
+    this.tlHit.eventCallback('onComplete', () => {
+      this.globalState.isBattleAnimationPlaying.set(false);
+    });
+
     this.tlHit.pause(0).play(0);
   }
 }

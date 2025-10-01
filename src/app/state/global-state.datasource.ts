@@ -85,6 +85,7 @@ export class GlobalStateDataSource {
   currentDefendingDigimon = signal<DigimonWithOwner | null>(null);
   isBattleActive = signal<boolean>(false);
   showPlayerAttackButton = signal<boolean>(false);
+  isBattleAnimationPlaying = signal<boolean>(false);
   private currentExploredLocation = signal<Location | null>(null);
   private battleStage = signal<number>(1);
   private trainingDigimonIntervalDurationInSeconds = signal<number>(30);

@@ -87,7 +87,9 @@ export class BattleModalComponent {
       `app-digi-status-card[data-id="${opponentDigimon.id}"]`
     ) as HTMLElement;
 
-    await this.attackAnimationService.animateAttackUsingElement(attackingCard, targetCard, digimon.id);
+    this.globalState.showPlayerAttackButton.set(false);
+
+    await this.attackAnimationService.animateAttackUsingElement(attackingCard, targetCard, digimon.id!);
 
     this.globalState.attack(digimon, opponentDigimon, 'player');
 

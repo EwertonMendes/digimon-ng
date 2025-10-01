@@ -2,69 +2,69 @@
   tabindex="0"
   class="my-digimon-card"
   [ngStyle]="{ filter: digimon().currentHp <= 0 ? 'brightness(0.6)' : '' }"
-  [@damage]="damageState()"
-  (@damage.done)="resetDamageState()"
 >
+  <span class="hit-slash" aria-hidden="true"></span>
+  <span class="hit-spark" aria-hidden="true"></span>
+
   <div class="digimon-attribute">
-    <app-icon [name]="'attribute-' + digimon().attribute.toLowerCase()"/>
+    <app-icon [name]="'attribute-' + digimon().attribute.toLowerCase()" />
   </div>
 
-  @if(isHovered() && isDeletable()) {
-  <div
-    class="delete-button"
-    (click)="openDeleteConfirmationModal(); $event.stopPropagation()"
-  >
-    x
-  </div>
-  }
-  <div class="modifications">
-    @if(showHpChange()) {
-    <span
-      class="modifications-item"
-      [ngClass]="hpChange().changeType"
-      @fadeUp
-      (@fadeUp.done)="onHpChangeAnimationDone()"
+  @if (isHovered() && isDeletable()) {
+    <div
+      class="delete-button"
+      (click)="openDeleteConfirmationModal(); $event.stopPropagation()"
     >
-      {{ hpChange().changeType === "damage" ? "-" : "+" }}
-      {{ hpChange().hpChangeValue }} HP
-    </span>
+      x
+    </div>
+  }
+
+  <div class="modifications">
+    @if (showBadge()) {
+      <span class="modifications-item" [ngClass]="badgeType()">
+        {{ badgeText() }}
+      </span>
     }
   </div>
+
   <div class="my-digimon-card-image">
     <img [src]="digimon().img" [alt]="digimon().name" />
   </div>
+
   <div class="my-digimon-card-content">
     <span class="my-digimon-card-name">
-      <span> Lv. {{ digimon().level }} </span
-      >{{ digimon().nickName ? digimon().nickName : digimon().name }}
+      <span> Lv. {{ digimon().level }} </span>
+      {{ digimon().nickName ? digimon().nickName : digimon().name }}
     </span>
+
     <div class="my-digimon-card-attributes">
-      <span
-        >HP:
+      <span>
+        HP:
         <span
           [ngClass]="{
             'low-stat':
               digimon().currentHp <= 0.2 * digimon().maxHp &&
               digimon().currentHp > 0,
-            'zero-stat': digimon().currentHp === 0
+            'zero-stat': digimon().currentHp === 0,
           }"
           >{{ digimon().currentHp }}</span
         >
-        / {{ digimon().maxHp }}</span
-      >
-      <span
-        >MP:
+        / {{ digimon().maxHp }}
+      </span>
+
+      <span>
+        MP:
         <span
           [ngClass]="{
             'low-stat':
               digimon().currentMp <= 0.2 * digimon().maxMp &&
               digimon().currentMp > 0,
-            'zero-stat': digimon().currentMp === 0
+            'zero-stat': digimon().currentMp === 0,
           }"
           >{{ digimon().currentMp }}</span
         >
-        / {{ digimon().maxMp }}</span
-      >
+        / {{ digimon().maxMp }}
+      </span>
     </div>
   </div>
 </div>

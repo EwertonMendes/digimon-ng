@@ -159,3 +159,102 @@
     }
   }
 }
+
+.my-digimon-card {
+  position: relative;
+  overflow: visible;
+  will-change: transform, filter, box-shadow;
+  transform-origin: 50% 50%;
+}
+
+.hit-slash {
+  position: absolute;
+  left: 10%;
+  top: 15%;
+  width: 80%;
+  height: 12%;
+  border-radius: 999px;
+  opacity: 0;
+  pointer-events: none;
+  filter: blur(1px);
+  background: linear-gradient(90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.85) 40%,
+      rgba(255, 160, 160, 0.85) 60%,
+      rgba(255, 255, 255, 0) 100%);
+  mix-blend-mode: screen;
+  z-index: 3;
+  transform-origin: 50% 50%;
+}
+
+.hit-spark {
+  position: absolute;
+  left: 55%;
+  top: 40%;
+  width: 10px;
+  height: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transform-origin: 50% 50%;
+  filter: drop-shadow(0 0 6px rgba(255, 120, 120, 0.8));
+  z-index: 3;
+}
+
+.hit-spark::before,
+.hit-spark::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 2px;
+  height: 18px;
+  background: linear-gradient(to bottom,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 220, 220, 0.95) 50%,
+      rgba(255, 255, 255, 0) 100%);
+  transform: translate(-50%, -50%) rotate(0deg);
+  border-radius: 2px;
+}
+
+.hit-spark::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.modifications {
+  position: absolute;
+  left: 50%;
+  top: -6px;
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.modifications-item {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-weight: 700;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.modifications-item.healing {
+  background: rgba(40, 200, 120, 0.15);
+  border: 1px solid rgba(40, 200, 120, 0.6);
+  color: #39d98a;
+  text-shadow: 0 0 4px rgba(57, 217, 138, 0.35);
+}
+
+.modifications-item.damage {
+  background: rgba(240, 60, 60, 0.15);
+  border: 1px solid rgba(240, 60, 60, 0.6);
+  color: #ff6b6b;
+  text-shadow: 0 0 4px rgba(255, 107, 107, 0.35);
+}
+
+.modifications-item.miss {
+  background: rgba(64, 140, 255, 0.15);
+  border: 1px solid rgba(64, 140, 255, 0.6);
+  color: #68a0ff;
+  text-shadow: 0 0 4px rgba(104, 160, 255, 0.35);
+}

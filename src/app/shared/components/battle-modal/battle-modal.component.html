@@ -10,7 +10,7 @@
     <div
       class="digimon-battle-content"
       [ngClass]="{
-        'digimon-battle-content-colored-background': !imageBackground(),
+        'digimon-battle-content-colored-background': !imageBackground()
       }"
       [ngStyle]="{
         'background-image': imageBackground()
@@ -19,7 +19,7 @@
             ')'
           : 'none',
         'background-size': 'cover',
-        'background-position': 'center',
+        'background-position': 'center'
       }"
     >
       <div class="turn-order-container">
@@ -27,233 +27,204 @@
           <h4 class="turn-order-title">
             {{ "SHARED.COMPONENTS.BATTLE_MODAL.TURN_ORDER_TITLE" | transloco }}
           </h4>
-          @for (
-            digimon of globalState.turnOrder();
-            track digimon.seed + $index
-          ) {
-            <div
-              class="turn-order-digimon"
-              [ngClass]="{
-                'player-digimon': digimon.owner === 'player',
-                'enemy-digimon': digimon.owner === 'enemy',
-              }"
-            >
-              <img
-                [src]="digimon.img"
-                alt="digimon"
-                class="turn-order-digimon-image"
-              />
-              <div class="turn-order-digimon-info">
-                <div class="turn-order-digimon-name">{{ digimon.name }}</div>
-              </div>
+          @for(digimon of globalState.turnOrder(); track digimon.seed + $index){
+          <div
+            class="turn-order-digimon"
+            [ngClass]="{
+              'player-digimon': digimon.owner === 'player',
+              'enemy-digimon': digimon.owner === 'enemy'
+            }"
+          >
+            <img
+              [src]="digimon.img"
+              alt="digimon"
+              class="turn-order-digimon-image"
+            />
+            <div class="turn-order-digimon-info">
+              <div class="turn-order-digimon-name">{{ digimon.name }}</div>
             </div>
+          </div>
           }
         </div>
       </div>
+
       <div class="digimon-battle-content-container">
         <div class="teams-container">
+          <!-- PLAYER -->
           <div class="player-team-container">
             <h4 class="team-title">
-              {{
-                "SHARED.COMPONENTS.BATTLE_MODAL.PLAYER_TEAM_TITLE" | transloco
-              }}
+              {{ "SHARED.COMPONENTS.BATTLE_MODAL.PLAYER_TEAM_TITLE" | transloco }}
             </h4>
             <div class="player-team">
-              @for (
-                digimon of globalState.playerDataView().digimonList;
-                track digimon.id
-              ) {
-                <div class="digimon-container">
-                  <span
-                    class="action-indicator"
-                    [style]="{
-                      visibility:
-                        globalState.currentAttackingDigimon()?.id ===
-                          digimon.id ||
-                        globalState.currentDefendingDigimon()?.id === digimon.id
-                          ? 'visible'
-                          : 'hidden',
-                    }"
-                  >
-                    @if (
+              @for(digimon of globalState.playerDataView().digimonList; track digimon.id){
+              <div class="digimon-container" #playerDigimonsContainer [attr.data-id]="digimon.id">
+                <span
+                  class="action-indicator"
+                  [style]="{
+                    visibility:
                       globalState.currentAttackingDigimon()?.id === digimon.id
-                    ) {
-                      🔽
-                    }
-                    @if (
-                      globalState.currentDefendingDigimon()?.id === digimon.id
-                    ) {
-                      💥
-                    }
-                  </span>
-                  <app-digi-status-card
-                    [digimon]="digimon"
-                    #playerCard
-                    [attr.data-id]="digimon.id"
-                  />
-                </div>
+                        ? 'visible'
+                        : 'hidden'
+                  }"
+                >
+                  🔽
+                </span>
+
+                <app-digi-status-card
+                  [digimon]="digimon"
+                  #playerCard
+                  [attr.data-id]="digimon.id"
+                />
+              </div>
               }
             </div>
           </div>
+
           <span class="middle-panel">
             <span>
-              @if (isBossStage()) {
-                {{ "SHARED.COMPONENTS.BATTLE_MODAL.BOSS" | transloco }}
-              } @else {
-                {{
-                  "SHARED.COMPONENTS.BATTLE_MODAL.STAGE"
-                    | transloco
-                      : {
-                          stage: globalState.currentBattleStage(),
-                        }
-                }}
+              @if(isBossStage()) {
+              {{ "SHARED.COMPONENTS.BATTLE_MODAL.BOSS" | transloco }} } @else {
+              {{
+                "SHARED.COMPONENTS.BATTLE_MODAL.STAGE"
+                  | transloco
+                    : {
+                        stage: globalState.currentBattleStage()
+                      }
+              }}
               }
             </span>
-            @if (globalState.isBattleActive()) {
-              <span>{{
-                globalState.currentAttackingDigimon()?.owner === "player"
-                  ? ("SHARED.COMPONENTS.BATTLE_MODAL.PLAYER_TURN"
+
+            @if(globalState.isBattleActive() ) {
+            <span>{{
+              globalState.currentAttackingDigimon()?.owner === "player"
+                ? ("SHARED.COMPONENTS.BATTLE_MODAL.PLAYER_TURN"
+                  | transloco
+                    : {
+                        playerName: globalState.playerDataView().name
+                      })
+                : ("SHARED.COMPONENTS.BATTLE_MODAL.ENEMY_TURN" | transloco)
+            }}</span>
+            }
+
+            @if(globalState.showPlayerAttackButton() &&
+            !isChoosingDigimonToAttack() && globalState.isBattleActive()) {
+            <div class="player-actions-container">
+              <app-button
+                [text]="
+                  'SHARED.COMPONENTS.BATTLE_MODAL.ATTACK_BUTTON' | transloco
+                "
+                icon="sword"
+                iconScale="1.5"
+                iconPosition="right"
+                (onClick)="onClickAttack()"
+              />
+              <app-button
+                [text]="
+                  'SHARED.COMPONENTS.BATTLE_MODAL.RUN_AWAY_BUTTON' | transloco
+                "
+                icon="run-away"
+                iconScale="1.5"
+                color="danger"
+                iconPosition="right"
+                [disabled]="!globalState.isBattleActive()"
+                (onClick)="attemptRunAway()"
+              />
+            </div>
+            }
+
+            @if(isChoosingDigimonToAttack() && globalState.isBattleActive()) {
+            <div class="player-actions-container">
+              <app-button
+                [text]="
+                  'SHARED.COMPONENTS.BATTLE_MODAL.CANCEL_ATTACK_BUTTON'
                     | transloco
-                      : {
-                          playerName: globalState.playerDataView().name,
-                        })
-                  : ("SHARED.COMPONENTS.BATTLE_MODAL.ENEMY_TURN" | transloco)
-              }}</span>
+                "
+                icon="cancel"
+                iconScale="1.6"
+                color="secondary"
+                iconPosition="right"
+                (onClick)="cancelAttack()"
+              />
+            </div>
             }
-            @if (
-              globalState.showPlayerAttackButton() &&
-              !isChoosingDigimonToAttack() &&
-              globalState.isBattleActive()
-            ) {
-              <div class="player-actions-container">
-                <app-button
-                  [text]="
-                    'SHARED.COMPONENTS.BATTLE_MODAL.ATTACK_BUTTON' | transloco
-                  "
-                  icon="sword"
-                  iconScale="1.5"
-                  iconPosition="right"
-                  (onClick)="onClickAttack()"
-                />
-                <app-button
-                  [text]="
-                    'SHARED.COMPONENTS.BATTLE_MODAL.RUN_AWAY_BUTTON' | transloco
-                  "
-                  icon="run-away"
-                  iconScale="1.5"
-                  color="danger"
-                  iconPosition="right"
-                  [disabled]="!globalState.isBattleActive()"
-                  (onClick)="attemptRunAway()"
-                />
-              </div>
-            }
-            @if (isChoosingDigimonToAttack() && globalState.isBattleActive()) {
-              <div class="player-actions-container">
-                <app-button
-                  [text]="
-                    'SHARED.COMPONENTS.BATTLE_MODAL.CANCEL_ATTACK_BUTTON'
-                      | transloco
-                  "
-                  icon="cancel"
-                  iconScale="1.6"
-                  color="secondary"
-                  iconPosition="right"
-                  (onClick)="cancelAttack()"
-                />
-              </div>
-            }
-            @if (!globalState.isBattleActive()) {
-              <div class="player-actions-container">
-                @if (canGoToNextStage() && !ranAway()) {
-                  <app-button
-                    [text]="
-                      'SHARED.COMPONENTS.BATTLE_MODAL.GO_TO_NEXT_STAGE_BUTTON'
-                        | transloco
-                    "
-                    color="secondary"
-                    (onClick)="goToNextStage()"
-                  />
-                }
-                @if (canRepeatStage() && !ranAway()) {
-                  <app-button
-                    [text]="
-                      'SHARED.COMPONENTS.BATTLE_MODAL.REPEAT_STAGE_BUTTON'
-                        | transloco
-                    "
-                    color="info"
-                    (onClick)="repeatStage()"
-                  />
-                }
-                <app-button
-                  [text]="
-                    'SHARED.COMPONENTS.BATTLE_MODAL.EXIT_LOCATION_BUTTON'
-                      | transloco
-                  "
-                  color="danger"
-                  (onClick)="exitLocation()"
-                />
-              </div>
+
+            @if(!globalState.isBattleActive()) {
+            <div class="player-actions-container">
+              @if(canGoToNextStage() && !ranAway()) {
+              <app-button
+                [text]="
+                  'SHARED.COMPONENTS.BATTLE_MODAL.GO_TO_NEXT_STAGE_BUTTON'
+                    | transloco
+                "
+                color="secondary"
+                (onClick)="goToNextStage()"
+              />
+              }
+              @if(canRepeatStage() && !ranAway()) {
+              <app-button
+                [text]="
+                  'SHARED.COMPONENTS.BATTLE_MODAL.REPEAT_STAGE_BUTTON'
+                    | transloco
+                "
+                color="info"
+                (onClick)="repeatStage()"
+              />
+              }
+              <app-button
+                [text]="
+                  'SHARED.COMPONENTS.BATTLE_MODAL.EXIT_LOCATION_BUTTON'
+                    | transloco
+                "
+                color="danger"
+                (onClick)="exitLocation()"
+              />
+            </div>
             }
           </span>
+
+          <!-- ENEMY -->
           <div class="enemy-team-container">
             <h4 class="team-title">
-              {{
-                "SHARED.COMPONENTS.BATTLE_MODAL.ENEMY_TEAM_TITLE" | transloco
-              }}
+              {{ "SHARED.COMPONENTS.BATTLE_MODAL.ENEMY_TEAM_TITLE" | transloco }}
             </h4>
             <div class="enemy-team">
-              @for (
-                digimon of globalState.enemyTeamAccessor;
-                track digimon.id
-              ) {
-                <div class="digimon-container">
-                  <span
-                    class="action-indicator"
-                    [style]="{
-                      visibility:
-                        globalState.currentAttackingDigimon()?.id ===
-                          digimon.id ||
-                        globalState.currentDefendingDigimon()?.id === digimon.id
-                          ? 'visible'
-                          : 'hidden',
-                    }"
-                  >
-                    @if (
+              @for(digimon of globalState.enemyTeamAccessor; track digimon.id){
+              <div class="digimon-container" #enemyDigimonsContainer [attr.data-id]="digimon.id">
+                <span
+                  class="action-indicator"
+                  [style]="{
+                    visibility:
                       globalState.currentAttackingDigimon()?.id === digimon.id
-                    ) {
-                      🔽
-                    }
-                    @if (
-                      globalState.currentDefendingDigimon()?.id === digimon.id
-                    ) {
-                      💥
-                    }
-                  </span>
-                  <app-digi-status-card
-                    #enemyCard
-                    [attr.data-id]="digimon.id"
-                    [digimon]="digimon"
-                    (click)="playerAttack(digimon)"
-                    [ngClass]="{
-                      selectable:
-                        isChoosingDigimonToAttack() && digimon.currentHp > 0,
-                    }"
-                  />
-                </div>
+                        ? 'visible'
+                        : 'hidden'
+                  }"
+                >
+                  🔽
+                </span>
+
+                <app-digi-status-card
+                  [digimon]="digimon"
+                  #enemyCard
+                  [attr.data-id]="digimon.id"
+                  (click)="playerAttack(digimon)"
+                  [ngClass]="{
+                    selectable:
+                      isChoosingDigimonToAttack() && digimon.currentHp > 0
+                  }"
+                />
+              </div>
               }
             </div>
           </div>
         </div>
+
         <div class="battle-log-container">
           <h4 class="battle-log-title">
             {{ "SHARED.COMPONENTS.BATTLE_MODAL.BATTLE_LOG_TITLE" | transloco }}
           </h4>
-          @for (
-            log of this.globalState.battleLogAccessor.slice().reverse();
-            track $index
-          ) {
-            <span class="battle-log">▶ {{ log }}</span>
+          @for(log of this.globalState.battleLogAccessor.slice().reverse();
+          track $index){
+          <span class="battle-log">▶ {{ log }}</span>
           }
         </div>
       </div>

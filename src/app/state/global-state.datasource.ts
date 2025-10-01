@@ -787,8 +787,6 @@ export class GlobalStateDataSource {
   attack(attacker: Digimon, defender: Digimon, owner: string) {
     const dealtDamage = this.battleService.attack(attacker, defender);
 
-
-
     if (dealtDamage === 0) {
       this.audioService.playAudio(AudioEffects.MISS);
 
@@ -796,6 +794,14 @@ export class GlobalStateDataSource {
         attacker: attacker.nickName ?? attacker.name,
         defender: defender.nickName ?? defender.name
       }));
+
+      this.digimonHpChanges$.next({
+        digimonId: defender.id!,
+        previousHp: defender.currentHp,
+        currentHp: defender.currentHp,
+        difference: 0,
+        isPositive: false,
+      });
 
       return 0;
     }
@@ -853,7 +859,9 @@ export class GlobalStateDataSource {
         `app-digi-status-card[data-id="${target.id}"]`
       ) as HTMLElement;
 
-      await this.attackAnimationService.animateAttackUsingElement(attackingCard, targetCard, digimon.id);
+      this.showPlayerAttackButton.set(false);
+
+      await this.attackAnimationService.animateAttackUsingElement(attackingCard, targetCard, digimon.id!);
 
       this.attack(digimon, target, 'enemy');
 

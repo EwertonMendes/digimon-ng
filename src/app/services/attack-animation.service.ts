@@ -35,7 +35,6 @@ export class AttackAnimationService {
         this.animateWithTransformOnly(attackerEl, targetEl, dx, dy, id, resolve);
         return;
       }
-
       this.animateWithPlaceholder(attackerEl, targetEl, dx, dy, startLeft, startTop, width, height, id, resolve);
     });
   }
@@ -54,7 +53,6 @@ export class AttackAnimationService {
         (cs.filter && cs.filter !== 'none') ||
         (cs.willChange && /transform|perspective|filter/.test(cs.willChange)) ||
         (cs.overflow && (cs.overflow === 'hidden' || cs.overflow === 'clip'));
-
       if (problematic) return true;
       node = node.parentElement;
     }
@@ -80,6 +78,8 @@ export class AttackAnimationService {
     if (!id) return;
     const prev = this.timelines.get(id);
     if (!prev) return;
+    prev.eventCallback('onComplete', null);
+    prev.eventCallback('onInterrupt', null);
     prev.kill();
     this.timelines.delete(id);
   }
@@ -96,7 +96,7 @@ export class AttackAnimationService {
       onComplete: () => {
         attackerEl.style.willChange = '';
         attackerEl.style.zIndex = '';
-        this.clearTimeline(id);
+        if (id) this.timelines.delete(id);
         resolve();
       }
     });
@@ -106,13 +106,13 @@ export class AttackAnimationService {
     attackerEl.style.willChange = 'transform';
     attackerEl.style.zIndex = '9999';
 
-    tl.to(attackerEl, { duration: 0.36, x: dx, y: dy, scale: 1.05, ease: 'power2.out' })
+    tl.to(attackerEl, { duration: 0.36, x: dx, y: dy, scale: 1.05, ease: 'power2.out', overwrite: 'auto' })
       .to(
         targetEl,
-        { duration: 0.12, y: -8, scale: 0.98, yoyo: true, repeat: 1, ease: 'power1.inOut' },
+        { duration: 0.12, y: -8, scale: 0.98, yoyo: true, repeat: 1, ease: 'power1.inOut', overwrite: 'auto' },
         '<'
       )
-      .to(attackerEl, { duration: 0.32, x: 0, y: 0, scale: 1, ease: 'power2.inOut' });
+      .to(attackerEl, { duration: 0.32, x: 0, y: 0, scale: 1, ease: 'power2.inOut', overwrite: 'auto' });
   }
 
   private animateWithPlaceholder(
@@ -167,6 +167,8 @@ export class AttackAnimationService {
     });
 
     const cleanup = () => {
+      tl.eventCallback('onComplete', null);
+      tl.eventCallback('onInterrupt', null);
       Object.assign(attackerEl.style, originalStyles);
       if (placeholder.parentElement === parent) {
         parent.replaceChild(attackerEl, placeholder);
@@ -174,19 +176,19 @@ export class AttackAnimationService {
         parent.appendChild(attackerEl);
       }
       if (placeholder.parentElement) placeholder.remove();
-      this.clearTimeline(id);
+      if (id) this.timelines.delete(id);
       resolve();
     };
 
     const tl = gsap.timeline({ onComplete: cleanup, onInterrupt: cleanup });
     if (id) this.timelines.set(id, tl);
 
-    tl.to(attackerEl, { duration: 0.36, x: dx, y: dy, scale: 1.05, ease: 'power2.out' })
+    tl.to(attackerEl, { duration: 0.36, x: dx, y: dy, scale: 1.05, ease: 'power2.out', overwrite: 'auto' })
       .to(
         targetEl,
-        { duration: 0.12, y: -8, scale: 0.98, yoyo: true, repeat: 1, ease: 'power1.inOut' },
+        { duration: 0.12, y: -8, scale: 0.98, yoyo: true, repeat: 1, ease: 'power1.inOut', overwrite: 'auto' },
         '<'
       )
-      .to(attackerEl, { duration: 0.32, x: 0, y: 0, scale: 1, ease: 'power2.inOut' });
+      .to(attackerEl, { duration: 0.32, x: 0, y: 0, scale: 1, ease: 'power2.inOut', overwrite: 'auto' });
   }
 }

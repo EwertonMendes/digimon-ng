@@ -1,5 +1,6 @@
 import {
   AfterViewInit,
+  ChangeDetectionStrategy,
   Component,
   computed,
   DestroyRef,
@@ -17,7 +18,7 @@ import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
-
+import { ScrollingModule } from '@angular/cdk/scrolling';
 import { ButtonComponent } from '@shared/components/button/button.component';
 import { CheckboxComponent } from '@shared/components/checkbox/checkbox.component';
 import { IconComponent } from '@shared/components/icon/icon.component';
@@ -29,10 +30,8 @@ import { GlobalStateDataSource } from '@state/global-state.datasource';
 import { ModalService } from '@shared/components/modal/modal.service';
 import { EvolutionTreeModalComponent } from '@shared/components/evolution-tree-modal/evolution-tree-modal.component';
 import { LocalizedNumberPipe } from 'app/pipes/localized-number.pipe';
-
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-gsap.registerPlugin(ScrollTrigger);
+import { setupLabCardAnimations } from './lab.animations';
+import { startLabLayoutController } from './lab.layout';
 
 type LabDigimon = BaseDigimon & { amount: number; cost: number; obtained: boolean };
 type SortKey = 'name' | 'rank' | 'amount';
@@ -51,15 +50,16 @@ type SortDirection = 'asc' | 'desc';
     ReactiveFormsModule,
     CheckboxComponent,
     SelectComponent,
-    LocalizedNumberPipe
+    LocalizedNumberPipe,
+    ScrollingModule
   ],
   templateUrl: './lab.component.html',
   styleUrl: './lab.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LabComponent implements AfterViewInit {
   protected labDigimons = signal<LabDigimon[]>([]);
   protected obtainedDigimonsAmount = computed(() => this.labDigimons().filter(d => d.obtained).length);
-
   protected sortBy = model<SortKey>('name');
   protected filterObtained = model<boolean>(false);
   protected sortDirection = signal<SortDirection>('asc');
@@ -68,48 +68,30 @@ export class LabComponent implements AfterViewInit {
     const ranks = new Set(this.labDigimons().map(d => d.rank));
     return Array.from(ranks).sort(this.rankComparator.bind(this));
   });
-
   protected rankForm = signal<FormGroup>(new FormGroup({}));
   protected sortOptions = signal<{ label: string; value: SortKey }[]>([]);
-
   protected filteredDigimons = computed(() => {
-    let digimons = [...this.labDigimons()];
-
-    if (this.selectedRanks().length > 0) {
-      digimons = digimons.filter(d => this.selectedRanks().includes(d.rank));
-    }
-
-    if (this.filterObtained()) {
-      digimons = digimons.filter(d => d.obtained);
-    }
-
-    const directionMultiplier = this.sortDirection() === 'asc' ? 1 : -1;
-
-    digimons.sort((a, b) => {
-      let compareA: string | number;
-      let compareB: string | number;
-
+    let digimons = this.labDigimons();
+    if (this.selectedRanks().length > 0) digimons = digimons.filter(d => this.selectedRanks().includes(d.rank));
+    if (this.filterObtained()) digimons = digimons.filter(d => d.obtained);
+    const dir = this.sortDirection() === 'asc' ? 1 : -1;
+    return [...digimons].sort((a, b) => {
       switch (this.sortBy()) {
-        case 'name':
-          compareA = a.name.toLowerCase();
-          compareB = b.name.toLowerCase();
-          return directionMultiplier * compareA.localeCompare(compareB);
-        case 'rank':
-          compareA = this.getRankOrder(a.rank);
-          compareB = this.getRankOrder(b.rank);
-          return directionMultiplier * (compareA - compareB);
-        case 'amount':
-          compareA = a.amount;
-          compareB = b.amount;
-          return directionMultiplier * (compareA - compareB);
-        default:
-          return 0;
+        case 'name': return dir * a.name.toLowerCase().localeCompare(b.name.toLowerCase());
+        case 'rank': return dir * (this.getRankOrder(a.rank) - this.getRankOrder(b.rank));
+        case 'amount': return dir * (a.amount - b.amount);
+        default: return 0;
       }
     });
-
-    return digimons;
   });
-
+  protected columns = signal<number>(3);
+  protected virtualRows = computed(() => {
+    const cols = Math.max(1, this.columns());
+    const src = this.filteredDigimons();
+    const out: LabDigimon[][] = [];
+    for (let i = 0; i < src.length; i += cols) out.push(src.slice(i, i + cols));
+    return out;
+  });
   protected globalState = inject(GlobalStateDataSource);
   private digimonService = inject(DigimonService);
   private fb = inject(FormBuilder);
@@ -117,12 +99,8 @@ export class LabComponent implements AfterViewInit {
   private modalService = inject(ModalService);
   private destroyRef = inject(DestroyRef);
 
-  @ViewChild('labContent', { read: ElementRef }) labContent!: ElementRef<HTMLElement>;
+  @ViewChild('viewport', { read: ElementRef }) viewportRef!: ElementRef<HTMLElement>;
   @ViewChildren('labCard', { read: ElementRef }) labCards!: QueryList<ElementRef>;
-
-  private createdTriggers: ScrollTrigger[] = [];
-  private resizeObs?: ResizeObserver;
-  private refreshTimer: any;
 
   constructor() {
     this.transloco.selectTranslation().pipe(takeUntilDestroyed()).subscribe(() => {
@@ -132,154 +110,54 @@ export class LabComponent implements AfterViewInit {
         { label: this.transloco.translate('MODULES.LAB.SORT_AMOUNT'), value: 'amount' }
       ]);
     });
-
-    effect(() => {
-      this.populateLabDigimons();
-    });
-
-    effect(() => {
-      this.initializeRankForm();
-    });
+    effect(() => { this.populateLabDigimons(); });
+    effect(() => { this.initializeRankForm(); });
   }
 
-  async ngAfterViewInit(): Promise<void> {
-    const scroller = this.labContent?.nativeElement;
-    const all = this.labCards.map(c => c.nativeElement as Element);
-
-    if (!scroller || !all.length) {
-      return;
-    }
-
-    gsap.set(all, { opacity: 0, y: 24 });
-
-    await this.waitImages(scroller);
-
-    this.createdTriggers.push(
-      ...this.createBatch(all, scroller)
-    );
-
-    this.refreshSoon();
-
-    this.labCards.changes.subscribe((q: QueryList<ElementRef>) => {
-      const els = q.map(c => c.nativeElement as Element);
-      if (!els.length) return;
-
-      gsap.set(els, { opacity: 0, y: 24 });
-
-      this.createdTriggers.push(
-        ...this.createBatch(els, scroller)
-      );
-
-      this.refreshSoon();
-    });
-
-    this.resizeObs = new ResizeObserver(() => this.refreshSoon());
-    this.resizeObs.observe(scroller);
-
-    this.destroyRef.onDestroy(() => {
-      this.resizeObs?.disconnect();
-      this.createdTriggers.forEach(t => t.kill());
-      this.createdTriggers = [];
-      ScrollTrigger.getAll().forEach(t => t.kill());
-      gsap.globalTimeline.clear();
-      if (this.refreshTimer) clearTimeout(this.refreshTimer);
-    });
+  ngAfterViewInit(): void {
+    startLabLayoutController(this.viewportRef, this.columns, this.destroyRef);
+    setupLabCardAnimations(this.labCards, this.viewportRef, this.destroyRef);
   }
 
-  private createBatch(targets: Element[], scroller: HTMLElement): ScrollTrigger[] {
-    const triggers = ScrollTrigger.batch(targets, {
-      start: 'top 85%',
-      scroller,
-      onEnter: (els: Element[]) => {
-        gsap.to(els, {
-          opacity: 1,
-          y: 0,
-          duration: 0.5,
-          ease: 'power2.out',
-          stagger: 0.08,
-          overwrite: 'auto'
-        });
-      },
-      onEnterBack: (els: Element[]) => {
-        gsap.to(els, {
-          opacity: 1,
-          y: 0,
-          duration: 0.3,
-          overwrite: 'auto'
-        });
-      }
-    });
-
-    return Array.isArray(triggers) ? triggers : [triggers];
-  }
-
-  private async waitImages(root: HTMLElement): Promise<void> {
-    const imgs = Array.from(root.querySelectorAll('img'));
-    if (!imgs.length) return;
-    await Promise.allSettled(
-      imgs.map(img => {
-        try {
-          if ('decode' in img && typeof (img as HTMLImageElement).decode === 'function') {
-            return (img as HTMLImageElement).decode();
-          }
-        } catch { }
-        return Promise.resolve();
-      })
-    );
-  }
-
-  private refreshSoon(): void {
-    if (this.refreshTimer) clearTimeout(this.refreshTimer);
-    requestAnimationFrame(() => {
-      this.refreshTimer = setTimeout(() => {
-        try {
-          ScrollTrigger.refresh();
-        } catch { }
-      }, 0);
-    });
-  }
+  protected trackBySeed = (_: number, d: LabDigimon) => d.seed;
+  protected trackByRow = (index: number, row: LabDigimon[]) => row?.[0]?.seed ?? index;
 
   private populateLabDigimons(): void {
     const digimons: LabDigimon[] = [];
-
-    Object.entries(this.globalState.playerDataView().digiData).forEach(([seed, digiData]) => {
+    const view = this.globalState.playerDataView();
+    const entries = Object.entries(view.digiData);
+    for (let i = 0; i < entries.length; i++) {
+      const [seed, digiData] = entries[i];
       const digimon = this.digimonService.getBaseDigimonDataBySeed(seed) as LabDigimon | undefined;
-      if (digimon) {
-        digimon.amount = digiData.amount;
-        digimon.cost = this.globalState.getBitCost(digimon.rank);
-        digimon.obtained = digiData.obtained;
-        digimons.push(digimon);
-      }
-    });
-
+      if (!digimon) continue;
+      digimons.push({
+        ...digimon,
+        amount: digiData.amount,
+        cost: this.globalState.getBitCost(digimon.rank),
+        obtained: digiData.obtained
+      });
+    }
     this.labDigimons.set(digimons);
   }
 
   private initializeRankForm(): void {
     const ranks = this.uniqueRanks();
     const formGroup = this.fb.group({});
-
-    ranks.forEach(rank => {
-      const isSelected = this.selectedRanks().includes(rank);
-      const control = new FormControl(isSelected);
+    for (let i = 0; i < ranks.length; i++) {
+      const rank = ranks[i];
+      const control = new FormControl(this.selectedRanks().includes(rank));
       formGroup.addControl(rank, control);
-
-      control.valueChanges.subscribe(value => {
-        this.updateSelectedRanks(rank, value!);
-      });
-    });
-
+      control.valueChanges.subscribe(value => this.updateSelectedRanks(rank, value!));
+    }
     this.rankForm.set(formGroup);
   }
 
   private updateSelectedRanks(rank: string, value: boolean): void {
-    const currentRanks = [...this.selectedRanks()];
-    if (value && !currentRanks.includes(rank)) {
-      currentRanks.push(rank);
-    } else if (!value && currentRanks.includes(rank)) {
-      currentRanks.splice(currentRanks.indexOf(rank), 1);
-    }
-    this.selectedRanks.set(currentRanks);
+    const current = this.selectedRanks().slice();
+    const idx = current.indexOf(rank);
+    if (value && idx === -1) current.push(rank);
+    if (!value && idx !== -1) current.splice(idx, 1);
+    this.selectedRanks.set(current);
   }
 
   private getRankOrder(rank: string): number {
@@ -292,15 +170,11 @@ export class LabComponent implements AfterViewInit {
 
   convertDigiData(digimon: LabDigimon): void {
     const newDigimon = this.digimonService.generateDigimonBySeed(digimon.seed);
-    if (newDigimon) {
-      this.globalState.convertDigiData(newDigimon);
-    }
+    if (newDigimon) this.globalState.convertDigiData(newDigimon);
   }
 
   showEvolutionsForDigimon(digimon: LabDigimon): void {
-    this.modalService.open('evolution-tree-lab', EvolutionTreeModalComponent, {
-      mainDigimon: digimon
-    });
+    this.modalService.open('evolution-tree-lab', EvolutionTreeModalComponent, { mainDigimon: digimon });
   }
 
   resetFilters(): void {
@@ -308,10 +182,8 @@ export class LabComponent implements AfterViewInit {
     this.filterObtained.set(false);
     this.sortDirection.set('asc');
     this.selectedRanks.set([]);
-
     const form = this.rankForm();
-    Object.keys(form.controls).forEach(key => {
-      form.get(key)?.setValue(false, { emitEvent: false });
-    });
+    const keys = Object.keys(form.controls);
+    for (let i = 0; i < keys.length; i++) form.get(keys[i])?.setValue(false, { emitEvent: false });
   }
 }

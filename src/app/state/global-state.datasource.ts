@@ -708,6 +708,7 @@ export class GlobalStateDataSource {
   }
 
   attemptRunAway(): boolean {
+    this.showPlayerAttackButton.set(false);
     const playerScore = this.battleService.calculateTeamScore(this.playerData().digimonList);
     const enemyScore = this.battleService.calculateTeamScore(this.enemyTeam());
     const escapeChance = this.battleService.calculateEscapeChance(playerScore, enemyScore);

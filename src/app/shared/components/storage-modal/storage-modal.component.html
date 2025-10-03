@@ -7,65 +7,75 @@
       {{ globalState.playerDataView().digimonStorageList.length }} Digimons
     </span>
     <div class="digimon-storage-content">
-      @if(globalState.playerDataView().digimonStorageList.length === 0){
-      <div class="digimon-storage-content-no-data-container">
-        <h4>{{ "SHARED.COMPONENTS.STORAGE_MODAL.NO_DIGIMON" | transloco }}</h4>
-      </div>
-      } @else {
-      <div class="digimon-storage-content-list-container">
-        @for(digimon of globalState.playerDataView().digimonStorageList; track
-        digimon){
-        <div class="digimon-storage-content-list-item">
-          <app-digi-status-card
-            [digimon]="digimon"
-            (click)="openDigimonDetailsModal(digimon)"
-          />
-          <div class="actions">
-            <app-button
-              [appTooltip]="
-                'SHARED.COMPONENTS.STORAGE_MODAL.TO_TEAM_BUTTON' | transloco
-              "
-              tooltipDirection="bottom"
-              icon="send"
-              iconScale="1.7"
-              color="primary"
-              (onClick)="addDigimonToTeam(digimon)"
-            />
-            <app-button
-              [appTooltip]="
-                'SHARED.COMPONENTS.STORAGE_MODAL.TO_TRAINING_BUTTON' | transloco
-              "
-              tooltipDirection="bottom"
-              icon="dumbell"
-              iconScale="1.7"
-              color="tertiary"
-              (onClick)="addDigimonToTraining(digimon)"
-            />
-            <app-button
-              [appTooltip]="
-                'SHARED.COMPONENTS.STORAGE_MODAL.TO_BIT_FARM_BUTTON' | transloco
-              "
-              tooltipDirection="bottom"
-              icon="bit-farm"
-              iconScale="1.9"
-              color="secondary"
-              (onClick)="addDigimonToFarm(digimon)"
-            />
-            <app-button
-              [appTooltip]="
-                'SHARED.COMPONENTS.STORAGE_MODAL.TO_HOSPITAL_BUTTON' | transloco
-              "
-              tooltipDirection="bottom"
-              icon="ambulance"
-              iconScale="1.7"
-              size="xxl"
-              color="info"
-              (onClick)="addDigimonToHospital(digimon)"
-            />
-          </div>
+      @if (globalState.playerDataView().digimonStorageList.length === 0) {
+        <div class="digimon-storage-content-no-data-container">
+          <h4>
+            {{ "SHARED.COMPONENTS.STORAGE_MODAL.NO_DIGIMON" | transloco }}
+          </h4>
         </div>
-        }
-      </div>
+      } @else {
+        <div class="digimon-storage-content-list-container">
+          @for (
+            digimon of globalState.playerDataView().digimonStorageList;
+            track digimon.id
+          ) {
+            <div class="digimon-storage-content-list-item" aria-busy="true">
+              @defer (on viewport; prefetch on idle) {
+                <app-digi-status-card
+                  [digimon]="digimon"
+                  (click)="openDigimonDetailsModal(digimon)"
+                />
+                <div class="actions">
+                  <app-button
+                    [appTooltip]="'SHARED.COMPONENTS.STORAGE_MODAL.TO_TEAM_BUTTON' | transloco"
+                    tooltipDirection="bottom"
+                    icon="send"
+                    iconScale="1.7"
+                    color="primary"
+                    (onClick)="addDigimonToTeam(digimon)"
+                  />
+                  <app-button
+                    [appTooltip]="'SHARED.COMPONENTS.STORAGE_MODAL.TO_TRAINING_BUTTON' | transloco"
+                    tooltipDirection="bottom"
+                    icon="dumbell"
+                    iconScale="1.7"
+                    color="tertiary"
+                    (onClick)="addDigimonToTraining(digimon)"
+                  />
+                  <app-button
+                    [appTooltip]="'SHARED.COMPONENTS.STORAGE_MODAL.TO_BIT_FARM_BUTTON' | transloco"
+                    tooltipDirection="bottom"
+                    icon="bit-farm"
+                    iconScale="1.9"
+                    color="secondary"
+                    (onClick)="addDigimonToFarm(digimon)"
+                  />
+                  <app-button
+                    [appTooltip]="'SHARED.COMPONENTS.STORAGE_MODAL.TO_HOSPITAL_BUTTON' | transloco"
+                    tooltipDirection="bottom"
+                    icon="ambulance"
+                    iconScale="1.7"
+                    size="xxl"
+                    color="info"
+                    (onClick)="addDigimonToHospital(digimon)"
+                  />
+                </div>
+              } @placeholder {
+                <div class="card-placeholder">
+                  <div class="digivice-loader">
+                    <span class="core"></span>
+                  </div>
+                </div>
+              } @loading {
+                <div class="card-placeholder is-loading">
+                  <div class="digivice-loader">
+                    <span class="core"></span>
+                  </div>
+                </div>
+              }
+            </div>
+          }
+        </div>
       }
     </div>
   </div>

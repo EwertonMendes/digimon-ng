@@ -15,6 +15,7 @@ import { GlobalStateDataSource } from '@state/global-state.datasource';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ToastService } from '@shared/components/toast/toast.service';
 import { PlayerDataService } from '@services/player-data.service';
+import { LanguageOption, languageOptions } from '@core/consts/languages';
 
 @Component({
   selector: 'app-config-modal',
@@ -26,7 +27,7 @@ import { PlayerDataService } from '@services/player-data.service';
     ReactiveFormsModule,
     TranslocoModule,
     ButtonComponent,
-],
+  ],
   templateUrl: './config-modal.component.html',
   styleUrls: ['./config-modal.component.scss'],
 })
@@ -36,11 +37,7 @@ export class ConfigModalComponent implements OnInit {
 
   form!: FormGroup;
 
-  languageOptions = [
-    { label: 'English', value: 'en', icon: 'assets/flags/en.svg' },
-    { label: 'Español', value: 'es', icon: 'assets/flags/es.svg' },
-    { label: 'Português Brasil', value: 'pt-br', icon: 'assets/flags/pt-br.svg' },
-  ];
+  languageOptions: LanguageOption[] = languageOptions;
 
   themeOptions = signal<{ label: string; value: string }[]>([]);
 

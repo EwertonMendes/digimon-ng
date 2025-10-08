@@ -7,6 +7,7 @@ import { BaseDigimon, Digimon } from '@core/interfaces/digimon.interface';
 import { CommonModule } from '@angular/common';
 import { DigimonSeeds } from '@core/enums/digimon-seeds.enum';
 import { SelectComponent } from 'app/shared/components/select/select.component';
+import { LanguageOption, languageOptions } from '@core/consts/languages';
 
 type InitialTeam = {
   name: string;
@@ -74,11 +75,7 @@ export class InitialSetupComponent implements OnInit {
     }
   ]
   selectedTeam = signal<BaseDigimon[]>([]);
-  languageOptions = [
-    { label: 'English', value: 'en', icon: 'assets/flags/en.svg' },
-    { label: 'Español', value: 'es', icon: 'assets/flags/es.svg' },
-    { label: 'Português Brasil', value: 'pt-br', icon: 'assets/flags/pt-br.svg' },
-  ];
+  languageOptions: LanguageOption[] = languageOptions;
   selectedLanguage = model('en');
 
   globalState = inject(GlobalStateDataSource);

@@ -19,6 +19,8 @@ import { ModalService } from '../modal/modal.service';
 import { DeletionConfirmationModalComponent } from '@shared/components/deletion-confirmation-modal/deletion-confirmation-modal.component';
 import { IconComponent } from '../icon/icon.component';
 import gsap from 'gsap';
+import { DialogueService } from '@services/dialogue.service';
+import { timer } from 'rxjs';
 
 type BadgeType = 'healing' | 'damage' | 'miss' | 'none';
 
@@ -37,7 +39,10 @@ export class DigiStatusCardComponent implements AfterViewInit {
   private destroyRef = inject(DestroyRef);
   private modalService = inject(ModalService);
   globalState = inject(GlobalStateDataSource);
+  private readonly dialogueService = inject(DialogueService)
 
+  showBubble = signal(false)
+  currentText = signal('')
   badgeText = signal<string>('');
   badgeType = signal<BadgeType>('none');
   showBadge = signal(false);
@@ -82,6 +87,18 @@ export class DigiStatusCardComponent implements AfterViewInit {
           this.playHitAnimation();
         }
       });
+
+    this.dialogueService.currentLine$
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe((line) => {
+        if (!line || line.id !== this.digimon().id) {
+          this.showBubble.set(false)
+          return
+        }
+        this.currentText.set(line.text)
+        this.showBubble.set(true)
+        timer(3500).subscribe(() => this.showBubble.set(false))
+      })
   }
 
   ngAfterViewInit(): void {

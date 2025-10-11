@@ -3,6 +3,11 @@
   class="my-digimon-card"
   [ngStyle]="{ filter: digimon().currentHp <= 0 ? 'brightness(0.6)' : '' }"
 >
+
+  @if (showBubble()) {
+    <div class="speech-bubble">{{ currentText() }}</div>
+  }
+
   <span class="hit-slash" aria-hidden="true"></span>
   <span class="hit-spark" aria-hidden="true"></span>
 

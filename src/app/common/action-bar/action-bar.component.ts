@@ -14,16 +14,17 @@ import { StorageModalComponent } from '@shared/components/storage-modal/storage-
 import { PlayerInfoModalComponent } from '@shared/components/player-info-modal/player-info-modal.component';
 import { DebugModalComponent } from './debug-modal/debug-modal.component';
 import { GlobalStateDataSource } from '@state/global-state.datasource';
-import { ToastService } from '@shared/components/toast/toast.service';
 import { environment } from 'app/environments/environment';
 import { ConfigModalComponent } from './config-modal/config-modal.component';
-import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
+import { TranslocoModule } from '@jsverse/transloco';
 import { TooltipDirective } from 'app/directives/tooltip.directive';
 import { ModalService } from 'app/shared/components/modal/modal.service';
 import { IconComponent } from "@shared/components/icon/icon.component";
 import { filter } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { AiService, DigimonInfo } from '@services/ai.service';
+import { DialogueService } from '@services/dialogue.service';
 
 @Component({
   selector: 'app-action-bar',
@@ -52,15 +53,23 @@ export class ActionBarComponent implements OnInit {
   private audioService = inject(AudioService);
   private router = inject(Router);
   protected globalState = inject(GlobalStateDataSource);
-  private toastService = inject(ToastService);
-  private translocoService = inject(TranslocoService);
+  private aiService = inject(AiService);
   private destroyRef = inject(DestroyRef);
+  private readonly dialogueService = inject(DialogueService)
 
   private numberOfClicks = signal<number>(0);
   private clickTimeout: NodeJS.Timeout | null = null;
 
   @HostListener('click')
-  onClick() {
+  async onClick() {
+    const digimonsForDialogue = this.globalState.playerDataView().digimonList.map((digimon) => ({
+      id: digimon.id,
+      name: digimon.nickName ?? digimon.name,
+    }));
+
+    const dialogue = await this.aiService.generateDialogue('Digimons are in battle team, waiting for the next battle', digimonsForDialogue as DigimonInfo[]);
+    await this.dialogueService.playDialogue(dialogue);
+
     if (this.isDebugMenuUnlocked()) return;
     if (this.clickTimeout) {
       clearTimeout(this.clickTimeout);

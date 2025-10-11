@@ -258,3 +258,32 @@
   color: #68a0ff;
   text-shadow: 0 0 4px rgba(104, 160, 255, 0.35);
 }
+
+.speech-bubble {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min-content;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid var(--primary);
+  border-radius: 12px;
+  padding: 6px 10px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-align: center;
+  color: #000;
+  animation: fadeInOut 4s ease-in-out forwards;
+  pointer-events: none;
+  z-index: 10;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 8px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.9) transparent transparent transparent;
+  }
+}

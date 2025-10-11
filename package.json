@@ -1,6 +1,7 @@
 {
   "name": "digimon-ng",
   "version": "0.4.0",
+  "type": "module",
   "scripts": {
     "ng": "ng",
     "start": "npx tauri dev",
@@ -27,9 +28,11 @@
     "@sigma/node-image": "^3.0.0-beta.12",
     "@tauri-apps/api": "^2.8.0",
     "@tauri-apps/plugin-fs": "^2.4.2",
+    "@tauri-apps/plugin-http": "^2.5.2",
     "graphology": "^0.25.4",
     "graphology-types": "^0.24.8",
     "gsap": "^3.13.0",
+    "node-llama-cpp": "^3.14.0",
     "rxjs": "~7.8.0",
     "sigma": "^3.0.0-beta.26",
     "tslib": "^2.3.0",

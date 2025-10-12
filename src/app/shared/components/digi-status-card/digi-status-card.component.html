@@ -3,9 +3,10 @@
   class="my-digimon-card"
   [ngStyle]="{ filter: digimon().currentHp <= 0 ? 'brightness(0.6)' : '' }"
 >
-
   @if (showBubble()) {
-    <div class="speech-bubble">{{ currentText() }}</div>
+    <div class="speech-bubble">
+      <span class="speech-text">{{ currentText() }}</span>
+    </div>
   }
 
   <span class="hit-slash" aria-hidden="true"></span>
@@ -38,7 +39,7 @@
 
   <div class="my-digimon-card-content">
     <span class="my-digimon-card-name">
-      <span> Lv. {{ digimon().level }} </span>
+      <span>Lv. {{ digimon().level }}</span>
       {{ digimon().nickName ? digimon().nickName : digimon().name }}
     </span>
 
@@ -50,7 +51,7 @@
             'low-stat':
               digimon().currentHp <= 0.2 * digimon().maxHp &&
               digimon().currentHp > 0,
-            'zero-stat': digimon().currentHp === 0,
+            'zero-stat': digimon().currentHp === 0
           }"
           >{{ digimon().currentHp }}</span
         >
@@ -64,7 +65,7 @@
             'low-stat':
               digimon().currentMp <= 0.2 * digimon().maxMp &&
               digimon().currentMp > 0,
-            'zero-stat': digimon().currentMp === 0,
+            'zero-stat': digimon().currentMp === 0
           }"
           >{{ digimon().currentMp }}</span
         >

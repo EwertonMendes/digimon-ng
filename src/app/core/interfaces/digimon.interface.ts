@@ -1,5 +1,5 @@
 export interface Digimon {
-  id?: string;
+  id: string;
   seed: string;
   name: string;
   nickName?: string;

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { DialogueLine, DialoguePayload } from '@core/interfaces/dialogue.interface';
 import { DialogueStreamEvent } from '@core/types/ai.type';
-import { BehaviorSubject, Observable, Subscription, finalize } from 'rxjs';
+import { BehaviorSubject, Observable, Subject, Subscription, finalize } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class DialogueService {
@@ -16,6 +16,9 @@ export class DialogueService {
 
   private readonly activeParticipantsSubject = new BehaviorSubject<string[]>([]);
   readonly activeParticipants$ = this.activeParticipantsSubject.asObservable();
+
+  private dialogueCompleteSubject = new Subject<void>();
+  onDialogueComplete$: Observable<void> = this.dialogueCompleteSubject.asObservable();
 
   public lastActiveParticipantId: string | null = null;
 
@@ -80,8 +83,11 @@ export class DialogueService {
         error: () => {
           this.streamingTextSubject.next('[Erro ao carregar diálogo]');
           this.endStreaming();
+          this.dialogueCompleteSubject.next();
         },
-        complete: () => { }
+        complete: () => {
+          this.dialogueCompleteSubject.next();
+        }
       });
   }
 

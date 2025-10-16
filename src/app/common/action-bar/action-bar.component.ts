@@ -62,22 +62,6 @@ export class ActionBarComponent implements OnInit {
 
   @HostListener('click')
   async onClick() {
-
-    const dialogueStream$ = this.aiService.generateDialogueStream(
-      `Digimons are in battle team list, waiting for the next battle,
-      where they will fight together. They are in a friendly
-      and relaxed atmosphere, chatting and teasing each other while
-      waiting for the battle to start.
-      They are excited and a bit nervous about the upcoming battle,
-      but they are also confident in their abilities and trust in their teammates.
-      They are discussing strategies, sharing tips, and trying to lighten the mood with jokes and playful banter.
-      ]The battles occur when the player ${this.globalState.playerDataView().name}
-      selects a location to explore on Adventure route.`,
-      this.globalState.playerDataView().digimonList
-    );
-
-    this.dialogueService.playStreamingDialogue(dialogueStream$);
-
     if (this.isDebugMenuUnlocked()) return;
     if (this.clickTimeout) {
       clearTimeout(this.clickTimeout);

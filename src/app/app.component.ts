@@ -5,6 +5,7 @@ import { InitialSetupComponent } from './modules/initial-setup/initial-setup.com
 import { PlayerDataService } from './services/player-data.service';
 import { RouterOutlet } from '@angular/router';
 import { ShortcutService } from '@services/shortcut.service';
+import { DialogueControllerService } from '@services/dialogue-controller.service';
 
 @Component({
   selector: 'app-root',
@@ -24,6 +25,7 @@ export class AppComponent implements OnInit, OnDestroy {
   globalState = inject(GlobalStateDataSource);
   playerDataService = inject(PlayerDataService);
   private shortcutService = inject(ShortcutService);
+  private dialogueControllerService = inject(DialogueControllerService);
 
   async ngOnInit() {
 
@@ -44,6 +46,8 @@ export class AppComponent implements OnInit, OnDestroy {
       return;
     }
     this.globalState.initializeGame(playerData);
+
+    this.dialogueControllerService.start();
   }
 
   ngOnDestroy(): void {

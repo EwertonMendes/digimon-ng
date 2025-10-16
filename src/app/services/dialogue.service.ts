@@ -17,6 +17,8 @@ export class DialogueService {
   private readonly activeParticipantsSubject = new BehaviorSubject<string[]>([]);
   readonly activeParticipants$ = this.activeParticipantsSubject.asObservable();
 
+  public lastActiveParticipantId: string | null = null;
+
   private streamingSubscription?: Subscription;
   private lineQueue: DialogueLine[] = [];
   private isPlaying = false;
@@ -24,7 +26,7 @@ export class DialogueService {
 
   beginStreaming(participantIds: string[]): void {
     const ids = (participantIds || []).filter(Boolean);
-    this.activeParticipantsSubject.next(ids);
+    this.setActiveParticipants(ids);
     this.isStreamingSubject.next(true);
     this.streamingTextSubject.next('');
     this.lineQueue = [];
@@ -41,6 +43,7 @@ export class DialogueService {
   setActiveParticipants(participantIds: string[]): void {
     const ids = (participantIds || []).filter(Boolean);
     this.activeParticipantsSubject.next(ids);
+    this.lastActiveParticipantId = ids[ids.length - 1] ?? null;
   }
 
   async playDialogue(dialogue: DialoguePayload, delayMs = this.lineDisplayMs): Promise<void> {

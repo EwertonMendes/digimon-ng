@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient, HttpEvent, HttpEventType, HttpHeaders, HttpRequest } from '@angular/common/http';
-import { Observable, Subject, finalize, lastValueFrom } from 'rxjs';
+import { Observable, Subject, finalize, lastValueFrom, takeUntil } from 'rxjs';
 import { invoke } from '@tauri-apps/api/core';
 import { TranslocoService } from '@jsverse/transloco';
 import { languageOptions } from '@core/consts/languages';
@@ -18,6 +18,9 @@ export class AiService {
   private readonly KEEP_ALIVE = '30m';
   private readonly API_URL = 'http://127.0.0.1:11434/api/generate';
 
+  private cancel$ = new Subject<void>();
+  private wasCancelled = false;
+
   async generateDialogue(sceneContext: string, digimons: Digimon[]): Promise<DialoguePayload> {
     if (!this.isValidParticipants(digimons)) return this.wrapError('No digimons informed.');
     if (!(await this.ensureOllamaRunning())) return this.wrapError('Ollama is not available.');
@@ -25,27 +28,35 @@ export class AiService {
     const language = this.resolveCurrentLanguage();
     const prompt = this.buildPrompt(sceneContext, digimons, language, 'json');
 
-    this.dialogueService.beginStreaming(digimons.map(d => d.id));
 
     try {
+      this.resetCancelFlag();
       const response = await lastValueFrom(
-        this.http.post(
-          this.API_URL,
-          { model: this.MODEL, prompt, stream: false, keep_alive: this.KEEP_ALIVE, format: 'json' },
-          { responseType: 'text' as const }
-        )
+        this.http
+          .post(
+            this.API_URL,
+            { model: this.MODEL, prompt, stream: false, keep_alive: this.KEEP_ALIVE, format: 'json' },
+            { responseType: 'text' as const }
+          )
+          .pipe(takeUntil(this.cancel$))
       );
       if (!this.isNonEmptyString(response)) throw new Error('Empty response from model.');
       return this.parseOllamaResponse(response, digimons);
-    } catch {
+    } catch (err) {
+      if (this.wasCancelled) {
+        console.warn('[AI] ⚠️ Request aborted by user.');
+        return this.wrapError('Dialogue generation cancelled.');
+      }
+      console.error('[AI] ❌ Error generating dialogue:', err);
       return this.wrapError('Error generating dialogue via Ollama.');
-    } finally {
-      this.dialogueService.endStreaming();
     }
   }
 
   generateDialogueStream(sceneContext: string, digimons: Digimon[]): Observable<StreamOut> {
     const output$ = new Subject<StreamOut>();
+
+    this.cancelActiveStream();
+    this.resetCancelFlag();
 
     (async () => {
       if (!this.isValidParticipants(digimons)) {
@@ -79,8 +90,8 @@ export class AiService {
       this.http
         .request<string>(req)
         .pipe(
+          takeUntil(this.cancel$),
           finalize(() => {
-            this.dialogueService.endStreaming();
             output$.complete();
           })
         )
@@ -138,7 +149,7 @@ export class AiService {
                 const finalTail = ndjsonCarry.trim();
                 if (!this.isNonEmptyString(finalTail)) return;
 
-                const envelope = this.safeJsonParse<OllamaStreamChunk>(finalTail);
+                  const envelope = this.safeJsonParse<OllamaStreamChunk>(finalTail);
                 if (!envelope) {
                   textBuffer += finalTail;
                   const { objects, remaining } = this.extractBalancedJsonObjects(textBuffer);
@@ -149,11 +160,11 @@ export class AiService {
                 }
 
                 if (this.isNonEmptyString(envelope.response)) {
-                  textBuffer += envelope.response;
-                  const { objects, remaining } = this.extractBalancedJsonObjects(textBuffer);
-                  for (const obj of objects) this.tryEmitDialogueLine(obj, idToNameMap, output$);
-                  textBuffer = remaining;
-                }
+                    textBuffer += envelope.response;
+                    const { objects, remaining } = this.extractBalancedJsonObjects(textBuffer);
+                    for (const obj of objects) this.tryEmitDialogueLine(obj, idToNameMap, output$);
+                    textBuffer = remaining;
+                  }
 
                 if (envelope.done === true) {
                   const { objects, remaining } = this.extractBalancedJsonObjects(textBuffer);
@@ -178,11 +189,18 @@ export class AiService {
     return output$.asObservable();
   }
 
-  private tryEmitDialogueLine(
-    jsonText: string,
-    idToNameMap: Map<string, string>,
-    output$: Subject<StreamOut>
-  ): void {
+  cancelActiveStream(): void {
+    this.wasCancelled = true;
+    this.cancel$.next();
+    this.cancel$.complete();
+    this.cancel$ = new Subject<void>();
+  }
+
+  private resetCancelFlag(): void {
+    this.wasCancelled = false;
+  }
+
+  private tryEmitDialogueLine(jsonText: string, idToNameMap: Map<string, string>, output$: Subject<StreamOut>): void {
     const parsed = this.safeJsonParse<Record<string, unknown>>(jsonText);
     if (!parsed) return;
     if (!(typeof parsed['id'] === 'string' && typeof parsed['text'] === 'string')) return;

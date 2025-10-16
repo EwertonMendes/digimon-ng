@@ -21,6 +21,7 @@ import { IconComponent } from '../icon/icon.component';
 import gsap from 'gsap';
 import { DialogueService } from '@services/dialogue.service';
 import { filter } from 'rxjs';
+import { TranslocoService } from '@jsverse/transloco';
 
 type BadgeType = 'healing' | 'damage' | 'miss' | 'none';
 
@@ -32,20 +33,21 @@ type BadgeType = 'healing' | 'damage' | 'miss' | 'none';
   styleUrls: ['./digi-status-card.component.scss'],
 })
 export class DigiStatusCardComponent implements AfterViewInit {
-  digimon = input.required<Digimon>();
+  public digimon = input.required<Digimon>();
 
   private hostRef = inject<ElementRef<HTMLElement>>(ElementRef);
   private change = inject(ChangeDetectorRef);
   private destroyRef = inject(DestroyRef);
   private modalService = inject(ModalService);
-  globalState = inject(GlobalStateDataSource);
+  protected globalState = inject(GlobalStateDataSource);
   private readonly dialogueService = inject(DialogueService);
+  private readonly translocoService = inject(TranslocoService);
 
-  showBubble = signal(false);
-  currentText = signal('');
-  badgeText = signal<string>('');
-  badgeType = signal<BadgeType>('none');
-  showBadge = signal(false);
+  protected showBubble = signal(false);
+  protected currentText = signal('');
+  protected badgeText = signal<string>('');
+  protected badgeType = signal<BadgeType>('none');
+  protected showBadge = signal(false);
   protected isHovered = signal(false);
   protected isDeletable = signal(false);
 
@@ -103,6 +105,17 @@ export class DigiStatusCardComponent implements AfterViewInit {
           return;
         }
 
+        if (this.globalState.isBattleActive() && this.dialogueService.lastActiveParticipantId === this.digimon().id) {
+          this.showBubble.set(true);
+          this.currentText.set(this.translocoService.translate('SHARED.COMPONENTS.DIGI_STATUS_CARD.BATTLE_STARTED_DIALOGUE'));
+          setTimeout(() => {
+            this.showBubble.set(false);
+            this.currentText.set('');
+            this.dialogueService.setActiveParticipants([]);
+          }, 3000);
+          return;
+        }
+
         if (!line) {
           if (this.isGeneratingDialogue() && this.isParticipant()) {
             this.currentText.set('...');
@@ -115,6 +128,7 @@ export class DigiStatusCardComponent implements AfterViewInit {
         }
 
         if (line.id === myId) {
+          this.dialogueService.lastActiveParticipantId = myId;
           this.currentText.set(line.text);
           this.showBubble.set(true);
           return;

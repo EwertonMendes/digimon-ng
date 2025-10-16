@@ -295,6 +295,7 @@
         "TITLE": "Selecciona tu Digimon"
       },
       "DIGI_STATUS_CARD": {
+        "BATTLE_STARTED_DIALOGUE": "¡La batalla ha comenzado! ¡Después hablamos!",
         "COMPONENTS": {
           "DELETION_CONFIRMATION_MODAL": {
             "TITLE": "Confirmación de eliminación",

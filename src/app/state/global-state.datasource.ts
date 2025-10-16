@@ -24,6 +24,7 @@ import { Location } from '@core/consts/locations';
 import { LOCATIONS } from '@core/consts/locations';
 import { DesktopDataSource } from '@modules/desktop/desktop.datasource';
 import { AttackAnimationService } from '@services/attack-animation.service';
+import { AiService } from '@services/ai.service';
 
 type EndBattleState = 'victory' | 'defeat' | 'draw';
 type DigimonWithOwner = Digimon & { owner: string };
@@ -55,6 +56,7 @@ export class GlobalStateDataSource {
   private hospitalService = inject(HospitalService);
   private desktopDatasource = inject(DesktopDataSource);
   private attackAnimationService = inject(AttackAnimationService);
+  private aiService = inject(AiService);
 
   private initialSetupPlayerData: PlayerData = {
     id: '',
@@ -590,6 +592,7 @@ export class GlobalStateDataSource {
   startBattle() {
     this.repopulateTurnOrder();
     this.isBattleActive.set(true);
+    this.aiService.cancelActiveStream();
     this.nextTurn();
   }
 

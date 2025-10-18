@@ -28,7 +28,6 @@ export class AiService {
     const language = this.resolveCurrentLanguage();
     const prompt = this.buildPrompt(sceneContext, digimons, language, 'json');
 
-
     try {
       this.resetCancelFlag();
       const response = await lastValueFrom(

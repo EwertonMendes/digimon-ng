@@ -15,16 +15,14 @@ import { AudioService } from '@services/audio.service';
 import { AudioEffects, AudioTracks } from '@core/enums/audio-tracks.enum';
 import { TranslocoService } from '@jsverse/transloco';
 import { v4 as uuidv4 } from 'uuid';
-import { ConfigService } from 'app/services/config.service';
 import { ThemeService } from 'app/services/theme.service';
-import { PlayerConfig } from 'app/core/interfaces/player-config.interface';
 import { getDefaultPotential } from '@core/utils/digimon.utils';
-import { WindowService } from '@services/window.service';
 import { Location } from '@core/consts/locations';
 import { LOCATIONS } from '@core/consts/locations';
 import { DesktopDataSource } from '@modules/desktop/desktop.datasource';
 import { AttackAnimationService } from '@services/attack-animation.service';
 import { AiService } from '@services/ai.service';
+import { ConfigStateDataSource } from './config-state.datasource';
 
 type EndBattleState = 'victory' | 'defeat' | 'draw';
 type DigimonWithOwner = Digimon & { owner: string };
@@ -45,9 +43,8 @@ export class GlobalStateDataSource {
   private translocoService = inject(TranslocoService);
   private digimonService = inject(DigimonService);
   private playerDataService = inject(PlayerDataService);
-  private windowService = inject(WindowService);
   private audioService = inject(AudioService);
-  private configService = inject(ConfigService);
+  private configState = inject(ConfigStateDataSource);
   private themeService = inject(ThemeService);
   private trainingService = inject(TrainingService);
   private farmingService = inject(FarmingService);
@@ -205,18 +202,9 @@ export class GlobalStateDataSource {
     };
     return costMap[rank] || 1000;
   }
-  loadConfigs(newGame: boolean) {
-    const initialConfig: PlayerConfig = {
-      ...this.configService.defaultInitialConfig,
-      language: this.translocoService.getActiveLang()
 
-    };
-    this.configService.loadConfig().then(config => {
-      this.windowService.setFullscreen(newGame ? initialConfig.toggleFullscreen : config.toggleFullscreen);
-      this.audioService.isAudioEnabled = newGame ? initialConfig.enableAudio : config.enableAudio;
-      this.themeService.setTheme(newGame ? initialConfig.theme : config.theme);
-      this.translocoService.setActiveLang(newGame ? initialConfig.language : config.language);
-    });
+  async loadConfigs(newGame: boolean) {
+    await this.configState.initialize(newGame);
   }
 
   initializeGame(playerData: PlayerData, newGame = false) {

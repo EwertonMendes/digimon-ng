@@ -16,6 +16,7 @@ export class ConfigService {
     toggleFullscreen: false,
     language: "en",
     theme: "default",
+    enableLocalAi: false,
   };
 
   get defaultInitialConfig() {
@@ -36,7 +37,7 @@ export class ConfigService {
     }
   }
 
-  async loadConfig(customDefaultConfig = null): Promise<PlayerConfig> {
+  async loadConfig(customDefaultConfig: PlayerConfig | null = null): Promise<PlayerConfig> {
     try {
       const filePath = await this.getFilePath(this.playerDataService.currentPlayerId);
       const fileExists = await exists(filePath, { baseDir: this.baseDir });

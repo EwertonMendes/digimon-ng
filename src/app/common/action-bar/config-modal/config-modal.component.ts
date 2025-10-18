@@ -1,21 +1,17 @@
 import { Component, DestroyRef, inject, OnInit, signal } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { CheckboxComponent } from "@shared/components/checkbox/checkbox.component";
-import { AudioService } from 'app/services/audio.service';
-import { SelectComponent } from 'app/shared/components/select/select.component';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
+import { CheckboxComponent } from '@shared/components/checkbox/checkbox.component';
+import { SelectComponent } from 'app/shared/components/select/select.component';
 import { ModalComponent } from 'app/shared/components/modal/modal.component';
 import { ThemeService } from 'app/services/theme.service';
-import { ConfigService } from 'app/services/config.service';
-import { WindowService } from '@services/window.service';
-import { ButtonComponent } from "@shared/components/button/button.component";
+import { ButtonComponent } from '@shared/components/button/button.component';
 import { ConfirmModalComponent } from '@shared/components/confirm-modal/confirm-modal.component';
 import { ModalService } from '@shared/components/modal/modal.service';
-import { GlobalStateDataSource } from '@state/global-state.datasource';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ToastService } from '@shared/components/toast/toast.service';
-import { PlayerDataService } from '@services/player-data.service';
 import { LanguageOption, languageOptions } from '@core/consts/languages';
+import { ConfigStateDataSource } from '@state/config-state.datasource';
 
 @Component({
   selector: 'app-config-modal',
@@ -38,74 +34,79 @@ export class ConfigModalComponent implements OnInit {
   form!: FormGroup;
 
   languageOptions: LanguageOption[] = languageOptions;
-
   themeOptions = signal<{ label: string; value: string }[]>([]);
 
   private fb = inject(FormBuilder);
-  private windowService = inject(WindowService);
-  private audioService = inject(AudioService);
   private translocoService = inject(TranslocoService);
-  private playerDataService = inject(PlayerDataService);
   private themeService = inject(ThemeService);
-  private configService = inject(ConfigService);
   private modalService = inject(ModalService);
   private toastService = inject(ToastService);
-  private globalState = inject(GlobalStateDataSource);
   private destroyRef = inject(DestroyRef);
 
-  async ngOnInit() {
+  private configState = inject(ConfigStateDataSource);
+
+  ngOnInit(): void {
     this.form = this.fb.group({
-      enableAudio: [this.audioService.isAudioEnabled],
-      selectedLanguage: [this.translocoService.getActiveLang() ?? 'en'],
-      selectedTheme: [this.themeService.getCurrentTheme().name],
-      toggleFullscreen: [false],
-    });
-
-    const isFullscreen = await this.windowService.isFullscreen();
-
-    this.form.patchValue({
-      toggleFullscreen: isFullscreen,
+      enableAudio: [this.configState.audioEnabled()],
+      selectedLanguage: [this.configState.languageCode()],
+      selectedTheme: [this.configState.themeName()],
+      toggleFullscreen: [this.configState.fullscreenEnabled()],
     });
 
     this.setTranslatedThemeOptions();
 
     this.translocoService
-      .selectTranslation().pipe(takeUntilDestroyed(this.destroyRef))
+      .selectTranslation()
+      .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(() => {
         this.setTranslatedThemeOptions();
       });
 
-    this.form.get('toggleFullscreen')?.valueChanges.pipe(takeUntilDestroyed(this.destroyRef)).subscribe(async (value) => {
-      await this.windowService.toggleFullscreen();
-      this.configService.updateConfig("toggleFullscreen", value);
-    });
+    this.form
+      .get('toggleFullscreen')
+      ?.valueChanges.pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe((value: boolean) => {
+        this.configState.setFullscreenEnabled(!!value);
+      });
 
-    this.form.get('enableAudio')?.valueChanges.pipe(takeUntilDestroyed(this.destroyRef)).subscribe(value => {
-      this.audioService.isAudioEnabled = value;
-      this.configService.updateConfig("enableAudio", value);
-    });
+    this.form
+      .get('enableAudio')
+      ?.valueChanges.pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe((value: boolean) => {
+        this.configState.setAudioEnabled(!!value);
+      });
 
-    this.form.get('selectedLanguage')?.valueChanges.pipe(takeUntilDestroyed(this.destroyRef)).subscribe(lang => {
-      this.translocoService.setActiveLang(lang);
-      this.configService.updateConfig("language", lang);
-    });
+    this.form
+      .get('selectedLanguage')
+      ?.valueChanges.pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe((lang: string) => {
+        this.configState.setLanguage(lang);
+      });
 
-    this.form.get('selectedTheme')?.valueChanges.pipe(takeUntilDestroyed(this.destroyRef)).subscribe(themeName => {
-      this.themeService.setTheme(themeName);
-    });
+    this.form
+      .get('selectedTheme')
+      ?.valueChanges.pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe((themeName: string) => {
+        this.configState.setTheme(themeName);
+      });
 
-    this.modalService.onClose(this.deleteSavedDataModalId).pipe(takeUntilDestroyed(this.destroyRef)).subscribe(async (shouldDelete) => {
-      if (!shouldDelete) return;
-      this.modalService.close(this.configModalId);
-      await this.configService.deleteConfigFile();
-      await this.playerDataService.deletePlayerData();
-      this.globalState.resetGameToInitialSetup();
-      this.toastService.showToast(this.translocoService.translate('COMMON.ACTION_BAR.CONFIG_MODAL.DELETE_DATA_MODAL.DELETED_SAVED_DATA_TOAST'), 'success');
-    });
+    this.modalService
+      .onClose(this.deleteSavedDataModalId)
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(async (shouldDelete) => {
+        if (!shouldDelete) return;
+        this.modalService.close(this.configModalId);
+        this.toastService.showToast(
+          this.translocoService.translate(
+            'COMMON.ACTION_BAR.CONFIG_MODAL.DELETE_DATA_MODAL.DELETED_SAVED_DATA_TOAST'
+          ),
+          'success'
+        );
+      });
   }
 
   setTranslatedThemeOptions(): void {
-    const options = this.themeService.getThemes().map(t => ({
+    const options = this.themeService.getThemes().map((t) => ({
       label: this.translocoService.translate(
         `COMMON.ACTION_BAR.CONFIG_MODAL.THEME.${t.name.toUpperCase()}`
       ),
@@ -122,7 +123,7 @@ export class ConfigModalComponent implements OnInit {
       cancelText: 'COMMON.ACTION_BAR.CONFIG_MODAL.DELETE_DATA_MODAL.CANCEL',
       backgroundColor: 'danger',
       confirmButtonColor: 'warning',
-      cancelButtonColor: 'dark'
+      cancelButtonColor: 'dark',
     });
   }
 }

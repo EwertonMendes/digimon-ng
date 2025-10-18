@@ -61,6 +61,8 @@ export class DialogueService {
   playStreamingDialogue(stream$: Observable<DialogueStreamEvent>): void {
     this.stopStreaming(false);
 
+    if (!stream$) return;
+
     this.streamingSubscription = stream$
       .pipe(
         finalize(() => {

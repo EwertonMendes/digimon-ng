@@ -11,6 +11,10 @@
           "LABEL": "Habilitar Áudio",
           "DESCRIPTION": "Ativar ou desativar os efeitos sonoros e a música."
         },
+        "ENABLE_LOCAL_AI": {
+          "LABEL": "Habilitar IA Local",
+          "DESCRIPTION": "Ativar ou desativar a IA local. (ATENÇÃO: necessita Ollama instalado e pelo menos 8GB de RAM e boa CPU)"
+        },
         "LANGUAGE": {
           "LABEL": "Idioma"
         },

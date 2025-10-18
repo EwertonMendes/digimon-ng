@@ -11,6 +11,10 @@
           "LABEL": "Enable Audio",
           "DESCRIPTION": "Turn the sound effects and music on or off."
         },
+        "ENABLE_LOCAL_AI": {
+          "LABEL": "Enable Local AI",
+          "DESCRIPTION": "Turn the local AI on or off. (WARNING: requires Ollama installed and at least 8GB of RAM and good CPU)"
+        },
         "LANGUAGE": {
           "LABEL": "Language"
         },

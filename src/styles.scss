@@ -33,7 +33,9 @@
   --cursor-not-allowed: url('/assets/cursors/digimon-not-allowed-32.png') 16 16, not-allowed;
 }
 
-html, body, app-root {
+html,
+body,
+app-root {
   cursor: var(--cursor-default);
 }
 
@@ -162,6 +164,26 @@ body {
 
 img {
   -webkit-user-drag: none;
+}
+
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+    cursor: var(--cursor-pointer);
+  }
+
+  &:active {
+    color: var(--primary-light);
+  }
+
+  &:visited {
+    color: var(--primary-light);
+  }
 }
 
 body {

@@ -7,6 +7,7 @@
     <div class="config-modal-content">
       <div class="config-item">
         <app-checkbox
+          class="config-label"
           [label]="
             'COMMON.ACTION_BAR.CONFIG_MODAL.TOGGLE_FULLSCREEN.LABEL' | transloco
           "
@@ -23,6 +24,7 @@
 
       <div class="config-item">
         <app-checkbox
+          class="config-label"
           [label]="
             'COMMON.ACTION_BAR.CONFIG_MODAL.ENABLE_AUDIO.LABEL' | transloco
           "
@@ -35,6 +37,25 @@
               | transloco
           }}
         </p>
+      </div>
+
+      <div class="config-item">
+        <app-checkbox
+          class="config-label"
+          [label]="
+            'COMMON.ACTION_BAR.CONFIG_MODAL.ENABLE_LOCAL_AI.LABEL' | transloco
+          "
+          formControlName="enableLocalAi"
+        >
+        </app-checkbox>
+        <p class="config-description">
+          {{
+            "COMMON.ACTION_BAR.CONFIG_MODAL.ENABLE_LOCAL_AI.DESCRIPTION"
+              | transloco
+          }}
+        </p>
+        <!-- TODO: implement way to open link in user's default browser -->
+        <a href="https://ollama.com/download" target="_blank">Instalar Ollama</a>
       </div>
 
       <div class="config-item">
@@ -56,8 +77,17 @@
       </div>
 
       <div class="delete-data-container">
-        <span class="config-item-label"> {{ "COMMON.ACTION_BAR.CONFIG_MODAL.DELETE_DATA_MODAL.DELETE_SAVED_DATA" | transloco }} </span>
-        <app-button icon="trash" color="warning" (click)="openDeleteDataConfirmationModal()" />
+        <span class="config-item-label">
+          {{
+            "COMMON.ACTION_BAR.CONFIG_MODAL.DELETE_DATA_MODAL.DELETE_SAVED_DATA"
+              | transloco
+          }}
+        </span>
+        <app-button
+          icon="trash"
+          color="warning"
+          (click)="openDeleteDataConfirmationModal()"
+        />
       </div>
     </div>
   </form>

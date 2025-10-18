@@ -18,6 +18,7 @@ import {
   Observable,
 } from 'rxjs';
 import { Digimon } from '@core/interfaces/digimon.interface';
+import { StreamOut } from '@core/types/ai.type';
 
 @Injectable({ providedIn: 'root' })
 export class DialogueControllerService {
@@ -89,7 +90,7 @@ export class DialogueControllerService {
 
 
     const dialogue$ = this.aiService.generateDialogueStream(context, digimons);
-    this.dialogueService.playStreamingDialogue(dialogue$);
+    this.dialogueService.playStreamingDialogue(dialogue$ as Observable<StreamOut>);
 
     return this.dialogueService.onDialogueComplete$.pipe(
       take(1),

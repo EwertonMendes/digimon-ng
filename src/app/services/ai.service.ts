@@ -8,12 +8,15 @@ import { Digimon } from '@core/interfaces/digimon.interface';
 import { DialogueService } from '@services/dialogue.service';
 import { DialoguePayload, DialogueLine, OllamaStreamChunk, TextDownloadProgressEvent } from '@core/interfaces/dialogue.interface';
 import { StreamOut } from '@core/types/ai.type';
+import { ConfigStateDataSource } from '@state/config-state.datasource';
 
 @Injectable({ providedIn: 'root' })
 export class AiService {
   private readonly http = inject(HttpClient);
   private readonly transloco = inject(TranslocoService);
   private readonly dialogueService = inject(DialogueService);
+  private readonly configState = inject(ConfigStateDataSource);
+
   private readonly MODEL = 'gemma3n:e4b';
   private readonly KEEP_ALIVE = '30m';
   private readonly API_URL = 'http://127.0.0.1:11434/api/generate';
@@ -22,6 +25,7 @@ export class AiService {
   private wasCancelled = false;
 
   async generateDialogue(sceneContext: string, digimons: Digimon[]): Promise<DialoguePayload> {
+    if (!this.configState.localAiEnabled()) return this.wrapError('Local AI is not enabled.');
     if (!this.isValidParticipants(digimons)) return this.wrapError('No digimons informed.');
     if (!(await this.ensureOllamaRunning())) return this.wrapError('Ollama is not available.');
 
@@ -51,7 +55,11 @@ export class AiService {
     }
   }
 
-  generateDialogueStream(sceneContext: string, digimons: Digimon[]): Observable<StreamOut> {
+  generateDialogueStream(sceneContext: string, digimons: Digimon[]): Observable<StreamOut> | null {
+    console.log('[AI] 🚀 Starting streamed dialogue generation...', this.configState.localAiEnabled());
+
+    if (!this.configState.localAiEnabled()) return null;
+
     const output$ = new Subject<StreamOut>();
 
     this.cancelActiveStream();

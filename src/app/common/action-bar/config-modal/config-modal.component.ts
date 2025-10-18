@@ -51,6 +51,7 @@ export class ConfigModalComponent implements OnInit {
       selectedLanguage: [this.configState.languageCode()],
       selectedTheme: [this.configState.themeName()],
       toggleFullscreen: [this.configState.fullscreenEnabled()],
+      enableLocalAi: [this.configState.localAiEnabled()],
     });
 
     this.setTranslatedThemeOptions();
@@ -88,6 +89,13 @@ export class ConfigModalComponent implements OnInit {
       ?.valueChanges.pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe((themeName: string) => {
         this.configState.setTheme(themeName);
+      });
+
+    this.form
+      .get('enableLocalAi')
+      ?.valueChanges.pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe((value: boolean) => {
+        this.configState.setLocalAiEnabled(!!value);
       });
 
     this.modalService

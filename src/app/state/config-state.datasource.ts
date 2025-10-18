@@ -20,11 +20,11 @@ export class ConfigStateDataSource {
   private readonly state = signal<PlayerConfig>(this.configService.defaultInitialConfig);
 
   readonly config = computed(() => this.state());
-  readonly audioEnabled = computed(() => this.state().enableAudio);
-  readonly fullscreenEnabled = computed(() => this.state().toggleFullscreen);
-  readonly languageCode = computed(() => this.state().language);
-  readonly themeName = computed(() => this.state().theme);
-
+  readonly audioEnabled = computed(() => this.state().enableAudio ?? false);
+  readonly fullscreenEnabled = computed(() => this.state().toggleFullscreen ?? false);
+  readonly languageCode = computed(() => this.state().language ?? 'en');
+  readonly themeName = computed(() => this.state().theme ?? 'default');
+  readonly localAiEnabled = computed(() => this.state().enableLocalAi ?? false);
 
   async initialize(newGame: boolean): Promise<void> {
     const defaultsWithLang: PlayerConfig = {
@@ -68,6 +68,10 @@ export class ConfigStateDataSource {
 
   setTheme(name: string): void {
     this.patch({ theme: name });
+  }
+
+  setLocalAiEnabled(value: boolean): void {
+    this.patch({ enableLocalAi: value });
   }
 
   private async applyAllEffects(cfg: PlayerConfig): Promise<void> {

@@ -1,7 +1,9 @@
 import { Injectable, inject } from '@angular/core';
+import { toObservable } from '@angular/core/rxjs-interop';
 import { GlobalStateDataSource } from '@state/global-state.datasource';
 import { DialogueService } from '@services/dialogue.service';
 import { AiService } from '@services/ai.service';
+import { ConfigStateDataSource } from '@state/config-state.datasource';
 import { DigimonListLocation } from '@core/enums/digimon-list-location.enum';
 import {
   Subject,
@@ -16,15 +18,34 @@ import {
   take,
   repeat,
   Observable,
+  exhaustMap,
+  filter,
+  pairwise,
 } from 'rxjs';
 import { Digimon } from '@core/interfaces/digimon.interface';
 import { StreamOut } from '@core/types/ai.type';
+
+export enum LocalAiErrorCode {
+  RuntimeMissing = 'RuntimeMissing',
+  ModelMissing = 'ModelMissing',
+  Unknown = 'Unknown',
+}
+
+export interface LocalAiError {
+  code: LocalAiErrorCode;
+  message: string;
+}
 
 @Injectable({ providedIn: 'root' })
 export class DialogueControllerService {
   private readonly globalState = inject(GlobalStateDataSource);
   private readonly aiService = inject(AiService);
   private readonly dialogueService = inject(DialogueService);
+  private readonly configState = inject(ConfigStateDataSource);
+
+  private readonly localAiEnabled$ = toObservable(this.configState.localAiEnabled);
+  private readonly localAiErrorSubject = new Subject<LocalAiError>();
+  readonly errors$ = this.localAiErrorSubject.asObservable();
 
   private readonly eligibleLists = [
     DigimonListLocation.TEAM,
@@ -46,15 +67,29 @@ export class DialogueControllerService {
       this.maxDelayMs = maxDelayMs;
     }
 
+    this.sub = new Subscription();
 
-    this.sub = defer(() => timer(initialDelayMs).pipe(concatMap(() => this.runOnce())))
+    const cycleSub = defer(() => timer(initialDelayMs).pipe(concatMap(() => this.runOnce())))
       .pipe(
-        repeat({
-          delay: () => timer(this.randomBetween(this.minDelayMs, this.maxDelayMs)),
-        }),
+        repeat({ delay: () => timer(this.randomBetween(this.minDelayMs, this.maxDelayMs)) }),
         takeUntil(this.stop$)
       )
       .subscribe();
+    this.sub.add(cycleSub);
+
+    const kickOnEnableSub = this.localAiEnabled$
+      .pipe(
+        pairwise(),
+        filter(([prev, curr]) => !prev && !!curr),
+        takeUntil(this.stop$),
+        exhaustMap(() =>
+          this.ensureLocalAiReady().pipe(
+            concatMap((ready) => (ready ? this.runOnce() : of(void 0)))
+          )
+        )
+      )
+      .subscribe();
+    this.sub.add(kickOnEnableSub);
   }
 
   stop(): void {
@@ -66,18 +101,14 @@ export class DialogueControllerService {
   }
 
   private runOnce(): Observable<void> {
+    if (!this.configState.localAiEnabled()) return of(void 0);
     const location = this.pickNextLocation();
     const digimons = this.getDigimonsByList(location);
-
     if (!digimons.length) {
       const nextAvailable = this.findNextAvailableLocation(location);
-      if (!nextAvailable) {
-        console.warn('[DialogueController] ⚠️ No Digimons available in any list. Skipping dialogue.');
-        return of(void 0);
-      }
+      if (!nextAvailable) return of(void 0);
       return this.triggerDialogue(nextAvailable);
     }
-
     return this.triggerDialogue(location);
   }
 
@@ -88,8 +119,8 @@ export class DialogueControllerService {
     const context = this.getContextForList(location);
     this.lastList = location;
 
-
     const dialogue$ = this.aiService.generateDialogueStream(context, digimons);
+    if (!dialogue$) return of(void 0);
     this.dialogueService.playStreamingDialogue(dialogue$ as Observable<StreamOut>);
 
     return this.dialogueService.onDialogueComplete$.pipe(
@@ -99,15 +130,21 @@ export class DialogueControllerService {
     );
   }
 
+  private ensureLocalAiReady(): Observable<boolean> {
+    // TODO: Check if ollama is installed and running
+    // TODO: Check if model is available
+    return of(true);
+  }
+
   private pickNextLocation(): DigimonListLocation {
-    const options = this.eligibleLists.filter(l => l !== this.lastList);
+    const options = this.eligibleLists.filter((l) => l !== this.lastList);
     const chosen = this.randomFrom(options);
     return chosen ?? this.eligibleLists[0];
   }
 
   private findNextAvailableLocation(start: DigimonListLocation): DigimonListLocation | null {
     const available = this.eligibleLists.filter(
-      l => l !== start && this.getDigimonsByList(l).length > 0
+      (l) => l !== start && this.getDigimonsByList(l).length > 0
     );
     return available.length ? this.randomFrom(available) : null;
   }

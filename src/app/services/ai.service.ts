@@ -56,7 +56,6 @@ export class AiService {
   }
 
   generateDialogueStream(sceneContext: string, digimons: Digimon[]): Observable<StreamOut> | null {
-    console.log('[AI] 🚀 Starting streamed dialogue generation...', this.configState.localAiEnabled());
 
     if (!this.configState.localAiEnabled()) return null;
 

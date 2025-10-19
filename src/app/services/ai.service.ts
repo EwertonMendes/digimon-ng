@@ -461,4 +461,26 @@ ${context}
     const remaining = buffer.slice(remainingStart);
     return { objects, remaining };
   }
+
+  async checkOllamaInstalled(): Promise<boolean> {
+    try {
+      return await invoke<boolean>('ollama_is_installed');
+    } catch {
+      return false;
+    }
+  }
+
+  getConfiguredLocalModelName(): string {
+    return this.MODEL;
+  }
+
+  async isModelInstalled(name?: string): Promise<boolean> {
+    const model = name || this.getConfiguredLocalModelName();
+    try {
+      return await invoke<boolean>('ollama_has_model', { name: model });
+    } catch {
+      return false;
+    }
+  }
+
 }

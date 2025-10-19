@@ -21,6 +21,8 @@ import {
   exhaustMap,
   filter,
   pairwise,
+  from,
+  tap,
 } from 'rxjs';
 import { Digimon } from '@core/interfaces/digimon.interface';
 import { StreamOut } from '@core/types/ai.type';
@@ -131,9 +133,28 @@ export class DialogueControllerService {
   }
 
   private ensureLocalAiReady(): Observable<boolean> {
-    // TODO: Check if ollama is installed and running
-    // TODO: Check if model is available
-    return of(true);
+    return from(this.aiService.checkOllamaInstalled()).pipe(
+      concatMap((installed) => {
+        if (installed) return of(true);
+        this.localAiErrorSubject.next({
+          code: LocalAiErrorCode.RuntimeMissing,
+          message: 'Ollama não está instalado neste sistema.',
+        });
+        this.configState.setLocalAiEnabled(false);
+        return of(false);
+      }),
+      concatMap((ok) => (ok ? from(this.aiService['ensureOllamaRunning']()) : of(false))),
+      concatMap((serverOk) => (serverOk ? from(this.aiService.isModelInstalled()) : of(false))),
+      tap((modelOk) => {
+        if (!modelOk) {
+          this.localAiErrorSubject.next({
+            code: LocalAiErrorCode.ModelMissing,
+            message: 'O modelo local de IA não foi encontrado.',
+          });
+          this.configState.setLocalAiEnabled(false);
+        }
+      })
+    );
   }
 
   private pickNextLocation(): DigimonListLocation {

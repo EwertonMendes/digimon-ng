@@ -222,7 +222,7 @@ export class AiService {
     return Array.isArray(digimons) && digimons.length > 0;
   }
 
-  private async ensureOllamaRunning(): Promise<boolean> {
+  async ensureOllamaRunning(): Promise<boolean> {
     try {
       const isRunning = await invoke<boolean>('ensure_ollama');
       return isRunning;

@@ -172,6 +172,14 @@
       }
     }
   },
+  "SERVICES": {
+    "DIALOGUE_CONTROLLER": {
+      "LOCAL_AI_ERRORS": {
+        "RUNTIME_MISSING": "Ollama is not installed on this system.",
+        "MODEL_MISSING": "The local AI model was not found."
+      }
+    }
+  },
   "SHARED": {
     "COMPONENTS": {
       "BATTLE_MODAL": {

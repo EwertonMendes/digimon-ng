@@ -26,6 +26,8 @@ import {
 } from 'rxjs';
 import { Digimon } from '@core/interfaces/digimon.interface';
 import { StreamOut } from '@core/types/ai.type';
+import { ToastService } from '@shared/components/toast/toast.service';
+import { TranslocoService } from '@jsverse/transloco';
 
 export enum LocalAiErrorCode {
   RuntimeMissing = 'RuntimeMissing',
@@ -44,6 +46,8 @@ export class DialogueControllerService {
   private readonly aiService = inject(AiService);
   private readonly dialogueService = inject(DialogueService);
   private readonly configState = inject(ConfigStateDataSource);
+  private readonly toast = inject(ToastService);
+  private readonly translocoService = inject(TranslocoService);
 
   private readonly localAiEnabled$ = toObservable(this.configState.localAiEnabled);
   private readonly localAiErrorSubject = new Subject<LocalAiError>();
@@ -136,21 +140,27 @@ export class DialogueControllerService {
     return from(this.aiService.checkOllamaInstalled()).pipe(
       concatMap((installed) => {
         if (installed) return of(true);
+        const errorMessage = this.translocoService.translate('SERVICES.DIALOGUE_CONTROLLER.LOCAL_AI_ERRORS.RUNTIME_MISSING');
         this.localAiErrorSubject.next({
           code: LocalAiErrorCode.RuntimeMissing,
-          message: 'Ollama não está instalado neste sistema.',
+          message: errorMessage,
         });
+        console.error(errorMessage, LocalAiErrorCode.RuntimeMissing);
+        this.toast.showToast(errorMessage, 'error');
         this.configState.setLocalAiEnabled(false);
         return of(false);
       }),
-      concatMap((ok) => (ok ? from(this.aiService['ensureOllamaRunning']()) : of(false))),
+      concatMap((ok) => (ok ? from(this.aiService.ensureOllamaRunning()) : of(false))),
       concatMap((serverOk) => (serverOk ? from(this.aiService.isModelInstalled()) : of(false))),
       tap((modelOk) => {
         if (!modelOk) {
+          const errorMessage = this.translocoService.translate('SERVICES.DIALOGUE_CONTROLLER.LOCAL_AI_ERRORS.MODEL_MISSING');
           this.localAiErrorSubject.next({
             code: LocalAiErrorCode.ModelMissing,
-            message: 'O modelo local de IA não foi encontrado.',
+            message: errorMessage,
           });
+          console.error(errorMessage, LocalAiErrorCode.ModelMissing);
+          this.toast.showToast(errorMessage, 'error');
           this.configState.setLocalAiEnabled(false);
         }
       })

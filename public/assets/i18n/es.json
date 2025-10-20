@@ -173,6 +173,14 @@
       }
     }
   },
+  "SERVICES": {
+    "DIALOGUE_CONTROLLER": {
+      "LOCAL_AI_ERRORS": {
+        "RUNTIME_MISSING": "Ollama no está instalado en este sistema.",
+        "MODEL_MISSING": "El modelo local de IA no se encontró."
+      }
+    }
+  },
   "SHARED": {
     "COMPONENTS": {
       "BATTLE_MODAL": {

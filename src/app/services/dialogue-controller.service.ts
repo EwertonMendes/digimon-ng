@@ -18,9 +18,6 @@ import {
   take,
   repeat,
   Observable,
-  exhaustMap,
-  filter,
-  pairwise,
   from,
   tap,
 } from 'rxjs';
@@ -82,20 +79,6 @@ export class DialogueControllerService {
       )
       .subscribe();
     this.sub.add(cycleSub);
-
-    const kickOnEnableSub = this.localAiEnabled$
-      .pipe(
-        pairwise(),
-        filter(([prev, curr]) => !prev && !!curr),
-        takeUntil(this.stop$),
-        exhaustMap(() =>
-          this.ensureLocalAiReady().pipe(
-            concatMap((ready) => (ready ? this.runOnce() : of(void 0)))
-          )
-        )
-      )
-      .subscribe();
-    this.sub.add(kickOnEnableSub);
   }
 
   stop(): void {
@@ -108,14 +91,21 @@ export class DialogueControllerService {
 
   private runOnce(): Observable<void> {
     if (!this.configState.localAiEnabled()) return of(void 0);
-    const location = this.pickNextLocation();
-    const digimons = this.getDigimonsByList(location);
-    if (!digimons.length) {
-      const nextAvailable = this.findNextAvailableLocation(location);
-      if (!nextAvailable) return of(void 0);
-      return this.triggerDialogue(nextAvailable);
-    }
-    return this.triggerDialogue(location);
+
+    return this.ensureLocalAiReady().pipe(
+      concatMap((ready) => {
+        if (!ready) return of(void 0);
+
+        const location = this.pickNextLocation();
+        const digimons = this.getDigimonsByList(location);
+        if (!digimons.length) {
+          const nextAvailable = this.findNextAvailableLocation(location);
+          if (!nextAvailable) return of(void 0);
+          return this.triggerDialogue(nextAvailable);
+        }
+        return this.triggerDialogue(location);
+      })
+    );
   }
 
   private triggerDialogue(location: DigimonListLocation): Observable<void> {

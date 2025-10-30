@@ -57,7 +57,10 @@
         </p>
 
         @if (configState.ollamaInstalled()) {
-          <span class="installed-label">Ollama instalado ✅</span>
+          <span class="installed-label">{{
+            "COMMON.ACTION_BAR.CONFIG_MODAL.ENABLE_LOCAL_AI.OLLAMA_INSTALLED"
+              | transloco
+          }}</span>
         } @else {
           <a (click)="openOllamaPage()">
             {{

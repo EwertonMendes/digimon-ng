@@ -173,7 +173,7 @@ export class ConfigStateDataSource {
     try {
       await invoke('ollama_install_model', { model: name });
     } catch {
-      this.toastService.showToast('Model installation failed', 'error');
+      this.toastService.showToast(this.translocoService.translate('COMMON.ACTION_BAR.CONFIG_MODAL.ENABLE_LOCAL_AI.INSTALL_MODEL_FAILED'), 'error');
       this.modelInstalling.set(false);
       this.modelProgress.set(null);
       localStorage.removeItem(ConfigStateDataSource.INSTALL_FLAG);
@@ -199,7 +199,7 @@ export class ConfigStateDataSource {
       this.modelProgress.set(null);
       localStorage.removeItem(ConfigStateDataSource.INSTALL_FLAG);
       await this.checkModelStatus();
-      this.toastService.showToast('Model installed successfully!', 'success');
+      this.toastService.showToast(this.translocoService.translate('COMMON.ACTION_BAR.CONFIG_MODAL.ENABLE_LOCAL_AI.INSTALL_MODEL_SUCCESS'), 'success');
     }).then((un) => (this.unlistenDone = un));
   }
 }

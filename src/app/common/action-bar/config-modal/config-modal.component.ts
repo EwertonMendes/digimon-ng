@@ -1,5 +1,5 @@
-import { Component, DestroyRef, inject, OnInit, signal } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { Component, DestroyRef, OnInit, inject, signal } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 import { CheckboxComponent } from '@shared/components/checkbox/checkbox.component';
 import { SelectComponent } from 'app/shared/components/select/select.component';
@@ -31,9 +31,7 @@ import { openUrl } from '@tauri-apps/plugin-opener';
 export class ConfigModalComponent implements OnInit {
   configModalId = 'config-modal';
   deleteSavedDataModalId = 'delete-saved-data-modal';
-
   form!: FormGroup;
-
   languageOptions: LanguageOption[] = languageOptions;
   themeOptions = signal<{ label: string; value: string }[]>([]);
 
@@ -43,61 +41,64 @@ export class ConfigModalComponent implements OnInit {
   private modalService = inject(ModalService);
   private toastService = inject(ToastService);
   private destroyRef = inject(DestroyRef);
-
   protected configState = inject(ConfigStateDataSource);
 
   ngOnInit(): void {
+    const localAiDisabled =
+      !this.configState.ollamaInstalled() || !this.configState.modelInstalled();
+
     this.form = this.fb.group({
-      enableAudio: [this.configState.audioEnabled()],
-      selectedLanguage: [this.configState.languageCode()],
-      selectedTheme: [this.configState.themeName()],
-      toggleFullscreen: [this.configState.fullscreenEnabled()],
-      enableLocalAi: [this.configState.localAiEnabled()],
+      enableAudio: new FormControl(this.configState.audioEnabled()),
+      selectedLanguage: new FormControl(this.configState.languageCode()),
+      selectedTheme: new FormControl(this.configState.themeName()),
+      toggleFullscreen: new FormControl(this.configState.fullscreenEnabled()),
+      enableLocalAi: new FormControl(
+        { value: this.configState.localAiEnabled(), disabled: localAiDisabled }
+      ),
     });
 
+    this.syncLocalAiCheckboxState();
     this.setTranslatedThemeOptions();
 
     this.translocoService
       .selectTranslation()
       .pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe(() => {
-        this.setTranslatedThemeOptions();
-      });
+      .subscribe(() => this.setTranslatedThemeOptions());
 
     this.form
       .get('toggleFullscreen')
       ?.valueChanges.pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe((value: boolean) => {
-        this.configState.setFullscreenEnabled(!!value);
-      });
+      .subscribe((value: boolean) =>
+        this.configState.setFullscreenEnabled(!!value)
+      );
 
     this.form
       .get('enableAudio')
       ?.valueChanges.pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe((value: boolean) => {
-        this.configState.setAudioEnabled(!!value);
-      });
+      .subscribe((value: boolean) =>
+        this.configState.setAudioEnabled(!!value)
+      );
 
     this.form
       .get('selectedLanguage')
       ?.valueChanges.pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe((lang: string) => {
-        this.configState.setLanguage(lang);
-      });
+      .subscribe((lang: string) =>
+        this.configState.setLanguage(lang)
+      );
 
     this.form
       .get('selectedTheme')
       ?.valueChanges.pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe((themeName: string) => {
-        this.configState.setTheme(themeName);
-      });
+      .subscribe((themeName: string) =>
+        this.configState.setTheme(themeName)
+      );
 
     this.form
       .get('enableLocalAi')
       ?.valueChanges.pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe((value: boolean) => {
-        this.configState.setLocalAiEnabled(!!value);
-      });
+      .subscribe((value: boolean) =>
+        this.configState.setLocalAiEnabled(!!value)
+      );
 
     this.modalService
       .onClose(this.deleteSavedDataModalId)
@@ -112,6 +113,26 @@ export class ConfigModalComponent implements OnInit {
           'success'
         );
       });
+  }
+
+  private syncLocalAiCheckboxState(): void {
+    const control = this.form.get('enableLocalAi');
+    if (!control) return;
+
+    const updateState = () => {
+      const shouldDisable =
+        !this.configState.ollamaInstalled() || !this.configState.modelInstalled();
+
+      if (shouldDisable && !control.disabled) {
+        control.disable({ emitEvent: false });
+        control.setValue(false, { emitEvent: false });
+      } else if (!shouldDisable && control.disabled) {
+        control.enable({ emitEvent: false });
+      }
+    };
+
+    updateState();
+    setInterval(updateState, 1500);
   }
 
   setTranslatedThemeOptions(): void {

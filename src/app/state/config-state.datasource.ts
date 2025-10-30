@@ -1,4 +1,4 @@
-import { Injectable, computed, inject, signal } from '@angular/core';
+import { Injectable, computed, effect, inject, signal } from '@angular/core';
 import { TranslocoService } from '@jsverse/transloco';
 import { AudioService } from 'app/services/audio.service';
 import { ThemeService } from 'app/services/theme.service';
@@ -7,7 +7,7 @@ import { ConfigService } from 'app/services/config.service';
 import { PlayerDataService } from 'app/services/player-data.service';
 import { PlayerConfig } from 'app/core/interfaces/player-config.interface';
 import { invoke } from '@tauri-apps/api/core';
-import { listen } from '@tauri-apps/api/event';
+import { listen, UnlistenFn } from '@tauri-apps/api/event';
 import { ToastService } from '@shared/components/toast/toast.service';
 
 @Injectable({ providedIn: 'root' })
@@ -34,6 +34,20 @@ export class ConfigStateDataSource {
   readonly modelInstalled = signal(false);
   readonly modelInstalling = signal(false);
   readonly modelProgress = signal<string | null>(null);
+  readonly canToggleLocalAI = computed(() => this.ollamaInstalled() && this.modelInstalled());
+
+  private eventsBound = false;
+  protected unlistenProgress: UnlistenFn | null = null;
+  protected unlistenDone: UnlistenFn | null = null;
+  private static readonly INSTALL_FLAG = 'aiModelInstallInProgress';
+
+  constructor() {
+    effect(() => {
+      if (!this.canToggleLocalAI() && this.localAiEnabled()) {
+        this.patch({ enableLocalAi: false });
+      }
+    });
+  }
 
   async initialize(newGame: boolean): Promise<void> {
     const defaultsWithLang: PlayerConfig = {
@@ -55,7 +69,21 @@ export class ConfigStateDataSource {
 
     this.ready.set(true);
     await this.initOllamaDetection();
-    await this.listenForInstallEvents();
+
+    if (!this.eventsBound) {
+      this.bindInstallEvents();
+    }
+
+    const flag = localStorage.getItem(ConfigStateDataSource.INSTALL_FLAG);
+    if (flag && !this.modelInstalled()) {
+      this.modelInstalling.set(true);
+      this.modelProgress.set('0%');
+    }
+    if (flag && this.modelInstalled()) {
+      localStorage.removeItem(ConfigStateDataSource.INSTALL_FLAG);
+      this.modelInstalling.set(false);
+      this.modelProgress.set(null);
+    }
   }
 
   patch(partial: Partial<PlayerConfig>): void {
@@ -113,6 +141,9 @@ export class ConfigStateDataSource {
     setInterval(() => {
       this.checkOllamaStatus();
       this.checkModelStatus();
+      if (!this.modelInstalled() && localStorage.getItem(ConfigStateDataSource.INSTALL_FLAG)) {
+        this.modelInstalling.set(true);
+      }
     }, interval);
   }
 
@@ -134,30 +165,41 @@ export class ConfigStateDataSource {
     }
   }
 
-  async installModel(model = 'gemma3n:e4b') {
-    if (this.modelInstalling()) return;
+  async installModel(name: string) {
+    if (this.modelInstalling() || this.modelInstalled()) return;
     this.modelInstalling.set(true);
     this.modelProgress.set('0%');
-
+    localStorage.setItem(ConfigStateDataSource.INSTALL_FLAG, '1');
     try {
-      await invoke('ollama_install_model', { model });
-    } catch (e: any) {
-      this.toastService.showToast(`Error installing model: ${e}`, 'error');
+      await invoke('ollama_install_model', { model: name });
+    } catch {
+      this.toastService.showToast('Model installation failed', 'error');
       this.modelInstalling.set(false);
       this.modelProgress.set(null);
+      localStorage.removeItem(ConfigStateDataSource.INSTALL_FLAG);
     }
   }
 
-  private async listenForInstallEvents() {
-    await listen<string>('ollama_install_progress', (event) => {
-      this.modelProgress.set(event.payload);
-    });
+  private bindInstallEvents() {
+    this.eventsBound = true;
 
-    await listen<string>('ollama_install_done', async () => {
+    listen<string>('ollama_install_progress', (event) => {
+      if (!localStorage.getItem(ConfigStateDataSource.INSTALL_FLAG)) {
+        localStorage.setItem(ConfigStateDataSource.INSTALL_FLAG, '1');
+      }
+      if (!this.modelInstalling()) {
+        this.modelInstalling.set(true);
+      }
+      this.modelProgress.set(event.payload);
+    }).then((un) => (this.unlistenProgress = un));
+
+    listen<string>('ollama_install_done', async () => {
+      if (!this.modelInstalling()) return;
       this.modelInstalling.set(false);
       this.modelProgress.set(null);
+      localStorage.removeItem(ConfigStateDataSource.INSTALL_FLAG);
       await this.checkModelStatus();
       this.toastService.showToast('Model installed successfully!', 'success');
-    });
+    }).then((un) => (this.unlistenDone = un));
   }
 }

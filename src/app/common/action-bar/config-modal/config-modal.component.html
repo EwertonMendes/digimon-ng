@@ -79,12 +79,14 @@
             {{
               "COMMON.ACTION_BAR.CONFIG_MODAL.ENABLE_LOCAL_AI.MODEL_INSTALLED"
                 | transloco
-            }}</span
-          >
+            }}
+          </span>
         } @else if (configState.modelInstalling()) {
           <span class="installing-label">
-            {{ "COMMON.ACTION_BAR.CONFIG_MODAL.ENABLE_LOCAL_AI.INSTALL_MODEL_PROGRESS"
-                | transloco:{ progress: configState.modelProgress() } }}
+            {{
+              "COMMON.ACTION_BAR.CONFIG_MODAL.ENABLE_LOCAL_AI.INSTALL_MODEL_PROGRESS"
+                | transloco: { progress: configState.modelProgress() }
+            }}
           </span>
         } @else {
           <a (click)="installAIModel()">

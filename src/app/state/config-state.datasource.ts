@@ -6,6 +6,7 @@ import { WindowService } from '@services/window.service';
 import { ConfigService } from 'app/services/config.service';
 import { PlayerDataService } from 'app/services/player-data.service';
 import { PlayerConfig } from 'app/core/interfaces/player-config.interface';
+import { invoke } from '@tauri-apps/api/core';
 
 @Injectable({ providedIn: 'root' })
 export class ConfigStateDataSource {
@@ -26,6 +27,9 @@ export class ConfigStateDataSource {
   readonly themeName = computed(() => this.state().theme ?? 'default');
   readonly localAiEnabled = computed(() => this.state().enableLocalAi ?? false);
 
+  readonly ollamaInstalled = signal(false);
+  readonly modelInstalled = signal(false);
+
   async initialize(newGame: boolean): Promise<void> {
     const defaultsWithLang: PlayerConfig = {
       ...this.configService.defaultInitialConfig,
@@ -45,6 +49,7 @@ export class ConfigStateDataSource {
     }
 
     this.ready.set(true);
+    await this.initOllamaDetection();
   }
 
   patch(partial: Partial<PlayerConfig>): void {
@@ -93,6 +98,33 @@ export class ConfigStateDataSource {
     }
     if (next.language !== prev.language) {
       this.translocoService.setActiveLang(next.language);
+    }
+  }
+
+  async initOllamaDetection(interval = 3000) {
+    await this.checkOllamaStatus();
+    await this.checkModelStatus();
+    setInterval(() => {
+      this.checkOllamaStatus();
+      this.checkModelStatus();
+    }, interval);
+  }
+
+  private async checkOllamaStatus() {
+    try {
+      const installed = await invoke<boolean>('ollama_is_installed');
+      this.ollamaInstalled.set(installed);
+    } catch {
+      this.ollamaInstalled.set(false);
+    }
+  }
+
+  private async checkModelStatus() {
+    try {
+      const installed = await invoke<boolean>('ollama_has_model', { name: 'gemma3n:e4b' });
+      this.modelInstalled.set(installed);
+    } catch {
+      this.modelInstalled.set(false);
     }
   }
 }

@@ -45,6 +45,16 @@
       color: var(--gray-400);
       margin: 0;
     }
+
+    a, span {
+      font-size: 0.9rem;
+    }
+
+    .disabled-link {
+      pointer-events: none;
+      opacity: 0.6;
+      color: var(--gray-400);
+    }
   }
 
   .delete-data-container {

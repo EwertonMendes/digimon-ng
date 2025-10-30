@@ -44,7 +44,7 @@ export class ConfigModalComponent implements OnInit {
   private toastService = inject(ToastService);
   private destroyRef = inject(DestroyRef);
 
-  private configState = inject(ConfigStateDataSource);
+  protected configState = inject(ConfigStateDataSource);
 
   ngOnInit(): void {
     this.form = this.fb.group({

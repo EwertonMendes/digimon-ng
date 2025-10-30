@@ -54,8 +54,30 @@
               | transloco
           }}
         </p>
-        <a (click)="openOllamaPage()">{{ "COMMON.ACTION_BAR.CONFIG_MODAL.ENABLE_LOCAL_AI.INSTALL_OLLAMA" | transloco }}</a>
-        <a (click)="installAIModel()">{{ "COMMON.ACTION_BAR.CONFIG_MODAL.ENABLE_LOCAL_AI.INSTALL_MODEL" | transloco }}</a>
+        @if (configState.ollamaInstalled()) {
+          <span class="installed-label">Ollama instalado ✅</span>
+        } @else {
+          <a (click)="openOllamaPage()">{{
+            "COMMON.ACTION_BAR.CONFIG_MODAL.ENABLE_LOCAL_AI.INSTALL_OLLAMA"
+              | transloco
+          }}</a>
+        }
+
+        @if (!configState.ollamaInstalled()) {
+          <a class="disabled-link">
+            {{
+              "COMMON.ACTION_BAR.CONFIG_MODAL.ENABLE_LOCAL_AI.INSTALL_MODEL"
+                | transloco
+            }}</a
+          >
+        } @else if (configState.modelInstalled()) {
+          <span class="installed-label">Modelo instalado ✅</span>
+        } @else {
+          <a (click)="installAIModel()">{{
+            "COMMON.ACTION_BAR.CONFIG_MODAL.ENABLE_LOCAL_AI.INSTALL_MODEL"
+              | transloco
+          }}</a>
+        }
       </div>
 
       <div class="config-item">

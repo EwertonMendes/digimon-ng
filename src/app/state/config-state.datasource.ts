@@ -7,6 +7,8 @@ import { ConfigService } from 'app/services/config.service';
 import { PlayerDataService } from 'app/services/player-data.service';
 import { PlayerConfig } from 'app/core/interfaces/player-config.interface';
 import { invoke } from '@tauri-apps/api/core';
+import { listen } from '@tauri-apps/api/event';
+import { ToastService } from '@shared/components/toast/toast.service';
 
 @Injectable({ providedIn: 'root' })
 export class ConfigStateDataSource {
@@ -16,6 +18,7 @@ export class ConfigStateDataSource {
   private readonly windowService = inject(WindowService);
   private readonly configService = inject(ConfigService);
   private readonly playerDataService = inject(PlayerDataService);
+  private readonly toastService = inject(ToastService);
 
   private readonly ready = signal(false);
   private readonly state = signal<PlayerConfig>(this.configService.defaultInitialConfig);
@@ -29,6 +32,8 @@ export class ConfigStateDataSource {
 
   readonly ollamaInstalled = signal(false);
   readonly modelInstalled = signal(false);
+  readonly modelInstalling = signal(false);
+  readonly modelProgress = signal<string | null>(null);
 
   async initialize(newGame: boolean): Promise<void> {
     const defaultsWithLang: PlayerConfig = {
@@ -50,6 +55,7 @@ export class ConfigStateDataSource {
 
     this.ready.set(true);
     await this.initOllamaDetection();
+    await this.listenForInstallEvents();
   }
 
   patch(partial: Partial<PlayerConfig>): void {
@@ -126,5 +132,32 @@ export class ConfigStateDataSource {
     } catch {
       this.modelInstalled.set(false);
     }
+  }
+
+  async installModel(model = 'gemma3n:e4b') {
+    if (this.modelInstalling()) return;
+    this.modelInstalling.set(true);
+    this.modelProgress.set('0%');
+
+    try {
+      await invoke('ollama_install_model', { model });
+    } catch (e: any) {
+      this.toastService.showToast(`Error installing model: ${e}`, 'error');
+      this.modelInstalling.set(false);
+      this.modelProgress.set(null);
+    }
+  }
+
+  private async listenForInstallEvents() {
+    await listen<string>('ollama_install_progress', (event) => {
+      this.modelProgress.set(event.payload);
+    });
+
+    await listen<string>('ollama_install_done', async () => {
+      this.modelInstalling.set(false);
+      this.modelProgress.set(null);
+      await this.checkModelStatus();
+      this.toastService.showToast('Model installed successfully!', 'success');
+    });
   }
 }

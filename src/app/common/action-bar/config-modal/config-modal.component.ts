@@ -141,6 +141,6 @@ export class ConfigModalComponent implements OnInit {
   }
 
   protected installAIModel() {
-    console.log('Installing AI model...');
+    this.configState.installModel('gemma3n:e4b');
   }
 }

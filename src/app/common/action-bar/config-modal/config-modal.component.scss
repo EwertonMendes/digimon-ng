@@ -46,7 +46,8 @@
       margin: 0;
     }
 
-    a, span {
+    a,
+    span {
       font-size: 0.9rem;
     }
 
@@ -54,6 +55,37 @@
       pointer-events: none;
       opacity: 0.6;
       color: var(--gray-400);
+    }
+
+    .installed-label {
+      color: var(--success);
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-top: 0.25rem;
+      display: inline-block;
+    }
+
+    .installing-label {
+      color: var(--warning);
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-top: 0.25rem;
+      display: inline-block;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.6;
+      }
+
+      100% {
+        opacity: 1;
+      }
     }
   }
 

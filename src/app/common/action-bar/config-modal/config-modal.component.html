@@ -48,19 +48,23 @@
           formControlName="enableLocalAi"
         >
         </app-checkbox>
+
         <p class="config-description">
           {{
             "COMMON.ACTION_BAR.CONFIG_MODAL.ENABLE_LOCAL_AI.DESCRIPTION"
               | transloco
           }}
         </p>
+
         @if (configState.ollamaInstalled()) {
           <span class="installed-label">Ollama instalado ✅</span>
         } @else {
-          <a (click)="openOllamaPage()">{{
-            "COMMON.ACTION_BAR.CONFIG_MODAL.ENABLE_LOCAL_AI.INSTALL_OLLAMA"
-              | transloco
-          }}</a>
+          <a (click)="openOllamaPage()">
+            {{
+              "COMMON.ACTION_BAR.CONFIG_MODAL.ENABLE_LOCAL_AI.INSTALL_OLLAMA"
+                | transloco
+            }}
+          </a>
         }
 
         @if (!configState.ollamaInstalled()) {
@@ -68,15 +72,27 @@
             {{
               "COMMON.ACTION_BAR.CONFIG_MODAL.ENABLE_LOCAL_AI.INSTALL_MODEL"
                 | transloco
-            }}</a
-          >
+            }}
+          </a>
         } @else if (configState.modelInstalled()) {
-          <span class="installed-label">Modelo instalado ✅</span>
+          <span class="installed-label">
+            {{
+              "COMMON.ACTION_BAR.CONFIG_MODAL.ENABLE_LOCAL_AI.MODEL_INSTALLED"
+                | transloco
+            }}</span
+          >
+        } @else if (configState.modelInstalling()) {
+          <span class="installing-label">
+            {{ "COMMON.ACTION_BAR.CONFIG_MODAL.ENABLE_LOCAL_AI.INSTALL_MODEL_PROGRESS"
+                | transloco:{ progress: configState.modelProgress() } }}
+          </span>
         } @else {
-          <a (click)="installAIModel()">{{
-            "COMMON.ACTION_BAR.CONFIG_MODAL.ENABLE_LOCAL_AI.INSTALL_MODEL"
-              | transloco
-          }}</a>
+          <a (click)="installAIModel()">
+            {{
+              "COMMON.ACTION_BAR.CONFIG_MODAL.ENABLE_LOCAL_AI.INSTALL_MODEL"
+                | transloco
+            }}
+          </a>
         }
       </div>
 

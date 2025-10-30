@@ -15,7 +15,12 @@
           "LABEL": "Enable Local AI",
           "DESCRIPTION": "Turn the local AI on or off. (WARNING: requires Ollama installed and at least 12GB of RAM and good CPU)",
           "INSTALL_OLLAMA": "Install Ollama",
-          "INSTALL_MODEL": "Install Model (Gemma3n:e4b)"
+          "INSTALL_MODEL": "Install Model (Gemma3n:e4b)",
+          "INSTALL_MODEL_SUCCESS": "Model installed successfully!",
+          "INSTALL_MODEL_FAILED": "Model install failed!",
+          "INSTALL_MODEL_PROGRESS": "Installing model... {{progress}}",
+          "MODEL_INSTALLED": "Model installed ✅",
+          "OLLAMA_INSTALLED": "Ollama installed ✅"
         },
         "LANGUAGE": {
           "LABEL": "Language"

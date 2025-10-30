@@ -15,7 +15,12 @@
           "LABEL": "Habilitar IA Local",
           "DESCRIPTION": "Activar o desactivar la IA local. (ADVERTENCIA: requiere que Ollama esté instalado y al menos 12GB de RAM y buena CPU)",
           "INSTALL_OLLAMA": "Instalar Ollama",
-          "INSTALL_MODEL": "Instalar Modelo (Gemma3n:e4b)"
+          "INSTALL_MODEL": "Instalar Modelo (Gemma3n:e4b)",
+          "INSTALL_MODEL_SUCCESS": "¡Modelo instalado con éxito!",
+          "INSTALL_MODEL_FAILED": "¡Fallo al instalar el modelo!",
+          "INSTALL_MODEL_PROGRESS": "Instalando modelo... {{progress}}",
+          "MODEL_INSTALLED": "Modelo instalado ✅",
+          "OLLAMA_INSTALLED": "Ollama instalado ✅"
         },
         "LANGUAGE": {
           "LABEL": "Idioma"

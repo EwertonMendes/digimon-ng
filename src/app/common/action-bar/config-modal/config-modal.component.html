@@ -54,8 +54,8 @@
               | transloco
           }}
         </p>
-        <!-- TODO: implement way to open link in user's default browser -->
-        <a href="https://ollama.com/download" target="_blank">Instalar Ollama</a>
+        <a (click)="openOllamaPage()">{{ "COMMON.ACTION_BAR.CONFIG_MODAL.ENABLE_LOCAL_AI.INSTALL_OLLAMA" | transloco }}</a>
+        <a (click)="installAIModel()">{{ "COMMON.ACTION_BAR.CONFIG_MODAL.ENABLE_LOCAL_AI.INSTALL_MODEL" | transloco }}</a>
       </div>
 
       <div class="config-item">

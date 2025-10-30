@@ -75,6 +75,7 @@ fn main() {
     ::default()
     .plugin(tauri_plugin_fs::init())
     .plugin(tauri_plugin_http::init())
+    .plugin(tauri_plugin_opener::init())
     .on_window_event(|window, event| {
       if let WindowEvent::CloseRequested { .. } = event {
         window.app_handle().exit(0);

@@ -12,6 +12,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ToastService } from '@shared/components/toast/toast.service';
 import { LanguageOption, languageOptions } from '@core/consts/languages';
 import { ConfigStateDataSource } from '@state/config-state.datasource';
+import { openUrl } from '@tauri-apps/plugin-opener';
 
 @Component({
   selector: 'app-config-modal',
@@ -133,5 +134,13 @@ export class ConfigModalComponent implements OnInit {
       confirmButtonColor: 'warning',
       cancelButtonColor: 'dark',
     });
+  }
+
+  protected openOllamaPage() {
+    openUrl('https://ollama.com/download');
+  }
+
+  protected installAIModel() {
+    console.log('Installing AI model...');
   }
 }

@@ -14,6 +14,8 @@
     "fs:default",
     "fs:allow-app-write-recursive",
     "fs:allow-app-read-recursive",
+    "opener:default",
+    "opener:allow-open-url",
     {
       "identifier": "http:default",
       "allow": [

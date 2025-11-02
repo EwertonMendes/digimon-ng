@@ -2,15 +2,16 @@
 
 use tauri::{AppHandle, Manager, WindowEvent, Emitter};
 use std::process::{Command, Stdio};
-use std::io::{self, Read, Write};
-use std::{thread, time::Duration};
-use reqwest;
 use serde::Deserialize;
+use reqwest::Client;
+use tokio::time::sleep;
+use std::time::Duration;
 
-#[tauri::command]
-fn ollama_is_installed() -> bool {
-  Command::new("ollama").arg("--version").output().is_ok()
-}
+#[cfg(target_os = "windows")]
+use std::os::windows::process::CommandExt;
+
+#[cfg(target_os = "windows")]
+const CREATE_NO_WINDOW: u32 = 0x08000000 | 0x00000008;
 
 #[derive(Deserialize)]
 struct ModelTag {
@@ -22,34 +23,65 @@ struct Tags {
   models: Vec<ModelTag>,
 }
 
-fn is_server_up() -> bool {
-  reqwest::blocking::get("http://127.0.0.1:11434/api/tags").is_ok()
+#[tauri::command]
+async fn ollama_is_installed() -> bool {
+  let mut cmd = Command::new("ollama");
+  cmd.arg("--version").stdout(Stdio::null()).stderr(Stdio::null());
+  #[cfg(target_os = "windows")]
+  {
+    cmd.creation_flags(CREATE_NO_WINDOW);
+  }
+  cmd.spawn().is_ok()
+}
+
+async fn is_server_up() -> bool {
+  Client::new()
+    .get("http://127.0.0.1:11434/api/tags")
+    .send()
+    .await
+    .map(|r| r.status().is_success())
+    .unwrap_or(false)
 }
 
 #[tauri::command]
-fn ensure_ollama() -> bool {
-  if is_server_up() {
+async fn ensure_ollama() -> bool {
+  if is_server_up().await {
     return true;
   }
-  let _ = Command::new("ollama").arg("serve").spawn();
-  for _ in 0..10 {
-    if is_server_up() {
+  let mut cmd = Command::new("ollama");
+  cmd.arg("serve").stdin(Stdio::null()).stdout(Stdio::null()).stderr(Stdio::null());
+  #[cfg(target_os = "windows")]
+  {
+    cmd.creation_flags(CREATE_NO_WINDOW);
+  }
+  let _ = cmd.spawn();
+  for _ in 0..20 {
+    if is_server_up().await {
       return true;
     }
-    thread::sleep(Duration::from_millis(400));
+    sleep(Duration::from_millis(500)).await;
   }
   false
 }
 
 #[tauri::command]
-fn ollama_has_model(name: String) -> bool {
-  if let Ok(resp) = reqwest::blocking::get("http://127.0.0.1:11434/api/tags") {
-    if let Ok(tags) = resp.json::<Tags>() {
+async fn ollama_has_model(name: String) -> bool {
+  let client = Client::new();
+  if let Ok(resp) = client.get("http://127.0.0.1:11434/api/tags").send().await {
+    if let Ok(tags) = resp.json::<Tags>().await {
       let target = name.to_lowercase();
-      return tags.models.iter().any(|m| m.name.to_lowercase() == target);
+      if tags.models.iter().any(|m| m.name.to_lowercase() == target) {
+        return true;
+      }
     }
   }
-  if let Ok(out) = Command::new("ollama").arg("list").output() {
+  let mut cmd = Command::new("ollama");
+  cmd.arg("list").stdout(Stdio::piped()).stderr(Stdio::null());
+  #[cfg(target_os = "windows")]
+  {
+    cmd.creation_flags(CREATE_NO_WINDOW);
+  }
+  if let Ok(out) = cmd.output() {
     let target = name.to_lowercase();
     let s = String::from_utf8_lossy(&out.stdout).to_lowercase();
     return s.lines().any(|line| line.split_whitespace().next().map(|n| n == target).unwrap_or(false));
@@ -58,63 +90,55 @@ fn ollama_has_model(name: String) -> bool {
 }
 
 #[tauri::command]
-fn ollama_install_model(app: AppHandle, model: String) -> Result<(), String> {
+async fn ollama_install_model(app: AppHandle, model: String) -> Result<(), String> {
   tauri::async_runtime::spawn(async move {
-    let mut child = Command::new("ollama")
-      .arg("pull")
-      .arg(&model)
-      .stdout(Stdio::piped())
-      .stderr(Stdio::piped())
-      .spawn()
-      .map_err(|e| format!("Error starting install process: {}", e))
-      .unwrap();
+    use tokio::io::{AsyncBufReadExt, BufReader};
+    use tokio::process::Command as TokioCommand;
 
-    let mut buf = [0u8; 4096];
-    let mut data: Vec<u8> = Vec::new();
+    let mut cmd = TokioCommand::new("ollama");
+    cmd.arg("pull").arg(&model).stdout(Stdio::piped()).stderr(Stdio::piped());
+    #[cfg(target_os = "windows")]
+    {
+      cmd.creation_flags(CREATE_NO_WINDOW);
+    }
+
+    let mut child = match cmd.spawn() {
+      Ok(c) => c,
+      Err(e) => {
+        let _ = app.emit("ollama_install_done", format!("Error: {}", e));
+        return;
+      }
+    };
+
+    let stderr = match child.stderr.take() {
+      Some(s) => s,
+      None => {
+        let _ = app.emit("ollama_install_done", String::from("No stderr available"));
+        return;
+      }
+    };
+
+    let mut reader = BufReader::new(stderr).lines();
     let mut last_percent: Option<String> = None;
 
-    if let Some(mut stderr) = child.stderr.take() {
-      loop {
-        match stderr.read(&mut buf) {
-          Ok(0) => break,
-          Ok(n) => {
-            data.extend_from_slice(&buf[..n]);
-            if let Ok(text) = String::from_utf8(data.clone()) {
-              if let Some(percent) = parse_progress(&text) {
-                if last_percent.as_deref() != Some(percent.as_str()) {
-                  print!("\rModel install at {}", percent);
-                  io::stdout().flush().ok();
-                  app.emit("ollama_install_progress", percent.clone()).ok();
-                  last_percent = Some(percent);
-                }
-              }
-              if data.len() > 10000 {
-                data = data.split_off(data.len() - 100);
-              }
-            } else {
-              if data.len() > 8192 {
-                data.drain(..4096);
-              }
-            }
-          }
-          Err(e) => {
-            println!("\nRead error: {}", e);
-            break;
-          }
+    while let Ok(Some(line)) = reader.next_line().await {
+      if let Some(percent) = parse_progress(&line) {
+        if last_percent.as_deref() != Some(percent.as_str()) {
+          let _ = app.emit("ollama_install_progress", percent.clone());
+          last_percent = Some(percent);
         }
       }
     }
 
-    let status = child.wait().map_err(|e| format!("Error waiting for process: {}", e)).unwrap();
-    if status.success() {
-      println!("\nModel install finished successfully");
-      app.emit("ollama_install_done", model).ok();
-    } else {
-      println!("\nModel install failed");
-      app.emit("ollama_install_done", String::from("Failed to install model")).ok();
+    match child.wait().await {
+      Ok(status) if status.success() => {
+        let _ = app.emit("ollama_install_done", model);
+      }
+      _ => {
+        let _ = app.emit("ollama_install_done", String::from("Failed to install model"));
+      }
     }
   });
-
   Ok(())
 }
 
@@ -138,10 +162,10 @@ fn parse_progress(text: &str) -> Option<String> {
 #[tauri::command]
 fn close_splashscreen(app: AppHandle) {
   if let Some(splash) = app.get_webview_window("splashscreen") {
-    splash.destroy().unwrap();
+    let _ = splash.destroy();
   }
   if let Some(main) = app.get_webview_window("main") {
-    main.show().unwrap();
+    let _ = main.show();
   }
 }
 
@@ -151,8 +175,7 @@ fn exit_app(app: AppHandle) {
 }
 
 fn main() {
-  tauri::Builder
-    ::default()
+  tauri::Builder::default()
     .plugin(tauri_plugin_fs::init())
     .plugin(tauri_plugin_http::init())
     .plugin(tauri_plugin_opener::init())

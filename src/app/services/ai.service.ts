@@ -1,7 +1,8 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, Subject, lastValueFrom, takeUntil } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { invoke } from '@tauri-apps/api/core';
+import { listen } from '@tauri-apps/api/event';
 import { TranslocoService } from '@jsverse/transloco';
 import { languageOptions } from '@core/consts/languages';
 import { Digimon } from '@core/interfaces/digimon.interface';
@@ -19,7 +20,6 @@ export class AiService {
 
   private readonly MODEL = 'gemma3n:e4b';
   private readonly KEEP_ALIVE = '30m';
-  private readonly API_URL = 'http://127.0.0.1:11434/api/generate';
 
   private cancel$ = new Subject<void>();
   private wasCancelled = false;
@@ -34,15 +34,8 @@ export class AiService {
 
     try {
       this.resetCancelFlag();
-      const response = await lastValueFrom(
-        this.http
-          .post(
-            this.API_URL,
-            { model: this.MODEL, prompt, stream: false, keep_alive: this.KEEP_ALIVE, format: 'json' },
-            { responseType: 'text' as const }
-          )
-          .pipe(takeUntil(this.cancel$))
-      );
+      const body = JSON.stringify({ model: this.MODEL, prompt, stream: false, keep_alive: this.KEEP_ALIVE, format: 'json' });
+      const response = await invoke<string>('proxy_ollama_generate_once', { body });
       if (!this.isNonEmptyString(response)) throw new Error('Empty response from model.');
       return this.parseOllamaResponse(response, digimons);
     } catch {
@@ -71,85 +64,72 @@ export class AiService {
 
       const language = this.resolveCurrentLanguage();
       const prompt = this.buildPrompt(sceneContext, digimons, language, 'jsonl');
-
       this.dialogueService.beginStreaming(digimons.map(d => d.id));
 
-      const controller = new AbortController();
-      const signal = controller.signal;
-
-      let processedLength = 0;
-      let ndjsonCarry = '';
-      let textBuffer = '';
       const idToNameMap = this.buildIdToNameMap(digimons);
+      let ndjsonCarry = '';
+      let responseBuffer = '';
 
-      const body = JSON.stringify({
-        model: this.MODEL,
-        prompt,
-        stream: true,
-        keep_alive: this.KEEP_ALIVE,
-        context: []
-      });
+      const chunkUnlisten = await listen<string>('ollama_stream_chunk', (e) => {
+        const text = e.payload || '';
+        if (!this.isNonEmptyString(text)) return;
+        const joined = ndjsonCarry + text;
+        const lines = joined.split('\n');
+        ndjsonCarry = lines.pop() ?? '';
 
-      try {
-        const res = await fetch(this.API_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body,
-          signal,
-        });
+        for (const raw of lines) {
+          const trimmed = raw.trim();
+          if (!this.isNonEmptyString(trimmed)) continue;
 
-        if (!res.ok || !res.body) {
-          output$.error('Streaming request failed.');
-          return;
-        }
+          const envelope = this.safeJsonParse<OllamaStreamChunk>(trimmed);
+          if (!envelope) continue;
 
-        const reader = res.body.getReader();
-        while (true) {
-          const { value, done } = await reader.read();
-          if (done) break;
-          if (!value || !value.length) continue;
-
-          const chunkText = new TextDecoder().decode(value);
-          const completeDownloadText = textBuffer + chunkText;
-          textBuffer = '';
-
-          const newSegment = completeDownloadText.slice(processedLength);
-          processedLength = completeDownloadText.length;
-          if (!this.isNonEmptyString(newSegment)) continue;
-
-          const joined = ndjsonCarry + newSegment;
-          const lines = joined.split('\n');
-          ndjsonCarry = lines.pop() ?? '';
-
-          for (const raw of lines) {
-            const trimmed = raw.trim();
-            if (!this.isNonEmptyString(trimmed)) continue;
-
-            const envelope = this.safeJsonParse<OllamaStreamChunk>(trimmed);
-            if (!envelope) continue;
-
-            const partial = typeof envelope.response === 'string' ? envelope.response : '';
-            if (partial) {
-              output$.next({ type: 'partial', data: partial });
-              const { objects, remaining } = this.extractBalancedJsonObjects(partial);
-              for (const obj of objects) this.tryEmitDialogueLine(obj, idToNameMap, output$);
-              textBuffer = remaining;
-            }
-
-            if (envelope.done === true) {
-              const { objects, remaining } = this.extractBalancedJsonObjects(textBuffer);
-              for (const obj of objects) this.tryEmitDialogueLine(obj, idToNameMap, output$);
-              textBuffer = remaining;
-              ndjsonCarry = '';
-              break;
-            }
+          const piece = typeof envelope.response === 'string' ? envelope.response : '';
+          if (this.isNonEmptyString(piece)) {
+            responseBuffer += piece;
+            output$.next({ type: 'partial', data: piece });
+            const { objects, remaining } = this.extractBalancedJsonObjects(responseBuffer);
+            for (const obj of objects) this.tryEmitDialogueLine(obj, idToNameMap, output$);
+            responseBuffer = remaining;
           }
         }
+      });
 
+      const doneUnlisten = await listen('ollama_stream_done', () => {
+        const { objects } = this.extractBalancedJsonObjects(responseBuffer);
+        for (const obj of objects) this.tryEmitDialogueLine(obj, idToNameMap, output$);
         output$.complete();
+        chunkUnlisten();
+        doneUnlisten();
+      });
+
+      const errUnlisten = await listen<string>('ollama_stream_error', (e) => {
+        this.dialogueService.endStreaming();
+        output$.error(e.payload || 'Streaming error');
+        chunkUnlisten();
+        doneUnlisten();
+        errUnlisten();
+      });
+
+      const controllerUnsub = this.cancel$.subscribe(() => {
+        this.dialogueService.endStreaming();
+        output$.error('Cancelled');
+        chunkUnlisten();
+        doneUnlisten();
+        errUnlisten();
+      });
+
+      const body = JSON.stringify({ model: this.MODEL, prompt, stream: true, keep_alive: this.KEEP_ALIVE, context: [] });
+      try {
+        await invoke('proxy_ollama_generate_stream', { body });
       } catch {
         this.dialogueService.endStreaming();
-        output$.error('Error during streaming dialogue generation.');
+        output$.error('Error starting streaming.');
+        chunkUnlisten();
+        doneUnlisten();
+        errUnlisten();
+        controllerUnsub.unsubscribe();
+        return;
       }
     })();
 
@@ -216,47 +196,44 @@ export class AiService {
 
   private buildPrompt(context: string, digimons: Digimon[], language: string, mode: 'json' | 'jsonl'): string {
     const shuffledDigimons = [...digimons].sort(() => Math.random() - 0.5);
-
     const attributeToneMap: Record<string, Record<'lowRank' | 'midRank' | 'highRank', string>> = {
       virus: {
         lowRank: 'Has hints of a darker or mischievous side, impulsive and unpredictable, but not evil.',
         midRank: 'Confident and intense, with a chaotic or rebellious streak, often blunt or cynical.',
-        highRank: 'Calm but intimidating, wise and calculating, occasionally menacing yet composed.',
+        highRank: 'Calm but intimidating, wise and calculating, occasionally menacing yet composed.'
       },
       vaccine: {
         lowRank: 'Kind and optimistic, though naive and still discovering their strength.',
         midRank: 'Brave and determined, with a sense of justice tempered by doubt or emotion.',
-        highRank: 'Speaks with calm confidence and leadership, inspiring allies through hope and courage.',
+        highRank: 'Speaks with calm confidence and leadership, inspiring allies through hope and courage.'
       },
       data: {
         lowRank: 'Curious and observant, analyzing things with innocence and curiosity.',
         midRank: 'Balanced and rational, acts as a mediator and voice of reason.',
-        highRank: 'Wise and thoughtful, deeply analytical, expressing logic and empathy in equal measure.',
-      },
+        highRank: 'Wise and thoughtful, deeply analytical, expressing logic and empathy in equal measure.'
+      }
     };
 
-    const participants = shuffledDigimons
-      .map((d) => {
-        const attribute = String(d.attribute || '').toLowerCase();
-        const rank = String(d.rank || '').toLowerCase();
-        const hasNickname = typeof (d as any).nickName === 'string' && ((d as any).nickName as string).trim().length > 0;
-        const displayName = hasNickname ? `${(d as any).nickName} (${d.name})` : d.name;
-        const nameContext = hasNickname ? `Referred to by other Digimons as "${(d as any).nickName}", but is actually a ${d.name}.` : `Referred to as "${d.name}".`;
-        const isMidRank = ['champion', 'ultimate'].includes(rank);
-        const isHighRank = rank === 'mega';
-        const rankCategory: 'lowRank' | 'midRank' | 'highRank' = isHighRank ? 'highRank' : isMidRank ? 'midRank' : 'lowRank';
-        const attributeTone = attributeToneMap[attribute]?.[rankCategory] ?? 'Speaks in a neutral tone appropriate to their nature.';
-        const rankTone = isHighRank ? 'Speaks with authority, composure, and wisdom, as a being of great experience.' : isMidRank ? 'Speaks with energy and confidence — experienced, but still emotional and imperfect.' : 'Speaks with a curious, youthful tone — uncertain yet full of wonder.';
-        const summary = [
-          `- ${displayName} (ID: ${d.id})`,
-          `Rank: ${d.rank}, Attribute: ${d.attribute}, Species: ${d.species}, Level: ${d.level}, HP: ${d.currentHp}/${d.maxHp}, MP: ${d.currentMp}/${d.maxMp}, ATK: ${d.atk}, DEF: ${d.def}, SPEED: ${d.speed}.`,
-          nameContext,
-          attributeTone,
-          rankTone,
-        ].join(' ');
-        return summary;
-      })
-      .join('\n');
+    const participants = shuffledDigimons.map((d) => {
+      const attribute = String(d.attribute || '').toLowerCase();
+      const rank = String(d.rank || '').toLowerCase();
+      const hasNickname = typeof (d as any).nickName === 'string' && ((d as any).nickName as string).trim().length > 0;
+      const displayName = hasNickname ? `${(d as any).nickName} (${d.name})` : d.name;
+      const nameContext = hasNickname ? `Referred to by other Digimons as "${(d as any).nickName}", but is actually a ${d.name}.` : `Referred to as "${d.name}".`;
+      const isMidRank = ['champion', 'ultimate'].includes(rank);
+      const isHighRank = rank === 'mega';
+      const rankCategory: 'lowRank' | 'midRank' | 'highRank' = isHighRank ? 'highRank' : isMidRank ? 'midRank' : 'lowRank';
+      const attributeTone = attributeToneMap[attribute]?.[rankCategory] ?? 'Speaks in a neutral tone appropriate to their nature.';
+      const rankTone = isHighRank ? 'Speaks with authority, composure, and wisdom, as a being of great experience.' : isMidRank ? 'Speaks with energy and confidence — experienced, but still emotional and imperfect.' : 'Speaks with a curious, youthful tone — uncertain yet full of wonder.';
+      const summary = [
+        `- ${displayName} (ID: ${d.id})`,
+        `Rank: ${d.rank}, Attribute: ${d.attribute}, Species: ${d.species}, Level: ${d.level}, HP: ${d.currentHp}/${d.maxHp}, MP: ${d.currentMp}/${d.maxMp}, ATK: ${d.atk}, DEF: ${d.def}, SPEED: ${d.speed}.`,
+        nameContext,
+        attributeTone,
+        rankTone
+      ].join(' ');
+      return summary;
+    }).join('\n');
 
     const isSingle = digimons.length === 1;
     const style = isSingle ? 'If only one Digimon, produce 1–3 short monologue lines.' : 'If multiple Digimons, produce 3–7 short lines alternating speakers in natural tone and random order. The order of speakers should feel organic and unpredictable.';
@@ -280,7 +257,7 @@ Rules:
 - Keep the dialogue short, emotional, and anime-like.
 - Make short sentences, no long paragraphs (about 10 words or less).
 - No narration, no markdown, no meta comments.
-- Do not end conversations (dialogue) with questions for other digimons to answer.
+- Do not end conversations with questions for other digimons to answer.
 - No grammatical errors.
 `.trim();
 
@@ -344,11 +321,7 @@ ${context}
   }
 
   private safeJsonParse<T>(raw: string): T | null {
-    try {
-      return JSON.parse(raw) as T;
-    } catch {
-      return null;
-    }
+    try { return JSON.parse(raw) as T; } catch { return null; }
   }
 
   private extractFirstJsonObjectFromText(raw: string): string | null {
@@ -356,13 +329,8 @@ ${context}
     let start = -1;
     for (let i = 0; i < raw.length; i++) {
       const c = raw[i];
-      if (c === '{') {
-        if (depth === 0) start = i;
-        depth++;
-      } else if (c === '}') {
-        depth--;
-        if (depth === 0 && start >= 0) return raw.slice(start, i + 1);
-      }
+      if (c === '{') { if (depth === 0) start = i; depth++; }
+      else if (c === '}') { depth--; if (depth === 0 && start >= 0) return raw.slice(start, i + 1); }
     }
     return null;
   }
@@ -374,15 +342,10 @@ ${context}
     let start = -1;
     for (let i = 0; i < raw.length; i++) {
       const c = raw[i];
-      if (c === '{') {
-        if (depth === 0) start = i;
-        depth++;
-      } else if (c === '}') {
+      if (c === '{') { if (depth === 0) start = i; depth++; }
+      else if (c === '}') {
         depth--;
-        if (depth === 0 && start >= 0) {
-          result.push(raw.slice(start, i + 1));
-          start = -1;
-        }
+        if (depth == 0 && start >= 0) { result.push(raw.slice(start, i + 1)); start = -1; }
       }
     }
     if (depth > 0 && start >= 0) remaining = raw.slice(start);

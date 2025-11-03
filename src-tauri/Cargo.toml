@@ -18,8 +18,9 @@ tauri = { version = "2.8.0", features = [] }
 tauri-plugin-fs = "2.4.2"
 tauri-plugin-http = { version = "2.5.2", features = ["unsafe-headers"] }
 tauri-plugin-opener = "2.5.2"
-reqwest = { version = "0.12", features = ["json", "stream", "multipart", "gzip"] }
+reqwest = { version = "0.12", features = ["json", "stream", "multipart", "gzip", "blocking"] }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 log = "0.4"
+futures-util = "0.3"
 tokio = { version = "1.39", features = ["macros", "process", "io-util", "time", "rt-multi-thread"] }

@@ -1355,7 +1355,7 @@ export class GlobalStateDataSource {
   }
 
   private updateSelectedDigimonDetails(evolvedDigimon: Digimon): void {
-    this.selectedDigimonOnDetails.set(evolvedDigimon);
+    this.selectedDigimonOnDetails.set({ ...evolvedDigimon });
   }
 
   private updatePlayerData(playerData?: PlayerData) {
